@@ -22,7 +22,7 @@
                         <i class="fa fa-sitemap"></i>
                     </div>
                     <div class="content">
-                        <div class="text"><?= lang('Preceptor');?></div>
+                        <div class="text"><?= lang('Union');?></div>
                         <div class="number count-to"><?php echo number_format_short($union); ?></div>
                     </div>
                 </div>

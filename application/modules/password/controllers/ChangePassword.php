@@ -21,7 +21,7 @@ class ChangePassword extends Common_Back_Controller {
        //  $data['check_send']=0;
          $data1['changetype']   = "";
         
-         $response              = $this->common_model->is_data_exists('users',$data);// check user valid or Invalid
+         $response              = $this->common_model->is_data_exists('admin',$data);// check user valid or Invalid
       
          if($response){
             $data1['encode_email']=$this->uri->segment(4);
@@ -45,7 +45,7 @@ class ChangePassword extends Common_Back_Controller {
                 'password' => password_hash($this->input->post('password'), PASSWORD_DEFAULT),
                 'passToken' => "",
             );
-            $table          = USERS;
+            $table          = ADMIN;
             $where_email    = array('email'=>decoding($this->input->post('e'))); // decode email id
             $response       = $this->common_model->getsingle($table, $where_email);    
             if($response){
