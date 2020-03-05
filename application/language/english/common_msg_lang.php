@@ -25,6 +25,28 @@
 	$lang['Preceptor'] = "Preceptor";
 	$lang['Union'] = "Union";
 	$lang['Office'] = "Office";
+	$lang['Name'] 	= "Name";
+	$lang['About'] 	= "About";
+	$lang['Save'] 	= "Save";
+	$lang['Update'] = "Update";
+	$lang['ID'] 	= "ID";
+	$lang['Status'] 	= "Status";
+	$lang['Action'] 	= "Action";
+	$lang['Detail'] 	= "Detail";
+	$lang['Delete'] 	= "Delete";
+	$lang['Edit'] 		= "Edit";
+	$lang['Active'] 	= "Active";
+	$lang['Inactive'] 	= "Inactive";
+	$lang['Total'] 	= "Total";
+	$lang['PDF'] 	= "PDF";
+	$lang['No_Record_found'] 	= "No Record found";
+	$lang['Warning_This_will_reset_all_your_widget_settings'] = "Warning! This will reset all your widget settings.";
+$lang['rest_all'] 								= "Would you like to RESET all your saved widgets and clear LocalStorage?";
+$lang['Clear_Local_Storage'] 					= "Clear Local Storage";
+$lang['Success'] 								= "Success";
+$lang['Alert'] 									= "Alert!";
+
+
 
 
 ?>

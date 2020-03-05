@@ -15,6 +15,12 @@ class Common_Back_Controller extends MX_Controller {
         ini_set('display_errors', 1);
                 $language_array = array('english','hindi');//language array
         $this->appLang = 'hindi'; //set default langauge
+        $siteLang = $this->session->userdata('site_lang');
+        if ($siteLang) {
+           $this->appLang= $siteLang;
+        } else {
+            $this->session->set_userdata('site_lang',$this->appLang);
+        }
         $header = $this->input->request_headers();//get header values
         $lang_key = '';//set key
         //check for language key exist in header array or not

@@ -11,7 +11,8 @@ class Smtp_email{
     $from_mail      = 'no-reply@outthinkcoders.com', //email a/c username
     $pwd            = 'EsEyCb7Tii2K', // email a/c password
     $port           = 465, //or 25(depends or server email configuration)
-    $from_name      = SITE_NAME;
+  
+    $from_name      = 'Shri Dharam Das Gan Parishad';
     public function send_mail($to,$subject,$message){
 
         $mail = new PHPMailer(true); // Passing `true` enables exceptions

@@ -36,6 +36,7 @@ class ResponseMessages{
             126 => "You are not authorised for this action",
             126 => $CI->lang->line("Invalid_Email_or_Password"),
             127 => "Record found",
+            128 => $CI->lang->line("successfully"),
             200 => 'OK',
             201 => 'Created',
             202 => 'Accepted',

@@ -78,7 +78,7 @@
     * 'fixed-page-footer' - Fixes footer
     * 'container'         - boxed layout mode (non-responsive: will not work with fixed-navigation & fixed-ribbon)
   -->
-  <body class="" data-base-url="<?php echo base_url(); ?>" data-auth-url="<?php echo $user['authToken']; ?>">
+  <body class="" data-base-url="<?php echo base_url(); ?>" data-auth-url="<?php echo $user['authToken']; ?>" data-success-msg="<?= lang('Success'); ?>" data-alert-msg="<?= lang('Alert'); ?>">
     <!-- #preloader -->
     <!--   <div class="preloader" id="preloader">
     <div class="spinner"></div>
@@ -144,6 +144,30 @@
           <span> <a href="javascript:void(0);" data-action="launchFullscreen" title="Full Screen"><i class="fa fa-arrows-alt"></i></a> </span>
         </div>
         <!-- end fullscreen button -->
+
+        <!-- multiple lang dropdown : find all flags in the flags page -->
+        <ul class="header-dropdown-list hidden-xs">
+          <li>
+            <?php if($this->session->userdata('site_lang')=='english'): ?>
+            <a href="javascript:void(0);" class="dropdown-toggle" data-toggle="dropdown"> <img src="<?php echo $backend_assets; ?>img/blank.gif" class="flag flag-us" alt="English"> <span> English  </span> <i class="fa fa-angle-down"></i> </a>
+             <?php elseif($this->session->userdata('site_lang')=='hindi'): ?>
+               <a href="javascript:void(0);" class="dropdown-toggle" data-toggle="dropdown"> <img src="<?php echo $backend_assets; ?>img/blank.gif" class="flag flag-in" alt="Hindi"> <span> Hindi  </span> <i class="fa fa-angle-down"></i> </a>
+             <?php else:  ?>
+               <a href="javascript:void(0);" class="dropdown-toggle" data-toggle="dropdown"> <img src="<?php echo $backend_assets; ?>img/blank.gif" class="flag flag-in" alt="Hindi"> <span> Hindi  </span> <i class="fa fa-angle-down"></i> </a>
+             <?php endif;  ?>
+            <ul class="dropdown-menu pull-right">
+              <li class="<?= ($this->session->userdata('site_lang')=='english')? 'active':'' ?>">
+                <a href="<?php echo base_url().'admin/switchLang/english/'.encoding(current_url()); ?>"><img src="<?php echo $backend_assets; ?>img/blank.gif" class="flag flag-us" alt="United States"> English (US)</a>
+              </li>
+              <li class="<?= ($this->session->userdata('site_lang')=='hindi')? 'active':'' ?>">
+                <a href="<?php echo base_url().'admin/switchLang/hindi/'.encoding(current_url()); ?>"><img src="<?php echo $backend_assets; ?>img/blank.gif" class="flag flag flag-in" alt="Hindi"> Hindi</a>
+              </li>
+              
+              
+            </ul>
+          </li>
+        </ul>
+        <!-- end multiple lang -->
       </div>
       <!-- end pulled right: nav area -->
     </header>
@@ -198,11 +222,16 @@
     <div id="main" role="main">
       <!-- RIBBON -->
       <div id="ribbon">
-        <span class="ribbon-button-alignment"> 
-          <span id="refresh" class="btn btn-ribbon" data-action="resetWidgets" data-title="refresh"  rel="tooltip" data-placement="bottom" data-original-title="<i class='text-warning fa fa-warning'></i> Warning! This will reset all your widget settings." data-html="true">
+          <span class="ribbon-button-alignment"> 
+          <span id="refresh" class="btn btn-ribbon" data-action="resetWidgets" data-title="refresh"  rel="tooltip" data-placement="bottom" data-original-title="<i class='text-warning fa fa-warning'></i> <?= lang('Warning_This_will_reset_all_your_widget_settings'); ?>" data-html="true" data-reset-msg="<?= lang('rest_all');?>" data-reset-title="<?= lang('Clear_Local_Storage');?>" data-reset-yes="<?= lang('Yes'); ?>" data-reset-no="<?= lang('No'); ?>">
             <i class="fa fa-refresh"></i>
           </span> 
         </span>
+<!--         <span class="ribbon-button-alignment"> 
+          <span id="refresh" class="btn btn-ribbon" data-action="resetWidgets" data-title="refresh"  rel="tooltip" data-placement="bottom" data-original-title="<i class='text-warning fa fa-warning'></i> Warning! This will reset all your widget settings." data-html="true">
+            <i class="fa fa-refresh"></i>
+          </span> 
+        </span> -->
         <!-- breadcrumb -->
           <?php
             $segmentSearch   = array('-', '/', '_');

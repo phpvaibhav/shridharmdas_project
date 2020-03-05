@@ -35,6 +35,8 @@ $lang['Full_name'] 								= "Full name";
 $lang['Contact'] 								= "Contact";
 $lang['forget_mail_msg'] = "You recently requested to reset your password for your account. Please click on button To reset your password:";
 $lang['forget_mail_msg_1'] = "If you didn't generate this link, don't worry. You can log in with your old password. This link is only for one-time use.";
+$lang['Please_enter_your_name'] = "Please enter your name";
+
 
 
 

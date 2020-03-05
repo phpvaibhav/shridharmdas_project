@@ -16,4 +16,5 @@ $lang['Added_successfully'] 	= "Added successfully";
 $lang['Updated_successfully'] 	= "Updated successfully";
 $lang['Deleted_successfully'] 	= "Deleted successfully";
 $lang['Something_went_wrong'] 	= "Something went wrong. Please try again";
+$lang['successfully'] 	= "successfully";
 

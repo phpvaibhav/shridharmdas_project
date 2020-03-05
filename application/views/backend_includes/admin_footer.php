@@ -147,8 +147,15 @@
     <!-- DataTables -->
     <script src="<?php echo $backend_assets ?>plugins/datatables/jquery.dataTables.min.js"></script>
     <script src="<?php echo $backend_assets ?>plugins/datatables/dataTables.bootstrap.min.js"></script>
+  <script src="https://cdn.datatables.net/buttons/1.5.6/js/dataTables.buttons.min.js"></script>
+  <script src="https://cdn.datatables.net/buttons/1.5.6/js/buttons.flash.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jszip/3.1.3/jszip.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/pdfmake/0.1.53/pdfmake.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/pdfmake/0.1.53/vfs_fonts.js"></script>
+  <script src="https://cdn.datatables.net/buttons/1.5.6/js/buttons.html5.min.js"></script>
+  <script src="https://cdn.datatables.net/buttons/1.5.6/js/buttons.print.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-sweetalert/1.0.1/sweetalert.js"></script>
-    <script src="<?php echo $backend_assets; ?>custom/js/listing.js"></script>
+   
     <!--    <script async defer src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDjhKBJtoevmCuR5iD1El6cuDHTMByw9Co&libraries=places" type="text/javascript"></script> -->
     <script src='https://cdnjs.cloudflare.com/ajax/libs/html2canvas/0.5.0-beta4/html2canvas.min.js'></script>
     <script type="text/javascript">
@@ -160,6 +167,7 @@
         var Please_enter_email_address = '<?= lang('Please_enter_email_address'); ?>';
         var Please_enter_a_valid_email_address = '<?= lang('Please_enter_a_valid_email_address'); ?>';
         var Please_enter_your_contact_number = '<?= lang('Please_enter_your_contact_number'); ?>';
+        var Please_enter_your_name = '<?= lang('Please_enter_your_name'); ?>';
     </script>
     <script src="<?php echo $backend_assets; ?>admin/js/profile.js"></script>
    <script src="<?php echo $backend_assets; ?>custom/js/common.js"></script>

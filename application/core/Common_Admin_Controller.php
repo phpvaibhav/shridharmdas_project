@@ -12,8 +12,14 @@ class Common_Admin_Controller extends REST_Controller{
         ini_set('display_errors', 1);
         $this->load->model('adminapi_model'); //load api model model
         $this->load->helper('response_message'); //load api response message helper
-                        $language_array = array('english','hindi');//language array
+        $language_array = array('english','hindi');//language array
         $this->appLang = 'hindi'; //set default langauge
+        $siteLang = $this->session->userdata('site_lang');
+        if ($siteLang) {
+           $this->appLang= $siteLang;
+        } else {
+            $this->session->set_userdata('site_lang',$this->appLang);
+        }
         $header = $this->input->request_headers();//get header values
         $lang_key = '';//set key
         //check for language key exist in header array or not
