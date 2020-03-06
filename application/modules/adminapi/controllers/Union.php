@@ -51,7 +51,7 @@ class Union extends Common_Admin_Controller{
             $row        = array();
             $row[]      = $no;
             $row[]      = display_placeholder_text($serData->name); 
-            $row[]      = display_placeholder_text((substr($serData->about, 0,100) .((strlen($serData->about) >100) ? '...' : ''))); 
+            $row[]      = display_placeholder_text((mb_substr($serData->about, 0,100, 'UTF-8') .((strlen($serData->about) >100) ? '...' : ''))); 
          
             switch ($serData->status) {
              

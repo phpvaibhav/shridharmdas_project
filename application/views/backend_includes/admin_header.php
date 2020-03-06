@@ -1,7 +1,15 @@
 <!DOCTYPE html>
-<html lang="en-us">
+<?php
+  $lang    = 'hi';
+  if($this->session->userdata('site_lang')=='english'):
+    $lang  = 'en';
+  endif;
+?>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="<?= $lang ?>" xml:lang="<?= $lang ?>">
   <head>
-    <meta charset="utf-8">
+
+    <meta http-equiv="Content-Language" content="hi,en">
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
     <title><?= lang('site_name'); ?><?php echo '|'.lang('Admin'); ?></title>
     <meta name="description" content="">
     <meta name="author" content="">

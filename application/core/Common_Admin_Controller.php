@@ -8,8 +8,8 @@ class Common_Admin_Controller extends REST_Controller{
     
     public function __construct(){
         parent::__construct();
-        error_reporting(E_ALL);
-        ini_set('display_errors', 1);
+      /*  error_reporting(E_ALL);
+        ini_set('display_errors', 1);*/
         $this->load->model('adminapi_model'); //load api model model
         $this->load->helper('response_message'); //load api response message helper
         $language_array = array('english','hindi');//language array

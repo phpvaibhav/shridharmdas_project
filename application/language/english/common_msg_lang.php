@@ -46,6 +46,12 @@ $lang['Clear_Local_Storage'] 					= "Clear Local Storage";
 $lang['Success'] 								= "Success";
 $lang['Alert'] 									= "Alert!";
 
+$lang['Basic_Information'] 									= "Basic Information";
+$lang['Address'] 									= "Address";
+$lang['contactNumber'] 									= "contactNumber";
+
+
+
 
 
 

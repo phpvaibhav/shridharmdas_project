@@ -11,8 +11,7 @@ class Common_Back_Controller extends MX_Controller {
         parent::__construct();
         $this->admin_user_session_key = ADMIN_USER_SESS_KEY; //user session key
         $this->tbl_users = ADMIN; //admin table
-         error_reporting(E_ALL);
-        ini_set('display_errors', 1);
+       
                 $language_array = array('english','hindi');//language array
         $this->appLang = 'hindi'; //set default langauge
         $siteLang = $this->session->userdata('site_lang');

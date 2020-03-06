@@ -106,11 +106,5 @@ class Service_model extends CI_Model {
             $this->db->where($this->where); 
         return $this->db->count_all_results();
     }//End function
-    public function serviceDetails($data){
-    	$this->db->select('*');
-    	$this->db->from('service');
-    	$this->db->where(array('serviceId'=>$data['serviceId']));
-    	$query = $this->db->get();
-    	return $query->row();
-    }//End function
+
 }//End class
