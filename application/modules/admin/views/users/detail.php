@@ -66,7 +66,7 @@
 												</li>
 												<li>
 													<p class="text-muted">
-														<i class="fa fa-transgender"></i>&nbsp;&nbsp;<span class="txt-color-darken"><?= display_placeholder_text($info['gender']); ?></span>
+														<i class="fa fa-transgender"></i>&nbsp;&nbsp;<span class="txt-color-darken"><?= display_placeholder_text($info['gender']); ?> 	<i class="fa fa-<?= ($info['gender']=='Female')?'female':'male'; ?>"></i> </span>
 													</p>
 												</li>
 												
@@ -82,7 +82,7 @@
 											</ul>
 											<br>
 											<p class="font-md">
-												<i>Addrsss</i>
+												<i>Address</i>
 											</p>
 											<p>
 												<ul class="list-unstyled">
