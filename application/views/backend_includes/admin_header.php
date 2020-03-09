@@ -216,8 +216,20 @@
           <li class="<?php echo (strtolower($this->router->fetch_class()) == "office") ? "active" : "" ?>">
             <a href="<?php echo base_url('office'); ?>" title="<?= lang('Office');?>"><i class="fa fa-lg fa-fw  fa-building"></i> <span class="menu-item-parent"><?= lang('Office');?></span></a>
           </li>
-          <li class="<?php echo (strtolower($this->router->fetch_class()) == "users") ? "active" : "" ?>">
+<!--           <li class="<?php echo (strtolower($this->router->fetch_class()) == "users") ? "active" : "" ?>">
             <a href="<?php echo base_url('users'); ?>" title="<?= lang('Users');?>"><i class="fa fa-lg fa-fw fa-users"></i> <span class="menu-item-parent"><?= lang('Users');?></span></a>
+          </li> -->
+          <li class="<?php echo (strtolower($this->router->fetch_class()) == "users") ? "active" : "" ?>">
+            <a href="javascript:void(0);" title="<?= lang('Users');?>"><i class="fa fa-lg fa-fw fa-users"></i> <span class="menu-item-parent"><?= lang('Users');?></span></a>
+            <ul>
+              <li>
+                <a href="<?php echo base_url('users'); ?>" title="User"><span class="menu-item-parent">Users List</span></a>
+              </li>
+              <li>
+                <a href="<?php echo base_url('add-user'); ?>" title="add user"><span class="menu-item-parent">Add User</span></a>
+              </li>
+             
+            </ul> 
           </li>
         </ul> 
       </nav>

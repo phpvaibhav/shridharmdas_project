@@ -439,3 +439,18 @@ function number_format_short( $n ) {
   return !empty($n_format . $suffix) ? $n_format . $suffix : 0;
 }//End function
 /***********  Any new project specific helper method can be added below  ***********/
+/**
+ * Display Nobile text when string is empty
+ */
+if (!function_exists('display_mobile_text')) {
+
+    function display_mobile_text($string='',$digit=3){
+        if (empty($string)) {
+            return 'NA'; //if string is empty return placeholder text
+        }else{
+         
+          return preg_replace('/\d{'.$digit.'}/', '$0 ', str_replace('.', null, trim($string)), 2);
+          
+        }
+    }
+}//End function
