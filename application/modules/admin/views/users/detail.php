@@ -140,6 +140,12 @@
 											<li>
 												<a href="#a3" data-toggle="tab">Education</a>
 											</li>
+											<li>
+												<a href="#a4" data-toggle="tab">Occupation</a>
+											</li>
+											<li>
+												<a href="#a5" data-toggle="tab">Family Member</a>
+											</li>
 											<li class="pull-right">
 												<span class="margin-top-10 display-inline"><i class="fa fa-rss text-success"></i> Activity</span>
 											</li>
@@ -150,6 +156,19 @@
 												<div class="row">
 													<div class="col-xs-12 col-sm-12">	
 														<center><strong>Maintenance -1</strong></center>
+<!-- 
+ <select name="bloodgp" id="bloodgp" <?php echo($data['user_bloodgroup']==$bloodgp)?'checked':'' ?>>
+    <option value="A+">A+</option
+    <option value="B+">B+</option>
+    <option value="AB+">AB+</option>
+    <option value="O+">O+</option>
+    <option value="A-">A-</option>
+    <option value="B-">B-</option>
+    <option value="AB-">AB-</option>
+    <option value="O-">O-</option>
+</select> -->
+
+
 													</div>
 												</div>
 
@@ -168,6 +187,24 @@
 												<div class="row">
 													<div class="col-xs-12 col-sm-12">	
 														<center><strong>Maintenance -3</strong></center>
+													</div>
+												</div>
+
+											</div>
+											<div class="tab-pane fade" id="a4">
+
+												<div class="row">
+													<div class="col-xs-12 col-sm-12">	
+														<center><strong>Maintenance -4</strong></center>
+													</div>
+												</div>
+
+											</div>
+											<div class="tab-pane fade" id="a5">
+
+												<div class="row">
+													<div class="col-xs-12 col-sm-12">	
+														<center><strong>Maintenance -5</strong></center>
 													</div>
 												</div>
 
@@ -195,4 +232,4 @@
 
 </div>
 
-<!-- end row
+<!-- end row-->
