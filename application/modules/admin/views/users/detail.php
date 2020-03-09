@@ -18,8 +18,8 @@
 								<div class="col-sm-12">
 
 									<div class="row">
-
-										<!-- <div class="col-sm-3 profile-pic">
+									
+										<!-- <div class="col-sm-3">
 											<img src="<?= $backend_assets; ?>img/avatars/sunny-big.png" alt="demo user">
 											<div class="padding-10">
 												<h4 class="font-md"><strong>1,543</strong>
@@ -35,8 +35,20 @@
 											<h1><?= ucfirst($info['firstName']); ?> <span class="semi-bold"><?= ucfirst($info['lastName']); ?></span>
 											<br>
 											<!-- <small> CEO, SmartAdmin</small> --></h1>
-
+										
+											
+											
 											<ul class="list-unstyled">
+												<li>
+													<p class="text-muted">
+														Status :&nbsp;&nbsp;<span class="txt-color-darken pull-right"><label class="label label-<?= $info['status'] ? "success":"warning"; ?>"><?= $info['status'] ? "Active":"Inactive"; ?></label></span>
+													</p>
+												</li>
+												<li>
+													<p class="text-muted">
+														Approval :&nbsp;&nbsp;<span class="txt-color-darken pull-right"><label class="label label-<?= $info['verifyUser'] ? "info":"danger"; ?>"><?= $info['verifyUser'] ? "Approved":"Not approved"; ?></label></span>
+													</p>
+												</li>
 												<li>
 													<p class="text-muted">
 														<i class="fa fa-list"></i>&nbsp;&nbsp;<span class="txt-color-darken"><?= display_mobile_text($info['aadharNumber'],4); ?></span>
