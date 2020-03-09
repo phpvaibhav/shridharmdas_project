@@ -31,7 +31,7 @@
 												<small>Connections</small></h4>
 											</div>
 										</div> -->
-										<div class="col-sm-10 col-sm-offset-1 ">
+										<div class="col-sm-10 col-sm-offset-1 col-md-10 col-md-offset-1 col-lg-10 col-lg-offset-1">
 											<h1><?= ucfirst($info['firstName']); ?> <span class="semi-bold"><?= ucfirst($info['lastName']); ?></span>
 											<br>
 											<!-- <small> CEO, SmartAdmin</small> --></h1>

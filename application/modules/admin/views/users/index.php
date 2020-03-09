@@ -52,7 +52,7 @@
 								</thead>
 								<tbody>			
 								</tbody>
-								<tfoot>
+								<!-- <tfoot>
 									<tr>
 										<th data-hide="phone">ID</th>
 										<th data-hide="phone">Full Name</th>
@@ -63,7 +63,7 @@
 										<th data-hide="phone,tablet">Approval</th>
 										<th data-hide="phone,tablet">Action</th>
 									</tr>
-								</tfoot>
+								</tfoot> -->
 							</table>
 						</div>
 					</div>

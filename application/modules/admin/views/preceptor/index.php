@@ -49,7 +49,7 @@
 								</thead>
 								<tbody>			
 								</tbody>
-								<tfoot>
+								<!-- <tfoot>
 									<tr>
 										<th data-hide="phone"><?=lang('ID');?></th>
 										<th data-hide="phone"><?= lang('Preceptor')." ".lang('Name'); ?></th>
@@ -57,7 +57,7 @@
 										<th data-hide="phone,tablet"><?= lang('Status'); ?></th>
 										<th data-hide="phone,tablet"><?= lang('Action'); ?></th>
 									</tr>
-								</tfoot>
+								</tfoot> -->
 							</table>
 						</div>
 					</div>
