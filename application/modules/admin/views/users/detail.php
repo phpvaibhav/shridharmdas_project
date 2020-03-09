@@ -40,12 +40,12 @@
 											
 											<ul class="list-unstyled">
 												<li>
-													<p class="text-muted">
+													<p class="text-muted"><i class="fa fa-bookmark" aria-hidden="true"></i> 
 														Status :&nbsp;&nbsp;<span class="txt-color-darken pull-right"><label class="label label-<?= $info['status'] ? "success":"warning"; ?>"><?= $info['status'] ? "Active":"Inactive"; ?></label></span>
 													</p>
 												</li>
 												<li>
-													<p class="text-muted">
+													<p class="text-muted"><i class="fa fa-hand-o-right" aria-hidden="true"></i>
 														Approval :&nbsp;&nbsp;<span class="txt-color-darken pull-right"><label class="label label-<?= $info['verifyUser'] ? "info":"danger"; ?>"><?= $info['verifyUser'] ? "Approved":"Not approved"; ?></label></span>
 													</p>
 												</li>
