@@ -71,7 +71,7 @@
 												</li>
 												<li>
 													<p class="text-muted">
-														<i class="fa fa-heart"></i>&nbsp;&nbsp;<span class="txt-color-darken"><?= display_placeholder_text($info['maritalStatus']); ?> </span>
+														<i class="fa fa-heart"></i>&nbsp;&nbsp;<span c0lass="txt-color-darken"><?= display_placeholder_text($info['maritalStatus']); ?> </span>
 													</p>
 												</li>
 												
@@ -95,6 +95,12 @@
 														<p class="text-muted">
 														<i class="fa fa-location-arrow" aria-hidden="true"></i>&nbsp;&nbsp;<span class="txt-color-darken"><?= display_placeholder_text($address['address']); ?></span>
 														</p>
+														<p>City : <?= display_placeholder_text($address['city']); ?></p>
+														<p>Tehsil : <?= display_placeholder_text($address['tehsil']); ?></p>
+														<p>District : <?= display_placeholder_text($address['district']); ?></p>
+														<p>State : <?= display_placeholder_text($address['state']); ?></p>
+														<p>Country : <?= display_placeholder_text($address['country']); ?></p>
+														<p>Zip : <?= display_placeholder_text($address['zip_code']); ?></p>
 													</li>
 												</ul>
 											</p>

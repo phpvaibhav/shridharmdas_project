@@ -93,6 +93,7 @@ $("#user-add-form").validate({// Rules for form validation
               preLoadshow(false);
               setTimeout(function(){  $('#submit').prop('disabled', false); },4000);
               if(res.status=='success'){
+                swal("Good job!", "Your form submitted successfully", "success");
                 toastr.success(res.message, 'Success', {timeOut: 3000});
                 setTimeout(function(){ 
                 window.location.reload();

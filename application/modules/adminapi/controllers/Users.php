@@ -19,27 +19,27 @@ class Users extends Common_Admin_Controller{
             $response = array('status' => FAIL, 'message' => strip_tags(validation_errors()));  
         }else{
 
-            $data_val['firstName']      = $this->post('firstName'); 
-            $data_val['lastName']       = $this->post('lastName'); 
-            $data_val['fullName']       = $this->post('firstName').' '.$this->post('lastName'); 
-            $data_val['dob']            = date('Y-m-d',strtotime($this->post('dob'))); 
-            $data_val['gender']         = $this->post('gender'); 
-            $data_val['parentName']         = $this->post('parentName'); 
-            $data_val['maritalStatus']         = $this->post('maritalStatus'); 
-            $data_val['contactNumber']  = trim(str_replace(array('(',')','-',' '),array('','','',''),$this->post('contactNumber')));
+            $data_val['firstName']       = $this->post('firstName'); 
+            $data_val['lastName']        = $this->post('lastName'); 
+            $data_val['fullName']        = $this->post('firstName').' '.$this->post('lastName'); 
+            $data_val['dob']             = date('Y-m-d',strtotime($this->post('dob'))); 
+            $data_val['gender']          = $this->post('gender'); 
+            $data_val['parentName']      = $this->post('parentName'); 
+            $data_val['maritalStatus']   = $this->post('maritalStatus'); 
+            $data_val['contactNumber']   = trim(str_replace(array('(',')','-',' '),array('','','',''),$this->post('contactNumber')));
     
             
-            $aadharNumber               = trim(str_replace(array('(',')','-'),array('','',''),$this->post('aadharNumber'))); 
-            $data_val['aadharNumber']   = $aadharNumber; 
-            $data_val['userName']       = rand('111111','999999'); 
-            $data_val['password']       = password_hash('123!@#', PASSWORD_DEFAULT);; 
+            $aadharNumber                = trim(str_replace(array('(',')','-'),array('','',''),$this->post('aadharNumber'))); 
+            $data_val['aadharNumber']    = $aadharNumber; 
+            $data_val['userName']        = rand('111111','999999'); 
+            $data_val['password']        = password_hash('123!@#', PASSWORD_DEFAULT);; 
 
            // pr( $data_val);
-            $meta_val['address']        = $this->post('address'); 
-            $meta_val['country']        = $this->post('country'); 
-            $meta_val['state']        = $this->post('state'); 
-            $meta_val['city']        = $this->post('city'); 
-            $meta_val['tehsil']        = $this->post('tehsil'); 
+            $meta_val['address']         = $this->post('address'); 
+            $meta_val['country']         = $this->post('country'); 
+            $meta_val['state']           = $this->post('state'); 
+            $meta_val['city']            = $this->post('city'); 
+            $meta_val['tehsil']          = $this->post('tehsil'); 
             $meta_val['district']        = $this->post('district'); 
             $meta_val['zip_code']        = $this->post('zip_code'); 
             $id     = decoding($this->post('id'));
@@ -75,7 +75,7 @@ class Users extends Common_Admin_Controller{
             $action = '';
             $no++;
             $row        = array();
-            $link_url      = base_url().'user-detail/'.encoding($serData->id);
+            $link_url   = base_url().'user-detail/'.encoding($serData->id);
             $row[]      = $no;
             $row[]      = '<a href="'.$link_url.'" >'.display_placeholder_text($serData->fullName).'</a>'; 
             $row[]      = display_mobile_text($serData->aadharNumber,4); 
@@ -135,28 +135,26 @@ class Users extends Common_Admin_Controller{
         $this->response($output);
     }
         function activeInactiveStatus_post(){
-        $preId             = decoding($this->post('id'));
+        $preId              = decoding($this->post('id'));
         $where              = array('id'=>$preId);
         $dataExist          = $this->common_model->is_data_exists('users',$where);
         if($dataExist){
             $status         = $dataExist->status ? 0:1;
             $dataExist      = $this->common_model->updateFields('users',array('status'=>$status),$where);
             $showmsg        = ($status==1)? lang("Active") : lang("Inactive");
-            $response       = array('status'=>SUCCESS,'message'=>$showmsg." ".ResponseMessages::getStatusCodeMessage(128));
-        }else{
-            $response       = array('status'=>FAIL,'message'=>ResponseMessages::getStatusCodeMessage(118));  
+            $response       = array('status'=>SUCCESS,'message'=>$showmsg." ".ResponseMessages::getStatusCodeMessage(128));             $response       = array('status'=>FAIL,'message'=>ResponseMessages::getStatusCodeMessage(118));  
         }
         $this->response($response);
     }//end function
     function recordDelete_post(){
-        $preId     = decoding($this->post('id'));
-        $where      = array('id'=>$preId);
-        $dataExist  = $this->common_model->is_data_exists('users',$where);
+        $preId              = decoding($this->post('id'));
+        $where              = array('id'=>$preId);
+        $dataExist          = $this->common_model->is_data_exists('users',$where);
         if($dataExist){
-            $dataExist = $this->common_model->deleteData('users',$where);
-            $response  = array('status'=>SUCCESS,'message'=>ResponseMessages::getStatusCodeMessage(124));
+            $dataExist      = $this->common_model->deleteData('users',$where);
+            $response       = array('status'=>SUCCESS,'message'=>ResponseMessages::getStatusCodeMessage(124));
         }else{
-            $response  = array('status'=>FAIL,'message'=>ResponseMessages::getStatusCodeMessage(118));  
+            $response       = array('status'=>FAIL,'message'=>ResponseMessages::getStatusCodeMessage(118));  
         }
         $this->response($response);
     }//end function

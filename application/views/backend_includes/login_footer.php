@@ -21,6 +21,8 @@
      <!-- JQUERY SELECT2 INPUT -->
     <script src="<?php echo $backend_assets ?>js/plugin/select2/select2.min.js"></script>
      <script src="<?php echo $backend_assets ?>js/plugin/bootstrap-timepicker/bootstrap-timepicker.min.js"></script>
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-sweetalert/1.0.1/sweetalert.js"></script>
+   
     <!--[if IE 8]>
     <h1>Your browser is out of date, please update your browser by going to www.microsoft.com/download</h1>
     <![endif]-->

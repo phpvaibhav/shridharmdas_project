@@ -17,8 +17,8 @@ class Union extends Common_Admin_Controller{
             $name   = $this->post('name'); 
             $about  = $this->post('about'); 
             $id     = decoding($this->post('id'));
-            $data_val['name'] = $name;
-            $data_val['about'] = $about;
+            $data_val['name']   = $name;
+            $data_val['about']  = $about;
             $isExist            =  $this->common_model->is_data_exists('union_group',array('unionId'=>$id));
             if($isExist){
                  $result = $this->common_model->updateFields('union_group',$data_val,array('uniond'=>$id));
@@ -92,7 +92,7 @@ class Union extends Common_Admin_Controller{
         $this->response($output);
     }
     function activeInactiveStatus_post(){
-        $unionId             = decoding($this->post('id'));
+        $unionId            = decoding($this->post('id'));
         $where              = array('unionId'=>$unionId);
         $dataExist          = $this->common_model->is_data_exists('union_group',$where);
         if($dataExist){
@@ -106,12 +106,12 @@ class Union extends Common_Admin_Controller{
         $this->response($response);
     }//end function
     function recordDelete_post(){
-        $unionId     = decoding($this->post('id'));
-        $where      = array('unionId'=>$unionId);
-        $dataExist  = $this->common_model->is_data_exists('union_group',$where);
+        $unionId        = decoding($this->post('id'));
+        $where          = array('unionId'=>$unionId);
+        $dataExist      = $this->common_model->is_data_exists('union_group',$where);
         if($dataExist){
-            $dataExist = $this->common_model->deleteData('union_group',$where);
-            $response  = array('status'=>SUCCESS,'message'=>ResponseMessages::getStatusCodeMessage(124));
+            $dataExist  = $this->common_model->deleteData('union_group',$where);
+            $response   = array('status'=>SUCCESS,'message'=>ResponseMessages::getStatusCodeMessage(124));
         }else{
             $response  = array('status'=>FAIL,'message'=>ResponseMessages::getStatusCodeMessage(118));  
         }
