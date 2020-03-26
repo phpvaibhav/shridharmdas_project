@@ -25,7 +25,8 @@ $("#user-add-form").validate({// Rules for form validation
       }, 
       gender    : {
         required : true
-      },    maritalStatus    : {
+      },    
+      maritalStatus    : {
         required : true
       },  
       contactNumber    : {
@@ -35,6 +36,18 @@ $("#user-add-form").validate({// Rules for form validation
       //  required : true
      // }, 
       address    : {
+        required : true
+      },  
+      city    : {
+        required : true
+      },  
+      zip_code    : {
+        required : true
+      },  
+      tehsil    : {
+        required : true
+      },  
+      district    : {
         required : true
       },
     },
@@ -65,7 +78,20 @@ $("#user-add-form").validate({// Rules for form validation
           },  
           address : {
             required : 'Please select your address'
+          },  
+          city : {
+            required : 'Please select your city'
+          }, 
+          zip_code : {
+            required : 'Please select your zip code'
           },
+           tehsil : {
+            required : 'Please select your tehsil'
+          },
+           district : {
+            required : 'Please select your district'
+          },
+          
   },
   // Ajax form submition
   submitHandler : function(form) {
