@@ -7,14 +7,14 @@ class Users extends Common_Admin_Controller{
     }
 
     function add_post(){
-        $authCheck  = $this->check_admin_service_auth();
+       // $authCheck  = $this->check_admin_service_auth();
         $this->form_validation->set_rules('firstName','first name', 'trim|required');
         $this->form_validation->set_rules('lastName','last name', 'trim|required');
         $this->form_validation->set_rules('dob','date of birth', 'trim|required');
         $this->form_validation->set_rules('gender','gender', 'trim|required');
         $this->form_validation->set_rules('contactNumber','contact number', 'trim|required');
-        $this->form_validation->set_rules('aadharNumber','aadhar number', 'trim|required|is_unique[users.aadharNumber]',
-            array('is_unique' => 'aadhar number already exist'));
+  /*      $this->form_validation->set_rules('aadharNumber','aadhar number', 'trim|required|is_unique[users.aadharNumber]',
+            array('is_unique' => 'aadhar number already exist'));*/
         if($this->form_validation->run() == FALSE){
             $response = array('status' => FAIL, 'message' => strip_tags(validation_errors()));  
         }else{
@@ -24,6 +24,8 @@ class Users extends Common_Admin_Controller{
             $data_val['fullName']       = $this->post('firstName').' '.$this->post('lastName'); 
             $data_val['dob']            = date('Y-m-d',strtotime($this->post('dob'))); 
             $data_val['gender']         = $this->post('gender'); 
+            $data_val['parentName']         = $this->post('parentName'); 
+            $data_val['maritalStatus']         = $this->post('maritalStatus'); 
             $data_val['contactNumber']  = trim(str_replace(array('(',')','-',' '),array('','','',''),$this->post('contactNumber')));
     
             
@@ -37,10 +39,12 @@ class Users extends Common_Admin_Controller{
             $meta_val['country']        = $this->post('country'); 
             $meta_val['state']        = $this->post('state'); 
             $meta_val['city']        = $this->post('city'); 
+            $meta_val['tehsil']        = $this->post('tehsil'); 
+            $meta_val['district']        = $this->post('district'); 
             $meta_val['zip_code']        = $this->post('zip_code'); 
             $id     = decoding($this->post('id'));
          
-            $isExist            =  $this->common_model->is_data_exists('users',array('aadharNumber'=>$aadharNumber));
+            $isExist            =  $this->common_model->is_data_exists('users',array('id'=>$id));
             if($isExist){
                   $response   = array('status'=>FAIL,'message'=>'aadhar number already exist');
                    $this->response($response);
@@ -71,8 +75,9 @@ class Users extends Common_Admin_Controller{
             $action = '';
             $no++;
             $row        = array();
+            $link_url      = base_url().'user-detail/'.encoding($serData->id);
             $row[]      = $no;
-            $row[]      = display_placeholder_text($serData->fullName); 
+            $row[]      = '<a href="'.$link_url.'" >'.display_placeholder_text($serData->fullName).'</a>'; 
             $row[]      = display_mobile_text($serData->aadharNumber,4); 
             $row[]      = display_mobile_text($serData->contactNumber); 
             $row[]      = display_placeholder_text($serData->gender); 

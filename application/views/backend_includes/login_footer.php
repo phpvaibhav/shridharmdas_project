@@ -18,6 +18,9 @@
     <script src="<?php echo $backend_assets; ?>js/plugin/jquery-validate/jquery.validate.min.js"></script>
     <!-- JQUERY MASKED INPUT -->
     <script src="<?php echo $backend_assets; ?>js/plugin/masked-input/jquery.maskedinput.min.js"></script>
+     <!-- JQUERY SELECT2 INPUT -->
+    <script src="<?php echo $backend_assets ?>js/plugin/select2/select2.min.js"></script>
+     <script src="<?php echo $backend_assets ?>js/plugin/bootstrap-timepicker/bootstrap-timepicker.min.js"></script>
     <!--[if IE 8]>
     <h1>Your browser is out of date, please update your browser by going to www.microsoft.com/download</h1>
     <![endif]-->
@@ -29,6 +32,9 @@
         var Please_enter_your_password = '<?= lang('Please_enter_your_password'); ?>';
     </script>
     <script src="<?php echo $backend_assets; ?>admin/js/login.js"></script>
+   <script src="<?php echo $backend_assets; ?>custom/js/common.js"></script>
     <script src="<?php echo $backend_assets; ?>custom/js/custom.js"></script>
+        
+    <?php if(!empty($front_scripts)) { load_js($front_scripts);} //load required page scripts ?>
   </body>
 </html>

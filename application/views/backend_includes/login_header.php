@@ -28,6 +28,8 @@
     <!-- #GOOGLE FONT -->
     <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Open+Sans:400italic,700italic,300,400,700">
     <link href="//cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/css/toastr.min.css" rel="stylesheet">
+       <?php if(!empty($front_styles)) { load_css($front_styles); } //load required page styles 
+     ?>
     <!-- custom -->
     <link rel="stylesheet" type="text/css" href="<?php echo $backend_assets; ?>custom/css/custom.css">
   </head>

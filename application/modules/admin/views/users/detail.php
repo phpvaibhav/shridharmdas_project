@@ -69,6 +69,11 @@
 														<i class="fa fa-transgender"></i>&nbsp;&nbsp;<span class="txt-color-darken"><?= display_placeholder_text($info['gender']); ?> 	<i class="fa fa-<?= ($info['gender']=='Female')?'female':'male'; ?>"></i> </span>
 													</p>
 												</li>
+												<li>
+													<p class="text-muted">
+														<i class="fa fa-heart"></i>&nbsp;&nbsp;<span class="txt-color-darken"><?= display_placeholder_text($info['maritalStatus']); ?> </span>
+													</p>
+												</li>
 												
 												<li>
 													<p class="text-muted">
