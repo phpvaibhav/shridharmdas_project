@@ -156,7 +156,7 @@ $(document).ready(function(){
             $('#city').html('<option value="">Select state first</option>'); 
         }
     });
-    
+      $("#country").trigger("change");
     $('#state').on('change',function(){
         var stateID = $(this).val();
         if(stateID){

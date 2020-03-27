@@ -183,3 +183,6 @@ $("#user-add-form").validate({// Rules for form validation
     error.insertAfter(element.parent());
   }
 });
+
+
+

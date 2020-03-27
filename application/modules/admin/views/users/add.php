@@ -160,7 +160,7 @@
                       <option value="0" selected="" disabled=""><?= lang('Country'); ?></option>
                       <?php if(!empty($countries)):
                         foreach ($countries as $k => $country) {?>
-                          <option value="<?=  $country->country_name; ?>" ><?=  $country->country_name; ?></option>
+                          <option value="<?=  $country->country_name; ?>" <?=  ($country->country_id==100)?  "selected='selected'" :""; ?> ><?=  $country->country_name; ?></option>
                       <?php } endif; ?>
               
                     </select> <i></i> </label>

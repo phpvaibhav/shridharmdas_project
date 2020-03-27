@@ -55,7 +55,7 @@ class Admin extends Common_Back_Controller {
      
        
         if(!empty($states)):
-            $html .= '<option value="0" selected="" disabled="">Select State</option>';
+                $html .= '<option value="0" selected="" disabled="">'.lang('State').'</option>';
             foreach ($states as $k => $state) {
                 $html .= '<option value="'.$state->state_name.'">'.$state->state_name.'</option>';
             }
