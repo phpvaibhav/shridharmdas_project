@@ -51,7 +51,7 @@
 												</li>
 												<li>
 													<p class="text-muted">
-														<i class="fa fa-list"></i>&nbsp;&nbsp;<span class="txt-color-darken"><?= display_mobile_text($info['aadharNumber'],4); ?></span>
+														<i class="fa fa-list"></i>&nbsp;&nbsp;<span class="txt-color-darken"><?= display_aadhar_text($info['aadharNumber'],6); ?></span>
 													</p>
 												</li>
 												<li>

@@ -80,7 +80,7 @@ class Users extends Common_Admin_Controller{
             $link_url   = base_url().'user-detail/'.encoding($serData->id);
             $row[]      = $no;
             $row[]      = '<a href="'.$link_url.'" >'.display_placeholder_text($serData->fullName).'</a>'; 
-            $row[]      = display_mobile_text($serData->aadharNumber,4); 
+            $row[]      = display_aadhar_text($serData->aadharNumber,6); 
             $row[]      = display_mobile_text($serData->contactNumber); 
             $row[]      = display_placeholder_text($serData->gender); 
           

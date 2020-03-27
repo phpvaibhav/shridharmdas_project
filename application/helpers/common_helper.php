@@ -454,3 +454,18 @@ if (!function_exists('display_mobile_text')) {
         }
     }
 }//End function
+/**
+ * Display Aadhar text when string is empty
+ */
+if (!function_exists('display_aadhar_text')) {
+
+    function display_aadhar_text($string='',$digit=3){
+        if (empty($string)) {
+            return 'NA'; //if string is empty return placeholder text
+        }else{
+         $string = preg_replace('~[+\d-](?=[\d-]{6})~', 'X', $string);
+          return  preg_replace('/\d{'.$digit.'}/', '$0 ', str_replace('.', null, trim($string)), 2);
+         
+        }
+    }
+}//End function
