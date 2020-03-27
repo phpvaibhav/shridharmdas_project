@@ -6,8 +6,8 @@
 	$lang['User_Form'] 							= "गण प्रपत्र";
 	$lang['basic_Information'] 							= "मूलभूत जानकारी";
 	$lang['First_name'] 							= "नाम";
-	$lang['Last_name'] 							= "सरनेम";
-	$lang['parentName'] 							= "पिता का नाम / पति का नाम";
+	$lang['Last_name'] 							= "उपनाम";
+	$lang['parentName'] 							= "पिता/पति का नाम";
 	$lang['dob'] 							= "जन्म की तारीख";
 	$lang['Phone'] 							= "फ़ोन";
 	$lang['Aadhar_number'] 							= "आधार कार्ड नंबर";
@@ -27,7 +27,7 @@
 	$lang['No'] 								= "नहीं";
 	$lang['Please_select_your_first_name'] 							= "कृपया अपना पहला नाम चुनें";
 	$lang['Please_select_your_last_name'] 							= "कृपया अपना सरनेम चुनें";
-	$lang['Please_select_your_father_name_husband_name'] 							= "कृपया अपने पिता का नाम / पति का नाम चुनें";
+	$lang['Please_select_your_father_name_husband_name'] 							= "कृपया अपने पिता/पति का नाम चुनें";
 	$lang['Please_select_your_date_of_birth'] 							= "कृपया अपनी जन्मतिथि चुनें";
 	$lang['Please_select_your_gender'] 							= "कृपया अपना लिंग चुनें";
 	$lang['Please_select_your_marital_status'] 							= "कृपया अपनी वैवाहिक स्थिति चुनें";
