@@ -49,7 +49,8 @@ $lang['Alert'] 									= "Alert!";
 $lang['Basic_Information'] 									= "Basic Information";
 $lang['Address'] 									= "Address";
 $lang['contactNumber'] 									= "contactNumber";
-
+	$lang['Users_List'] 							= "Users List";
+	$lang['Add_User'] 							= "Add User";
 
 
 

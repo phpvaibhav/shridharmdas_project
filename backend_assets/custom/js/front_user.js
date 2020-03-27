@@ -53,43 +53,43 @@ $("#user-add-form").validate({// Rules for form validation
     },
     // Messages for form validation
     messages : {
-      firstname : {
-            required : 'Please select your first name'
+      firstName : {
+            required : Please_select_your_first_name
           },
-          lastname : {
-            required : 'Please select your last name'
+          lastName : {
+            required : Please_select_your_last_name
           }, 
           parentName : {
-            required : 'Please select your father name/ husband name'
+            required : Please_select_your_father_name_husband_name
           },
           dob : {
-            required : 'Please select your date of birth'
+            required : Please_select_your_date_of_birth
           }, 
           gender : {
-            required : 'Please select your gender'
+            required : Please_select_your_gender
           }, maritalStatus : {
-            required : 'Please select your marital status'
+            required : Please_select_your_marital_status
           }, 
           contactNumber : {
-            required : 'Please select your contact number'
+            required : Please_select_your_contact_number
           }, 
            aadharNumber : {
-            required : 'Please select your aadhar number'
+            required : Please_select_your_aadhar_number
           },  
           address : {
-            required : 'Please select your address'
+            required : Please_select_your_address
           },  
           city : {
-            required : 'Please select your city'
+            required : Please_select_your_city
           }, 
           zip_code : {
-            required : 'Please select your zip code'
+            required : Please_select_your_zip_code
           },
            tehsil : {
-            required : 'Please select your tehsil'
+            required : Please_select_your_tehsil
           },
            district : {
-            required : 'Please select your district'
+            required : Please_select_your_district
           },
           
   },
@@ -119,7 +119,7 @@ $("#user-add-form").validate({// Rules for form validation
               preLoadshow(false);
               setTimeout(function(){  $('#submit').prop('disabled', false); },4000);
               if(res.status=='success'){
-                swal("Good job!", "Your form submitted successfully", "success");
+                swal(Good_job,Your_form_submitted_successfully, "success");
                 toastr.success(res.message, 'Success', {timeOut: 3000});
                 setTimeout(function(){ 
                 window.location.reload();

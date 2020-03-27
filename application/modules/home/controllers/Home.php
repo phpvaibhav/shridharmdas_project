@@ -12,7 +12,7 @@ class Home extends Common_Front_Controller {
     }//End Function
 
     public function index() { 
-        $data['title'] = "Home";
+        $data['title'] = lang('Home');
         $data['front_styles'] = array();
         $data['front_scripts'] = array();
          $data['front_scripts'] = array('backend_assets/custom/js/front_user.js');
@@ -28,7 +28,7 @@ class Home extends Common_Front_Controller {
      
        
         if(!empty($states)):
-            $html .= '<option value="0" selected="" disabled="">Select State</option>';
+            $html .= '<option value="0" selected="" disabled="">'.lang('State').'</option>';
             foreach ($states as $k => $state) {
                 $html .= '<option value="'.$state->state_name.'">'.$state->state_name.'</option>';
             }
@@ -56,4 +56,11 @@ class Home extends Common_Front_Controller {
         echo $html;
 
     }//End function
+    function switchLang($language = "",$url = "") {
+        
+        $language = ($language != "") ? $language : "english";
+        $url = ($url != "") ? decoding($url) : base_url();
+        $this->session->set_userdata('site_lang', $language);
+        redirect($url);
+    }//End Function
 }//End Class

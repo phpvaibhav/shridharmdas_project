@@ -223,10 +223,10 @@
             <a href="javascript:void(0);" title="<?= lang('Users');?>"><i class="fa fa-lg fa-fw fa-users"></i> <span class="menu-item-parent"><?= lang('Users');?></span></a>
             <ul>
               <li>
-                <a href="<?php echo base_url('users'); ?>" title="User"><span class="menu-item-parent">Users List</span></a>
+                <a href="<?php echo base_url('users'); ?>" title="<?= lang('Users_List');?>"><span class="menu-item-parent"><?= lang('Users_List');?></span></a>
               </li>
               <li>
-                <a href="<?php echo base_url('add-user'); ?>" title="add user"><span class="menu-item-parent">Add User</span></a>
+                <a href="<?php echo base_url('add-user'); ?>" title="<?= lang('Add_User');?>"><span class="menu-item-parent"><?= lang('Add_User');?></span></a>
               </li>
              
             </ul> 

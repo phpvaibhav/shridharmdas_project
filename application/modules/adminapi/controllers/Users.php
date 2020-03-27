@@ -33,15 +33,17 @@ class Users extends Common_Admin_Controller{
             $data_val['aadharNumber']    = $aadharNumber; 
             $data_val['userName']        = rand('111111','999999'); 
             $data_val['password']        = password_hash('123!@#', PASSWORD_DEFAULT);; 
-
+               $country        = $this->post('country'); 
+            $state         = $this->post('state'); 
            // pr( $data_val);
             $meta_val['address']         = $this->post('address'); 
-            $meta_val['country']         = $this->post('country'); 
-            $meta_val['state']           = $this->post('state'); 
+            $meta_val['country']         = isset($country) ? $country :""; 
+            $meta_val['state']           = isset($state) ? $state :""; 
             $meta_val['city']            = $this->post('city'); 
             $meta_val['tehsil']          = $this->post('tehsil'); 
             $meta_val['district']        = $this->post('district'); 
             $meta_val['zip_code']        = $this->post('zip_code'); 
+               //pr($meta_val);
             $id     = decoding($this->post('id'));
          
             $isExist            =  $this->common_model->is_data_exists('users',array('id'=>$id));

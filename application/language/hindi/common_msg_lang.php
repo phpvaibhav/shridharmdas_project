@@ -47,4 +47,6 @@ $lang['Alert'] 									= "चेतावनी!";
 $lang['Basic_Information'] 									= "कार्य सूचना";
 $lang['Address'] 									= "पता";
 $lang['contactNumber'] 									= "मोबाइल नंबर";
+$lang['Users_List'] 							= "गण सूची";
+$lang['Add_User'] 							= "गण जोड़ें";
 ?>
