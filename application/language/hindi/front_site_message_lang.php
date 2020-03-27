@@ -21,6 +21,10 @@
 	$lang['Country'] 							= "देश";
 	$lang['State'] 								= "राज्य";
 	$lang['Submit'] 							= "प्रस्तुत";
+		$lang['Male'] 								= "पुरुष";
+	$lang['Female'] 							= "महिला";
+	$lang['Yes'] 								= "हाँ";
+	$lang['No'] 								= "नहीं";
 	$lang['Please_select_your_first_name'] 							= "कृपया अपना पहला नाम चुनें";
 	$lang['Please_select_your_last_name'] 							= "कृपया अपना सरनेम चुनें";
 	$lang['Please_select_your_father_name_husband_name'] 							= "कृपया अपने पिता का नाम / पति का नाम चुनें";

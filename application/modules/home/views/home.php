@@ -128,20 +128,21 @@
               </div>
               <div class="row">
                
+        
                 <section class="col col-6">
                   <label class="select">
                     <select name="gender">
                       <option value="" selected="" disabled=""><?= lang('Select_Gender'); ?></option>
-                      <option value="Male">Male</option>
-                      <option value="Female">Female</option>
+                      <option value="Male"><?= lang('Male');?></option>
+                      <option value="Female"><?= lang('Female');?></option>
                     </select> <i></i> </label>
                 </section>
                 <section class="col col-6">
                   <label class="select">
                     <select name="maritalStatus">
                       <option value="" selected="" disabled=""><?= lang('Marital_Status'); ?></option>
-                      <option value="Yes">Yes</option>
-                      <option value="No">No</option>
+                      <option value="Yes"><?= lang('Yes');?></option>
+                      <option value="No"><?= lang('No');?></option>
                     </select> <i></i> </label>
                 </section>
               </div>

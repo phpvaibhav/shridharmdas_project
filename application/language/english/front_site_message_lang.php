@@ -21,6 +21,11 @@
 	$lang['District'] 							= "District";
 	$lang['Country'] 							= "Country";
 	$lang['State'] 								= "State";
+	$lang['Male'] 								= "Male";
+	$lang['Female'] 								= "Female";
+	$lang['Yes'] 								= "Yes";
+	$lang['No'] 								= "No";	
+
 	$lang['Submit'] 							= "Submit";
 	$lang['Please_select_your_first_name'] 							= "Please select your first name";
 	$lang['Please_select_your_last_name'] 							= "Please select your last name";
