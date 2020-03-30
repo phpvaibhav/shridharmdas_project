@@ -145,12 +145,13 @@
 														<p class="text-muted">
 														<i class="fa fa-location-arrow" aria-hidden="true"></i>&nbsp;&nbsp;<span class="txt-color-darken"><?= display_placeholder_text($address->address); ?></span>
 														</p>
-														<p>City : <?= display_placeholder_text($address->city); ?></p>
-														<p>Tehsil : <?= display_placeholder_text($address->tehsil); ?></p>
-														<p>District : <?= display_placeholder_text($address->district); ?></p>
-														<p>State : <?= display_placeholder_text($address->state); ?></p>
-														<p>Country : <?= display_placeholder_text($address->country); ?></p>
-														<p>Zip : <?= display_placeholder_text($address->zip_code); ?></p>
+														<p><?= lang('City'); ?> : <?= display_placeholder_text($address->city); ?></p>
+													<!-- 	<p><?= lang('zip_code'); ?> : <?= display_placeholder_text($address->zip_code); ?></p> -->
+														<p><?= lang('Tehsil'); ?> : <?= display_placeholder_text($address->tehsil); ?></p>
+														<p><?= lang('District'); ?> : <?= display_placeholder_text($address->district); ?></p>
+														<p><?= lang('State'); ?> : <?= display_placeholder_text($address->state); ?></p>
+														<p><?= lang('Country'); ?> : <?= display_placeholder_text($address->country); ?></p>
+														<p><?= lang('zip_code'); ?> : <?= display_placeholder_text($address->zip_code); ?></p>
 													</li>
 												</ul>
 											</p>
