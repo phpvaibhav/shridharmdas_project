@@ -29,7 +29,7 @@
 	$lang['office_address'] 					= "Office address";	
 	$lang['Religious_knowledge'] 					= "Religious knowledge";	
 	$lang['Education'] 					= "Education";	
-	$lang['Profession'] 					= "profession";	
+	$lang['Profession'] 					= "Profession";	
 	$lang['blood_group'] 					= "Blood group";	
 	$lang['unionResponsibility'] 					= "Union responsibility";	
 	$lang['married'] 					= "Married";	

@@ -147,7 +147,7 @@
                 
                 <section class="col col-6">
                   <label class="input"> <i class="icon-prepend fa fa-phone"></i>
-                    <input type="text" name="contactNumber" placeholder="<?= lang('Phone'); ?>" data-mask="(999) 999-9999">
+                    <input type="text" name="contactNumber" placeholder="<?= lang('Phone'); ?>" data-mask="999 999 9999">
                   </label>
                 </section>
                 <section class="col col-6">
@@ -256,7 +256,7 @@
                         <option value="WV">West Virginia</option>
                       </optgroup>
                     </select> -->
-                 
+                      
                       <select name="religiousKnowledge[]" multiple style="width:100%" class="select2" data-placeholder="<?= lang('Religious_knowledge'); ?>">
                      <!--  <option value="" selected="" disabled=""><?= lang('Religious_knowledge'); ?></option> -->
                       <option value="णमोकार मंत्र"> णमोकार मंत्र</option>
@@ -324,7 +324,7 @@
             <fieldset>
               <section>
                 <label for="address2" class="input">
-                  <input type="text" name="address" placeholder=" <?= lang('Address'); ?>">
+                  <input type="text" name="address" id="address" placeholder=" <?= lang('Address'); ?>">
                 </label>
               </section>
 
@@ -337,12 +337,12 @@
               
                     </select> <i></i> </label> -->
                     <label class="input">
-                    <input type="text" name="city" placeholder="<?= lang('City'); ?>">
+                    <input type="text" name="city" id="city" placeholder="<?= lang('City'); ?>">
                   </label>
                 </section>
                 <section class="col col-6">
                   <label class="input">
-                    <input type="text" name="zip_code" placeholder="<?= lang('zip_code'); ?>" class="number-only">
+                    <input type="text" name="zip_code" id="zip_code" placeholder="<?= lang('zip_code'); ?>" class="number-only">
                   </label>
                 </section>
               </div>
@@ -351,14 +351,14 @@
                 <section class="col col-6">
               
                     <label class="input">
-                    <input type="text" name="tehsil" placeholder="<?= lang('Tehsil'); ?>">
+                    <input type="text" name="tehsil" id="tehsil" placeholder="<?= lang('Tehsil'); ?>">
                   </label>
                 </section>
                 
                 <section class="col col-6">
               
                     <label class="input">
-                    <input type="text" name="district" placeholder="<?= lang('District'); ?>">
+                    <input type="text" name="district" id="district" placeholder="<?= lang('District'); ?>">
                   </label>
                 </section>
                
@@ -384,15 +384,33 @@
                     </select> <i></i> </label>
                 </section>
               
+              
+              </div>
+              <div class="row">
+                   <section class="col col-6">
+                  <label class="checkbox">
+                    <input type="checkbox" id="remember_Address" name="rememberAddress">
+                    <i></i>Remember address</label>
+                  </section>
               </div>
             </fieldset>            
             <header>
-              <?= lang('office_address'); ?>
+                <div class="row">
+                   <section class="col col-6">
+                 <?= lang('office_address'); ?>
+                  </section>  
+                  <section class="col col-6">
+                  <label class="checkbox pull-right">
+                    <input type="checkbox" id="Same_Address" name="remember">
+                    <i></i>Same as above</label>
+                  </section>
+              </div>
+             
             </header>
             <fieldset>
               <section>
                 <label for="address2" class="input">
-                  <input type="text" name="oaddress" placeholder=" <?= lang('Address'); ?>">
+                  <input type="text" name="oaddress" id="oaddress" placeholder=" <?= lang('Address'); ?>">
                 </label>
               </section>
 
@@ -405,12 +423,12 @@
               
                     </select> <i></i> </label> -->
                     <label class="input">
-                    <input type="text" name="ocity" placeholder="<?= lang('City'); ?>">
+                    <input type="text" name="ocity" id="ocity" placeholder="<?= lang('City'); ?>">
                   </label>
                 </section>
                 <section class="col col-6">
                   <label class="input">
-                    <input type="text" name="ozip_code" placeholder="<?= lang('zip_code'); ?>" class="number-only">
+                    <input type="text" name="ozip_code" id="ozip_code" placeholder="<?= lang('zip_code'); ?>" class="number-only">
                   </label>
                 </section>
               </div>
@@ -419,14 +437,14 @@
                 <section class="col col-6">
               
                     <label class="input">
-                    <input type="text" name="otehsil" placeholder="<?= lang('Tehsil'); ?>">
+                    <input type="text" name="otehsil" id="otehsil" placeholder="<?= lang('Tehsil'); ?>">
                   </label>
                 </section>
                 
                 <section class="col col-6">
               
                     <label class="input">
-                    <input type="text" name="odistrict" placeholder="<?= lang('District'); ?>">
+                    <input type="text" name="odistrict" id="odistrict" placeholder="<?= lang('District'); ?>">
                   </label>
                 </section>
                

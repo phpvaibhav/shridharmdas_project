@@ -148,6 +148,7 @@ $(document).ready(function(){
                 data:{'country':countryID},
                 success:function(html){
                     $('#state').html(html);
+                    $("#state option[value='"+localStorage.state+"']").prop('selected', true);
                     //$('#city').html('<option value="">Select state first</option>'); 
                 }
             }); 
@@ -191,3 +192,59 @@ $(document).ready(function(){
         }
     });*/
 });
+
+//rember me
+$(function() {
+  if (localStorage.add_chkbx && localStorage.add_chkbx != '') {
+    $('#remember_Address').attr('checked', 'checked');
+    $('#address').val(localStorage.address);
+    $('#city').val(localStorage.city);
+    $('#zip_code').val(localStorage.zip_code);
+    $('#tehsil').val(localStorage.tehsil);
+    $('#district').val(localStorage.district);
+  } else {
+    $('#remember_Address').removeAttr('checked');
+    $('#address').val("");
+    $('#city').val("");
+    $('#zip_code').val("");
+    $('#tehsil').val("");
+    $('#district').val("");
+  }
+  $('#remember_Address').click(function() {
+    if ($('#remember_Address').is(':checked')) {
+
+      localStorage.address  = $('#address').val();
+      localStorage.city     = $('#city').val();
+      localStorage.zip_code     = $('#zip_code').val();
+      localStorage.tehsil     = $('#tehsil').val();
+      localStorage.district     = $('#district').val();
+      localStorage.country     = $('#country').val();
+      localStorage.state     = $('#state').val();
+      localStorage.add_chkbx    = $('#remember_Address').val();
+
+    } else {
+      localStorage.address  = "";
+      localStorage.city     =  "";
+      localStorage.zip_code     =  "";
+      localStorage.tehsil     =  "";
+      localStorage.district     = "";
+      localStorage.country     =  "";
+      localStorage.state     =  "";
+      localStorage.add_chkbx    =  "";
+    }
+  });
+    $('#Same_Address').click(function() {
+    if ($('#Same_Address').is(':checked')) {
+
+          $('#oaddress').val($('#address').val());
+          $('#ocity').val($('#city').val());
+          $('#ozip_code').val($('#zip_code').val());
+          $('#otehsil').val($('#tehsil').val());
+          $('#odistrict').val($('#district').val());
+          $("#ostate option[value='"+($('#state').val())+"']").prop('selected', true);
+    } else {
+    //gfgg
+    }
+  });
+});
+//rember me
