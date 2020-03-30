@@ -18,12 +18,13 @@ class Users extends Common_Admin_Controller{
         if($this->form_validation->run() == FALSE){
             $response = array('status' => FAIL, 'message' => strip_tags(validation_errors()));  
         }else{
-
+            // pr($this->post());
             $data_val['firstName']       = $this->post('firstName'); 
             $data_val['lastName']        = $this->post('lastName'); 
             $data_val['fullName']        = $this->post('firstName').' '.$this->post('lastName'); 
             $data_val['dob']             = date('Y-m-d',strtotime($this->post('dob'))); 
             $data_val['gender']          = $this->post('gender'); 
+            $data_val['email']          = $this->post('email'); 
             $data_val['parentName']      = $this->post('parentName'); 
             $data_val['maritalStatus']   = $this->post('maritalStatus'); 
             $data_val['contactNumber']   = trim(str_replace(array('(',')','-',' '),array('','','',''),$this->post('contactNumber')));
@@ -35,7 +36,11 @@ class Users extends Common_Admin_Controller{
             $data_val['password']        = password_hash('123!@#', PASSWORD_DEFAULT);; 
                $country        = $this->post('country'); 
             $state         = $this->post('state'); 
+            $ocountry        = $this->post('ocountry'); 
+            $ostate         = $this->post('ostate'); 
+            $oaddress = $this->post('oaddress');
            // pr( $data_val);
+             $meta_val['addressType']         = 'Home'; 
             $meta_val['address']         = $this->post('address'); 
             $meta_val['country']         = isset($country) ? $country :""; 
             $meta_val['state']           = isset($state) ? $state :""; 
@@ -44,6 +49,24 @@ class Users extends Common_Admin_Controller{
             $meta_val['district']        = $this->post('district'); 
             $meta_val['zip_code']        = $this->post('zip_code'); 
                //pr($meta_val);
+             if(isset($oaddress) && !empty($oaddress)){
+                $ometa_val['address']         = $this->post('oaddress'); 
+                $ometa_val['addressType']         = 'Office'; 
+                $ometa_val['country']         = isset($ocountry) ? $ocountry :""; 
+                $ometa_val['state']           = isset($ostate) ? $ostate :""; 
+                $ometa_val['city']            = $this->post('ocity'); 
+                $ometa_val['tehsil']          = $this->post('otehsil'); 
+                $ometa_val['district']        = $this->post('odistrict'); 
+                $ometa_val['zip_code']        = $this->post('ozip_code'); 
+               //pr($meta_val);
+            }
+            $user_meta['preceptorName']  = $this->post('preceptorName');
+            $user_meta['unionName']      = $this->post('unionName');
+            $user_meta['education']      = $this->post('education');
+            $user_meta['religiousKnowledge']      = $this->post('religiousKnowledge') ? implode(",",$this->post('religiousKnowledge')) :"";
+            $user_meta['profession']      = $this->post('profession');
+            $user_meta['bloodGroup']      = $this->post('bloodGroup');
+            $user_meta['unionResponsibility']      = $this->post('unionResponsibility');
             $id     = decoding($this->post('id'));
          
             $isExist            =  $this->common_model->is_data_exists('users',array('id'=>$id));
@@ -52,8 +75,13 @@ class Users extends Common_Admin_Controller{
                    $this->response($response);
             }else{
                  $result = $this->common_model->insertData('users',$data_val);
+                 $user_meta['userId']        = $result; 
                  $meta_val['userId']        = $result; 
+                 $ometa_val['userId']        = $result; 
+                $this->common_model->insertData('user_meta',$user_meta);
                 $this->common_model->insertData('addresses',$meta_val);
+                $this->common_model->insertData('addresses',$ometa_val);
+               // $this->common_model->insertData('addresses',$meta_val);
 
                 $msg  = ResponseMessages::getStatusCodeMessage(122);
             }

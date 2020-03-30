@@ -148,16 +148,34 @@ $(document).ready(function(){
                 data:{'country':countryID},
                 success:function(html){
                     $('#state').html(html);
-                    $('#city').html('<option value="">Select state first</option>'); 
+                    //$('#city').html('<option value="">Select state first</option>'); 
                 }
             }); 
         }else{
             $('#state').html('<option value="">Select country first</option>');
-            $('#city').html('<option value="">Select state first</option>'); 
+           // $('#city').html('<option value="">Select state first</option>'); 
+        }
+    });
+    $('#ocountry').on('change',function(){
+        var countryID = $(this).val();
+        if(countryID){
+            $.ajax({
+                type:'POST',
+                url:base_url+'home/countryToState',
+                data:{'country':countryID},
+                success:function(html){
+                    $('#ostate').html(html);
+                   // $('#city').html('<option value="">Select state first</option>'); 
+                }
+            }); 
+        }else{
+            $('#ostate').html('<option value="">Select country first</option>');
+           // $('#city').html('<option value="">Select state first</option>'); 
         }
     });
       $("#country").trigger("change");
-    $('#state').on('change',function(){
+      $("#ocountry").trigger("change");
+/*    $('#state').on('change',function(){
         var stateID = $(this).val();
         if(stateID){
             $.ajax({
@@ -171,5 +189,5 @@ $(document).ready(function(){
         }else{
             $('#city').html('<option value="">Select state first</option>'); 
         }
-    });
+    });*/
 });
