@@ -85,25 +85,76 @@
 												
 												
 											</ul>
+											<hr>
+											<ul class="list-unstyled">
+												<li>
+													<p class="text-muted"><i class="fa fa-sun-o" aria-hidden="true"></i> 
+														<?= lang('Preceptor').' '.lang('Name'); ?> :&nbsp;&nbsp;<span class="txt-color-darken pull-right"><?= display_placeholder_text($usermeta['preceptorName']); ?></span>
+													</p>
+												</li>
+												
+												<li>
+													<p class="text-muted"><i class="fa fa-sitemap" aria-hidden="true"></i> 
+														<?= lang('Union').' '.lang('Name'); ?> :&nbsp;&nbsp;<span class="txt-color-darken pull-right"><?= display_placeholder_text($usermeta['unionName']); ?></span>
+													</p>
+												</li>
+												<li>
+													<p class="text-muted"><i class="fa fa-tag" aria-hidden="true"></i> 
+														<?= trim(lang('Education')); ?> :&nbsp;&nbsp;<span class="txt-color-darken pull-right"><?= display_placeholder_text($usermeta['education']); ?></span>
+													</p>
+												</li>
+												<li>
+													<p class="text-muted"><i class="fa fa-circle" aria-hidden="true"></i> 
+														<?= trim(lang('Religious_knowledge')); ?> :&nbsp;&nbsp;
+														<br><span class="txt-color-darken pull-right"><?= display_placeholder_text($usermeta['religiousKnowledge']); ?></span>
+													</p>
+													<br>
+												</li>
+												<li>
+													<p class="text-muted"><i class="fa fa-circle" aria-hidden="true"></i> 
+														<?= trim(lang('Profession')); ?> :&nbsp;&nbsp;
+														<span class="txt-color-darken pull-right"><?= display_placeholder_text($usermeta['profession']); ?></span>
+													</p>
+
+												</li>
+												<li>
+													<p class="text-muted"><i class="fa fa-circle" aria-hidden="true"></i> 
+														<?= trim(lang('blood_group')); ?> :&nbsp;
+														<span class="txt-color-darken pull-right"><?= display_placeholder_text($usermeta['bloodGroup']); ?></span>
+													</p>
+												</l>
+												<li>
+													<p class="text-muted"><i class="fa fa-circle" aria-hidden="true"></i> 
+														<?= trim(lang('unionResponsibility')); ?> :&nbsp;
+														<span class="txt-color-darken pull-right"><?= display_placeholder_text($usermeta['unionResponsibility']); ?></span>
+													</p>
+												</li>
+												
+											
+												
+
+											</ul>
+											<?php if(!empty($addresses)){ foreach ($addresses as $e => $address) {?>
 											<br>
 											<p class="font-md">
-												<i>Address</i>
+												<i><?= $address->addressType; ?> Address</i>
 											</p>
 											<p>
 												<ul class="list-unstyled">
 													<li>
 														<p class="text-muted">
-														<i class="fa fa-location-arrow" aria-hidden="true"></i>&nbsp;&nbsp;<span class="txt-color-darken"><?= display_placeholder_text($address['address']); ?></span>
+														<i class="fa fa-location-arrow" aria-hidden="true"></i>&nbsp;&nbsp;<span class="txt-color-darken"><?= display_placeholder_text($address->address); ?></span>
 														</p>
-														<p>City : <?= display_placeholder_text($address['city']); ?></p>
-														<p>Tehsil : <?= display_placeholder_text($address['tehsil']); ?></p>
-														<p>District : <?= display_placeholder_text($address['district']); ?></p>
-														<p>State : <?= display_placeholder_text($address['state']); ?></p>
-														<p>Country : <?= display_placeholder_text($address['country']); ?></p>
-														<p>Zip : <?= display_placeholder_text($address['zip_code']); ?></p>
+														<p>City : <?= display_placeholder_text($address->city); ?></p>
+														<p>Tehsil : <?= display_placeholder_text($address->tehsil); ?></p>
+														<p>District : <?= display_placeholder_text($address->district); ?></p>
+														<p>State : <?= display_placeholder_text($address->state); ?></p>
+														<p>Country : <?= display_placeholder_text($address->country); ?></p>
+														<p>Zip : <?= display_placeholder_text($address->zip_code); ?></p>
 													</li>
 												</ul>
 											</p>
+											<?php } } ?>
 											<br>
 											<p class="font-md">
 												<i>Bio</i>

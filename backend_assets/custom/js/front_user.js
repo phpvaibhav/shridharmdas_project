@@ -95,6 +95,27 @@ $("#user-add-form").validate({// Rules for form validation
   },
   // Ajax form submition
   submitHandler : function(form) {
+     if ($('#remember_Address').is(':checked')) {
+
+      localStorage.address  = $('#address').val();
+      localStorage.city     = $('#city').val();
+      localStorage.zip_code     = $('#zip_code').val();
+      localStorage.tehsil     = $('#tehsil').val();
+      localStorage.district     = $('#district').val();
+      localStorage.country     = $('#country').val();
+      localStorage.state     = $('#state').val();
+      localStorage.add_chkbx    = $('#remember_Address').val();
+
+    } else {
+      localStorage.address  = "";
+      localStorage.city     =  "";
+      localStorage.zip_code     =  "";
+      localStorage.tehsil     =  "";
+      localStorage.district     = "";
+      localStorage.country     =  "";
+      localStorage.state     =  "";
+      localStorage.add_chkbx    =  "";
+    }
     var method      =  "POST";
     var post_data   = $(form).serialize();
     var url         =  base_url+'adminapi/'+$(form).attr('action');
