@@ -80,10 +80,6 @@
 														<i class="fa fa-envelope"></i>&nbsp;&nbsp;<a href="javascript:void(0);"><?= display_placeholder_text($info['email']); ?></a>
 													</p>
 												</li>
-												
-												
-												
-												
 											</ul>
 											<hr>
 											<ul class="list-unstyled">
@@ -129,10 +125,6 @@
 														<span class="txt-color-darken pull-right"><?= display_placeholder_text($usermeta['unionResponsibility']); ?></span>
 													</p>
 												</li>
-												
-											
-												
-
 											</ul>
 											<?php if(!empty($addresses)){ foreach ($addresses as $e => $address) {?>
 											<br>
@@ -161,38 +153,22 @@
 												<i>Bio</i>
 											</p>
 											<p>
-
 												<?= display_placeholder_text($info['bio']); ?>
-
 											</p>
 											<br>
-											
 											<br>
 											<br>
-
 										</div>
-
 									</div>
-
 								</div>
-
 							</div>
-
-
 						</div>
-
 					</div>
 					<div class="col-sm-12 col-md-12 col-lg-9">
 						<!-- data -->
-
 							<div class="row">
-
 								<div class="col-sm-12">
-
-									
-
 									<div class="padding-10">
-
 										<ul class="nav nav-tabs tabs-pull-left">
 											<li class="active">
 												<a href="#a1" data-toggle="tab">Basic info</a>
@@ -234,34 +210,27 @@
 
 													</div>
 												</div>
-
 											</div>
 											<div class="tab-pane fade" id="a2">
-
 												<div class="row">
 													<div class="col-xs-12 col-sm-12">	
 														<center><strong>Maintenance -2</strong></center>
 													</div>
 												</div>
-
 											</div>
 											<div class="tab-pane fade" id="a3">
-
 												<div class="row">
 													<div class="col-xs-12 col-sm-12">	
 														<center><strong>Maintenance -3</strong></center>
 													</div>
 												</div>
-
 											</div>
 											<div class="tab-pane fade" id="a4">
-
 												<div class="row">
 													<div class="col-xs-12 col-sm-12">	
 														<center><strong>Maintenance -4</strong></center>
 													</div>
 												</div>
-
 											</div>
 											<div class="tab-pane fade" id="a5">
 
@@ -272,27 +241,16 @@
 												</div>
 
 											</div>
-
 											<!-- end tab -->
 										</div>
-
 									</div>
-
 								</div>
-
 							</div>
 							<!-- end row -->
 						<!-- data -->
-
-
 					</div>
 				</div>
-
 			</div>
-
-
 	</div>
-
 </div>
-
 <!-- end row-->

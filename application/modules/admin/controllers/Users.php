@@ -21,7 +21,7 @@ class Users extends Common_Back_Controller {
      
         $data['title']      = lang('Users');
      	$countries      = $this->common_model->getAll('countries');
-        $data['front_scripts'] = array('backend_assets/admin/js/location.js','backend_assets/custom/js/users.js');
+        $data['front_scripts'] = array('backend_assets/custom/js/users.js');
         $data['countries'] = $countries;
         $this->load->admin_render('users/add', $data, '');
     } //End function 

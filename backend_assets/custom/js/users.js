@@ -183,6 +183,113 @@ $("#user-add-form").validate({// Rules for form validation
     error.insertAfter(element.parent());
   }
 });
+$(document).ready(function(){
+    $('#country').on('change',function(){
+        var countryID = $(this).val();
+        if(countryID){
+            $.ajax({
+                type:'POST',
+                url:base_url+'home/countryToState',
+                data:{'country':countryID},
+                success:function(html){
+                    $('#state').html(html);
+                    $("#state option[value='"+localStorage.state+"']").prop('selected', true);
+                    //$('#city').html('<option value="">Select state first</option>'); 
+                }
+            }); 
+        }else{
+            $('#state').html('<option value="">Select country first</option>');
+           // $('#city').html('<option value="">Select state first</option>'); 
+        }
+    });
+    $('#ocountry').on('change',function(){
+        var countryID = $(this).val();
+        if(countryID){
+            $.ajax({
+                type:'POST',
+                url:base_url+'home/countryToState',
+                data:{'country':countryID},
+                success:function(html){
+                    $('#ostate').html(html);
+                   // $('#city').html('<option value="">Select state first</option>'); 
+                }
+            }); 
+        }else{
+            $('#ostate').html('<option value="">Select country first</option>');
+           // $('#city').html('<option value="">Select state first</option>'); 
+        }
+    });
+      $("#country").trigger("change");
+      $("#ocountry").trigger("change");
+/*    $('#state').on('change',function(){
+        var stateID = $(this).val();
+        if(stateID){
+            $.ajax({
+                type:'POST',
+                url:base_url+'home/stateToCity',
+                data:{'state':stateID},
+                success:function(html){
+                    $('#city').html(html);
+                }
+            }); 
+        }else{
+            $('#city').html('<option value="">Select state first</option>'); 
+        }
+    });*/
+});
 
+//rember me
+$(function() {
+  if (localStorage.add_chkbx && localStorage.add_chkbx != '') {
+    $('#remember_Address').attr('checked', 'checked');
+    $('#address').val(localStorage.address);
+    $('#city').val(localStorage.city);
+    $('#zip_code').val(localStorage.zip_code);
+    $('#tehsil').val(localStorage.tehsil);
+    $('#district').val(localStorage.district);
+  } else {
+    $('#remember_Address').removeAttr('checked');
+    $('#address').val("");
+    $('#city').val("");
+    $('#zip_code').val("");
+    $('#tehsil').val("");
+    $('#district').val("");
+  }
+  $('#remember_Address').click(function() {
+    if ($('#remember_Address').is(':checked')) {
 
+      localStorage.address  = $('#address').val();
+      localStorage.city     = $('#city').val();
+      localStorage.zip_code     = $('#zip_code').val();
+      localStorage.tehsil     = $('#tehsil').val();
+      localStorage.district     = $('#district').val();
+      localStorage.country     = $('#country').val();
+      localStorage.state     = $('#state').val();
+      localStorage.add_chkbx    = $('#remember_Address').val();
 
+    } else {
+      localStorage.address  = "";
+      localStorage.city     =  "";
+      localStorage.zip_code     =  "";
+      localStorage.tehsil     =  "";
+      localStorage.district     = "";
+      localStorage.country     =  "";
+      localStorage.state     =  "";
+      localStorage.add_chkbx    =  "";
+    }
+  });
+    $('#Same_Address').click(function() {
+    if ($('#Same_Address').is(':checked')) {
+
+          $('#oaddress').val($('#address').val());
+          $('#ocity').val($('#city').val());
+          $('#ozip_code').val($('#zip_code').val());
+          $('#otehsil').val($('#tehsil').val());
+          $('#odistrict').val($('#district').val());
+          $("#ostate option[value='"+($('#state').val())+"']").prop('selected', true);
+    } else {
+    //gfgg
+    }
+  });
+});
+//rember me
