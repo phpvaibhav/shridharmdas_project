@@ -12,13 +12,28 @@ class Home extends Common_Front_Controller {
     }//End Function
 
     public function index() { 
+        $data['title'] = 'Home';
+        $this->load->front_render('home',$data);
+    }//End Function
+    public function aboutus() { 
+        $data['title'] = 'About us';
+        $this->load->front_render('aboutus',$data);
+    }//End Function
+
+    public function contact() { 
+        $data['title'] = 'Contact us';
+        $this->load->front_render('contactus',$data);
+    }//End Function
+
+
+    public function addUser() { 
         $data['title'] = lang('Home');
         $data['front_styles'] = array();
         $data['front_scripts'] = array();
          $data['front_scripts'] = array('backend_assets/custom/js/front_user.js');
           $countries      = $this->common_model->getAll('countries');
         $data['countries'] = $countries;
-        $this->load->login_render('home',$data);
+        $this->load->login_render('adduser',$data);
     }//End Function 
     function countryToState(){
         $country     = $this->input->post('country');

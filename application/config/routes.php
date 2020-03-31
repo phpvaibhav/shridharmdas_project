@@ -63,3 +63,9 @@ $route['preceptor'] 	= 'admin/preceptor';
 $route['union'] 	= 'admin/union';
 $route['office'] 	= 'admin/office';
 
+$route['user-form'] 	= 'home/addUser';
+$route['about-us'] 	= 'home/aboutus';
+$route['contact-us'] 	= 'home/contact';
+
+
+

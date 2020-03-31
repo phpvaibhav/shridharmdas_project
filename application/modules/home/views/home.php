@@ -1,531 +1,761 @@
-  <?php $backend_assets =  base_url().'backend_assets/'; ?>
-  <style type="text/css">
-    .header-dropdown-list > li > .dropdown-toggle {
-    margin-top: 0px ! important;
-    
-}
-.select2-container-multi .select2-choices .select2-search-choice, .select2-selection__choice {
-    padding: 1px 28px 1px 8px !important;
-    margin: 4px 0 3px 5px !important;
-    position: relative;
-    line-height: 18px;
-    color: #fff;
-    cursor: default;
-    border: 1px solid #2a6395;
-    -webkit-background-clip: padding-box !important;
-    background-clip: padding-box !important;
-    -webkit-touch-callout: none !important;
-    -webkit-user-select: none !important;
-    -khtml-user-select: none;
-    -moz-user-select: none;
-    -ms-user-select: none;
-    user-select: none;
-    background-color: #3276b1;
-}
-  </style>
-<div id="main" role="main">
-  <!-- MAIN CONTENT -->
-  <div id="content" class="container">
 
-<!-- START ROW -->
+  <!-- Intro -->
+  <section id="intro">
+    <div class="overlay overlay-bg"></div>
+    <div class="owl-carousel">
+      <div class="item section-padding" style="background-image:url(https://via.placeholder.com/1920x930);">
+        <div class="container">
+          <div class="intro_text white_text">
+            <h1>Shinto Believes in Kami</h1>
+            <p>The point of using Lorem Ipsum is that it has a more-or-less normal distribution of letters, as opposed to using 'Content here, content here. </p>
+            <a href="<?= base_url(); ?>user-form" class="btn dark-btn tilak-top-btn">User Form</a>
+          </div>
+        </div>
+      </div>
+      <div class="item section-padding" style="background-image:url(https://via.placeholder.com/1920x930);">
+        <div class="container">
+          <div class="intro_text white_text">
+            <h1>God is Creator Of Life</h1>
+            <p>The point of using Lorem Ipsum is that it has a more-or-less normal distribution of letters, as opposed to using 'Content here, content here. </p>
+           <a href="<?= base_url(); ?>user-form" class="btn dark-btn tilak-top-btn">User Form</a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+  <!-- /Intro -->
 
-<div class="row">
-
-  <!-- NEW COL START -->
-            <div class="col-sm-12 col-md-12 col-lg-2 hidden-xs hidden-sm">
-            <div class="hero-1">
-
-              <div class="pull-left login-desc-box-l">
-                <img src="<?php echo $backend_assets; ?>img/logo.png" class="pull-left display-image-1" alt="" style=" margin-left: -76px;" >
-
+  <!-- Next-Events-Sermons -->
+    <section class="latest_event_sermons home-sermon">
+      <div class="container">
+        <div class="row">
+          <div class="col-md-6">
+            <div class="box_wrap next_sermons">
+              <p class="subtitle">Latest Sekkyos</p>
+              <h4><a href="sermon-detail.html">Shinto — “the way of the kami”</a></h4>
+              <ul class="sermons_meta">
+                <li><i class="fa fa-user"></i> Message from <a href="our-teachers.html"> Mabuchi</a></li>
+                <li><i class="far fa-calendar-alt"></i> sep 03, 2019</li>
+              </ul>
+              <div class="sermons_inside">
+                <ul>
+                  <li><a class="popup-youtube" href="http://www.youtube.com/watch?v=0O2aH4XLbto"><i class="fab fa-youtube"></i></a></li>
+                  <li><a href="#" data-toggle="modal" data-target="#pdfmodal"><i class="far fa-file-pdf"></i></a></li>
+                  <li><a href="#" data-toggle="modal" data-target="#sharemodal"><i class="fa fa-share-alt"></i></a></li>
+                </ul>
+              </div>
+              <div class="audio-player">
+                <div id="play-btn">
+                  <i class="fa fa-play"> </i>
+                  <i class="fa fa-pause"></i>
+                </div>
+                <div class="audio-wrapper" id="player-container">
+                  <audio id="player" ontimeupdate="initProgressBar()">
+                  </audio>
+                </div>
+                <div class="player-controls scrubber">
+                  <small class="end-time">5:44</small>
+                  <span id="seekObjContainer"> <progress id="seekObj" value="0" max="1"></progress> </span>
+                  <i class="fa fa-volume-up"></i>
+                </div>
+                <div class="next_prev">
+                  <i class="fa fa-angle-left"></i>
+                  <i class="fa fa-angle-right"></i>
+                </div>
               </div>
             </div>
-
           </div>
-  <article class="col-sm-12 col-md-12 col-lg-8">
-    
-    <!-- Widget ID (each widget will need unique ID)-->
-    <div class="jarviswidget" id="wid-id-1" data-widget-editbutton="false" data-widget-custombutton="false">
-      <!-- widget options:
-        usage: <div class="jarviswidget" id="wid-id-0" data-widget-editbutton="false">
-        
-        data-widget-colorbutton="false" 
-        data-widget-editbutton="false"
-        data-widget-togglebutton="false"
-        data-widget-deletebutton="false"
-        data-widget-fullscreenbutton="false"
-        data-widget-custombutton="false"
-        data-widget-collapsed="true" 
-        data-widget-sortable="false"
-        
-      -->
-      <header>
-        <span class="widget-icon"> <i class="fa fa-edit"></i> </span>
-        <h2><?= lang('User_Form'); ?></h2>       
-          <ul class="header-dropdown-list hidden-xs">
-          <li>
-            <?php if($this->session->userdata('site_lang')=='english'): ?>
-            <a href="javascript:void(0);" class="dropdown-toggle" data-toggle="dropdown"> <img src="<?php echo $backend_assets; ?>img/blank.gif" class="flag flag-us" alt="English"> <span> English  </span> <i class="fa fa-angle-down"></i> </a>
-             <?php elseif($this->session->userdata('site_lang')=='hindi'): ?>
-               <a href="javascript:void(0);" class="dropdown-toggle" data-toggle="dropdown"> <img src="<?php echo $backend_assets; ?>img/blank.gif" class="flag flag-in" alt="Hindi"> <span> Hindi  </span> <i class="fa fa-angle-down"></i> </a>
-             <?php else:  ?>
-               <a href="javascript:void(0);" class="dropdown-toggle" data-toggle="dropdown"> <img src="<?php echo $backend_assets; ?>img/blank.gif" class="flag flag-in" alt="Hindi"> <span> Hindi  </span> <i class="fa fa-angle-down"></i> </a>
-             <?php endif;  ?>
-            <ul class="dropdown-menu pull-right">
-              <li class="<?= ($this->session->userdata('site_lang')=='english')? 'active':'' ?>">
-                <a href="<?php echo base_url().'home/switchLang/english/'.encoding(current_url()); ?>"><img src="<?php echo $backend_assets; ?>img/blank.gif" class="flag flag-us" alt="United States"> English (US)</a>
-              </li>
-              <li class="<?= ($this->session->userdata('site_lang')=='hindi')? 'active':'' ?>">
-                <a href="<?php echo base_url().'home/switchLang/hindi/'.encoding(current_url()); ?>"><img src="<?php echo $backend_assets; ?>img/blank.gif" class="flag flag flag-in" alt="Hindi"> Hindi</a>
-              </li>
-              
-              
-            </ul>
-          </li>
-        </ul>
-      </header>
-
-      <!-- widget div-->
-      <div>
-        
-        <!-- widget edit box -->
-        <div class="jarviswidget-editbox">
-          <!-- This area used as dropdown edit box -->
-          
+          <div class="col-md-6">
+            <div class="box_wrap video-bg home-video">
+              <div class="video-content">
+                <div class="video_icon">
+                  <a class="popup-youtube" href="http://www.youtube.com/watch?v=0O2aH4XLbto">
+                    <i class="fas fa-play"></i></a>
+                </div>
+              </div>
+            </div>
+          </div>
         </div>
-        <!-- end widget edit box -->
-        
-        <!-- widget content -->
-        <div class="widget-body no-padding">
-          
-          <form id="user-add-form" method="post" class="smart-form" novalidate="novalidate" action="users/add" novalidate="novalidate" autocomplete="off">
-            <header>
-             <?= lang('basic_Information'); ?>
-              <input type="hidden" name="id" value="0">
-            </header>
-            <fieldset>
-              <div class="row">
-                <section class="col col-6">
-                  <label class="input"> <i class="icon-prepend fa fa-sun-o"></i>
-                    <input type="text" name="preceptorName" placeholder="<?= lang('Preceptor').' '.lang('Name'); ?>">
-                  </label>
-                </section>
-                <section class="col col-6">
-                  <label class="input"> <i class="icon-prepend fa fa-sitemap"></i>
-                    <input type="text" name="unionName" placeholder="<?= lang('Union').' '.lang('Name'); ?>">
-                  </label>
-                </section>
-              </div>
-              <div class="row">
-                  <section class="col col-6">
-                    <label class="input"> <i class="icon-prepend fa fa-user"></i>
-                      <input type="text" name="firstName" placeholder="<?= lang('First_name'); ?>">
-                    </label>
-                  </section>
-                  <section class="col col-6">
-                    <label class="input"> <i class="icon-prepend fa fa-user"></i>
-                      <input type="text" name="lastName" placeholder="<?= lang('Last_name'); ?>">
-                    </label>
-                  </section>
-              </div>
 
-              <div class="row">
-                <section class="col col-6">
-                  <label class="input"> <i class="icon-prepend fa fa-user"></i>
-                    <input type="text" name="parentName" placeholder="<?= lang('parentName'); ?>">
-                  </label>
-                </section>
-                  <section class="col col-6">
-                  <label class="input"> <i class="icon-prepend fa fa-calendar"></i>
-                    <input type="text" name="dob" id="dob" placeholder="<?= lang('dob'); ?>" readonly="">
-                  </label>
-                </section>
+      </div>
+    </section>
+    <!-- /Next-Events-Sermons -->
 
-              </div>
-
-              <div class="row">
-                
-                <section class="col col-6">
-                  <label class="input"> <i class="icon-prepend fa fa-phone"></i>
-                    <input type="text" name="contactNumber" placeholder="<?= lang('Phone'); ?>" data-mask="999 999 9999">
-                  </label>
-                </section>
-                <section class="col col-6">
-                  <label class="input"> <i class="icon-prepend fa fa-list"></i>
-                    <input type="text" name="aadharNumber" placeholder="<?= lang('Aadhar_number'); ?>" data-mask="9999-9999-9999">
-                  </label>
-                </section>
-              </div>  
-              
-              <div class="row">
-                  <section class="col col-6">
-                   <label class="input"> <i class="icon-prepend fa fa-envelope"></i>
-                    <input type="email" name="email" placeholder="<?= lang('email'); ?>">
-                  </label>
-                  </section>
-                    <section class="col col-6">
-                   <label class="input"> <i class="icon-prepend fa fa-tag"></i>
-                    <input type="text" name="education" placeholder="<?= lang('Education'); ?>">
-                  </label>
-                  </section>
-               
-              
-              </div>
-              <div class="row">
-                <section class="col col-6">
-                  <label class="select">
-                    <select name="gender">
-                      <option value="" selected="" disabled=""><?= lang('Select_Gender'); ?></option>
-                      <option value="Male"><?= lang('Male');?></option>
-                      <option value="Female"><?= lang('Female');?></option>
-                    </select> <i></i> </label>
-                </section>
-                  <section class="col col-6">
-                  <label class="select">
-                    <select name="maritalStatus">
-                      <option value="" selected="" disabled=""><?= lang('Marital_Status'); ?></option>
-                      <option value="Married"><?= lang('married');?></option>
-                      <option value="Unmarried"><?= lang('unmarried');?></option>
-                      <option value="Divorced"><?= lang('divorced');?></option>
-                    </select> <i></i> </label>
-                </section>
-               
-           
-              </div>
-              <div class="row">
-                   <section class="col col-6">
-                <!--     <label>Select2 Plugin (multi-select)</label>
-                    <select multiple style="width:100%" class="select2">
-                      <optgroup label="Alaskan/Hawaiian Time Zone">
-                        <option value="AK">Alaska</option>
-                        <option value="HI">Hawaii</option>
-                      </optgroup>
-                      <optgroup label="Pacific Time Zone">
-                        <option value="CA">California</option>
-                        <option value="NV" selected="selected">Nevada</option>
-                        <option value="OR">Oregon</option>
-                        <option value="WA">Washington</option>
-                      </optgroup>
-                      <optgroup label="Mountain Time Zone">
-                        <option value="AZ">Arizona</option>
-                        <option value="CO">Colorado</option>
-                        <option value="ID">Idaho</option>
-                        <option value="MT" selected="selected">Montana</option><option value="NE">Nebraska</option>
-                        <option value="NM">New Mexico</option>
-                        <option value="ND">North Dakota</option>
-                        <option value="UT">Utah</option>
-                        <option value="WY">Wyoming</option>
-                      </optgroup>
-                      <optgroup label="Central Time Zone">
-                        <option value="AL">Alabama</option>
-                        <option value="AR">Arkansas</option>
-                        <option value="IL">Illinois</option>
-                        <option value="IA">Iowa</option>
-                        <option value="KS">Kansas</option>
-                        <option value="KY">Kentucky</option>
-                        <option value="LA">Louisiana</option>
-                        <option value="MN">Minnesota</option>
-                        <option value="MS">Mississippi</option>
-                        <option value="MO">Missouri</option>
-                        <option value="OK">Oklahoma</option>
-                        <option value="SD">South Dakota</option>
-                        <option value="TX">Texas</option>
-                        <option value="TN">Tennessee</option>
-                        <option value="WI">Wisconsin</option>
-                      </optgroup>
-                      <optgroup label="Eastern Time Zone">
-                        <option value="CT">Connecticut</option>
-                        <option value="DE">Delaware</option>
-                        <option value="FL">Florida</option>
-                        <option value="GA">Georgia</option>
-                        <option value="IN">Indiana</option>
-                        <option value="ME">Maine</option>
-                        <option value="MD">Maryland</option>
-                        <option value="MA">Massachusetts</option>
-                        <option value="MI" selected="selected">Michigan</option>
-                        <option value="NH">New Hampshire</option>
-                        <option value="NJ">New Jersey</option>
-                        <option value="NY">New York</option>
-                        <option value="NC">North Carolina</option>
-                        <option value="OH">Ohio</option>
-                        <option value="PA">Pennsylvania</option>
-                        <option value="RI">Rhode Island</option>
-                        <option value="SC">South Carolina</option>
-                        <option value="VT">Vermont</option>
-                        <option value="VA">Virginia</option>
-                        <option value="WV">West Virginia</option>
-                      </optgroup>
-                    </select> -->
-                      
-                      <select name="religiousKnowledge[]" multiple style="width:100%" class="select2" data-placeholder="<?= lang('Religious_knowledge'); ?>">
-                     <!--  <option value="" selected="" disabled=""><?= lang('Religious_knowledge'); ?></option> -->
-                      <option value="णमोकार मंत्र"> णमोकार मंत्र</option>
-                      <option value="सामायिक">सामायिक</option>
-                      <option value="प्रतिक्रमण">प्रतिक्रमण</option>
-                      <option value="पच्चीस बोल">पच्चीस बोल</option>
-                      <option value="पुच्छिस्सुणम्">पुच्छिस्सुणम्</option>
-                      <option value="दशवैकालिक सूत्र">दशवैकालिक सूत्र</option>
-                      <option value="उत्तराध्ययन सूत्र">उत्तराध्ययन सूत्र</option>
-                      <option value="अन्य">अन्य</option>
-                     
-                      </select>
-                  </section>
-                
-           <!--        <section class="col col-6">
-                      <label class="select">
-                      <select name="education">
-                      <option value="" selected="" disabled=""><?= lang('Education'); ?></option>
-                      <option value="Yes"><?= lang('Yes');?></option>
-                      <option value="No"><?= lang('No');?></option>
-                      </select> <i></i> </label>
-                  </section> -->
-                  <section class="col col-6">
-                      <label class="select">
-                      <select name="profession">
-                      <option value="" selected="" disabled=""><?= lang('Profession'); ?></option>
-                      <option value="job">Job</option>
-                      <option value="business">Business</option>
-                      <option value="house wife">House wife</option>
-                      <option value="student">Student</option>
-                      </select> <i></i> </label>
-                  </section>
-           
-              </div>
-              <div class="row">
-                
-                  <section class="col col-6">
-                      <label class="select">
-                      <select name="bloodGroup">
-                      <option value="" selected="" disabled=""><?= lang('blood_group'); ?></option>
-                      <option value="A+">A+</option>
-                      <option value="O+">O+</option>
-                      <option value="B+">B+</option>
-                      <option value="AB+">AB+</option>
-                      <option value="A-">A-</option>
-                      <option value="O-">O-</option>
-                      <option value="B-">B-</option>
-                      <option value="AB-">AB-</option>
-                    
-                      </select> <i></i> </label>
-                  </section>
-                   <section class="col col-6">
-                   <label class="input"> <i class="icon-prepend fa fa-list"></i>
-                    <input type="text" name="unionResponsibility" placeholder="<?= lang('unionResponsibility'); ?>">
-                  </label>
-                  </section>
-           
-              </div>
-              
-
-            </fieldset>
-            <header>
-              <?= lang('home_address'); ?>
-            </header>
-            <fieldset>
-              <section>
-                <label for="address2" class="input">
-                  <input type="text" name="address" id="address" placeholder=" <?= lang('Address'); ?>">
-                </label>
-              </section>
-
-              <div class="row">
-                
-                <section class="col col-6">
-                  <!-- <label class="select">
-                    <select  class="cities" id="city" name="city">
-                      <option value="0" selected="" disabled="">Select City</option>
-              
-                    </select> <i></i> </label> -->
-                    <label class="input">
-                    <input type="text" name="city" id="city" placeholder="<?= lang('City'); ?>">
-                  </label>
-                </section>
-                <section class="col col-6">
-                  <label class="input">
-                    <input type="text" name="zip_code" id="zip_code" placeholder="<?= lang('zip_code'); ?>" class="number-only">
-                  </label>
-                </section>
-              </div>
-               <div class="row">
-                
-                <section class="col col-6">
-              
-                    <label class="input">
-                    <input type="text" name="tehsil" id="tehsil" placeholder="<?= lang('Tehsil'); ?>">
-                  </label>
-                </section>
-                
-                <section class="col col-6">
-              
-                    <label class="input">
-                    <input type="text" name="district" id="district" placeholder="<?= lang('District'); ?>">
-                  </label>
-                </section>
-               
-              </div>
-              
-              <div class="row">
-                <section class="col col-6">
-                  <label class="select">
-                    <select name="country"  class="countries" id="country">
-                      <option value="0" selected="" disabled=""><?= lang('Country'); ?></option>
-                      <?php if(!empty($countries)):
-                        foreach ($countries as $k => $country) {?>
-                          <option value="<?=  $country->country_name; ?>" <?=  ($country->country_id==100)?  "selected='selected'" :""; ?> ><?=  $country->country_name; ?></option>
-                      <?php } endif; ?>
-              
-                    </select> <i></i> </label>
-                </section>
-                <section class="col col-6">
-                  <label class="select">
-                    <select  class="states" name="state" id="state">
-                      <option value="0" selected="" disabled=""><?= lang('State'); ?></option>
-              
-                    </select> <i></i> </label>
-                </section>
-              
-              
-              </div>
-              <div class="row">
-                   <section class="col col-6">
-                  <label class="checkbox">
-                    <input type="checkbox" id="remember_Address" name="rememberAddress">
-                    <i></i>Remember address</label>
-                  </section>
-              </div>
-            </fieldset>            
-            <header>
-                <div class="row">
-                   <section class="col col-6">
-                 <?= lang('office_address'); ?>
-                  </section>  
-                  <section class="col col-6">
-                  <label class="checkbox pull-right">
-                    <input type="checkbox" id="Same_Address" name="remember">
-                    <i></i>Same as above</label>
-                  </section>
-              </div>
-             
-            </header>
-            <fieldset>
-              <section>
-                <label for="address2" class="input">
-                  <input type="text" name="oaddress" id="oaddress" placeholder=" <?= lang('Address'); ?>">
-                </label>
-              </section>
-
-              <div class="row">
-                
-                <section class="col col-6">
-                  <!-- <label class="select">
-                    <select  class="cities" id="city" name="city">
-                      <option value="0" selected="" disabled="">Select City</option>
-              
-                    </select> <i></i> </label> -->
-                    <label class="input">
-                    <input type="text" name="ocity" id="ocity" placeholder="<?= lang('City'); ?>">
-                  </label>
-                </section>
-                <section class="col col-6">
-                  <label class="input">
-                    <input type="text" name="ozip_code" id="ozip_code" placeholder="<?= lang('zip_code'); ?>" class="number-only">
-                  </label>
-                </section>
-              </div>
-               <div class="row">
-                
-                <section class="col col-6">
-              
-                    <label class="input">
-                    <input type="text" name="otehsil" id="otehsil" placeholder="<?= lang('Tehsil'); ?>">
-                  </label>
-                </section>
-                
-                <section class="col col-6">
-              
-                    <label class="input">
-                    <input type="text" name="odistrict" id="odistrict" placeholder="<?= lang('District'); ?>">
-                  </label>
-                </section>
-               
-              </div>
-              
-              <div class="row">
-                <section class="col col-6">
-                  <label class="select">
-                    <select name="ocountry"  class="countries" id="ocountry">
-                      <option value="0" selected="" disabled=""><?= lang('Country'); ?></option>
-                      <?php if(!empty($countries)):
-                        foreach ($countries as $k => $country) {?>
-                          <option value="<?=  $country->country_name; ?>" <?=  ($country->country_id==100)?  "selected='selected'" :""; ?> ><?=  $country->country_name; ?></option>
-                      <?php } endif; ?>
-              
-                    </select> <i></i> </label>
-                </section>
-                <section class="col col-6">
-                  <label class="select">
-                    <select  class="states" name="ostate" id="ostate">
-                      <option value="0" selected="" disabled=""><?= lang('State'); ?></option>
-              
-                    </select> <i></i> </label>
-                </section>
-              
-              </div>
-            </fieldset>
-            <footer>
-              <button type="submit" id="submit" class="btn btn-primary">
-                <?= lang('Submit'); ?>
-              </button>
-            </footer>
-          </form>
-
+    <!-- About -->
+    <section class="about_intro section-padding position-relative">
+      <div class="custom-img-left">
+        <img src="assets/images/img-left.png" alt="img" class="img-fluid">
+      </div>
+      <div class="custom-img-right">
+        <img src="assets/images/img-right.png" alt="img" class="img-fluid">
+      </div>
+      <div class="container">
+        <div class="row">
+          <div class="col-xl-6 col-lg-6 col-md-12">
+          <div class="about-us-content">
+            <div class="section-header">
+              <h2>some important life lessons from God <u class="text-custom-primary">Kami</u></h2>
+              <p>There are many variations of passages of Lorem Ipsum available, but the majority have suffered alteration in some</p>
+            </div>
+            <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen
+              book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged.</p>
+              <p>It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum.</p>
+          </div>
         </div>
-        <!-- end widget content -->
+        <div class="col-xl-6 col-lg-6 col-md-12">
+          <div class="feature-main-block">
+          <div class="row">
+            <div class="col-lg-6 col-md-6">
+              <div class="features_wrap custom-md-mb feature-bottom-space feature-h1 features-after-none">
+                <div class="f-f-icon"><img src="https://via.placeholder.com/64x64" alt="img"></div>
+                <h4 class="text-custom-secondary">Meditation</h4>
+                <p class="mb-0">Uncover many web sites still in their infancy.</p>
+              </div>
+            </div>
+            <div class="col-lg-6 col-md-6">
+              <div class="features_wrap custom-md-mb feature-bottom-space feature-h1 features-after-none">
+                <div class="f-f-icon"><img src="https://via.placeholder.com/64x64" alt="img"></div>
+                <h4 class="text-custom-secondary">Community</h4>
+                <p class="mb-0">Uncover many web sites still in their infancy.</p>
+              </div>
+            </div>
+            <div class="col-lg-6 col-md-6">
+              <div class="features_wrap custom-sm-mb feature-h1 features-after-none">
+                <div class="f-f-icon"><img src="https://via.placeholder.com/64x64" alt="img"></div>
+                <h4 class="text-custom-secondary">Philosophy</h4>
+                <p class="mb-0">Uncover many web sites still in their infancy.</p>
+              </div>
+            </div>
+            <div class="col-lg-6 col-md-6">
+              <div class="features_wrap feature-h1 features-after-none">
+                <div class="f-f-icon"><img src="https://via.placeholder.com/64x64" alt="img"></div>
+                <h4 class="text-custom-secondary">Peace</h4>
+                <p class="mb-0">Uncover many web sites still in their infancy.</p>
+              </div>
+            </div>
+          </div>
+           </div>
+        </div>
+        </div>
         
       </div>
-      <!-- end widget div -->
-      
+    </section>
+    <!-- /About -->
+
+  <!-- Causes -->
+  <section id="causes" class="section-padding gray_bg">
+    <div class="container">
+      <div class="owl-carousel">
+        <div class="item">
+          <div class="causes_info">
+            <p class="subtitle text-white">Shintois'm Preaching</p>
+            <h3 class="white_text">The Mind is everything</h3>
+            <p class="white_text mb-0">A Karma-yogi performs action by body, mind, intellect, and senses, without attachment (or ego), only for self-purification."</p>
+          </div>
+        </div>
+        <div class="item">
+          <div class="causes_info">
+            <p class="subtitle text-white">Shintois'm Preaching</p>
+            <h3 class="white_text">Shinto-The Symbol Of peace</h3>
+            <p class="white_text mb-0">Meet this transient world with neither grasping nor fear,trust the unfolding of life,and you will attain true serenity.</p>
+          </div>
+        </div>
+      </div>
     </div>
-    <!-- end widget -->
-    
+  </section>
+  <!-- /Causes -->
 
+  <!-- Latest-Events-Sermons -->
+  <section class="section-padding latest_event_sermons m-0">
+    <div class="container">
+      <div class="row">
+        <div class="col-md-6 col-lg-5">
+          <div class="heading">
+            <h3>Latest Ibentos</h3>
+            <div class="tl-slider-arrow float-right">
+              <div class="tl-left-arrow slick-arrow mr-2" style="">
+                <span><i class="fa fa-chevron-up"></i></span>
+              </div>
+              <div class="tl-right-arrow slick-arrow" style="">
+                <span><i class="fa fa-chevron-down"></i></span>
+              </div>
+            </div>
+          </div>
+          <div class="event_list event-slider slick-vertical">
+            <div class="event-slider-item pb-4">
+              <div class="row">
+                <div class="col-12">
+                  <div class="event-list">
+                    <ul>
+                      <li>
+                        <div class="event_info">
+                          <div class="event_date">
+                            <span>02</span> sep'20
+                          </div>
+                          <h6><a href="event-detail.html">Oshogatsu(New Year)</a></h6>
+                          <ul>
+                            <li><i class="far fa-clock"></i> Sunday (8:00 am -9:00 am)</li>
+                            <li><i class="fas fa-map-marker-alt"></i>4873 Pretty View Lane Tokyo</li>
+                          </ul>
+                        </div>
+                      </li>
+                      <li>
+                        <div class="event_info">
+                          <div class="event_date">
+                            <span>17</span> Feb'20
+                          </div>
+                          <h6><a href="event-detail.html"> Toshigoi(Rice Harvest)</a></h6>
+                          <ul>
+                            <li><i class="far fa-clock"></i> tuesday (9:00 am -8:00 pm)</li>
+                            <li><i class="fas fa-map-marker-alt"></i>4873 Pretty View Lane Tokyo</li>
+                          </ul>
+                        </div>
+                      </li>
+                      <li>
+                        <div class="event_info">
+                          <div class="event_date">
+                            <span>15</span> jan'20
+                          </div>
+                          <h6><a href="event-detail.html"> Dōsojin(Shrine decorations)</a></h6>
+                          <ul>
+                            <li><i class="far fa-clock"></i> Sunday (8:00 pm -9:00 pm)</li>
+                            <li><i class="fas fa-map-marker-alt"></i>4873 Pretty View Lane Tokyo</li>
+                          </ul>
+                        </div>
+                      </li>
+                    </ul>
+                  </div>
 
+                </div>
+              </div>
 
+            </div>
 
+            <div class="event-slider-item pb-4">
+              <div class="row">
+                <div class="col-12">
+                  <div class="event-list">
+                    <ul>
+                      <li>
+                        <div class="event_info">
+                          <div class="event_date">
+                            <span>08</span> Apr'20
+                          </div>
+                          <h6><a href="event-detail.html">Hana Matsuri(Flower Festival)</a></h6>
+                          <ul>
+                            <li><i class="far fa-clock"></i> Sunday (8:00 am -9:00 am)</li>
+                            <li><i class="fas fa-map-marker-alt"></i>4873 Pretty View Lane Tokyo</li>
+                          </ul>
+                        </div>
+                      </li>
+                      <li>
+                        <div class="event_info">
+                          <div class="event_date">
+                            <span>22</span> Dec'20
+                          </div>
+                          <h6><a href="event-detail.html">Tohji-Taisai</a></h6>
+                          <ul>
+                            <li><i class="far fa-clock"></i> tuesday (9:00 am -8:00 pm)</li>
+                            <li><i class="fas fa-map-marker-alt"></i>4873 Pretty View Lane Tokyo</li>
+                          </ul>
+                        </div>
+                      </li>
+                      <li>
+                        <div class="event_info">
+                          <div class="event_date">
+                            <span>15</span> jan'20
+                          </div>
+                          <h6><a href="event-detail.html"> Dōsojin(Shrine decorations)</a></h6>
+                          <ul>
+                            <li><i class="far fa-clock"></i> Sunday (8:00 pm -9:00 pm)</li>
+                            <li><i class="fas fa-map-marker-alt"></i>4873 Pretty View Lane Tokyo</li>
+                          </ul>
+                        </div>
+                      </li>
+                    </ul>
+                  </div>
 
-  </article>
-  <!-- END COL -->
-            <div class="col-sm-12 col-md-12 col-lg-2 hidden-xs hidden-sm">
-            <div class="hero-1">
+                </div>
+              </div>
 
-              <div class="pull-left login-desc-box-l">
-                <img src="<?php echo $backend_assets; ?>img/logo.png" class="pull-left display-image-1" alt="" >
+            </div>
 
+          </div>
+        </div>
+
+        <div class="col-md-6 col-lg-5 offset-lg-2">
+          <div class="heading">
+            <h3>Latest Sekkyos</h3>
+            <a href="sermon.html" class="btn btn-sm btn-outline float-right">See All</a>
+          </div>
+          <div class="panel-group" id="accordion" role="tablist" aria-multiselectable="true">
+            <div class="panel panel-default">
+              <div class="panel-heading" role="tab" id="headingOne">
+                <h6 class="panel-title">
+                  <a role="button" data-toggle="collapse" data-parent="#accordion" href="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
+                    To be fully alive is to have an aesthetic </a>
+                </h6>
+              </div>
+              <div id="collapseOne" class="panel-collapse collapse in show" role="tabpanel" aria-labelledby="headingOne">
+                <div class="panel-body">
+                  <ul class="sermons_meta">
+                    <li><i class="fa fa-user"></i> Message from <a href="our-teachers.html">Mabuchi</a></li>
+                    <li><i class="far fa-calendar-alt"></i> sep 03, 2019</li>
+                  </ul>
+                  <div class="sermons_inside">
+                    <ul>
+                      <li><a href="#" data-toggle="modal" data-target="#audiomodal"><i class="fa fa-music"></i></a></li>
+
+                      <li><a class="popup-youtube" href="http://www.youtube.com/watch?v=0O2aH4XLbto"><i class="fab fa-youtube"></i></a></li>
+
+                  <li><a href="#" data-toggle="modal" data-target="#pdfmodal"><i class="far fa-file-pdf"></i></a></li>
+
+                  <li><a href="#" data-toggle="modal" data-target="#sharemodal"><i class="fa fa-share-alt"></i></a></li>
+                    </ul>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <div class="panel panel-default">
+              <div class="panel-heading" role="tab" id="headingTwo">
+                <h6 class="panel-title">
+                  <a class="collapsed" role="button" data-toggle="collapse" data-parent="#accordion" href="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
+                    Purification in Shinto lifts the burden</a>
+                </h6>
+              </div>
+              <div id="collapseTwo" class="panel-collapse collapse" role="tabpanel" aria-labelledby="headingTwo">
+                <div class="panel-body">
+                  <ul class="sermons_meta">
+                    <li><i class="fa fa-user"></i> Message from <a href="our-teachers.html">Mabuchi</a></li>
+                    <li><i class="far fa-calendar-alt"></i> Aug 30, 2019</li>
+                  </ul>
+                  <div class="sermons_inside">
+                    <ul>
+                      <li><a href="#" data-toggle="modal" data-target="#audiomodal"><i class="fa fa-music"></i></a></li>
+
+                      <li><a class="popup-youtube" href="http://www.youtube.com/watch?v=0O2aH4XLbto"><i class="fab fa-youtube"></i></a></li>
+
+                  <li><a href="#" data-toggle="modal" data-target="#pdfmodal"><i class="far fa-file-pdf"></i></a></li>
+
+                  <li><a href="#" data-toggle="modal" data-target="#sharemodal"><i class="fa fa-share-alt"></i></a></li>
+                    </ul>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <div class="panel panel-default">
+              <div class="panel-heading" role="tab" id="headingThree">
+                <h6 class="panel-title">
+                  <a class="collapsed" role="button" data-toggle="collapse" data-parent="#accordion" href="#collapseThree" aria-expanded="false" aria-controls="collapseThree">Shinto is essentially a religion of gratitude.</a>
+                </h6>
+              </div>
+              <div id="collapseThree" class="panel-collapse collapse" role="tabpanel" aria-labelledby="headingThree">
+                <div class="panel-body">
+                  <ul class="sermons_meta">
+                    <li><i class="fa fa-user"></i> Message from <a href="our-teachers.html">Mabuchi</a></li>
+                    <li><i class="far fa-calendar-alt"></i> sep 02, 2019</li>
+                  </ul>
+                  <div class="sermons_inside">
+                    <ul>
+                      <li><a href="#" data-toggle="modal" data-target="#audiomodal"><i class="fa fa-music"></i></a></li>
+
+                      <li><a class="popup-youtube" href="http://www.youtube.com/watch?v=0O2aH4XLbto"><i class="fab fa-youtube"></i></a></li>
+
+                  <li><a href="#" data-toggle="modal" data-target="#pdfmodal"><i class="far fa-file-pdf"></i></a></li>
+
+                  <li><a href="#" data-toggle="modal" data-target="#sharemodal"><i class="fa fa-share-alt"></i></a></li>
+                    </ul>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <div class="panel panel-default">
+              <div class="panel-heading" role="tab" id="headingfour">
+                <h6 class="panel-title">
+                  <a class="collapsed" role="button" data-toggle="collapse" data-parent="#accordion" href="#collapsefour" aria-expanded="false" aria-controls="collapsefour">Japanese mind is synonymous with Shinto mind.</a>
+                </h6>
+              </div>
+              <div id="collapsefour" class="panel-collapse collapse" role="tabpanel" aria-labelledby="headingfour">
+                <div class="panel-body">
+                  <ul class="sermons_meta">
+                    <li><i class="fa fa-user"></i> Message from <a href="our-teachers.html">Mabuchi</a></li>
+                    <li><i class="far fa-calendar-alt"></i> sep 03, 2019</li>
+                  </ul>
+                  <div class="sermons_inside">
+                    <ul>
+                      <li><a href="#" data-toggle="modal" data-target="#audiomodal"><i class="fa fa-music"></i></a></li>
+
+                      <li><a class="popup-youtube" href="http://www.youtube.com/watch?v=0O2aH4XLbto"><i class="fab fa-youtube"></i></a></li>
+
+                  <li><a href="#" data-toggle="modal" data-target="#pdfmodal"><i class="far fa-file-pdf"></i></a></li>
+
+                  <li><a href="#" data-toggle="modal" data-target="#sharemodal"><i class="fa fa-share-alt"></i></a></li>
+                    </ul>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+  <!-- /Latest-Events-Sermons -->
+
+  <!-- Donation-img section -->
+  <section class="section-padding secondary-bg donation-img-section">
+    <div class="container">
+      <div class="row">
+        <div class="col-md-6 align-self-center">
+          <div class="section-header">
+            <h3>What we Belive in</h3>
+            <p>There are many variations of passages of Lorem Ipsum available, but the majority have suffered alteration in some</p>
+          </div>
+          <h4>About Shinto God</h4>
+          <p>Aliquam nec sem vulputate, sagittis felis id, semper nibh. Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod tincidunt ut laoreet dolore magna aliquam erat volutpat. Ut wisi enim ad minim
+            veniam, quis nostrud exerci tation ullamcorper suscipit lobortis nisl ut aliquip.</p>
+          <p>We provide Buddhism and meditation resources. We try to make our classes relaxed, informal and interactive,
+            and relevant to ordinary people leading ordinary lives. You do not have to be a Buddhist or become a Buddhist or anything else in order to attend our classes.</p>
+            <a href="#" class="btn-link tk-btn-link"><u>Read More <i class="fa fa-angle-right"></i></u></a>
+        </div>
+
+        <div class="col-md-6 align-self-center img-width-100">
+          <img src="https://via.placeholder.com/540x600" alt="img" class="img-fluid">
+        </div>
+      </div>
+    </div>
+
+  </section>
+  <!-- /Donation-img section -->
+
+  <!-- Call to Action -->
+  <section class="section-padding call-action-section">
+    <div class="container">
+      <div class="row">
+        <div class="col-12">
+          <div class="call-content mx-auto text-center event-content">
+            <p class="subtitle text-white">Upcoming Ibentos</p>
+            <h3 class="text-white fs-36">Festival Of Flowers Hana Matsuri 2020</h3>
+            <p class="text-white">Meet this transient world with neither grasping nor fear,trust the unfolding of life,and you will attain true serenity.</p>
+          </div>
+          <div class="timer event-timer">
+            <div id="countdown"></div>
+            <a href="#" class="btn dark-btn margin-top-30">Register Now</a>
+          </div>
+        </div>
+
+      </div>
+    </div>
+
+  </section>
+  <!-- /Call to Action -->
+
+  <!-- Testimonials -->
+  <section class="our_testimonials section-padding">
+    <div class="container">
+      <div class="row">
+        <div class="col-md-6 align-self-center">
+          <img src="https://via.placeholder.com/540x600" alt="" class="img-fluid Mb_20">
+        </div>
+        <div class="col-md-6 align-self-center">
+          <div class="about_company">
+            <div class="section-header">
+              <h3>Our History</h3>
+              <p>There are many variations of passages of Lorem Ipsum available, but the majority have suffered alteration in some</p>
+            </div>
+            <ul class="nav nav-tabs testi-nav-tabs">
+              <li class="nav-item">
+                <a class="nav-link active" data-toggle="tab" href="#home">1980</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" data-toggle="tab" href="#menu1">1990</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" data-toggle="tab" href="#menu2">2000</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" data-toggle="tab" href="#menu3">2010</a>
+              </li>
+            </ul>
+
+            <!-- Tab panes -->
+            <div class="tab-content">
+              <div id="home" class="container tab-pane active pl-0 pr-0"><br>
+                <h4>1980</h4>
+                <p>Aliquam nec sem vulputate, sagittis felis id, semper nibh. Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod tincidunt ut laoreet dolore magna aliquam erat volutpat. Ut wisi enim ad minim
+                  veniam, quis nostrud exerci tation ullamcorper suscipit lobortis nisl ut aliquip.</p>
+                <a href="#" class="btn-link tk-btn-link"><u>Learn More <i class="fa fa-angle-right"></i></u></a>
+              </div>
+              <div id="menu1" class="container tab-pane fade pl-0 pr-0"><br>
+                <h4>1990</h4>
+                <p>Integer tincidunt. Cras dapibus. Vivamus elementum semper nisi. Aenean vulputate eleifend tellus. Aenean leo ligula, porttitor eu, consequat vitae, eleifend ac, enim. Aliquam lorem ante, dapibus in, viverra quis, feugiat a, tellus.
+                  Phasellus viverra nulla ut metus varius laoreet. Nam ornare pellentesque tortor.</p>
+                <a href="#" class="btn-link tk-btn-link"><u>Learn More <i class="fa fa-angle-right"></i></u></a>
+              </div>
+              <div id="menu2" class="container tab-pane fade pl-0 pr-0"><br>
+                <h4>2000</h4>
+                <p>Aliquam nec sem vulputate, sagittis felis id, semper nibh. Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod tincidunt ut laoreet dolore magna aliquam erat volutpat. Ut wisi enim ad minim
+                  veniam, quis nostrud exerci tation ullamcorper suscipit lobortis nisl ut aliquip.</p>
+                <a href="#" class="btn-link tk-btn-link"><u>Learn More <i class="fa fa-angle-right"></i></u></a>
+              </div>
+              <div id="menu3" class="container tab-pane fade pl-0 pr-0"><br>
+                <h4>2010</h4>
+                <p>Integer tincidunt. Cras dapibus. Vivamus elementum semper nisi. Aenean vulputate eleifend tellus. Aenean leo ligula, porttitor eu, consequat vitae, eleifend ac, enim. Aliquam lorem ante, dapibus in, viverra quis, feugiat a, tellus.
+                  Phasellus viverra nulla ut metus varius laoreet. Nam ornare pellentesque tortor.</p>
+                <a href="#" class="btn-link tk-btn-link"><u>Learn More <i class="fa fa-angle-right"></i></u></a>
               </div>
             </div>
 
           </div>
 
-</div>
+        </div>
+      </div>
+    </div>
+  </section>
+  <!-- /Testimonials -->
 
-<!-- END ROW -->
+  <!-- Donation form -->
+  <section class="section-padding pb-0 donation-form-section secondary-bg">
+    <div class="container">
+      <div class="row">
+        <div class="col-12">
+          <div class="donate-us">
+            <div class="section-header mx-auto text-center">
+              <h3>Support Our Mission</h3>
+              <p>There are many variations of passages of Lorem Ipsum available, but the majority have suffered alteration in some</p>
+            </div>
 
-   </div>
-</div>
-<script type="text/javascript">
-  var Please_select_your_first_name ="<?= lang('Please_select_your_first_name');?>";
-  var Please_select_your_last_name ="<?= lang('Please_select_your_last_name');?>";
-  var Please_select_your_father_name_husband_name ="<?= lang('Please_select_your_father_name_husband_name');?>";
-  var Please_select_your_date_of_birth ="<?= lang('Please_select_your_date_of_birth');?>";
-  var Please_select_your_gender ="<?= lang('Please_select_your_gender');?>";
-  var Please_select_your_marital_status ="<?= lang('Please_select_your_marital_status');?>";
-  var Please_select_your_contact_number ="<?= lang('Please_select_your_contact_number');?>";
-  var Please_select_your_aadhar_number ="<?= lang('Please_select_your_aadhar_number');?>";
-  var Please_select_your_address ="<?= lang('Please_select_your_address');?>";
-  var Please_select_your_city ="<?= lang('Please_select_your_city');?>";
-  var Please_select_your_zip_code ="<?= lang('Please_select_your_zip_code');?>";
-  var Please_select_your_tehsil ="<?= lang('Please_select_your_tehsil');?>";
-  var Please_select_your_district ="<?= lang('Please_select_your_district');?>";
-  var Good_job ="<?= lang('Good_job');?>";
-  var Your_form_submitted_successfully ="<?= lang('Your_form_submitted_successfully');?>";
-</script>
+            <div class="donation_form">
+              <form>
+                <div class="form-group mb-0">
+                  <div class="row">
+                    <div class="col-md-12 col-lg-12">
+                      <div class="input-group mx-auto">
+
+                        <div class="input-group-prepend">
+                          <span class="input-group-text" id="basic-addon1">$</span>
+                        </div>
+                        <input type="text" class="form-control w-auto mb-0" value="$100">
+
+                      </div>
+                      <ul class="select_amount">
+                        <li class="mb-0">$10.00</li>
+                        <li class="mb-0">$25.00</li>
+                        <li class="mb-0">$50.00</li>
+                        <li class="mb-0 active">$100.00</li>
+                        <li class="mb-0">$500.00</li>
+                      </ul>
+                      <input type="submit" class="btn btn-outline" value="Donate Now">
+                    </div>
+                  </div>
+                </div>
+
+              </form>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </div>
+
+  </section>
+  <!-- /Donation form -->
+
+  <!-- Latest-Blog -->
+  <section class="latest_blog secondary-bg section-padding" id="blog">
+    <div class="container">
+      <div class="blog">
+        <div class="section-header-center text-center">
+          <h3>Latest News</h3>
+          <p>There are many variations of passages of Lorem Ipsum available, but the majority have suffered alteration in some</p>
+        </div>
+        <div class="row">
+          <div class="col-12">
+            <div class="owl-carousel blog-slider">
+              <div class="item">
+                <article class="blog-section">
+                  <div class="blog_wrap position-relative">
+                    <div class="blog-post-date">
+                      <strong>03</strong>Dec
+                    </div>
+                    <div class="blog_img ">
+                      <a href="blog-detail.html"><img src="https://via.placeholder.com/570x300" alt="image"></a>
+                    </div>
+                    <div class="blog_info">
+                      <div class="post_meta">
+                        <span><a href="#">Meditation</a></span>
+                      </div>
+                      <h5><a href="blog-detail.html">Shinto festival carries old tradition across city</a></h5>
+                      <p>You need to be sure there isn't anything embarrassing hidden in the middle of text.
+                        All the Lorem Ipsum generators on the Internet tend to repeat predefined</p>
+                      <a href="blog-detail.html" class="btn btn-outline">Read More <i class="fa fa-caret-right"></i> </a>
+                    </div>
+                  </div>
+                </article>
+              </div>
+
+              <div class="item">
+                <article class="blog-section">
+                  <div class="blog_wrap position-relative">
+                    <div class="blog-post-date">
+                      <strong>13</strong>Jan
+                    </div>
+                    <div class="blog_img">
+                      <a href="blog-detail.html"><img src="https://via.placeholder.com/570x300" alt="image"></a>
+                    </div>
+                    <div class="blog_info">
+                      <div class="post_meta">
+                        <span><a href="#">Yoga</a></span>
+                        <span><a href="#">Books</a></span>
+                      </div>
+                      <h5><a href="blog-detail.html">Spectacular Pictures From 2019 Shinto Festival</a></h5>
+                      <p>You need to be sure there isn't anything embarrassing hidden in the middle of text.
+                        All the Lorem Ipsum generators on the Internet tend to repeat predefined</p>
+                      <a href="blog-detail.html" class="btn btn-outline">Read More <i class="fa fa-caret-right"></i> </a>
+                    </div>
+                  </div>
+                </article>
+              </div>
+
+              <div class="item">
+                <article class="blog-section">
+                  <div class="blog_wrap position-relative">
+                    <div class="blog-post-date">
+                      <strong>31</strong>Dec
+                    </div>
+                    <div class="blog_img">
+                      <a href="blog-detail.html"><img src="https://via.placeholder.com/570x300" alt="image"></a>
+                    </div>
+                    <div class="blog_info">
+                      <div class="post_meta">
+                        <span><a href="#">Meditation</a></span>
+                        <span><a href="#">Peace</a></span>
+                      </div>
+                      <h5><a href="blog-detail.html">Emperor performs ritual to report abdication</a></h5>
+                      <p>You need to be sure there isn't anything embarrassing hidden in the middle of text.
+                        All the Lorem Ipsum generators on the Internet tend to repeat predefined</p>
+                      <a href="blog-detail.html" class="btn btn-outline">Read More <i class="fa fa-caret-right"></i> </a>
+                    </div>
+                  </div>
+                </article>
+              </div>
+
+              <div class="item">
+                <article class="blog-section">
+                  <div class="blog_wrap position-relative">
+                    <div class="blog-post-date">
+                      <strong>04</strong>Nov
+                    </div>
+                    <div class="blog_img">
+                      <a href="blog-detail.html"><img src="https://via.placeholder.com/570x300" alt="image"></a>
+                    </div>
+                    <div class="blog_info">
+                      <div class="post_meta">
+                        <span><a href="#">Enlightment</a></span>
+                        <span><a href="#">Peace</a></span>
+                      </div>
+                      <h5><a href="blog-detail.html">Shinto festival carries old tradition across city</a></h5>
+                      <p>You need to be sure there isn't anything embarrassing hidden in the middle of text.
+                        All the Lorem Ipsum generators on the Internet tend to repeat predefined</p>
+                      <a href="blog-detail.html" class="btn btn-outline">Read More <i class="fa fa-caret-right"></i> </a>
+                    </div>
+                  </div>
+                </article>
+              </div>
+
+              <div class="item">
+                <article class="blog-section">
+                  <div class="blog_wrap position-relative">
+                    <div class="blog-post-date">
+                      <strong>13</strong>Nov
+                    </div>
+                    <div class="blog_img">
+                      <a href="blog-detail.html"><img src="https://via.placeholder.com/570x300" alt="image"></a>
+                    </div>
+                    <div class="blog_info">
+                      <div class="post_meta">
+                        <span><a href="#">Meditation</a></span>
+                        <span><a href="#">Books</a></span>
+                      </div>
+                      <h5><a href="blog-detail.html">Spectacular Pictures From 2019 Shinto Festival</a></h5>
+                      <p>You need to be sure there isn't anything embarrassing hidden in the middle of text.
+                        All the Lorem Ipsum generators on the Internet tend to repeat predefined</p>
+                      <a href="blog-detail.html" class="btn btn-outline">Read More <i class="fa fa-caret-right"></i> </a>
+                    </div>
+                  </div>
+                </article>
+              </div>
+
+              <div class="item">
+                <article class="blog-section">
+                  <div class="blog_wrap position-relative">
+                    <div class="blog-post-date">
+                      <strong>20</strong>Dec
+                    </div>
+                    <div class="blog_img">
+                      <a href="blog-detail.html"><img src="https://via.placeholder.com/570x300" alt="image"></a>
+                    </div>
+                    <div class="blog_info">
+                      <div class="post_meta">
+                        <span><a href="#">Buddha</a></span>
+                        <span><a href="#">Enlightment</a></span>
+                      </div>
+                      <h5><a href="blog-detail.html">Emperor performs ritual to report abdication</a></h5>
+                      <p>You need to be sure there isn't anything embarrassing hidden in the middle of text.
+                        All the Lorem Ipsum generators on the Internet tend to repeat predefined</p>
+                      <a href="blog-detail.html" class="btn btn-outline">Read More <i class="fa fa-caret-right"></i> </a>
+                    </div>
+                  </div>
+                </article>
+              </div>
+
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+  <!-- Latest-Blog -->
+
+  <section class="section-padding pb-0">
+    <div class="container">
+      <div class="section-header-center text-center">
+        <h3>Instagram</h3>
+        <p>There are many variations of passages of Lorem Ipsum available, but the majority have suffered alteration in some</p>
+      </div>
+    </div>
+    <ul class="hm-list hm-instagram">
+      <li>
+        <a href="#"><img src="https://via.placeholder.com/222x222" alt="instagram"></a>
+      </li>
+      <li>
+        <a href="#"><img src="https://via.placeholder.com/222x222" alt="instagram"></a>
+      </li>
+      <li>
+        <a href="#"><img src="https://via.placeholder.com/222x222" alt="instagram"></a>
+      </li>
+      <li>
+        <a href="#"><img src="https://via.placeholder.com/222x222" alt="instagram"></a>
+      </li>
+      <li>
+        <a href="#"><img src="https://via.placeholder.com/222x222" alt="instagram"></a>
+      </li>
+      <li>
+        <a href="#"><img src="https://via.placeholder.com/222x222" alt="instagram"></a>
+      </li>
+      <li>
+        <a href="#"><img src="https://via.placeholder.com/222x222" alt="instagram"></a>
+      </li>
+      <li>
+        <a href="#"><img src="https://via.placeholder.com/222x222" alt="instagram"></a>
+      </li>
+      <li>
+        <a href="#"><img src="https://via.placeholder.com/222x222" alt="instagram"></a>
+      </li>
+    </ul>
+  </section>
