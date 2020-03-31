@@ -1,4 +1,4 @@
-
+<?php $frontend_assets =  base_url().'frontend_assets/';?>
   <!-- Intro -->
   <section id="intro">
     <div class="overlay overlay-bg"></div>
@@ -26,7 +26,7 @@
   <!-- /Intro -->
 
   <!-- Next-Events-Sermons -->
-    <section class="latest_event_sermons home-sermon">
+<!--     <section class="latest_event_sermons home-sermon">
       <div class="container">
         <div class="row">
           <div class="col-md-6">
@@ -78,7 +78,7 @@
         </div>
 
       </div>
-    </section>
+    </section> -->
     <!-- /Next-Events-Sermons -->
 
     <!-- About -->
@@ -143,7 +143,7 @@
     <!-- /About -->
 
   <!-- Causes -->
-  <section id="causes" class="section-padding gray_bg">
+<!--   <section id="causes" class="section-padding gray_bg">
     <div class="container">
       <div class="owl-carousel">
         <div class="item">
@@ -162,11 +162,11 @@
         </div>
       </div>
     </div>
-  </section>
+  </section> -->
   <!-- /Causes -->
 
   <!-- Latest-Events-Sermons -->
-  <section class="section-padding latest_event_sermons m-0">
+<!--   <section class="section-padding latest_event_sermons m-0">
     <div class="container">
       <div class="row">
         <div class="col-md-6 col-lg-5">
@@ -403,11 +403,11 @@
         </div>
       </div>
     </div>
-  </section>
+  </section> -->
   <!-- /Latest-Events-Sermons -->
 
   <!-- Donation-img section -->
-  <section class="section-padding secondary-bg donation-img-section">
+ <!--  <section class="section-padding secondary-bg donation-img-section">
     <div class="container">
       <div class="row">
         <div class="col-md-6 align-self-center">
@@ -429,11 +429,11 @@
       </div>
     </div>
 
-  </section>
+  </section> -->
   <!-- /Donation-img section -->
 
   <!-- Call to Action -->
-  <section class="section-padding call-action-section">
+<!--   <section class="section-padding call-action-section">
     <div class="container">
       <div class="row">
         <div class="col-12">
@@ -451,7 +451,7 @@
       </div>
     </div>
 
-  </section>
+  </section> -->
   <!-- /Call to Action -->
 
   <!-- Testimonials -->
@@ -519,7 +519,7 @@
   <!-- /Testimonials -->
 
   <!-- Donation form -->
-  <section class="section-padding pb-0 donation-form-section secondary-bg">
+<!--   <section class="section-padding pb-0 donation-form-section secondary-bg">
     <div class="container">
       <div class="row">
         <div class="col-12">
@@ -562,7 +562,7 @@
       </div>
     </div>
 
-  </section>
+  </section> -->
   <!-- /Donation form -->
 
   <!-- Latest-Blog -->
@@ -721,7 +721,7 @@
     </div>
   </section>
   <!-- Latest-Blog -->
-
+<!-- 
   <section class="section-padding pb-0">
     <div class="container">
       <div class="section-header-center text-center">
@@ -758,4 +758,68 @@
         <a href="#"><img src="https://via.placeholder.com/222x222" alt="instagram"></a>
       </li>
     </ul>
+  </section> -->
+
+  <!-- Contact-Us -->
+  <section class="section-padding">
+    <div class="container">
+       <div class="section-header-center text-center">
+          <h3>Contact us</h3>
+        <!--   <p>There are many variations of passages of Lorem Ipsum available, but the majority have suffered alteration in some</p> -->
+        </div>
+      <div class="contact_wrap">
+        <div class="row">
+
+          <div class="col-md-12">
+            <div class="form_wrap">
+              <form>
+                 <div class="row">
+                    <div class="col-md-6">
+                        <div class="form-group">
+                          <label>Your Full Name</label>
+                          <input type="text" class="form-control" name="Name">
+                        </div>
+                    </div>
+                    <div class="col-md-6">
+                        <div class="form-group">
+                          <label>Your Email</label>
+                          <input type="email" class="form-control" name="email">
+                        </div>
+                    </div>
+                    <div class="col-md-6">
+                        <div class="form-group">
+                          <label>Your Subject</label>
+                          <input type="text" class="form-control" name="subject">
+                        </div>
+                    </div>
+                    <div class="col-md-6">
+                      <div class="form-group">
+                          <label>Type</label>
+                          <select class="form-control" name="type">
+                            <option value="1">One</option>
+                            <option value="2">Two</option>
+                          </select>
+                         
+                        </div>
+                    </div>
+                    <div class="col-md-12">
+                        <div class="form-group">
+                        <label>Your Message</label>
+                        <textarea name="message" cols="45" rows="3" class="form-control"></textarea>
+                        </div>
+                    </div>
+                 </div>
+               
+                
+               
+                <div class="form-group">
+                  <input class="btn btn-outline" value="Submit" type="submit">
+                </div>
+              </form>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
   </section>
+  <!-- /Contact-Us -->

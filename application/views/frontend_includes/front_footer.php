@@ -11,17 +11,17 @@
 						</div>
 					</div>
 					<div class="col-md-4 top_widget">
-						<div class="newsletter">
+					<!-- 	<div class="newsletter">
 							<form>
 								<div class="email_input">
 									<input type="email" placeholder="Email address">
 								</div>
 								<button type="submit">Submit <i class="fa fa-caret-right"></i></button>
 							</form>
-						</div>
+						</div> -->
 					</div>
 					<div class="col-md-4 top_widget">
-						<div class="follow_us">
+					<!-- 	<div class="follow_us">
 							<ul class="text-custom-align-right">
 								<li><a href="#"><i class="fab fa-facebook-f"></i></a></li>
 								<li><a href="#"><i class="fab fa-twitter"></i></a></li>
@@ -29,7 +29,7 @@
 								<li><a href="#"><i class="fab fa-youtube"></i></a></li>
 								<li><a href="#"><i class="fab fa-instagram"></i></a></li>
 							</ul>
-						</div>
+						</div> -->
 					</div>
 				</div>
 			</div>
@@ -60,7 +60,7 @@
 					</div>
 				</div>
 				<div class="col-md-4 footer_widget">
-					<div class="widget_inner">
+<!-- 					<div class="widget_inner">
 						<h5>Useful Links</h5>
 						<div class="footer_nav">
 							<ul>
@@ -72,7 +72,7 @@
 								<li><a href="#">Checkout</a></li>
 							</ul>
 						</div>
-					</div>
+					</div> -->
 				</div>
 			</div>
 		</div>
