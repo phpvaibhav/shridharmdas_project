@@ -4,7 +4,7 @@
  */ 
 
 	$lang['Home'] 								= "Home";
-	$lang['User_Form'] 							= "User Form";
+	$lang['User_Form'] 							= "Shri Dharmadas Population Census";
 	$lang['basic_Information'] 					= "Basic Information";
 	$lang['First_name'] 						= "First name";
 	$lang['Last_name'] 							= "Last name";

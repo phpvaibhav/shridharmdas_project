@@ -3,7 +3,7 @@
  * English language of home page
  */ 
 	$lang['Home'] 										= "कुटुंब";
-	$lang['User_Form'] 									= "गण प्रपत्र";
+	$lang['User_Form'] 									= "श्री धर्मदास गण जनगणना पत्र";
 	$lang['basic_Information'] 							= "मूलभूत जानकारी";
 	$lang['First_name'] 								= "नाम";
 	$lang['Last_name'] 									= "उपनाम";
