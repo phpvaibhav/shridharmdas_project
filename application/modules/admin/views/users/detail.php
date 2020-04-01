@@ -251,7 +251,7 @@
                 </section>
                   <section class="col col-6">
                   <label class="input"> <i class="icon-prepend fa fa-calendar"></i>
-                    <input type="text" name="dob" id="dob" value="<?= date('d-m-Y',$info['dob']); ?>" placeholder="<?= lang('dob'); ?>" readonly="">
+                    <input type="text" name="dob" id="dob" value="<?= date('d-m-Y',strtotime($info['dob'])); ?>" placeholder="<?= lang('dob'); ?>" readonly="">
                   </label>
                 </section>
 
