@@ -34,8 +34,9 @@ class Users extends Common_Back_Controller {
         $data['info']           = $result;
         $data['addresses']        = $this->common_model->getAll('addresses',array('userId'=>$result['id']));
         $data['usermeta']        = $this->common_model->getsingle('user_meta',array('userId'=>$result['id']));
-        $data['front_scripts']  = array('backend_assets/admin/js/location.js','backend_assets/custom/js/users.js');
-
+$countries      = $this->common_model->getAll('countries');
+        $data['front_scripts'] = array('backend_assets/custom/js/users.js');
+        $data['countries'] = $countries;
         $this->load->admin_render('users/detail', $data, '');
     } //End function
 }//End Class

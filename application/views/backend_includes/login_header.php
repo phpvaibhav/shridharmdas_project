@@ -50,4 +50,5 @@
     
       <!--  <span id="extr-page-header-space"> <span class="hidden-mobile hiddex-xs">Need an account?</span> <a href="<?php echo base_url().'admin/signup'; ?>" class="btn btn-danger">Create account</a> </span>  -->
       <!--   <span id="extr-page-header-space"> <span class="hidden-mobile hiddex-xs">Already registered?</span> <a href="<?php echo base_url(); ?>" class="btn btn-danger">Sign In</a> </span> -->
+       <span id="extr-page-header-space"> <a href="<?php echo base_url(); ?>" class="btn btn-danger">Back</a> </span>
     </header>
