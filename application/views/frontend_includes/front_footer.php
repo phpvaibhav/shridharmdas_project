@@ -7,7 +7,7 @@
 				<div class="row">
 					<div class="col-md-4 top_widget">
 						<div class="footer_logo">
-							<a href="#"><img src="https://via.placeholder.com/110x46" alt="image"></a>
+								<a href="<?= base_url(); ?>"><img src="<?= $frontend_assets; ?>images/logo/logo-white.png" alt="image" class="image-logo" /></a>
 						</div>
 					</div>
 					<div class="col-md-4 top_widget">
