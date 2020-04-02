@@ -1,14 +1,14 @@
 
 <!DOCTYPE HTML>
-<html lang="en">
+<html lang="hi">
 <head>
 	<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
 	<meta http-equiv="X-UA-Compatible" content="IE=edge">
 	<meta name="viewport" content="width=device-width,initial-scale=1">
-	<meta name="keywords" content="">
-	<meta name="description" content="">
+	<meta name="keywords" content="Shri dharmdas,श्री धर्मदास गण परिषद">
+	<meta name="description" content="Shri dharmdas,श्री धर्मदास गण परिषद">
 	<?php $frontend_assets =  base_url().'frontend_assets/';?>
-	<title>Shridharmdas</title>
+	<title>श्री धर्मदास गण परिषद</title>
 	<!--Bootstrap -->
 	<link rel="stylesheet" href="<?= $frontend_assets; ?>assets/css/bootstrap.min.css" type="text/css">
 	<!--OWL Carousel slider-->
