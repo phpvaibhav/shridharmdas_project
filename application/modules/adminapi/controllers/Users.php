@@ -164,7 +164,7 @@ class Users extends Common_Admin_Controller{
         //output to json format
         $this->response($output);
     }
-        function activeInactiveStatus_post(){
+    function activeInactiveStatus_post(){
         $preId              = decoding($this->post('id'));
         $where              = array('id'=>$preId);
         $dataExist          = $this->common_model->is_data_exists('users',$where);
@@ -206,7 +206,7 @@ class Users extends Common_Admin_Controller{
             $data_val['fullName']        = $this->post('firstName').' '.$this->post('lastName'); 
             $data_val['dob']             = date('Y-m-d',strtotime($this->post('dob'))); 
             $data_val['gender']          = $this->post('gender'); 
-            $data_val['email']          = $this->post('email'); 
+            $data_val['email']           = $this->post('email'); 
             $data_val['parentName']      = $this->post('parentName'); 
             $data_val['maritalStatus']   = $this->post('maritalStatus'); 
             $data_val['contactNumber']   = trim(str_replace(array('(',')','-',' '),array('','','',''),$this->post('contactNumber')));
@@ -263,7 +263,7 @@ class Users extends Common_Admin_Controller{
             $ostate         = $this->post('ostate'); 
             $oaddress       = $this->post('oaddress');
            // pr( $data_val);
-             $meta_val['addressType']         = 'Home'; 
+            $meta_val['addressType']         = 'Home'; 
             $meta_val['address']         = $this->post('address'); 
             $meta_val['country']         = isset($country) ? $country :""; 
             $meta_val['state']           = isset($state) ? $state :""; 
@@ -272,7 +272,7 @@ class Users extends Common_Admin_Controller{
             $meta_val['district']        = $this->post('district'); 
             $meta_val['zip_code']        = $this->post('zip_code'); 
                //pr($meta_val);
-             if(isset($oaddress) && !empty($oaddress)){
+            if(isset($oaddress) && !empty($oaddress)){
                 $ometa_val['address']         = $this->post('oaddress'); 
                 $ometa_val['addressType']         = 'Office'; 
                 $ometa_val['country']         = isset($ocountry) ? $ocountry :""; 
@@ -302,7 +302,6 @@ class Users extends Common_Admin_Controller{
                 $status = FAIL;
                 $msg  = ResponseMessages::getStatusCodeMessage(118);
             }
-            
             if($result){
                  $response   = array('status'=>SUCCESS,'message'=>$msg);
             }else{

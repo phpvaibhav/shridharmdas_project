@@ -56,10 +56,10 @@ class Preceptor extends Common_Admin_Controller{
             switch ($serData->status) {
              
                 case 1:
-                   $row[] = '<label class="label label-success">'.$serData->statusShow.'</label>';
+                   $row[] =  '<label class="label label-success">'.$serData->statusShow.'</label>';
                     break;
                 case 0:
-                   $row[] = '<label class="label label-warning">'.$serData->statusShow.'</label>';
+                   $row[] =  '<label class="label label-warning">'.$serData->statusShow.'</label>';
                     break;
                 
                 default:
@@ -91,14 +91,14 @@ class Preceptor extends Common_Admin_Controller{
         //output to json format
         $this->response($output);
     }
-        function activeInactiveStatus_post(){
-        $preId             = decoding($this->post('id'));
+    function activeInactiveStatus_post(){
+        $preId              = decoding($this->post('id'));
         $where              = array('preId'=>$preId);
         $dataExist          = $this->common_model->is_data_exists('preceptor',$where);
         if($dataExist){
             $status         = $dataExist->status ? 0:1;
             $dataExist      = $this->common_model->updateFields('preceptor',array('status'=>$status),$where);
-            $showmsg        = ($status==1)? lang("Active") : lang("Inactive");
+            $showmsg        = ($status==1) ? lang("Active") : lang("Inactive");
             $response       = array('status'=>SUCCESS,'message'=>$showmsg." ".ResponseMessages::getStatusCodeMessage(128));
         }else{
             $response       = array('status'=>FAIL,'message'=>ResponseMessages::getStatusCodeMessage(118));  

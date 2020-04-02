@@ -31,10 +31,11 @@
 	$lang['Education'] 					= "शिक्षा";	
 	$lang['Profession'] 					= "व्यवसाय";	
 	$lang['blood_group'] 					= "रक्त समूह";	
-	$lang['unionResponsibility'] 					= "श्री संघ मे दायित्व";	
+	$lang['unionResponsibility'] 					= "गण/संघठन/संघ/मंडल में दायित्व";	
 	$lang['married'] 					= "विवाहित";	
 	$lang['unmarried'] 					= "अविवाहित";	
 	$lang['divorced'] 					= "तलाकशुदा";	
+	$lang['other'] 					= "अन्य";	
 
 	$lang['Please_select_your_first_name'] 				= "कृपया अपना पहला नाम चुनें";
 	$lang['Please_select_your_last_name'] 				= "कृपया अपना उपनाम चुनें";

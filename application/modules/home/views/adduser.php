@@ -187,6 +187,7 @@
                       <option value="Married"><?= lang('married');?></option>
                       <option value="Unmarried"><?= lang('unmarried');?></option>
                       <option value="Divorced"><?= lang('divorced');?></option>
+                       <option value="Other"><?= lang('other');?></option>
                     </select> <i></i> </label>
                 </section>
                

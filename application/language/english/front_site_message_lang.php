@@ -35,7 +35,7 @@
 	$lang['married'] 					= "Married";	
 	$lang['unmarried'] 					= "Unmarried";	
 	$lang['divorced'] 					= "Divorced";	
-
+	$lang['other'] 					= "Other";
 
 
 

@@ -23,11 +23,9 @@ class User_model extends CI_Model {
     public function __construct(){
         parent::__construct();
     }
-    
     public function set_data($where=''){
         $this->where = $where; 
     }
-
     private function _get_query()
     {
         $sel_fields = array_filter($this->column_sel); 
@@ -99,15 +97,12 @@ class User_model extends CI_Model {
         $query = $this->db->get(); //lq();
         return $query->result();
     }
-
     function count_filtered()
     {
         $this->_get_query();
         $query = $this->db->get();
         return $query->num_rows();
     }
-
-
     public function count_all()
     {
        $this->db->from('users as u');
