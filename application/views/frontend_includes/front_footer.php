@@ -41,14 +41,36 @@
 			<div class="row">
 				<div class="col-md-4 footer_widget">
 					<div class="widget_inner">
-						<h5>Contact Us</h5>
-						<p>4873 New York,47</p>
-						<p>E: <a href="email@email.com">email@email.com</a></p>
-						<p>P: +011 4532 5698 303</p>
+						<h5>संपर्क करें</h5>
+						<p> श्री शांतिलाल जी भंडारी (धर्मदासगण अध्यक्ष) <br><span>P : +91 9987 069 990</span></p>
+							<p> सर्वेश मण्डलेचा,बदनावर <br><span>P : +91 9893 741 418</span></p>
+							<p> मिलिन गाँधी,रतलाम <br><span>P : +91 9827 253 330</span></p>
+							<p> केतन रुनवाल,इंदौर <br><span>P : +91 9425 406 559</span></p>
+						
+					<!-- 	<p>4873 New York,47</p> -->
+					<!-- 	<p>E: <a href="email@email.com">email@email.com</a></p>
+						<p>P: +011 4532 5698 303</p> -->
 					</div>
 				</div>
 				<div class="col-md-4 footer_widget">
-					<div class="widget_inner">
+					<h5></h5>
+						<p> मितेश बोकड़िया,सेंधवा <br><span>P : +91 9406 834 875</span></p>
+							<p> कपिल पिचा,थांदला <br><span>P : +91 9425 486 404</span></p>
+							<p> सौरभ चौधरी,बदनावर <br><span>P : +91 7898 156 666</span></p>
+							<p> सौरभ कोठारी,रतलाम <br><span>P :  +91 9424 527 917</span></p>
+					<!-- <div class="widget_inner">
+						<div class="video_post">
+							<div class="exp-vido-icon">
+								<div class="video_post_icon">
+									<a class="popup-youtube" href="https://www.youtube.com/watch?v=AdZrEIo6UYU" tabindex="0"><i class="fa fa-play"></i></a>
+								</div>
+							</div>
+							<img src="https://via.placeholder.com/510x240" alt="image" class="mx-auto image-fluid d-block">
+						</div>
+					</div> -->
+				</div>
+				<div class="col-md-4 footer_widget">
+<div class="widget_inner">
 						<div class="video_post">
 							<div class="exp-vido-icon">
 								<div class="video_post_icon">
@@ -58,8 +80,6 @@
 							<img src="https://via.placeholder.com/510x240" alt="image" class="mx-auto image-fluid d-block">
 						</div>
 					</div>
-				</div>
-				<div class="col-md-4 footer_widget">
 <!-- 					<div class="widget_inner">
 						<h5>Useful Links</h5>
 						<div class="footer_nav">
