@@ -7,7 +7,7 @@
 				<div class="row">
 					<div class="col-md-4 top_widget">
 						<div class="footer_logo">
-								<a href="<?= base_url(); ?>"><img src="<?= $frontend_assets; ?>images/logo/logo-white.png" alt="image" class="image-logo" /></a>
+								<a href="<?= base_url(); ?>"><img src="<?= $frontend_assets; ?>images/logo/logo-white.png" alt="image" class="image-logo-footer" /></a>
 						</div>
 					</div>
 					<div class="col-md-4 top_widget">
