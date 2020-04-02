@@ -69,7 +69,7 @@
 			<div class="container">
 				<div class="navbar-header">
 					<div class="logo">
-						<a href="index.html"><img src="https://via.placeholder.com/110x46" alt="image" /></a>
+						<a href="<?= base_url(); ?>"><img src="<?= $frontend_assets; ?>images/logo/logo.png" alt="image" /></a>
 					</div> <!-- /Logo -->
 					<div id="menu_slide">
 						<div id="nav-toggle-label">
