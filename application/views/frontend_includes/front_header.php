@@ -26,6 +26,8 @@
 	<!-- Google-Font-->
 	<link href="https://fonts.googleapis.com/css?family=Lato:400,400i,700,700i&display=swap" rel="stylesheet">
 	<link href="https://fonts.googleapis.com/css?family=Muli:300,300i,400,400i,700,700i&display=swap" rel="stylesheet">
+	<!--Custom Style -->
+	<link href="<?= $frontend_assets; ?>css/custom.css" rel="stylesheet">
 	<!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
 	<!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
 	<!--[if lt IE 9]>
@@ -69,7 +71,7 @@
 			<div class="container">
 				<div class="navbar-header">
 					<div class="logo">
-						<a href="<?= base_url(); ?>"><img src="<?= $frontend_assets; ?>images/logo/logo.png" alt="image" style="max-width: 42%;" /></a>
+						<a href="<?= base_url(); ?>"><img src="<?= $frontend_assets; ?>images/logo/logo-white.png" alt="image" class="image-logo" /></a>
 					</div> <!-- /Logo -->
 					<div id="menu_slide">
 						<div id="nav-toggle-label">
