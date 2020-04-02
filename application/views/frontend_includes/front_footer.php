@@ -5,23 +5,23 @@
 		<div class="footer_top primary-bg">
 			<div class="container">
 				<div class="row">
-					<div class="col-md-4 top_widget">
+				<!-- 	<div class="col-md-12 top_widget">
 						<div class="footer_logo">
 								<a href="<?= base_url(); ?>"><img src="<?= $frontend_assets; ?>images/logo/logo-white.png" alt="image" class="image-logo-footer" /></a>
 						</div>
-					</div>
-					<div class="col-md-4 top_widget">
-					<!-- 	<div class="newsletter">
+					</div> -->
+<!-- 					<div class="col-md-4 top_widget">
+						<div class="newsletter">
 							<form>
 								<div class="email_input">
 									<input type="email" placeholder="Email address">
 								</div>
 								<button type="submit">Submit <i class="fa fa-caret-right"></i></button>
 							</form>
-						</div> -->
+						</div>
 					</div>
 					<div class="col-md-4 top_widget">
-					<!-- 	<div class="follow_us">
+						<div class="follow_us">
 							<ul class="text-custom-align-right">
 								<li><a href="#"><i class="fab fa-facebook-f"></i></a></li>
 								<li><a href="#"><i class="fab fa-twitter"></i></a></li>
@@ -29,8 +29,8 @@
 								<li><a href="#"><i class="fab fa-youtube"></i></a></li>
 								<li><a href="#"><i class="fab fa-instagram"></i></a></li>
 							</ul>
-						</div> -->
-					</div>
+						</div>
+					</div> -->
 				</div>
 			</div>
 		</div>
@@ -70,16 +70,15 @@
 					</div> -->
 				</div>
 				<div class="col-md-4 footer_widget">
-<div class="widget_inner">
-						<div class="video_post">
-							<div class="exp-vido-icon">
-								<div class="video_post_icon">
-									<a class="popup-youtube" href="https://www.youtube.com/watch?v=AdZrEIo6UYU" tabindex="0"><i class="fa fa-play"></i></a>
-								</div>
-							</div>
-							<img src="https://via.placeholder.com/510x240" alt="image" class="mx-auto image-fluid d-block">
+						<div class="widget_inner">
+							<div class="footer_logo">
+								<a href="<?= base_url(); ?>"><img src="<?= $frontend_assets; ?>images/logo/logo-white.png" alt="image" class="image-logo-footer" /></a>
 						</div>
-					</div>
+						<br>
+							<h5>कार्यालय का पता</h5>
+							<p>15, पुखराज रेजीडेंसी , सैलाना  रोड (मोहन बाग़ के पास) रतलाम ( म. प्र) -457001<br><span>P : 07412-297330</span></p>
+							
+						</div>
 <!-- 					<div class="widget_inner">
 						<h5>Useful Links</h5>
 						<div class="footer_nav">
@@ -113,9 +112,9 @@
 					<div class="col-lg-4 align-self-center">
 						<div class="footer_links">
 							<a href="<?= base_url(); ?>">Home</a>
-							<a href="<?= base_url(); ?>about-us">About Us</a>
+							<!-- <a href="<?= base_url(); ?>about-us">About Us</a> -->
 							<a href="<?= base_url(); ?>user-form">User Form</a>
-							<a href="<?= base_url(); ?>contact-us">Contact</a>
+							<!-- <a href="<?= base_url(); ?>contact-us">Contact</a> -->
 						</div>
 					</div>
 				</div>

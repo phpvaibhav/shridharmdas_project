@@ -165,7 +165,7 @@
     <!-- /Next-Events-Sermons -->
 
     <!-- About -->
-    <section class="about_intro section-padding position-relative">
+<!--     <section class="about_intro section-padding position-relative">
       <div class="custom-img-left">
         <img src="assets/images/img-left.png" alt="img" class="img-fluid">
       </div>
@@ -222,7 +222,7 @@
         </div>
         
       </div>
-    </section>
+    </section> -->
     <!-- /About -->
 
   <!-- Causes -->
@@ -538,7 +538,7 @@
   <!-- /Call to Action -->
 
   <!-- Testimonials -->
-  <section class="our_testimonials section-padding">
+<!--   <section class="our_testimonials section-padding">
     <div class="container">
       <div class="row">
         <div class="col-md-6 align-self-center">
@@ -565,7 +565,7 @@
               </li>
             </ul>
 
-            <!-- Tab panes -->
+          
             <div class="tab-content">
               <div id="home" class="container tab-pane active pl-0 pr-0"><br>
                 <h4>1980</h4>
@@ -598,7 +598,7 @@
         </div>
       </div>
     </div>
-  </section>
+  </section> -->
   <!-- /Testimonials -->
 
   <!-- Donation form -->
@@ -649,7 +649,7 @@
   <!-- /Donation form -->
 
   <!-- Latest-Blog -->
-  <section class="latest_blog secondary-bg section-padding" id="blog">
+<!--   <section class="latest_blog secondary-bg section-padding" id="blog">
     <div class="container">
       <div class="blog">
         <div class="section-header-center text-center">
@@ -802,7 +802,7 @@
 
       </div>
     </div>
-  </section>
+  </section> -->
   <!-- Latest-Blog -->
 <!-- 
   <section class="section-padding pb-0">
@@ -860,35 +860,25 @@
                     <div class="col-md-6">
                         <div class="form-group">
                           <label>Your Full Name</label>
-                          <input type="text" class="form-control" name="Name">
+                          <input type="text" class="form-control" name="Name" required="">
                         </div>
                     </div>
                     <div class="col-md-6">
                         <div class="form-group">
                           <label>Your Email</label>
-                          <input type="email" class="form-control" name="email">
+                          <input type="email" class="form-control" name="email" required="">
                         </div>
                     </div>
-                    <div class="col-md-6">
+                    <div class="col-md-12">
                         <div class="form-group">
                           <label>Your Subject</label>
-                          <input type="text" class="form-control" name="subject">
-                        </div>
-                    </div>
-                    <div class="col-md-6">
-                      <div class="form-group">
-                          <label>Type</label>
-                          <select class="form-control" name="type">
-                            <option value="1">One</option>
-                            <option value="2">Two</option>
-                          </select>
-                         
+                          <input type="text" class="form-control" name="subject" required="">
                         </div>
                     </div>
                     <div class="col-md-12">
                         <div class="form-group">
                         <label>Your Message</label>
-                        <textarea name="message" cols="45" rows="3" class="form-control"></textarea>
+                        <textarea name="message" cols="45" rows="3" class="form-control" required=""></textarea>
                         </div>
                     </div>
                  </div>

@@ -56,8 +56,8 @@
 					</div>
 					<div class="col-lg-6 col-md-8 col-4 align-self-center">
 						<ul class="top-btn list-inline">
-							<li class="list-inline-item"><i class="fa fa-phone"></i><a href="#">+01 825-5552-852</a></li>
-							<li class="list-inline-item"><i class="fa fa-envelope"></i><a href="#">info@slidesigma.com</a></li>
+							<li class="list-inline-item"><i class="fa fa-phone"></i><a href="javascript:void();">+91 9987 069 990</a></li>
+							<li class="list-inline-item"><i class="fa fa-envelope"></i><a href="javascript:void();">dharmdasjanganna2020@gmail.com</a></li>
 						<!-- 	<li class="list-inline-item"><a class="btn btn-sm dark-btn tilak-top-btn" href="donation.html">Donate</a></li> -->
 						</ul>
 					</div>
@@ -96,7 +96,7 @@
 							</ul>
 						</li> -->
 						<li><a href="<?= base_url(); ?>">Home</a></li>
-						<li><a href="<?= base_url(); ?>about-us">About Us</a></li>
+					<!-- 	<li><a href="<?= base_url(); ?>about-us">About Us</a></li> -->
 						<li><a href="<?= base_url(); ?>user-form">User Form</a></li>
 						<!-- <li class="dropdown"><a href="#">Sermon <span class="nav_arrow"></span></a>
 							<ul class="sub-menu">
@@ -127,7 +127,7 @@
 								<li><a href="blog-detail.html">Blog Detail</a></li>
 							</ul>
 						</li> -->
-						<li><a href="<?= base_url(); ?>contact-us">Contact</a></li>
+						<!-- <li><a href="<?= base_url(); ?>contact-us">Contact</a></li> -->
 					</ul>
 				</div>
 			</div>
@@ -137,9 +137,9 @@
 		<div class="mobile-menu">
 			<ul class="wd-menu pop-scroll">
 					<li><a href="<?= base_url(); ?>">Home</a></li>
-					<li><a href="<?= base_url(); ?>about-us">About Us</a></li>
+					<!-- <li><a href="<?= base_url(); ?>about-us">About Us</a></li> -->
 					<li><a href="<?= base_url(); ?>user-form">User Form</a></li>
-					<li><a href="<?= base_url(); ?>contact-us">Contact</a></li>
+				<!-- 	<li><a href="<?= base_url(); ?>contact-us">Contact</a></li> -->
 <!-- 				<li class="has-child">
 					<a href="#">Home</a>
 					<ul class="sub-menu">
