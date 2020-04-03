@@ -136,5 +136,6 @@ $sheet->getStyle('A:I')->getAlignment()->setHorizontal('center');
         //redirect(HTTP_UPLOAD_PATH.$fileName); 
         $filepath = file_get_contents(ROOT_UPLOAD_PATH.$fileName);
         force_download($fileName, $filepath);
+        //unlink(FCPATH.'/'.ROOT_UPLOAD_PATH.$fileName);
     }//End Function
 }//End Class

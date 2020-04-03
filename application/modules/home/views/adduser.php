@@ -529,7 +529,7 @@
         </button></h5>
         
       </div>
-      <div class="modal-body scrollbar">
+      <div class="modal-body scrollbar-model">
          <ul style="font-size: 18px;font-weight: bold; padding-left:20px;">
            <li>गुरु भगवंत के नाम वाले कॉलम मे जिन्हे आपने अपना गुरु बनाया हो तो उनका नाम भरे |</li>
            <li>श्री संघ के नाम वाले कॉलम मे आप जहाँ रहते ही उस श्री संघ व शहर का नाम |</li>
