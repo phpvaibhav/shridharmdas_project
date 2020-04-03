@@ -13,3 +13,9 @@
     border-radius: 12% !important;
     transition: 0.4s ease;
 }
+@media (max-width: 767px){
+	#intro .owl-nav div::after {
+		line-height: 48px;
+		font-size: 22px;
+	}
+}

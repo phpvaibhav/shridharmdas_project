@@ -35,7 +35,7 @@
     border-style: solid;
     border-radius: 0;
     background: #fff;
-    font: 15px/16px 'Open Sans',Helvetica,Arial,sans-serif;
+    font: 16px/16px 'Open Sans',Helvetica,Arial,sans-serif;
     color: #404040;
     appearance: normal;
     -moz-appearance: none;
@@ -563,7 +563,7 @@
 
       <!-- Modal -->
 <div class="modal fade bd-example-modal-lg" id="myModal" tabindex="-1" role="dialog" style="width: 100%" aria-labelledby="myLargeModalLabel" >
-  <div class="modal-dialog modal-lg">
+  <div class="modal-dialog modal-lg "  role="document">
     <div class="modal-content">
       <div class="modal-header">
         <button type="button" class="close" data-dismiss="modal" aria-hidden="true">
@@ -586,7 +586,7 @@
                 <ul style="font-size: 18px;font-weight: bold;">
                   <li>गुरु भगवंत के नाम वाले कॉलम मे जिन्हे आपने अपना गुरु बनाया हो तो उनका नाम भरे |</li>
                   <li>श्री संघ के नाम वाले कॉलम मे आप जहाँ रहते ही उस श्री संघ व शहर का नाम |</li>
-                  <li>घर का पता वाले कॉलम मे आप वर्तमान मे जहा रह रहे है उसका सम्पूर्ण पता </li>
+                  <li>घर का पता वाले कॉलम मे आप वर्तमान मे जहा रह रहे है उसका सम्पूर्ण पता |</li>
                   <li>कार्यालय प्रतिष्ठान वाले कॉलम मे जिस कंपनी मे आपकी जॉब हो या आपका व्यापार हो उसका नाम व पूर्ण पता लिखे|</li>
                   <li>नाम वाले कॉलम मे अपना नाम व उपनाम वाले कॉलम मे अपनी सरनेम लिखे |</li>
                   <li>श्री संघ या संगठन वाले कॉलम मे यदि आपके पास कोई स्थानीय संघ ,धर्मदास गण परिषद ,युवा संगठन  , श्राविका संगठन, नवयुवक मण्डल, बालिका मण्डल मे कोई पद हो तो उसका उल्लेख करे |</li>
