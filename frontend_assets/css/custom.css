@@ -4,3 +4,12 @@
 .image-logo-footer{
 	max-width: 23% !important;
 }
+#intro .owl-nav div {
+    width: 50px;
+    height: 50px;
+    background: #fff;
+        background-color: rgb(255, 255, 255);
+    opacity: 0.7;
+    border-radius: 12% !important;
+    transition: 0.4s ease;
+}
