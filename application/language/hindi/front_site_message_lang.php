@@ -5,6 +5,7 @@
 	$lang['Home'] 										= "कुटुंब";
 	$lang['User_Form'] 									= "श्री धर्मदास गण जनगणना पत्र";
 	$lang['basic_Information'] 							= "मूलभूत जानकारी";
+	$lang['other_Information'] 							= "अन्य जानकारी";
 	$lang['First_name'] 								= "नाम";
 	$lang['Last_name'] 									= "उपनाम";
 	$lang['parentName'] 								= "पिता/पति का नाम";

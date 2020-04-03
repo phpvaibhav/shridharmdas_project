@@ -89,7 +89,7 @@
 
             </header>
             <fieldset>
-              <div class="row">
+             <!--  <div class="row">
                 <section class="col col-6">
                   <label class="input"> <i class="icon-prepend fa fa-sun-o"></i>
                     <input type="text" name="preceptorName" placeholder="<?= lang('Preceptor').' '.lang('Name'); ?>">
@@ -100,7 +100,7 @@
                     <input type="text" name="unionName" placeholder="<?= lang('Union').' '.lang('Name'); ?>">
                   </label>
                 </section>
-              </div>
+              </div> -->
               <div class="row">
                   <section class="col col-6">
                     <label class="input"> <i class="icon-prepend fa fa-user"></i>
@@ -179,72 +179,12 @@
            
               </div>
               <div class="row">
-                   <section class="col col-6">
-                <!--     <label>Select2 Plugin (multi-select)</label>
-                    <select multiple style="width:100%" class="select2">
-                      <optgroup label="Alaskan/Hawaiian Time Zone">
-                        <option value="AK">Alaska</option>
-                        <option value="HI">Hawaii</option>
-                      </optgroup>
-                      <optgroup label="Pacific Time Zone">
-                        <option value="CA">California</option>
-                        <option value="NV" selected="selected">Nevada</option>
-                        <option value="OR">Oregon</option>
-                        <option value="WA">Washington</option>
-                      </optgroup>
-                      <optgroup label="Mountain Time Zone">
-                        <option value="AZ">Arizona</option>
-                        <option value="CO">Colorado</option>
-                        <option value="ID">Idaho</option>
-                        <option value="MT" selected="selected">Montana</option><option value="NE">Nebraska</option>
-                        <option value="NM">New Mexico</option>
-                        <option value="ND">North Dakota</option>
-                        <option value="UT">Utah</option>
-                        <option value="WY">Wyoming</option>
-                      </optgroup>
-                      <optgroup label="Central Time Zone">
-                        <option value="AL">Alabama</option>
-                        <option value="AR">Arkansas</option>
-                        <option value="IL">Illinois</option>
-                        <option value="IA">Iowa</option>
-                        <option value="KS">Kansas</option>
-                        <option value="KY">Kentucky</option>
-                        <option value="LA">Louisiana</option>
-                        <option value="MN">Minnesota</option>
-                        <option value="MS">Mississippi</option>
-                        <option value="MO">Missouri</option>
-                        <option value="OK">Oklahoma</option>
-                        <option value="SD">South Dakota</option>
-                        <option value="TX">Texas</option>
-                        <option value="TN">Tennessee</option>
-                        <option value="WI">Wisconsin</option>
-                      </optgroup>
-                      <optgroup label="Eastern Time Zone">
-                        <option value="CT">Connecticut</option>
-                        <option value="DE">Delaware</option>
-                        <option value="FL">Florida</option>
-                        <option value="GA">Georgia</option>
-                        <option value="IN">Indiana</option>
-                        <option value="ME">Maine</option>
-                        <option value="MD">Maryland</option>
-                        <option value="MA">Massachusetts</option>
-                        <option value="MI" selected="selected">Michigan</option>
-                        <option value="NH">New Hampshire</option>
-                        <option value="NJ">New Jersey</option>
-                        <option value="NY">New York</option>
-                        <option value="NC">North Carolina</option>
-                        <option value="OH">Ohio</option>
-                        <option value="PA">Pennsylvania</option>
-                        <option value="RI">Rhode Island</option>
-                        <option value="SC">South Carolina</option>
-                        <option value="VT">Vermont</option>
-                        <option value="VA">Virginia</option>
-                        <option value="WV">West Virginia</option>
-                      </optgroup>
-                    </select> -->
+         <!--           <section class="col col-6">
+          
+                  
                       
                       <select name="religiousKnowledge[]" multiple style="width:100%" class="select2" data-placeholder="<?= lang('Religious_knowledge'); ?>">
-                     <!--  <option value="" selected="" disabled=""><?= lang('Religious_knowledge'); ?></option> -->
+                   
                       <option value="णमोकार मंत्र"> णमोकार मंत्र</option>
                       <option value="सामायिक">सामायिक</option>
                       <option value="प्रतिक्रमण">प्रतिक्रमण</option>
@@ -255,16 +195,9 @@
                       <option value="अन्य">अन्य</option>
                      
                       </select>
-                  </section>
-                
-           <!--        <section class="col col-6">
-                      <label class="select">
-                      <select name="education">
-                      <option value="" selected="" disabled=""><?= lang('Education'); ?></option>
-                      <option value="Yes"><?= lang('Yes');?></option>
-                      <option value="No"><?= lang('No');?></option>
-                      </select> <i></i> </label>
                   </section> -->
+                
+     
                   <section class="col col-6">
                       <label class="select">
                       <select name="profession">
@@ -273,14 +206,11 @@
                       <option value="business">Business</option>
                       <option value="house wife">House wife</option>
                       <option value="student">Student</option>
+                      <option value="student">Retired</option>
                       <option value="other">Other</option>
                       </select> <i></i> </label>
                   </section>
-           
-              </div>
-              <div class="row">
-                
-                  <section class="col col-6">
+                   <section class="col col-6">
                       <label class="select">
                       <select name="bloodGroup">
                       <option value="" selected="" disabled=""><?= lang('blood_group'); ?></option>
@@ -295,14 +225,8 @@
                     
                       </select> <i></i> </label>
                   </section>
-                   <section class="col col-6">
-                   <label class="input"> <i class="icon-prepend fa fa-list"></i>
-                    <input type="text" name="unionResponsibility" placeholder="<?= lang('unionResponsibility'); ?>">
-                  </label>
-                  </section>
-           
               </div>
-              
+          
 
             </fieldset>
             <header>
@@ -459,6 +383,115 @@
               
               </div>
             </fieldset>
+                        <header>
+             <?= lang('other_Information'); ?>
+          
+
+            </header>
+            <fieldset>
+              <div class="row">
+                <section class="col col-6">
+                  <label class="input"> <i class="icon-prepend fa fa-sun-o"></i>
+                    <input type="text" name="preceptorName" placeholder="<?= lang('Preceptor').' '.lang('Name'); ?>">
+                  </label>
+                </section>
+                <section class="col col-6">
+                  <label class="input"> <i class="icon-prepend fa fa-sitemap"></i>
+                    <input type="text" name="unionName" placeholder="<?= lang('Union').' '.lang('Name'); ?>">
+                  </label>
+                </section>
+              </div>
+
+             
+   <!--                 <section>
+               
+                      
+                      <select name="religiousKnowledge[]" multiple style="width:100%" class="select2" data-placeholder="<?= lang('Religious_knowledge'); ?>">
+                   
+                      <option value="णमोकार मंत्र"> णमोकार मंत्र</option>
+                      <option value="सामायिक">सामायिक</option>
+                      <option value="प्रतिक्रमण">प्रतिक्रमण</option>
+                      <option value="पच्चीस बोल">पच्चीस बोल</option>
+                      <option value="पुच्छिस्सुणम्">पुच्छिस्सुणम्</option>
+                      <option value="दशवैकालिक सूत्र">दशवैकालिक सूत्र</option>
+                      <option value="उत्तराध्ययन सूत्र">उत्तराध्ययन सूत्र</option>
+                      <option value="अन्य">अन्य</option>
+                     
+                      </select>
+                  </section> -->
+                 <section >
+                   <label class="input"> <i class="icon-prepend fa fa-list"></i>
+                    <input type="text" name="unionResponsibility" placeholder="<?= lang('unionResponsibility'); ?>">
+                  </label>
+                  </section>
+        
+        
+              <div class="form-group" >
+                          <label class="col-md-2 control-label" style="
+    font-size: 16px;"><?= lang('Religious_knowledge'); ?></label>
+                          <div class="col-md-10"  style="
+    font-size: 16px;">
+                            
+                            <div class="checkbox">
+                              <label>
+                                <input type="checkbox" class="checkbox style-0" value="णमोकार मंत्र" name="religiousKnowledge[]">
+                                <span>णमोकार मंत्र</span>
+                              </label>
+                            </div>
+                               <div class="checkbox">
+                              <label>
+                                <input type="checkbox" class="checkbox style-0" value="सामायिक" name="religiousKnowledge[]">
+                                <span>सामायिक</span>
+                              </label>
+                            </div>
+                            
+        <div class="checkbox">
+                              <label>
+                                <input type="checkbox" class="checkbox style-0" value="प्रतिक्रमण" name="religiousKnowledge[]">
+                                <span>प्रतिक्रमण</span>
+                              </label>
+                            </div>
+         <div class="checkbox">
+                              <label>
+                                <input type="checkbox" class="checkbox style-0" value="पच्चीस बोल" name="religiousKnowledge[]">
+                                <span>पच्चीस बोल</span>
+                              </label>
+                            </div>
+        
+           <div class="checkbox">
+                              <label>
+                                <input type="checkbox" class="checkbox style-0" value="पुच्छिस्सुणम्" name="religiousKnowledge[]">
+                                <span>पुच्छिस्सुणम्</span>
+                              </label>
+                            </div>
+        
+            <div class="checkbox">
+                              <label>
+                                <input type="checkbox" class="checkbox style-0" value="दशवैकालिक सूत्र" name="religiousKnowledge[]">
+                                <span>दशवैकालिक सूत्र</span>
+                              </label>
+                            </div>
+        
+           <div class="checkbox">
+                              <label>
+                                <input type="checkbox" class="checkbox style-0" value="उत्तराध्ययन सूत्र" name="religiousKnowledge[]">
+                                <span>उत्तराध्ययन सूत्र</span>
+                              </label>
+                            </div>
+        
+        <div class="checkbox">
+                              <label>
+                                <input type="checkbox" class="checkbox style-0" value="अन्य" name="religiousKnowledge[]">
+                                <span>अन्य</span>
+                              </label>
+                            </div>
+        
+        
+        
+                          </div>
+                          </div>
+             
+            </fieldset>
             <footer>
               <button type="submit" id="submit" class="btn btn-primary">
                 <?= lang('Submit'); ?>
@@ -531,7 +564,7 @@
       </div>
       <div class="modal-body scrollbar-model">
          <ul style="font-size: 18px;font-weight: bold; padding-left:20px;">
-           <li>गुरु भगवंत के नाम वाले कॉलम मे जिन्हे आपने अपना गुरु बनाया हो तो उनका नाम भरे |</li>
+           <li>परिवार गुरु आमना कालम में परिवार के मुखिया की धर्मदास संप्रदाय के जिस संत में मान्यता हो वह नाम लिखें|</li>
            <li>श्री संघ के नाम वाले कॉलम मे आप जहाँ रहते ही उस श्री संघ व शहर का नाम |</li>
            <li>घर का पता वाले कॉलम मे आप वर्तमान मे जहा रह रहे है उसका सम्पूर्ण पता |</li>
            <li>कार्यालय प्रतिष्ठान वाले कॉलम मे जिस कंपनी मे आपकी जॉब हो या आपका व्यापार हो उसका नाम व पूर्ण पता लिखे|</li>
