@@ -28,7 +28,7 @@ class Home extends Common_Front_Controller {
 
     public function addUser() { 
         $data['title'] = lang('Home');
-        $data['front_styles'] = array();
+        $data['front_styles'] = array('backend_assets/custom/css/user_custom.css');
         $data['front_scripts'] = array();
          $data['front_scripts'] = array('backend_assets/custom/js/front_user.js');
           $countries      = $this->common_model->getAll('countries');

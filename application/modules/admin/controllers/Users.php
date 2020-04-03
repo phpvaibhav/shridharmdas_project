@@ -88,25 +88,33 @@ $sheet->getColumnDimension('D')->setAutoSize(true);
 $sheet->getColumnDimension('E')->setAutoSize(true);
 $sheet->getColumnDimension('F')->setAutoSize(true);
 $sheet->getColumnDimension('G')->setAutoSize(true);
- $sheet->getStyle('A1:G1')->applyFromArray($styleArray);
-
+$sheet->getColumnDimension('H')->setAutoSize(true);
+$sheet->getColumnDimension('I')->setAutoSize(true);
+ $sheet->getStyle('A1:I1')->applyFromArray($styleArray);
+$sheet->getStyle('A1:I1')->getAlignment()->setHorizontal('center');
+$sheet->getStyle('A:I')->getAlignment()->setHorizontal('center');
         $sheet->setCellValue('A1', 'First Name');
         $sheet->setCellValue('B1', 'Last Name');
         $sheet->setCellValue('C1', 'Parent Name');
         $sheet->setCellValue('D1', 'Email');
-        $sheet->setCellValue('E1', 'DOB');
-        $sheet->setCellValue('F1', 'Contact Number');
-        $sheet->setCellValue('G1', 'Contact_No');
+        $sheet->setCellValue('E1', 'Contact Number');
+        $sheet->setCellValue('F1', 'Aadhar Number');
+        $sheet->setCellValue('G1', 'DOB');
+        $sheet->setCellValue('H1', 'Gender');
+        $sheet->setCellValue('I1', 'Marital Status');
 
         $rowCount = 2;
         foreach ($empInfo as $element) {
+              $usermeta        = $this->common_model->getsingle('user_meta',array('userId'=>$element->id));
         $sheet->setCellValue('A' . $rowCount, display_placeholder_text($element->firstName));
         $sheet->setCellValue('B' . $rowCount, display_placeholder_text($element->lastName));
         $sheet->setCellValue('C' . $rowCount, display_placeholder_text($element->parentName));
         $sheet->setCellValue('D' . $rowCount, display_placeholder_text($element->email));
-        $sheet->setCellValue('E' . $rowCount, display_placeholder_text($element->dob));
-        $sheet->setCellValue('F' . $rowCount, display_mobile_text($element->contactNumber));
-        $sheet->setCellValue('G' . $rowCount, display_aadhar_text($element->aadharNumber));
+        $sheet->setCellValue('E' . $rowCount, display_mobile_text($element->contactNumber));
+        $sheet->setCellValue('F' . $rowCount, display_aadhar_text($element->aadharNumber));
+        $sheet->setCellValue('G' . $rowCount, display_placeholder_text(date('d-m-Y',strtotime($element->dob))));
+        $sheet->setCellValue('H' . $rowCount, display_placeholder_text($element->gender));
+        $sheet->setCellValue('I' . $rowCount, display_placeholder_text($element->maritalStatus));
         $rowCount++;
         }
 

@@ -1,58 +1,5 @@
   <?php $backend_assets =  base_url().'backend_assets/'; ?>
-  <style type="text/css">
-    .header-dropdown-list > li > .dropdown-toggle {
-    margin-top: 0px ! important;
-    
-}
-.select2-container-multi .select2-choices .select2-search-choice, .select2-selection__choice {
-    padding: 1px 28px 1px 8px !important;
-    margin: 4px 0 3px 5px !important;
-    position: relative;
-    line-height: 18px;
-    color: #fff;
-    cursor: default;
-    border: 1px solid #2a6395;
-    -webkit-background-clip: padding-box !important;
-    background-clip: padding-box !important;
-    -webkit-touch-callout: none !important;
-    -webkit-user-select: none !important;
-    -khtml-user-select: none;
-    -moz-user-select: none;
-    -ms-user-select: none;
-    user-select: none;
-    background-color: #3276b1;
-}
-.smart-form .input input, .smart-form .select select, .smart-form .textarea textarea {
-    display: block;
-    box-sizing: border-box;
-    -moz-box-sizing: border-box;
-    width: 100%;
-    height: 32px;
-    line-height: 32px;
-    padding: 5px 10px;
-    outline: 0;
-    border-width: 1px;
-    border-style: solid;
-    border-radius: 0;
-    background: #fff;
-    font: 16px/16px 'Open Sans',Helvetica,Arial,sans-serif;
-    color: #404040;
-    appearance: normal;
-    -moz-appearance: none;
-    -webkit-appearance: none;
-}
-@media only screen and (max-width: 640px) and (min-width: 320px){
-
-  .scrollbar
-{
- width: 100%;
- height: 450px;
- overflow: auto;
-}
-}
   
-
-  </style>
 <div id="main" role="main">
   <!-- MAIN CONTENT -->
   <div id="content" class="container">
@@ -577,10 +524,10 @@
     <div class="modal-content">
 
       <div class="modal-header">
-        <h5 class="modal-title" id="exampleModalLongTitle">श्री धर्मदास गण जनगणना फॉर्म को भरने हेतु निर्देश</h5>
-        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+        <h5 class="modal-title" id="exampleModalLongTitle">श्री धर्मदास गण जनगणना फॉर्म को भरने हेतु निर्देश <button type="button" class="close" data-dismiss="modal" aria-label="Close">
           <span aria-hidden="true">&times;</span>
-        </button>
+        </button></h5>
+        
       </div>
       <div class="modal-body scrollbar">
          <ul style="font-size: 18px;font-weight: bold; padding-left:20px;">

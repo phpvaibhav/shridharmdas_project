@@ -38,7 +38,7 @@
 					<!-- end widget edit box -->
 					<!-- widget content -->
 					<div class="widget-body padding">
-						<?php if(empty($countuser)): ?>
+						<?php if(!empty($countuser)): ?>
 							<div class="row">
 	<div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
 		 <form action="<?php print base_url();?>admin/users/exportUser" class="form-horizontal"  enctype="multipart/form-data" method="post" accept-charset="utf-8">
@@ -50,8 +50,8 @@
 															<span>.xlsx</span> 	
 														</label>
 														<label class="radio radio-inline">
-															<input type="radio" class="radiobox" name="export_type" value="xlsx"> 
-															<span>.xlsx</span> 	
+															<input type="radio" class="radiobox" name="export_type" value="xls"> 
+															<span>.xls</span> 	
 														</label>
 														<label class="radio radio-inline">
 															<input type="radio" class="radiobox" name="export_type" value="csv"> 
