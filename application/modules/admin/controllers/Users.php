@@ -7,6 +7,8 @@ class Users extends Common_Back_Controller {
 
     function __construct() {
         parent::__construct();
+         error_reporting(E_ALL);
+        ini_set('display_errors', 1);
         $this->check_admin_user_session();
     }
     public function index(){
@@ -56,6 +58,37 @@ class Users extends Common_Back_Controller {
         $fileName = 'shridharmdas-gan-'.time(); 
         $spreadsheet = new Spreadsheet();
         $sheet = $spreadsheet->getActiveSheet();
+        $styleArray = [
+    'font' => [
+        'bold' => true,
+    ],
+    'alignment' => [
+        'horizontal' => \PhpOffice\PhpSpreadsheet\Style\Alignment::HORIZONTAL_RIGHT,
+    ],
+    'borders' => [
+        'top' => [
+            'borderStyle' => \PhpOffice\PhpSpreadsheet\Style\Border::BORDER_THIN,
+        ],
+    ],
+    'fill' => [
+        'fillType' => \PhpOffice\PhpSpreadsheet\Style\Fill::FILL_GRADIENT_LINEAR,
+        'rotation' => 90,
+        'startColor' => [
+            'argb' => 'FFA0A0A0',
+        ],
+        'endColor' => [
+            'argb' => 'FFFFFFFF',
+        ],
+    ],
+];
+$sheet->getColumnDimension('A')->setAutoSize(true);
+$sheet->getColumnDimension('B')->setAutoSize(true);
+$sheet->getColumnDimension('C')->setAutoSize(true);
+$sheet->getColumnDimension('D')->setAutoSize(true);
+$sheet->getColumnDimension('E')->setAutoSize(true);
+$sheet->getColumnDimension('F')->setAutoSize(true);
+$sheet->getColumnDimension('G')->setAutoSize(true);
+ $sheet->getStyle('A1:G1')->applyFromArray($styleArray);
 
         $sheet->setCellValue('A1', 'First Name');
         $sheet->setCellValue('B1', 'Last Name');

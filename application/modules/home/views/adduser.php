@@ -41,6 +41,17 @@
     -moz-appearance: none;
     -webkit-appearance: none;
 }
+@media only screen and (max-width: 640px) and (min-width: 320px){
+
+  .scrollbar
+{
+ width: 100%;
+ height: 450px;
+ overflow: auto;
+}
+}
+  
+
   </style>
 <div id="main" role="main">
   <!-- MAIN CONTENT -->
@@ -561,17 +572,17 @@
 
 
 
-<div class="modal fade bd-example-modal-lg" tabindex="-1" role="dialog" aria-labelledby="myLargeModalLabel" aria-hidden="true">
-  <div class="modal-dialog modal-lg">
+<div class="modal fade bd-example-modal-lg " tabindex="-1" role="dialog" aria-labelledby="myLargeModalLabel" aria-hidden="true">
+  <div class="modal-dialog modal-lg ">
     <div class="modal-content">
 
-      <div class="modal-header text-center">
+      <div class="modal-header">
         <h5 class="modal-title" id="exampleModalLongTitle">श्री धर्मदास गण जनगणना फॉर्म को भरने हेतु निर्देश</h5>
         <button type="button" class="close" data-dismiss="modal" aria-label="Close">
           <span aria-hidden="true">&times;</span>
         </button>
       </div>
-      <div class="modal-body">
+      <div class="modal-body scrollbar">
          <ul style="font-size: 18px;font-weight: bold; padding-left:20px;">
            <li>गुरु भगवंत के नाम वाले कॉलम मे जिन्हे आपने अपना गुरु बनाया हो तो उनका नाम भरे |</li>
            <li>श्री संघ के नाम वाले कॉलम मे आप जहाँ रहते ही उस श्री संघ व शहर का नाम |</li>
