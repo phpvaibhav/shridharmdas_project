@@ -32,9 +32,9 @@ data_list.DataTable({
     //Set column definition initialisation properties.
   "columnDefs": [
     { orderable: false, targets: -1 },    
-  ] ,dom: 'lBfrtip',
-          buttons: [
-               'excel',  'csv',
-          ],
-          "lengthMenu": [[10, 25, 50, -1], [10, 25, 50, "All"]]
+  ]// ,dom: 'lBfrtip',
+        //  buttons: [
+             //  'excel',  'csv',
+        //  ],
+          //"lengthMenu": [[10, 25, 50, -1], [10, 25, 50, "All"]]
 });
