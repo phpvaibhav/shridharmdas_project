@@ -250,6 +250,7 @@
                       <option value="business">Business</option>
                       <option value="house wife">House wife</option>
                       <option value="student">Student</option>
+                       <option value="other">Other</option>
                       </select> <i></i> </label>
                   </section>
            

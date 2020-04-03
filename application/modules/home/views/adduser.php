@@ -22,6 +22,25 @@
     user-select: none;
     background-color: #3276b1;
 }
+.smart-form .input input, .smart-form .select select, .smart-form .textarea textarea {
+    display: block;
+    box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    width: 100%;
+    height: 32px;
+    line-height: 32px;
+    padding: 5px 10px;
+    outline: 0;
+    border-width: 1px;
+    border-style: solid;
+    border-radius: 0;
+    background: #fff;
+    font: 15px/16px 'Open Sans',Helvetica,Arial,sans-serif;
+    color: #404040;
+    appearance: normal;
+    -moz-appearance: none;
+    -webkit-appearance: none;
+}
   </style>
 <div id="main" role="main">
   <!-- MAIN CONTENT -->
@@ -32,7 +51,7 @@
 <div class="row">
 
   <!-- NEW COL START -->
-            <div class="col-sm-12 col-md-12 col-lg-2 hidden-xs hidden-sm">
+      <!--       <div class="col-sm-12 col-md-12 col-lg-2 hidden-xs hidden-sm">
             <div class="hero-1">
 
               <div class="pull-left login-desc-box-l">
@@ -41,8 +60,14 @@
               </div>
             </div>
 
-          </div>
-  <article class="col-sm-12 col-md-12 col-lg-8">
+          </div> -->
+  <article class="col-sm-12 col-md-12 col-lg-12">
+    <header>
+       <center> <a data-toggle="modal" href="#myModal" class="btn  btn-sm header-btn"><h3>फॉर्म को भरने हेतु निर्देश</h3> </a>  </center>
+    </header>
+   
+  </article>
+  <article class="col-sm-12 col-md-12 col-lg-12">
     
     <!-- Widget ID (each widget will need unique ID)-->
     <div class="jarviswidget" id="wid-id-1" data-widget-editbutton="false" data-widget-custombutton="false">
@@ -61,7 +86,8 @@
       -->
       <header>
         <span class="widget-icon"> <i class="fa fa-edit"></i> </span>
-        <h2><?= lang('User_Form'); ?></h2>       
+        <h2><?= lang('User_Form'); ?></h2>  
+          
           <ul class="header-dropdown-list hidden-xs">
           <li>
             <?php if($this->session->userdata('site_lang')=='english'): ?>
@@ -102,6 +128,7 @@
             <header>
              <?= lang('basic_Information'); ?>
               <input type="hidden" name="id" value="0">
+
             </header>
             <fieldset>
               <div class="row">
@@ -288,6 +315,7 @@
                       <option value="business">Business</option>
                       <option value="house wife">House wife</option>
                       <option value="student">Student</option>
+                      <option value="other">Other</option>
                       </select> <i></i> </label>
                   </section>
            
@@ -496,7 +524,7 @@
 
   </article>
   <!-- END COL -->
-            <div class="col-sm-12 col-md-12 col-lg-2 hidden-xs hidden-sm">
+           <!--  <div class="col-sm-12 col-md-12 col-lg-2 hidden-xs hidden-sm">
             <div class="hero-1">
 
               <div class="pull-left login-desc-box-l">
@@ -505,7 +533,7 @@
               </div>
             </div>
 
-          </div>
+          </div> -->
 
 </div>
 
@@ -530,3 +558,67 @@
   var Good_job ="<?= lang('Good_job');?>";
   var Your_form_submitted_successfully ="<?= lang('Your_form_submitted_successfully');?>";
 </script>
+
+
+
+      <!-- Modal -->
+<div class="modal fade bd-example-modal-lg" id="myModal" tabindex="-1" role="dialog" style="width: 100%" aria-labelledby="myLargeModalLabel" >
+  <div class="modal-dialog modal-lg">
+    <div class="modal-content">
+      <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal" aria-hidden="true">
+          &times;
+        </button>
+        <h4 class="modal-title text-center">
+          श्री धर्मदास गण जनगणना  फॉर्म को भरने हेतु निर्देश 
+        </h4>
+      </div>
+      <div class="modal-body">
+             <!-- Add CUstomer -->
+        <!-- widget content -->
+        <div class="widget-body no-padding">
+          <form>
+          
+            <fieldset>
+             
+                <section>
+               <p >
+                <ul style="font-size: 18px;font-weight: bold;">
+                  <li>गुरु भगवंत के नाम वाले कॉलम मे जिन्हे आपने अपना गुरु बनाया हो तो उनका नाम भरे |</li>
+                  <li>श्री संघ के नाम वाले कॉलम मे आप जहाँ रहते ही उस श्री संघ व शहर का नाम |</li>
+                  <li>घर का पता वाले कॉलम मे आप वर्तमान मे जहा रह रहे है उसका सम्पूर्ण पता </li>
+                  <li>कार्यालय प्रतिष्ठान वाले कॉलम मे जिस कंपनी मे आपकी जॉब हो या आपका व्यापार हो उसका नाम व पूर्ण पता लिखे|</li>
+                  <li>नाम वाले कॉलम मे अपना नाम व उपनाम वाले कॉलम मे अपनी सरनेम लिखे |</li>
+                  <li>श्री संघ या संगठन वाले कॉलम मे यदि आपके पास कोई स्थानीय संघ ,धर्मदास गण परिषद ,युवा संगठन  , श्राविका संगठन, नवयुवक मण्डल, बालिका मण्डल मे कोई पद हो तो उसका उल्लेख करे |</li>
+                  <li>आपके पहला फॉर्म submit होने पर दूसरा फॉर्म स्वतः जनरेट हो जाएगा आप अपने परिवार के दूसरे सदस्य का फॉर्म submit  कर सकते है उसमे आपको पता और कार्यालय यदि एक ही है तो दूसरा भरने की जरूरत नहीं है, आप same as above पर क्लिक करे |</li>
+                  <li>अपने परिवार के दूसरे सदस्य का फॉर्म भरते समय आपको अपने फॉर्म मैं भरा हुआ अड्रेस ही रखना हो तो अपना फॉर्म भरते समय remember address ऑप्शन पर क्लिक करे ।</li>
+                  <li>इस फ़ॉर्म मे अनिवार्य रूप से  नाम , उपनाम , पिता/पति का नाम , जन्म तारीख यदि याद ना हों तो 1 जनवरी जिस वर्ष मे आपका जन्म हुआ हो वह डाल देवे , मोबाईल नंबर , लिंग , वैवाहिक स्थिति यह सभी कॉलम को भरना |</li>
+                </ul>
+           
+               </p>
+                  
+
+                 
+                 
+                </section>
+                <footer>
+            
+            </footer>
+               
+                
+            </fieldset>
+
+            
+          </form>
+        </div>
+        <!-- end widget content -->
+        <!-- Add CUstomer -->
+          </div>
+           <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+       
+      </div>
+    </div>
+  </div>
+</div>
+<!-- End modal -->
