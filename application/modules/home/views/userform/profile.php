@@ -186,10 +186,10 @@
                   <div class="row">
                       <div class="col-md-12">
                         <div class="row">
-                        <section class="col col-8">
+                        <section class="col col-6">
                         <b><?= lang('permanent_address'); ?></b>
                         </section>  
-                        <section class="col col-4">
+                        <section class="col col-6">
                            <div class="form-label-group pull-right">
 
                               <input type="checkbox"  id="Same_AddressP" name="remember">  <label for="Same_AddressP">Same as above</label>
@@ -264,10 +264,10 @@
                   <div class="row">
                       <div class="col-md-12">
                         <div class="row">
-                        <section class="col col-8">
+                        <section class="col col-6">
                         <b><?= lang('office_address'); ?></b>
                         </section>  
-                        <section class="col col-4">
+                        <section class="col col-6">
                            <div class="form-label-group pull-right">
 
                               <input type="checkbox"  id="Same_Address" name="remember">  <label for="Same_Address">Same as above</label>
