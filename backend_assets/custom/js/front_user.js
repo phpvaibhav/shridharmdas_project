@@ -195,7 +195,26 @@ $(document).ready(function(){
            // $('#city').html('<option value="">Select state first</option>'); 
         }
     });
+    $('#pcountry').on('change',function(){
+        var countryID = $(this).val();
+        if(countryID){
+            $.ajax({
+                type:'POST',
+                url:base_url+'home/countryToState',
+                data:{'country':countryID},
+                success:function(html){
+                    $('#pstate').html(html);
+                   // $('#city').html('<option value="">Select state first</option>'); 
+                }
+            }); 
+        }else{
+            $('#pstate').html('<option value="">Select country first</option>');
+           // $('#city').html('<option value="">Select state first</option>'); 
+        }
+    });
+    
       $("#country").trigger("change");
+      $("#pcountry").trigger("change");
       $("#ocountry").trigger("change");
 /*    $('#state').on('change',function(){
         var stateID = $(this).val();
@@ -254,18 +273,34 @@ $(function() {
       localStorage.add_chkbx    =  "";
     }
   });
-    $('#Same_Address').click(function() {
-    if ($('#Same_Address').is(':checked')) {
+    $('#Same_AddressP').click(function() {
+    if ($('#Same_AddressP').is(':checked')) {
 
-          $('#oaddress').val($('#address').val());
-          $('#ocity').val($('#city').val());
-          $('#ozip_code').val($('#zip_code').val());
-          $('#otehsil').val($('#tehsil').val());
-          $('#odistrict').val($('#district').val());
-          $("#ostate option[value='"+($('#state').val())+"']").prop('selected', true);
+          $('#paddress').val($('#address').val());
+          $('#pcity').val($('#city').val());
+          $('#pzip_code').val($('#zip_code').val());
+          $('#ptehsil').val($('#tehsil').val());
+          $('#pdistrict').val($('#district').val());
+          $("#pstate option[value='"+($('#state').val())+"']").prop('selected', true);
     } else {
     //gfgg
     }
   });
+
+  $('#Same_Address').click(function() {
+    if ($('#Same_Address').is(':checked')) {
+
+          $('#oaddress').val($('#paddress').val());
+          $('#ocity').val($('#pcity').val());
+          $('#ozip_code').val($('#pzip_code').val());
+          $('#otehsil').val($('#ptehsil').val());
+          $('#odistrict').val($('#pdistrict').val());
+          $("#ostate option[value='"+($('#pstate').val())+"']").prop('selected', true);
+    } else {
+    //gfgg
+    }
+  });
+
+    
 });
 //rember me

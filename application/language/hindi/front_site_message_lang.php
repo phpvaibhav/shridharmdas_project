@@ -28,6 +28,7 @@
 	$lang['No'] 										= "नहीं";
 	$lang['home_address'] 								= "घर का पता";	
 	$lang['office_address'] 							= "कार्यालय का पता";	
+	$lang['permanent_address'] 					        = "स्थायी घर का पता";	
 	$lang['Religious_knowledge'] 							= "धार्मिक ज्ञान";	
 	$lang['Education'] 					= "शिक्षा";	
 	$lang['Profession'] 					= "व्यवसाय";	

@@ -1,4 +1,3 @@
-
 <!DOCTYPE HTML>
 <html lang="hi">
 <head>
@@ -98,6 +97,8 @@
 						<li><a href="<?= base_url(); ?>">Home</a></li>
 					<!-- 	<li><a href="<?= base_url(); ?>about-us">About Us</a></li> -->
 						<li><a href="<?= base_url(); ?>user-form">User Form</a></li>
+							<li><a href="<?= base_url(); ?>home/add_user">Step-1</a></li>
+					<li><a href="<?= base_url(); ?>home/add_profile">Step-2</a></li>
 						<!-- <li class="dropdown"><a href="#">Sermon <span class="nav_arrow"></span></a>
 							<ul class="sub-menu">
 								<li><a href="sermon.html">Sermon</a></li>
@@ -139,6 +140,8 @@
 					<li><a href="<?= base_url(); ?>">Home</a></li>
 					<!-- <li><a href="<?= base_url(); ?>about-us">About Us</a></li> -->
 					<li><a href="<?= base_url(); ?>user-form">User Form</a></li>
+					<li><a href="<?= base_url(); ?>home/add_user">Step-1</a></li>
+					<li><a href="<?= base_url(); ?>home/add_profile">Step-2</a></li>
 				<!-- 	<li><a href="<?= base_url(); ?>contact-us">Contact</a></li> -->
 <!-- 				<li class="has-child">
 					<a href="#">Home</a>

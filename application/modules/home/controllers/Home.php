@@ -24,6 +24,20 @@ class Home extends Common_Front_Controller {
         $data['title'] = 'Contact us';
         $this->load->front_render('contactus',$data);
     }//End Function
+    public function add_user() { 
+        $data['title'] = 'User Form';
+        $data['front_styles'] = array();
+         $data['front_scripts'] = array('backend_assets/custom/js/front_user.js');
+        $this->load->front_render_minimal('userform/signup',$data);
+    }//End Function
+    public function add_profile() { 
+        $data['title'] = 'User Form';
+        $data['front_styles'] = array();
+         $data['front_scripts'] = array('backend_assets/custom/js/front_user.js');
+                   $countries      = $this->common_model->getAll('countries');
+        $data['countries'] = $countries;
+        $this->load->front_render_minimal('userform/profile',$data);
+    }//End Function
 
 
     public function addUser() { 

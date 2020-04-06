@@ -27,6 +27,7 @@
 	$lang['Yes'] 								= "Yes";
 	$lang['No'] 								= "No";	
 	$lang['home_address'] 						= "Home address";	
+	$lang['permanent_address'] 					= "Permanent address";	
 	$lang['office_address'] 					= "Office address";	
 	$lang['Religious_knowledge'] 					= "Religious knowledge";	
 	$lang['Education'] 					= "Education";	
