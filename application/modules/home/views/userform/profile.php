@@ -14,7 +14,7 @@
                   <div class="row">
                       <div class="col-md-12">
                           <header>
-                          <?= lang('basic_Information'); ?>
+                          <b><?= lang('basic_Information'); ?></b>
                           <input type="hidden" name="id" value="0">
 
                           </header>
@@ -110,7 +110,7 @@
                   <div class="row">
                       <div class="col-md-12">
                           <header>
-                          <?= lang('home_address'); ?>
+                          <b><?= lang('home_address'); ?></b>
                           </header>
                           <hr>
                       </div>
@@ -187,7 +187,7 @@
                       <div class="col-md-12">
                         <div class="row">
                         <section class="col col-8">
-                        <?= lang('permanent_address'); ?>
+                        <b><?= lang('permanent_address'); ?></b>
                         </section>  
                         <section class="col col-4">
                            <div class="form-label-group pull-right">
