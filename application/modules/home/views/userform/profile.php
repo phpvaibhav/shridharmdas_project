@@ -265,7 +265,7 @@
                       <div class="col-md-12">
                         <div class="row">
                         <section class="col col-8">
-                        <?= lang('office_address'); ?>
+                        <b><?= lang('office_address'); ?></b>
                         </section>  
                         <section class="col col-4">
                            <div class="form-label-group pull-right">
@@ -340,7 +340,7 @@
                     
                   </div>
                  
-
+                  <hr>
                 
                   <button class="btn btn-outline  btn-block tl-btn-round-2 text-uppercase font-weight-bold mb-2" type="submit"> <?= lang('Submit'); ?></button>
 
