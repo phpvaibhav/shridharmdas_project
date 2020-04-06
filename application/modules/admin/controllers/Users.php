@@ -90,9 +90,32 @@ $sheet->getColumnDimension('F')->setAutoSize(true);
 $sheet->getColumnDimension('G')->setAutoSize(true);
 $sheet->getColumnDimension('H')->setAutoSize(true);
 $sheet->getColumnDimension('I')->setAutoSize(true);
- $sheet->getStyle('A1:I1')->applyFromArray($styleArray);
-$sheet->getStyle('A1:I1')->getAlignment()->setHorizontal('center');
-$sheet->getStyle('A:I')->getAlignment()->setHorizontal('center');
+$sheet->getColumnDimension('J')->setAutoSize(true);
+$sheet->getColumnDimension('K')->setAutoSize(true);
+$sheet->getColumnDimension('L')->setAutoSize(true);
+$sheet->getColumnDimension('M')->setAutoSize(true);
+$sheet->getColumnDimension('N')->setAutoSize(true);
+$sheet->getColumnDimension('O')->setAutoSize(true);
+$sheet->getColumnDimension('P')->setAutoSize(true);
+
+$sheet->getColumnDimension('Q')->setAutoSize(true);
+$sheet->getColumnDimension('R')->setAutoSize(true);
+$sheet->getColumnDimension('S')->setAutoSize(true);
+$sheet->getColumnDimension('T')->setAutoSize(true);
+$sheet->getColumnDimension('U')->setAutoSize(true);
+$sheet->getColumnDimension('V')->setAutoSize(true);
+$sheet->getColumnDimension('W')->setAutoSize(true);
+$sheet->getColumnDimension('X')->setAutoSize(true);
+$sheet->getColumnDimension('Y')->setAutoSize(true);
+$sheet->getColumnDimension('Z')->setAutoSize(true);
+$sheet->getColumnDimension('AA')->setAutoSize(true);
+$sheet->getColumnDimension('AB')->setAutoSize(true);
+$sheet->getColumnDimension('AC')->setAutoSize(true);
+$sheet->getColumnDimension('AD')->setAutoSize(true);
+
+$sheet->getStyle('A1:AD1')->applyFromArray($styleArray);
+$sheet->getStyle('A1:AD1')->getAlignment()->setHorizontal('center');
+$sheet->getStyle('A:AD')->getAlignment()->setHorizontal('center');
         $sheet->setCellValue('A1', 'First Name');
         $sheet->setCellValue('B1', 'Last Name');
         $sheet->setCellValue('C1', 'Parent Name');
@@ -102,10 +125,37 @@ $sheet->getStyle('A:I')->getAlignment()->setHorizontal('center');
         $sheet->setCellValue('G1', 'DOB');
         $sheet->setCellValue('H1', 'Gender');
         $sheet->setCellValue('I1', 'Marital Status');
+        
+        $sheet->setCellValue('J1', 'Education');
+        $sheet->setCellValue('K1', 'Profession');
+        $sheet->setCellValue('L1', 'Blood Group');
+        $sheet->setCellValue('M1', 'Parivaar Guru Aamana');
+        $sheet->setCellValue('N1', 'Shree Sangh');
+        $sheet->setCellValue('O1', 'Dhaarmik Gyaan');
+        $sheet->setCellValue('P1', 'Gan / Sangathan / Sangh / Mandal Mein Daayitv');
+
+        $sheet->setCellValue('Q1', 'Home Address');
+        $sheet->setCellValue('R1', 'City');
+        $sheet->setCellValue('S1', 'Zip code');
+        $sheet->setCellValue('T1', 'Tehsil');
+        $sheet->setCellValue('U1', 'District');
+        $sheet->setCellValue('V1', 'State');
+        $sheet->setCellValue('W1', 'Country');
+
+        $sheet->setCellValue('X1', 'Office Address');
+        $sheet->setCellValue('Y1', 'City');
+        $sheet->setCellValue('Z1', 'Zip code');
+        $sheet->setCellValue('AA1', 'Tehsil');
+        $sheet->setCellValue('AB1', 'District');
+        $sheet->setCellValue('AC1', 'State');
+        $sheet->setCellValue('AD1', 'Country');
+        
 
         $rowCount = 2;
         foreach ($empInfo as $element) {
               $usermeta        = $this->common_model->getsingle('user_meta',array('userId'=>$element->id));
+               $addresses        = $this->common_model->getAll('addresses',array('userId'=>$element->id));
+             // pr($usermeta);
         $sheet->setCellValue('A' . $rowCount, display_placeholder_text($element->firstName));
         $sheet->setCellValue('B' . $rowCount, display_placeholder_text($element->lastName));
         $sheet->setCellValue('C' . $rowCount, display_placeholder_text($element->parentName));
@@ -115,6 +165,30 @@ $sheet->getStyle('A:I')->getAlignment()->setHorizontal('center');
         $sheet->setCellValue('G' . $rowCount, display_placeholder_text(date('d-m-Y',strtotime($element->dob))));
         $sheet->setCellValue('H' . $rowCount, display_placeholder_text($element->gender));
         $sheet->setCellValue('I' . $rowCount, display_placeholder_text($element->maritalStatus));
+        $sheet->setCellValue('J' . $rowCount, display_placeholder_text(@$usermeta['education']));
+        $sheet->setCellValue('K' . $rowCount, display_placeholder_text(@$usermeta['profession']));
+        $sheet->setCellValue('L' . $rowCount, display_placeholder_text(@$usermeta['bloodGroup']));
+        $sheet->setCellValue('M' . $rowCount, display_placeholder_text(@$usermeta['preceptorName']));
+        $sheet->setCellValue('N' . $rowCount, display_placeholder_text(@$usermeta['unionName']));
+        $sheet->setCellValue('O' . $rowCount, display_placeholder_text(@$usermeta['religiousKnowledge']));
+        $sheet->setCellValue('P' . $rowCount, display_placeholder_text(@$usermeta['unionResponsibility']));
+
+        $sheet->setCellValue('Q' . $rowCount, display_placeholder_text(@$addresses[0]->address));
+        $sheet->setCellValue('R' . $rowCount, display_placeholder_text(@$addresses[0]->city));
+        $sheet->setCellValue('S' . $rowCount, display_placeholder_text(@$addresses[0]->zip_code));
+        $sheet->setCellValue('T' . $rowCount, display_placeholder_text(@$addresses[0]->tehsil));
+        $sheet->setCellValue('U' . $rowCount, display_placeholder_text(@$addresses[0]->district));
+        $sheet->setCellValue('V' . $rowCount, display_placeholder_text(@$addresses[0]->state));
+        $sheet->setCellValue('W' . $rowCount, display_placeholder_text(@$addresses[0]->country));
+
+        $sheet->setCellValue('X' . $rowCount, display_placeholder_text(@$addresses[1]->address));
+        $sheet->setCellValue('Y' . $rowCount, display_placeholder_text(@$addresses[1]->city));
+        $sheet->setCellValue('Z' . $rowCount, display_placeholder_text(@$addresses[1]->zip_code));
+        $sheet->setCellValue('AA' . $rowCount, display_placeholder_text(@$addresses[1]->tehsil));
+        $sheet->setCellValue('AB' . $rowCount, display_placeholder_text(@$addresses[1]->district));
+        $sheet->setCellValue('AC' . $rowCount, display_placeholder_text(@$addresses[1]->state));
+        $sheet->setCellValue('AD' . $rowCount, display_placeholder_text(@$addresses[1]->country));
+        
         $rowCount++;
         }
 
