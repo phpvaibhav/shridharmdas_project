@@ -206,8 +206,11 @@
         <ul>
           <li class="<?php echo (strtolower($this->router->fetch_class()) == "admin") ? "active" : "" ?>">
             <a href="<?php echo base_url('dashboard'); ?>" title="<?= lang('Dashboard');?>"><i class="fa fa-lg fa-fw fa-home"></i> <span class="menu-item-parent"><?= lang('Dashboard');?></span></a>
+          </li>   
+          <li class="<?php echo (strtolower($this->router->fetch_class()) == "users") ? "active" : "" ?>">
+            <a href="<?php echo base_url('users'); ?>" title="<?= lang('Users');?>"><i class="fa fa-lg fa-fw fa-users"></i> <span class="menu-item-parent"><?= lang('Users');?></span></a>
           </li> 
-          <li class="<?php echo (strtolower($this->router->fetch_class()) == "preceptor") ? "active" : "" ?>">
+        <!--   <li class="<?php echo (strtolower($this->router->fetch_class()) == "preceptor") ? "active" : "" ?>">
             <a href="<?php echo base_url('preceptor'); ?>" title="<?= lang('Preceptor');?>"><i class="fa fa-lg fa-fw  fa-sun-o"></i> <span class="menu-item-parent"><?= lang('Preceptor');?></span></a>
           </li> 
           <li class="<?php echo (strtolower($this->router->fetch_class()) == "union") ? "active" : "" ?>">
@@ -215,11 +218,11 @@
           </li>
           <li class="<?php echo (strtolower($this->router->fetch_class()) == "office") ? "active" : "" ?>">
             <a href="<?php echo base_url('office'); ?>" title="<?= lang('Office');?>"><i class="fa fa-lg fa-fw  fa-building"></i> <span class="menu-item-parent"><?= lang('Office');?></span></a>
-          </li>
+          </li> -->
 <!--           <li class="<?php echo (strtolower($this->router->fetch_class()) == "users") ? "active" : "" ?>">
             <a href="<?php echo base_url('users'); ?>" title="<?= lang('Users');?>"><i class="fa fa-lg fa-fw fa-users"></i> <span class="menu-item-parent"><?= lang('Users');?></span></a>
           </li> -->
-          <li class="<?php echo (strtolower($this->router->fetch_class()) == "users") ? "active" : "" ?>">
+<!--           <li class="<?php echo (strtolower($this->router->fetch_class()) == "users") ? "active" : "" ?>">
             <a href="javascript:void(0);" title="<?= lang('Users');?>"><i class="fa fa-lg fa-fw fa-users"></i> <span class="menu-item-parent"><?= lang('Users');?></span></a>
             <ul>
               <li>
@@ -230,7 +233,7 @@
               </li>
              
             </ul> 
-          </li>
+          </li> -->
         </ul> 
       </nav>
       <!--    <span class="minifyme" data-action="minifyMenu"> 

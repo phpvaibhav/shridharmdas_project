@@ -3,7 +3,7 @@
       <div class="col-md-12">
         <div class="login py-5">
             <div class="row">
-              <div class="col-md-6 offset-col-6 mx-auto d-block login-page">
+              <div class="col-md-8 offset-col-4 mx-auto d-block login-page">
                 <div class="login-page">
                     <h4 class="title"><?= lang('User_Form'); ?></h4>
                     <p class="sub_title text-center"><!-- Already have an account? --> 
@@ -11,22 +11,75 @@
                 </div>
                 
                 <form id="user-add-form" method="post" class="login-form-t" novalidate="novalidate" action="users/add" novalidate="novalidate" autocomplete="off">
-                  <div class="form-label-group">
-                    <label for="firstName"><?= lang('First_name'); ?></label>
-                    <input type="text" id="firstName" class="form-control" placeholder="<?= lang('First_name'); ?>"  name="firstName">
+                <div class="row" >
+                  <div class="col-md-6">
+                      <div class="form-label-group">
+                        <label for="firstName"><?= lang('First_name'); ?></label>
+                        <input type="text" id="firstName" class="form-control" placeholder="<?= lang('First_name'); ?>"  name="firstName">
+                      </div>
                   </div>
-                  <div class="form-label-group">
-                    <label for="lastName"><?= lang('Last_name'); ?></label>
-                    <input type="text" id="lastName" class="form-control" placeholder="<?= lang('Last_name'); ?>"  name="lastName">
+                  <div class="col-md-6">
+                 
+                    <div class="form-label-group">
+                      <label for="lastName"><?= lang('Last_name'); ?></label>
+                      <input type="text" id="lastName" class="form-control" placeholder="<?= lang('Last_name'); ?>"  name="lastName">
+                    </div>
                   </div>
-                  <div class="form-label-group">
-                    <label for="contactNumber"><?= lang('Phone'); ?></label>
-                    <input type="text" id="contactNumber" class="form-control" placeholder="<?= lang('Phone'); ?>"  name="contactNumber"  data-mask="999 999 9999">
+                  <div class="col-md-6">
+                      <div class="form-label-group">
+                        <label for="contactNumber"><?= lang('Phone'); ?></label>
+                        <input type="text" id="contactNumber" class="form-control" placeholder="<?= lang('Phone'); ?>"  name="contactNumber"  data-mask="999 999 9999">
+                      </div>
                   </div>
-                  <div class="form-label-group">
-                    <label for="aadharNumber"><?= lang('Aadhar_number'); ?></label>
-                    <input type="text" id="aadharNumber" class="form-control" placeholder="<?= lang('Aadhar_number'); ?>"  name="aadharNumber"  data-mask="9999-9999-9999">
+                  <div class="col-md-6">
+                 
+                    <div class="form-label-group">
+                      <label for="aadharNumber"><?= lang('Aadhar_number'); ?></label>
+                      <input type="text" id="aadharNumber" class="form-control" placeholder="<?= lang('Aadhar_number'); ?>"  name="aadharNumber"  data-mask="9999-9999-9999">
+                    </div>
                   </div>
+
+                </div>
+                <div class="row">
+                    <div class="col-md-6">
+                      <div class="row">
+                          <div class="col-md-12">
+                              <div class="form-label-group">
+                              <label for="frontImage">Front Aadhar Image</label>
+                              <input type="file" class="form-control" id="frontImage"  name="frontImage" accept="image/*" onchange="readURL(this,1);" >
+                              </div>
+                          </div>
+                          <div class="col-md-12">
+                                <div class="img-shop-wrapper tl-shop-single">
+                                <div class="tl-img-shop">
+                                <img src="https://via.placeholder.com/300x225" alt="image" class="mx-auto image-fluid d-block" id="blah_1">
+                                </div>
+                                </div>
+                          </div>
+                      </div>
+                    </div>
+                    <div class="col-md-6">
+                      <div class="row">
+                          <div class="col-md-12">
+                              <div class="form-label-group">
+                              <label for="backImage">Back Aadhar Image</label>
+                              <input type="file" class="form-control" id="backImage"  name="backImage"  accept="image/*" onchange="readURL(this,2);" >
+                              </div>
+                          </div>
+                          <div class="col-md-12">
+                                <div class="img-shop-wrapper tl-shop-single">
+                                <div class="tl-img-shop">
+                                <img src="https://via.placeholder.com/300x225" alt="image" class="mx-auto image-fluid d-block" id="blah_2">
+                                </div>
+                                </div>
+                          </div>
+                      </div>
+                    </div>
+                    
+                </div>
+
+
+
                   
 
                 <!--   <div class="form-label-group">

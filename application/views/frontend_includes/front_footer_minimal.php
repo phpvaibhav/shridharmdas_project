@@ -29,18 +29,8 @@ $backend_assets =  base_url().'backend_assets/';
 	<script src="<?= $frontend_assets; ?>assets/js/audio_custome.js"></script>
 
      
-      <script src="<?php echo $backend_assets; ?>custom/js/common.js"></script>
- 		<script type="text/javascript">
- 			$("#dob").datepicker({
-  dateFormat  : 'dd-mm-yy',
-  maxDate     : new Date(),
-  changeMonth : true,
-  changeYear  : true,
-  yearRange   : "-100:+0",
-  prevText    : '<i class="fa fa-chevron-left"></i>',
-  nextText    : '<i class="fa fa-chevron-right"></i>',
-});
- 		</script>
+      <script src="<?php echo $frontend_assets; ?>js/common.js"></script>
+
         
     <?php if(!empty($front_scripts)) { load_js($front_scripts);} //load required page scripts ?>
 </body>

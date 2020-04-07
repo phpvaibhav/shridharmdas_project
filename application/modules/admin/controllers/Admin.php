@@ -35,9 +35,9 @@ class Admin extends Common_Back_Controller {
         $data['parent']     = lang("Dashboard");
         $data['title']      = lang("Dashboard");
         $data['users']      = $this->common_model->get_total_count('users');
-        $data['preceptor']  = $this->common_model->get_total_count('preceptor');
+    /*    $data['preceptor']  = $this->common_model->get_total_count('preceptor');
         $data['union']      = $this->common_model->get_total_count('union_group');
-        $data['office']     = $this->common_model->get_total_count('offices');
+        $data['office']     = $this->common_model->get_total_count('offices');*/
         $this->load->admin_render('dashboard', $data, '');
     }//End Function
     function switchLang($language = "",$url = "") {

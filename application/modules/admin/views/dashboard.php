@@ -2,7 +2,7 @@
 <section id="widget-grid" class="">
     <!-- Widgets -->
     <div class="row clearfix">
-        <div class="col-lg-3 col-md-3 col-sm-6 col-xs-12">
+<!--         <div class="col-lg-3 col-md-3 col-sm-6 col-xs-12">
             <a href="<?php echo base_url('preceptor'); ?>">
                 <div class="info-box bg-orange hover-expand-effect">
                     <div class="icon">
@@ -14,8 +14,8 @@
                     </div>
                 </div>
             </a>
-        </div> 
-        <div class="col-lg-3 col-md-3 col-sm-6 col-xs-12">
+        </div>  -->
+<!--         <div class="col-lg-3 col-md-3 col-sm-6 col-xs-12">
             <a href="<?php echo base_url('union'); ?>">
                 <div class="info-box bg-red hover-expand-effect">
                     <div class="icon">
@@ -27,8 +27,8 @@
                     </div>
                 </div>
             </a>
-        </div>  
-        <div class="col-lg-3 col-md-3 col-sm-6 col-xs-12">
+        </div>   -->
+<!--         <div class="col-lg-3 col-md-3 col-sm-6 col-xs-12">
             <a href="<?php echo base_url('office'); ?>">
                 <div class="info-box bg-blue hover-expand-effect">
                     <div class="icon">
@@ -40,7 +40,7 @@
                     </div>
                 </div>
             </a>
-        </div> 
+        </div>  -->
         <div class="col-lg-3 col-md-3 col-sm-6 col-xs-12">
             <a href="<?php echo base_url('users'); ?>">
                 <div class="info-box bg-green hover-expand-effect">

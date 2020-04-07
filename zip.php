@@ -1,7 +1,7 @@
 <?php function zipToinfo($zipcode){
       
         
-        $url = "http://maps.googleapis.com/maps/api/geocode/json?address=".$zipcode."&sensor=false$key=AIzaSyDjhKBJtoevmCuR5iD1El6cuDHTMByw9Co";
+        $url = "http://maps.googleapis.com/maps/api/geocode/json?address=".urlencode($zipcode)."&sensor=true$key=AIzaSyBNPbKlU_F4hyc6SY5A3yljsLX_51SYzaA";
 
         $ch = curl_init();
         curl_setopt($ch, CURLOPT_URL, $url);
@@ -17,11 +17,11 @@
         
         
     }//ENd FUnction
-   // zipToinfo('indore');
+    zipToinfo('indore');
     function geolocationaddress($lat,$long)
     {
        // $geolocation = $lat.','.$long;
-        $geocode = "https://maps.googleapis.com/maps/api/geocode/json?latlng=$lat,$long&sensor=false&key=AIzaSyDjhKBJtoevmCuR5iD1El6cuDHTMByw9Co";
+        $geocode = "https://maps.googleapis.com/maps/api/geocode/json?latlng=$lat,$long&sensor=true&key=AIzaSyBNPbKlU_F4hyc6SY5A3yljsLX_51SYzaA";
         $ch = curl_init();
         curl_setopt($ch, CURLOPT_URL, $geocode);
         curl_setopt($ch, CURLOPT_RETURNTRANSFER, 1);
@@ -50,7 +50,7 @@
         return $address;
     }//End Function
     function getLnt($zip){
-$url = "https://maps.googleapis.com/maps/api/geocode/json?address=".urlencode($zip)."&key=AIzaSyDjhKBJtoevmCuR5iD1El6cuDHTMByw9Co";
+$url = "https://maps.googleapis.com/maps/api/geocode/json?address=".urlencode($zip)."&key=AIzaSyBNPbKlU_F4hyc6SY5A3yljsLX_51SYzaA";
 $result_string = file_get_contents($url);
 $result = json_decode($result_string, true);
 $result1[]=$result['results'][0];
@@ -58,6 +58,6 @@ $result2[]=$result1[0]['geometry'];
 $result3[]=$result2[0]['location'];
 return $result3[0];
 }
-   // geolocationaddress(22.719568,75.857727);
-
+    geolocationaddress(22.719568,75.857727);
+//getLnt(452011);
 ?>
