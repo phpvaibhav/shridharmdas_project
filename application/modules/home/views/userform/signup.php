@@ -46,7 +46,7 @@
                           <div class="col-md-12">
                               <div class="form-label-group">
                               <label for="frontImage">Front Aadhar Image</label>
-                              <input type="file" class="form-control" id="frontImage"  name="frontImage" accept="image/*" onchange="readURL(this,1);" >
+                              <input type="file" class="form-control" id="frontImage"  name="frontImage" accept="image/*" onchange="readURL(this,1);" style="border: 0px solid #ddd;" >
                               </div>
                           </div>
                           <div class="col-md-12">
@@ -63,7 +63,7 @@
                           <div class="col-md-12">
                               <div class="form-label-group">
                               <label for="backImage">Back Aadhar Image</label>
-                              <input type="file" class="form-control" id="backImage"  name="backImage"  accept="image/*" onchange="readURL(this,2);" >
+                              <input type="file" class="form-control" id="backImage"  name="backImage"  accept="image/*" onchange="readURL(this,2);" style="border: 0px solid #ddd;" >
                               </div>
                           </div>
                           <div class="col-md-12">
