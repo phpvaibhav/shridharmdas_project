@@ -10,7 +10,7 @@
                     	<a class="color-litegreen" href="javascript:void(0);" type="button"  data-toggle="modal" data-target=".bd-example-modal-lg">फॉर्म को भरने हेतु निर्देश </a></p>
                 </div>
                 
-                <form id="user-add-form" method="post" class="login-form-t" novalidate="novalidate" action="users/add" novalidate="novalidate" autocomplete="off">
+                <form id="user-add-step-1" method="post" class="login-form-t" novalidate="novalidate" action="add_step-1" novalidate="novalidate" autocomplete="off">
                 <div class="row" >
                   <div class="col-md-6">
                       <div class="form-label-group">
@@ -47,10 +47,10 @@
                          <div class="form-label-group">
                            
                           
-                              <select name="countrycode"  class="form-control" id="countrycode">
+                              <select name="countrycode"  class="form-control js-example-basic-single " id="countrycode">
                               <?php if(!empty($countryCodes)):
                               foreach ($countryCodes as $kc => $code) { 
-                                  print_r($code);
+                                
                                 ?>
                               <option value="<? '+'.$code['code']; ?>" <?= ($kc=='IN')?"selected='selected'":""; ?>><?=  "(+".$code["code"].") ".$kc; ?></option>
                               <?php } endif; ?>
@@ -82,13 +82,13 @@
                           <div class="col-md-12">
                               <div class="form-label-group">
                               <label for="frontImage">Front Aadhar Image</label>
-                              <input type="file" class="form-control" id="frontImage"  name="frontImage" accept="image/*" onchange="readURL(this,1);" style="border: 0px solid #ddd;" >
+                              <input type="file" class="form-control" id="frontImage"  name="frontImage" accept="image/*" onchange="ResizeImage('frontImage','blah_1');" style="border: 0px solid #ddd;" >
                               </div>
                           </div>
                           <div class="col-md-12">
                                 <div class="img-shop-wrapper tl-shop-single">
                                 <div class="tl-img-shop">
-                                <img src="https://via.placeholder.com/300x225" alt="image" class="mx-auto image-fluid d-block" id="blah_1">
+                                <img src="https://via.placeholder.com/640x360" alt="image" class="mx-auto image-fluid d-block" id="blah_1">
                                 </div>
                                 </div>
                           </div>
@@ -99,13 +99,13 @@
                           <div class="col-md-12">
                               <div class="form-label-group">
                               <label for="backImage">Back Aadhar Image</label>
-                              <input type="file" class="form-control" id="backImage"  name="backImage"  accept="image/*" onchange="readURL(this,2);" style="border: 0px solid #ddd;" >
+                              <input type="file" class="form-control" id="backImage"  name="backImage"  accept="image/*" onchange="ResizeImage('backImage','blah_2');" style="border: 0px solid #ddd;" >
                               </div>
                           </div>
                           <div class="col-md-12">
                                 <div class="img-shop-wrapper tl-shop-single">
                                 <div class="tl-img-shop">
-                                <img src="https://via.placeholder.com/300x225" alt="image" class="mx-auto image-fluid d-block" id="blah_2">
+                                <img src="https://via.placeholder.com/640x360" alt="image" class="mx-auto image-fluid d-block" id="blah_2">
                                 </div>
                                 </div>
                           </div>
@@ -166,4 +166,7 @@
   var Please_select_your_district ="<?= lang('Please_select_your_district');?>";
   var Good_job ="<?= lang('Good_job');?>";
   var Your_form_submitted_successfully ="<?= lang('Your_form_submitted_successfully');?>";
+  var Please_select_your_front_image ="<?= lang('Please_select_your_front_image');?>";
+  var Please_select_your_back_image ="<?= lang('Please_select_your_back_image');?>";
+  var Please_select__image_type ="<?= lang('Please_select__image_type');?>";
 </script>

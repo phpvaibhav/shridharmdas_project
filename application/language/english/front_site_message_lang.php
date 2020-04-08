@@ -59,5 +59,8 @@
 	$lang['Please_select_your_district'] 							= "Please select your district";
 	$lang['Good_job'] 												= "Good job";
 	$lang['Your_form_submitted_successfully'] 						= "Your form has  submitted successfully";
+	$lang['Please_select_your_front_image'] 						= "Please select your front aadhar  image";
+	$lang['Please_select_your_back_image'] 						= "Please select your back aadhar  image";
+	$lang['Please_select__image_type'] 						= "Only aadhar image type jpg/png/jpeg/gif is allowed";
 
 ?>

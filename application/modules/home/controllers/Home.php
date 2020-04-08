@@ -30,7 +30,7 @@ class Home extends Common_Front_Controller {
         $data['countryCodes'] = countryCodelist();
      //   pr($data['countryCodes']);
         $data['front_styles'] = array();
-         $data['front_scripts'] = array('backend_assets/custom/js/front_user.js');
+         $data['front_scripts'] = array('frontend_assets/js/front_user.js');
         $this->load->front_render_minimal('userform/step_1',$data);
     }//End Function
     public function user_step_2() { 

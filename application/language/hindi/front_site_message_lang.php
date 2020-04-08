@@ -29,15 +29,15 @@
 	$lang['home_address'] 								= "घर का पता";	
 	$lang['office_address'] 							= "कार्यालय का पता";	
 	$lang['permanent_address'] 					        = "स्थायी घर का पता";	
-	$lang['Religious_knowledge'] 							= "धार्मिक ज्ञान";	
-	$lang['Education'] 					= "शिक्षा";	
-	$lang['Profession'] 					= "व्यवसाय";	
-	$lang['blood_group'] 					= "रक्त समूह";	
-	$lang['unionResponsibility'] 					= "गण/संघठन/संघ/मंडल में दायित्व";	
-	$lang['married'] 					= "विवाहित";	
-	$lang['unmarried'] 					= "अविवाहित";	
-	$lang['divorced'] 					= "तलाकशुदा";	
-	$lang['other'] 					= "अन्य";	
+	$lang['Religious_knowledge'] 						= "धार्मिक ज्ञान";	
+	$lang['Education'] 									= "शिक्षा";	
+	$lang['Profession'] 								= "व्यवसाय";	
+	$lang['blood_group'] 								= "रक्त समूह";	
+	$lang['unionResponsibility'] 						= "गण/संघठन/संघ/मंडल में दायित्व";	
+	$lang['married'] 									= "विवाहित";	
+	$lang['unmarried'] 									= "अविवाहित";	
+	$lang['divorced'] 									= "तलाकशुदा";	
+	$lang['other'] 										= "अन्य";	
 
 	$lang['Please_select_your_first_name'] 				= "कृपया अपना पहला नाम चुनें";
 	$lang['Please_select_your_last_name'] 				= "कृपया अपना उपनाम चुनें";
@@ -54,5 +54,8 @@
 	$lang['Please_select_your_district'] 				= "कृपया अपने जिले का चयन करें";
 	$lang['Good_job'] 									= "उत्कृष्ट";
 	$lang['Your_form_submitted_successfully'] 			= "आपका फॉर्म सफलतापूर्वक जमा हो गया है";
+	$lang['Please_select_your_front_image'] 			= "कृपया अपनी फ्रंट आधार छवि चुनें";
+	$lang['Please_select_your_back_image'] 				= "कृपया अपनी बैक आधार छवि का चयन करें";
+	$lang['Please_select__image_type'] 					= "केवल आधार छवि प्रकार jpg / png / jpeg / gif की अनुमति है";
 
 ?>

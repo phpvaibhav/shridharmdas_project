@@ -38,6 +38,19 @@
  .scrollbar-model{
      height: 247px;
  }
+ .select2-container--below{
+     width: 100%;
+
+}
+.select2-container .select2-selection--single {
+    box-sizing: border-box;
+    cursor: pointer;
+    display: block;
+    height: 28px;
+    user-select: none;
+    -webkit-user-select: none;
+    margin-bottom: 10px;
+}
 
 }
  
@@ -45,21 +58,57 @@
  .scrollbar-model{
      height: 224px;
  }
+ .select2-container--below{
+     width: 100%;
 
+}
+.select2-container .select2-selection--single {
+    box-sizing: border-box;
+    cursor: pointer;
+    display: block;
+    height: 28px;
+    user-select: none;
+    -webkit-user-select: none;
+    margin-bottom: 10px;
+}
 }
 
 @media only screen and (max-width: 600px) and (min-width:481px){
  .scrollbar-model{
      height: 659px;
  }
+ .select2-container--below{
+     width: 100%;
 
+}
+.select2-container .select2-selection--single {
+    box-sizing: border-box;
+    cursor: pointer;
+    display: block;
+    height: 28px;
+    user-select: none;
+    -webkit-user-select: none;
+    margin-bottom: 10px;
+}
 }
 
 @media only screen and (max-width:480px) and (min-width:413px){
  .scrollbar-model{
      height: 672px;
  }
+ .select2-container--below{
+     width: 100%;
 
+}
+.select2-container .select2-selection--single {
+    box-sizing: border-box;
+    cursor: pointer;
+    display: block;
+    height: 28px;
+    user-select: none;
+    -webkit-user-select: none;
+    margin-bottom: 10px;
+}
 }
 
 
@@ -67,13 +116,29 @@
  .scrollbar-model{
      height: 496px;
  }
+ .select2-container--below{
+     width: 100%;
 
+}
+.select2-container .select2-selection--single {
+    box-sizing: border-box;
+    cursor: pointer;
+    display: block;
+    height: 28px;
+    user-select: none;
+    -webkit-user-select: none;
+    margin-bottom: 10px;
+}
 }
 
 @media only screen and (max-width:384px) and (min-width:361px){
  .scrollbar-model{
      height: 469px;
  }
+ .select2-container--below{
+     width: 100%;
+
+}
 
 }
 
@@ -83,6 +148,32 @@
  height: 366px;
  overflow: auto;
 }
+.select2-container--below{
+     width: 100%;
+
+}
+.select2-container .select2-selection--single {
+    box-sizing: border-box;
+    cursor: pointer;
+    display: block;
+    height: 28px;
+    user-select: none;
+    -webkit-user-select: none;
+    margin-bottom: 10px;
+}
 
 
+}
+.select2-container--default .select2-selection--single {
+    background-color: #fff;
+    border: 1px solid #aaa;
+    border-radius: 4px;
+    height: 41px;
+   /* margin-bottom: 10px;*/
+   
+}
+.select2-container--default .select2-selection--single .select2-selection__rendered {
+    color: #444;
+    line-height: 40px;
+   
 }

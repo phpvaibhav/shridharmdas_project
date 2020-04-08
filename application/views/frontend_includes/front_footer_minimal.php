@@ -58,6 +58,7 @@ $backend_assets =  base_url().'backend_assets/';
 	<script src="<?= $frontend_assets; ?>assets/js/ion.rangeSlider.min.js"></script>
 	<!--Audio-JS-->
 	<script src="<?= $frontend_assets; ?>assets/js/audio_custome.js"></script>
+ <script src="https://cdn.jsdelivr.net/npm/select2@4.0.13/dist/js/select2.min.js"></script>
 
      
       <script src="<?php echo $frontend_assets; ?>js/common.js"></script>
