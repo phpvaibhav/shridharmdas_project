@@ -24,19 +24,31 @@ class Home extends Common_Front_Controller {
         $data['title'] = 'Contact us';
         $this->load->front_render('contactus',$data);
     }//End Function
-    public function add_user() { 
+    public function user_step_1() { 
+        $this->load->helper('country_code_helper');
         $data['title'] = 'User Form';
+        $data['countryCodes'] = countryCodelist();
+     //   pr($data['countryCodes']);
         $data['front_styles'] = array();
          $data['front_scripts'] = array('backend_assets/custom/js/front_user.js');
-        $this->load->front_render_minimal('userform/signup',$data);
+        $this->load->front_render_minimal('userform/step_1',$data);
     }//End Function
-    public function add_profile() { 
+    public function user_step_2() { 
         $data['title'] = 'User Form';
         $data['front_styles'] = array();
          $data['front_scripts'] = array('backend_assets/custom/js/front_user.js');
                    $countries      = $this->common_model->getAll('countries');
         $data['countries'] = $countries;
-        $this->load->front_render_minimal('userform/profile',$data);
+        $this->load->front_render_minimal('userform/step_2',$data);
+    }//End Function
+
+    public function user_step_3() { 
+        $data['title'] = 'User Form';
+        $data['front_styles'] = array();
+         $data['front_scripts'] = array('backend_assets/custom/js/front_user.js');
+                   $countries      = $this->common_model->getAll('countries');
+        $data['countries'] = $countries;
+        $this->load->front_render_minimal('userform/step_3',$data);
     }//End Function
 
 
