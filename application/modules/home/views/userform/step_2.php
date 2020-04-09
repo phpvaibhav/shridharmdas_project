@@ -46,6 +46,21 @@
                             </select>
                           </div>
                       </div>
+                                            <div class="col-md-6">
+                         <div class="form-label-group">
+                           
+                              <label for="unionName"><?= lang('Union').' '.lang('Name'); ?></label>
+                              <select name="unionName"  class="form-control js-example-basic-single " id="unionName">
+                              <?php if(!empty($unionList)):
+                              foreach ($unionList as $kc => $union) { 
+                                
+                                ?>
+                              <option value="<?= $union; ?>" ><?=  $union; ?></option>
+                              <?php } endif; ?>
+
+                              </select>
+                          </div>
+                      </div>
                       <div class="col-md-6">
                           <div class="form-label-group">
                             <label for="profession"><?= lang('Profession'); ?></label>
@@ -205,6 +220,8 @@
                               </select>
                           </div>
                       </div>
+
+                      
                       <div class="col-md-12">
                           <div class="form-label-group">
                             <label for="pstate"><?= lang('State'); ?></label>

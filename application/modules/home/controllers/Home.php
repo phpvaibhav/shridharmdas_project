@@ -34,11 +34,13 @@ class Home extends Common_Front_Controller {
         $this->load->front_render_minimal('userform/step_1',$data);
     }//End Function
     public function user_step_2() { 
+          $this->load->helper('country_code_helper');
         $data['title'] = 'User Form';
         $data['front_styles'] = array();
          $data['front_scripts'] = array('frontend_assets/js/front_user.js');
                    $countries      = $this->common_model->getAll('countries');
         $data['countries'] = $countries;
+         $data['unionList'] = unionList();
         $this->load->front_render_minimal('userform/step_2',$data);
     }//End Function
 
