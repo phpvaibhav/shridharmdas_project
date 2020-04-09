@@ -139,11 +139,11 @@ $(function() {
         contentType     : false,
         cache           : false,
         beforeSend      : function () {
-        
+          preLoadshow(true);
             $('#submit').prop('disabled', true);
         },
         success         : function (res) {
-        
+          preLoadshow(false);
           setTimeout(function(){  $('#submit').prop('disabled', false); },4000);
           if(res.status=='success'){
             toastr.success(res.message, 'Success', {timeOut: 3000});

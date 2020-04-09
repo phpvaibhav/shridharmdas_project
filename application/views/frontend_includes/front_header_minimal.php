@@ -51,6 +51,13 @@
 </head>
 
 <body id="tl" data-base-url="<?php echo base_url(); ?>">
+	<!-- loader -->
+<div class="dialog-background" id="pre-load-dailog" style="display: none;">
+    <div class="dialog-loading-wrapper">
+        <span class="dialog-loading-icon"><img src="<?= base_url();?>frontend_assets/images/ajax-loader.gif" alt="Loading..."></span>
+    </div>
+</div> 
+<!-- loader -->
   <header class="tl-header tl-tilak-nav">
 
           <div class="container">
