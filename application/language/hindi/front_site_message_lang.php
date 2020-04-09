@@ -59,5 +59,7 @@
 	$lang['Please_select_your_front_image'] 			= "कृपया अपनी फ्रंट आधार छवि चुनें";
 	$lang['Please_select_your_back_image'] 				= "कृपया अपनी बैक आधार छवि का चयन करें";
 	$lang['Please_select__image_type'] 					= "केवल आधार छवि प्रकार jpg / png / jpeg / gif की अनुमति है";
+		$lang['Please_enter_at_least_12_digit_aadhaar_number'] 						= "कृपया कम से कम 12 अंकों का आधार नंबर दर्ज करें।";
+	$lang['Please_enter_at_least_10_digit_phone_number'] 						= "कृपया कम से कम 10 अंकों का फ़ोन नंबर दर्ज करें।";
 
 ?>

@@ -64,5 +64,8 @@
 	$lang['Please_select_your_front_image'] 						= "Please select your front aadhar  image";
 	$lang['Please_select_your_back_image'] 						= "Please select your back aadhar  image";
 	$lang['Please_select__image_type'] 						= "Only aadhar image type jpg/png/jpeg/gif is allowed";
+	$lang['Please_enter_at_least_10_digit_phone_number'] 						= "Please enter at least 10 digit phone number.";
+	$lang['Please_enter_at_least_12_digit_aadhaar_number'] 						= "Please enter at least 12 digit aadhaar number.";
+
 
 ?>

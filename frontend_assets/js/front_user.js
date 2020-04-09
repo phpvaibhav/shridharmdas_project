@@ -29,10 +29,12 @@ $("#user-add-step-1").validate({// Rules for form validation
       }, 
      
       contactNumber    : {
-        required : true
+        required : true,
+        minlength: 12
       },  
       aadharNumber    : {
-        required : true
+        required : true,
+        minlength : 14
       }, 
                   frontImage:{
                     required: true,
@@ -61,10 +63,12 @@ $("#user-add-step-1").validate({// Rules for form validation
             required : Please_select_your_date_of_birth
           }, 
           contactNumber : {
-            required : Please_select_your_contact_number
+            required : Please_select_your_contact_number,
+            minlength : Please_enter_at_least_10_digit_phone_number
           }, 
            aadharNumber : {
-            required : Please_select_your_aadhar_number
+            required : Please_select_your_aadhar_number,
+             minlength : Please_enter_at_least_12_digit_aadhaar_number
           },  
           frontImage:{
           required: Please_select_your_front_image,

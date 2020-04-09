@@ -333,4 +333,6 @@
   var Please_select_your_back_image ="<?= lang('Please_select_your_back_image');?>";
   var Please_select__image_type ="<?= lang('Please_select__image_type');?>";
     var Please_select_your_familyHeadName ="<?= lang('Please_select_your_familyHeadName');?>";
+     var Please_enter_at_least_12_digit_aadhaar_number ="<?= lang('Please_enter_at_least_12_digit_aadhaar_number');?>";
+  var Please_enter_at_least_10_digit_phone_number ="<?= lang('Please_enter_at_least_10_digit_phone_number');?>";
 </script>
