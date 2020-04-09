@@ -10,7 +10,7 @@
                     	<a class="color-litegreen" href="javascript:void(0);" type="button"  data-toggle="modal" data-target=".bd-example-modal-lg">फॉर्म को भरने हेतु निर्देश </a></p>
                 </div>
                 
-                <form id="user-add-step-1" method="post" class="login-form-t" novalidate="novalidate" action="add_step-1" novalidate="novalidate" autocomplete="off">
+                <form id="user-add-step-1" method="post" class="login-form-t" novalidate="novalidate" action="userStep1" novalidate="novalidate" autocomplete="off">
                 <div class="row" >
                   <div class="col-md-6">
                       <div class="form-label-group">
@@ -25,18 +25,24 @@
                       <input type="text" id="lastName" class="form-control" placeholder="<?= lang('Last_name'); ?>"  name="lastName">
                     </div>
                   </div>
-                                        <div class="col-md-6">
+                  <div class="col-md-6">
                             <div class="form-label-group">
                               <label for="dob"><?= lang('dob'); ?></label>
                               <input type="text" id="dob" class="form-control" placeholder="<?= lang('dob'); ?>"  name="dob" readonly="">
                             </div>
-                      </div>
+                    </div>
                     <div class="col-md-6">
                             <div class="form-label-group">
                               <label for="parentName"><?= lang('parentName'); ?></label>
                               <input type="text" id="parentName" class="form-control" placeholder="<?= lang('parentName'); ?>"  name="parentName">
                             </div>
-                      </div>
+                    </div>
+                    <div class="col-md-6">
+                            <div class="form-label-group">
+                              <label for="familyHeadName"><?= lang('familyHeadName'); ?></label>
+                              <input type="text" id="familyHeadName" class="form-control" placeholder="<?= lang('familyHeadName'); ?>"  name="familyHeadName">
+                            </div>
+                    </div>
 
                   <div class="col-md-6">
                     <div class="row">
@@ -52,7 +58,7 @@
                               foreach ($countryCodes as $kc => $code) { 
                                 
                                 ?>
-                              <option value="<? '+'.$code['code']; ?>" <?= ($kc=='IN')?"selected='selected'":""; ?>><?=  "(+".$code["code"].") ".$kc; ?></option>
+                              <option value="<?= '+'.$code['code']; ?>" <?= ($kc=='IN')?"selected='selected'":""; ?>><?=  "(+".$code["code"].") ".$kc; ?></option>
                               <?php } endif; ?>
 
                               </select>
@@ -137,7 +143,7 @@
                     <input type="checkbox" class="custom-control-input" id="customCheck1">
                     <label class="custom-control-label" for="customCheck1">I Agree With <a href="#">Tearms &amp; Conditions</a></label>
                   </div> -->
-                  <button class="btn btn-outline btn-lg btn-block tl-btn-round-2 text-uppercase font-weight-bold mb-2" type="submit">Register</button>
+                  <button class="btn btn-outline btn-lg btn-block tl-btn-round-2 text-uppercase font-weight-bold mb-2" id="submit" type="submit">Register</button>
 
                   <div class="text-center">
                     <a class="small" href="<?= base_url();  ?>">Go To Home</a>
@@ -169,4 +175,5 @@
   var Please_select_your_front_image ="<?= lang('Please_select_your_front_image');?>";
   var Please_select_your_back_image ="<?= lang('Please_select_your_back_image');?>";
   var Please_select__image_type ="<?= lang('Please_select__image_type');?>";
+  var Please_select_your_familyHeadName ="<?= lang('Please_select_your_familyHeadName');?>";
 </script>

@@ -1,4 +1,3 @@
-
 /*createJobType*/
 $("#user-add-step-1").validate({// Rules for form validation
     errorClass    : errorClass,
@@ -20,7 +19,11 @@ $("#user-add-step-1").validate({// Rules for form validation
       },    
       parentName    : {
         required : true
-      },  
+      }, 
+      familyHeadName    : {
+        required : true
+      }, 
+       
       dob    : {
         required : true
       }, 
@@ -50,6 +53,10 @@ $("#user-add-step-1").validate({// Rules for form validation
           parentName : {
             required : Please_select_your_father_name_husband_name
           },
+          familyHeadName : {
+            required : Please_select_your_familyHeadName
+          },
+          
           dob : {
             required : Please_select_your_date_of_birth
           }, 
@@ -148,4 +155,167 @@ $(function() {
     });
   });        //fromsubmit
 });
+$(document).ready(function(){
+    $('#country').on('change',function(){
+        var countryID = $(this).val();
+        if(countryID){
+            $.ajax({
+                type:'POST',
+                url:base_url+'home/countryToState',
+                data:{'country':countryID},
+                success:function(html){
+                    $('#state').html(html);
+                    $("#state option[value='"+localStorage.state+"']").prop('selected', true);
+                    //$('#city').html('<option value="">Select state first</option>'); 
+                }
+            }); 
+        }else{
+            $('#state').html('<option value="">Select country first</option>');
+           // $('#city').html('<option value="">Select state first</option>'); 
+        }
+    });
+    $('#ocountry').on('change',function(){
+        var countryID = $(this).val();
+        if(countryID){
+            $.ajax({
+                type:'POST',
+                url:base_url+'home/countryToState',
+                data:{'country':countryID},
+                success:function(html){
+                    $('#ostate').html(html);
+                   // $('#city').html('<option value="">Select state first</option>'); 
+                }
+            }); 
+        }else{
+            $('#ostate').html('<option value="">Select country first</option>');
+           // $('#city').html('<option value="">Select state first</option>'); 
+        }
+    });
+    $('#pcountry').on('change',function(){
+        var countryID = $(this).val();
+        if(countryID){
+            $.ajax({
+                type:'POST',
+                url:base_url+'home/countryToState',
+                data:{'country':countryID},
+                success:function(html){
+                    $('#pstate').html(html);
+                   // $('#city').html('<option value="">Select state first</option>'); 
+                }
+            }); 
+        }else{
+            $('#pstate').html('<option value="">Select country first</option>');
+           // $('#city').html('<option value="">Select state first</option>'); 
+        }
+    });
+    
+      $("#country").trigger("change");
+      $("#pcountry").trigger("change");
+      $("#ocountry").trigger("change");
+/*    $('#state').on('change',function(){
+        var stateID = $(this).val();
+        if(stateID){
+            $.ajax({
+                type:'POST',
+                url:base_url+'home/stateToCity',
+                data:{'state':stateID},
+                success:function(html){
+                    $('#city').html(html);
+                }
+            }); 
+        }else{
+            $('#city').html('<option value="">Select state first</option>'); 
+        }
+    });*/
+});
 
+//rember me
+$(function() {
+  if (localStorage.add_chkbx && localStorage.add_chkbx != '') {
+    $('#remember_Address').attr('checked', 'checked');
+    $('#address').val(localStorage.address);
+    $('#city').val(localStorage.city);
+    $('#zip_code').val(localStorage.zip_code);
+    $('#tehsil').val(localStorage.tehsil);
+    $('#district').val(localStorage.district);
+  } else {
+    $('#remember_Address').removeAttr('checked');
+    $('#address').val("");
+    $('#city').val("");
+    $('#zip_code').val("");
+    $('#tehsil').val("");
+    $('#district').val("");
+  }
+  $('#remember_Address').click(function() {
+    if ($('#remember_Address').is(':checked')) {
+
+      localStorage.address  = $('#address').val();
+      localStorage.city     = $('#city').val();
+      localStorage.zip_code     = $('#zip_code').val();
+      localStorage.tehsil     = $('#tehsil').val();
+      localStorage.district     = $('#district').val();
+      localStorage.country     = $('#country').val();
+      localStorage.state     = $('#state').val();
+      localStorage.add_chkbx    = $('#remember_Address').val();
+
+    } else {
+      localStorage.address  = "";
+      localStorage.city     =  "";
+      localStorage.zip_code     =  "";
+      localStorage.tehsil     =  "";
+      localStorage.district     = "";
+      localStorage.country     =  "";
+      localStorage.state     =  "";
+      localStorage.add_chkbx    =  "";
+    }
+  });
+    $('#Same_AddressP').click(function() {
+    if ($('#Same_AddressP').is(':checked')) {
+
+          $('#paddress').val($('#address').val());
+          $('#pcity').val($('#city').val());
+          $('#pzip_code').val($('#zip_code').val());
+          $('#ptehsil').val($('#tehsil').val());
+          $('#pdistrict').val($('#district').val());
+          $("#pstate option[value='"+($('#state').val())+"']").prop('selected', true);
+    } else {
+    //gfgg
+    }
+  });
+
+  $('#Same_Address').click(function() {
+    if ($('#Same_Address').is(':checked')) {
+
+          $('#oaddress').val($('#paddress').val());
+          $('#ocity').val($('#pcity').val());
+          $('#ozip_code').val($('#pzip_code').val());
+          $('#otehsil').val($('#ptehsil').val());
+          $('#odistrict').val($('#pdistrict').val());
+          $("#ostate option[value='"+($('#pstate').val())+"']").prop('selected', true);
+    } else {
+    //gfgg
+    }
+  });
+
+    
+});
+//rember me
+
+function professionCheck(e){
+    var expression = $(e).val();
+    switch(expression) {
+    case 'house wife':
+        $("#offAddress").css("display","none");
+    break;
+    case 'student':
+        $("#offAddress").css("display","none");
+    break;
+    case 'retired':
+        $("#offAddress").css("display","none");
+    break;
+    
+    default:
+        $("#offAddress").css("display","block");
+    } 
+
+}

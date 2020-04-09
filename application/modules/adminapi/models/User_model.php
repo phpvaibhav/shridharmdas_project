@@ -5,8 +5,8 @@ class User_model extends CI_Model {
 
     //var $table , $column_order, $column_search , $order =  '';
     var $table = 'users';
-    var $column_order = array('u.id','u.fullName','u.aadharNumber','u.contactNumber','u.gender'); //set column field database for datatable orderable
-    var $column_sel = array('u.id','u.fullName','u.firstName','u.lastName','u.username','u.email','u.aadharNumber','u.contactNumber','u.gender','u.dob','u.verifyUser','u.status','(case when (u.status = 0) 
+    var $column_order = array('u.id','u.fullName','u.parentName','u.aadharNumber','u.contactNumber','u.dob'); //set column field database for datatable orderable
+    var $column_sel = array('u.id','u.fullName','u.firstName','u.lastName','u.username','u.email','u.aadharNumber','u.countrycode','u.contactNumber','u.gender','u.dob','u.parentName','u.familyHeadName','u.verifyUser','um.hindiFirstName','um.hindiLastName','um.hindiFullName','um.hindiFamilyHeadName','um.hindiParentName','u.status','(case when (u.status = 0) 
         THEN "Inactive" when (u.status = 1) 
         THEN "Active"  ELSE
         "Unknown" 
@@ -15,7 +15,7 @@ class User_model extends CI_Model {
         THEN "Approved"  ELSE
         "Unknown" 
         END) as verifyShow'); //set column field database for datatable orderable
-    var $column_search = array('u.firstName','u.lastName','u.fullName','u.aadharNumber','u.contactNumber','u.gender'); //set column field database for datatable searchable 
+    var $column_search = array('u.firstName','u.lastName','u.fullName','u.aadharNumber','u.parentName','u.contactNumber','u.gender','um.hindiFirstName','um.hindiLastName','um.hindiFullName','um.hindiParentName','um.hindiFamilyHeadName','u.familyHeadName'); //set column field database for datatable searchable 
     var $order = array('u.id'=> 'DESC');  // default order
     var $where = array();
     var $group_by = 'u.id'; 
@@ -31,6 +31,7 @@ class User_model extends CI_Model {
         $sel_fields = array_filter($this->column_sel); 
         $this->db->select($sel_fields);
         $this->db->from('users as u');
+        $this->db->join('user_meta as um','um.userId=u.id');
     
         $i = 0;
         foreach ($this->column_search as $emp) // loop column 
@@ -105,7 +106,8 @@ class User_model extends CI_Model {
     }
     public function count_all()
     {
-       $this->db->from('users as u');
+        $this->db->from('users as u');
+        $this->db->join('user_meta as um','um.userId=u.id');
         if(!empty($this->where))
             $this->db->where($this->where); 
         return $this->db->count_all_results();

@@ -107,10 +107,12 @@ class Users extends Common_Admin_Controller{
             $row        = array();
             $link_url   = base_url().'user-detail/'.encoding($serData->id);
             $row[]      = $no;
-            $row[]      = '<a href="'.$link_url.'" >'.display_placeholder_text($serData->fullName).'</a>'; 
+            $row[]      = '<a href="'.$link_url.'" >'.display_placeholder_text($serData->hindiFullName).'</a>'; 
+            $row[]      = display_placeholder_text($serData->hindiParentName); 
+            $row[]      = display_placeholder_text($serData->hindiFamilyHeadName); 
             $row[]      = display_aadhar_text($serData->aadharNumber,6); 
-            $row[]      = display_mobile_text($serData->contactNumber); 
-            $row[]      = display_placeholder_text($serData->gender); 
+            $row[]      = @$serData->countrycode.' '.display_mobile_text($serData->contactNumber); 
+            $row[]      = display_placeholder_text(date('d-m-Y',strtotime($serData->dob))); 
           
             switch ($serData->status) {
              
@@ -170,9 +172,15 @@ class Users extends Common_Admin_Controller{
         $dataExist          = $this->common_model->is_data_exists('users',$where);
         if($dataExist){
             $status         = $dataExist->status ? 0:1;
-            $dataExist      = $this->common_model->updateFields('users',array('status'=>$status),$where);
+            $up      = $this->common_model->updateFields('users',array('status'=>$status),$where);
             $showmsg        = ($status==1)? lang("Active") : lang("Inactive");
-            $response       = array('status'=>SUCCESS,'message'=>$showmsg." ".ResponseMessages::getStatusCodeMessage(128));             $response       = array('status'=>FAIL,'message'=>ResponseMessages::getStatusCodeMessage(118));  
+            if($up){
+                  $response       = array('status'=>SUCCESS,'message'=>$showmsg." ".ResponseMessages::getStatusCodeMessage(128));       
+            }else{
+                 $response       = array('status'=>FAIL,'message'=>ResponseMessages::getStatusCodeMessage(118));  
+            }
+              
+           
         }
         $this->response($response);
     }//end function

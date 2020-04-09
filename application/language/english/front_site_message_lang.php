@@ -38,7 +38,7 @@
 	$lang['unmarried'] 					= "Unmarried";	
 	$lang['divorced'] 					= "Divorced";	
 	$lang['other'] 					= "Other";
-
+	$lang['familyHeadName'] 							= "Family Head Name";	
 
 
 
@@ -46,6 +46,8 @@
 	$lang['Submit'] 							= "Submit";
 	$lang['Please_select_your_first_name'] 							= "Please select your first name";
 	$lang['Please_select_your_last_name'] 							= "Please select your last name";
+	$lang['Please_select_your_familyHeadName'] 							= "Please select your family head name";
+	
 	$lang['Please_select_your_father_name_husband_name'] 			= "Please select your father name/husband name";
 	$lang['Please_select_your_date_of_birth'] 						= "Please select your date of birth";
 	$lang['Please_select_your_gender'] 								= "Please select your gender";

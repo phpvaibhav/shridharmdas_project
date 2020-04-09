@@ -50,13 +50,13 @@
                           <div class="form-label-group">
                             <label for="profession"><?= lang('Profession'); ?></label>
 
-                              <select name="profession" class="form-control">
+                              <select name="profession" class="form-control" onchange="professionCheck(this);">
                               <option value="" selected="" disabled=""><?= lang('Profession'); ?></option>
                               <option value="job">Job</option>
                               <option value="business">Business</option>
                               <option value="house wife">House wife</option>
                               <option value="student">Student</option>
-                              <option value="student">Retired</option>
+                              <option value="retired">Retired</option>
                               <option value="other">Other</option>
                               </select>
                           </div>
@@ -69,9 +69,16 @@
                           </header>
                           <hr>
                       </div>
+                       <div class="col-md-12">
+                          <div class="form-label-group">
+                            <label for="zip_code"><?= lang('zip_code'); ?></label>
+                          
+                           <input type="text" class="form-control number-only" name="zip_code" id="zip_code" placeholder="<?= lang('zip_code'); ?>" >
+                          </div>
+                      </div>
                       <div class="col-md-12">
                           <div class="form-label-group">
-                            <label for="address"><?= lang('address'); ?></label>
+                            <label for="address"><?= lang('Address'); ?></label>
                           
                            <input type="text" name="address" class="form-control" id="address" placeholder="<?= lang('Address'); ?>">
                           </div>
@@ -83,13 +90,7 @@
                            <input type="text" class="form-control" name="city" id="city" placeholder="<?= lang('City'); ?>">
                           </div>
                       </div>
-                      <div class="col-md-6">
-                          <div class="form-label-group">
-                            <label for="zip_code"><?= lang('zip_code'); ?></label>
-                          
-                           <input type="text" class="form-control" name="zip_code" id="zip_code" placeholder="<?= lang('zip_code'); ?>" class="number-only">
-                          </div>
-                      </div>
+                   
                       <div class="col-md-6">
                           <div class="form-label-group">
                             <label for="tehsil"><?= lang('Tehsil'); ?></label>
@@ -118,7 +119,7 @@
                               </select>
                           </div>
                       </div>
-                      <div class="col-md-6">
+                      <div class="col-md-12">
                           <div class="form-label-group">
                             <label for="state"><?= lang('State'); ?></label>
                           
@@ -156,7 +157,14 @@
                       </div>
                       <div class="col-md-12">
                           <div class="form-label-group">
-                            <label for="paddress"><?= lang('address'); ?></label>
+                            <label for="pzip_code"><?= lang('zip_code'); ?></label>
+                          
+                           <input type="text" class="form-control number-only" name="pzip_code" id="pzip_code" placeholder="<?= lang('zip_code'); ?>" >
+                          </div>
+                      </div>
+                      <div class="col-md-12">
+                          <div class="form-label-group">
+                            <label for="paddress"><?= lang('Address'); ?></label>
                           
                            <input type="text" name="paddress" class="form-control" id="paddress" placeholder="<?= lang('Address'); ?>">
                           </div>
@@ -168,13 +176,7 @@
                            <input type="text" class="form-control" name="pcity" id="pcity" placeholder="<?= lang('City'); ?>">
                           </div>
                       </div>
-                      <div class="col-md-6">
-                          <div class="form-label-group">
-                            <label for="pzip_code"><?= lang('zip_code'); ?></label>
-                          
-                           <input type="text" class="form-control" name="pzip_code" id="pzip_code" placeholder="<?= lang('zip_code'); ?>" class="number-only">
-                          </div>
-                      </div>
+
                       <div class="col-md-6">
                           <div class="form-label-group">
                             <label for="ptehsil"><?= lang('Tehsil'); ?></label>
@@ -203,7 +205,7 @@
                               </select>
                           </div>
                       </div>
-                      <div class="col-md-6">
+                      <div class="col-md-12">
                           <div class="form-label-group">
                             <label for="pstate"><?= lang('State'); ?></label>
                           
@@ -216,7 +218,7 @@
 
                     
                   </div>
-                  <div class="row">
+                  <div class="row" id="offAddress">
                       <div class="col-md-12">
                         <div class="row">
                         <section class="col col-6">
@@ -234,6 +236,13 @@
                       </div>
                       <div class="col-md-12">
                           <div class="form-label-group">
+                            <label for="ozip_code"><?= lang('zip_code'); ?></label>
+                          
+                           <input type="text" class="form-control number-only" name="ozip_code" id="ozip_code" placeholder="<?= lang('zip_code'); ?>">
+                          </div>
+                      </div>
+                      <div class="col-md-12">
+                          <div class="form-label-group">
                             <label for="oaddress"><?= lang('address'); ?></label>
                           
                            <input type="text" name="oaddress" class="form-control" id="oaddress" placeholder="<?= lang('Address'); ?>">
@@ -246,13 +255,7 @@
                            <input type="text" class="form-control" name="ocity" id="ocity" placeholder="<?= lang('City'); ?>">
                           </div>
                       </div>
-                      <div class="col-md-6">
-                          <div class="form-label-group">
-                            <label for="ozip_code"><?= lang('zip_code'); ?></label>
-                          
-                           <input type="text" class="form-control" name="ozip_code" id="ozip_code" placeholder="<?= lang('zip_code'); ?>" class="number-only">
-                          </div>
-                      </div>
+
                       <div class="col-md-6">
                           <div class="form-label-group">
                             <label for="tehsil"><?= lang('Tehsil'); ?></label>
@@ -281,7 +284,7 @@
                               </select>
                           </div>
                       </div>
-                      <div class="col-md-6">
+                      <div class="col-md-12">
                           <div class="form-label-group">
                             <label for="ostate"><?= lang('State'); ?></label>
                           
@@ -326,4 +329,8 @@
   var Please_select_your_district ="<?= lang('Please_select_your_district');?>";
   var Good_job ="<?= lang('Good_job');?>";
   var Your_form_submitted_successfully ="<?= lang('Your_form_submitted_successfully');?>";
+  var Please_select_your_front_image ="<?= lang('Please_select_your_front_image');?>";
+  var Please_select_your_back_image ="<?= lang('Please_select_your_back_image');?>";
+  var Please_select__image_type ="<?= lang('Please_select__image_type');?>";
+    var Please_select_your_familyHeadName ="<?= lang('Please_select_your_familyHeadName');?>";
 </script>

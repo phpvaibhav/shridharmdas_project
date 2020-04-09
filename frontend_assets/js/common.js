@@ -1,3 +1,4 @@
+
 var base_url  = $('body').data('base-url'); // Base url
 var authToken = $('body').data('auth-url'); // Base url
 var errorClass    = 'invalid';
@@ -64,7 +65,9 @@ function injectTrim(handler) {
 }
 //loader manage
 //number check 
-$('.number-only').keypress(function(e) {
+
+$(".number-only").keypress(function(e) {
+
   if(isNaN(this.value+""+String.fromCharCode(e.charCode))) return false;
 }).on("cut copy paste",function(e){
   e.preventDefault();

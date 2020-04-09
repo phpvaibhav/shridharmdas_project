@@ -9,9 +9,43 @@ class Common_Service_Controller extends REST_Controller{
     public function __construct(){
         parent::__construct();
         error_reporting(E_ALL);
-        ini_set('display_errors', 1);
+      //  ini_set('display_errors', 1);
         $this->load->model('api_model'); //load api model model
-        $this->load->helper('response_message'); //load api response message helper
+         $this->load->helper('response_message'); //load api response message helper
+        $language_array = array('english','hindi');//language array
+        $this->appLang = 'hindi'; //set default langauge
+        $siteLang = $this->session->userdata('site_lang');
+        if ($siteLang) {
+           $this->appLang= $siteLang;
+        } else {
+            $this->session->set_userdata('site_lang',$this->appLang);
+        }
+        $header = $this->input->request_headers();//get header values
+        $lang_key = '';//set key
+        //check for language key exist in header array or not
+        if(array_key_exists ( 'language' , $header )){
+            $lang_key = 'language';
+        } elseif(array_key_exists ( 'Language' , $header )){
+            $lang_key = 'Language';
+        }
+
+        if(!empty($lang_key)){//if language key not empty get language from header
+
+            $lang_val = $header[$lang_key];//get header language 
+
+            if(in_array($lang_val,$language_array )){//check if header langauge in array set in varaible
+                $this->appLang = $lang_val;
+            }
+        }
+
+        if($this->appLang == 'hindi'){
+            $this->config->set_item('language', $this->appLang);
+        }
+         $this->lang->load('login_signup_message_lang', $this->appLang);
+       
+        $this->lang->load('response_messages_lang', $this->appLang); 
+        $this->lang->load('common_msg_lang', $this->appLang);
+        $this->lang->load('front_site_message_lang', $this->appLang);
     }
     
     /**

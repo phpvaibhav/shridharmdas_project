@@ -216,29 +216,40 @@
 												<div class="row">
 													<div class="col-xs-12 col-sm-12">	
 															<form id="user-update-form" class="smart-form" novalidate="novalidate" action="users/update" novalidate="novalidate" autocomplete="off">
-																            <fieldset>
+												<div class="row">
+
+	<!-- NEW COL START -->
+	<article class="col-sm-12 col-md-12 col-lg-6 col-lg-offset-3">
+		<b>Full Name</b> : <?= @$info['fullName'] ." (".@$usermeta['hindiFullName'].")"; ?><br> 
+		<b>First Name</b> : <?= @$info['firstName'] ." (".@$usermeta['hindiFirstName'].")"; ?><br> 
+		<b>Last Name</b> : <?= @$info['lastName'] ." (".@$usermeta['hindiLastName'].")"; ?><br><b>S/O W/O</b> : <?= @$info['parentName'] ." (".@$usermeta['hindiParentName'].")"; ?><br>  
+		<b>Family Head Name</b> : <?= @$info['familyHeadName'] ." (".@$usermeta['hindiFamilyHeadName'].")"; ?><br>  
+		
+	</article></div>
+				
+																           <!--  <fieldset>
               <div class="row">
                 <section class="col col-6">
                 	<input type="hidden" name="id" value="<?= encoding($info['id']); ?>">
                   <label class="input"> <i class="icon-prepend fa fa-sun-o"></i>
-                    <input type="text" name="preceptorName" placeholder="<?= lang('Preceptor').' '.lang('Name'); ?>" value="<?= $usermeta['preceptorName']; ?>" >
+                    <input type="text" name="preceptorName" placeholder="<?= lang('Preceptor').' '.lang('Name'); ?>" value="<?= @$usermeta['preceptorName']; ?>" >
                   </label>
                 </section>
                 <section class="col col-6">
                   <label class="input"> <i class="icon-prepend fa fa-sitemap"></i>
-                    <input type="text" name="unionName" placeholder="<?= lang('Union').' '.lang('Name'); ?>" value="<?= $usermeta['unionName']; ?>">
+                    <input type="text" name="unionName" placeholder="<?= lang('Union').' '.lang('Name'); ?>" value="<?= @$usermeta['unionName']; ?>">
                   </label>
                 </section>
               </div>
               <div class="row">
                   <section class="col col-6">
                     <label class="input"> <i class="icon-prepend fa fa-user"></i>
-                      <input type="text" name="firstName" value="<?= $info['firstName']; ?>" placeholder="<?= lang('First_name'); ?>">
+                      <input type="text" name="firstName" value="<?= @$info['firstName']; ?>" placeholder="<?= lang('First_name'); ?>">
                     </label>
                   </section>
                   <section class="col col-6">
                     <label class="input"> <i class="icon-prepend fa fa-user"></i>
-                      <input type="text" name="lastName" value="<?= $info['lastName']; ?>" placeholder="<?= lang('Last_name'); ?>">
+                      <input type="text" name="lastName" value="<?= @$info['lastName']; ?>" placeholder="<?= lang('Last_name'); ?>">
                     </label>
                   </section>
               </div>
@@ -246,7 +257,7 @@
               <div class="row">
                 <section class="col col-6">
                   <label class="input"> <i class="icon-prepend fa fa-user"></i>
-                    <input type="text" name="parentName" value="<?= $info['parentName']; ?>" placeholder="<?= lang('parentName'); ?>">
+                    <input type="text" name="parentName" value="<?= @$info['parentName']; ?>" placeholder="<?= lang('parentName'); ?>">
                   </label>
                 </section>
                   <section class="col col-6">
@@ -314,7 +325,7 @@
                     // $info['maritalStatus']=='Unmarried' ?"selected='selected'":"";
                       ?>
                       <select name="religiousKnowledge[]" multiple style="width:100%" class="select2" data-placeholder="<?= lang('Religious_knowledge'); ?>">
-                     <!--  <option value="" selected="" disabled=""><?= lang('Religious_knowledge'); ?></option> -->
+                  
                       <option value="णमोकार मंत्र" <?= in_array("णमोकार मंत्र", $rk) ? "selected='selected'":""; ?>> णमोकार मंत्र</option>
                       <option value="सामायिक" <?= in_array("सामायिक", $rk) ? "selected='selected'":""; ?>>सामायिक</option>
                       <option value="प्रतिक्रमण" <?= in_array("प्रतिक्रमण", $rk) ? "selected='selected'":""; ?>>प्रतिक्रमण</option>
@@ -364,12 +375,12 @@
                   </section>            
               </div>
     
-            </fieldset>
-               <footer>
+            </fieldset> -->
+             <!--   <footer>
                  <button type="submit" id="submit" class="btn btn-primary">
 								<?= lang('Save'); ?>
 							</button>
-                  </footer>
+                  </footer> -->
 															</form>
 													</div>
 												</div>
@@ -377,8 +388,8 @@
 											<div class="tab-pane fade" id="a2">
 												<div class="row">
 													<div class="col-xs-12 col-sm-12">	
-														<!-- <center><strong>Maintenance -2</strong></center> -->
-															<form id="user-address-form" class="smart-form" novalidate="novalidate" action="users/addressupdate" novalidate="novalidate" autocomplete="off">
+														<center><strong>Maintenance -2</strong></center>
+														<!-- 	<form id="user-address-form" class="smart-form" novalidate="novalidate" action="users/addressupdate" novalidate="novalidate" autocomplete="off">
 														            <header>
              <?= lang('home_address'); ?>
             </header>
@@ -393,11 +404,7 @@
               <div class="row">
                 
                 <section class="col col-6">
-                  <!-- <label class="select">
-                    <select  class="cities" id="city" name="city">
-                      <option value="0" selected="" disabled="">Select City</option>
               
-                    </select> <i></i> </label> -->
                     <label class="input">
                     <input type="text" name="city" id="cityu" value="<?= $addresses[0]->city; ?>" placeholder="<?= lang('City'); ?>">
                   </label>
@@ -448,13 +455,7 @@
               
               
               </div>
-            <!--   <div class="row">
-                   <section class="col col-6">
-                  <label class="checkbox">
-                    <input type="checkbox" id="remember_Address" name="rememberAddress">
-                    <i></i>Remember address</label>
-                  </section> 
-              </div>-->
+          
             </fieldset>            
             <header>
                 <div class="row">
@@ -483,11 +484,7 @@
               <div class="row">
                 
                 <section class="col col-6">
-                  <!-- <label class="select">
-                    <select  class="cities" id="city" name="city">
-                      <option value="0" selected="" disabled="">Select City</option>
-              
-                    </select> <i></i> </label> -->
+                
                     <label class="input">
                     <input type="text" name="ocity" id="ocityu" value="<?= $addresses[1]->city; ?>" placeholder="<?= lang('City'); ?>">
                   </label>
@@ -543,7 +540,7 @@
 								<?= lang('Save'); ?>
 							</button>
 						</footer>
-        </form>
+        </form> -->
 														<!-- <center><strong>Maintenance -2</strong></center> -->
 													</div>
 												</div>

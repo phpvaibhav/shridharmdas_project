@@ -38,9 +38,11 @@
 	$lang['unmarried'] 									= "अविवाहित";	
 	$lang['divorced'] 									= "तलाकशुदा";	
 	$lang['other'] 										= "अन्य";	
+	$lang['familyHeadName'] 							= "प्रधान का नाम";	
 
 	$lang['Please_select_your_first_name'] 				= "कृपया अपना पहला नाम चुनें";
 	$lang['Please_select_your_last_name'] 				= "कृपया अपना उपनाम चुनें";
+	$lang['Please_select_your_familyHeadName'] 							= "कृपया अपने परिवार के प्रधान का नाम चुनें";
 	$lang['Please_select_your_father_name_husband_name'] = "कृपया अपने पिता/पति का नाम चुनें";
 	$lang['Please_select_your_date_of_birth'] 			= "कृपया अपनी जन्मतिथि चुनें";
 	$lang['Please_select_your_gender'] 					= "कृपया अपना लिंग चुनें";
