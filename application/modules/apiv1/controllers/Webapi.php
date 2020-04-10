@@ -73,6 +73,12 @@ class Webapi extends Common_Service_Controller{
                 $meta_val['hindiFullName']   = $hindiFullName;
                 $meta_val['hindiParentName'] = $hindiParentName;
                 $meta_val['hindiFamilyHeadName'] = $hindiFamilyHeadName;
+                $meta_val['actualFirstName']  =  $this->post('firstName'); 
+                $meta_val['actualLastName']   = $this->post('lastName');
+                $meta_val['actualFullName']   = $this->post('firstName').' '.$this->post('lastName');
+                $meta_val['actualParentName'] = $this->post('parentName');
+                $meta_val['actualFamilyHeadName'] = $this->post('familyHeadName'); 
+                
                 /* image Uploads*/              
                     $this->load->model('Image_model');
                     $image          = array(); $frontImage = '';

@@ -88,7 +88,7 @@
                           <div class="col-md-12">
                               <div class="form-label-group">
                               <label for="frontImage">Front Aadhar Image</label>
-                              <input type="file" class="form-control" id="frontImage"  name="frontImage" accept="image/*" onchange="ResizeImage('frontImage','blah_1');" style="border: 0px solid #ddd;" >
+                              <input type="file" class="form-control" id="frontImage"  name="frontImage" data-id="1" onchange="readURL(this,1);" accept="image/*" style="border: 0px solid #ddd;" >
                               </div>
                           </div>
                           <div class="col-md-12">
@@ -105,8 +105,9 @@
                           <div class="col-md-12">
                               <div class="form-label-group">
                               <label for="backImage">Back Aadhar Image</label>
-                              <input type="file" class="form-control" id="backImage"  name="backImage"  accept="image/*" onchange="ResizeImage('backImage','blah_2');" style="border: 0px solid #ddd;" >
+                              <input type="file" class="form-control" id="backImage"  name="backImage"  data-id="2" onchange="readURL(this,2);"  accept="image/*"  style="border: 0px solid #ddd;" >
                               </div>
+                              <!-- onchange="ResizeImage('backImage','blah_2');" -->
                           </div>
                           <div class="col-md-12">
                                 <div class="img-shop-wrapper tl-shop-single">

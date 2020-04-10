@@ -227,24 +227,29 @@
 									<tr>
 										<th data-hide="phone">Full Name</th>
 										<th data-hide="phone"><?= @$info['fullName'] ." (".@$usermeta['hindiFullName'].")"; ?></th>
+										<th data-hide="phone"><?= @$usermeta['actualFullName']; ?></th>
 									
 									</tr>
 								</thead>
 									<tr>
 										<td >First Name</td>
 										<td ><?= @$info['firstName'] ." (".@$usermeta['hindiFirstName'].")"; ?></td>
+										<td ><?= @$usermeta['actualFirstName'] ; ?></td>
 									</tr>
 									<tr>
 										<td >Last Name</td>
 										<td ><?= @$info['lastName'] ." (".@$usermeta['hindiLastName'].")"; ?></td>
+										<td ><?= @$usermeta['actualLastName']; ?></td>
 									</tr>
 									<tr>
 										<td >S/O W/O</td>
-										<td ><?= @$info['lastName'] ." (".@$usermeta['hindiLastName'].")"; ?></td>
+										<td ><?= @$info['parentName'] ." (".@$usermeta['hindiParentName'].")"; ?></td>
+										<td ><?= @$usermeta['actualParentName']; ?></td>
 									</tr>
 									<tr>
 										<td >Family Head Name</td>
 										<td ><?= @$info['familyHeadName'] ." (".@$usermeta['hindiFamilyHeadName'].")"; ?></td>
+										<td ><?= @$usermeta['actualFamilyHeadName'] ; ?></td>
 									</tr>
 									<tr>
 										<td >Front Aadhar Image</td>
