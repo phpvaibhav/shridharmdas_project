@@ -219,12 +219,47 @@
 												<div class="row">
 
 	<!-- NEW COL START -->
-	<article class="col-sm-12 col-md-12 col-lg-6 col-lg-offset-3">
-		<b>Full Name</b> : <?= @$info['fullName'] ." (".@$usermeta['hindiFullName'].")"; ?><br> 
-		<b>First Name</b> : <?= @$info['firstName'] ." (".@$usermeta['hindiFirstName'].")"; ?><br> 
-		<b>Last Name</b> : <?= @$info['lastName'] ." (".@$usermeta['hindiLastName'].")"; ?><br><b>S/O W/O</b> : <?= @$info['parentName'] ." (".@$usermeta['hindiParentName'].")"; ?><br>  
-		<b>Family Head Name</b> : <?= @$info['familyHeadName'] ." (".@$usermeta['hindiFamilyHeadName'].")"; ?><br>  
+	<article class="col-sm-12 col-md-12 col-lg-8 col-lg-offset-3">
 		
+			<div class="table-responsive1">
+							<table class="table table-striped table-bordered table-hover">
+								<thead>			                
+									<tr>
+										<th data-hide="phone">Full Name</th>
+										<th data-hide="phone"><?= @$info['fullName'] ." (".@$usermeta['hindiFullName'].")"; ?></th>
+									
+									</tr>
+								</thead>
+									<tr>
+										<td >First Name</td>
+										<td ><?= @$info['firstName'] ." (".@$usermeta['hindiFirstName'].")"; ?></td>
+									</tr>
+									<tr>
+										<td >Last Name</td>
+										<td ><?= @$info['lastName'] ." (".@$usermeta['hindiLastName'].")"; ?></td>
+									</tr>
+									<tr>
+										<td >S/O W/O</td>
+										<td ><?= @$info['lastName'] ." (".@$usermeta['hindiLastName'].")"; ?></td>
+									</tr>
+									<tr>
+										<td >Family Head Name</td>
+										<td ><?= @$info['familyHeadName'] ." (".@$usermeta['hindiFamilyHeadName'].")"; ?></td>
+									</tr>
+									<tr>
+										<td >Front Aadhar Image</td>
+										<td><img src="<?= base_url().'uploads/aadhar/large/'.$info['frontAadharImage']; ?>" width="300" height="255" class="img img-thumbnail"></td>
+									</tr>
+									<tr>
+										<td >Back Aadhar Image</td>
+										<td><img src="<?= base_url().'uploads/aadhar/large/'.$info['backAadharImage']; ?>" width="300" height="255" class="img img-thumbnail"></td>
+									</tr>
+									
+								<tbody>			
+								</tbody>
+								
+							</table>
+						</div>
 	</article></div>
 				
 																           <!--  <fieldset>

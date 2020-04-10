@@ -151,7 +151,7 @@ $(function() {
           setTimeout(function(){  $('#submit').prop('disabled', false); },4000);
           if(res.status=='success'){
             toastr.success(res.message, 'Success', {timeOut: 3000});
-            setTimeout(function(){ window.location = base_url+'home/user_step_1'; },4000);
+            setTimeout(function(){ window.location = base_url+'user-step-2'; },3000);
           }else{
             toastr.error(res.message, 'Alert!', {timeOut: 4000});
           }         
@@ -253,23 +253,23 @@ $(function() {
   $('#remember_Address').click(function() {
     if ($('#remember_Address').is(':checked')) {
 
-      localStorage.address  = $('#address').val();
-      localStorage.city     = $('#city').val();
+      localStorage.address      = $('#address').val();
+      localStorage.city         = $('#city').val();
       localStorage.zip_code     = $('#zip_code').val();
-      localStorage.tehsil     = $('#tehsil').val();
+      localStorage.tehsil       = $('#tehsil').val();
       localStorage.district     = $('#district').val();
-      localStorage.country     = $('#country').val();
-      localStorage.state     = $('#state').val();
+      localStorage.country      = $('#country').val();
+      localStorage.state        = $('#state').val();
       localStorage.add_chkbx    = $('#remember_Address').val();
 
     } else {
-      localStorage.address  = "";
-      localStorage.city     =  "";
+      localStorage.address      =  "";
+      localStorage.city         =  "";
       localStorage.zip_code     =  "";
-      localStorage.tehsil     =  "";
-      localStorage.district     = "";
-      localStorage.country     =  "";
-      localStorage.state     =  "";
+      localStorage.tehsil       =  "";
+      localStorage.district     =  "";
+      localStorage.country      =  "";
+      localStorage.state        =  "";
       localStorage.add_chkbx    =  "";
     }
   });
@@ -289,7 +289,6 @@ $(function() {
 
   $('#Same_Address').click(function() {
     if ($('#Same_Address').is(':checked')) {
-
           $('#oaddress').val($('#paddress').val());
           $('#ocity').val($('#pcity').val());
           $('#ozip_code').val($('#pzip_code').val());
@@ -297,7 +296,7 @@ $(function() {
           $('#odistrict').val($('#pdistrict').val());
           $("#ostate option[value='"+($('#pstate').val())+"']").prop('selected', true);
     } else {
-    //gfgg
+      //gfgg
     }
   });
 
@@ -323,3 +322,215 @@ function professionCheck(e){
     } 
 
 }
+
+$("#user-add-step-2").validate({ // Rules for form validation
+    errorClass    : errorClass,
+    errorElement  : errorElement,
+    highlight: function(element) {
+      $(element).parent().removeClass('state-success').addClass("state-error");
+      $(element).removeClass('valid');
+    },
+    unhighlight: function(element) {
+      $(element).parent().removeClass("state-error").addClass('state-success');
+      $(element).addClass('valid');
+    },
+      rules : {
+        gender    : {
+          required : true
+        },    
+        maritalStatus    : {
+          required : true
+        },
+        unionName    : {
+          required : true
+        },
+          
+        address    : {
+          required : true
+        },  
+        city    : {
+          required : true
+        },  
+        zip_code    : {
+          required : true
+        },  
+        tehsil    : {
+          required : true
+        },  
+        district    : {
+          required : true
+        },
+        paddress    : {
+          required : true
+        },  
+        pcity    : {
+          required : true
+        },  
+        pzip_code    : {
+          required : true
+        },  
+        ptehsil    : {
+          required : true
+        },  
+        pdistrict    : {
+          required : true
+        },
+        
+    },
+    // Messages for form validation
+    messages : {
+     
+          gender : {
+            required : Please_select_your_gender
+          }, 
+          maritalStatus : {
+            required : Please_select_your_marital_status
+          }, 
+          unionName : {
+            required : Please_select_your_unionName
+          }, 
+        
+          address : {
+            required : Please_select_your_address
+          },  
+          city : {
+            required : Please_select_your_city
+          }, 
+          zip_code : {
+            required : Please_select_your_zip_code
+          },
+          tehsil : {
+            required : Please_select_your_tehsil
+          },
+          district : {
+            required : Please_select_your_district
+          },
+
+                  
+          paddress : {
+            required : Please_select_your_address
+          },  
+          pcity : {
+            required : Please_select_your_city
+          }, 
+          pzip_code : {
+            required : Please_select_your_zip_code
+          },
+          ptehsil : {
+            required : Please_select_your_tehsil
+          },
+          pdistrict : {
+            required : Please_select_your_district
+          },
+          
+          
+  },
+  // Ajax form submition
+  submitHandler : function(form) {
+    var method      =  "POST";
+    var post_data   = $(form).serialize();
+    var url         =  base_url+'apiv1/webapi/'+$(form).attr('action');
+    var header      = true;
+    var headerData  = {} ;
+    if(header){
+     var headerData = { 'authToken':authToken} ; 
+    }
+    toastr.clear();
+    $('#submit').prop('disabled', true);
+    $.ajax({
+            type            : method,
+            url             : url,
+            headers         : headerData,
+            data            : post_data,
+            cache           : false,
+            beforeSend      : function() {
+              preLoadshow(true);
+              $('#submit').prop('disabled', true);  
+            },     
+            success         : function (res) {
+              preLoadshow(false);
+              setTimeout(function(){  $('#submit').prop('disabled', false); },4000);
+              if(res.status=='success'){
+                toastr.success(res.message, 'Success', {timeOut: 3000});
+                setTimeout(function(){ 
+                 // window.location.reload();
+                  window.location = base_url+'user-step-3';
+                },3000);
+              }else{
+                toastr.error(res.message, 'Alert!', {timeOut: 4000});
+              }
+            }
+          });
+    return false; // required to block normal submit since you used ajax
+  },
+  onfocusout: injectTrim($.validator.defaults.onfocusout),
+  // Do not change code below
+  errorPlacement : function(error, element) {
+    error.insertAfter(element.parent());
+  }
+});
+
+$("#user-add-step-3").validate({ // Rules for form validation
+    errorClass    : errorClass,
+    errorElement  : errorElement,
+    highlight: function(element) {
+      $(element).parent().removeClass('state-success').addClass("state-error");
+      $(element).removeClass('valid');
+    },
+    unhighlight: function(element) {
+      $(element).parent().removeClass("state-error").addClass('state-success');
+      $(element).addClass('valid');
+    },
+      rules : {
+        userId    : {
+          required : true
+        },    
+     
+        
+    },
+   
+  // Ajax form submition
+  submitHandler : function(form) {
+    var method      =  "POST";
+    var post_data   = $(form).serialize();
+    var url         =  base_url+'apiv1/webapi/'+$(form).attr('action');
+    var header      = true;
+    var headerData  = {} ;
+    if(header){
+     var headerData = { 'authToken':authToken} ; 
+    }
+    toastr.clear();
+    $('#submit').prop('disabled', true);
+    $.ajax({
+            type            : method,
+            url             : url,
+            headers         : headerData,
+            data            : post_data,
+            cache           : false,
+            beforeSend      : function() {
+              preLoadshow(true);
+              $('#submit').prop('disabled', true);  
+            },     
+            success         : function (res) {
+              preLoadshow(false);
+              setTimeout(function(){  $('#submit').prop('disabled', false); },4000);
+              if(res.status=='success'){
+                toastr.success(res.message, 'Success', {timeOut: 3000});
+                  swal(Good_job,Your_form_submitted_successfully, "success");
+                setTimeout(function(){ 
+                  // window.location.reload();
+                    window.location = base_url;
+                },3000);
+              }else{
+                toastr.error(res.message, 'Alert!', {timeOut: 4000});
+              }
+            }
+          });
+    return false; // required to block normal submit since you used ajax
+  },
+  onfocusout: injectTrim($.validator.defaults.onfocusout),
+  // Do not change code below
+  errorPlacement : function(error, element) {
+    error.insertAfter(element.parent());
+  }
+});

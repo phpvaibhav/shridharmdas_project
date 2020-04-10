@@ -10,12 +10,12 @@
                     	<a class="color-litegreen" href="javascript:void(0);" type="button"  data-toggle="modal" data-target=".bd-example-modal-lg">फॉर्म को भरने हेतु निर्देश</a></p>
                 </div>
                 
-                <form id="user-add-form" method="post" class="login-form-t" novalidate="novalidate" action="users/add" novalidate="novalidate" autocomplete="off">
+                <form id="user-add-step-2" method="post" class="login-form-t" novalidate="novalidate" action="userStep2" novalidate="novalidate" autocomplete="off">
                   <div class="row">
                       <div class="col-md-12">
                           <header>
                           <b><?= lang('basic_Information'); ?></b>
-                          <input type="hidden" name="id" value="0">
+                          <input type="hidden" name="userId" value="<?= $userId; ?>">
 
                           </header>
                           <hr>
@@ -317,7 +317,7 @@
                  
                   <hr>
                 
-                  <button class="btn btn-outline  btn-block tl-btn-round-2 text-uppercase font-weight-bold mb-2" type="submit"> <?= lang('Submit'); ?></button>
+                  <button class="btn btn-outline  btn-block tl-btn-round-2 text-uppercase font-weight-bold mb-2" id="submit" type="submit"> <?= lang('Submit'); ?></button>
 
                   <div class="text-center">
                     <a class="small" href="<?= base_url();  ?>">Go To Home</a>
@@ -352,4 +352,5 @@
     var Please_select_your_familyHeadName ="<?= lang('Please_select_your_familyHeadName');?>";
      var Please_enter_at_least_12_digit_aadhaar_number ="<?= lang('Please_enter_at_least_12_digit_aadhaar_number');?>";
   var Please_enter_at_least_10_digit_phone_number ="<?= lang('Please_enter_at_least_10_digit_phone_number');?>";
+  var Please_select_your_unionName ="<?= lang('Please_select_your_unionName');?>";
 </script>

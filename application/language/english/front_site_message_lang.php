@@ -66,6 +66,8 @@
 	$lang['Please_select__image_type'] 						= "Only aadhar image type jpg/png/jpeg/gif is allowed";
 	$lang['Please_enter_at_least_10_digit_phone_number'] 						= "Please enter  10 digit phone number.";
 	$lang['Please_enter_at_least_12_digit_aadhaar_number'] 						= "Please enter  12 digit aadhaar number.";
+	$lang['Please_select_your_unionName'] 						= "Please Select Your union name";
+	
 
 
 ?>
