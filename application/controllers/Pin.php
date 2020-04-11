@@ -22,6 +22,7 @@ class Pin extends CI_Controller {
         parent::__construct();
        error_reporting(E_ALL);
 	ini_set('display_errors', 1);
+}
 	public function index()
 	{
 		$res = array();
