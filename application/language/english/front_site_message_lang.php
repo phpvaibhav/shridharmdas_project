@@ -39,7 +39,9 @@
 	$lang['divorced'] 					= "Divorced";	
 	$lang['other'] 					= "Other";
 	$lang['familyHeadName'] 							= "Family Head Name";	
-
+	$lang['locality'] 									= "Locality / Village";	
+	$lang['postName'] 									= "Post Name";	
+		
 
 
 

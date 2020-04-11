@@ -26,7 +26,7 @@
 	$lang['Female'] 									= "महिला";
 	$lang['Yes'] 										= "हाँ";
 	$lang['No'] 										= "नहीं";
-	$lang['home_address'] 								= "घर का पता";	
+	$lang['home_address'] 								= "वर्तमान घर का पता";	
 	$lang['office_address'] 							= "कार्यालय का पता";	
 	$lang['permanent_address'] 					        = "स्थायी घर का पता";	
 	$lang['Religious_knowledge'] 						= "धार्मिक ज्ञान";	
@@ -39,6 +39,8 @@
 	$lang['divorced'] 									= "तलाकशुदा";	
 	$lang['other'] 										= "अन्य";	
 	$lang['familyHeadName'] 							= "प्रधान का नाम";	
+	$lang['locality'] 									= "मुहल्ला / गाँव";	
+	$lang['postName'] 									= "पोस्ट नाम";
 
 	$lang['Please_select_your_first_name'] 				= "कृपया अपना पहला नाम चुनें";
 	$lang['Please_select_your_last_name'] 				= "कृपया अपना उपनाम चुनें";
