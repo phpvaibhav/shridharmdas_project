@@ -280,7 +280,7 @@
                           <div class="form-label-group">
                             <label for="ozip_code"><?= lang('zip_code'); ?></label>
                           
-                           <input type="text" class="form-control number-only" name="ozip_code" id="ozip_code" placeholder="<?= lang('zip_code'); ?>" onkeyup="zipCodetoData(this);" data-set="p"; >
+                           <input type="text" class="form-control number-only" name="ozip_code" id="ozip_code" placeholder="<?= lang('zip_code'); ?>" onkeyup="zipCodetoData(this);" data-set="o"; >
                           </div>
                       </div>
                       <div class="col-md-12">

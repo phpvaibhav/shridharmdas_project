@@ -532,6 +532,7 @@ function zipCodetoData(e){
       var tehsil      = '#'+tag+'tehsil';
       var district      = '#'+tag+'district';
       var state      = '#'+tag+'state';
+     // alert(postName +' '+city+' '+tehsil+' '+district+' '+state);
         /*set*/
         $.ajax({
                   url: base_url+'home/pincodeajax',
@@ -552,7 +553,7 @@ function zipCodetoData(e){
                         $(district).empty().val(result.res4);
                         $(state).empty().val(result.res5);
                     }else{
-                        toastr.error(result.resx, 'Alert!', {timeOut: 4000});
+                     //   toastr.error(result.resx, 'Alert!', {timeOut: 4000});
                     }
                    
                   },
