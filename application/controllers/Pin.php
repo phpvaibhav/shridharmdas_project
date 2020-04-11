@@ -18,6 +18,10 @@ class Pin extends CI_Controller {
 	 * map to /index.php/welcome/<method_name>
 	 * @see https://codeigniter.com/user_guide/general/urls.html
 	 */
+	    function __construct() {
+        parent::__construct();
+       error_reporting(E_ALL);
+	ini_set('display_errors', 1);
 	public function index()
 	{
 		$res = array();

@@ -8,7 +8,8 @@ class Home extends Common_Front_Controller {
 
     function __construct() {
         parent::__construct();
-        //$this->check_user_session();
+       error_reporting(E_ALL);
+    ini_set('display_errors', 1);
     }//End Function
 
     public function index() { 
