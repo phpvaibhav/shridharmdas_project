@@ -165,20 +165,20 @@ class Home extends Common_Front_Controller {
                 $status = 1;
                 while (($row = fgetcsv($fp)) !== false)
                 {
-                    if($row[2] === $search)
+                    if(@$row[2] === $search)
                     {
 
                         //$res0 .= '<option value="'.$row[0].'">'.$row[0].'</option>';
 
-                        $res1 .= '<option value="'.$row[1].'">'.$row[1].'</option>';
+                        $res1 .= '<option value="'.@$row[1].'">'.@$row[1].'</option>';
 
                         //$res2 = $row[2];
 
-                        $res3 = $row[3];
+                        $res3 = @$row[3];
 
-                        $res4 = $row[4];
+                        $res4 = @$row[4];
 
-                        $res5 = $row[5];
+                        $res5 = @$row[5];
                     }
                 }
                 fclose($fp);  
