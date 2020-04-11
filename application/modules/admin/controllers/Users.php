@@ -54,7 +54,7 @@ class Users extends Common_Back_Controller {
         if(!empty($lang_type)){
             $lang_type = $lang_type;
         } else {
-            $lang_type = 'Atcual';
+            $lang_type = 'Actual';
         }
         
         $this->load->helper('download');  
@@ -258,7 +258,7 @@ class Users extends Common_Back_Controller {
                     $parentName      = $element->parentName;
                     $familyHeadName  = $element->familyHeadName;
                     break;
-                case 'Atcual':
+                case 'Actual':
                     $firstName       = @$usermeta['actualFirstName'];
                     $lastName        = @$usermeta['actualLastName'];
                     $parentName      = @$usermeta['actualParentName'];

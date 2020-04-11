@@ -76,6 +76,36 @@
                               </select>
                           </div>
                       </div>
+                      <div class="col-md-12">
+                          <div class="form-label-group">
+                            <label><?= lang('Religious_knowledge'); ?></label>
+
+                              <div class="custom-control custom-checkbox mb-3">
+                                <input type="checkbox" class="custom-control-input limitCheckBox" value="णमोकार मंत्र एवं  प्राथमिक ज्ञान" id="customCheck1" name="religiousKnowledge[]" data-limit="1">
+                                <label class="custom-control-label" for="customCheck1" >णमोकार मंत्र एवं  प्राथमिक ज्ञान</label>
+                              </div>
+                              <div class="custom-control custom-checkbox mb-3">
+                                <input type="checkbox" class="custom-control-input limitCheckBox" value="सामयिक" name="religiousKnowledge[]" id="customCheck2" data-limit="2">
+                                <label class="custom-control-label" for="customCheck2" >सामयिक</label>
+                              </div>
+                              <div class="custom-control custom-checkbox mb-3">
+                                <input type="checkbox" class="custom-control-input limitCheckBox" value="प्रतिक्रमण " name="religiousKnowledge[]" id="customCheck3" data-limit="3">
+                                <label class="custom-control-label" for="customCheck3" >प्रतिक्रमण </label>
+                              </div>
+                              <div class="custom-control custom-checkbox mb-3">
+                                <input type="checkbox" class="custom-control-input limitCheckBox" value="थोकड़ो का ज्ञान" name="religiousKnowledge[]" id="customCheck4" data-limit="4">
+                                <label class="custom-control-label" for="customCheck4" >थोकड़ो का ज्ञान</label>
+                              </div>
+                              <div class="custom-control custom-checkbox mb-3">
+                                <input type="checkbox" class="custom-control-input limitCheckBox" value="स्वाध्याय का ज्ञान" name="religiousKnowledge[]" id="customCheck5" data-limit="5">
+                                <label class="custom-control-label" for="customCheck5" >स्वाध्याय का ज्ञान</label>
+                              </div>
+                              
+                              
+                              
+                          </div>
+                      </div>
+                      
                   </div>
                   <div class="row">
                       <div class="col-md-12">
@@ -88,7 +118,7 @@
                           <div class="form-label-group">
                             <label for="zip_code"><?= lang('zip_code'); ?></label>
                           
-                           <input type="text" class="form-control number-only" name="zip_code" id="zip_code" placeholder="<?= lang('zip_code'); ?>" >
+                           <input type="text" class="form-control number-only" name="zip_code" id="zip_code" placeholder="<?= lang('zip_code'); ?>" onkeyup="zipCodetoData(this);" data-set="";   >
                           </div>
                       </div>
                       <div class="col-md-12">
@@ -96,6 +126,14 @@
                             <label for="address"><?= lang('Address'); ?></label>
                           
                            <input type="text" name="address" class="form-control" id="address" placeholder="<?= lang('Address'); ?>">
+                          </div>
+                      </div>
+                      <div class="col-md-6">
+                          <div class="form-label-group">
+                            <label for="postName"><?= lang('postName'); ?></label>
+                            <select  class="form-control" name="postName" id="postName">
+                              <option value="0" selected="" disabled=""><?= lang('postName'); ?></option>
+                              </select>
                           </div>
                       </div>
                       <div class="col-md-6">
@@ -120,31 +158,22 @@
                            <input type="text" class="form-control" name="district" id="district" placeholder="<?= lang('District'); ?>">
                           </div>
                       </div>
+                       <div class="col-md-6">
+                          <div class="form-label-group">
+                            <label for="state"><?= lang('State'); ?></label>
+                              <input type="text" class="form-control" name="state" id="state" placeholder="<?= lang('State'); ?>">
+                          </div>
+                      </div>
+
                       <div class="col-md-6">
                           <div class="form-label-group">
                             <label for="country"><?= lang('Country'); ?></label>
                           
-                              <select name="country"  class="form-control" id="country">
-                              <option value="0" selected="" disabled=""><?= lang('Country'); ?></option>
-                              <?php if(!empty($countries)):
-                              foreach ($countries as $k => $country) {?>
-                              <option value="<?=  $country->country_name; ?>" <?=  ($country->country_id==100)?  "selected='selected'" :""; ?> ><?=  $country->country_name; ?></option>
-                              <?php } endif; ?>
-
-                              </select>
+                           <input type="text" class="form-control" name="country"  id="country" placeholder="<?= lang('Country'); ?>" value="India">
+                             
                           </div>
                       </div>
-                      <div class="col-md-12">
-                          <div class="form-label-group">
-                            <label for="state"><?= lang('State'); ?></label>
-                          
-                              <select  class="form-control" name="state" id="state">
-                              <option value="0" selected="" disabled=""><?= lang('State'); ?></option>
-
-                              </select>
-                          </div>
-                      </div>
-
+                     
                       <div class="col-md-6">
                           <div class="form-label-group">
 
@@ -174,7 +203,7 @@
                           <div class="form-label-group">
                             <label for="pzip_code"><?= lang('zip_code'); ?></label>
                           
-                           <input type="text" class="form-control number-only" name="pzip_code" id="pzip_code" placeholder="<?= lang('zip_code'); ?>" >
+                           <input type="text" class="form-control number-only" name="pzip_code" id="pzip_code" placeholder="<?= lang('zip_code'); ?>" onkeyup="zipCodetoData(this);" data-set="p";  >
                           </div>
                       </div>
                       <div class="col-md-12">
@@ -182,6 +211,14 @@
                             <label for="paddress"><?= lang('Address'); ?></label>
                           
                            <input type="text" name="paddress" class="form-control" id="paddress" placeholder="<?= lang('Address'); ?>">
+                          </div>
+                      </div>
+                      <div class="col-md-6">
+                          <div class="form-label-group">
+                            <label for="ppostName"><?= lang('postName'); ?></label>
+                            <select  class="form-control" name="ppostName" id="ppostName">
+                              <option value="" selected="" disabled=""><?= lang('postName'); ?></option>
+                              </select>
                           </div>
                       </div>
                       <div class="col-md-6">
@@ -208,32 +245,20 @@
                       </div>
                       <div class="col-md-6">
                           <div class="form-label-group">
-                            <label for="pcountry"><?= lang('Country'); ?></label>
-                          
-                              <select name="pcountry"  class="form-control" id="pcountry">
-                              <option value="0" selected="" disabled=""><?= lang('Country'); ?></option>
-                              <?php if(!empty($countries)):
-                              foreach ($countries as $k => $country) {?>
-                              <option value="<?=  $country->country_name; ?>" <?=  ($country->country_id==100)?  "selected='selected'" :""; ?> ><?=  $country->country_name; ?></option>
-                              <?php } endif; ?>
-
-                              </select>
+                            <label for="state"><?= lang('State'); ?></label>
+                              <input type="text" class="form-control" name="pstate" id="pstate" placeholder="<?= lang('State'); ?>">
                           </div>
                       </div>
 
-                      
-                      <div class="col-md-12">
+                      <div class="col-md-6">
                           <div class="form-label-group">
-                            <label for="pstate"><?= lang('State'); ?></label>
+                            <label for="country"><?= lang('Country'); ?></label>
                           
-                              <select  class="form-control" name="pstate" id="pstate">
-                              <option value="0" selected="" disabled=""><?= lang('State'); ?></option>
-
-                              </select>
+                           <input type="text" class="form-control" name="pcountry"  id="pcountry" placeholder="<?= lang('Country'); ?>" value="India">
+                             
                           </div>
                       </div>
 
-                    
                   </div>
                   <div class="row" id="offAddress">
                       <div class="col-md-12">
@@ -255,7 +280,7 @@
                           <div class="form-label-group">
                             <label for="ozip_code"><?= lang('zip_code'); ?></label>
                           
-                           <input type="text" class="form-control number-only" name="ozip_code" id="ozip_code" placeholder="<?= lang('zip_code'); ?>">
+                           <input type="text" class="form-control number-only" name="ozip_code" id="ozip_code" placeholder="<?= lang('zip_code'); ?>" onkeyup="zipCodetoData(this);" data-set="p"; >
                           </div>
                       </div>
                       <div class="col-md-12">
@@ -263,6 +288,14 @@
                             <label for="oaddress"><?= lang('address'); ?></label>
                           
                            <input type="text" name="oaddress" class="form-control" id="oaddress" placeholder="<?= lang('Address'); ?>">
+                          </div>
+                      </div>
+                      <div class="col-md-6">
+                          <div class="form-label-group">
+                            <label for="opostName"><?= lang('postName'); ?></label>
+                            <select  class="form-control" name="opostName" id="opostName">
+                              <option value="" selected="" disabled=""><?= lang('postName'); ?></option>
+                              </select>
                           </div>
                       </div>
                       <div class="col-md-6">
@@ -289,30 +322,19 @@
                       </div>
                       <div class="col-md-6">
                           <div class="form-label-group">
-                            <label for="ocountry"><?= lang('Country'); ?></label>
-                          
-                              <select name="ocountry"  class="form-control" id="ocountry">
-                              <option value="0" selected="" disabled=""><?= lang('Country'); ?></option>
-                              <?php if(!empty($countries)):
-                              foreach ($countries as $k => $country) {?>
-                              <option value="<?=  $country->country_name; ?>" <?=  ($country->country_id==100)?  "selected='selected'" :""; ?> ><?=  $country->country_name; ?></option>
-                              <?php } endif; ?>
-
-                              </select>
+                            <label for="state"><?= lang('State'); ?></label>
+                              <input type="text" class="form-control" name="ostate" id="ostate" placeholder="<?= lang('State'); ?>">
                           </div>
                       </div>
-                      <div class="col-md-12">
+
+                      <div class="col-md-6">
                           <div class="form-label-group">
-                            <label for="ostate"><?= lang('State'); ?></label>
+                            <label for="country"><?= lang('Country'); ?></label>
                           
-                              <select  class="form-control" name="ostate" id="ostate">
-                              <option value="0" selected="" disabled=""><?= lang('State'); ?></option>
-
-                              </select>
+                           <input type="text" class="form-control" name="ocountry"  id="ocountry" placeholder="<?= lang('Country'); ?>" value="India">
+                             
                           </div>
                       </div>
-
-                    
                   </div>
                  
                   <hr>

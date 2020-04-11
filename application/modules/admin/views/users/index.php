@@ -63,8 +63,8 @@
 													<div class="col-md-3 text-center">
 
 														<label class="radio radio-inline">
-															<input type="radio" class="radiobox" name="lang_type" value="Atcual" > 
-															<span>Atcual</span> 	
+															<input type="radio" class="radiobox" name="lang_type" value="Actual" > 
+															<span>Actual</span> 	
 														</label>
 														<label class="radio radio-inline">
 															<input type="radio" class="radiobox" name="lang_type" value="Hindi" checked=""> 

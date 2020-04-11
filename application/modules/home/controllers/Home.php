@@ -152,4 +152,43 @@ class Home extends Common_Front_Controller {
         $this->session->set_userdata('site_lang', $language);
         redirect($url);
     }//End Function
+    public function pincodeajax()
+    {
+        $res = array();
+        $fileName = base_url().'frontend_assets/updated_pincode_sheet.csv';
+
+        if($this->input->post())
+        {
+            $search = $this->input->post('pinCode');
+            if (($fp = fopen("$fileName", "r")) !== false)
+            {
+                $status = 1;
+                while (($row = fgetcsv($fp)) !== false)
+                {
+                    if($row[2] === $search)
+                    {
+
+                        //$res0 .= '<option value="'.$row[0].'">'.$row[0].'</option>';
+
+                        $res1 .= '<option value="'.$row[1].'">'.$row[1].'</option>';
+
+                        //$res2 = $row[2];
+
+                        $res3 = $row[3];
+
+                        $res4 = $row[4];
+
+                        $res5 = $row[5];
+                    }
+                }
+                fclose($fp);  
+            }else{
+                 $status = 0;
+                $resx = 'Record Not found.';
+            }
+        }
+
+        $this->output->set_content_type('application/json')
+            ->set_output(json_encode(array("status"=>@$status,"res0"=>@$res0, "res1"=>@$res1, "res2"=>@$res2, "res3"=>@$res3, "res4"=>@$res4, "res5"=>@$res5, "resx"=>@$resx)));
+    }
 }//End Class

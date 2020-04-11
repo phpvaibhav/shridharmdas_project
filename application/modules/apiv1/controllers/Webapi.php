@@ -5,7 +5,8 @@ class Webapi extends Common_Service_Controller{
     
     public function __construct(){
         parent::__construct();
-		
+		error_reporting(E_ALL);
+        ini_set('display_errors', 1);
     }
 
     function userStep1_post(){
@@ -79,10 +80,126 @@ class Webapi extends Common_Service_Controller{
                 $meta_val['actualParentName'] = $this->post('parentName');
                 $meta_val['actualFamilyHeadName'] = $this->post('familyHeadName'); 
                 
-                /* image Uploads*/              
-                    $this->load->model('Image_model');
-                    $image          = array(); $frontImage = '';
-                    if (!empty($_FILES['frontImage']['name'])) {
+                /* image Uploads*/ 
+                $image          = array(); $frontImage = '';
+                 $this->load->model('Image_model');
+                 $this->Image_model->make_dirs('aadhar');
+                 if (!empty($_FILES['frontImage']['name'])) {
+                                // Getting file name
+                        $filename  = $_FILES['frontImage']['name'];
+                        $imageTemp = $_FILES["frontImage"]["tmp_name"];
+                        $imageSize = $_FILES["frontImage"]["size"];
+                        // Valid extension
+                        $valid_ext = array('png','jpeg','jpg','gif');
+
+                        $photoExt1 = @end(explode('.', $filename)); // explode the image name to get the extension
+                        $phototest1 = strtolower($photoExt1);
+                            
+                        $new_profle_pic = "aadharfront".time().'.'.$phototest1;
+                            
+                        // Location
+                        $location = "uploads/aadhar/".$new_profle_pic;
+
+                        // file extension
+                        $file_extension = pathinfo($location, PATHINFO_EXTENSION);
+                        $file_extension = strtolower($file_extension);
+
+                        // Check extension
+                        if(in_array($file_extension,$valid_ext))
+                        {  
+                            // Compress Image
+                            $compressedImage = $this->compressedImage($_FILES['frontImage']['tmp_name'],$location,50);
+                            
+                            if($compressedImage)
+                            { 
+                                $compressedImageSize = filesize($compressedImage);
+
+                                 $data_val['frontAadharImage'] = $new_profle_pic;
+                               // $status = 'success'; 
+                              //  $statusMsg = "Image compressed successfully.";
+                                //Here i am enter the insert code in the step 
+                                /*$sql = "INSERT INTO compress_image(image)VALUES ('".$new_profle_pic."')";
+                                if (mysqli_query($con, $sql)) 
+                                {
+                                    echo "New record created successfully";
+                                    $status = 'success'; 
+                                    $statusMsg = "Image compressed successfully.";
+                                }*/
+                            }
+                            else
+                            {
+                               // $statusMsg = "Image compress failed!";
+                                 $response = array('status' => FAIL, 'message' => "Image compress failed!");
+                           $this->response($response);die;
+                            }   
+                        }
+                        else
+                        { 
+                            $statusMsg = 'Sorry, only JPG, JPEG, PNG, & GIF files are allowed to upload.'; 
+                             $response = array('status' => FAIL, 'message' =>$statusMsg);
+                           $this->response($response);die;
+                        }
+                    } 
+                     $image1         = array(); $backImage = '';
+                 if (!empty($_FILES['backImage']['name'])) {
+                                // Getting file name
+                        $filenameb  = $_FILES['backImage']['name'];
+                        $imageTempb = $_FILES["backImage"]["tmp_name"];
+                        $imageSizeb = $_FILES["backImage"]["size"];
+                        // Valid extension
+                        $valid_extb = array('png','jpeg','jpg','gif');
+
+                        $photoExt1b = @end(explode('.', $filenameb)); // explode the image name to get the extension
+                        $phototest1b = strtolower($photoExt1b);
+                            
+                        $new_profle_picb = "backfront".time().'.'.$phototest1b;
+                            
+                        // Location
+                        $locationb = "uploads/aadhar/".$new_profle_picb;
+
+                        // file extension
+                        $file_extensionb = pathinfo($locationb, PATHINFO_EXTENSION);
+                        $file_extensionb = strtolower($file_extensionb);
+
+                        // Check extension
+                        if(in_array($file_extensionb,$valid_extb))
+                        {  
+                            // Compress Image
+                            $compressedImageb = $this->compressedImage($_FILES['backImage']['tmp_name'],$locationb,50);
+                            
+                            if($compressedImageb)
+                            { 
+                                $compressedImageSizeb = filesize($compressedImageb);
+
+                                $data_val['backAadharImage'] = $new_profle_picb;
+                               // $status = 'success'; 
+                              //  $statusMsg = "Image compressed successfully.";
+                                //Here i am enter the insert code in the step 
+                                /*$sql = "INSERT INTO compress_image(image)VALUES ('".$new_profle_pic."')";
+                                if (mysqli_query($con, $sql)) 
+                                {
+                                    echo "New record created successfully";
+                                    $status = 'success'; 
+                                    $statusMsg = "Image compressed successfully.";
+                                }*/
+                            }
+                            else
+                            {
+                               // $statusMsg = "Image compress failed!";
+                                 $response = array('status' => FAIL, 'message' => "Image compress failed!");
+                                $this->response($response);die;
+                            }   
+                        }
+                        else
+                        { 
+                            $statusMsg = 'Sorry, only JPG, JPEG, PNG, & GIF files are allowed to upload.'; 
+                             $response = array('status' => FAIL, 'message' =>$statusMsg);
+                           $this->response($response);die;
+                        }
+                    }             
+                   // $this->load->model('Image_model');
+                    
+                  /*  if (!empty($_FILES['frontImage']['name'])) {
                         $folder     = 'aadhar';
                         $image      = $this->Image_model->upload_image('frontImage',$folder); //upload media of Seller
                         //check for error
@@ -95,12 +212,13 @@ class Webapi extends Common_Service_Controller{
                             $frontImage = $image['image_name'];
 
                         endif;
-                        }
-                        if(!empty($frontImage)){
+                        }*/
+                     /*   if(!empty($frontImage)){
                             $data_val['frontAadharImage']           =   $frontImage;
                         }                     
-                        $image1         = array(); $backImage = '';
-                    if (!empty($_FILES['backImage']['name'])) {
+                       */
+                   
+                 /*   if (!empty($_FILES['backImage']['name'])) {
                         $folder     = 'aadhar';
                         $image1      = $this->Image_model->upload_image('backImage',$folder); //upload media of Seller
                         //check for error
@@ -113,10 +231,10 @@ class Webapi extends Common_Service_Controller{
                             $backImage = $image1['image_name'];
 
                         endif;
-                        }
-                        if(!empty($backImage)){
+                        }*/
+                     /*   if(!empty($backImage)){
                             $data_val['backAadharImage']           =   $backImage;
-                        } 
+                        } */
                 /* image Uploads*/
                 $result = $this->common_model->insertData('users',$data_val);
                
@@ -162,6 +280,7 @@ class Webapi extends Common_Service_Controller{
               //  $user_meta['userId']        = $userId;
                 $user_meta['unionName']     = $this->post('unionName');
                 $user_meta['profession']    = $this->post('profession');
+                $user_meta['religiousKnowledge']      = $this->post('religiousKnowledge') ? implode(",",$this->post('religiousKnowledge')) :"";
 
                 $add_meta['userId']         = $userId;
                 $add_meta['zip_code']       = $this->post('zip_code');
@@ -247,6 +366,25 @@ class Webapi extends Common_Service_Controller{
         }
         $this->response($response);
     } //End Function
-    
 
+    // Compress image
+    function compressedImage($source, $path, $quality) 
+    {
+        $info = getimagesize($source);
+
+        if ($info['mime'] == 'image/jpeg') 
+            $image = imagecreatefromjpeg($source);
+
+        elseif ($info['mime'] == 'image/gif') 
+            $image = imagecreatefromgif($source);
+
+        elseif ($info['mime'] == 'image/png') 
+            $image = imagecreatefrompng($source);
+
+        // Save image 
+        imagejpeg($image, $path, $quality);
+     
+        // Return compressed image 
+        return $path;
+    }
 }//End Class 

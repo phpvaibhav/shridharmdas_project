@@ -225,39 +225,51 @@
 							<table class="table table-striped table-bordered table-hover">
 								<thead>			                
 									<tr>
-										<th data-hide="phone">Full Name</th>
-										<th data-hide="phone"><?= @$info['fullName'] ." (".@$usermeta['hindiFullName'].")"; ?></th>
-										<th data-hide="phone"><?= @$usermeta['actualFullName']; ?></th>
+										<th data-hide="phone">Name</th>
+										<th data-hide="phone">English</th>
+										<th data-hide="phone">Hindi</th>
+										<th data-hide="phone">Actual</th>
 									
 									</tr>
 								</thead>
 									<tr>
+										<td data-hide="phone">Full Name</td>
+										<td data-hide="phone"><?= @$info['fullName'] ." (".@$usermeta['hindiFullName'].")"; ?></td>
+										<td data-hide="phone"><?= @$usermeta['hindiFullName']; ?></td>
+										<td data-hide="phone"><?= @$usermeta['actualFullName']; ?></td>
+									
+									</tr>
+									<tr>
 										<td >First Name</td>
-										<td ><?= @$info['firstName'] ." (".@$usermeta['hindiFirstName'].")"; ?></td>
+										<td ><?= @$info['firstName']; ?></td>
+										<td ><?= @$usermeta['hindiFirstName']; ?></td>
 										<td ><?= @$usermeta['actualFirstName'] ; ?></td>
 									</tr>
 									<tr>
 										<td >Last Name</td>
-										<td ><?= @$info['lastName'] ." (".@$usermeta['hindiLastName'].")"; ?></td>
+										<td ><?= @$info['lastName']; ?></td>
+										<td ><?= @$usermeta['hindiLastName']; ?></td>
 										<td ><?= @$usermeta['actualLastName']; ?></td>
 									</tr>
 									<tr>
 										<td >S/O W/O</td>
-										<td ><?= @$info['parentName'] ." (".@$usermeta['hindiParentName'].")"; ?></td>
+										<td ><?= @$info['parentName']; ?></td>
+										<td ><?= @$usermeta['hindiParentName']; ?></td>
 										<td ><?= @$usermeta['actualParentName']; ?></td>
 									</tr>
 									<tr>
 										<td >Family Head Name</td>
-										<td ><?= @$info['familyHeadName'] ." (".@$usermeta['hindiFamilyHeadName'].")"; ?></td>
+										<td ><?= @$info['familyHeadName'] ; ?></td>
+										<td ><?= @$usermeta['hindiFamilyHeadName']; ?></td>
 										<td ><?= @$usermeta['actualFamilyHeadName'] ; ?></td>
 									</tr>
 									<tr>
 										<td >Front Aadhar Image</td>
-										<td><img src="<?= base_url().'uploads/aadhar/large/'.$info['frontAadharImage']; ?>" width="300" height="255" class="img img-thumbnail"></td>
+										<td colspan="3"><img src="<?= base_url().'uploads/aadhar/'.$info['frontAadharImage']; ?>" width="300" height="255" class="img img-thumbnail"></td>
 									</tr>
 									<tr>
 										<td >Back Aadhar Image</td>
-										<td><img src="<?= base_url().'uploads/aadhar/large/'.$info['backAadharImage']; ?>" width="300" height="255" class="img img-thumbnail"></td>
+										<td colspan="3"><img src="<?= base_url().'uploads/aadhar/'.$info['backAadharImage']; ?>" width="300" height="255" class="img img-thumbnail"></td>
 									</tr>
 									
 								<tbody>			
