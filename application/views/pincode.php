@@ -16,10 +16,10 @@
             <div class="col-sm-6">
                 <form action="" method="post">
                     <label for="zip">Pin code search by ajax: </label><br>
-                    <input type="text" minlength="5" maxlength="6" name="pinCode" required="" placeholder="Enter Pin Code" value="<?= ($this->input->post('pinCode') !='') ? $this->input->post('pinCode') : ''  ?>" id="pinCodeId">
+                    <input type="text" minlength="5" maxlength="6" name="pinCode" required="" placeholder="Enter Pin Code" value="" id="pinCodeId">
                     <input type="button" value="Reset" id="resetId">
                     <div id='loader' style='display: none;'>
-                        <img src='<?= base_url();?>assets/pincode/giphy.gif' width='100px' height='100px'>
+                        <img src='<?= base_url();?>frontend_assets/giphy.gif' width='100px' height='100px'>
                     </div>
                     <br>
                     <span id="pincoderrormsg"></span>
@@ -62,13 +62,6 @@
        
         <h2>Pin Code</h2>
         <div class="row">
-            <!-- <div class="col-sm-4">
-                <label for="zip">Village/Locality name: </label>
-                <select id="pinCodeRes0">
-                    <option>Village/Locality name</option>
-                    <?= $r0; ?>
-                </select>
-            </div> -->
 
             <div class="col-sm-4">
                 <label for="office">Officename: </label>
@@ -79,24 +72,23 @@
             </div>
         </div>
      
-        <!-- <label for="pincode">Pin Code</label>-->
-        <!-- <input type="text" name="pincode" placeholder="Pin Code" title="Pin Code" value="<?= ($r2 !='') ? $r2 : '' ?>" id="pinCodeRes2">&nbsp;&nbsp; <br> -->
+        
         <div class="row">&nbsp;&nbsp;</div>
 
         <div class="row">
             <div class="col-sm-4">
                 <label for="sub-distname">Sub Distname: </label>
-                <input type="text" required="" name="subDistname" placeholder="Sub Distname" title="Sub Distname" value="<?= ($r3 !='') ? $r3 : '' ?>" id="pinCodeRes3">
+                <input type="text" required="" name="subDistname" placeholder="Sub Distname" title="Sub Distname" value="" id="pinCodeRes3">
             </div>
 
             <div class="col-sm-4">
                 <label for="sistrictName">District Name: </label>
-                <input type="text" name="districtname" placeholder="District Name" title="District Name" value="<?= ($r4 !='') ? $r4 : '' ?>" id="pinCodeRes4">
+                <input type="text" name="districtname" placeholder="District Name" title="District Name" value="" id="pinCodeRes4">
             </div>
 
             <div class="col-sm-4">
                 <label for="stateName">State Name: </label>
-                <input type="text" name="stateName" placeholder="State Name" title="State Name" value="<?= ($r5 !='') ? $r5 : '' ?>" id="pinCodeRes5">
+                <input type="text" name="stateName" placeholder="State Name" title="State Name" value="" id="pinCodeRes5">
             </div>
         </div>
     </div>
@@ -110,7 +102,7 @@
             {
                 $('#pincoderrormsg').text('');
                 $.ajax({
-                    url: "<?= base_url()?>index.php/pin/pincodeajax",
+                    url: "<?= base_url()?>pin/pincodeajax",
                     cache: false,
                     data: {'pinCode':pin},
                     type: "POST",
@@ -119,7 +111,7 @@
                         $("#loader").show();
                     },
                     success: function(result){
-                        $('#pinCodeRes0').empty().append(result.res0);
+                        //$('#pinCodeRes0').empty().append(result.res0);
                         $('#pinCodeRes1').empty().append(result.res1);
                         // $('#pinCodeRes2').empty().append(result.res2);
                         $('#pinCodeRes3').empty().val(result.res3);
