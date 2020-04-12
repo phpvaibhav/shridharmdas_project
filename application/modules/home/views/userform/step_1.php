@@ -33,13 +33,13 @@
                     </div>
                     <div class="col-md-6">
                             <div class="form-label-group">
-                              <label for="parentName"><?= lang('parentName'); ?></label>
+                              <label for="parentName"><?= lang('parentName').'('.lang('Write_full_name').')'; ?></label>
                               <input type="text" id="parentName" class="form-control" placeholder="<?= lang('parentName'); ?>"  name="parentName">
                             </div>
                     </div>
                     <div class="col-md-6">
                             <div class="form-label-group">
-                              <label for="familyHeadName"><?= lang('familyHeadName'); ?></label>
+                              <label for="familyHeadName"><?= lang('familyHeadName').'('.lang('Write_full_name').')'; ?></label>
                               <input type="text" id="familyHeadName" class="form-control" placeholder="<?= lang('familyHeadName'); ?>"  name="familyHeadName">
                             </div>
                     </div>
@@ -72,6 +72,23 @@
                       </div>
                     </div>
                       
+                  </div>
+                  <div class="col-md-6">
+                 
+                    <div class="form-label-group">
+                      <label for="Whose_contact_number"><?= lang('Whose_contact_number'); ?></label>
+                      <select id="Whose_contact_number" name="whose_contact_number" class="form-control">
+                        <option value="Self" selected="selected">Self</option>
+                        <option value="Husband">Husband</option>
+                        <option value="Wife">Wife</option>
+                        <option value="Father">Father</option>
+                        <option value="Mother">Mother</option>
+                        <option value="Brother">Brother</option>
+                        <option value="Sister">Sister</option>
+                        <option value="Son">Son</option>
+                        <option value="Daughter">Daughter</option>
+                      </select>
+                    </div>
                   </div>
                   <div class="col-md-6">
                  

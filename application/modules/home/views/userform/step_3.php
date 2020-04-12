@@ -52,7 +52,16 @@
                           <div class="form-label-group">
                             <label for="education"><?= lang('Education'); ?></label>
                           
-                           <input type="text" name="education" class="form-control" id="education" placeholder="<?= lang('Education'); ?>">
+                          
+                            <select id="education" name="education" class="form-control">
+                              <option value="" selected="selected"><?= lang('Education'); ?></option>
+                              <option value="Higher secondary">Higher secondary</option>
+                              <option value="Graduate">Graduate</option>
+                              <option value="Post Graduate">Post Graduate</option>
+                              <option value="Phd">Phd</option>
+                              <option value="Other">Other</option>
+
+                            </select>
                           </div>
                       </div>
 

@@ -277,7 +277,7 @@ class Users extends Common_Back_Controller {
         $sheet->setCellValue('C' . $rowCount, display_placeholder_text($parentName));
         $sheet->setCellValue('D' . $rowCount, display_placeholder_text($familyHeadName));
         $sheet->setCellValue('E' . $rowCount, display_placeholder_text($element->email));
-        $sheet->setCellValue('F' . $rowCount, display_mobile_text($element->contactNumber));
+        $sheet->setCellValue('F' . $rowCount, display_mobile_text($element->contactNumber).'('.$element->whose_contact_number.')');
         $sheet->setCellValue('G' . $rowCount, display_aadhar_text($element->aadharNumber));
         $sheet->setCellValue('H' . $rowCount, display_placeholder_text(date('d-m-Y',strtotime($element->dob))));
         $sheet->setCellValue('I' . $rowCount, display_placeholder_text($element->gender));

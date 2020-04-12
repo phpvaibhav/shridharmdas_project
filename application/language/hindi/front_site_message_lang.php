@@ -11,6 +11,7 @@
 	$lang['parentName'] 								= "पिता/पति का नाम";
 	$lang['dob'] 										= "जन्म की तारीख";
 	$lang['Phone'] 										= "फ़ोन";
+	$lang['Whose_contact_number'] 						= "फ़ोन नंबर किसका है";
 	$lang['Aadhar_number'] 								= "आधार कार्ड नंबर";
 	$lang['Select_Gender'] 								= "लिंग";
 	$lang['Marital_Status'] 							= "वैवाहिक स्थिति";
@@ -41,6 +42,7 @@
 	$lang['familyHeadName'] 							= "प्रधान का नाम";	
 	$lang['locality'] 									= "मुहल्ला / गाँव";	
 	$lang['postName'] 									= "पोस्ट नाम";
+	$lang['Write_full_name'] 									= "पूरा नाम लिखे";
 
 	$lang['Please_select_your_first_name'] 				= "कृपया अपना पहला नाम चुनें";
 	$lang['Please_select_your_last_name'] 				= "कृपया अपना उपनाम चुनें";

@@ -12,6 +12,7 @@
 	$lang['parentName'] 						= "Father name/Husband name";
 	$lang['dob'] 								= "Date of birth";
 	$lang['Phone'] 								= "Phone";
+	$lang['Whose contact number'] 				= "Whose contact number is it";
 	$lang['Aadhar_number'] 						= "Aadhar number";
 	$lang['Select_Gender'] 						= "Select Gender";
 	$lang['Marital_Status'] 					= "Marital Status";
@@ -41,6 +42,7 @@
 	$lang['familyHeadName'] 							= "Family Head Name";	
 	$lang['locality'] 									= "Locality / Village";	
 	$lang['postName'] 									= "Post Name";	
+	$lang['Write_full_name'] 									= "Write full name";
 		
 
 

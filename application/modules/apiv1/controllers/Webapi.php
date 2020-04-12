@@ -63,6 +63,7 @@ class Webapi extends Common_Service_Controller{
                 $data_val['parentName']      = $parentName; 
                 $data_val['familyHeadName']      = $familyHeadName; 
                 $data_val['countrycode']     = $this->post('countrycode'); 
+                $data_val['whose_contact_number']     = $this->post('whose_contact_number'); 
 
                 $data_val['contactNumber']   = $contactNumber;
                 $data_val['aadharNumber']    = $aadharNumber; 
@@ -108,23 +109,14 @@ class Webapi extends Common_Service_Controller{
                         if(in_array($file_extension,$valid_ext))
                         {  
                             // Compress Image
-                            $compressedImage = $this->compressedImage($_FILES['frontImage']['tmp_name'],$location,16);
+                            $compressedImage = $this->compressedImage($_FILES['frontImage']['tmp_name'],$location,10);
                             
                             if($compressedImage)
                             { 
                                 $compressedImageSize = filesize($compressedImage);
 
                                  $data_val['frontAadharImage'] = $new_profle_pic;
-                               // $status = 'success'; 
-                              //  $statusMsg = "Image compressed successfully.";
-                                //Here i am enter the insert code in the step 
-                                /*$sql = "INSERT INTO compress_image(image)VALUES ('".$new_profle_pic."')";
-                                if (mysqli_query($con, $sql)) 
-                                {
-                                    echo "New record created successfully";
-                                    $status = 'success'; 
-                                    $statusMsg = "Image compressed successfully.";
-                                }*/
+                             
                             }
                             else
                             {
@@ -165,23 +157,14 @@ class Webapi extends Common_Service_Controller{
                         if(in_array($file_extensionb,$valid_extb))
                         {  
                             // Compress Image
-                            $compressedImageb = $this->compressedImage($_FILES['backImage']['tmp_name'],$locationb,16);
+                            $compressedImageb = $this->compressedImage($_FILES['backImage']['tmp_name'],$locationb,10);
                             
                             if($compressedImageb)
                             { 
                                 $compressedImageSizeb = filesize($compressedImageb);
 
                                 $data_val['backAadharImage'] = $new_profle_picb;
-                               // $status = 'success'; 
-                              //  $statusMsg = "Image compressed successfully.";
-                                //Here i am enter the insert code in the step 
-                                /*$sql = "INSERT INTO compress_image(image)VALUES ('".$new_profle_pic."')";
-                                if (mysqli_query($con, $sql)) 
-                                {
-                                    echo "New record created successfully";
-                                    $status = 'success'; 
-                                    $statusMsg = "Image compressed successfully.";
-                                }*/
+                            
                             }
                             else
                             {
@@ -290,6 +273,7 @@ class Webapi extends Common_Service_Controller{
                 $add_meta['district']       = $this->post('district');
                 $add_meta['country']        = $this->post('country');
                 $add_meta['state']          = $this->post('state');
+                $add_meta['postName']          = $this->post('postName');
                 $add_meta['addressType']    = 'Current';
 
                 $add_meta1['userId']      = $userId;
@@ -300,6 +284,7 @@ class Webapi extends Common_Service_Controller{
                 $add_meta1['district']      = $this->post('pdistrict');
                 $add_meta1['country']       = $this->post('pcountry');
                 $add_meta1['state']         = $this->post('pstate');
+                $add_meta1['postName']         = $this->post('ppostName');
                 $add_meta1['addressType']   = 'Permanent';
                 
                 $add_meta2['userId']        = $userId;
@@ -310,6 +295,7 @@ class Webapi extends Common_Service_Controller{
                 $add_meta2['district']      = $this->post('odistrict');
                 $add_meta2['country']       = $this->post('ocountry');
                 $add_meta2['state']         = $this->post('ostate');
+                $add_meta2['postName']         = $this->post('opostName');
                 $add_meta2['addressType']   = 'Office';
                 $this->common_model->updateFields('users',$user_val,array('id'=>$userId));
                 $this->common_model->updateFields('user_meta',$user_meta,array('userId'=>$userId));
