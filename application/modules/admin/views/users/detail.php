@@ -265,11 +265,29 @@
 									</tr>
 									<tr>
 										<td >Front Aadhar Image</td>
-										<td colspan="3"><img src="<?= base_url().'uploads/aadhar/'.$info['frontAadharImage']; ?>" width="300" height="255" class="img img-thumbnail"></td>
+										<td colspan="3">
+											<?php
+											$furl = "https://via.placeholder.com/640x360";
+											if(!empty($info['frontAadharImage'])){
+												$furl = base_url().'uploads/aadhar/'.$info['frontAadharImage'];
+											}
+												
+
+												?>
+											<img src="<?= $furl; ?>" width="300" height="255" class="img img-thumbnail"></td>
 									</tr>
 									<tr>
 										<td >Back Aadhar Image</td>
-										<td colspan="3"><img src="<?= base_url().'uploads/aadhar/'.$info['backAadharImage']; ?>" width="300" height="255" class="img img-thumbnail"></td>
+										<td colspan="3">
+<?php
+											$burl = "https://via.placeholder.com/640x360";
+											if(!empty($info['backAadharImage'])){
+												$burl = base_url().'uploads/aadhar/'.$info['backAadharImage'];
+											}
+												
+
+												?>
+											<img src="<?= $burl; ?>" width="300" height="255" class="img img-thumbnail"></td>
 									</tr>
 									
 								<tbody>			

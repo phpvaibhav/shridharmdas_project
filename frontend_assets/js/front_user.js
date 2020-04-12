@@ -165,13 +165,15 @@ $(function() {
   if (localStorage.add_chkbx && localStorage.add_chkbx != '') {
     $('#remember_Address').attr('checked', 'checked');
     $('#address').val(localStorage.address);
-    $('#postName').val(localStorage.postName);
+    //$('#postName').val(localStorage.postName);
     $('#city').val(localStorage.city);
     $('#zip_code').val(localStorage.zip_code);
     $('#tehsil').val(localStorage.tehsil);
     $('#district').val(localStorage.district);
     $('#country').val(localStorage.country);
     $('#state').val(localStorage.state);
+    $("#zip_code").trigger("keyup");
+    setTimeout(function(){$("#postName option[value='"+localStorage.postName+"']").prop('selected', true); },3000);
   } else {
     $('#remember_Address').removeAttr('checked');
     $('#address').val("");
@@ -195,7 +197,7 @@ $(function() {
       localStorage.country      = $('#country').val();
       localStorage.state        = $('#state').val();
       localStorage.add_chkbx    = $('#remember_Address').val();
-
+    
     } else {
       localStorage.address      =  "";
       localStorage.city         =  "";
@@ -218,7 +220,10 @@ $(function() {
           $('#pcountry').val($('#country').val());
           $('#pstate').val($('#state').val());
           $('#pdistrict').val($('#district').val());
-          $("#ppostName option[value='"+($('#postName').val())+"']").prop('selected', true);
+
+          $("#pzip_code").trigger("keyup");
+          setTimeout(function(){$("#ppostName option[value='"+($('#postName').val())+"']").prop('selected', true); },3000);
+          
     } else {
     //gfgg
     }
@@ -233,7 +238,12 @@ $(function() {
           $('#odistrict').val($('#pdistrict').val());
           $('#ocountry').val($('#pcountry').val());
           $('#ostate').val($('#pstate').val());
-           $("#opostName option[value='"+($('#ppostName').val())+"']").prop('selected', true);
+          $("#ozip_code").trigger("keyup");
+          setTimeout(function(){
+            $("#opostName option[value='"+($('#ppostName').val())+"']").prop('selected', true);
+            //$("#ppostName option[value='"+($('#postName').val())+"']").prop('selected', true);
+                       },3000);
+           
     } else {
       //gfgg
     }
@@ -526,12 +536,13 @@ $('.limitCheckBox').on('change', function(){
 function zipCodetoData(e){
     var value = $(e).val();
     if(value.length==6){
-         var tag =$(e).data('set');
+         var tag = $(e).data('set');
       var postName  = '#'+tag+'postName';
       var city      = '#'+tag+'city';
       var tehsil      = '#'+tag+'tehsil';
       var district      = '#'+tag+'district';
       var state      = '#'+tag+'state';
+      var country      = '#'+tag+'country';
      // alert(postName +' '+city+' '+tehsil+' '+district+' '+state);
         /*set*/
         $.ajax({
@@ -552,6 +563,17 @@ function zipCodetoData(e){
                         $(city).empty().val(result.res3);
                         $(district).empty().val(result.res4);
                         $(state).empty().val(result.res5);
+                        $(country).empty().val('India');
+                        if(tag=='p'){
+                          $("#ppostName option[value='"+($('#postName').val())+"']").prop('selected', true);
+                        }
+                        if(tag=='o'){
+                          $("#opostName option[value='"+($('#ppostName').val())+"']").prop('selected', true);
+                        } 
+                       /* if(tag=='o'){
+                          setTimeout(function(){$("#postName option[value='"+localStorage.postName+"']").prop('selected', true); },3000);
+                        }*/
+
                     }else{
                      //   toastr.error(result.resx, 'Alert!', {timeOut: 4000});
                     }

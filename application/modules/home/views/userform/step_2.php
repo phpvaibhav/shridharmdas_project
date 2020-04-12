@@ -46,7 +46,7 @@
                             </select>
                           </div>
                       </div>
-                                            <div class="col-md-6">
+                       <div class="col-md-6">
                          <div class="form-label-group">
                            
                               <label for="unionName"><?= lang('Union').' '.lang('Name'); ?></label>
@@ -66,13 +66,13 @@
                             <label for="profession"><?= lang('Profession'); ?></label>
 
                               <select name="profession" class="form-control" onchange="professionCheck(this);">
-                              <option value="" selected="" disabled=""><?= lang('Profession'); ?></option>
-                              <option value="job">Job</option>
-                              <option value="business">Business</option>
-                              <option value="house wife">House wife</option>
-                              <option value="student">Student</option>
-                              <option value="retired">Retired</option>
-                              <option value="other">Other</option>
+                                <option value="" selected="" disabled=""><?= lang('Profession'); ?></option>
+                                <option value="job">Job</option>
+                                <option value="business">Business</option>
+                                <option value="house wife">House wife</option>
+                                <option value="student">Student</option>
+                                <option value="retired">Retired</option>
+                                <option value="other">Other</option>
                               </select>
                           </div>
                       </div>
