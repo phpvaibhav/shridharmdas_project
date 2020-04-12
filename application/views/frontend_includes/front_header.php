@@ -140,7 +140,7 @@
 			<ul class="wd-menu pop-scroll">
 					<li><a href="<?= base_url(); ?>">Home</a></li>
 					<!-- <li><a href="<?= base_url(); ?>about-us">About Us</a></li> -->
-					<li><a href="<?= base_url(); ?>user-form">User Form</a></li>
+				<!-- 	<li><a href="<?= base_url(); ?>user-form">User Form</a></li> -->
 						<li><a href="<?= base_url(); ?>user-step-1">User Form</a></li>
 					<!-- 	<li><a href="<?= base_url(); ?>home/user_step_1">Step-1</a></li>
 						<li><a href="<?= base_url(); ?>home/user_step_2">Step-2</a></li>

@@ -95,7 +95,7 @@ class Webapi extends Common_Service_Controller{
                         $photoExt1 = @end(explode('.', $filename)); // explode the image name to get the extension
                         $phototest1 = strtolower($photoExt1);
                             
-                        $new_profle_pic = "aadharfront".time().'.'.$phototest1;
+                        $new_profle_pic = "aadharfront_".time().'.'.$phototest1;
                             
                         // Location
                         $location = "uploads/aadhar/".$new_profle_pic;
@@ -108,7 +108,7 @@ class Webapi extends Common_Service_Controller{
                         if(in_array($file_extension,$valid_ext))
                         {  
                             // Compress Image
-                            $compressedImage = $this->compressedImage($_FILES['frontImage']['tmp_name'],$location,50);
+                            $compressedImage = $this->compressedImage($_FILES['frontImage']['tmp_name'],$location,20);
                             
                             if($compressedImage)
                             { 
@@ -152,7 +152,7 @@ class Webapi extends Common_Service_Controller{
                         $photoExt1b = @end(explode('.', $filenameb)); // explode the image name to get the extension
                         $phototest1b = strtolower($photoExt1b);
                             
-                        $new_profle_picb = "backfront".time().'.'.$phototest1b;
+                        $new_profle_picb = "aadharback_".time().'.'.$phototest1b;
                             
                         // Location
                         $locationb = "uploads/aadhar/".$new_profle_picb;
@@ -165,7 +165,7 @@ class Webapi extends Common_Service_Controller{
                         if(in_array($file_extensionb,$valid_extb))
                         {  
                             // Compress Image
-                            $compressedImageb = $this->compressedImage($_FILES['backImage']['tmp_name'],$locationb,50);
+                            $compressedImageb = $this->compressedImage($_FILES['backImage']['tmp_name'],$locationb,20);
                             
                             if($compressedImageb)
                             { 
