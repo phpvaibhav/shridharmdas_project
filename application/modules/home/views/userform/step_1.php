@@ -67,11 +67,27 @@
                       <div class="col-md-8">
                           <div class="form-label-group">
                          
-                          <input type="text" id="contactNumber" class="form-control" placeholder="<?= lang('Phone'); ?>"  name="contactNumber"   data-mask="999 999 9999">
+                          <input type="text" id="contactNumber" class="form-control" placeholder="<?= lang('Phone'); ?>"  name="contactNumber" onkeyup="checkNumber(this);"   data-mask="999 999 9999">
                         </div>
                       </div>
                     </div>
                       
+                  </div>
+                  <div class="col-md-6" id="otpDivId">
+                         <div class="row">
+                              <div class="col-md-12">
+                                 <label for="contactNumber">
+                                    OTP
+                                  <input type="hidden" id="mobileVerify" name="mobileVerify" value="0">
+                                 </label>
+                              </div>
+                      
+                              <div class="col-md-12">
+                                 <div class="form-label-group">
+                                    <input type="text" class="form-control" id="otpnumber" required="" placeholder="Enter OTP" name="otpnumber" data-mask="9  9  9  9" onkeyup="checkOtp(this);" >
+                                 </div>
+                              </div>
+                           </div>
                   </div>
                   <div class="col-md-6">
                  

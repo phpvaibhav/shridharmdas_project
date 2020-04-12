@@ -64,6 +64,7 @@ class Webapi extends Common_Service_Controller{
                 $data_val['familyHeadName']      = $familyHeadName; 
                 $data_val['countrycode']     = $this->post('countrycode'); 
                 $data_val['whose_contact_number']     = $this->post('whose_contact_number'); 
+                $data_val['mobileVerify']     = $this->post('mobileVerify'); 
 
                 $data_val['contactNumber']   = $contactNumber;
                 $data_val['aadharNumber']    = $aadharNumber; 
@@ -352,6 +353,47 @@ class Webapi extends Common_Service_Controller{
         }
         $this->response($response);
     } //End Function
+ 
+    function smsSentOtp_post(){
+        $this->form_validation->set_rules('contactNumber','contact number','trim|required');
+     
+      
+        if($this->form_validation->run() == FALSE)
+        {
+            $response = array('status' => FAIL, 'message' => strip_tags(validation_errors()));
+        }
+        else
+        {
+            $contactNumber          = trim(str_replace(array('(',')','-',' '),array('','','',''),$this->post('contactNumber')));
+            $this->load->library('sms_sent');
+            $response           = $this->sms_sent->sent_otp_number($contactNumber); 
+              
+               // $response   = array('status'=>FAIL,'message'=>ResponseMessages::getStatusCodeMessage(118));   
+            //}
+            
+        }
+        $this->response($response);
+    } //End Function
+
+    function verifyOtpCode_post(){
+        $this->form_validation->set_rules('contactNumber','contact number','trim|required');
+        $this->form_validation->set_rules('otpnumber','otpnumber','trim|required');
+     
+      
+        if($this->form_validation->run() == FALSE)
+        {
+            $response = array('status' => FAIL, 'message' => strip_tags(validation_errors()));
+        }
+        else
+        {
+            $contactNumber          = trim(str_replace(array('(',')','-',' '),array('','','',''),$this->post('contactNumber')));
+            $otpnumber          = trim(str_replace(array('(',')','-',' '),array('','','',''),$this->post('otpnumber')));
+            $this->load->library('sms_sent');
+            $response           = $this->sms_sent->verify_otp_code($contactNumber,$otpnumber); 
+        }
+        $this->response($response);
+    } //End Function
+
 
     // Compress image
     function compressedImage($source, $path, $quality) 

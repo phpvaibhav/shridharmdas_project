@@ -1,4 +1,5 @@
 /*createJobType*/
+$("#otpDivId").css("display", "none");
 $("#user-add-step-1").validate({// Rules for form validation
     errorClass    : errorClass,
     errorElement  : errorElement,
@@ -32,6 +33,11 @@ $("#user-add-step-1").validate({// Rules for form validation
         required : true,
         minlength: 12
       },  
+      otpnumber    : {
+        required : true,
+        minlength: 10
+      },  
+      
       aadharNumber    : {
         required : true,
         minlength : 14
@@ -66,7 +72,12 @@ $("#user-add-step-1").validate({// Rules for form validation
             required : Please_select_your_contact_number,
             minlength : Please_enter_at_least_10_digit_phone_number
           }, 
-           aadharNumber : {
+          otpnumber : {
+            required : 'Please enter  OTP number',
+            minlength : 'Please enter 4 OTP number'
+          }, 
+          
+          aadharNumber : {
             required : Please_select_your_aadhar_number,
              minlength : Please_enter_at_least_12_digit_aadhaar_number
           },  
@@ -590,3 +601,101 @@ function zipCodetoData(e){
         /*set*/
     }//End if
 }//End FUnction
+
+function sendOtpToMobile(e){
+  var method      =  "POST";
+    var post_data   = {'contactNumber':$('#contactNumber').val()};
+    var url         =  base_url+'apiv1/webapi/smsSentOtp';
+    var header      = true;
+    var headerData  = {} ;
+    if(header){
+     var headerData = { 'authToken':authToken} ; 
+    }
+    toastr.clear();
+    $('#submit').prop('disabled', true);
+    $.ajax({
+            type            : method,
+            url             : url,
+            headers         : headerData,
+            data            : post_data,
+            cache           : false,
+            beforeSend      : function() {
+             // preLoadshow(true);
+              $('#submit').prop('disabled', true);  
+            },     
+            success         : function (res) {
+              //preLoadshow(false);
+              $('#contactNumber').prop('readonly',true);
+              setTimeout(function(){  $('#submit').prop('disabled', false); },4000);
+              if(res.status=='success'){
+                $("#otpDivId").css("display", "block");
+                toastr.success(res.message, 'Success', {timeOut: 3000});
+              }else{
+                toastr.error(res.message, 'Alert!', {timeOut: 4000});
+              }
+            }
+          });
+    return false; // required to block normal submit since you used ajax
+
+}//End FUnction
+function verifyOtpNumber(e){
+  var method      =  "POST";
+    var post_data   = {'contactNumber':$('#contactNumber').val(),'otpnumber':$('#otpnumber').val()};
+    var url         =  base_url+'apiv1/webapi/verifyOtpCode';
+    var header      = true;
+    var headerData  = {} ;
+    if(header){
+     var headerData = { 'authToken':authToken} ; 
+    }
+    toastr.clear();
+    $('#submit').prop('disabled', true);
+    $.ajax({
+            type            : method,
+            url             : url,
+            headers         : headerData,
+            data            : post_data,
+            cache           : false,
+            beforeSend      : function() {
+             // preLoadshow(true);
+              $('#submit').prop('disabled', true);  
+            },     
+            success         : function (res) {
+              //preLoadshow(false);
+              $('#submit').prop('disabled', false);
+             // setTimeout(function(){  $('#submit').prop('disabled', false); },4000);
+              if(res.status=='success'){
+                $('#mobileVerify').val(1);
+                $('#submit').prop('disabled', false);
+                $('#contactNumber').prop('readonly',true);
+                $('#otpnumber').prop('readonly',true);
+                toastr.success(res.message, 'Success', {timeOut: 3000});
+              }else{
+                $('#submit').prop('disabled', true);
+                $('#mobileVerify').val(0);
+                $('#otpnumber').val('');
+                toastr.error(res.message, 'Alert!', {timeOut: 4000});
+              }
+            }
+          });
+    return false; // required to block normal submit since you used ajax
+
+}//End FUnction
+
+function checkNumber(e){
+    var value = $(e).val();
+    if(value.length==12){
+      $('#contactNumber').prop('readonly',true);
+      sendOtpToMobile(e);
+
+    }
+}
+
+
+function checkOtp(e){
+    var value = $(e).val();
+    if(value.length==10){
+      verifyOtpNumber(e);
+    }
+}
+
+
