@@ -672,6 +672,51 @@ function sendOtpToMobile(){
     return false; // required to block normal submit since you used ajax
 
 }//End FUnction
+
+function ResendOtpToMobile(){
+   $("#Resendotp").css("display", "none");
+  var method      =  "POST";
+    var post_data   = {'contactNumber':$('#contactNumber').val()};
+    var url         =  base_url+'apiv1/webapi/smsSentReOtp';
+    var header      = true;
+    var headerData  = {} ;
+    if(header){
+     var headerData = { 'authToken':authToken} ; 
+    }
+    toastr.clear();
+    $('#submit').prop('disabled', true);
+    $.ajax({
+            type            : method,
+            url             : url,
+            headers         : headerData,
+            data            : post_data,
+            cache           : false,
+            beforeSend      : function() {
+             // preLoadshow(true);
+             $('#contactNumber').prop('disabled',true);
+              $('#submit').prop('disabled', true);  
+            },     
+            success         : function (res) {
+              //preLoadshow(false);
+              $('#contactNumber').prop('readonly',true);
+             $('#contactNumber').prop('disabled',true);
+              setTimeout(function(){  $('#submit').prop('disabled', false); },4000);
+              if(res.status=='success'){
+                $("#otpDivId").css("display", "block");
+                $("#Resendotp").css("display", "none");
+                timerCount();
+                toastr.success(res.message, 'Success', {timeOut: 3000});
+              }else{
+                $('#contactNumber').prop('disabled',false);
+                $('#contactNumber').prop('readonly',false);
+                toastr.error(res.message, 'Alert!', {timeOut: 4000});
+              }
+            }
+          });
+    return false; // required to block normal submit since you used ajax
+
+}//End FUnction
+
 function verifyOtpNumber(){
   var method      =  "POST";
     var post_data   = {'contactNumber':$('#contactNumber').val(),'otpnumber':$('#otpnumber').val()};
@@ -726,6 +771,18 @@ function checkNumber(){
         
         $('#disabled').prop('disabled',true);
         sendOtpToMobile();
+      }
+    }
+}
+
+function checkReNumber(){
+    var value = $('#contactNumber').val();
+    if(value.length==12){
+      if($('#mobileVerify').val()==0){
+        $('#contactNumber').prop('readonly',true);
+        
+        $('#disabled').prop('disabled',true);
+        ResendOtpToMobile();
       }
     }
 }

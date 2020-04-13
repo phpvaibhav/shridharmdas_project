@@ -60,7 +60,71 @@ class Sms_sent{
 
                     if($json->type == 'error' )
                     {
-                    return array( 'status' =>FAIL,'message' => "Your OTP not verified  ".$json->message." ");
+                    return array( 'status' =>FAIL,'message' => "Your mobile number invalid ".$json->message." ");
+
+                    }   
+          
+                     
+                } 
+                //$data['otpSuccmsg1'] = "Your OTP is been sent to this ".$mobileNumber." by this is ".$response." ";
+            return array('status'=>FAIL,'message'=>'Something going wrong.');
+    }//end function    
+    public function sent_otp_retry_number($number){
+        $authKey  = $this->authKey;
+        $senderId = $this->senderId;
+        $route    = $this->route;
+
+        $mobNum = $number;
+        $mobileNumber = '91'.str_replace(' ', '', $mobNum);
+        /* $otpNum     = rand(1000,9999);       
+        $message    = urlencode("Your Verification OTP Code Is ".$otpNum." ");
+        //Prepare you post parameters
+        $postData = array(
+            'authkey' => $authKey,
+            'mobiles' => $mobileNumber,
+            'message' => $message,
+            'sender'  => $senderId,
+            'route'   => $route
+        );
+       */
+        $url="https://api.msg91.com/api/v5/otp/retry?authkey=$authKey&mobile=$mobileNumber&retrytype=text";
+      //  $url="https://api.msg91.com/api/v5/otp/retry?mobile=Mobile%20Number%20with%20Country%20Code&authkey=Authentication%20Key&retrytype="";
+
+        $curl = curl_init($url);
+        curl_setopt_array($curl, array(
+            CURLOPT_RETURNTRANSFER => true,
+            CURLOPT_ENCODING => "",
+            CURLOPT_MAXREDIRS => 10,
+            CURLOPT_TIMEOUT => 30,
+            CURLOPT_HTTP_VERSION => CURL_HTTP_VERSION_1_1,
+            CURLOPT_CUSTOMREQUEST => "POST",
+            CURLOPT_POSTFIELDS => "",
+            CURLOPT_SSL_VERIFYHOST => 0,
+            CURLOPT_SSL_VERIFYPEER => 0,
+        ));
+
+        $response = curl_exec($curl);
+        $err = curl_error($curl);
+
+        curl_close($curl);
+
+        if ($err) 
+        {
+           return array('status'=>0,'message'=>$err);// echo "cURL Error #:" . $err;
+        }
+                else
+                {
+
+
+                    $json = json_decode($response);
+                    if($json->type == 'success' )
+                    {
+                    return array( 'status' =>SUCCESS,'message' => "Message re-send successfully.",'code'=>json_decode($response)); 
+                    }
+
+                    if($json->type == 'error' )
+                    {
+                    return array( 'status' =>FAIL,'message' => "Your mobile number invalid  ".$json->message." ");
 
                     }   
           
@@ -70,7 +134,7 @@ class Sms_sent{
             return array('status'=>FAIL,'message'=>'Something going wrong.');
     }//end function
 
-    
+
 
     public function verify_otp_code($number,$otp){
         $authKey  = $this->authKey;

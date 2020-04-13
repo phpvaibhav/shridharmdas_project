@@ -94,7 +94,7 @@
                                     <input type="text" class="form-control" id="otpnumber" required="" placeholder="Enter OTP" name="otpnumber" data-mask="9  9  9  9" onkeyup="checkOtp(this);" >
                                     <p class="countdown"></p>
                                     <p id="Resendotp" class="text-right">
-                                    <a href="javascript:void(0);" onclick="checkNumber();">Resend OTP</a></span>
+                                    <a href="javascript:void(0);" onclick="checkReNumber();">Resend OTP</a></span>
                                     </p>
                                       
                                  </div>
