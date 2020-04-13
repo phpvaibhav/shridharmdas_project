@@ -51,29 +51,26 @@ class Sms_sent{
                 else
                 {
 
-                 //   pr(json_decode($response,true));
-                    return array('status'=>SUCCESS,'message'=>'Message sent successfully.','code'=>json_decode($response));
-                   // echo $response;
 
-                    //echo "Your OTP is been sent to this ".$mobileNumber." ";
-                    /*$json = json_decode($response);
+                    $json = json_decode($response);
                     if($json->type == 'success' )
                     {
-                        //$data['otpSuccmsg'] = array('msg' => "Your OTP is been sent to this ".$mobileNumber." by this is ".$response." ", 'status' =>1);
-                        $data['otpSuccmsg'] = array('msg' => "Your OTP is been sent to this ".$mobileNumber." ", 'status' =>1); 
+                    return array( 'status' =>SUCCESS,'message' => "Message sent successfully.",'code'=>json_decode($response)); 
                     }
 
                     if($json->type == 'error' )
                     {
-                        $data['otpErrorMsg'] = "Your OTP ".$json->message." ";
-                    }*/
+                    return array( 'status' =>FAIL,'message' => "Your OTP not verified  ".$json->message." ");
+
+                    }   
+          
                      
                 } 
                 //$data['otpSuccmsg1'] = "Your OTP is been sent to this ".$mobileNumber." by this is ".$response." ";
             return array('status'=>FAIL,'message'=>'Something going wrong.');
-    
-       
     }//end function
+
+    
 
     public function verify_otp_code($number,$otp){
         $authKey  = $this->authKey;
