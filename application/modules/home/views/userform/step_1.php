@@ -9,22 +9,29 @@
                     <p class="sub_title text-center"><!-- Already have an account? --> 
                     	<a class="color-litegreen" href="javascript:void(0);" type="button"  data-toggle="modal" data-target=".bd-example-modal-lg">फॉर्म को भरने हेतु निर्देश </a></p>
                 </div>
-                
+               
                 <form id="user-add-step-1" method="post" class="login-form-t" novalidate="novalidate" action="userStep1" novalidate="novalidate" autocomplete="off">
                 <div class="row" >
-                  <div class="col-md-6">
+                  <div class="col-md-12">
                       <div class="form-label-group">
-                        <label for="firstName"><?= lang('First_name'); ?></label>
+                        <label for="fullName"><?= lang('First_name').'('.lang('Write_full_name').')'; ?></label>
+                        <input type="text" id="fullName" class="form-control" placeholder="<?= lang('First_name'); ?>"  name="fullName">
+                      </div>
+                  </div>
+               <!--     <div class="col-md-6">
+                      <div class="form-label-group">
+                        <label for="firstName"><?= lang('First_name').'('.lang('Write_full_name').')'; ?></label>
                         <input type="text" id="firstName" class="form-control" placeholder="<?= lang('First_name'); ?>"  name="firstName">
                       </div>
                   </div>
-                  <div class="col-md-6">
+                   -->
+                <!--   <div class="col-md-6">
                  
                     <div class="form-label-group">
                       <label for="lastName"><?= lang('Last_name'); ?></label>
                       <input type="text" id="lastName" class="form-control" placeholder="<?= lang('Last_name'); ?>"  name="lastName">
                     </div>
-                  </div>
+                  </div> -->
                   <div class="col-md-6">
                             <div class="form-label-group">
                               <label for="dob"><?= lang('dob'); ?></label>
@@ -67,7 +74,7 @@
                       <div class="col-md-8">
                           <div class="form-label-group">
                          
-                          <input type="text" id="contactNumber" class="form-control" placeholder="<?= lang('Phone'); ?>"  name="contactNumber" onkeyup="checkNumber(this);"   data-mask="999 999 9999">
+                          <input type="text" id="contactNumber" class="form-control" placeholder="<?= lang('Phone'); ?>"  name="contactNumber" onkeyup="checkNumber();"   data-mask="999 999 9999">
                         </div>
                       </div>
                     </div>
@@ -85,8 +92,15 @@
                               <div class="col-md-12">
                                  <div class="form-label-group">
                                     <input type="text" class="form-control" id="otpnumber" required="" placeholder="Enter OTP" name="otpnumber" data-mask="9  9  9  9" onkeyup="checkOtp(this);" >
+                                    <p class="countdown"></p>
+                                    <p id="Resendotp" class="text-right">
+                                    <a href="javascript:void(0);" onclick="checkNumber();">Resend OTP</a></span>
+                                    </p>
+                                      
                                  </div>
                               </div>
+                            
+                              
                            </div>
                   </div>
                   <div class="col-md-6">
@@ -110,7 +124,7 @@
                  
                     <div class="form-label-group">
                       <label for="aadharNumber"><?= lang('Aadhar_number'); ?></label>
-                      <input type="text" id="aadharNumber" class="form-control" placeholder="<?= lang('Aadhar_number'); ?>"  name="aadharNumber"  data-mask="9999-9999-9999">
+                      <input type="text" id="aadharNumber" class="form-control" placeholder="<?= lang('Aadhar_number'); ?>"  name="aadharNumber"  data-mask="9999 9999 9999">
                     </div>
                   </div>
 
@@ -191,6 +205,7 @@
     </div>
   </div>
 <script type="text/javascript">
+  var Please_select_your_full_name ="<?= lang('Please_select_your_full_name');?>";
   var Please_select_your_first_name ="<?= lang('Please_select_your_first_name');?>";
   var Please_select_your_last_name ="<?= lang('Please_select_your_last_name');?>";
   var Please_select_your_father_name_husband_name ="<?= lang('Please_select_your_father_name_husband_name');?>";
@@ -213,4 +228,5 @@
   var Please_enter_at_least_12_digit_aadhaar_number ="<?= lang('Please_enter_at_least_12_digit_aadhaar_number');?>";
   var Please_enter_at_least_10_digit_phone_number ="<?= lang('Please_enter_at_least_10_digit_phone_number');?>";
   var Please_select_your_unionName ="<?= lang('Please_select_your_unionName');?>";
+  var This_option_field_is_required ="<?= lang('This_option_field_is_required');?>";
 </script>

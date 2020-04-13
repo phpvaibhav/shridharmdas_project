@@ -10,14 +10,21 @@ class Webapi extends Common_Service_Controller{
     }
 
     function userStep1_post(){
-        $this->form_validation->set_rules('firstName','first name','trim|required');
-        $this->form_validation->set_rules('lastName','last name','trim|required');
+        $this->form_validation->set_rules('fullName','full name','trim|required');
+      //  $this->form_validation->set_rules('firstName','first name','trim|required');
+      //  $this->form_validation->set_rules('lastName','last name','trim|required');
         $this->form_validation->set_rules('dob','dob','trim|required');
         $this->form_validation->set_rules('parentName','S/O-W/O','trim|required');
         $this->form_validation->set_rules('countrycode','country code','trim|required');
         $this->form_validation->set_rules('contactNumber','contact number','trim|required');
         $this->form_validation->set_rules('aadharNumber','aadhar number','trim|required');
-
+        if (empty($_FILES['frontImage']['name'])) {
+            $this->form_validation->set_rules('frontImage','Aadhar front image','trim|required');
+        }
+        if (empty($_FILES['backImage']['name'])) {
+            $this->form_validation->set_rules('backImage','Aadhar back image','trim|required');
+        }
+        
         if($this->form_validation->run() == FALSE)
         {
             $response = array('status' => FAIL, 'message' => strip_tags(validation_errors()));
@@ -32,22 +39,39 @@ class Webapi extends Common_Service_Controller{
             }else{
                // pr($this->post());
                 $data_val   = $meta_val  = array();
+                $fullName1              = $this->post('fullName'); 
                 $firstName1              = $this->post('firstName'); 
                 $lastName1               = $this->post('lastName'); 
                 $parentName1             = $this->post('parentName'); 
                 $familyHeadName1             = $this->post('familyHeadName'); 
-                $fullName1               = $firstName1.' '.$lastName1 ; 
+              //  $fullName1               = $firstName1.' '.$lastName1 ; 
                 $tr = new GoogleTranslate(); // Translates to 'en' from auto-detected language by default
-                $firstName = $tr->setSource('hi')->setTarget('en')->translate($firstName1);
-                $hindiFirstName = $tr->setSource('en')->setTarget('hi')->translate($firstName);
-                $lastName = $tr->setSource('hi')->setTarget('en')->translate($lastName1);
-                $hindiLastName = $tr->setSource('en')->setTarget('hi')->translate($lastName);
+              
 
                 $fullName = $tr->setSource('hi')->setTarget('en')->translate($fullName1);
                 $hindiFullName = $tr->setSource('en')->setTarget('hi')->translate($fullName);
 
+              /*  $firstName = $tr->setSource('hi')->setTarget('en')->translate($firstName1);
+                $hindiFirstName = $tr->setSource('en')->setTarget('hi')->translate($firstName);
+                $lastName = $tr->setSource('hi')->setTarget('en')->translate($lastName1);
+                $hindiLastName = $tr->setSource('en')->setTarget('hi')->translate($lastName);*/
+                $fulldivideE = explode(" ",$fullName);
+                $firstName = isset($fulldivideE[0]) ? $fulldivideE[0] :"";
+                $firstName = trim($firstName);
+                $lastName = isset($fulldivideE[1]) ? ($fulldivideE[1]." ".@$fulldivideE[2]." ".@$fulldivideE[3]) :"";
+                $lastName = trim($lastName);
+                
+                $fulldivideH = explode(" ",$hindiFullName);
+                $hindiFirstName = isset($fulldivideH[0]) ? $fulldivideH[0] :"";
+                $hindiFirstName = trim($hindiFirstName);
+                $hindiLastName = isset($fulldivideH[1]) ? (@$fulldivideH[1]." ".@$fulldivideH[2]." ".@$fulldivideH[3]) :"";
+                $hindiLastName = trim($hindiLastName);
+
+
                 $parentName = $tr->setSource('hi')->setTarget('en')->translate($parentName1);
                 $hindiParentName = $tr->setSource('en')->setTarget('hi')->translate($parentName);
+
+
 
                 $familyHeadName = $tr->setSource('hi')->setTarget('en')->translate($familyHeadName1);
                 $hindiFamilyHeadName = $tr->setSource('en')->setTarget('hi')->translate($familyHeadName);
@@ -223,11 +247,12 @@ class Webapi extends Common_Service_Controller{
                 $result = $this->common_model->insertData('users',$data_val);
                
                 if($result){
-                    $meta_val['userId']             = $result; 
-                       $_SESSION['userId']          = $result;  
-                       $_SESSION['userStep']        = 2;  
-                       //$_SESSION['userStep']        = 2;  
                     $this->common_model->insertData('user_meta',$meta_val);
+                    $meta_val['userId']             = $result; 
+                    $_SESSION['userId']             = $result;  
+                    $_SESSION['userStep']           = 2;  
+                       //$_SESSION['userStep']        = 2;  
+                  
                     $msg  = 'Step-1 '.ResponseMessages::getStatusCodeMessage(122);
                     $response   = array('status'=>SUCCESS,'message'=>$msg);
                 }else{
@@ -263,7 +288,10 @@ class Webapi extends Common_Service_Controller{
 
               //  $user_meta['userId']        = $userId;
                 $user_meta['unionName']     = $this->post('unionName');
+                $user_meta['otherUnionName']     = $this->post('otherUnionName');
                 $user_meta['profession']    = $this->post('profession');
+                $user_meta['subProfession']    = @$this->post('subProfession');
+                $user_meta['otherProfession']    = @$this->post('otherProfession');
                 $user_meta['religiousKnowledge']      = $this->post('religiousKnowledge') ? implode(",",$this->post('religiousKnowledge')) :"";
 
                 $add_meta['userId']         = $userId;

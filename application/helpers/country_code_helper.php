@@ -363,7 +363,9 @@ $list = array(
 'AASTAA',
 'SIHOR',
 'SHIDDHGANAJ',
-'BHOPAL');
+'BHOPAL',
+'OTHER'
+);
 return $list;
 
 

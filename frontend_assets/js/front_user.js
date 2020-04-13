@@ -12,12 +12,16 @@ $("#user-add-step-1").validate({// Rules for form validation
       $(element).addClass('valid');
     },
     rules : {
-      firstName    : {
+      fullName    : {
         required : true
       }, 
+     /* firstName    : {
+        required : true
+      }, 
+      
       lastName    : {
         required : true
-      },    
+      },    */
       parentName    : {
         required : true
       }, 
@@ -42,19 +46,24 @@ $("#user-add-step-1").validate({// Rules for form validation
         required : true,
         minlength : 14
       }, 
-                  frontImage:{
-                    required: true,
-                    accept:"jpg,png,jpeg,gif"
-                } ,   backImage:{
-                    required: true,
-                    accept:"jpg,png,jpeg,gif"
-                } ,
+      frontImage:{
+        required: true,
+        accept:"jpg,png,jpeg,gif"
+      } ,   
+      backImage:{
+        required: true,
+        accept:"jpg,png,jpeg,gif"
+      } ,
     },
     // Messages for form validation
     messages : {
+      fullName : {
+            required : Please_select_your_full_name
+          },
       firstName : {
             required : Please_select_your_first_name
           },
+          
           lastName : {
             required : Please_select_your_last_name
           }, 
@@ -217,7 +226,7 @@ $(function() {
       localStorage.district     =  "";
       localStorage.country      =  "";
       localStorage.state        =  "";
-      localStorage.postName        =  "";
+      localStorage.postName     =  "";
       localStorage.add_chkbx    =  "";
     }
   });
@@ -304,6 +313,15 @@ $("#user-add-step-2").validate({ // Rules for form validation
         unionName    : {
           required : true
         },
+        otherUnionName    : {
+          required : true
+        },
+       subProfession    : {
+          required : true
+        },
+        otherProfession    : {
+          required : true
+        },
           
         address    : {
           required : true
@@ -348,6 +366,15 @@ $("#user-add-step-2").validate({ // Rules for form validation
           }, 
           unionName : {
             required : Please_select_your_unionName
+          }, 
+          otherUnionName : {
+            required : This_option_field_is_required
+          }, 
+        subProfession : {
+            required : This_option_field_is_required
+          }, 
+         otherProfession : {
+            required : This_option_field_is_required
           }, 
         
           address : {
@@ -520,7 +547,7 @@ $("#user-add-step-3").validate({ // Rules for form validation
 });
 
 
-$('.limitCheckBox').on('change', function(){
+/*$('.limitCheckBox').on('change', function(){
     var noChecked = 0;
     var limit = $(this).data('limit');
     //alert(limit);
@@ -542,7 +569,7 @@ $('.limitCheckBox').on('change', function(){
       });
     }
 
-});
+});*/
 
 function zipCodetoData(e){
     var value = $(e).val();
@@ -602,7 +629,8 @@ function zipCodetoData(e){
     }//End if
 }//End FUnction
 
-function sendOtpToMobile(e){
+function sendOtpToMobile(){
+   $("#Resendotp").css("display", "none");
   var method      =  "POST";
     var post_data   = {'contactNumber':$('#contactNumber').val()};
     var url         =  base_url+'apiv1/webapi/smsSentOtp';
@@ -621,16 +649,22 @@ function sendOtpToMobile(e){
             cache           : false,
             beforeSend      : function() {
              // preLoadshow(true);
+             $('#contactNumber').prop('disabled',true);
               $('#submit').prop('disabled', true);  
             },     
             success         : function (res) {
               //preLoadshow(false);
               $('#contactNumber').prop('readonly',true);
+             $('#contactNumber').prop('disabled',true);
               setTimeout(function(){  $('#submit').prop('disabled', false); },4000);
               if(res.status=='success'){
                 $("#otpDivId").css("display", "block");
+                $("#Resendotp").css("display", "none");
+                timerCount();
                 toastr.success(res.message, 'Success', {timeOut: 3000});
               }else{
+                $('#contactNumber').prop('disabled',false);
+                $('#contactNumber').prop('readonly',false);
                 toastr.error(res.message, 'Alert!', {timeOut: 4000});
               }
             }
@@ -638,7 +672,7 @@ function sendOtpToMobile(e){
     return false; // required to block normal submit since you used ajax
 
 }//End FUnction
-function verifyOtpNumber(e){
+function verifyOtpNumber(){
   var method      =  "POST";
     var post_data   = {'contactNumber':$('#contactNumber').val(),'otpnumber':$('#otpnumber').val()};
     var url         =  base_url+'apiv1/webapi/verifyOtpCode';
@@ -668,6 +702,9 @@ function verifyOtpNumber(e){
                 $('#submit').prop('disabled', false);
                 $('#contactNumber').prop('readonly',true);
                 $('#otpnumber').prop('readonly',true);
+                $("#Resendotp").css("display", "none");
+                 $('#contactNumber').prop('disabled',false);
+                 $(".countdown").css("display", "none");
                 toastr.success(res.message, 'Success', {timeOut: 3000});
               }else{
                 $('#submit').prop('disabled', true);
@@ -681,21 +718,134 @@ function verifyOtpNumber(e){
 
 }//End FUnction
 
-function checkNumber(e){
-    var value = $(e).val();
+function checkNumber(){
+    var value = $('#contactNumber').val();
     if(value.length==12){
-      $('#contactNumber').prop('readonly',true);
-      sendOtpToMobile(e);
-
+      if($('#mobileVerify').val()==0){
+        $('#contactNumber').prop('readonly',true);
+        
+        $('#disabled').prop('disabled',true);
+        sendOtpToMobile();
+      }
     }
 }
 
 
-function checkOtp(e){
-    var value = $(e).val();
+function checkOtp(){
+    var value = $('#otpnumber').val();
     if(value.length==10){
-      verifyOtpNumber(e);
+      verifyOtpNumber();
     }
 }
 
+function timerCount(){
+  $('.countdown').html("");
+  var timer2 = "0:31";
+  var interval = setInterval(function() {
+    if(timer2 == "0:31"){
+      $(".countdown").css("display", "block");
+    }
+    var timer = timer2.split(':');
+    //by parsing integer, I avoid all extra string processing
+    var minutes = parseInt(timer[0], 10);
+    var seconds = parseInt(timer[1], 10);
+    --seconds;
+    minutes = (seconds < 0) ? --minutes : minutes;
+    if (minutes < 0) clearInterval(interval);
+    seconds = (seconds < 0) ? 59 : seconds;
+    seconds = (seconds < 10) ? '0' + seconds : seconds;
+    //minutes = (minutes < 10) ?  minutes : minutes;
+    $('.countdown').html(minutes + ':' + seconds);
 
+    timer2 = minutes + ':' + seconds;
+    if(seconds=='00'){
+       $(".countdown").css("display", "none");
+       $("#Resendotp").css("display", "block");
+       if($('#mobileVerify').val()==1){
+         $("#Resendotp").css("display", "none");
+       }
+    }
+  }, 1000);
+}
+
+//otherUnionName
+/*function setUnion(e){
+  alert("gr");
+  if($(e).val()=='OTHER'){
+     $(".otherUnionName").css("display", "block");
+  }else{
+     $(".otherUnionName").css("display", "none");
+  }
+}*/
+$("#unionName").change(function(){
+  if($(this).val()=='OTHER'){
+     $(".otherUnionName").css("display", "block");
+  }else{
+     $(".otherUnionName").css("display", "none");
+  }
+}); 
+function subPro(e){
+   if($(e).val()=='Other'){
+    $('.otherProfessionA').html('<div class="form-label-group"><label for="">Other Profession</label><input type="text" name="otherProfession"  class="form-control"></div>');
+     $("#otherProfessionA").css("display", "block");
+  }else{
+    $('.otherProfessionA').html('');
+     $("#otherProfessionA").css("display", "none");
+  }
+}
+
+function professionCheck(e){
+    var expression = $(e).val();
+    $("#subProfessionA").css("display","none");
+    $('.subProfessionA').html('');
+    $('.otherProfessionA').html('');
+    switch(expression) {
+    case 'vyapar':
+      var html = '<div class="form-label-group"><label for="vyaparSub">Vyapar Option</label><select name="subProfession" id="subProfession" onchange="subPro(this);" class="form-control subProfession"><option value="">Select Vyapar</option><option value="Lawyers">Lawyers</option><option value="Doctors">Doctors</option><option value="IT professional">IT professional</option><option value="CA">CA</option><option value="Other">Other</option></select></div>';
+        $('.subProfessionA').html(html);
+        $("#subProfessionA").css("display","block");
+    break;
+    case 'business':
+      var html = '<div class="form-label-group"><label for="vyaparSub">Business Option</label><select name="subProfession" onchange="subPro(this);" class="form-control subProfession" id="subProfession"><option value="">Select Business</option><option value="Retail">Retail</option><option value="Wholesale">Wholesale</option><option value="Trading">Trading</option><option value="Manufacturing">Manufacturing</option><option value="Other">Other</option></select></div>';
+        $('.subProfessionA').html(html);
+        $("#subProfessionA").css("display","block");
+    break;
+    case 'job':
+      var html = '<div class="form-label-group"><label for="">Other Job</label><textarea  name="subProfession" class="form-control subProfession" maxlength="100"></textarea></div>';
+        $('.subProfessionA').html(html);
+        $("#subProfessionA").css("display","block");
+    break;
+
+    case 'other':
+      var html = '<div class="form-label-group"><label for="">Other Profession</label><input type="text" name="subProfession"  class="form-control"></div>';
+        $('.subProfessionA').html(html);
+        $("#subProfessionA").css("display","block");
+    break;
+    
+    
+    case 'house wife':
+        $("#offAddress").css("display","none");
+    break;
+    
+    case 'student':
+        $("#offAddress").css("display","none");
+    break;
+    case 'retired':
+        $("#offAddress").css("display","none");
+    break;
+    
+    default:
+        $("#offAddress").css("display","block");
+    } 
+
+}
+/*$("#subProfession").change(function(){
+  alert("FDSf");
+  if($(this).val()=='Other'){
+    $('.otherProfessionA').html('<div class="form-label-group"><label for="">Other Profession</label><input type="text" name="otherProfession"  class="form-control"></div>');
+     $("#otherProfessionA").css("display", "block");
+  }else{
+    $('.otherProfessionA').html('');
+     $("#otherProfessionA").css("display", "none");
+  }
+}); */

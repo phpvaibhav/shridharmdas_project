@@ -315,9 +315,9 @@ $('.popup-youtube').magnificPopup({
 	-------------------------------------------------------------------*/
   // 2019[year] - 8[month] - 20[day]
 
-  $('#countdown').countdown('2020/05/20', function(event) {
+ /* $('#countdown').countdown('2020/05/20', function(event) {
 	$(this).html(event.strftime('<span class="countdown-period">%-D <span>Day%!D</span></span> <span class="countdown-period">%H <span>Hours</span></span> <span class="countdown-period">%M <span>Minutes</span></span> <span class="countdown-period">%S <span>Seconds</span></span>'));
-  });
+  });*/
 
 
 })(jQuery);

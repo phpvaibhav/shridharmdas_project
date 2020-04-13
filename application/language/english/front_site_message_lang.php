@@ -43,11 +43,13 @@
 	$lang['locality'] 									= "Locality / Village";	
 	$lang['postName'] 									= "Post Name";	
 	$lang['Write_full_name'] 									= "Write full name";
+	$lang['otherUnionName'] 									= "Other Union Name";
 		
 
 
 
 	$lang['Submit'] 							= "Submit";
+	$lang['Please_select_your_full_name'] 				= "Please Select Your Full Name";
 	$lang['Please_select_your_first_name'] 							= "Please select your first name";
 	$lang['Please_select_your_last_name'] 							= "Please select your last name";
 	$lang['Please_select_your_familyHeadName'] 							= "Please select your family head name";
@@ -71,6 +73,8 @@
 	$lang['Please_enter_at_least_10_digit_phone_number'] 						= "Please enter  10 digit phone number.";
 	$lang['Please_enter_at_least_12_digit_aadhaar_number'] 						= "Please enter  12 digit aadhaar number.";
 	$lang['Please_select_your_unionName'] 						= "Please Select Your union name";
+	$lang['This_option_field_is_required'] 						= "This option field is required";
+	
 	
 
 

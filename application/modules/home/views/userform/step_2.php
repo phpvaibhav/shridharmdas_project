@@ -50,7 +50,7 @@
                          <div class="form-label-group">
                            
                               <label for="unionName"><?= lang('Union').' '.lang('Name'); ?></label>
-                              <select name="unionName"  class="form-control js-example-basic-single " id="unionName">
+                              <select name="unionName"  class="form-control js-example-basic-single "  id="unionName"  >
                               <?php if(!empty($unionList)):
                               foreach ($unionList as $kc => $union) { 
                                 
@@ -61,12 +61,21 @@
                               </select>
                           </div>
                       </div>
+                      <div class="col-md-6 otherUnionName" style="display: none">
+                 
+                    <div class="form-label-group">
+                      <label for="otherUnionName"><?= lang('otherUnionName'); ?></label>
+                      <input type="text" id="otherUnionName" class="form-control" placeholder="<?= lang('otherUnionName'); ?>"  name="otherUnionName">
+                    </div>
+                  </div>
+                      
                       <div class="col-md-6">
                           <div class="form-label-group">
                             <label for="profession"><?= lang('Profession'); ?></label>
 
                               <select name="profession" class="form-control" onchange="professionCheck(this);">
                                 <option value="" selected="" disabled=""><?= lang('Profession'); ?></option>
+                                <option value="vyapar">Vyapar</option>
                                 <option value="job">Job</option>
                                 <option value="business">Business</option>
                                 <option value="house wife">House wife</option>
@@ -76,6 +85,15 @@
                               </select>
                           </div>
                       </div>
+                      <div class="col-md-6" id="subProfessionA" style="display: none">
+                          <div class="subProfessionA"></div>
+                        
+                      </div>
+                      <div class="col-md-6" id="otherProfessionA" style="display: none">
+                          <div class="otherProfessionA"></div>
+                        
+                      </div>
+                      
                       <div class="col-md-12">
                           <div class="form-label-group">
                             <label><?= lang('Religious_knowledge'); ?></label>
@@ -353,6 +371,7 @@
     </div>
   </div>
 <script type="text/javascript">
+  var Please_select_your_full_name ="<?= lang('Please_select_your_full_name');?>";
   var Please_select_your_first_name ="<?= lang('Please_select_your_first_name');?>";
   var Please_select_your_last_name ="<?= lang('Please_select_your_last_name');?>";
   var Please_select_your_father_name_husband_name ="<?= lang('Please_select_your_father_name_husband_name');?>";
@@ -375,4 +394,5 @@
   var Please_enter_at_least_12_digit_aadhaar_number ="<?= lang('Please_enter_at_least_12_digit_aadhaar_number');?>";
   var Please_enter_at_least_10_digit_phone_number ="<?= lang('Please_enter_at_least_10_digit_phone_number');?>";
   var Please_select_your_unionName ="<?= lang('Please_select_your_unionName');?>";
+  var This_option_field_is_required ="<?= lang('This_option_field_is_required');?>";
 </script>
