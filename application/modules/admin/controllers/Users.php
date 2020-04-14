@@ -24,9 +24,9 @@ class Users extends Common_Back_Controller {
     public function add(){
      
         $data['title']      = lang('Users');
-     	$countries      = $this->common_model->getAll('countries');
+     
         $data['front_scripts'] = array('backend_assets/custom/js/users.js');
-        $data['countries'] = $countries;
+      
         $this->load->admin_render('users/add', $data, '');
     } //End function 
     public function detail(){
@@ -38,9 +38,8 @@ class Users extends Common_Back_Controller {
         $data['info']           = $result;
         $data['addresses']        = $this->common_model->getAll('addresses',array('userId'=>$result['id']));
         $data['usermeta']        = $this->common_model->getsingle('user_meta',array('userId'=>$result['id']));
-        $countries      = $this->common_model->getAll('countries');
+      
         $data['front_scripts'] = array('backend_assets/custom/js/users.js');
-        $data['countries'] = $countries;
         $this->load->admin_render('users/detail', $data, '');
     } //End function
     function exportUser(){

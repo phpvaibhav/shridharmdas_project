@@ -654,8 +654,8 @@ function sendOtpToMobile(){
             },     
             success         : function (res) {
               //preLoadshow(false);
-              $('#contactNumber').prop('readonly',true);
-             $('#contactNumber').prop('disabled',true);
+              $('#contactNumber').prop('readonly',false);
+              $('#contactNumber').prop('disabled',false);
               setTimeout(function(){  $('#submit').prop('disabled', false); },4000);
               if(res.status=='success'){
                 $("#otpDivId").css("display", "block");
@@ -698,8 +698,8 @@ function ResendOtpToMobile(){
             },     
             success         : function (res) {
               //preLoadshow(false);
-              $('#contactNumber').prop('readonly',true);
-             $('#contactNumber').prop('disabled',true);
+              $('#contactNumber').prop('readonly',false);
+              $('#contactNumber').prop('disabled',false);
               setTimeout(function(){  $('#submit').prop('disabled', false); },4000);
               if(res.status=='success'){
                 $("#otpDivId").css("display", "block");

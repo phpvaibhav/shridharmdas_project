@@ -39,6 +39,8 @@ class Webapi extends Common_Service_Controller{
             }else{
                // pr($this->post());
                 $data_val   = $meta_val  = array();
+                $fuN              = $this->post('fullName');
+                $fuN = explode(" ", $fuN); 
                 $fullName1              = $this->post('fullName'); 
                 $firstName1              = $this->post('firstName'); 
                 $lastName1               = $this->post('lastName'); 
@@ -49,26 +51,27 @@ class Webapi extends Common_Service_Controller{
               
 
                 $fullName = $tr->setSource('hi')->setTarget('en')->translate($fullName1);
-                $hindiFullName = $tr->setSource('en')->setTarget('hi')->translate($fullName);
+                $hindiFullName = $tr->setSource('en')->setTarget('hi')->translate($fullName1);
 
-              /*  $firstName = $tr->setSource('hi')->setTarget('en')->translate($firstName1);
-                $hindiFirstName = $tr->setSource('en')->setTarget('hi')->translate($firstName);
-                $lastName = $tr->setSource('hi')->setTarget('en')->translate($lastName1);
-                $hindiLastName = $tr->setSource('en')->setTarget('hi')->translate($lastName);*/
-                $fulldivideE = explode(" ",$fullName);
-                $firstName = isset($fulldivideE[0]) ? $fulldivideE[0] :"";
-                $firstName = trim($firstName);
-                $lastName = isset($fulldivideE[1]) ? ($fulldivideE[1]." ".@$fulldivideE[2]." ".@$fulldivideE[3]) :"";
+           
+                $fulldivideE    = explode(" ",$fullName);
+                $firstName      = isset($fulldivideE[0]) ? $fulldivideE[0] :"";
+                $firstName      = trim($firstName);
+                // elements 
+                unset($fulldivideE[0]); 
+                $lastName       = isset($fulldivideE[1]) ? (implode(" ",$fulldivideE)) :"";
                 $lastName = trim($lastName);
                 
-                $fulldivideH = explode(" ",$hindiFullName);
+                $fulldivideH    = explode(" ",$hindiFullName);
                 $hindiFirstName = isset($fulldivideH[0]) ? $fulldivideH[0] :"";
                 $hindiFirstName = trim($hindiFirstName);
-                $hindiLastName = isset($fulldivideH[1]) ? (@$fulldivideH[1]." ".@$fulldivideH[2]." ".@$fulldivideH[3]) :"";
+                // elements 
+                unset($fulldivideH[0]); 
+                $hindiLastName = isset($fulldivideH[1]) ? (implode(" ",$fulldivideH)) :"";
                 $hindiLastName = trim($hindiLastName);
 
 
-                $parentName = $tr->setSource('hi')->setTarget('en')->translate($parentName1);
+                $parentName     = $tr->setSource('hi')->setTarget('en')->translate($parentName1);
                 $hindiParentName = $tr->setSource('en')->setTarget('hi')->translate($parentName);
 
 
@@ -100,12 +103,13 @@ class Webapi extends Common_Service_Controller{
                 $meta_val['hindiFullName']   = $hindiFullName;
                 $meta_val['hindiParentName'] = $hindiParentName;
                 $meta_val['hindiFamilyHeadName'] = $hindiFamilyHeadName;
-                $meta_val['actualFirstName']  =  $this->post('firstName'); 
-                $meta_val['actualLastName']   = $this->post('lastName');
-                $meta_val['actualFullName']   = $this->post('firstName').' '.$this->post('lastName');
+                $meta_val['actualFirstName']  =  trim(isset($fuN[0]) ? $fuN[0]:""); 
+                 unset($fuN[0]); 
+                $meta_val['actualLastName']   = trim(isset($fuN[1]) ? implode(" ",$fuN):"");
+                $meta_val['actualFullName']   = $this->post('fullName');
                 $meta_val['actualParentName'] = $this->post('parentName');
                 $meta_val['actualFamilyHeadName'] = $this->post('familyHeadName'); 
-                
+            
                 /* image Uploads*/ 
                 $image          = array(); $frontImage = '';
                  $this->load->model('Image_model');
@@ -247,8 +251,9 @@ class Webapi extends Common_Service_Controller{
                 $result = $this->common_model->insertData('users',$data_val);
                
                 if($result){
+                    $meta_val['userId']             = $result;
                     $this->common_model->insertData('user_meta',$meta_val);
-                    $meta_val['userId']             = $result; 
+                     
                     $_SESSION['userId']             = $result;  
                     $_SESSION['userStep']           = 2;  
                        //$_SESSION['userStep']        = 2;  
@@ -331,9 +336,9 @@ class Webapi extends Common_Service_Controller{
                 $this->common_model->insertData('addresses',$add_meta);
                 $this->common_model->insertData('addresses',$add_meta1);
                 $this->common_model->insertData('addresses',$add_meta2);
-                 $msg  = 'Step-2 '.ResponseMessages::getStatusCodeMessage(122);
-                  $_SESSION['userStep']        = 3; 
-                    $response   = array('status'=>SUCCESS,'message'=>$msg);
+                $msg  = 'Step-2 '.ResponseMessages::getStatusCodeMessage(122);
+                $_SESSION['userStep']        = 3; 
+                $response   = array('status'=>SUCCESS,'message'=>$msg);
 
             }else{
                // pr($this->post());
@@ -416,7 +421,6 @@ class Webapi extends Common_Service_Controller{
             $contactNumber          = trim(str_replace(array('(',')','-',' '),array('','','',''),$this->post('contactNumber')));
             $this->load->library('sms_sent');
             $response           = $this->sms_sent->sent_otp_retry_number($contactNumber); 
-              
                // $response   = array('status'=>FAIL,'message'=>ResponseMessages::getStatusCodeMessage(118));   
             //}
             
