@@ -75,7 +75,7 @@
 
                               <select name="profession" class="form-control" onchange="professionCheck(this);">
                                 <option value="" selected="" disabled=""><?= lang('Profession'); ?></option>
-                                <option value="vyapar">Vyapar</option>
+                                <option value="profession">Profession</option>
                                 <option value="job">Job</option>
                                 <option value="business">Business</option>
                                 <option value="house wife">House wife</option>

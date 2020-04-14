@@ -316,12 +316,12 @@ $("#user-add-step-2").validate({ // Rules for form validation
         otherUnionName    : {
           required : true
         },
-       subProfession    : {
+     /*  subProfession    : {
           required : true
         },
         otherProfession    : {
           required : true
-        },
+        },*/
           
         address    : {
           required : true
@@ -653,9 +653,10 @@ function sendOtpToMobile(){
               $('#submit').prop('disabled', true);  
             },     
             success         : function (res) {
+               $('#contactNumber').prop('disabled',false);
               //preLoadshow(false);
-              $('#contactNumber').prop('readonly',false);
-              $('#contactNumber').prop('disabled',false);
+             // $('#contactNumber').prop('readonly',false);
+            // 
               setTimeout(function(){  $('#submit').prop('disabled', false); },4000);
               if(res.status=='success'){
                 $("#otpDivId").css("display", "block");
@@ -767,7 +768,7 @@ function checkNumber(){
     var value = $('#contactNumber').val();
     if(value.length==12){
       if($('#mobileVerify').val()==0){
-        $('#contactNumber').prop('readonly',true);
+       // $('#contactNumber').prop('readonly',true);
         
         $('#disabled').prop('disabled',true);
         sendOtpToMobile();
@@ -843,7 +844,7 @@ $("#unionName").change(function(){
 }); 
 function subPro(e){
    if($(e).val()=='Other'){
-    $('.otherProfessionA').html('<div class="form-label-group"><label for="">Other Profession</label><input type="text" name="otherProfession"  class="form-control"></div>');
+    $('.otherProfessionA').html('<div class="form-label-group"><label for="">Profession Detail</label><input type="text" name="otherProfession"  class="form-control"></div>');
      $("#otherProfessionA").css("display", "block");
   }else{
     $('.otherProfessionA').html('');
@@ -858,23 +859,23 @@ function professionCheck(e){
     $('.otherProfessionA').html('');
     switch(expression) {
     case 'vyapar':
-      var html = '<div class="form-label-group"><label for="vyaparSub">Vyapar Option</label><select name="subProfession" id="subProfession" onchange="subPro(this);" class="form-control subProfession"><option value="">Select Vyapar</option><option value="Lawyers">Lawyers</option><option value="Doctors">Doctors</option><option value="IT professional">IT professional</option><option value="CA">CA</option><option value="Other">Other</option></select></div>';
+      var html = '<div class="form-label-group"><label for="vyaparSub">Profession Type</label><select name="subProfession" id="subProfession" onchange="subPro(this);" class="form-control subProfession"><option value="">Select Vyapar</option><option value="Lawyers">Lawyers</option><option value="Doctors">Doctors</option><option value="IT professional">IT professional</option><option value="CA">CA</option><option value="Other">Other</option></select></div>';
         $('.subProfessionA').html(html);
         $("#subProfessionA").css("display","block");
     break;
     case 'business':
-      var html = '<div class="form-label-group"><label for="vyaparSub">Business Option</label><select name="subProfession" onchange="subPro(this);" class="form-control subProfession" id="subProfession"><option value="">Select Business</option><option value="Retail">Retail</option><option value="Wholesale">Wholesale</option><option value="Trading">Trading</option><option value="Manufacturing">Manufacturing</option><option value="Other">Other</option></select></div>';
+      var html = '<div class="form-label-group"><label for="vyaparSub">Business Type</label><select name="subProfession" onchange="subPro(this);" class="form-control subProfession" id="subProfession"><option value="">Select Business</option><option value="Retail">Retail</option><option value="Wholesale">Wholesale</option><option value="Trading">Trading</option><option value="Manufacturing">Manufacturing</option><option value="Other">Other</option></select></div>';
         $('.subProfessionA').html(html);
         $("#subProfessionA").css("display","block");
     break;
     case 'job':
-      var html = '<div class="form-label-group"><label for="">Other Job</label><textarea  name="subProfession" class="form-control subProfession" maxlength="100"></textarea></div>';
+      var html = '<div class="form-label-group"><label for="">Job Type</label><textarea  name="subProfession" class="form-control subProfession" maxlength="100"></textarea></div>';
         $('.subProfessionA').html(html);
         $("#subProfessionA").css("display","block");
     break;
 
     case 'other':
-      var html = '<div class="form-label-group"><label for="">Other Profession</label><input type="text" name="subProfession"  class="form-control"></div>';
+      var html = '<div class="form-label-group"><label for="">Profession Detail</label><input type="text" name="subProfession"  class="form-control"></div>';
         $('.subProfessionA').html(html);
         $("#subProfessionA").css("display","block");
     break;
@@ -892,6 +893,9 @@ function professionCheck(e){
     break;
     
     default:
+        var html = '<div class="form-label-group"><label for="">Profession Detail</label><input type="text" name="subProfession"  class="form-control"></div>';
+        $('.subProfessionA').html(html);
+        $("#subProfessionA").css("display","block");
         $("#offAddress").css("display","block");
     } 
 

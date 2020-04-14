@@ -32,7 +32,7 @@
 	$lang['office_address'] 					= "Office address";	
 	$lang['Religious_knowledge'] 					= "Religious knowledge";	
 	$lang['Education'] 					= "Education";	
-	$lang['Profession'] 					= "Profession";	
+	$lang['Profession'] 					= "Occupation";	
 	$lang['blood_group'] 					= "Blood group";	
 	$lang['unionResponsibility'] 					= "Union responsibility";	
 	$lang['married'] 					= "Married";	
