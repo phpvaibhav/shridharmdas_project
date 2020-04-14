@@ -14,6 +14,7 @@ class Webapi extends Common_Service_Controller{
       //  $this->form_validation->set_rules('firstName','first name','trim|required');
       //  $this->form_validation->set_rules('lastName','last name','trim|required');
         $this->form_validation->set_rules('dob','dob','trim|required');
+        $this->form_validation->set_rules('otpnumber','otp number','trim|required');
         $this->form_validation->set_rules('parentName','S/O-W/O','trim|required');
         $this->form_validation->set_rules('countrycode','country code','trim|required');
         $this->form_validation->set_rules('contactNumber','contact number','trim|required');

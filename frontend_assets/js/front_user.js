@@ -873,6 +873,18 @@ function subPro(e){
      $("#otherProfessionA").css("display", "none");
   }*/
 }
+function subPro1(e){
+   $("#otherProfessionA").css("display", "none");
+   $('.otherProfessionA').html('<div class="form-label-group"><label for="">Business Detail</label><input type="text" name="otherProfession"  class="form-control"></div>');
+     $("#otherProfessionA").css("display", "block");
+  /* if($(e).val()=='Other'){
+    $('.otherProfessionA').html('<div class="form-label-group"><label for="">Profession Detail</label><input type="text" name="otherProfession"  class="form-control"></div>');
+     $("#otherProfessionA").css("display", "block");
+  }else{
+    $('.otherProfessionA').html('');
+     $("#otherProfessionA").css("display", "none");
+  }*/
+}
 
 function professionCheck(e){
     var expression = $(e).val();
@@ -886,7 +898,7 @@ function professionCheck(e){
         $("#subProfessionA").css("display","block");
     break;
     case 'business':
-      var html = '<div class="form-label-group"><label for="vyaparSub">Business Type</label><select name="subProfession" onchange="subPro(this);" class="form-control subProfession" id="subProfession"><option value="">Select Business</option><option value="Retail">Retail</option><option value="Wholesale">Wholesale</option><option value="Trading">Trading</option><option value="Manufacturing">Manufacturing</option><option value="Other">Other</option></select></div>';
+      var html = '<div class="form-label-group"><label for="vyaparSub">Business Type</label><select name="subProfession" onchange="subPro1(this);" class="form-control subProfession" id="subProfession"><option value="">Select Business</option><option value="Retail">Retail</option><option value="Wholesale">Wholesale</option><option value="Trading">Trading</option><option value="Manufacturing">Manufacturing</option><option value="Other">Other</option></select></div>';
         $('.subProfessionA').html(html);
         $("#subProfessionA").css("display","block");
     break;

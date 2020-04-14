@@ -99,7 +99,7 @@
                             <label><?= lang('Religious_knowledge'); ?></label>
 
                               <div class="custom-control custom-checkbox mb-3">
-                                <input type="checkbox" class="custom-control-input limitCheckBox" value="णमोकार मंत्र एवं  प्राथमिक ज्ञान" id="customCheck1" name="religiousKnowledge[]" data-limit="1">
+                                <input type="checkbox" class="custom-control-input limitCheckBox" value="णमोकार मंत्र एवं  प्राथमिक ज्ञान" id="customCheck1" name="religiousKnowledge[]" data-limit="1" checked="checked">
                                 <label class="custom-control-label" for="customCheck1" >णमोकार मंत्र एवं  प्राथमिक ज्ञान</label>
                               </div>
                               <div class="custom-control custom-checkbox mb-3">
