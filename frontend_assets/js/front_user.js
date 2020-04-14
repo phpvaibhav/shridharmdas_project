@@ -858,7 +858,7 @@ function professionCheck(e){
     $('.subProfessionA').html('');
     $('.otherProfessionA').html('');
     switch(expression) {
-    case 'vyapar':
+    case 'profession':
       var html = '<div class="form-label-group"><label for="vyaparSub">Profession Type</label><select name="subProfession" id="subProfession" onchange="subPro(this);" class="form-control subProfession"><option value="">Select Vyapar</option><option value="Lawyers">Lawyers</option><option value="Doctors">Doctors</option><option value="IT professional">IT professional</option><option value="CA">CA</option><option value="Other">Other</option></select></div>';
         $('.subProfessionA').html(html);
         $("#subProfessionA").css("display","block");
@@ -875,7 +875,7 @@ function professionCheck(e){
     break;
 
     case 'other':
-      var html = '<div class="form-label-group"><label for="">Profession Detail</label><input type="text" name="subProfession"  class="form-control"></div>';
+      var html = '<div class="form-label-group"><label for="">Occupation Detail</label><input type="text" name="subProfession"  class="form-control"></div>';
         $('.subProfessionA').html(html);
         $("#subProfessionA").css("display","block");
     break;
@@ -889,11 +889,12 @@ function professionCheck(e){
         $("#offAddress").css("display","none");
     break;
     case 'retired':
+        
         $("#offAddress").css("display","none");
     break;
     
     default:
-        var html = '<div class="form-label-group"><label for="">Profession Detail</label><input type="text" name="subProfession"  class="form-control"></div>';
+        var html = '<div class="form-label-group"><label for="">Occupation Detail</label><input type="text" name="subProfession"  class="form-control"></div>';
         $('.subProfessionA').html(html);
         $("#subProfessionA").css("display","block");
         $("#offAddress").css("display","block");

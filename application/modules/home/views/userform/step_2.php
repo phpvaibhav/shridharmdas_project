@@ -143,7 +143,7 @@
                           <div class="form-label-group">
                             <label for="address"><?= lang('Address'); ?></label>
                           
-                           <input type="text" name="address" class="form-control" id="address" placeholder="<?= lang('Address'); ?>">
+                           <input type="text" name="address" class="form-control" id="address" placeholder="<?= lang('Address'); ?>" maxlength="30" size="30" >
                           </div>
                       </div>
                       <div class="col-md-6">
@@ -158,7 +158,7 @@
                           <div class="form-label-group">
                             <label for="city"><?= lang('City'); ?></label>
                           
-                           <input type="text" class="form-control" name="city" id="city" placeholder="<?= lang('City'); ?>">
+                           <input type="text" class="form-control" name="city" id="city" placeholder="<?= lang('City'); ?>" maxlength="30" size="30">
                           </div>
                       </div>
                    
@@ -166,20 +166,20 @@
                           <div class="form-label-group">
                             <label for="tehsil"><?= lang('Tehsil'); ?></label>
                           
-                           <input type="text" class="form-control" name="tehsil" id="tehsil" placeholder="<?= lang('Tehsil'); ?>">
+                           <input type="text" class="form-control" name="tehsil" id="tehsil" placeholder="<?= lang('Tehsil'); ?>" maxlength="30" size="30">
                           </div>
                       </div>
                       <div class="col-md-6">
                           <div class="form-label-group">
                             <label for="district"><?= lang('District'); ?></label>
                           
-                           <input type="text" class="form-control" name="district" id="district" placeholder="<?= lang('District'); ?>">
+                           <input type="text" class="form-control" name="district" id="district" placeholder="<?= lang('District'); ?>" maxlength="30" size="30">
                           </div>
                       </div>
                        <div class="col-md-6">
                           <div class="form-label-group">
                             <label for="state"><?= lang('State'); ?></label>
-                              <input type="text" class="form-control" name="state" id="state" placeholder="<?= lang('State'); ?>">
+                              <input type="text" class="form-control" name="state" id="state" placeholder="<?= lang('State'); ?>" maxlength="30" size="30">
                           </div>
                       </div>
 
@@ -187,7 +187,7 @@
                           <div class="form-label-group">
                             <label for="country"><?= lang('Country'); ?></label>
                           
-                           <input type="text" class="form-control" name="country"  id="country" placeholder="<?= lang('Country'); ?>" value="India">
+                           <input type="text" class="form-control" name="country"  id="country" placeholder="<?= lang('Country'); ?>" value="India" maxlength="30" size="30">
                              
                           </div>
                       </div>
@@ -228,7 +228,7 @@
                           <div class="form-label-group">
                             <label for="paddress"><?= lang('Address'); ?></label>
                           
-                           <input type="text" name="paddress" class="form-control" id="paddress" placeholder="<?= lang('Address'); ?>">
+                           <input type="text" name="paddress" class="form-control" id="paddress" placeholder="<?= lang('Address'); ?>" maxlength="30" size="30">
                           </div>
                       </div>
                       <div class="col-md-6">
@@ -243,7 +243,7 @@
                           <div class="form-label-group">
                             <label for="pcity"><?= lang('City'); ?></label>
                           
-                           <input type="text" class="form-control" name="pcity" id="pcity" placeholder="<?= lang('City'); ?>">
+                           <input type="text" class="form-control" name="pcity" id="pcity" placeholder="<?= lang('City'); ?>" maxlength="30" size="30">
                           </div>
                       </div>
 
@@ -251,20 +251,20 @@
                           <div class="form-label-group">
                             <label for="ptehsil"><?= lang('Tehsil'); ?></label>
                           
-                           <input type="text" class="form-control" name="ptehsil" id="ptehsil" placeholder="<?= lang('Tehsil'); ?>">
+                           <input type="text" class="form-control" name="ptehsil" id="ptehsil" placeholder="<?= lang('Tehsil'); ?>" maxlength="30" size="30" >
                           </div>
                       </div>
                       <div class="col-md-6">
                           <div class="form-label-group">
                             <label for="pdistrict"><?= lang('District'); ?></label>
                           
-                           <input type="text" class="form-control" name="pdistrict" id="pdistrict" placeholder="<?= lang('District'); ?>">
+                           <input type="text" class="form-control" name="pdistrict" id="pdistrict" placeholder="<?= lang('District'); ?>" maxlength="30" size="30" >
                           </div>
                       </div>
                       <div class="col-md-6">
                           <div class="form-label-group">
                             <label for="state"><?= lang('State'); ?></label>
-                              <input type="text" class="form-control" name="pstate" id="pstate" placeholder="<?= lang('State'); ?>">
+                              <input type="text" class="form-control" name="pstate" id="pstate" placeholder="<?= lang('State'); ?>" maxlength="30" size="30" >
                           </div>
                       </div>
 
@@ -272,7 +272,7 @@
                           <div class="form-label-group">
                             <label for="country"><?= lang('Country'); ?></label>
                           
-                           <input type="text" class="form-control" name="pcountry"  id="pcountry" placeholder="<?= lang('Country'); ?>" value="India">
+                           <input type="text" class="form-control" name="pcountry"  id="pcountry" placeholder="<?= lang('Country'); ?>" value="India" maxlength="30" size="30">
                              
                           </div>
                       </div>
@@ -298,14 +298,14 @@
                           <div class="form-label-group">
                             <label for="ozip_code"><?= lang('zip_code'); ?></label>
                           
-                           <input type="text" class="form-control number-only" name="ozip_code" id="ozip_code" placeholder="<?= lang('zip_code'); ?>" onkeyup="zipCodetoData(this);" data-set="o"; >
+                           <input type="text" class="form-control number-only" name="ozip_code" id="ozip_code" placeholder="<?= lang('zip_code'); ?>" onkeyup="zipCodetoData(this);" data-set="o";  >
                           </div>
                       </div>
                       <div class="col-md-12">
                           <div class="form-label-group">
                             <label for="oaddress"><?= lang('address'); ?></label>
                           
-                           <input type="text" name="oaddress" class="form-control" id="oaddress" placeholder="<?= lang('Address'); ?>">
+                           <input type="text" name="oaddress" class="form-control" id="oaddress" placeholder="<?= lang('Address'); ?>" maxlength="30" size="30">
                           </div>
                       </div>
                       <div class="col-md-6">
@@ -320,7 +320,7 @@
                           <div class="form-label-group">
                             <label for="ocity"><?= lang('City'); ?></label>
                           
-                           <input type="text" class="form-control" name="ocity" id="ocity" placeholder="<?= lang('City'); ?>">
+                           <input type="text" class="form-control" name="ocity" id="ocity" placeholder="<?= lang('City'); ?>" maxlength="30" size="30" >
                           </div>
                       </div>
 
@@ -328,20 +328,20 @@
                           <div class="form-label-group">
                             <label for="tehsil"><?= lang('Tehsil'); ?></label>
                           
-                           <input type="text" class="form-control" name="otehsil" id="otehsil" placeholder="<?= lang('Tehsil'); ?>">
+                           <input type="text" class="form-control" name="otehsil" id="otehsil" placeholder="<?= lang('Tehsil'); ?>" maxlength="30" size="30" >
                           </div>
                       </div>
                       <div class="col-md-6">
                           <div class="form-label-group">
                             <label for="odistrict"><?= lang('District'); ?></label>
                           
-                           <input type="text" class="form-control" name="odistrict" id="odistrict" placeholder="<?= lang('District'); ?>">
+                           <input type="text" class="form-control" name="odistrict" id="odistrict" placeholder="<?= lang('District'); ?>" maxlength="30" size="30" >
                           </div>
                       </div>
                       <div class="col-md-6">
                           <div class="form-label-group">
                             <label for="state"><?= lang('State'); ?></label>
-                              <input type="text" class="form-control" name="ostate" id="ostate" placeholder="<?= lang('State'); ?>">
+                              <input type="text" class="form-control" name="ostate" id="ostate" placeholder="<?= lang('State'); ?>" maxlength="30" size="30" >
                           </div>
                       </div>
 
@@ -349,7 +349,7 @@
                           <div class="form-label-group">
                             <label for="country"><?= lang('Country'); ?></label>
                           
-                           <input type="text" class="form-control" name="ocountry"  id="ocountry" placeholder="<?= lang('Country'); ?>" value="India">
+                           <input type="text" class="form-control" name="ocountry"  id="ocountry" placeholder="<?= lang('Country'); ?>" value="India" maxlength="30" size="30" >
                              
                           </div>
                       </div>

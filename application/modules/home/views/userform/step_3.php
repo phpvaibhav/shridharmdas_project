@@ -24,7 +24,7 @@
                       <div class="col-md-6">
                           <div class="form-label-group">
                             <label for="email"><?= lang('email'); ?></label>
-                            <input type="email" id="email" class="form-control" placeholder="<?= lang('email'); ?>"  name="email" >
+                            <input type="email" id="email" class="form-control" placeholder="<?= lang('email'); ?>"  name="email" maxlength="30" size="30">
                           </div>
                       </div>
 

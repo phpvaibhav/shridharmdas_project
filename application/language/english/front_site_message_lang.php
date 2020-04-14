@@ -30,50 +30,50 @@
 	$lang['home_address'] 						= "Home address";	
 	$lang['permanent_address'] 					= "Permanent address";	
 	$lang['office_address'] 					= "Office address";	
-	$lang['Religious_knowledge'] 					= "Religious knowledge";	
-	$lang['Education'] 					= "Education";	
-	$lang['Profession'] 					= "Occupation";	
-	$lang['blood_group'] 					= "Blood group";	
-	$lang['unionResponsibility'] 					= "Union responsibility";	
-	$lang['married'] 					= "Married";	
-	$lang['unmarried'] 					= "Unmarried";	
-	$lang['divorced'] 					= "Divorced";	
-	$lang['other'] 					= "Other";
-	$lang['familyHeadName'] 							= "Family Head Name";	
-	$lang['locality'] 									= "Locality / Village";	
-	$lang['postName'] 									= "Post Name";	
-	$lang['Write_full_name'] 									= "Write full name";
-	$lang['otherUnionName'] 									= "Other Union Name";
+	$lang['Religious_knowledge'] 				= "Religious knowledge";	
+	$lang['Education'] 							= "Education";	
+	$lang['Profession'] 						= "Occupation";	
+	$lang['blood_group'] 						= "Blood group";	
+	$lang['unionResponsibility'] 				= "Union responsibility";	
+	$lang['married'] 						 	= "Married";	
+	$lang['unmarried'] 							= "Unmarried";	
+	$lang['divorced'] 							= "Divorced";	
+	$lang['other'] 								= "Other";
+	$lang['familyHeadName'] 					= "Family Head Name";	
+	$lang['locality'] 							= "Locality / Village";	
+	$lang['postName'] 							= "Post Name";	
+	$lang['Write_full_name'] 					= "Write full name";
+	$lang['otherUnionName'] 					= "Other Union Name";
 		
 
 
 
-	$lang['Submit'] 							= "Submit";
-	$lang['Please_select_your_full_name'] 				= "Please Select Your Full Name";
-	$lang['Please_select_your_first_name'] 							= "Please select your first name";
-	$lang['Please_select_your_last_name'] 							= "Please select your last name";
-	$lang['Please_select_your_familyHeadName'] 							= "Please select your family head name";
+	$lang['Submit'] 										= "Submit";
+	$lang['Please_select_your_full_name'] 					= "Please Select Your Full Name";
+	$lang['Please_select_your_first_name'] 					= "Please select your first name";
+	$lang['Please_select_your_last_name'] 					= "Please select your last name";
+	$lang['Please_select_your_familyHeadName'] 				= "Please select your family head name";
 	
-	$lang['Please_select_your_father_name_husband_name'] 			= "Please select your father name/husband name";
-	$lang['Please_select_your_date_of_birth'] 						= "Please select your date of birth";
-	$lang['Please_select_your_gender'] 								= "Please select your gender";
-	$lang['Please_select_your_marital_status'] 						= "Please select your marital status";
-	$lang['Please_select_your_contact_number'] 						= "Please select your contact number";
-	$lang['Please_select_your_aadhar_number'] 						= "Please select your aadhar number";
-	$lang['Please_select_your_address'] 							= "Please select your address";
-	$lang['Please_select_your_city'] 								= "Please select your city";
-	$lang['Please_select_your_zip_code'] 							= "Please select your zip code";
-	$lang['Please_select_your_tehsil'] 								= "Please select your tehsil";
-	$lang['Please_select_your_district'] 							= "Please select your district";
-	$lang['Good_job'] 												= "Good job";
-	$lang['Your_form_submitted_successfully'] 						= "Your form has  submitted successfully";
-	$lang['Please_select_your_front_image'] 						= "Please select your front aadhar  image";
-	$lang['Please_select_your_back_image'] 						= "Please select your back aadhar  image";
+	$lang['Please_select_your_father_name_husband_name'] 	= "Please select your father name/husband name";
+	$lang['Please_select_your_date_of_birth'] 				= "Please select your date of birth";
+	$lang['Please_select_your_gender'] 						= "Please select your gender";
+	$lang['Please_select_your_marital_status'] 				= "Please select your marital status";
+	$lang['Please_select_your_contact_number'] 				= "Please select your contact number";
+	$lang['Please_select_your_aadhar_number'] 				= "Please select your aadhar number";
+	$lang['Please_select_your_address'] 					= "Please select your address";
+	$lang['Please_select_your_city'] 						= "Please select your city";
+	$lang['Please_select_your_zip_code'] 					= "Please select your zip code";
+	$lang['Please_select_your_tehsil'] 						= "Please select your tehsil";
+	$lang['Please_select_your_district'] 					= "Please select your district";
+	$lang['Good_job'] 										= "Good job";
+	$lang['Your_form_submitted_successfully'] 				= "Your form has  submitted successfully";
+	$lang['Please_select_your_front_image'] 				= "Please select your front aadhar  image";
+	$lang['Please_select_your_back_image'] 					= "Please select your back aadhar  image";
 	$lang['Please_select__image_type'] 						= "Only aadhar image type jpg/png/jpeg/gif is allowed";
-	$lang['Please_enter_at_least_10_digit_phone_number'] 						= "Please enter  10 digit phone number.";
-	$lang['Please_enter_at_least_12_digit_aadhaar_number'] 						= "Please enter  12 digit aadhaar number.";
-	$lang['Please_select_your_unionName'] 						= "Please Select Your union name";
-	$lang['This_option_field_is_required'] 						= "This option field is required";
+	$lang['Please_enter_at_least_10_digit_phone_number'] 	= "Please enter  10 digit phone number.";
+	$lang['Please_enter_at_least_12_digit_aadhaar_number'] 	= "Please enter  12 digit aadhaar number.";
+	$lang['Please_select_your_unionName'] 					= "Please Select Your union name";
+	$lang['This_option_field_is_required'] 					= "This option field is required";
 	
 	
 
