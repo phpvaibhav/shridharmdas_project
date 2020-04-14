@@ -31,7 +31,7 @@ class User_model extends CI_Model {
         $sel_fields = array_filter($this->column_sel); 
         $this->db->select($sel_fields);
         $this->db->from('users as u');
-        $this->db->join('user_meta as um','um.userId=u.id');
+        $this->db->join('user_meta as um','um.userId=u.id','left');
     
         $i = 0;
         foreach ($this->column_search as $emp) // loop column 
@@ -107,7 +107,7 @@ class User_model extends CI_Model {
     public function count_all()
     {
         $this->db->from('users as u');
-        $this->db->join('user_meta as um','um.userId=u.id');
+        $this->db->join('user_meta as um','um.userId=u.id','left');
         if(!empty($this->where))
             $this->db->where($this->where); 
         return $this->db->count_all_results();
