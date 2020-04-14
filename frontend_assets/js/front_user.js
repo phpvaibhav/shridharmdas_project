@@ -44,7 +44,8 @@ $("#user-add-step-1").validate({// Rules for form validation
       
       aadharNumber    : {
         required : true,
-        minlength : 14
+        minlength : 12,
+        checkAadharNumber : true,
       }, 
       frontImage:{
         required: true,
@@ -88,7 +89,8 @@ $("#user-add-step-1").validate({// Rules for form validation
           
           aadharNumber : {
             required : Please_select_your_aadhar_number,
-             minlength : Please_enter_at_least_12_digit_aadhaar_number
+            minlength : Please_enter_at_least_12_digit_aadhaar_number,
+            checkAadharNumber : This_aadhar_number_is_already_taken
           },  
           frontImage:{
           required: Please_select_your_front_image,
@@ -316,6 +318,19 @@ $("#user-add-step-2").validate({ // Rules for form validation
         otherUnionName    : {
           required : true
         },
+         profession    : {
+          required : true
+        },
+        
+        religiousKnowledge: { 
+           //required: true,
+           //minlength: 1
+            required: function(elem)
+            {
+                return $('[name="religiousKnowledge[]"]:checked').length > 0 ? false: true;
+            }
+             
+          },
      /*  subProfession    : {
           required : true
         },
@@ -366,7 +381,11 @@ $("#user-add-step-2").validate({ // Rules for form validation
           }, 
           unionName : {
             required : Please_select_your_unionName
-          }, 
+          },
+          profession : {
+            required : Please_select_your_Occupation
+          },
+           
           otherUnionName : {
             required : This_option_field_is_required
           }, 
@@ -843,13 +862,16 @@ $("#unionName").change(function(){
   }
 }); 
 function subPro(e){
-   if($(e).val()=='Other'){
+   $("#otherProfessionA").css("display", "none");
+   $('.otherProfessionA').html('<div class="form-label-group"><label for="">Profession Detail</label><input type="text" name="otherProfession"  class="form-control"></div>');
+     $("#otherProfessionA").css("display", "block");
+  /* if($(e).val()=='Other'){
     $('.otherProfessionA').html('<div class="form-label-group"><label for="">Profession Detail</label><input type="text" name="otherProfession"  class="form-control"></div>');
      $("#otherProfessionA").css("display", "block");
   }else{
     $('.otherProfessionA').html('');
      $("#otherProfessionA").css("display", "none");
-  }
+  }*/
 }
 
 function professionCheck(e){
@@ -911,3 +933,25 @@ function professionCheck(e){
      $("#otherProfessionA").css("display", "none");
   }
 }); */
+$().ready(function() {
+
+    $.validator.addMethod("checkAadharNumber", 
+        function(value, element) {
+            var result = false;
+            $.ajax({
+                type:"POST",
+                async: false,
+                url:  base_url+'apiv1/webapi/checkAadharNumber', // script to validate in server side
+                data: {aadharNumber: value},
+                success: function(data) {
+                  console.log(data);
+                    result = (data.status) ? true : false;
+                }
+            });
+            // return true if username is exist in database
+            return result; 
+        }, 
+        //This_aadhar_number_is_already_taken
+    );
+
+});   

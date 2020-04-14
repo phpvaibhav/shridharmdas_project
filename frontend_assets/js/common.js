@@ -76,7 +76,7 @@ function confirmAction(e){
 function injectTrim(handler) {
   return function (element, event) {
     if (element.tagName === "TEXTAREA" || (element.tagName === "INPUT" 
-                                       && element.type !== "password")) {
+                                       && element.type !== "password" && element.type !== "file")) {
       element.value = $.trim(element.value);
     }
     return handler.call(this, element, event);

@@ -67,6 +67,8 @@
 		$lang['Please_enter_at_least_12_digit_aadhaar_number'] 						= "कृपया 12 अंकों का आधार नंबर दर्ज करें।";
 	$lang['Please_enter_at_least_10_digit_phone_number'] 						= "कृपया 10 अंकों का फ़ोन नंबर दर्ज करें।";
 	$lang['Please_select_your_unionName'] 						= "कृपया अपने संघ का नाम चुनें";
+	$lang['Please_select_your_Occupation'] 					= "कृपया अपना व्यवसाय चुनें";
 	$lang['This_option_field_is_required'] 						= "यह विकल्प फ़ील्ड आवश्यक है।";
+	$lang['This_aadhar_number_is_already_taken'] 					= "यह आधार नंबर पहले से ही लिया हुआ है! कृपया अन्य आधार कार्ड नंबर दर्ज करें।";
 
 ?>

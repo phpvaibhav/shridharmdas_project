@@ -56,19 +56,20 @@ $route['hidesignup']				= 'admin/signup';
 $route['dashboard']					= 'admin/dashboard';
 $route['profile/(:any)'] 			= 'admin/profile/userDetail/$1';
 $route['change_password/(:any)'] 	= 'admin/profile/changePassword/$1';
-$route['users'] 	= 'admin/users';
-$route['add-user'] 	= 'admin/users/add';
-$route['user-detail/(:any)'] 	= 'admin/users/detail/$1';
-$route['preceptor'] 	= 'admin/preceptor';
-$route['union'] 	= 'admin/union';
-$route['office'] 	= 'admin/office';
+$route['users'] 					= 'admin/users';
+$route['add-user'] 					= 'admin/users/add';
+$route['user-detail/(:any)'] 		= 'admin/users/detail/$1';
+$route['preceptor'] 				= 'admin/preceptor';
+$route['union'] 					= 'admin/union';
+$route['office'] 					= 'admin/office';
 
-$route['user-form'] 	= 'home/addUser';
-$route['about-us'] 	= 'home/aboutus';
-$route['contact-us'] 	= 'home/contact';
-$route['user-step-1'] 	= 'home/user_step_1';
-$route['user-step-2'] 	= 'home/user_step_2';
-$route['user-step-3'] 	= 'home/user_step_3';
+$route['user-form'] 				= 'home/addUser';
+$route['about-us'] 					= 'home/aboutus';
+$route['contact-us'] 				= 'home/contact';
+$route['user-step-1'] 				= 'home/user_step_1';
+$route['user-step-2'] 				= 'home/user_step_2';
+$route['user-step-3'] 				= 'home/user_step_3';
+$route['user-preview'] 				= 'home/user_preview';
 
 
 

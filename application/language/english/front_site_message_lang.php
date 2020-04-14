@@ -72,8 +72,10 @@
 	$lang['Please_select__image_type'] 						= "Only aadhar image type jpg/png/jpeg/gif is allowed";
 	$lang['Please_enter_at_least_10_digit_phone_number'] 	= "Please enter  10 digit phone number.";
 	$lang['Please_enter_at_least_12_digit_aadhaar_number'] 	= "Please enter  12 digit aadhaar number.";
-	$lang['Please_select_your_unionName'] 					= "Please Select Your union name";
+	$lang['Please_select_your_unionName'] 					= "Please select your union name";
+	$lang['Please_select_your_Occupation'] 					= "Please select your Occupation";
 	$lang['This_option_field_is_required'] 					= "This option field is required";
+	$lang['This_aadhar_number_is_already_taken'] 					= "This aadhar number is already taken! Please enter  other aadhar card number .";
 	
 	
 

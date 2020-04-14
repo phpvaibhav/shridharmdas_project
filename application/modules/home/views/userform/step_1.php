@@ -124,7 +124,8 @@
                  
                     <div class="form-label-group">
                       <label for="aadharNumber"><?= lang('Aadhar_number'); ?></label>
-                      <input type="text" id="aadharNumber" class="form-control" placeholder="<?= lang('Aadhar_number'); ?>"  name="aadharNumber"  data-mask="9999 9999 9999">
+                    <!--   <input type="text" id="aadharNumber" class="form-control" placeholder="<?= lang('Aadhar_number'); ?>"  name="aadharNumber"  data-mask="9999 9999 9999">   -->
+                    <input type="text" id="aadharNumber" class="form-control number-only" placeholder="<?= lang('Aadhar_number'); ?>"  name="aadharNumber" maxlength="12" size="12" >
                     </div>
                   </div>
 
@@ -167,10 +168,6 @@
                     </div>
                     
                 </div>
-
-
-
-                  
 
                 <!--   <div class="form-label-group">
                     <label for="inputEmail">Email address</label>
@@ -229,4 +226,6 @@
   var Please_enter_at_least_10_digit_phone_number ="<?= lang('Please_enter_at_least_10_digit_phone_number');?>";
   var Please_select_your_unionName ="<?= lang('Please_select_your_unionName');?>";
   var This_option_field_is_required ="<?= lang('This_option_field_is_required');?>";
+  var This_aadhar_number_is_already_taken ="<?= lang('This_aadhar_number_is_already_taken');?>";
+  var Please_select_your_Occupation ="<?= lang('Please_select_your_Occupation');?>";
 </script>

@@ -17,14 +17,14 @@ class Webapi extends Common_Service_Controller{
         $this->form_validation->set_rules('parentName','S/O-W/O','trim|required');
         $this->form_validation->set_rules('countrycode','country code','trim|required');
         $this->form_validation->set_rules('contactNumber','contact number','trim|required');
-        $this->form_validation->set_rules('aadharNumber','aadhar number','trim|required');
+        $this->form_validation->set_rules('aadharNumber','aadhar number','trim|required|min_length[12]');
         if (empty($_FILES['frontImage']['name'])) {
             $this->form_validation->set_rules('frontImage','Aadhar front image','trim|required');
         }
         if (empty($_FILES['backImage']['name'])) {
             $this->form_validation->set_rules('backImage','Aadhar back image','trim|required');
         }
-        
+        $this->form_validation->set_message('min_length', lang('Please_enter_at_least_12_digit_aadhaar_number'));
         if($this->form_validation->run() == FALSE)
         {
             $response = array('status' => FAIL, 'message' => strip_tags(validation_errors()));
@@ -444,6 +444,28 @@ class Webapi extends Common_Service_Controller{
             $otpnumber          = trim(str_replace(array('(',')','-',' '),array('','','',''),$this->post('otpnumber')));
             $this->load->library('sms_sent');
             $response           = $this->sms_sent->verify_otp_code($contactNumber,$otpnumber); 
+        }
+        $this->response($response);
+    } //End Function
+
+    function checkAadharNumber_post(){
+        $this->form_validation->set_rules('aadharNumber','aadhar number','trim|required');
+      
+      
+        if($this->form_validation->run() == FALSE)
+        {
+            $response = array('status' => FAIL, 'message' => strip_tags(validation_errors()));
+        }
+        else
+        {
+            $aadharNumber          = trim(str_replace(array('(',')','-',' '),array('','','',''),$this->post('aadharNumber')));
+           
+            $isExist            =  $this->common_model->is_data_exists('users',array('aadharNumber'=>$aadharNumber)); 
+            if($isExist){
+                $response = array('status' =>false);
+            }else{
+                 $response = array('status' =>true);
+            }
         }
         $this->response($response);
     } //End Function

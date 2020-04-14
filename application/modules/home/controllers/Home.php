@@ -47,7 +47,7 @@ public function __construct()
         $data['countryCodes'] = countryCodelist();
      //   pr($data['countryCodes']);
         $data['front_styles'] = array();
-         $data['front_scripts'] = array('frontend_assets/js/front_user.js');
+         $data['front_scripts'] = array('http://jqueryvalidation.org/files/dist/additional-methods.min.js','frontend_assets/js/front_user.js');
         $this->load->front_render_minimal('userform/step_1',$data);
     }//End Function
     public function user_step_2() { 
@@ -98,6 +98,31 @@ public function __construct()
          $data['userId'] = $userId;
         $this->load->front_render_minimal('userform/step_3',$data);
     }//End Function
+
+    public function user_preview() { 
+      //  pr($_SESSION);
+/*        $userId = (isset($_SESSION['userId']) && !empty($_SESSION['userId'])) ? $_SESSION['userId'] :0;
+        $userStep = (isset($_SESSION['userStep']) && !empty($_SESSION['userStep'])) ? $_SESSION['userStep'] :0;
+        switch ($userStep) {
+        case 0:
+        redirect('user-step-1');
+        break;
+        case 2:
+        redirect('user-step-2');
+        break;
+
+        default:
+        # code...
+        break;
+        }*/
+        $data['title'] = 'User Preview';
+        $data['front_styles'] = array();
+      // $data['front_scripts'] = array('frontend_assets/js/front_user.js');
+
+         $data['userId'] = $userId;
+        $this->load->front_render_minimal('userform/user_preview',$data);
+    }//End Function
+    
 
 
     public function addUser() { 
