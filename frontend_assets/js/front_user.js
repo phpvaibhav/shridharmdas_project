@@ -968,3 +968,16 @@ $().ready(function() {
     );
 
 });   
+
+
+function checkLang(e){
+        var url = $(e).data('url');
+
+              var radioValue = $("input[name='inlineRadioOptions']:checked").val();
+
+            if(radioValue){
+
+                 window.location = url;
+
+            }
+}

@@ -1,7 +1,30 @@
  <div class="container">
     <div class="row no-gutter">
-      <div class="col-md-12">
-        
+      <div class="col-md-4"></div>
+      <div class="col-md-4"></div>
+      <div class="col-md-4 text-right">
+         <div class="row">
+            
+              <div class="col-md-9 col-lg-10">
+                <div class="radio d-inline mr-4">
+                  <input type="radio" name="inlineRadioOptions" id="inlineRadio1" value="hindi"<?= ($this->session->userdata('site_lang')=='hindi') ?"checked='checked'":""; ?> data-url="<?php echo base_url().'home/switchLang/hindi/'.encoding(current_url()); ?>" onclick="checkLang(this);">
+                  <label for="inlineRadio1">Hindi</label>
+                </div>
+                <div class="radio d-inline">
+                  <input type="radio" name="inlineRadioOptions" id="inlineRadio2" value="english" <?= ($this->session->userdata('site_lang')=='english') ?"checked='checked'":""; ?>  data-url="<?php echo base_url().'home/switchLang/english/'.encoding(current_url()); ?>" onclick="checkLang(this);">
+                  <label for="inlineRadio2">English</label>
+                </div>
+              </div>
+            </div>
+
+          <!--   <div class="form-check form-check-inline">
+            <input class="form-check-input" type="radio" name="inlineRadioOptions" id="inlineRadio1" value="hindi"<?= ($this->session->userdata('site_lang')=='hindi') ?"checked='checked'":""; ?> data-url="<?php echo base_url().'home/switchLang/hindi/'.encoding(current_url()); ?>" onclick="checkLang(this);" >
+            <label class="form-check-label" for="inlineRadio1">Hindi</label>
+            </div>
+            <div class="form-check form-check-inline">
+            <input class="form-check-input" type="radio" name="inlineRadioOptions" id="inlineRadio2" value="english" <?= ($this->session->userdata('site_lang')=='english') ?"checked='checked'":""; ?>  data-url="<?php echo base_url().'home/switchLang/english/'.encoding(current_url()); ?>" onclick="checkLang(this);">
+            <label class="form-check-label" for="inlineRadio2">English</label>
+            </div> -->
       </div>
       <div class="col-md-12">
         <div class="login py-5">
@@ -373,33 +396,3 @@
       </div>
     </div>
   </div>
-<script type="text/javascript">
-  var Please_select_your_full_name ="<?= lang('Please_select_your_full_name');?>";
-  var Please_select_your_first_name ="<?= lang('Please_select_your_first_name');?>";
-  var Please_select_your_last_name ="<?= lang('Please_select_your_last_name');?>";
-  var Please_select_your_father_name_husband_name ="<?= lang('Please_select_your_father_name_husband_name');?>";
-  var Please_select_your_date_of_birth ="<?= lang('Please_select_your_date_of_birth');?>";
-  var Please_select_your_gender ="<?= lang('Please_select_your_gender');?>";
-  var Please_select_your_marital_status ="<?= lang('Please_select_your_marital_status');?>";
-  var Please_select_your_contact_number ="<?= lang('Please_select_your_contact_number');?>";
-  var Please_select_your_aadhar_number ="<?= lang('Please_select_your_aadhar_number');?>";
-  var Please_select_your_address ="<?= lang('Please_select_your_address');?>";
-  var Please_select_your_city ="<?= lang('Please_select_your_city');?>";
-  var Please_select_your_zip_code ="<?= lang('Please_select_your_zip_code');?>";
-  var Please_select_your_tehsil ="<?= lang('Please_select_your_tehsil');?>";
-  var Please_select_your_district ="<?= lang('Please_select_your_district');?>";
-  var Good_job ="<?= lang('Good_job');?>";
-  var Your_form_submitted_successfully ="<?= lang('Your_form_submitted_successfully');?>";
-  var Please_select_your_front_image ="<?= lang('Please_select_your_front_image');?>";
-  var Please_select_your_back_image ="<?= lang('Please_select_your_back_image');?>";
-  var Please_select__image_type ="<?= lang('Please_select__image_type');?>";
-  var Please_select_your_familyHeadName ="<?= lang('Please_select_your_familyHeadName');?>";
-  var Please_enter_at_least_12_digit_aadhaar_number ="<?= lang('Please_enter_at_least_12_digit_aadhaar_number');?>";
-  var Please_enter_at_least_10_digit_phone_number ="<?= lang('Please_enter_at_least_10_digit_phone_number');?>";
-  var Please_select_your_unionName ="<?= lang('Please_select_your_unionName');?>";
-  var This_option_field_is_required ="<?= lang('This_option_field_is_required');?>";
-  var This_aadhar_number_is_already_taken ="<?= lang('This_aadhar_number_is_already_taken');?>";
-  var Please_select_your_Occupation ="<?= lang('Please_select_your_Occupation');?>";
-  var Please_select_your_religious_Knowledge ="<?= lang('Please_select_your_religious_Knowledge');?>";
-</script>
-</script>

@@ -40,13 +40,13 @@ class Webapi extends Common_Service_Controller{
             }else{
                // pr($this->post());
                 $data_val   = $meta_val  = array();
-                $fuN              = $this->post('fullName');
+                $fuN              = trim($this->post('fullName'));
                 $fuN = explode(" ", $fuN); 
-                $fullName1              = $this->post('fullName'); 
-                $firstName1              = $this->post('firstName'); 
-                $lastName1               = $this->post('lastName'); 
-                $parentName1             = $this->post('parentName'); 
-                $familyHeadName1             = $this->post('familyHeadName'); 
+                $fullName1              =  trim($this->post('fullName')); 
+                $firstName1              = trim($this->post('firstName')); 
+                $lastName1               = trim($this->post('lastName')); 
+                $parentName1             = trim($this->post('parentName')); 
+                $familyHeadName1             = trim($this->post('familyHeadName')); 
               //  $fullName1               = $firstName1.' '.$lastName1 ; 
                 $tr = new GoogleTranslate(); // Translates to 'en' from auto-detected language by default
               
@@ -72,44 +72,44 @@ class Webapi extends Common_Service_Controller{
                 $hindiLastName = trim($hindiLastName);
 
 
-                $parentName     = $tr->setSource('hi')->setTarget('en')->translate($parentName1);
+                $parentName         = $tr->setSource('hi')->setTarget('en')->translate($parentName1);
                 $hindiParentName = $tr->setSource('en')->setTarget('hi')->translate($parentName);
 
 
 
-                $familyHeadName = $tr->setSource('hi')->setTarget('en')->translate($familyHeadName1);
-                $hindiFamilyHeadName = $tr->setSource('en')->setTarget('hi')->translate($familyHeadName);
+                $familyHeadName                     = $tr->setSource('hi')->setTarget('en')->translate($familyHeadName1);
+                $hindiFamilyHeadName                = $tr->setSource('en')->setTarget('hi')->translate($familyHeadName);
 
 
 
-                $contactNumber          = trim(str_replace(array('(',')','-',' '),array('','','',''),$this->post('contactNumber')));
-                $data_val['dob']        = date('Y-m-d',strtotime($this->post('dob'))); 
+                $contactNumber                      = trim(str_replace(array('(',')','-',' '),array('','','',''),$this->post('contactNumber')));
+                $data_val['dob']                    = date('Y-m-d',strtotime($this->post('dob'))); 
 
-                $data_val['firstName']      = $firstName;
-                $data_val['lastName']      = $lastName; 
-                $data_val['fullName']      = $fullName; 
-                $data_val['parentName']      = $parentName; 
-                $data_val['familyHeadName']      = $familyHeadName; 
-                $data_val['countrycode']     = $this->post('countrycode'); 
-                $data_val['whose_contact_number']     = $this->post('whose_contact_number'); 
-                $data_val['mobileVerify']     = $this->post('mobileVerify'); 
+                $data_val['firstName']              = $firstName;
+                $data_val['lastName']               = $lastName; 
+                $data_val['fullName']               = $fullName; 
+                $data_val['parentName']             = $parentName; 
+                $data_val['familyHeadName']         = $familyHeadName; 
+                $data_val['countrycode']            = $this->post('countrycode'); 
+                $data_val['whose_contact_number']   = $this->post('whose_contact_number'); 
+                $data_val['mobileVerify']           = $this->post('mobileVerify'); 
 
-                $data_val['contactNumber']   = $contactNumber;
-                $data_val['aadharNumber']    = $aadharNumber; 
-                $data_val['userName']        = rand('111111','999999'); 
-                $data_val['password']        = password_hash('123!@#', PASSWORD_DEFAULT);
+                $data_val['contactNumber']          = $contactNumber;
+                $data_val['aadharNumber']           = $aadharNumber; 
+                $data_val['userName']               = rand('111111','999999'); 
+                $data_val['password']               = password_hash('123!@#', PASSWORD_DEFAULT);
 
-                $meta_val['hindiFirstName']  = $hindiFirstName;
-                $meta_val['hindiLastName']   = $hindiLastName;
-                $meta_val['hindiFullName']   = $hindiFullName;
-                $meta_val['hindiParentName'] = $hindiParentName;
-                $meta_val['hindiFamilyHeadName'] = $hindiFamilyHeadName;
-                $meta_val['actualFirstName']  =  trim(isset($fuN[0]) ? $fuN[0]:""); 
+                $meta_val['hindiFirstName']         = $hindiFirstName;
+                $meta_val['hindiLastName']          = $hindiLastName;
+                $meta_val['hindiFullName']          = $hindiFullName;
+                $meta_val['hindiParentName']        = $hindiParentName;
+                $meta_val['hindiFamilyHeadName']    = $hindiFamilyHeadName;
+                $meta_val['actualFirstName']        =  trim(isset($fuN[0]) ? $fuN[0]:""); 
                  unset($fuN[0]); 
-                $meta_val['actualLastName']   = trim(isset($fuN[1]) ? implode(" ",$fuN):"");
-                $meta_val['actualFullName']   = $this->post('fullName');
-                $meta_val['actualParentName'] = $this->post('parentName');
-                $meta_val['actualFamilyHeadName'] = $this->post('familyHeadName'); 
+                $meta_val['actualLastName']         = trim(isset($fuN[1]) ? implode(" ",$fuN):"");
+                $meta_val['actualFullName']         = $this->post('fullName');
+                $meta_val['actualParentName']       = $this->post('parentName');
+                $meta_val['actualFamilyHeadName']   = $this->post('familyHeadName'); 
             
                 /* image Uploads*/ 
                 $image          = array(); $frontImage = '';
@@ -288,16 +288,16 @@ class Webapi extends Common_Service_Controller{
                 $user_val = $user_meta = $add_meta = $add_meta1 = $add_meta2 = array();
 
               //  $user_val['userId']         = $userId;
-                $user_val['gender']         = $this->post('gender');
-                $user_val['maritalStatus']  = $this->post('maritalStatus');
+                $user_val['gender']             = $this->post('gender');
+                $user_val['maritalStatus']      = $this->post('maritalStatus');
                 $user_val['communicationCode']  = $this->post('zip_code');
 
               //  $user_meta['userId']        = $userId;
-                $user_meta['unionName']     = $this->post('unionName');
-                $user_meta['otherUnionName']     = $this->post('otherUnionName');
-                $user_meta['profession']    = $this->post('profession');
-                $user_meta['subProfession']    = @$this->post('subProfession');
-                $user_meta['otherProfession']    = @$this->post('otherProfession');
+                $user_meta['unionName']         = $this->post('unionName');
+                $user_meta['otherUnionName']    = $this->post('otherUnionName');
+                $user_meta['profession']        = $this->post('profession');
+                $user_meta['subProfession']     = @$this->post('subProfession');
+                $user_meta['otherProfession']   = @$this->post('otherProfession');
                 $user_meta['religiousKnowledge']      = $this->post('religiousKnowledge') ? implode(",",$this->post('religiousKnowledge')) :"";
 
                 $add_meta['userId']         = $userId;
@@ -311,7 +311,7 @@ class Webapi extends Common_Service_Controller{
                 $add_meta['postName']          = $this->post('postName');
                 $add_meta['addressType']    = 'Current';
 
-                $add_meta1['userId']      = $userId;
+                $add_meta1['userId']        = $userId;
                 $add_meta1['zip_code']      = $this->post('pzip_code');
                 $add_meta1['address']       = $this->post('paddress');
                 $add_meta1['city']          = $this->post('pcity');
@@ -319,7 +319,7 @@ class Webapi extends Common_Service_Controller{
                 $add_meta1['district']      = $this->post('pdistrict');
                 $add_meta1['country']       = $this->post('pcountry');
                 $add_meta1['state']         = $this->post('pstate');
-                $add_meta1['postName']         = $this->post('ppostName');
+                $add_meta1['postName']      = $this->post('ppostName');
                 $add_meta1['addressType']   = 'Permanent';
                 
                 $add_meta2['userId']        = $userId;
@@ -330,14 +330,14 @@ class Webapi extends Common_Service_Controller{
                 $add_meta2['district']      = $this->post('odistrict');
                 $add_meta2['country']       = $this->post('ocountry');
                 $add_meta2['state']         = $this->post('ostate');
-                $add_meta2['postName']         = $this->post('opostName');
+                $add_meta2['postName']      = $this->post('opostName');
                 $add_meta2['addressType']   = 'Office';
                 $this->common_model->updateFields('users',$user_val,array('id'=>$userId));
                 $this->common_model->updateFields('user_meta',$user_meta,array('userId'=>$userId));
                 $this->common_model->insertData('addresses',$add_meta);
                 $this->common_model->insertData('addresses',$add_meta1);
                 $this->common_model->insertData('addresses',$add_meta2);
-                $msg  = 'Step-2 '.ResponseMessages::getStatusCodeMessage(122);
+                $msg            = 'Step-2 '.ResponseMessages::getStatusCodeMessage(122);
                 $_SESSION['userStep']        = 3; 
                 $response   = array('status'=>SUCCESS,'message'=>$msg);
 
@@ -366,17 +366,16 @@ class Webapi extends Common_Service_Controller{
                 $user_val = $user_meta = $add_meta = $add_meta1 = $add_meta2 = array();
 
               //  $user_val['userId']         = $userId;
-                $user_val['email']         = $this->post('email');
-            
-                $user_meta['bloodGroup']     = $this->post('bloodGroup');
-                $user_meta['education']      = $this->post('education');
+                $user_val['email']              = $this->post('email');
+                $user_meta['bloodGroup']        = $this->post('bloodGroup');
+                $user_meta['education']         = $this->post('education');
 
                 
                 $this->common_model->updateFields('users',$user_val,array('id'=>$userId));
                 $this->common_model->updateFields('user_meta',$user_meta,array('userId'=>$userId));
              
                  $msg  = lang('Your_form_submitted_successfully');;
-                  $_SESSION['userStep']        = 0; 
+                 $_SESSION['userStep']        = 0; 
                  $response   = array('status'=>SUCCESS,'message'=>$msg);
 
             }else{
@@ -470,8 +469,6 @@ class Webapi extends Common_Service_Controller{
         }
         $this->response($response);
     } //End Function
-
-
     // Compress image
     function compressedImage($source, $path, $quality) 
     {
