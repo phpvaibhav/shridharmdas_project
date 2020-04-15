@@ -141,7 +141,7 @@ class Users extends Common_Back_Controller {
             $sheet->setCellValue('A1', 'नाम');
             $sheet->setCellValue('B1', 'उपनाम');
             $sheet->setCellValue('C1', 'पिता/पति का नाम');
-            $sheet->setCellValue('D1', 'प्रधान का नाम');
+            $sheet->setCellValue('D1', 'परिवार के मुखिया का नाम');
             $sheet->setCellValue('E1', 'ई-मेल');
             $sheet->setCellValue('F1', 'फ़ोन नंबर');
             $sheet->setCellValue('G1', 'आधार कार्ड नंबर');

@@ -111,5 +111,5 @@
   var This_option_field_is_required                 = "<?= lang('This_option_field_is_required');?>";
   var This_aadhar_number_is_already_taken                 = "<?= lang('This_aadhar_number_is_already_taken');?>";
   var Please_select_your_Occupation ="<?= lang('Please_select_your_Occupation');?>";
-
+var Please_select_your_religious_Knowledge ="<?= lang('Please_select_your_religious_Knowledge');?>";
 </script>

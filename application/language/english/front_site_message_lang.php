@@ -76,6 +76,7 @@
 	$lang['Please_select_your_Occupation'] 					= "Please select your Occupation";
 	$lang['This_option_field_is_required'] 					= "This option field is required";
 	$lang['This_aadhar_number_is_already_taken'] 					= "This aadhar number is already taken! Please enter  other aadhar card number .";
+	$lang['Please_select_your_religious_Knowledge'] 					= "Please select your religious Knowledge";
 	
 	
 

@@ -49,11 +49,11 @@ $("#user-add-step-1").validate({// Rules for form validation
       }, 
       frontImage:{
         required: true,
-        accept:"jpg,png,jpeg,gif"
+        accept:"jpg,png,jpeg,gif,pdf"
       } ,   
       backImage:{
         required: true,
-        accept:"jpg,png,jpeg,gif"
+        accept:"jpg,png,jpeg,gif,pdf"
       } ,
     },
     // Messages for form validation
@@ -65,10 +65,10 @@ $("#user-add-step-1").validate({// Rules for form validation
             required : Please_select_your_first_name
           },
           
-          lastName : {
+      lastName : {
             required : Please_select_your_last_name
           }, 
-          parentName : {
+      parentName : {
             required : Please_select_your_father_name_husband_name
           },
           familyHeadName : {
@@ -93,12 +93,12 @@ $("#user-add-step-1").validate({// Rules for form validation
             checkAadharNumber : This_aadhar_number_is_already_taken
           },  
           frontImage:{
-          required: Please_select_your_front_image,
+            required: Please_select_your_front_image,
           accept: Please_select__image_type,//"Only image type jpg/png/jpeg/gif is allowed"
           }  ,
           backImage:{
-          required: Please_select_your_back_image,
-          accept: Please_select__image_type//"Only image type jpg/png/jpeg/gif is allowed"
+            required: Please_select_your_back_image,
+            accept: Please_select__image_type//"Only image type jpg/png/jpeg/gif is allowed"
           }  ,
 
   },
@@ -322,15 +322,6 @@ $("#user-add-step-2").validate({ // Rules for form validation
           required : true
         },
         
-        religiousKnowledge: { 
-           //required: true,
-           //minlength: 1
-            required: function(elem)
-            {
-                return $('[name="religiousKnowledge[]"]:checked').length > 0 ? false: true;
-            }
-             
-          },
      /*  subProfession    : {
           required : true
         },
@@ -370,6 +361,7 @@ $("#user-add-step-2").validate({ // Rules for form validation
         },
         
     },
+    
     // Messages for form validation
     messages : {
      
@@ -457,6 +449,15 @@ $("#user-add-step-2").validate({ // Rules for form validation
       localStorage.postName        =  "";
       localStorage.add_chkbx    =  "";
     }
+    if($('[name="religiousKnowledge[]"]:checked').length > 0){
+       $('#check-d-error').text('');
+    }else{
+
+      alert(Please_select_your_religious_Knowledge);
+      $('#check-d-error').text(Please_select_your_religious_Knowledge);
+       return false;
+    }
+    
     var method      =  "POST";
     var post_data   = $(form).serialize();
     var url         =  base_url+'apiv1/webapi/'+$(form).attr('action');

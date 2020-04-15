@@ -1,6 +1,9 @@
  <div class="container">
     <div class="row no-gutter">
       <div class="col-md-12">
+        
+      </div>
+      <div class="col-md-12">
         <div class="login py-5">
             <div class="row">
               <div class="col-md-8 offset-col-2 mx-auto d-block login-page">
@@ -95,7 +98,7 @@
                       </div>
                       
                       <div class="col-md-12">
-                          <div class="form-label-group">
+                          <div class="form-label-group" id="idhhhh">
                             <label><?= lang('Religious_knowledge'); ?></label>
 
                               <div class="custom-control custom-checkbox mb-3">
@@ -118,10 +121,9 @@
                                 <input type="checkbox" class="custom-control-input limitCheckBox" value="स्वाध्याय का ज्ञान" name="religiousKnowledge[]" id="customCheck5" data-limit="5">
                                 <label class="custom-control-label" for="customCheck5" >स्वाध्याय का ज्ञान</label>
                               </div>
-                              
-                              
-                              
+
                           </div>
+                          <span id="check-d-error" for="idhhhh" class="invalid"></span>
                       </div>
                       
                   </div>
@@ -397,5 +399,6 @@
   var This_option_field_is_required ="<?= lang('This_option_field_is_required');?>";
   var This_aadhar_number_is_already_taken ="<?= lang('This_aadhar_number_is_already_taken');?>";
   var Please_select_your_Occupation ="<?= lang('Please_select_your_Occupation');?>";
+  var Please_select_your_religious_Knowledge ="<?= lang('Please_select_your_religious_Knowledge');?>";
 </script>
 </script>

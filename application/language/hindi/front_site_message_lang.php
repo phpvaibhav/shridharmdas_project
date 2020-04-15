@@ -39,15 +39,15 @@
 	$lang['unmarried'] 									= "अविवाहित";	
 	$lang['divorced'] 									= "तलाकशुदा";	
 	$lang['other'] 										= "अन्य";	
-	$lang['familyHeadName'] 							= "प्रधान का नाम";	
+	$lang['familyHeadName'] 							= "परिवार के मुखिया का नाम";	
 	$lang['locality'] 									= "मुहल्ला / गाँव";	
 	$lang['postName'] 									= "पोस्ट नाम";
-	$lang['Write_full_name'] 									= "पूरा नाम लिखे";
-	$lang['otherUnionName'] 									= "अन्य श्री संघ का नाम";
+	$lang['Write_full_name'] 							= "पूरा नाम लिखे";
+	$lang['otherUnionName'] 							= "अन्य श्री संघ का नाम";
 	$lang['Please_select_your_full_name'] 				= "कृपया अपना पूरा नाम चुनें";
 	$lang['Please_select_your_first_name'] 				= "कृपया अपना पहला नाम चुनें";
 	$lang['Please_select_your_last_name'] 				= "कृपया अपना उपनाम चुनें";
-	$lang['Please_select_your_familyHeadName'] 							= "कृपया अपने परिवार के प्रधान का नाम चुनें";
+	$lang['Please_select_your_familyHeadName'] 			= "कृपया अपने परिवार के मुखिया का नाम का नाम चुनें";
 	$lang['Please_select_your_father_name_husband_name'] = "कृपया अपने पिता/पति का नाम चुनें";
 	$lang['Please_select_your_date_of_birth'] 			= "कृपया अपनी जन्मतिथि चुनें";
 	$lang['Please_select_your_gender'] 					= "कृपया अपना लिंग चुनें";
@@ -64,11 +64,13 @@
 	$lang['Please_select_your_front_image'] 			= "कृपया अपनी फ्रंट आधार छवि चुनें";
 	$lang['Please_select_your_back_image'] 				= "कृपया अपनी बैक आधार छवि का चयन करें";
 	$lang['Please_select__image_type'] 					= "केवल आधार छवि प्रकार jpg / png / jpeg / gif की अनुमति है";
-		$lang['Please_enter_at_least_12_digit_aadhaar_number'] 						= "कृपया 12 अंकों का आधार नंबर दर्ज करें।";
-	$lang['Please_enter_at_least_10_digit_phone_number'] 						= "कृपया 10 अंकों का फ़ोन नंबर दर्ज करें।";
+		$lang['Please_enter_at_least_12_digit_aadhaar_number'] 	= "कृपया 12 अंकों का आधार नंबर दर्ज करें।";
+	$lang['Please_enter_at_least_10_digit_phone_number'] 		= "कृपया 10 अंकों का फ़ोन नंबर दर्ज करें।";
 	$lang['Please_select_your_unionName'] 						= "कृपया अपने संघ का नाम चुनें";
-	$lang['Please_select_your_Occupation'] 					= "कृपया अपना व्यवसाय चुनें";
+	$lang['Please_select_your_Occupation'] 						= "कृपया अपना व्यवसाय चुनें";
 	$lang['This_option_field_is_required'] 						= "यह विकल्प फ़ील्ड आवश्यक है।";
-	$lang['This_aadhar_number_is_already_taken'] 					= "यह आधार नंबर पहले से ही लिया हुआ है! कृपया अन्य आधार कार्ड नंबर दर्ज करें।";
+	$lang['This_aadhar_number_is_already_taken'] 				= "यह आधार नंबर पहले से ही लिया हुआ है! कृपया अन्य आधार कार्ड नंबर दर्ज करें।";
+	
+	$lang['Please_select_your_religious_Knowledge'] 			= "कृपया अपने धार्मिक ज्ञान का चयन करें";
 
 ?>

@@ -121,7 +121,7 @@ class Webapi extends Common_Service_Controller{
                         $imageTemp = $_FILES["frontImage"]["tmp_name"];
                         $imageSize = $_FILES["frontImage"]["size"];
                         // Valid extension
-                        $valid_ext = array('png','jpeg','jpg','gif');
+                        $valid_ext = array('png','jpeg','jpg','gif','pdf');
 
                         $photoExt1 = @end(explode('.', $filename)); // explode the image name to get the extension
                         $phototest1 = strtolower($photoExt1);
@@ -169,7 +169,7 @@ class Webapi extends Common_Service_Controller{
                         $imageTempb = $_FILES["backImage"]["tmp_name"];
                         $imageSizeb = $_FILES["backImage"]["size"];
                         // Valid extension
-                        $valid_extb = array('png','jpeg','jpg','gif');
+                        $valid_extb = array('png','jpeg','jpg','gif','pdf');
 
                         $photoExt1b = @end(explode('.', $filenameb)); // explode the image name to get the extension
                         $phototest1b = strtolower($photoExt1b);
