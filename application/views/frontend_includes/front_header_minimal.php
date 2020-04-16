@@ -11,7 +11,7 @@
 			$backend_assets =  base_url().'backend_assets/';
 
 	?>
-	<title>श्री धर्मदास गण परिषद</title>
+	<title><?= lang('site_name'); ?></title>
 	<!--Bootstrap -->
 	<link rel="stylesheet" href="<?= $frontend_assets; ?>assets/css/bootstrap.min.css" type="text/css">
 	<!--OWL Carousel slider-->

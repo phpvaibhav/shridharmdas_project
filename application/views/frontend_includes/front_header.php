@@ -7,7 +7,7 @@
 	<meta name="keywords" content="Shri dharmdas,श्री धर्मदास गण परिषद">
 	<meta name="description" content="Shri dharmdas,श्री धर्मदास गण परिषद">
 	<?php $frontend_assets =  base_url().'frontend_assets/';?>
-	<title>श्री धर्मदास गण परिषद</title>
+	<title><?= lang('site_name'); ?></title>
 	<!--Bootstrap -->
 	<link rel="stylesheet" href="<?= $frontend_assets; ?>assets/css/bootstrap.min.css" type="text/css">
 	<!--OWL Carousel slider-->

@@ -4,9 +4,9 @@
  * English language of home page
  */ 
 
-	$lang['site_name'] 							= "Shri Dharam Das Gan Parishad";
+	$lang['site_name'] 							= "Shree Dharam Das Gan Parishad";
 	
-	$lang['copy-right'] 							= " &copy; ". date('Y').",Shri Dharam Das Gan Parishad. All rights reserved.'";
+	$lang['copy-right'] 							= " &copy; ". date('Y').",Shree Dharam Das Gan Parishad. All rights reserved.'";
 	$lang['web-application'] 							= "Web Application";
 	$lang['success'] 							= "success";
 	$lang['fail'] 							= "fail";
