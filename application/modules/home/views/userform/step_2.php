@@ -50,7 +50,7 @@
 
                      <div class="col-md-6">
                           <div class="form-label-group">
-                              <label for="gender"><?= lang('Select_Gender'); ?></label>
+                              <label for="gender"><?= lang('Select_Gender'); ?><span>*</span></label>
 
                               <select name="gender" class="form-control" id="gender">
                               <option value="" selected="" disabled=""><?= lang('Select_Gender'); ?></option>
@@ -61,7 +61,7 @@
                       </div>
                       <div class="col-md-6">
                           <div class="form-label-group">
-                            <label for="maritalStatus"><?= lang('Marital_Status'); ?></label>
+                            <label for="maritalStatus"><?= lang('Marital_Status'); ?><span>*</span></label>
                           
                             <select name="maritalStatus" class="form-control" id="maritalStatus">
                             <option value="" selected="" disabled=""><?= lang('Marital_Status'); ?></option>
@@ -75,7 +75,7 @@
                        <div class="col-md-6">
                          <div class="form-label-group">
                            
-                              <label for="unionName"><?= lang('Union').' '.lang('Name'); ?></label>
+                              <label for="unionName"><?= lang('Union').' '.lang('Name'); ?><span>*</span></label>
                               <select name="unionName"  class="form-control js-example-basic-single "  id="unionName"  >
                               <?php if(!empty($unionList)):
                               foreach ($unionList as $kc => $union) { 
@@ -98,7 +98,7 @@
                       
                       <div class="col-md-6">
                           <div class="form-label-group">
-                            <label for="profession"><?= lang('Profession'); ?></label>
+                            <label for="profession"><?= lang('Profession'); ?><span>*</span></label>
 
                               <select name="profession" class="form-control" onchange="professionCheck(this);">
                                 <option value="" selected="" disabled=""><?= lang('Profession'); ?></option>
@@ -123,7 +123,7 @@
                       
                       <div class="col-md-12">
                           <div class="form-label-group" id="idhhhh">
-                            <label><?= lang('Religious_knowledge'); ?></label>
+                            <label><?= lang('Religious_knowledge'); ?><span>*</span></label>
 
                               <div class="custom-control custom-checkbox mb-3">
                                 <input type="checkbox" class="custom-control-input limitCheckBox" value="णमोकार मंत्र एवं  प्राथमिक ज्ञान" id="customCheck1" name="religiousKnowledge[]" data-limit="1" checked="checked">
@@ -160,21 +160,21 @@
                       </div>
                        <div class="col-md-12">
                           <div class="form-label-group">
-                            <label for="zip_code"><?= lang('zip_code'); ?></label>
+                            <label for="zip_code"><?= lang('zip_code'); ?><span>*</span></label>
                           
                            <input type="text" class="form-control number-only" name="zip_code" id="zip_code" placeholder="<?= lang('zip_code'); ?>" onkeyup="zipCodetoData(this);" data-set="";   >
                           </div>
                       </div>
                       <div class="col-md-12">
                           <div class="form-label-group">
-                            <label for="address"><?= lang('Address'); ?></label>
+                            <label for="address"><?= lang('Address'); ?><span>*</span></label>
                           
                            <input type="text" name="address" class="form-control" id="address" placeholder="<?= lang('Address'); ?>" maxlength="30" size="30" >
                           </div>
                       </div>
                       <div class="col-md-6">
                           <div class="form-label-group">
-                            <label for="postName"><?= lang('postName'); ?></label>
+                            <label for="postName"><?= lang('postName'); ?><span>*</span></label>
                             <select  class="form-control" name="postName" id="postName">
                               <option value="0" selected="" disabled=""><?= lang('postName'); ?></option>
                               </select>
@@ -182,7 +182,7 @@
                       </div>
                       <div class="col-md-6">
                           <div class="form-label-group">
-                            <label for="city"><?= lang('City'); ?></label>
+                            <label for="city"><?= lang('City'); ?><span>*</span></label>
                           
                            <input type="text" class="form-control" name="city" id="city" placeholder="<?= lang('City'); ?>" maxlength="30" size="30">
                           </div>
@@ -190,28 +190,28 @@
                    
                       <div class="col-md-6">
                           <div class="form-label-group">
-                            <label for="tehsil"><?= lang('Tehsil'); ?></label>
+                            <label for="tehsil"><?= lang('Tehsil'); ?><span>*</span></label>
                           
                            <input type="text" class="form-control" name="tehsil" id="tehsil" placeholder="<?= lang('Tehsil'); ?>" maxlength="30" size="30">
                           </div>
                       </div>
                       <div class="col-md-6">
                           <div class="form-label-group">
-                            <label for="district"><?= lang('District'); ?></label>
+                            <label for="district"><?= lang('District'); ?><span>*</span></label>
                           
                            <input type="text" class="form-control" name="district" id="district" placeholder="<?= lang('District'); ?>" maxlength="30" size="30">
                           </div>
                       </div>
                        <div class="col-md-6">
                           <div class="form-label-group">
-                            <label for="state"><?= lang('State'); ?></label>
+                            <label for="state"><?= lang('State'); ?><span>*</span></label>
                               <input type="text" class="form-control" name="state" id="state" placeholder="<?= lang('State'); ?>" maxlength="30" size="30">
                           </div>
                       </div>
 
                       <div class="col-md-6">
                           <div class="form-label-group">
-                            <label for="country"><?= lang('Country'); ?></label>
+                            <label for="country"><?= lang('Country'); ?><span>*</span></label>
                           
                            <input type="text" class="form-control" name="country"  id="country" placeholder="<?= lang('Country'); ?>" value="India" maxlength="30" size="30">
                              
@@ -245,21 +245,21 @@
                       </div>
                       <div class="col-md-12">
                           <div class="form-label-group">
-                            <label for="pzip_code"><?= lang('zip_code'); ?></label>
+                            <label for="pzip_code"><?= lang('zip_code'); ?><span>*</span></label>
                           
                            <input type="text" class="form-control number-only" name="pzip_code" id="pzip_code" placeholder="<?= lang('zip_code'); ?>" onkeyup="zipCodetoData(this);" data-set="p";  >
                           </div>
                       </div>
                       <div class="col-md-12">
                           <div class="form-label-group">
-                            <label for="paddress"><?= lang('Address'); ?></label>
+                            <label for="paddress"><?= lang('Address'); ?><span>*</span></label>
                           
                            <input type="text" name="paddress" class="form-control" id="paddress" placeholder="<?= lang('Address'); ?>" maxlength="30" size="30">
                           </div>
                       </div>
                       <div class="col-md-6">
                           <div class="form-label-group">
-                            <label for="ppostName"><?= lang('postName'); ?></label>
+                            <label for="ppostName"><?= lang('postName'); ?><span>*</span></label>
                             <select  class="form-control" name="ppostName" id="ppostName">
                               <option value="" selected="" disabled=""><?= lang('postName'); ?></option>
                               </select>
@@ -267,7 +267,7 @@
                       </div>
                       <div class="col-md-6">
                           <div class="form-label-group">
-                            <label for="pcity"><?= lang('City'); ?></label>
+                            <label for="pcity"><?= lang('City'); ?><span>*</span></label>
                           
                            <input type="text" class="form-control" name="pcity" id="pcity" placeholder="<?= lang('City'); ?>" maxlength="30" size="30">
                           </div>
@@ -275,28 +275,28 @@
 
                       <div class="col-md-6">
                           <div class="form-label-group">
-                            <label for="ptehsil"><?= lang('Tehsil'); ?></label>
+                            <label for="ptehsil"><?= lang('Tehsil'); ?><span>*</span></label>
                           
                            <input type="text" class="form-control" name="ptehsil" id="ptehsil" placeholder="<?= lang('Tehsil'); ?>" maxlength="30" size="30" >
                           </div>
                       </div>
                       <div class="col-md-6">
                           <div class="form-label-group">
-                            <label for="pdistrict"><?= lang('District'); ?></label>
+                            <label for="pdistrict"><?= lang('District'); ?><span>*</span></label>
                           
                            <input type="text" class="form-control" name="pdistrict" id="pdistrict" placeholder="<?= lang('District'); ?>" maxlength="30" size="30" >
                           </div>
                       </div>
                       <div class="col-md-6">
                           <div class="form-label-group">
-                            <label for="state"><?= lang('State'); ?></label>
+                            <label for="state"><?= lang('State'); ?><span>*</span></label>
                               <input type="text" class="form-control" name="pstate" id="pstate" placeholder="<?= lang('State'); ?>" maxlength="30" size="30" >
                           </div>
                       </div>
 
                       <div class="col-md-6">
                           <div class="form-label-group">
-                            <label for="country"><?= lang('Country'); ?></label>
+                            <label for="country"><?= lang('Country'); ?><span>*</span></label>
                           
                            <input type="text" class="form-control" name="pcountry"  id="pcountry" placeholder="<?= lang('Country'); ?>" value="India" maxlength="30" size="30">
                              

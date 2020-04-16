@@ -72,5 +72,9 @@
 	$lang['This_aadhar_number_is_already_taken'] 				= "यह आधार नंबर पहले से ही लिया हुआ है! कृपया अन्य आधार कार्ड नंबर दर्ज करें।";
 	
 	$lang['Please_select_your_religious_Knowledge'] 			= "कृपया अपने धार्मिक ज्ञान का चयन करें";
+	$lang['Try_again_after_seconds'] 					= "सेकंड के बाद पुन: प्रयास करें";
+	
+
+	//सेकंड के बाद पुन: प्रयास करें
 
 ?>

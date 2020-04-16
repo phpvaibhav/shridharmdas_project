@@ -42,7 +42,7 @@
                 <div class="row" >
                   <div class="col-md-12">
                       <div class="form-label-group">
-                        <label for="fullName"><?= lang('First_name').'('.lang('Write_full_name').')'; ?></label>
+                        <label for="fullName"><?= lang('First_name').'('.lang('Write_full_name').')'; ?><span>*</span></label>
                         <input type="text" id="fullName" class="form-control" placeholder="<?= lang('First_name'); ?>"  name="fullName" maxlength="30" size="30">
                       </div>
                   </div>
@@ -62,19 +62,19 @@
                   </div> -->
                   <div class="col-md-6">
                             <div class="form-label-group">
-                              <label for="dob"><?= lang('dob'); ?></label>
+                              <label for="dob"><?= lang('dob'); ?><span>*</span></label>
                               <input type="text" id="dob" class="form-control" placeholder="<?= lang('dob'); ?>"  name="dob" readonly="">
                             </div>
                     </div>
                     <div class="col-md-6">
                             <div class="form-label-group">
-                              <label for="parentName"><?= lang('parentName').'('.lang('Write_full_name').')'; ?></label>
+                              <label for="parentName"><?= lang('parentName').'('.lang('Write_full_name').')'; ?><span>*</span></label>
                               <input type="text" id="parentName" class="form-control" placeholder="<?= lang('parentName'); ?>"  name="parentName" maxlength="30" size="30" >
                             </div>
                     </div>
                     <div class="col-md-6">
                             <div class="form-label-group">
-                              <label for="familyHeadName"><?= lang('familyHeadName').'('.lang('Write_full_name').')'; ?></label>
+                              <label for="familyHeadName"><?= lang('familyHeadName').'('.lang('Write_full_name').')'; ?><span>*</span></label>
                               <input type="text" id="familyHeadName" class="form-control" placeholder="<?= lang('familyHeadName'); ?>"  name="familyHeadName" maxlength="30" size="30" >
                             </div>
                     </div>
@@ -82,7 +82,7 @@
                   <div class="col-md-6">
                     <div class="row">
                       <div class="col-md-12">
-                         <label for="contactNumber"><?= lang('Phone'); ?></label>
+                         <label for="contactNumber"><?= lang('Phone'); ?><span>*</span></label>
                       </div>
                       <div class="col-md-4">
                          <div class="form-label-group">
@@ -112,7 +112,7 @@
                          <div class="row">
                               <div class="col-md-12">
                                  <label for="contactNumber">
-                                    OTP
+                                    OTP<span>*</span>
                                   <input type="hidden" id="mobileVerify" name="mobileVerify" value="0">
                                  </label>
                               </div>
@@ -152,7 +152,7 @@
                  
                  
                     <div class="form-label-group">
-                      <label for="aadharNumber"><?= lang('Aadhar_number'); ?></label>
+                      <label for="aadharNumber"><?= lang('Aadhar_number'); ?><span>*</span></label>
                     <!--   <input type="text" id="aadharNumber" class="form-control" placeholder="<?= lang('Aadhar_number'); ?>"  name="aadharNumber"  data-mask="9999 9999 9999">   -->
                     <input type="text" id="aadharNumber" class="form-control number-only" placeholder="<?= lang('Aadhar_number'); ?>"  name="aadharNumber" maxlength="12" size="12" >
                     </div>
@@ -164,7 +164,7 @@
                       <div class="row">
                           <div class="col-md-12">
                               <div class="form-label-group">
-                              <label for="frontImage">Front Aadhar Image</label>
+                              <label for="frontImage">Front Aadhar Image<span>*</span></label>
                               <input type="file" class="form-control" id="frontImage"  name="frontImage" data-id="1" onchange="readURL(this,1);" accept="image/*" style="border: 0px solid #ddd;" >
                               </div>
                           </div>
@@ -181,7 +181,7 @@
                       <div class="row">
                           <div class="col-md-12">
                               <div class="form-label-group">
-                              <label for="backImage">Back Aadhar Image</label>
+                              <label for="backImage">Back Aadhar Image<span>*</span></label>
                               <input type="file" class="form-control" id="backImage"  name="backImage"  data-id="2" onchange="readURL(this,2);"  accept="image/*"  style="border: 0px solid #ddd;" >
                               </div>
                               <!-- onchange="ResizeImage('backImage','blah_2');" -->
