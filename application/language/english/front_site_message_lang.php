@@ -78,6 +78,7 @@
 	$lang['This_aadhar_number_is_already_taken'] 					= "This aadhar number is already taken! Please enter  other aadhar card number .";
 	$lang['Please_select_your_religious_Knowledge'] 					= "Please select your religious Knowledge";
 	$lang['Try_again_after_seconds'] 					= "Try again after seconds";
+	$lang['First_write_your_name_then_your_surname'] 					= "First write your name then your surname";
 	
 	
 

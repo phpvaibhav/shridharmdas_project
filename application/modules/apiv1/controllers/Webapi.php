@@ -16,6 +16,7 @@ class Webapi extends Common_Service_Controller{
         $this->form_validation->set_rules('dob','dob','trim|required');
         $this->form_validation->set_rules('otpnumber','otp number','trim|required');
         $this->form_validation->set_rules('parentName','S/O-W/O','trim|required');
+        $this->form_validation->set_rules('familyHeadName','family head name','trim|required');
         $this->form_validation->set_rules('countrycode','country code','trim|required');
         $this->form_validation->set_rules('contactNumber','contact number','trim|required');
         $this->form_validation->set_rules('aadharNumber','aadhar number','trim|required|min_length[12]');
@@ -40,13 +41,13 @@ class Webapi extends Common_Service_Controller{
             }else{
                // pr($this->post());
                 $data_val   = $meta_val  = array();
-                $fuN              = trim($this->post('fullName'));
+                $fuN              = ucfirst(trim($this->post('fullName')));
                 $fuN = explode(" ", $fuN); 
-                $fullName1              =  trim($this->post('fullName')); 
-                $firstName1              = trim($this->post('firstName')); 
-                $lastName1               = trim($this->post('lastName')); 
-                $parentName1             = trim($this->post('parentName')); 
-                $familyHeadName1             = trim($this->post('familyHeadName')); 
+                $fullName1              =  ucfirst(trim($this->post('fullName'))); 
+                $firstName1              = ucfirst(trim($this->post('firstName'))); 
+                $lastName1               = ucfirst(trim($this->post('lastName'))); 
+                $parentName1             = ucfirst(trim($this->post('parentName'))); 
+                $familyHeadName1             = ucfirst(trim($this->post('familyHeadName'))); 
               //  $fullName1               = $firstName1.' '.$lastName1 ; 
                 $tr = new GoogleTranslate(); // Translates to 'en' from auto-detected language by default
               
@@ -144,15 +145,14 @@ class Webapi extends Common_Service_Controller{
                             if($compressedImage)
                             { 
                                 $compressedImageSize = filesize($compressedImage);
-
-                                 $data_val['frontAadharImage'] = $new_profle_pic;
+                                $data_val['frontAadharImage'] = $new_profle_pic;
                              
                             }
                             else
                             {
                                // $statusMsg = "Image compress failed!";
-                                 $response = array('status' => FAIL, 'message' => "Image compress failed!");
-                           $this->response($response);die;
+                                $response = array('status' => FAIL, 'message' => "Image compress failed!");
+                                $this->response($response);die;
                             }   
                         }
                         else
@@ -257,7 +257,7 @@ class Webapi extends Common_Service_Controller{
                      
                     $_SESSION['userId']             = $result;  
                     $_SESSION['userStep']           = 2;  
-                       //$_SESSION['userStep']        = 2;  
+                    //$_SESSION['userStep']        = 2;  
                   
                     $msg  = 'Step-1 '.ResponseMessages::getStatusCodeMessage(122);
                     $response   = array('status'=>SUCCESS,'message'=>$msg);
@@ -308,7 +308,7 @@ class Webapi extends Common_Service_Controller{
                 $add_meta['district']       = $this->post('district');
                 $add_meta['country']        = $this->post('country');
                 $add_meta['state']          = $this->post('state');
-                $add_meta['postName']          = $this->post('postName');
+                $add_meta['postName']       = $this->post('postName');
                 $add_meta['addressType']    = 'Current';
 
                 $add_meta1['userId']        = $userId;
@@ -332,6 +332,8 @@ class Webapi extends Common_Service_Controller{
                 $add_meta2['state']         = $this->post('ostate');
                 $add_meta2['postName']      = $this->post('opostName');
                 $add_meta2['addressType']   = 'Office';
+
+
                 $this->common_model->updateFields('users',$user_val,array('id'=>$userId));
                 $this->common_model->updateFields('user_meta',$user_meta,array('userId'=>$userId));
                 $this->common_model->insertData('addresses',$add_meta);
@@ -344,8 +346,7 @@ class Webapi extends Common_Service_Controller{
             }else{
                // pr($this->post());
                 $response   = array('status'=>FAIL,'message'=>ResponseMessages::getStatusCodeMessage(118));   
-            }
-            
+            }   
         }
         $this->response($response);
     } //End Function
@@ -360,17 +361,15 @@ class Webapi extends Common_Service_Controller{
         }
         else
         {
-            $userId              = $this->post('userId'); 
+            $userId              =  $this->post('userId'); 
             $isExist             =  $this->common_model->is_data_exists('users',array('id'=>$userId));
             if($isExist){
                 $user_val = $user_meta = $add_meta = $add_meta1 = $add_meta2 = array();
-
               //  $user_val['userId']         = $userId;
                 $user_val['email']              = $this->post('email');
                 $user_meta['bloodGroup']        = $this->post('bloodGroup');
                 $user_meta['education']         = $this->post('education');
-
-                
+  
                 $this->common_model->updateFields('users',$user_val,array('id'=>$userId));
                 $this->common_model->updateFields('user_meta',$user_meta,array('userId'=>$userId));
              
@@ -381,16 +380,14 @@ class Webapi extends Common_Service_Controller{
             }else{
                // pr($this->post());
                 $response   = array('status'=>FAIL,'message'=>ResponseMessages::getStatusCodeMessage(118));   
-            }
-            
+            }   
         }
         $this->response($response);
     } //End Function
  
     function smsSentOtp_post(){
         $this->form_validation->set_rules('contactNumber','contact number','trim|required');
-     
-      
+
         if($this->form_validation->run() == FALSE)
         {
             $response = array('status' => FAIL, 'message' => strip_tags(validation_errors()));
@@ -399,11 +396,9 @@ class Webapi extends Common_Service_Controller{
         {
             $contactNumber          = trim(str_replace(array('(',')','-',' '),array('','','',''),$this->post('contactNumber')));
             $this->load->library('sms_sent');
-            $response           = $this->sms_sent->sent_otp_number($contactNumber); 
-              
-               // $response   = array('status'=>FAIL,'message'=>ResponseMessages::getStatusCodeMessage(118));   
-            //}
-            
+            $response           = $this->sms_sent->sent_otp_number($contactNumber);  
+            // $response   = array('status'=>FAIL,'message'=>ResponseMessages::getStatusCodeMessage(118));   
+            //} 
         }
         $this->response($response);
     } //End Function
@@ -422,8 +417,7 @@ class Webapi extends Common_Service_Controller{
             $this->load->library('sms_sent');
             $response           = $this->sms_sent->sent_otp_retry_number($contactNumber); 
                // $response   = array('status'=>FAIL,'message'=>ResponseMessages::getStatusCodeMessage(118));   
-            //}
-            
+            //}   
         }
         $this->response($response);
     } //End Function
@@ -432,8 +426,7 @@ class Webapi extends Common_Service_Controller{
     function verifyOtpCode_post(){
         $this->form_validation->set_rules('contactNumber','contact number','trim|required');
         $this->form_validation->set_rules('otpnumber','otpnumber','trim|required');
-     
-      
+
         if($this->form_validation->run() == FALSE)
         {
             $response = array('status' => FAIL, 'message' => strip_tags(validation_errors()));
@@ -461,10 +454,11 @@ class Webapi extends Common_Service_Controller{
             $aadharNumber          = trim(str_replace(array('(',')','-',' '),array('','','',''),$this->post('aadharNumber')));
            
             $isExist            =  $this->common_model->is_data_exists('users',array('aadharNumber'=>$aadharNumber)); 
+
             if($isExist){
                 $response = array('status' =>false);
             }else{
-                 $response = array('status' =>true);
+                $response = array('status' =>true);
             }
         }
         $this->response($response);
@@ -485,8 +479,8 @@ class Webapi extends Common_Service_Controller{
 
         // Save image 
         imagejpeg($image, $path, $quality);
-     
-        // Return compressed image 
+
+        // sReturn compressed image 
         return $path;
     }
 }//End Class 

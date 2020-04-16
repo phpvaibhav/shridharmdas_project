@@ -43,7 +43,7 @@
                   <div class="col-md-12">
                       <div class="form-label-group">
                         <label for="fullName"><?= lang('First_name').'('.lang('Write_full_name').')'; ?><span>*</span></label>
-                        <input type="text" id="fullName" class="form-control" placeholder="<?= lang('First_name'); ?>"  name="fullName" maxlength="30" size="30">
+                        <input type="text" id="fullName" class="form-control" placeholder="<?= lang('First_write_your_name_then_your_surname'); ?>"  name="fullName" maxlength="30" size="30">
                       </div>
                   </div>
                <!--     <div class="col-md-6">

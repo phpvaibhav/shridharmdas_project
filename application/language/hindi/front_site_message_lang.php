@@ -73,7 +73,7 @@
 	
 	$lang['Please_select_your_religious_Knowledge'] 			= "कृपया अपने धार्मिक ज्ञान का चयन करें";
 	$lang['Try_again_after_seconds'] 					= "सेकंड के बाद पुन: प्रयास करें";
-	
+	$lang['First_write_your_name_then_your_surname'] 					= "पहले अपना नाम फिर अपना उपनाम या  सरनेम लिखे ";
 
 	//सेकंड के बाद पुन: प्रयास करें
 
