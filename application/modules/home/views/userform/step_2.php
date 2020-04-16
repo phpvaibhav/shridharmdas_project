@@ -383,8 +383,10 @@
                  
                   <hr>
                 
-                  <button class="btn btn-outline  btn-block tl-btn-round-2 text-uppercase font-weight-bold mb-2" id="submit" type="submit"> <?= lang('Submit'); ?></button>
-
+                  <button class="btn btn-outline  btn-block tl-btn-round-2 text-uppercase font-weight-bold mb-2" id="submit" type="submit"> 
+                    Next
+                  </button>
+<!-- <?= lang('Submit'); ?> -->
                   <div class="text-center">
                     <a class="small" href="<?= base_url();  ?>">Go To Home</a>
                   </div>

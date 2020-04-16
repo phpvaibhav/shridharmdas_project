@@ -217,8 +217,8 @@
                     <input type="checkbox" class="custom-control-input" id="customCheck1">
                     <label class="custom-control-label" for="customCheck1">I Agree With <a href="#">Tearms &amp; Conditions</a></label>
                   </div> -->
-                  <button class="btn btn-outline btn-lg btn-block tl-btn-round-2 text-uppercase font-weight-bold mb-2" id="submit" type="submit">Register</button>
-
+                  <button class="btn btn-outline btn-lg btn-block tl-btn-round-2 text-uppercase font-weight-bold mb-2" id="submit" type="submit">Next</button>
+<!-- Register -->
                   <div class="text-center">
                     <a class="small" href="<?= base_url();  ?>">Go To Home</a>
                   </div>
