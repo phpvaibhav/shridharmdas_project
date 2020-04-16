@@ -140,7 +140,7 @@ class Webapi extends Common_Service_Controller{
                         if(in_array($file_extension,$valid_ext))
                         {  
                             // Compress Image
-                            $compressedImage = $this->compressedImage($_FILES['frontImage']['tmp_name'],$location,6);
+                            $compressedImage = $this->compressedImage($_FILES['frontImage']['tmp_name'],$location,4);
                             
                             if($compressedImage)
                             { 
@@ -187,7 +187,7 @@ class Webapi extends Common_Service_Controller{
                         if(in_array($file_extensionb,$valid_extb))
                         {  
                             // Compress Image
-                            $compressedImageb = $this->compressedImage($_FILES['backImage']['tmp_name'],$locationb,6);
+                            $compressedImageb = $this->compressedImage($_FILES['backImage']['tmp_name'],$locationb,4);
                             
                             if($compressedImageb)
                             { 

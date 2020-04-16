@@ -889,6 +889,7 @@ function subPro1(e){
 
 function professionCheck(e){
     var expression = $(e).val();
+    $("#offAddress").css("display","block");
     $("#subProfessionA").css("display","none");
     $('.subProfessionA').html('');
     $('.otherProfessionA').html('');
