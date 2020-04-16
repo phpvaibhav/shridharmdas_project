@@ -70,7 +70,7 @@
 			<div class="container">
 				<div class="navbar-header">
 					<div class="logo">
-						<a href="<?= base_url(); ?>"><img src="<?= $frontend_assets; ?>images/logo/logo-white.png" alt="image" class="image-logo" /></a>
+						<a href="<?= base_url(); ?>"><img src="<?= $frontend_assets; ?>images/logo/logo-white.png" alt="image" class="image-logo" /></a> 
 					</div> <!-- /Logo -->
 					<div id="menu_slide">
 						<div id="nav-toggle-label">
@@ -85,6 +85,7 @@
 							</div>
 						</div>
 					</div>
+
 				</div>
 				<div class="collapse navbar-collapse" id="navigation">
 					<ul class="nav navbar-nav">

@@ -43,7 +43,7 @@
 	$lang['locality'] 							= "Locality / Village";	
 	$lang['postName'] 							= "Post Name";	
 	$lang['Write_full_name'] 					= "Write full name";
-	$lang['otherUnionName'] 					= "Other Union Name";
+	$lang['otherUnionName'] 					= "Other Sangh Name";
 		
 
 

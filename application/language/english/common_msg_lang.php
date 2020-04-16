@@ -23,7 +23,7 @@
 	$lang['Yes'] = "Yes";
 	$lang['No'] = "No";
 	$lang['Preceptor'] = "Preceptor";
-	$lang['Union'] = "Union";
+	$lang['Union'] = "Sangh";
 	$lang['Office'] = "Office";
 	$lang['Name'] 	= "Name";
 	$lang['About'] 	= "About";

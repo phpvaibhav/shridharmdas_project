@@ -35,6 +35,13 @@
 
 .image-logo{
 	max-width: 44%;
+ /*   max-width: 68%;*/
+}
+.text-manage{
+     
+    font-size: 15px;
+    color: #fff !important;
+
 }
 .image-logo-footer{
 	max-width: 23% !important;
