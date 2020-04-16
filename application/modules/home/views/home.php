@@ -850,11 +850,11 @@
   </section> -->
 
   <!-- Contact-Us -->
-  <section class="section-padding">
+  <!-- <section class="section-padding">
     <div class="container">
        <div class="section-header-center text-center">
           <h3>Contact us</h3>
-        <!--   <p>There are many variations of passages of Lorem Ipsum available, but the majority have suffered alteration in some</p> -->
+      
         </div>
       <div class="contact_wrap">
         <div class="row">
@@ -897,5 +897,5 @@
         </div>
       </div>
     </div>
-  </section>
+  </section> -->
   <!-- /Contact-Us -->
