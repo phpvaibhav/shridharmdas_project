@@ -33,7 +33,12 @@
                 <div class="login-page">
                     <h4 class="title"><?= lang('User_Form'); ?> (Step-2)</h4>
                     <p class="sub_title text-center"><!-- Already have an account? --> 
-                    	<a class="color-litegreen" href="javascript:void(0);" type="button"  data-toggle="modal" data-target=".bd-example-modal-lg">फॉर्म को भरने हेतु निर्देश</a></p>
+                       <?php if($this->session->userdata('site_lang')=='hindi'){ ?>
+                      <a class="color-litegreen" href="javascript:void(0);" type="button"  data-toggle="modal" data-target=".bd-example-modal-lg">फॉर्म को भरने हेतु निर्देश </a>
+                    <?php }else{ ?>
+                      <a class="color-litegreen" href="javascript:void(0);" type="button"  data-toggle="modal" data-target=".bd-example-modal-lg">Instructions for filling the form </a>
+                       <?php }?>
+                    </p>
                 </div>
                 
                 <form id="user-add-step-2" method="post" class="login-form-t" novalidate="novalidate" action="userStep2" novalidate="novalidate" autocomplete="off">
@@ -162,7 +167,7 @@
                           <div class="form-label-group">
                             <label for="zip_code"><?= lang('zip_code'); ?><span>*</span></label>
                           
-                           <input type="text" class="form-control number-only" name="zip_code" id="zip_code" placeholder="<?= lang('zip_code'); ?>" onkeyup="zipCodetoData(this);" data-set="";   >
+                           <input type="text" class="form-control number-only" name="zip_code" maxlength="6" size="6" id="zip_code" placeholder="<?= lang('zip_code'); ?>" onkeyup="zipCodetoData(this);" data-set="";   >
                           </div>
                       </div>
                       <div class="col-md-12">
@@ -247,7 +252,7 @@
                           <div class="form-label-group">
                             <label for="pzip_code"><?= lang('zip_code'); ?><span>*</span></label>
                           
-                           <input type="text" class="form-control number-only" name="pzip_code" id="pzip_code" placeholder="<?= lang('zip_code'); ?>" onkeyup="zipCodetoData(this);" data-set="p";  >
+                           <input type="text" class="form-control number-only" name="pzip_code" id="pzip_code"  maxlength="6" size="6" placeholder="<?= lang('zip_code'); ?>" onkeyup="zipCodetoData(this);" data-set="p";  >
                           </div>
                       </div>
                       <div class="col-md-12">
@@ -324,7 +329,7 @@
                           <div class="form-label-group">
                             <label for="ozip_code"><?= lang('zip_code'); ?></label>
                           
-                           <input type="text" class="form-control number-only" name="ozip_code" id="ozip_code" placeholder="<?= lang('zip_code'); ?>" onkeyup="zipCodetoData(this);" data-set="o";  >
+                           <input type="text" class="form-control number-only" name="ozip_code" id="ozip_code" placeholder="<?= lang('zip_code'); ?>"  maxlength="6" size="6" onkeyup="zipCodetoData(this);" data-set="o";  >
                           </div>
                       </div>
                       <div class="col-md-12">

@@ -35,7 +35,13 @@
                 <div class="login-page">
                     <h4 class="title"><?= lang('User_Form'); ?> (Step-3)</h4>
                     <p class="sub_title text-center"><!-- Already have an account? --> 
-                    	<a class="color-litegreen" href="javascript:void(0);" type="button"  data-toggle="modal" data-target=".bd-example-modal-lg">फॉर्म को भरने हेतु निर्देश</a></p>
+                      <?php if($this->session->userdata('site_lang')=='hindi'){ ?>
+                      <a class="color-litegreen" href="javascript:void(0);" type="button"  data-toggle="modal" data-target=".bd-example-modal-lg">फॉर्म को भरने हेतु निर्देश </a>
+                    <?php }else{ ?>
+                      <a class="color-litegreen" href="javascript:void(0);" type="button"  data-toggle="modal" data-target=".bd-example-modal-lg">Instructions for filling the form </a>
+                       <?php }?>
+
+                    </p>
                 </div>
                 
                 <form id="user-add-step-3" method="post" class="login-form-t" novalidate="novalidate" action="userStep3"  novalidate="novalidate" autocomplete="off">

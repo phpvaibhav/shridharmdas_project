@@ -90,7 +90,7 @@
                       <div class="col-md-12">
                          <label for="contactNumber"><?= lang('Phone'); ?><span>*</span></label>
                       </div>
-                      <div class="col-md-4">
+                     <!--  <div class="col-md-4" style="display: none">
                          <div class="form-label-group">
                            
                           
@@ -104,10 +104,10 @@
 
                               </select>
                           </div>
-                      </div>
-                      <div class="col-md-8">
+                      </div> -->
+                      <div class="col-md-12">
                           <div class="form-label-group">
-                         
+                         <input type="hidden"  name="countrycode"  class="form-control" id="countrycode" value="+91">
                           <input type="text" id="contactNumber" class="form-control" placeholder="<?= lang('Phone'); ?>"  name="contactNumber" onkeyup="checkNumber();"   data-mask="999 999 9999" >
                         </div>
                       </div>
