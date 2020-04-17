@@ -771,11 +771,16 @@ Max-width
 		line-height: 35px;
 		font-size: 22px;
 	}
-	.btn {
+	/*.btn {
 		font-size: 13px;
 		line-height: 25px;
 		padding: 10px 22px;
-	}
+	}*/
+		.btn {
+		font-size: 12px;
+		line-height: 25px;
+		padding: 6px 16px;
+		}
 	.latest_event_sermons .box_wrap {
 		padding: 25px 20px;
 		margin: 0 auto 30px;
