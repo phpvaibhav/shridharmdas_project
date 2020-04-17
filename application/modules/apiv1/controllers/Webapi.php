@@ -387,6 +387,7 @@ class Webapi extends Common_Service_Controller{
  
     function smsSentOtp_post(){
         $this->form_validation->set_rules('contactNumber','contact number','trim|required');
+        $this->form_validation->set_rules('countrycode','country code','trim|required');
 
         if($this->form_validation->run() == FALSE)
         {
@@ -395,6 +396,8 @@ class Webapi extends Common_Service_Controller{
         else
         {
             $contactNumber          = trim(str_replace(array('(',')','-',' '),array('','','',''),$this->post('contactNumber')));
+            $countrycode          = trim(str_replace(array('(',')','+',' '),array('','','',''),$this->post('countrycode')));
+            $contactNumber = $countrycode.$contactNumber;
             $this->load->library('sms_sent');
             $response           = $this->sms_sent->sent_otp_number($contactNumber);  
             // $response   = array('status'=>FAIL,'message'=>ResponseMessages::getStatusCodeMessage(118));   
@@ -414,6 +417,8 @@ class Webapi extends Common_Service_Controller{
         else
         {
             $contactNumber          = trim(str_replace(array('(',')','-',' '),array('','','',''),$this->post('contactNumber')));
+            $countrycode          = trim(str_replace(array('(',')','+',' '),array('','','',''),$this->post('countrycode')));
+            $contactNumber = $countrycode.$contactNumber;
             $this->load->library('sms_sent');
             $response           = $this->sms_sent->sent_otp_retry_number($contactNumber); 
                // $response   = array('status'=>FAIL,'message'=>ResponseMessages::getStatusCodeMessage(118));   
@@ -434,6 +439,8 @@ class Webapi extends Common_Service_Controller{
         else
         {
             $contactNumber          = trim(str_replace(array('(',')','-',' '),array('','','',''),$this->post('contactNumber')));
+            $countrycode          = trim(str_replace(array('(',')','+',' '),array('','','',''),$this->post('countrycode')));
+            $contactNumber = $countrycode.$contactNumber;
             $otpnumber          = trim(str_replace(array('(',')','-',' '),array('','','',''),$this->post('otpnumber')));
             $this->load->library('sms_sent');
             $response           = $this->sms_sent->verify_otp_code($contactNumber,$otpnumber); 

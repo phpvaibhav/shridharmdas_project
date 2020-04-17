@@ -44,6 +44,7 @@ $("#user-add-step-1").validate({// Rules for form validation
       
       aadharNumber    : {
         required : true,
+        number: true,
         minlength : 12,
         checkAadharNumber : true,
       }, 
@@ -652,7 +653,7 @@ function zipCodetoData(e){
 function sendOtpToMobile(){
    $("#Resendotp").css("display", "none");
   var method      =  "POST";
-    var post_data   = {'contactNumber':$('#contactNumber').val()};
+    var post_data   = {'contactNumber':$('#contactNumber').val(),'countrycode':$('#countrycode').val()};
     var url         =  base_url+'apiv1/webapi/smsSentOtp';
     var header      = true;
     var headerData  = {} ;
@@ -697,7 +698,7 @@ function sendOtpToMobile(){
 function ResendOtpToMobile(){
    $("#Resendotp").css("display", "none");
   var method      =  "POST";
-    var post_data   = {'contactNumber':$('#contactNumber').val()};
+    var post_data   = {'contactNumber':$('#contactNumber').val(),'countrycode':$('#countrycode').val()};
     var url         =  base_url+'apiv1/webapi/smsSentReOtp';
     var header      = true;
     var headerData  = {} ;
@@ -740,7 +741,7 @@ function ResendOtpToMobile(){
 
 function verifyOtpNumber(){
   var method      =  "POST";
-    var post_data   = {'contactNumber':$('#contactNumber').val(),'otpnumber':$('#otpnumber').val()};
+    var post_data   = {'contactNumber':$('#contactNumber').val(),'otpnumber':$('#otpnumber').val(),'countrycode':$('#countrycode').val()};
     var url         =  base_url+'apiv1/webapi/verifyOtpCode';
     var header      = true;
     var headerData  = {} ;
@@ -807,7 +808,9 @@ function checkReNumber(){
       }
     }
 }
-
+$("#countrycode").change(function(){
+  checkNumber();
+});
 
 function checkOtp(){
     var value = $('#otpnumber').val();

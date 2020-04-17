@@ -5,13 +5,20 @@
     <div class="modal-content">
 
       <div class="modal-header">
-        <h5 class="modal-title" id="exampleModalLongTitle">श्री धर्मदास गण जनगणना फॉर्म को भरने हेतु निर्देश <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+        <h5 class="modal-title" id="exampleModalLongTitle">
+          <?php if($this->session->userdata('site_lang')=='hindi'){ ?>
+          श्री धर्मदास गण जनगणना फॉर्म को भरने हेतु निर्देश 
+          <?php }else{ ?>
+          Instructions for filling the Shree Dharmadas Gan census form
+           <?php }?>
+          <button type="button" class="close" data-dismiss="modal" aria-label="Close">
           <span aria-hidden="true">&times;</span>
         </button></h5>
         
       </div>
       <div class="modal-body scrollbar-model">
         <div style="font-size: 18px;font-weight: bold; padding-left:20px;">
+           <?php if($this->session->userdata('site_lang')=='hindi'){ ?>
           <p>1) यह फॉर्म तीन भागों मे भागित हे एवं आपको तीनों भाग या स्टेप्स पूर्ण रूप से भरने हे। </p><p>
 2) इस फॉर्म को आप हिन्दी या अंग्रेजी भाषा मैं देख सकते है, भाषा चुनने के लिए हिन्दी या इंग्लिश के आगे दिए बटन पर क्लिक कर्रे ।  </p><p>
 3) नाम वाले कॉलम मैं अपना पूरा नाम लिखे , नाम लिखते समय पहले अपना नाम एवं बाद मे सरनेम लिखे ।  </p><p>
@@ -38,6 +45,58 @@
 24) अपना रक्त समूह अगर आपको पता हो तो अपना रक्त समूह डाले ।  </p><p>
 25) जहाँ तक आपने  शिक्षा ग्रहण करी है वो choose करे।  </p><p>
 26) इस फ़ॉर्म मे अनिवार्य रूप से पहली दो स्टेप्स  की जानकारी देना जरूरी है । </p>
+<?php }else{ ?>
+<p>1) This form is divided into three parts and you have to fill all three parts or steps completely.</p><p>
+
+2) You can see this form in Hindi or English language, click on the button next to Hindi or English to choose the language.</p><p>
+
+3) Write your full name in the column named, first write your name and later surname while writing the name.</p><p>
+
+4) When entering the date of birth, first select the year, then the month, then the date.</p><p>
+
+5) Write the full name of your Husband or Father.</p><p>
+
+6) Write the full name of the head of your family.</p><p>
+
+7) Enter your 10 digit mobile number, after entering the mobile number, as soon as you click outside, an OTP will come to your mobile number within 30 seconds and put it in the OTP column.</p><p>
+
+8) If OTP does not come on your mobile in 30 seconds then first check your mobile number again to see if it is correct or not, if it is not right, click on Resend OTP option.</p><p>
+
+9) On entering the correct OTP, the system will give a message to verify your mobile number.</p><p>
+
+10) If a member does not have a mobile number in your family, then you can enter the mobile number of yourself or any other member of your family, but do mention the relation in the column ahead.</p><p>
+
+11) Enter your 12 digit Aadhaar number.</p><p>
+
+12) Put the image of Aadhaar card front image in the column.</p><p>
+
+13) After entering all the first step information, check the form once, whether all the information is correct according to your information or not, if all is correct then click on Next.</p><p>
+
+14) Clicking Next will load your form and save the information of the first step, which can take 1 to 2 minutes, the loading time depends on the size of your image and the speed of your internet connection. So don't worry and wait for some time till it takes you to the next step.</p><p>
+
+15) In the column named after Shri Sangh, place the name of the city of Shri Sangh wherever you live. If your Shree Sangh's name is not in the list, then please search for other option in the list and click on it, you will be able to enter your Shree Sangh's name.</p><p>
+16) You can tick those things which come to knows in religious knowledge, such as the Samayik, Partikaman etc.</p><p>
+
+17) In the column containing the address of the current house, enter the complete address of where you are currently living.</p><p>
+
+18) While entering the address, first enter your PIN code, the information related to the PIN code will be filled in the form itself such as the name of the town / town associated with the PIN code, name of the tehsil / sub-district, name of the district, name of the state, country. You just have to enter the house number, street or society name.</p><p>
+
+19) If your current address and permanent address are the same, then click on the same as above option which will automatically copy the address.</p><p>
+
+20) In the office address column, write the name and full address of the company in which you have a job or your business.</p><p>
+
+21) While filling the form of another member of your family, if you want to keep the address filled in your form, then click on the Remember address option while filling your form.</p><p>
+
+22) After entering the information of the second step, check the form once, whether all the information is correct according to your information or not, if all is right then click on the next step.</p><p>
+
+23) If you have an email id then enter the email id in the column with the email id.</p><p>
+
+24) If you know your blood group then enter your blood group.</p><p>
+
+25) As far as you have taken education, they should choose.</p><p>
+
+26) In this form, it is mandatory to give information for the first two steps.</p>
+  <?php }?>
         </div>
         <!--  <ul style="font-size: 18px;font-weight: bold; padding-left:20px;">
            <li>परिवार गुरु आमना कालम में परिवार के मुखिया की धर्मदास संप्रदाय के जिस संत में मान्यता हो वह नाम लिखें|</li>

@@ -12,7 +12,7 @@ class Sms_sent{
         $route    = $this->route;
 
         $mobNum = $number;
-        $mobileNumber = '91'.str_replace(' ', '', $mobNum);
+        $mobileNumber = str_replace(' ', '', $mobNum);
          $otpNum     = rand(1000,9999);       
         $message    = urlencode("Your Verification OTP Code Is ".$otpNum." ");
         //Prepare you post parameters
@@ -75,7 +75,7 @@ class Sms_sent{
         $route    = $this->route;
 
         $mobNum = $number;
-        $mobileNumber = '91'.str_replace(' ', '', $mobNum);
+        $mobileNumber = str_replace(' ', '', $mobNum);
         /* $otpNum     = rand(1000,9999);       
         $message    = urlencode("Your Verification OTP Code Is ".$otpNum." ");
         //Prepare you post parameters
@@ -142,7 +142,7 @@ class Sms_sent{
         $route    = $this->route;
         $mobNum = $number;
         $otpNum = $otp;
-        $mobileNumber =  '91'.str_replace(' ', '', $mobNum);
+        $mobileNumber =  str_replace(' ', '', $mobNum);
         $otpNumber = str_replace(' ', '', $otpNum);
 
         $url = "https://api.msg91.com/api/v5/otp/verify?mobile=$mobileNumber&otp=$otpNumber&authkey=$authKey";
