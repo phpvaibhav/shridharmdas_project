@@ -1,8 +1,8 @@
  <div class="container">
     <div class="row no-gutter">
-      <div class="col-md-4"></div>
-      <div class="col-md-4"></div>
-      <div class="col-md-4 text-right">
+      <div class="col-md-3"></div>
+      <div class="col-md-3"></div>
+      <div class="col-md-6 text-right">
          <div class="row">
             
               <div class="col-md-9 col-lg-10 lang-panding">

@@ -56,7 +56,7 @@
 					</div>
 					<div class="col-lg-6 col-md-8 col-4 align-self-center">
 						<ul class="top-btn list-inline">
-							<li class="list-inline-item"><i class="fa fa-phone"></i><a href="javascript:void();">+91 99870 69990</a></li>
+							<li class="list-inline-item"><i class="fa fa-mobile"></i><a href="javascript:void();">+91 99870 69990</a></li>
 							<li class="list-inline-item"><i class="fa fa-envelope"></i><a href="javascript:void();">dharmdasjanganna2020@gmail.com</a></li>
 						<!-- 	<li class="list-inline-item"><a class="btn btn-sm dark-btn tilak-top-btn" href="donation.html">Donate</a></li> -->
 						</ul>
