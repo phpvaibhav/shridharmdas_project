@@ -3,7 +3,7 @@
   <section id="intro">
     <div class="overlay overlay-bg"></div>
     <div class="owl-carousel">
-      <div class="item section-padding" style="background-image:url(<?= $frontend_assets.'images/slider/316.png'; ?>);width: 100%;background-size:100% 100%;background-repeat:no-repeat;">
+      <div class="item section-padding" style="background-image:url(<?= $frontend_assets.'images/slider/image2.png'; ?>);width: 100%;background-size:100% 100%;background-repeat:no-repeat;">
         <div class="container">
           <div class="intro_text white_text">
           <!--  <h1>Shinto Believes in Kami</h1> -->
@@ -17,7 +17,7 @@
           <a href="<?= base_url(); ?>user-step-1" class="btn dark-btn tilak-top-btn">User Form</a>
         </div>
       </div>
-            <div class="item section-padding" style="background-image:url(<?= $frontend_assets.'images/slider/316.png'; ?>);width: 100%;background-size:100% 100%;background-repeat:no-repeat;">
+            <div class="item section-padding" style="background-image:url(<?= $frontend_assets.'images/slider/image2.png'; ?>);width: 100%;background-size:100% 100%;background-repeat:no-repeat;">
         <div class="container">
           <div class="intro_text white_text">
             <!--  <h1>Shinto Believes in Kami</h1> -->
