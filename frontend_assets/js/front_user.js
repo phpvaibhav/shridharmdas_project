@@ -51,10 +51,10 @@ $("#user-add-step-1").validate({// Rules for form validation
         required: true,
         accept:"jpg,png,jpeg,gif,pdf"
       } ,   
-      backImage:{
+    /*  backImage:{
         required: true,
         accept:"jpg,png,jpeg,gif,pdf"
-      } ,
+      } ,*/
     },
     // Messages for form validation
     messages : {

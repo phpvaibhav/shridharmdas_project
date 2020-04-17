@@ -23,9 +23,9 @@ class Webapi extends Common_Service_Controller{
         if (empty($_FILES['frontImage']['name'])) {
             $this->form_validation->set_rules('frontImage','Aadhar front image','trim|required');
         }
-        if (empty($_FILES['backImage']['name'])) {
+      /*  if (empty($_FILES['backImage']['name'])) {
             $this->form_validation->set_rules('backImage','Aadhar back image','trim|required');
-        }
+        }*/
         $this->form_validation->set_message('min_length', lang('Please_enter_at_least_12_digit_aadhaar_number'));
         if($this->form_validation->run() == FALSE)
         {

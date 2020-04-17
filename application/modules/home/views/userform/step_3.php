@@ -6,7 +6,7 @@
       <div class="col-md-4 text-right">
          <div class="row">
             
-              <div class="col-md-9 col-lg-10">
+              <div class="col-md-9 col-lg-10 lang-panding">
                 <div class="radio d-inline mr-4">
                   <input type="radio" name="inlineRadioOptions" id="inlineRadio1" value="hindi"<?= ($this->session->userdata('site_lang')=='hindi') ?"checked='checked'":""; ?> data-url="<?php echo base_url().'home/switchLang/hindi/'.encoding(current_url()); ?>" onclick="checkLang(this);">
                   <label for="inlineRadio1">Hindi</label>

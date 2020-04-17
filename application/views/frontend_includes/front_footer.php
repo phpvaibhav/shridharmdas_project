@@ -42,10 +42,10 @@
 				<div class="col-md-4 footer_widget">
 					<div class="widget_inner">
 						<h5>संपर्क करें</h5>
-						<p> श्री शांतिलाल जी भंडारी (धर्मदासगण अध्यक्ष) <br><span>P : +91 9987 069 990</span></p>
-							<p> सर्वेश मण्डलेचा,बदनावर <br><span>P : +91 9893 741 418</span></p>
-							<p> मिलिन गाँधी,रतलाम <br><span>P : +91 9827 253 330</span></p>
-							<p> केतन रुनवाल,इंदौर <br><span>P : +91 9425 406 559</span></p>
+						<p> श्री शांतिलाल जी भंडारी (धर्मदासगण अध्यक्ष) <br><span><i class="fas fa-phone"></i> : +91 99870 69990</span></p>
+							<p> सर्वेश मण्डलेचा,बदनावर <br><span><i class="fas fa-phone"></i> : +91 98937 41418</span></p>
+							<p> मिलिन गाँधी,रतलाम <br><span><i class="fas fa-phone"></i> : +91 982725 3330</span></p>
+							<p> केतन रुनवाल,इंदौर <br><span><i class="fas fa-phone"></i> : +91 94254 06559</span></p>
 						
 					<!-- 	<p>4873 New York,47</p> -->
 					<!-- 	<p>E: <a href="email@email.com">email@email.com</a></p>
@@ -54,10 +54,10 @@
 				</div>
 				<div class="col-md-4 footer_widget">
 					<h5></h5>
-						<p> मितेश बोकड़िया,सेंधवा <br><span>P : +91 9406 834 875</span></p>
-							<p> कपिल पिचा,थांदला <br><span>P : +91 9425 486 404</span></p>
-							<p> सौरभ चौधरी,बदनावर <br><span>P : +91 7898 156 666</span></p>
-							<p> सौरभ कोठारी,रतलाम <br><span>P :  +91 9424 527 917</span></p>
+						<p> मितेश बोकड़िया,सेंधवा <br><span><i class="fas fa-phone"></i> : +91 94068 34875</span></p>
+							<p> कपिल पिचा,थांदला <br><span><i class="fas fa-phone"></i> : +91 94254 86404</span></p>
+							<p> सौरभ चौधरी,बदनावर <br><span><i class="fas fa-phone"></i> : +91 78981 56666</span></p>
+							<p> सौरभ कोठारी,रतलाम <br><span><i class="fas fa-phone"></i> :  +91 94245 27917</span></p>
 					<!-- <div class="widget_inner">
 						<div class="video_post">
 							<div class="exp-vido-icon">
@@ -72,11 +72,13 @@
 				<div class="col-md-4 footer_widget">
 						<div class="widget_inner">
 							<div class="footer_logo">
-								<a href="<?= base_url(); ?>"><img src="<?= $frontend_assets; ?>images/logo/logo-white.png" alt="image" class="image-logo-footer" /></a>
+								<a href="<?= base_url(); ?>"><img src="<?= $frontend_assets; ?>images/logo/logo-white.png" alt="image" class="image-logo-footer" /></a><a href="<?= base_url(); ?>"></a>
+								<a href="<?= base_url(); ?>"><img src="<?= $frontend_assets; ?>images/logo/Untitled-2.png" alt="image" class="image-logo-footer-2" /></a>
+								
 						</div>
 						<br>
 							<h5>कार्यालय का पता</h5>
-							<p>15, पुखराज रेजीडेंसी , सैलाना  रोड (मोहन बाग़ के पास) रतलाम ( म. प्र) -457001<br><span>P : 07412-297330</span></p>
+							<p>15, पुखराज रेजीडेंसी , सैलाना  रोड (मोहन बाग़ के पास) रतलाम ( म. प्र) -457001<br><span><i class="fa fa-phone-square"></i> : 07412-297330</span></p>
 							
 						</div>
 <!-- 					<div class="widget_inner">

@@ -6,7 +6,7 @@
       <div class="col-md-4 text-right">
          <div class="row">
             
-              <div class="col-md-9 col-lg-10">
+              <div class="col-md-9 col-lg-10 lang-panding">
                 <div class="radio d-inline mr-4">
                   <input type="radio" name="inlineRadioOptions" id="inlineRadio1" value="hindi"<?= ($this->session->userdata('site_lang')=='hindi') ?"checked='checked'":""; ?> data-url="<?php echo base_url().'home/switchLang/hindi/'.encoding(current_url()); ?>" onclick="checkLang(this);">
                   <label for="inlineRadio1">Hindi</label>
@@ -160,7 +160,7 @@
 
                 </div>
                 <div class="row">
-                    <div class="col-md-6">
+                    <div class="col-md-12">
                       <div class="row">
                           <div class="col-md-12">
                               <div class="form-label-group">
@@ -177,14 +177,14 @@
                           </div>
                       </div>
                     </div>
-                    <div class="col-md-6">
+                  <!--   <div class="col-md-6">
                       <div class="row">
                           <div class="col-md-12">
                               <div class="form-label-group">
                               <label for="backImage">Back Aadhar Image<span>*</span></label>
                               <input type="file" class="form-control" id="backImage"  name="backImage"  data-id="2" onchange="readURL(this,2);"  accept="image/*"  style="border: 0px solid #ddd;" >
                               </div>
-                              <!-- onchange="ResizeImage('backImage','blah_2');" -->
+                             
                           </div>
                           <div class="col-md-12">
                                 <div class="img-shop-wrapper tl-shop-single">
@@ -195,7 +195,7 @@
                           </div>
                       </div>
                     </div>
-                    
+                     -->
                 </div>
 
                 <!--   <div class="form-label-group">

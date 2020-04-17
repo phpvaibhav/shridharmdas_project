@@ -25,6 +25,7 @@
 	<!-- Google-Font-->
 	<link href="https://fonts.googleapis.com/css?family=Lato:400,400i,700,700i&display=swap" rel="stylesheet">
 	<link href="https://fonts.googleapis.com/css?family=Muli:300,300i,400,400i,700,700i&display=swap" rel="stylesheet">
+
 	<!--Custom Style -->
 	<link href="<?= $frontend_assets; ?>css/custom.css" rel="stylesheet">
 	<!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
@@ -55,7 +56,7 @@
 					</div>
 					<div class="col-lg-6 col-md-8 col-4 align-self-center">
 						<ul class="top-btn list-inline">
-							<li class="list-inline-item"><i class="fa fa-phone"></i><a href="javascript:void();">+91 9987 069 990</a></li>
+							<li class="list-inline-item"><i class="fa fa-phone"></i><a href="javascript:void();">+91 99870 69990</a></li>
 							<li class="list-inline-item"><i class="fa fa-envelope"></i><a href="javascript:void();">dharmdasjanganna2020@gmail.com</a></li>
 						<!-- 	<li class="list-inline-item"><a class="btn btn-sm dark-btn tilak-top-btn" href="donation.html">Donate</a></li> -->
 						</ul>
