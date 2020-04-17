@@ -103,6 +103,9 @@
    width: 63%;
  
 }
+.text-center-footer{
+    text-align: center !important;
+}
 
 }
  
@@ -127,6 +130,9 @@
    width: 63%;
  
 }
+.text-center-footer{
+    text-align: center !important;
+}
 }
 
 @media only screen and (max-width: 600px) and (min-width:481px){
@@ -150,6 +156,9 @@
    width: 63%;
  
 }
+.text-center-footer{
+    text-align: center !important;
+}
 }
 
 @media only screen and (max-width:480px) and (min-width:413px){
@@ -172,6 +181,9 @@
 .logo{
    width: 63%;
  
+}
+.text-center-footer{
+    text-align: center !important;
 }
 }
 
@@ -197,6 +209,9 @@
    width: 63%;
  
 }
+.text-center-footer{
+    text-align: center !important;
+}
 }
 
 @media only screen and (max-width:384px) and (min-width:361px){
@@ -210,6 +225,9 @@
 .logo{
    width: 63%;
  
+}
+.text-center-footer{
+    text-align: center !important;
 }
 
 }
@@ -240,6 +258,9 @@
 .logo{
    width: 63%;
  
+}
+.text-center-footer{
+    text-align: center !important;
 }
 
 }

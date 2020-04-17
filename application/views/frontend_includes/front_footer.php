@@ -39,7 +39,7 @@
 		<!-- Footer-Widgets -->
 		<div class="container">
 			<div class="row">
-				<div class="col-md-4 footer_widget">
+				<div class="col-md-4 footer_widget text-center-footer">
 					<div class="widget_inner">
 						<h5>संपर्क करें</h5>
 						<p> श्री शांतिलाल जी भंडारी (धर्मदासगण अध्यक्ष) <br><span><i class="fas fa-mobile"></i> : +91 99870 69990</span></p>
@@ -52,7 +52,7 @@
 						<p>P: +011 4532 5698 303</p> -->
 					</div>
 				</div>
-				<div class="col-md-4 footer_widget">
+				<div class="col-md-4 footer_widget text-center-footer">
 					<h5></h5>
 						<p> मितेश बोकड़िया,सेंधवा <br><span><i class="fas fa-mobile"></i> : +91 94068 34875</span></p>
 							<p> कपिल पिचा,थांदला <br><span><i class="fas fa-mobile"></i> : +91 94254 86404</span></p>
@@ -69,7 +69,7 @@
 						</div>
 					</div> -->
 				</div>
-				<div class="col-md-4 footer_widget">
+				<div class="col-md-4 footer_widget text-center-footer">
 						<div class="widget_inner">
 							<div class="footer_logo">
 								<a href="<?= base_url(); ?>"><img src="<?= $frontend_assets; ?>images/logo/logo-white.png" alt="image" class="image-logo-footer" /></a><a href="<?= base_url(); ?>"></a>
