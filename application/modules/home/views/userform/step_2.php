@@ -100,8 +100,26 @@
                       <input type="text" id="otherUnionName" class="form-control" placeholder="<?= lang('otherUnionName'); ?>"  name="otherUnionName">
                     </div>
                   </div>
+                  <div class="col-md-6">
+                          <div class="form-label-group">
+                            <label for="bloodGroup"><?= lang('blood_group'); ?></label>
+                          
+                            <select name="bloodGroup" class="form-control" id="bloodGroup">
+                            <option value="" selected="" disabled=""><?= lang('blood_group'); ?></option>
+                            <option value="A+">A+</option>
+                            <option value="O+">O+</option>
+                            <option value="B+">B+</option>
+                            <option value="AB+">AB+</option>
+                            <option value="A-">A-</option>
+                            <option value="O-">O-</option>
+                            <option value="B-">B-</option>
+                            <option value="AB-">AB-</option>
+                          
+                            </select>
+                          </div>
+                      </div>
                       
-                      <div class="col-md-6">
+                   <!--    <div class="col-md-6">
                           <div class="form-label-group">
                             <label for="profession"><?= lang('Profession'); ?><span>*</span></label>
 
@@ -116,7 +134,7 @@
                                 <option value="other">Other</option>
                               </select>
                           </div>
-                      </div>
+                      </div> -->
                       <div class="col-md-6" id="subProfessionA" style="display: none">
                           <div class="subProfessionA"></div>
                         
@@ -154,24 +172,7 @@
                           </div>
                           <span id="check-d-error" for="idhhhh" class="invalid"></span>
                       </div>
-                                            <div class="col-md-6">
-                          <div class="form-label-group">
-                            <label for="bloodGroup"><?= lang('blood_group'); ?></label>
-                          
-                            <select name="bloodGroup" class="form-control" id="bloodGroup">
-                            <option value="" selected="" disabled=""><?= lang('blood_group'); ?></option>
-                            <option value="A+">A+</option>
-                            <option value="O+">O+</option>
-                            <option value="B+">B+</option>
-                            <option value="AB+">AB+</option>
-                            <option value="A-">A-</option>
-                            <option value="O-">O-</option>
-                            <option value="B-">B-</option>
-                            <option value="AB-">AB-</option>
-                          
-                            </select>
-                          </div>
-                      </div>
+                                            
                       
                   </div>
                   <div class="row">
