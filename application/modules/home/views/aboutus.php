@@ -26,7 +26,7 @@
 				<div class="col-xl-12 col-md-12 text-center">
 					<h2>Coming <u class="text-custom-primary">Soon</u></h2>
 				</div>
-<!-- 				<div class="col-xl-7 col-md-7">
+				<div class="col-xl-7 col-md-7">
 					<div class="about-us-content">
 						<div class="section-header">
 							<h2>some important life lessons from God <u class="text-custom-primary">Kami</u></h2>
@@ -41,11 +41,11 @@
 					<div class="about-us-image">
 						<img src="https://via.placeholder.com/445x345" alt="img" class="img-fluid mx-auto d-block">
 					</div>
-				</div> -->
+				</div>
 			</div>
 
 			<!-- Features -->
-<!-- 			<div class="features">
+			<div class="features">
 				<div class="row">
 					<div class="col-lg-4 col-md-6">
 						<div class="features_wrap custom-md-mb features-after-none">
@@ -69,7 +69,7 @@
 						</div>
 					</div>
 				</div>
-			</div> -->
+			</div>
 			<!-- /Features -->
 
 		</div>
@@ -90,7 +90,7 @@
 
 
 	<!-- Team -->
-<!-- 	<section class="section-padding" id="about-team">
+	<section class="section-padding" id="about-team">
 		<div class="container">
 			<div class="our_team">
 				<div class="section-header-center text-center">
@@ -181,5 +181,5 @@
 
 			</div>
 		</div>
-	</section> -->
+	</section>
 	<!-- /Team -->

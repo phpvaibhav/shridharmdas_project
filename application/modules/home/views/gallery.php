@@ -141,7 +141,7 @@
       <div class="col-xl-12 col-md-12 text-center">
           <h2>Coming <u class="text-custom-primary">Soon</u></h2>
         </div>
-<!-- 			<div class="col-lg-12">
+			<div class="col-lg-12">
 				<div class="demo-gallery">
             <ul id="lightgallery" class="list-unstyled row">
                 <li class="col-xs-6 col-sm-3 col-md-3" data-responsive="<?= base_url('frontend_assets/lightGallery/demo/'); ?>img/1-375.jpg 375, <?= base_url('frontend_assets/lightGallery/demo/'); ?>img/1-480.jpg 480, <?= base_url('frontend_assets/lightGallery/demo/'); ?>img/1.jpg 800" data-src="<?= base_url('frontend_assets/lightGallery/demo/'); ?>img/1-1600.jpg" data-sub-html="<h4>Fading Light</h4><p>Classic view from Rigwood Jetty on Coniston Water an old archive shot similar to an old post but a little later on.</p>">
@@ -166,7 +166,7 @@
                 </li>
             </ul>
         </div>
-			</div> -->
+			</div>
 		</div>
 	</div>
 	</section>
