@@ -102,9 +102,16 @@
 						</li> -->
 						<li><a href="<?= base_url(); ?>">Home</a></li>
 						<li><a href="<?= base_url(); ?>user-step-1">User Form</a></li>
-						<li><a href="<?= base_url(); ?>about-us">About us</a></li>
+					<!-- 	<li><a href="<?= base_url(); ?>about-us">About us</a></li>
 						<li><a href="<?= base_url(); ?>motto-of-sdhp">Motto Of SDHP</a></li>
+						<li><a href="<?= base_url(); ?>gallery">Gallery</a></li> -->
+						<li class="dropdown"><a href="javascript:void(0);">About us<span class="nav_arrow"></span></a>
+							<ul class="sub-menu">
+								<li><a href="<?= base_url(); ?>about-us">About us</a></li>
+							<li><a href="<?= base_url(); ?>motto-of-sdhp">Motto Of SDHP</a></li>
 						<li><a href="<?= base_url(); ?>gallery">Gallery</a></li>
+							</ul>
+						</li>
 						<li><a href="<?= base_url(); ?>contact-us">Contact us</a></li>
 					<!-- 	<li><a href="<?= base_url(); ?>user-step-1">Step-1</a></li>
 						<li><a href="<?= base_url(); ?>user-step-2">Step-2</a></li>
