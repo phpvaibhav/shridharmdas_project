@@ -44,30 +44,30 @@
 	<!-- Header -->
 	<header id="header" class="nav-stacked" data-spy="affix" data-offset-top="1">
 		<!-- Header-top -->
-		<div class="header_top">
+	<!-- 	<div class="header_top">
 			<div class="container">
 				<div class="row">
 					<div class="col-lg-6 col-md-4 col-8">
-					<!-- 	<div class="follow_us">
+						<div class="follow_us">
 							<ul>
 								<li><a href="#"><i class="fab fa-facebook-f"></i></a></li>
 								<li><a href="#"><i class="fab fa-twitter"></i></a></li>
 								<li><a href="#"><i class="fab fa-linkedin-in"></i></a></li>
 								<li><a href="#"><i class="fab fa-youtube"></i></a></li>
 								<li><a href="#"><i class="fab fa-instagram"></i></a></li>
-							</ul> -->
+							</ul>
 						</div>
 					</div>
 					<div class="col-lg-6 col-md-8 col-4 align-self-center">
 						<ul class="top-btn list-inline">
 							<li class="list-inline-item"><i class="fa fa-mobile"></i><a href="javascript:void();">+91 99870 69990</a></li>
 							<li class="list-inline-item"><i class="fa fa-envelope"></i><a href="javascript:void();">dharmdasjanganna2020@gmail.com</a></li>
-						<!-- 	<li class="list-inline-item"><a class="btn btn-sm dark-btn tilak-top-btn" href="donation.html">Donate</a></li> -->
+							<li class="list-inline-item"><a class="btn btn-sm dark-btn tilak-top-btn" href="donation.html">Donate</a></li>
 						</ul>
 					</div>
 				</div>
 			</div>
-		</div>
+		</div> -->
 		<!-- /Header-top -->
 
 		<!-- Navigation -->
