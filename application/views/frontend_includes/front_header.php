@@ -28,12 +28,16 @@
 
 	<!--Custom Style -->
 	<link href="<?= $frontend_assets; ?>css/custom.css" rel="stylesheet">
+
 	<!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
 	<!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
 	<!--[if lt IE 9]>
         <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
         <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
 <![endif]-->
+ <?php 
+      if(!empty($front_styles)) { load_css($front_styles); } //load required page styles 
+     ?>
 </head>
 
 <body id="tl">
@@ -97,8 +101,11 @@
 							</ul>
 						</li> -->
 						<li><a href="<?= base_url(); ?>">Home</a></li>
-					<!-- 	<li><a href="<?= base_url(); ?>about-us">About Us</a></li> -->
 						<li><a href="<?= base_url(); ?>user-step-1">User Form</a></li>
+						<li><a href="<?= base_url(); ?>about-us">About us</a></li>
+						<li><a href="<?= base_url(); ?>motto-of-sdhp">Motto Of SDHP</a></li>
+						<li><a href="<?= base_url(); ?>gallery">Gallery</a></li>
+						<li><a href="<?= base_url(); ?>contact-us">Contact us</a></li>
 					<!-- 	<li><a href="<?= base_url(); ?>user-step-1">Step-1</a></li>
 						<li><a href="<?= base_url(); ?>user-step-2">Step-2</a></li>
 						<li><a href="<?= base_url(); ?>user-step-3">Step-3</a></li> -->
@@ -141,9 +148,14 @@
 		<div class="mobile-menu">
 			<ul class="wd-menu pop-scroll">
 					<li><a href="<?= base_url(); ?>">Home</a></li>
-					<!-- <li><a href="<?= base_url(); ?>about-us">About Us</a></li> -->
-				<!-- 	<li><a href="<?= base_url(); ?>user-form">User Form</a></li> -->
+				
 						<li><a href="<?= base_url(); ?>user-step-1">User Form</a></li>
+						<li><a href="<?= base_url(); ?>user-step-1">User Form</a></li>
+						<li><a href="<?= base_url(); ?>about-us">About us</a></li>
+						<li><a href="<?= base_url(); ?>motto-of-sdhp">Motto Of SDHP</a></li>
+
+						<li><a href="<?= base_url(); ?>gallery">Gallery</a></li>
+						<li><a href="<?= base_url(); ?>contact-us">Contact us</a></li>
 					<!-- 	<li><a href="<?= base_url(); ?>home/user_step_1">Step-1</a></li>
 						<li><a href="<?= base_url(); ?>home/user_step_2">Step-2</a></li>
 						<li><a href="<?= base_url(); ?>home/user_step_3">Step-3</a></li> -->

@@ -66,10 +66,9 @@ $route['office'] 					= 'admin/office';
 $route['user-form'] 				= 'home/addUser';
 $route['about-us'] 					= 'home/aboutus';
 $route['contact-us'] 				= 'home/contact';
+$route['gallery'] 					= 'home/gallery';
+$route['motto-of-sdhp'] 			= 'home/motto_of_sdhp';
 $route['user-step-1'] 				= 'home/user_step_1';
 $route['user-step-2'] 				= 'home/user_step_2';
 $route['user-step-3'] 				= 'home/user_step_3';
 $route['user-preview'] 				= 'home/user_preview';
-
-
-

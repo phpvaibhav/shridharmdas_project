@@ -27,6 +27,17 @@ public function __construct()
         $data['title'] = 'Contact us';
         $this->load->front_render('contactus',$data);
     }//End Function
+    public function motto_of_sdhp() { 
+        $data['title'] = 'Motto of SDHP';
+        $this->load->front_render('motto_of_sdhp',$data);
+    }//End Function
+    public function gallery() { 
+        $data['title']          = 'Gallery';
+        $data['front_styles']   = array('frontend_assets/lightGallery/dist/css/lightgallery.css');
+        $data['front_scripts']  = array('https://cdn.jsdelivr.net/picturefill/2.3.1/picturefill.min.js','frontend_assets/lightGallery/dist/js/lightgallery-all.min.js','frontend_assets/lightGallery/lib/jquery.mousewheel.min.js','frontend_assets/lightGallery/dist/js/gallery.js');
+        $this->load->front_render('gallery',$data);
+    }//End Function
+    
     public function user_step_1() { 
         $userId = (isset($_SESSION['userId']) && !empty($_SESSION['userId'])) ? $_SESSION['userId'] :0;
         $userStep = (isset($_SESSION['userStep']) && !empty($_SESSION['userStep'])) ? $_SESSION['userStep'] :0;

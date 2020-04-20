@@ -232,6 +232,8 @@
 	<script src="<?= $frontend_assets; ?>assets/js/ion.rangeSlider.min.js"></script>
 	<!--Audio-JS-->
 	<script src="<?= $frontend_assets; ?>assets/js/audio_custome.js"></script>
+	        
+    <?php if(!empty($front_scripts)) { load_js($front_scripts);} //load required page scripts ?>
 </body>
 
 </html>
