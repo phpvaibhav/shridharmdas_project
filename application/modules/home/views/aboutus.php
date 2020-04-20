@@ -23,7 +23,10 @@
 	<section class="bg-about section-padding">
 		<div class="container">
 			<div class="row">
-				<div class="col-xl-7 col-md-7">
+				<div class="col-xl-12 col-md-12 text-center">
+					<h2>Coming <u class="text-custom-primary">Soon</u></h2>
+				</div>
+<!-- 				<div class="col-xl-7 col-md-7">
 					<div class="about-us-content">
 						<div class="section-header">
 							<h2>some important life lessons from God <u class="text-custom-primary">Kami</u></h2>
@@ -38,11 +41,11 @@
 					<div class="about-us-image">
 						<img src="https://via.placeholder.com/445x345" alt="img" class="img-fluid mx-auto d-block">
 					</div>
-				</div>
+				</div> -->
 			</div>
 
 			<!-- Features -->
-			<div class="features">
+<!-- 			<div class="features">
 				<div class="row">
 					<div class="col-lg-4 col-md-6">
 						<div class="features_wrap custom-md-mb features-after-none">
@@ -66,7 +69,7 @@
 						</div>
 					</div>
 				</div>
-			</div>
+			</div> -->
 			<!-- /Features -->
 
 		</div>
@@ -74,20 +77,20 @@
 	<!-- /Features -->
 
 	<!-- Video -->
-	<div class="video-wrap-section">
+	<!-- <div class="video-wrap-section">
 		<div class="video_wrap">
 			<img src="https://via.placeholder.com/1930x450" alt="image">
 			<div class="video_icon">
 				<a class="popup-youtube" href="https://www.youtube.com/watch?v=AdZrEIo6UYU"><i class="fa fa-play"></i></a>
 			</div>
 		</div>
-	</div>
+	</div> -->
 	<!-- /Video -->
 
 
 
 	<!-- Team -->
-	<section class="section-padding" id="about-team">
+<!-- 	<section class="section-padding" id="about-team">
 		<div class="container">
 			<div class="our_team">
 				<div class="section-header-center text-center">
@@ -178,5 +181,5 @@
 
 			</div>
 		</div>
-	</section>
+	</section> -->
 	<!-- /Team -->

@@ -42,21 +42,16 @@ $("#user-add-step-1").validate({// Rules for form validation
         minlength: 10
       },  
       
-    /*  aadharNumber    : {
+      aadharNumber    : {
         required : true,
         number: true,
         minlength : 12,
         checkAadharNumber : true,
-      }, */
-      identityImage:{
+      }, 
+      frontImage:{
         required: true,
         accept:"jpg,png,jpeg,gif,pdf"
-      } ,  
-    /*  frontImage:{
-        required: true,
-        accept:"jpg,png,jpeg,gif,pdf"
-      } ,  */
-       
+      } ,   
     /*  backImage:{
         required: true,
         accept:"jpg,png,jpeg,gif,pdf"
@@ -101,12 +96,7 @@ $("#user-add-step-1").validate({// Rules for form validation
           frontImage:{
             required: Please_select_your_front_image,
           accept: Please_select__image_type,//"Only image type jpg/png/jpeg/gif is allowed"
-          },
-           identityImage:{
-            required: Please_select_your_Identity_image,
-          accept: Please_select__image_type,//"Only image type jpg/png/jpeg/gif is allowed"
-          },
-          
+          }  ,
           backImage:{
             required: Please_select_your_back_image,
             accept: Please_select__image_type//"Only image type jpg/png/jpeg/gif is allowed"
@@ -290,17 +280,17 @@ function professionCheck(e){
     var expression = $(e).val();
     switch(expression) {
     case 'house wife':
-       // $("#offAddress").css("display","none");
+        $("#offAddress").css("display","none");
     break;
     case 'student':
-       // $("#offAddress").css("display","none");
+        $("#offAddress").css("display","none");
     break;
     case 'retired':
-       // $("#offAddress").css("display","none");
+        $("#offAddress").css("display","none");
     break;
     
     default:
-       // $("#offAddress").css("display","block");
+        $("#offAddress").css("display","block");
     } 
 
 }
@@ -493,17 +483,11 @@ $("#user-add-step-2").validate({ // Rules for form validation
               preLoadshow(false);
               setTimeout(function(){  $('#submit').prop('disabled', false); },4000);
               if(res.status=='success'){
-                //toastr.success(res.message, 'Success', {timeOut: 3000});
-                  swal(Good_job,Your_form_submitted_successfully, "success");
-                setTimeout(function(){ 
-                  // window.location.reload();
-                    window.location = base_url;
-                },3000);
-               /* toastr.success(res.message, 'Success', {timeOut: 3000});
+                toastr.success(res.message, 'Success', {timeOut: 3000});
                 setTimeout(function(){ 
                  // window.location.reload();
                   window.location = base_url+'user-step-3';
-                },3000);*/
+                },3000);
               }else{
                 toastr.error(res.message, 'Alert!', {timeOut: 4000});
               }
@@ -884,7 +868,7 @@ $("#unionName").change(function(){
 function subPro(e){
    $("#otherProfessionA").css("display", "none");
    $('.otherProfessionA').html('<div class="form-label-group"><label for="">Profession Detail</label><input type="text" name="otherProfession"  class="form-control" maxlength="30" size="30"></div>');
-  // $("#otherProfessionA").css("display", "block");
+     $("#otherProfessionA").css("display", "block");
   /* if($(e).val()=='Other'){
     $('.otherProfessionA').html('<div class="form-label-group"><label for="">Profession Detail</label><input type="text" name="otherProfession"  class="form-control"></div>');
      $("#otherProfessionA").css("display", "block");
@@ -896,7 +880,7 @@ function subPro(e){
 function subPro1(e){
    $("#otherProfessionA").css("display", "none");
    $('.otherProfessionA').html('<div class="form-label-group"><label for="">Business Detail</label><input type="text" name="otherProfession"  class="form-control" maxlength="30" size="30"></div>');
-     //$("#otherProfessionA").css("display", "block");
+     $("#otherProfessionA").css("display", "block");
   /* if($(e).val()=='Other'){
     $('.otherProfessionA').html('<div class="form-label-group"><label for="">Profession Detail</label><input type="text" name="otherProfession"  class="form-control"></div>');
      $("#otherProfessionA").css("display", "block");
@@ -930,29 +914,29 @@ function professionCheck(e){
     break;
 
     case 'other':
-     /* var html = '<div class="form-label-group"><label for="">Occupation Detail</label><input type="text" name="subProfession"  class="form-control" maxlength="30" size="30"></div>';
+      var html = '<div class="form-label-group"><label for="">Occupation Detail</label><input type="text" name="subProfession"  class="form-control" maxlength="30" size="30"></div>';
         $('.subProfessionA').html(html);
-        $("#subProfessionA").css("display","block");*/
+        $("#subProfessionA").css("display","block");
     break;
     
     
     case 'house wife':
-       // $("#offAddress").css("display","none");
+        $("#offAddress").css("display","none");
     break;
     
     case 'student':
-       // $("#offAddress").css("display","none");
+        $("#offAddress").css("display","none");
     break;
     case 'retired':
 
-      //  $("#offAddress").css("display","none");
+        $("#offAddress").css("display","none");
     break;
     
     default:
-      /*  var html = '<div class="form-label-group"><label for="">Occupation Detail</label><input type="text" name="subProfession"  class="form-control" maxlength="30" size="30"></div>';
+        var html = '<div class="form-label-group"><label for="">Occupation Detail</label><input type="text" name="subProfession"  class="form-control" maxlength="30" size="30"></div>';
         $('.subProfessionA').html(html);
         $("#subProfessionA").css("display","block");
-        $("#offAddress").css("display","block");*/
+        $("#offAddress").css("display","block");
     } 
 
 }

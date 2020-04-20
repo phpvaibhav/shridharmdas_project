@@ -44,6 +44,8 @@
 	$lang['postName'] 							= "Post Name";	
 	$lang['Write_full_name'] 					= "Write full name";
 	$lang['otherUnionName'] 					= "Other Sangh Name";
+	$lang['identity_Type'] 						= "Identity Type";
+	$lang['identity_Image'] 						= "Identity Image";
 		
 
 
@@ -68,6 +70,7 @@
 	$lang['Good_job'] 										= "Good job";
 	$lang['Your_form_submitted_successfully'] 				= "Your form has  submitted successfully";
 	$lang['Please_select_your_front_image'] 				= "Please select your front aadhar  image";
+	
 	$lang['Please_select_your_back_image'] 					= "Please select your back aadhar  image";
 	$lang['Please_select__image_type'] 						= "Only aadhar image type jpg/png/jpeg/gif is allowed";
 	$lang['Please_enter_at_least_10_digit_phone_number'] 	= "Please enter  10 digit phone number.";
@@ -79,6 +82,7 @@
 	$lang['Please_select_your_religious_Knowledge'] 					= "Please select your religious Knowledge";
 	$lang['Try_again_after_seconds'] 					= "Try again after seconds";
 	$lang['First_write_your_name_then_your_surname'] 					= "First write your name then your surname";
+	$lang['Please_select_your_Identity_image'] 				= "Please select your identity image";
 	
 	
 

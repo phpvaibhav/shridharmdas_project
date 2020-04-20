@@ -149,11 +149,21 @@ $backend_assets =  base_url().'backend_assets/';
   var This_aadhar_number_is_already_taken                 = "<?= lang('This_aadhar_number_is_already_taken');?>";
   var Please_select_your_Occupation ="<?= lang('Please_select_your_Occupation');?>";
 var Please_select_your_religious_Knowledge ="<?= lang('Please_select_your_religious_Knowledge');?>";
+var Please_select_your_Identity_image ="<?= lang('Please_select_your_Identity_image');?>";
 </script>
 
 	<!-- Scripts -->
 	<script src="<?= $frontend_assets; ?>assets/js/jquery.min.js"></script>
 	<script src="<?= $frontend_assets; ?>assets/js/bootstrap.min.js"></script>
+  <!-- Global site tag (gtag.js) - Google Analytics -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=UA-164031668-1"></script>
+<script>
+ window.dataLayer = window.dataLayer || [];
+ function gtag(){dataLayer.push(arguments);}
+ gtag('js', new Date());
+
+ gtag('config', 'UA-164031668-1');
+</script>
  <script src="https://ajax.googleapis.com/ajax/libs/jqueryui/1.11.2/jquery-ui.min.js"></script>
 
    <script type="text/javascript" src="//cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/js/toastr.min.js"></script>

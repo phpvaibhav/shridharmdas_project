@@ -154,6 +154,24 @@
                           </div>
                           <span id="check-d-error" for="idhhhh" class="invalid"></span>
                       </div>
+                                            <div class="col-md-6">
+                          <div class="form-label-group">
+                            <label for="bloodGroup"><?= lang('blood_group'); ?></label>
+                          
+                            <select name="bloodGroup" class="form-control" id="bloodGroup">
+                            <option value="" selected="" disabled=""><?= lang('blood_group'); ?></option>
+                            <option value="A+">A+</option>
+                            <option value="O+">O+</option>
+                            <option value="B+">B+</option>
+                            <option value="AB+">AB+</option>
+                            <option value="A-">A-</option>
+                            <option value="O-">O-</option>
+                            <option value="B-">B-</option>
+                            <option value="AB-">AB-</option>
+                          
+                            </select>
+                          </div>
+                      </div>
                       
                   </div>
                   <div class="row">
@@ -309,7 +327,7 @@
                       </div>
 
                   </div>
-                  <div class="row" id="offAddress">
+<!--                   <div class="row" id="offAddress">
                       <div class="col-md-12">
                         <div class="row">
                         <section class="col col-6">
@@ -384,12 +402,12 @@
                              
                           </div>
                       </div>
-                  </div>
+                  </div> -->
                  
                   <hr>
                 
                   <button class="btn btn-outline  btn-block tl-btn-round-2 text-uppercase font-weight-bold mb-2" id="submit" type="submit"> 
-                    Next
+                   <?= lang('Submit'); ?>
                   </button>
 <!-- <?= lang('Submit'); ?> -->
                   <div class="text-center">

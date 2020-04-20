@@ -22,7 +22,10 @@
 	<section class="sa-paster-about-section section-padding pd-default">
 			<div class="container">
 				<div class="row">
-					<div class="col-lg-7">
+					<div class="col-xl-12 col-md-12 text-center">
+					<h2>Coming <u class="text-custom-primary">Soon</u></h2>
+				</div>
+<!-- 					<div class="col-lg-7">
 						<div class="sa-paster-about-area">
 							<h3>Minoru Hara</h3>
 							<p class="designation">Our Preacher</p>
@@ -44,7 +47,7 @@
 						<div class="ss-pastor-img-wrap">
 							<img src="https://via.placeholder.com/652x720" alt="img">
 						</div>
-					</div>
+					</div> -->
 				</div>
 			</div>
 		</section>

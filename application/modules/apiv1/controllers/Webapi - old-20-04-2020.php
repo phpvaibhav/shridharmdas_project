@@ -19,18 +19,26 @@ class Webapi extends Common_Service_Controller{
         $this->form_validation->set_rules('familyHeadName','family head name','trim|required');
         $this->form_validation->set_rules('countrycode','country code','trim|required');
         $this->form_validation->set_rules('contactNumber','contact number','trim|required');
-       
-        if (empty($_FILES['identityImage']['name'])) {
-            $this->form_validation->set_rules('identityImage','identityImage image','trim|required');
+        $this->form_validation->set_rules('aadharNumber','aadhar number','trim|required|min_length[12]');
+        if (empty($_FILES['frontImage']['name'])) {
+            $this->form_validation->set_rules('frontImage','Aadhar front image','trim|required');
         }
-     
+      /*  if (empty($_FILES['backImage']['name'])) {
+            $this->form_validation->set_rules('backImage','Aadhar back image','trim|required');
+        }*/
+        $this->form_validation->set_message('min_length', lang('Please_enter_at_least_12_digit_aadhaar_number'));
         if($this->form_validation->run() == FALSE)
         {
             $response = array('status' => FAIL, 'message' => strip_tags(validation_errors()));
         }
         else
         {
-
+            $aadharNumber           = trim(str_replace(array('(',')','-'),array('','',''),$this->post('aadharNumber'))); 
+            $isExist            =  $this->common_model->is_data_exists('users',array('aadharNumber'=>$aadharNumber));
+            if($isExist){
+                  $response   = array('status'=>FAIL,'message'=>'aadhar number already exist');
+                   $this->response($response);
+            }else{
                // pr($this->post());
                 $data_val   = $meta_val  = array();
                 $fuN              = ucfirst(trim($this->post('fullName')));
@@ -86,10 +94,9 @@ class Webapi extends Common_Service_Controller{
                 $data_val['countrycode']            = $this->post('countrycode'); 
                 $data_val['whose_contact_number']   = $this->post('whose_contact_number'); 
                 $data_val['mobileVerify']           = $this->post('mobileVerify'); 
-                $data_val['identityType']           = $this->post('identityType'); 
 
                 $data_val['contactNumber']          = $contactNumber;
-               // $data_val['aadharNumber']           = $aadharNumber; 
+                $data_val['aadharNumber']           = $aadharNumber; 
                 $data_val['userName']               = rand('111111','999999'); 
                 $data_val['password']               = password_hash('123!@#', PASSWORD_DEFAULT);
 
@@ -108,22 +115,22 @@ class Webapi extends Common_Service_Controller{
                 /* image Uploads*/ 
                 $image          = array(); $frontImage = '';
                  $this->load->model('Image_model');
-                 $this->Image_model->make_dirs('identity');
-                 if (!empty($_FILES['identityImage']['name'])) {
+                 $this->Image_model->make_dirs('aadhar');
+                 if (!empty($_FILES['frontImage']['name'])) {
                                 // Getting file name
-                        $filename  = $_FILES['identityImage']['name'];
-                        $imageTemp = $_FILES["identityImage"]["tmp_name"];
-                        $imageSize = $_FILES["identityImage"]["size"];
+                        $filename  = $_FILES['frontImage']['name'];
+                        $imageTemp = $_FILES["frontImage"]["tmp_name"];
+                        $imageSize = $_FILES["frontImage"]["size"];
                         // Valid extension
                         $valid_ext = array('png','jpeg','jpg','gif','pdf');
 
                         $photoExt1 = @end(explode('.', $filename)); // explode the image name to get the extension
                         $phototest1 = strtolower($photoExt1);
                             
-                        $new_profle_pic = "identityImage_".time().'.'.$phototest1;
+                        $new_profle_pic = "aadharfront_".time().'.'.$phototest1;
                             
                         // Location
-                        $location = "uploads/identity/".$new_profle_pic;
+                        $location = "uploads/aadhar/".$new_profle_pic;
 
                         // file extension
                         $file_extension = pathinfo($location, PATHINFO_EXTENSION);
@@ -133,12 +140,12 @@ class Webapi extends Common_Service_Controller{
                         if(in_array($file_extension,$valid_ext))
                         {  
                             // Compress Image
-                            $compressedImage = $this->compressedImage($_FILES['identityImage']['tmp_name'],$location,10);
+                            $compressedImage = $this->compressedImage($_FILES['frontImage']['tmp_name'],$location,10);
                             
                             if($compressedImage)
                             { 
                                 $compressedImageSize = filesize($compressedImage);
-                                $data_val['identityImage'] = $new_profle_pic;
+                                $data_val['frontAadharImage'] = $new_profle_pic;
                              
                             }
                             else
@@ -155,8 +162,92 @@ class Webapi extends Common_Service_Controller{
                            $this->response($response);die;
                         }
                     } 
-                  
+                     $image1         = array(); $backImage = '';
+                 if (!empty($_FILES['backImage']['name'])) {
+                                // Getting file name
+                        $filenameb  = $_FILES['backImage']['name'];
+                        $imageTempb = $_FILES["backImage"]["tmp_name"];
+                        $imageSizeb = $_FILES["backImage"]["size"];
+                        // Valid extension
+                        $valid_extb = array('png','jpeg','jpg','gif','pdf');
 
+                        $photoExt1b = @end(explode('.', $filenameb)); // explode the image name to get the extension
+                        $phototest1b = strtolower($photoExt1b);
+                            
+                        $new_profle_picb = "aadharback_".time().'.'.$phototest1b;
+                            
+                        // Location
+                        $locationb = "uploads/aadhar/".$new_profle_picb;
+
+                        // file extension
+                        $file_extensionb = pathinfo($locationb, PATHINFO_EXTENSION);
+                        $file_extensionb = strtolower($file_extensionb);
+
+                        // Check extension
+                        if(in_array($file_extensionb,$valid_extb))
+                        {  
+                            // Compress Image
+                            $compressedImageb = $this->compressedImage($_FILES['backImage']['tmp_name'],$locationb,10);
+                            
+                            if($compressedImageb)
+                            { 
+                                $compressedImageSizeb = filesize($compressedImageb);
+
+                                $data_val['backAadharImage'] = $new_profle_picb;
+                            
+                            }
+                            else
+                            {
+                               // $statusMsg = "Image compress failed!";
+                                 $response = array('status' => FAIL, 'message' => "Image compress failed!");
+                                $this->response($response);die;
+                            }   
+                        }
+                        else
+                        { 
+                            $statusMsg = 'Sorry, only JPG, JPEG, PNG, & GIF files are allowed to upload.'; 
+                             $response = array('status' => FAIL, 'message' =>$statusMsg);
+                           $this->response($response);die;
+                        }
+                    }             
+                   // $this->load->model('Image_model');
+                    
+                  /*  if (!empty($_FILES['frontImage']['name'])) {
+                        $folder     = 'aadhar';
+                        $image      = $this->Image_model->upload_image('frontImage',$folder); //upload media of Seller
+                        //check for error
+                        if(array_key_exists("error",$image) && !empty($image['error'])){
+                            $response = array('status' => FAIL, 'message' => strip_tags($image['error'].'(In front aadhar Image)'));
+                           $this->response($response);die;
+                        }
+                        //check for image name if present
+                        if(array_key_exists("image_name",$image)):
+                            $frontImage = $image['image_name'];
+
+                        endif;
+                        }*/
+                     /*   if(!empty($frontImage)){
+                            $data_val['frontAadharImage']           =   $frontImage;
+                        }                     
+                       */
+                   
+                 /*   if (!empty($_FILES['backImage']['name'])) {
+                        $folder     = 'aadhar';
+                        $image1      = $this->Image_model->upload_image('backImage',$folder); //upload media of Seller
+                        //check for error
+                        if(array_key_exists("error",$image1) && !empty($image1['error'])){
+                            $response = array('status' => FAIL, 'message' => strip_tags($image1['error'].'(In back aadhar Image)'));
+                           $this->response($response);die;
+                        }
+                        //check for image name if present
+                        if(array_key_exists("image_name",$image1)):
+                            $backImage = $image1['image_name'];
+
+                        endif;
+                        }*/
+                     /*   if(!empty($backImage)){
+                            $data_val['backAadharImage']           =   $backImage;
+                        } */
                 /* image Uploads*/
                 $result = $this->common_model->insertData('users',$data_val);
                
@@ -172,7 +263,9 @@ class Webapi extends Common_Service_Controller{
                     $response   = array('status'=>SUCCESS,'message'=>$msg);
                 }else{
                     $response   = array('status'=>FAIL,'message'=>ResponseMessages::getStatusCodeMessage(118));
-                }    
+                } 
+            }
+            
         }
         $this->response($response);
     } //End Function
@@ -205,7 +298,6 @@ class Webapi extends Common_Service_Controller{
                 $user_meta['profession']        = $this->post('profession');
                 $user_meta['subProfession']     = @$this->post('subProfession');
                 $user_meta['otherProfession']   = @$this->post('otherProfession');
-                $user_meta['bloodGroup']        = @$this->post('bloodGroup');
                 $user_meta['religiousKnowledge']      = $this->post('religiousKnowledge') ? implode(",",$this->post('religiousKnowledge')) :"";
 
                 $add_meta['userId']         = $userId;
@@ -230,7 +322,7 @@ class Webapi extends Common_Service_Controller{
                 $add_meta1['postName']      = $this->post('ppostName');
                 $add_meta1['addressType']   = 'Permanent';
                 
-/*                $add_meta2['userId']        = $userId;
+                $add_meta2['userId']        = $userId;
                 $add_meta2['zip_code']      = $this->post('ozip_code');
                 $add_meta2['address']       = $this->post('oaddress');
                 $add_meta2['city']          = $this->post('ocity');
@@ -239,18 +331,16 @@ class Webapi extends Common_Service_Controller{
                 $add_meta2['country']       = $this->post('ocountry');
                 $add_meta2['state']         = $this->post('ostate');
                 $add_meta2['postName']      = $this->post('opostName');
-                $add_meta2['addressType']   = 'Office';*/
+                $add_meta2['addressType']   = 'Office';
 
 
                 $this->common_model->updateFields('users',$user_val,array('id'=>$userId));
                 $this->common_model->updateFields('user_meta',$user_meta,array('userId'=>$userId));
                 $this->common_model->insertData('addresses',$add_meta);
                 $this->common_model->insertData('addresses',$add_meta1);
-               // $this->common_model->insertData('addresses',$add_meta2);
-             /*   $msg            = 'Step-2 '.ResponseMessages::getStatusCodeMessage(122);
-                $_SESSION['userStep']        = 3; */
-                 $msg  = lang('Your_form_submitted_successfully');;
-                 $_SESSION['userStep']        = 0; 
+                $this->common_model->insertData('addresses',$add_meta2);
+                $msg            = 'Step-2 '.ResponseMessages::getStatusCodeMessage(122);
+                $_SESSION['userStep']        = 3; 
                 $response   = array('status'=>SUCCESS,'message'=>$msg);
 
             }else{

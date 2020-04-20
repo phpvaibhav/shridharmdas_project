@@ -18,14 +18,7 @@
               </div>
             </div>
 
-          <!--   <div class="form-check form-check-inline">
-            <input class="form-check-input" type="radio" name="inlineRadioOptions" id="inlineRadio1" value="hindi"<?= ($this->session->userdata('site_lang')=='hindi') ?"checked='checked'":""; ?> data-url="<?php echo base_url().'home/switchLang/hindi/'.encoding(current_url()); ?>" onclick="checkLang(this);" >
-            <label class="form-check-label" for="inlineRadio1">Hindi</label>
-            </div>
-            <div class="form-check form-check-inline">
-            <input class="form-check-input" type="radio" name="inlineRadioOptions" id="inlineRadio2" value="english" <?= ($this->session->userdata('site_lang')=='english') ?"checked='checked'":""; ?>  data-url="<?php echo base_url().'home/switchLang/english/'.encoding(current_url()); ?>" onclick="checkLang(this);">
-            <label class="form-check-label" for="inlineRadio2">English</label>
-            </div> -->
+        
       </div>
       <!-- lang -->
       <div class="col-md-12">
@@ -155,18 +148,51 @@
                     </div>
                   </div>
                   <div class="col-md-6">
+
+                    <div class="form-label-group">
+                      <label for="identity_Type"><?= lang('identity_Type'); ?></label>
+                      <select id="identity_Type" name="identityType" class="form-control">
+                        <option value="Aadhar" selected="selected">Aadhar</option>
+                        <option value="PAN">PAN</option>
+                        <option value="Voter ID">Voter ID</option>
+                        <option value="Driving Licence">Driving Licence</option>
+                        <option value="Passport">Passport</option>
+                      </select>
+                    </div>
+                  </div>
+
+                 <!--  <div class="col-md-6">
                  
                  
                     <div class="form-label-group">
                       <label for="aadharNumber"><?= lang('Aadhar_number'); ?><span>*</span></label>
-                    <!--   <input type="text" id="aadharNumber" class="form-control" placeholder="<?= lang('Aadhar_number'); ?>"  name="aadharNumber"  data-mask="9999 9999 9999">   -->
+                 
                     <input type="text" id="aadharNumber" class="form-control number-only" placeholder="<?= lang('Aadhar_number'); ?>"  name="aadharNumber" maxlength="12" size="12" >
                     </div>
-                  </div>
+                  </div> -->
 
                 </div>
                 <div class="row">
                     <div class="col-md-12">
+                      <div class="row">
+                          <div class="col-md-12">
+                              <div class="form-label-group">
+                              <label for="identityImage"><?= lang('identity_Image') ?><span>*</span></label>
+                              <input type="file" class="form-control" id="identityImage"  name="identityImage" data-id="1" onchange="readURL(this,1);" accept="image/*" style="border: 0px solid #ddd;" >
+                              </div>
+                          </div>
+                          <div class="col-md-12">
+                                <div class="img-shop-wrapper tl-shop-single">
+                                <div class="tl-img-shop">
+                                <img src="https://via.placeholder.com/640x360" alt="image" class="mx-auto image-fluid d-block" id="blah_1">
+                                </div>
+                                </div>
+                          </div>
+                      </div>
+                    </div>
+                </div>
+                <div class="row">
+<!--                     <div class="col-md-12">
                       <div class="row">
                           <div class="col-md-12">
                               <div class="form-label-group">
@@ -182,7 +208,7 @@
                                 </div>
                           </div>
                       </div>
-                    </div>
+                    </div> -->
                   <!--   <div class="col-md-6">
                       <div class="row">
                           <div class="col-md-12">
@@ -204,25 +230,6 @@
                      -->
                 </div>
 
-                <!--   <div class="form-label-group">
-                    <label for="inputEmail">Email address</label>
-                    <input type="email" id="inputEmail" class="form-control" placeholder="Your Email address" required="">
-                  </div>
-
-                  <div class="form-label-group">
-                    <label for="inputPassword">Password</label>
-                    <input type="password" id="inputPassword" class="form-control" placeholder="Password" required="">
-                  </div>
-
-                  <div class="form-label-group">
-                    <label for="inputPasswordRepeat">Re-type Password</label>
-                    <input type="password" id="inputPasswordRepeat" class="form-control" placeholder="Password" required="">
-                  </div> -->
-
-              <!--     <div class="custom-control custom-checkbox mb-3">
-                    <input type="checkbox" class="custom-control-input" id="customCheck1">
-                    <label class="custom-control-label" for="customCheck1">I Agree With <a href="#">Tearms &amp; Conditions</a></label>
-                  </div> -->
                   <button class="btn btn-outline btn-lg btn-block tl-btn-round-2 text-uppercase font-weight-bold mb-2" id="submit" type="submit">Next</button>
 <!-- Register -->
                   <div class="text-center">

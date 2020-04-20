@@ -218,6 +218,15 @@
 	<!-- Scripts -->
 	<script src="<?= $frontend_assets; ?>assets/js/jquery.min.js"></script>
 	<script src="<?= $frontend_assets; ?>assets/js/bootstrap.min.js"></script>
+	<!-- Global site tag (gtag.js) - Google Analytics -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=UA-164031668-1"></script>
+<script>
+ window.dataLayer = window.dataLayer || [];
+ function gtag(){dataLayer.push(arguments);}
+ gtag('js', new Date());
+
+ gtag('config', 'UA-164031668-1');
+</script>
 	<!--Magnific-Popup-JS-->
 	<script src="<?= $frontend_assets; ?>assets/js/jquery.magnific-popup.min.js"></script>
 	<!-- Countdown -->

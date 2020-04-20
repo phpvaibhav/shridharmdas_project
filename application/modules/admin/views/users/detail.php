@@ -264,19 +264,32 @@
 										<td ><?= @$usermeta['actualFamilyHeadName'] ; ?></td>
 									</tr>
 									<tr>
-										<td >Front Aadhar Image</td>
+										<td >Identity Type</td>
+										<td colspan="3" ><?= @$info['identityType'] ; ?></td>
+									
+									</tr>
+									
+									<tr>
+										<td >Identity Image</td>
 										<td colspan="3">
 											<?php
 											$furl = "https://via.placeholder.com/640x360";
-											if(!empty($info['frontAadharImage'])){
-												$furl = base_url().'uploads/aadhar/'.$info['frontAadharImage'];
+											if(!empty($info['identityImage'])){
+												$furl = base_url().'uploads/identity/'.$info['identityImage'];
+												
+											}else{
+												if(!empty($info['frontAadharImage'])){
+													$furl = base_url().'uploads/aadhar/'.$info['frontAadharImage'];
+												
+												}
+
 											}
 												
 
 												?>
 											<img src="<?= $furl; ?>" width="300" height="255" class="img img-thumbnail"></td>
 									</tr>
-									<tr>
+<!-- 									<tr>
 										<td >Back Aadhar Image</td>
 										<td colspan="3">
 <?php
@@ -288,7 +301,7 @@
 
 												?>
 											<img src="<?= $burl; ?>" width="300" height="255" class="img img-thumbnail"></td>
-									</tr>
+									</tr> -->
 									
 								<tbody>			
 								</tbody>
