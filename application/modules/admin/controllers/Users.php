@@ -124,7 +124,7 @@ class Users extends Common_Back_Controller {
         $sheet->getColumnDimension('AG')->setAutoSize(true);
         $sheet->getColumnDimension('AH')->setAutoSize(true);
         $sheet->getColumnDimension('AI')->setAutoSize(true);
-        $sheet->getColumnDimension('AJ')->setAutoSize(true);
+     /*   $sheet->getColumnDimension('AJ')->setAutoSize(true);
         $sheet->getColumnDimension('AK')->setAutoSize(true);
         $sheet->getColumnDimension('AL')->setAutoSize(true);
         $sheet->getColumnDimension('AM')->setAutoSize(true);
@@ -132,11 +132,11 @@ class Users extends Common_Back_Controller {
         $sheet->getColumnDimension('AO')->setAutoSize(true);
         $sheet->getColumnDimension('AP')->setAutoSize(true);
         $sheet->getColumnDimension('AQ')->setAutoSize(true);
-        $sheet->getColumnDimension('AR')->setAutoSize(true);
+        $sheet->getColumnDimension('AR')->setAutoSize(true);*/
 
-        $sheet->getStyle('A1:AR1')->applyFromArray($styleArray);
-        $sheet->getStyle('A1:AR1')->getAlignment()->setHorizontal('center');
-        $sheet->getStyle('A:AR')->getAlignment()->setHorizontal('center');
+        $sheet->getStyle('A1:AI1')->applyFromArray($styleArray);
+        $sheet->getStyle('A1:AI1')->getAlignment()->setHorizontal('center');
+        $sheet->getStyle('A:AI')->getAlignment()->setHorizontal('center');
         if($lang_type=='Hindi'){
             $sheet->setCellValue('A1', 'नाम');
             $sheet->setCellValue('B1', 'उपनाम');
@@ -177,7 +177,7 @@ class Users extends Common_Back_Controller {
             $sheet->setCellValue('AH1', 'राज्य');
             $sheet->setCellValue('AI1', 'देश');
 
-            $sheet->setCellValue('AJ1', 'कार्यालय का पता');
+        /*$sheet->setCellValue('AJ1', 'कार्यालय का पता');
             $sheet->setCellValue('AK1', 'मुहल्ला / गाँव');
             $sheet->setCellValue('AL1', 'पोस्ट नाम');
             $sheet->setCellValue('AM1', 'शहर');
@@ -185,7 +185,7 @@ class Users extends Common_Back_Controller {
             $sheet->setCellValue('AO1', 'तहसील');
             $sheet->setCellValue('AP1', 'जिला');
             $sheet->setCellValue('AQ1', 'राज्य');
-            $sheet->setCellValue('AR1', 'देश');
+            $sheet->setCellValue('AR1', 'देश');*/
         }else{
             $sheet->setCellValue('A1', 'First Name');
             $sheet->setCellValue('B1', 'Last Name');
@@ -226,7 +226,7 @@ class Users extends Common_Back_Controller {
             $sheet->setCellValue('AH1', 'State');
             $sheet->setCellValue('AI1', 'Country');
 
-            $sheet->setCellValue('AJ1', 'Office Address');
+         /*   $sheet->setCellValue('AJ1', 'Office Address');
             $sheet->setCellValue('AK1', 'locality');
             $sheet->setCellValue('AL1', 'postName');
             $sheet->setCellValue('AM1', 'City');
@@ -234,7 +234,7 @@ class Users extends Common_Back_Controller {
             $sheet->setCellValue('AO1', 'Tehsil');
             $sheet->setCellValue('AP1', 'District');
             $sheet->setCellValue('AQ1', 'State');
-            $sheet->setCellValue('AR1', 'Country');
+            $sheet->setCellValue('AR1', 'Country');*/
         }
 
         
@@ -285,7 +285,11 @@ class Users extends Common_Back_Controller {
         $sheet->setCellValue('L' . $rowCount, display_placeholder_text(@$usermeta['profession']));
         $sheet->setCellValue('M' . $rowCount, display_placeholder_text(@$usermeta['bloodGroup']));
         $sheet->setCellValue('N' . $rowCount, display_placeholder_text(@$usermeta['preceptorName']));
-        $sheet->setCellValue('O' . $rowCount, display_placeholder_text(@$usermeta['unionName']));
+        $unionName = @$usermeta['unionName'];
+        if(!empty($usermeta['unionName']) && $usermeta['unionName']=='OTHER'){
+            $unionName = @$usermeta['otherUnionName'];
+        }
+        $sheet->setCellValue('O' . $rowCount, display_placeholder_text(@$unionName));
         $sheet->setCellValue('P' . $rowCount, display_placeholder_text(@$usermeta['religiousKnowledge']));
         $sheet->setCellValue('Q' . $rowCount, display_placeholder_text(@$usermeta['unionResponsibility']));
 
@@ -308,7 +312,7 @@ class Users extends Common_Back_Controller {
         $sheet->setCellValue('AG' . $rowCount, display_placeholder_text(@$addresses[1]->district));
         $sheet->setCellValue('AH' . $rowCount, display_placeholder_text(@$addresses[1]->state));
         $sheet->setCellValue('AI' . $rowCount, display_placeholder_text(@$addresses[1]->country));
-
+/*
         $sheet->setCellValue('AJ' . $rowCount, display_placeholder_text(@$addresses[1]->address));
         $sheet->setCellValue('AK' . $rowCount, display_placeholder_text(@$addresses[1]->locality));
         $sheet->setCellValue('AL' . $rowCount, display_placeholder_text(@$addresses[1]->postName));
@@ -318,7 +322,7 @@ class Users extends Common_Back_Controller {
         $sheet->setCellValue('AP' . $rowCount, display_placeholder_text(@$addresses[1]->district));
         $sheet->setCellValue('AQ' . $rowCount, display_placeholder_text(@$addresses[1]->state));
         $sheet->setCellValue('AR' . $rowCount, display_placeholder_text(@$addresses[1]->country));
-        
+        */
 
         $rowCount++;
         }

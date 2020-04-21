@@ -2136,7 +2136,7 @@ footer{
 #inner_intro {
 	position: relative;
 	background-color: #4c4c4c;
-	background-image: url(https://via.placeholder.com/1920x930);
+	background-image: url('../images/About-us/about.png');
 	background-position: center;
 	background-size: cover;
 }
