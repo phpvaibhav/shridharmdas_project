@@ -29,19 +29,20 @@
                     <h4 class="title"><?= lang('User_Form'); ?> (Step-1)</h4>
                     <p class="sub_title text-center"><!-- Already have an account? --> 
                       <?php if($this->session->userdata('site_lang')=='hindi'){ ?>
-                    	<a class="color-litegreen" href="javascript:void(0);" type="button"  data-toggle="modal" data-target=".bd-example-modal-lg">फॉर्म को भरने हेतु निर्देश </a>
+                    	<a class="color-litegreen color-nirdes" href="javascript:void(0);" type="button"  data-toggle="modal" data-target=".bd-example-modal-lg" style="font-weight: 700;color: blue;">फॉर्म को भरने हेतु निर्देश </a>
                     <?php }else{ ?>
-                      <a class="color-litegreen" href="javascript:void(0);" type="button"  data-toggle="modal" data-target=".bd-example-modal-lg">Instructions for filling the form </a>
+                      <a class="color-litegreen color-nirdes" href="javascript:void(0);" type="button"  data-toggle="modal" data-target=".bd-example-modal-lg" style="font-weight: 700;color: blue;">Instructions for filling the form </a>
                        <?php }?>
 
                     </p>
                 </div>
                
+               
                 <form id="user-add-step-1" method="post" class="login-form-t" novalidate="novalidate" action="userStep1" novalidate="novalidate" autocomplete="off">
                 <div class="row" >
                   <div class="col-md-12">
                       <div class="form-label-group">
-                        <label for="fullName"><?= lang('First_name').'('.lang('Write_full_name').')'; ?><span>*</span></label>
+                        <label for="fullName"><?= lang('Full_name').'('.lang('Write_full_name').')'; ?><span>*</span></label>
                         <input type="text" id="fullName" class="form-control" placeholder="<?= lang('First_write_your_name_then_your_surname'); ?>"  name="fullName" maxlength="30" size="30">
                       </div>
                   </div>

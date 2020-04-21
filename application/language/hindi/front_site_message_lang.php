@@ -44,7 +44,7 @@
 	$lang['postName'] 									= "पोस्ट नाम";
 	$lang['Write_full_name'] 							= "पूरा नाम लिखे";
 	$lang['otherUnionName'] 							= "अन्य श्री संघ का नाम";
-	$lang['identity_Type'] 								= "पहचान के प्रकार";
+	$lang['identity_Type'] 								= "पहचान पत्र (कोई भी एक चुने)";
 	$lang['identity_Image'] 							= "पहचान छवि";
 
 

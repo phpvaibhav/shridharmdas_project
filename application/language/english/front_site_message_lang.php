@@ -11,7 +11,7 @@
 	$lang['Last_name'] 							= "Last name";
 	$lang['parentName'] 						= "Father name/Husband name";
 	$lang['dob'] 								= "Date of birth";
-	$lang['Phone'] 								= "Phone";
+	$lang['Phone'] 								= "Mobile";
 	$lang['Whose contact number'] 				= "Whose contact number is it";
 	$lang['Aadhar_number'] 						= "Aadhar number";
 	$lang['Select_Gender'] 						= "Select Gender";
@@ -44,7 +44,7 @@
 	$lang['postName'] 							= "Post Name";	
 	$lang['Write_full_name'] 					= "Write full name";
 	$lang['otherUnionName'] 					= "Other Sangh Name";
-	$lang['identity_Type'] 						= "Identity Type";
+	$lang['identity_Type'] 						= "Identity Proof (Choose any one)";
 	$lang['identity_Image'] 						= "Identity Image";
 		
 

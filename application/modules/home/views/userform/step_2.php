@@ -34,9 +34,9 @@
                     <h4 class="title"><?= lang('User_Form'); ?> (Step-2)</h4>
                     <p class="sub_title text-center"><!-- Already have an account? --> 
                        <?php if($this->session->userdata('site_lang')=='hindi'){ ?>
-                      <a class="color-litegreen" href="javascript:void(0);" type="button"  data-toggle="modal" data-target=".bd-example-modal-lg">फॉर्म को भरने हेतु निर्देश </a>
+                      <a class="color-litegreen color-nirdes" href="javascript:void(0);" type="button"  data-toggle="modal" data-target=".bd-example-modal-lg" style="font-weight: 700;color: blue;">फॉर्म को भरने हेतु निर्देश </a>
                     <?php }else{ ?>
-                      <a class="color-litegreen" href="javascript:void(0);" type="button"  data-toggle="modal" data-target=".bd-example-modal-lg">Instructions for filling the form </a>
+                      <a class="color-litegreen color-nirdes" href="javascript:void(0);" type="button"  data-toggle="modal" data-target=".bd-example-modal-lg" style="font-weight: 700;color: blue;">Instructions for filling the form </a>
                        <?php }?>
                     </p>
                 </div>
