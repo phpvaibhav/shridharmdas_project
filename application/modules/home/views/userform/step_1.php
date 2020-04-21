@@ -185,7 +185,7 @@
                           <div class="col-md-12">
                                 <div class="img-shop-wrapper tl-shop-single">
                                 <div class="tl-img-shop">
-                                <img src="https://via.placeholder.com/640x360" alt="image" class="mx-auto image-fluid d-block" id="blah_1">
+                                <img src="https://via.placeholder.com/640x360.png?text=Identity+Image" alt="image" class="mx-auto image-fluid d-block" id="blah_1">
                                 </div>
                                 </div>
                           </div>
@@ -234,7 +234,7 @@
                   <button class="btn btn-outline btn-lg btn-block tl-btn-round-2 text-uppercase font-weight-bold mb-2" id="submit" type="submit">Next</button>
 <!-- Register -->
                   <div class="text-center">
-                    <a class="small" href="<?= base_url();  ?>">Go To Home</a>
+                  <!--   <a class="small" href="<?= base_url();  ?>">Go To Home</a> -->
                   </div>
 
                 </form>

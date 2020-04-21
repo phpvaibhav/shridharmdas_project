@@ -412,7 +412,7 @@
                   </button>
 <!-- <?= lang('Submit'); ?> -->
                   <div class="text-center">
-                    <a class="small" href="<?= base_url();  ?>">Go To Home</a>
+                  <!--   <a class="small" href="<?= base_url();  ?>">Go To Home</a> -->
                   </div>
 
                 </form>
