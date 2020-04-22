@@ -66,6 +66,7 @@ $route['office'] 					= 'admin/office';
 
 $route['user-form'] 				= 'home/addUser';
 $route['about-us'] 					= 'home/aboutus';
+$route['jeevani'] 					= 'home/jeevani';
 $route['pad-adhikari'] 					= 'home/pad_adhikari';
 $route['contact-us'] 				= 'home/contact';
 $route['gallery'] 					= 'home/gallery';

@@ -29,6 +29,13 @@ public function __construct()
          $data['front_styles']   = array('frontend_assets/css/about.css');
         $this->load->front_render('pad_adhikari',$data);
     }//End Function
+
+     public function jeevani() { 
+        $data['title'] = 'Jeevani';
+         $data['front_styles']   = array('frontend_assets/css/about.css');
+        $this->load->front_render('jeevani',$data);
+    }//End Function
+    
     
 
     public function contact() { 

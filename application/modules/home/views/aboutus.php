@@ -35,7 +35,7 @@
 					    </p>
 
 					    <p>संवत १७५९ , धार में धर्म की रक्षा हेतु अनशन ग्रहण कर शिष्य की जगह स्वयं को विराजित किया, यह अनशन ८ दिन चला ।
-					    	<a href="#" class="text_url">सम्पूर्ण परिचय के लिए क्लिक करे</a> </p>
+					    	<a href="<?= base_url('jeevani'); ?>" class="text_url">सम्पूर्ण परिचय के लिए क्लिक करे</a> </p>
 
 					    <p>आप श्री की अनेक परम्परा रही जिनमें मुख्य रूप से रतलाम शाखा  रही जिसे श्री धर्मदास सम्प्रदाय के नाम से जाना जाता है । इस सम्प्रदाय में अनेक ओजस्वी -तेजस्वी गण प्रमुख सन्त रहे इनमें १४ वे गण प्रमुख के रूप में आध्यात्म योगी , जिनशाशन गौरव , वर्तमान के वर्धमान , आचार्य भगवन , पूज्य गुरुदेव श्री उमेशमुनि जी मसा हुए - आप श्री के सानिध्य में  वर्ष १९८६ , मेघनगर में श्री धर्मदास गण परिषद की स्थापना की गई । आचार्य श्री की परिषद की स्थापना के पीछे अनेक दूर दृष्टि को महसूस किया गया । 
 					    <a href="#" class="text_url">धर्मदास शिष्य वृक्ष के लिए क्लिक करे </a></p>
@@ -66,6 +66,7 @@
 				<div class="row">
 					<div class="col-lg-4 col-md-6">
 						<a href="<?= base_url().'pad-adhikari'; ?>">
+						
 						<div class="features_wrap custom-md-mb features-after-none">
 							<div class="f-f-icon"><img src="https://via.placeholder.com/64x64?text=P" alt="img"></div>
 							<h4 class="text-custom-secondary">पदाधिकारी</h4>
@@ -74,11 +75,13 @@
 						</a>
 					</div>
 					<div class="col-lg-4 col-md-6">
+						<a href="<?= base_url('jeevani'); ?>">
 						<div class="features_wrap custom-sm-mb features-after-none">
-							<div class="f-f-icon"><img src="https://via.placeholder.com/64x64" alt="img"></div>
-							<h4 class="text-custom-secondary">Community</h4>
-							<p class="mb-0">Uncover many web sites still in their infancy. Various versions have evolved over the years, sometimes by accident.</p>
+							<div class="f-f-icon"><img src="https://via.placeholder.com/64x64?text=J" alt="img"></div>
+							<h4 class="text-custom-secondary">जीवन-परिचय</h4>
+							<p class="mb-0">बात उस समय की है जब दिल्ली के सिंहासन पर मुगल आसीन थे। शाहजहाँ का शासन चल रहा था। भारत के अधिकांश भागों में उसकी सत्ता थी। शाहजहाँ के शहजादों में शासन के लिए विग्रह प्रारंभ हो गया था।</p>
 						</div>
+					</a>
 					</div>
 					<div class="col-lg-4 col-md-6">
 						<div class="features_wrap features-after-none">
