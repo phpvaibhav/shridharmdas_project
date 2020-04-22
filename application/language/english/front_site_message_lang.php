@@ -12,7 +12,7 @@
 	$lang['parentName'] 						= "Father name/Husband name";
 	$lang['dob'] 								= "Date of birth";
 	$lang['Phone'] 								= "Mobile Number";
-	$lang['Whose contact number'] 				= "Whose mobile number is it";
+	$lang['Whose_contact_number'] 				= "Whose mobile number is it";
 	$lang['Aadhar_number'] 						= "Aadhar number";
 	$lang['Select_Gender'] 						= "Select Gender";
 	$lang['Marital_Status'] 					= "Marital Status";
