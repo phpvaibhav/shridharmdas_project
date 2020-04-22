@@ -11,8 +11,8 @@
 	$lang['Last_name'] 							= "Last name";
 	$lang['parentName'] 						= "Father name/Husband name";
 	$lang['dob'] 								= "Date of birth";
-	$lang['Phone'] 								= "Mobile";
-	$lang['Whose contact number'] 				= "Whose contact number is it";
+	$lang['Phone'] 								= "Mobile Number";
+	$lang['Whose contact number'] 				= "Whose mobile number is it";
 	$lang['Aadhar_number'] 						= "Aadhar number";
 	$lang['Select_Gender'] 						= "Select Gender";
 	$lang['Marital_Status'] 					= "Marital Status";
@@ -60,7 +60,7 @@
 	$lang['Please_select_your_date_of_birth'] 				= "Please select your date of birth";
 	$lang['Please_select_your_gender'] 						= "Please select your gender";
 	$lang['Please_select_your_marital_status'] 				= "Please select your marital status";
-	$lang['Please_select_your_contact_number'] 				= "Please select your contact number";
+	$lang['Please_select_your_contact_number'] 				= "Please select your mobile number";
 	$lang['Please_select_your_aadhar_number'] 				= "Please select your aadhar number";
 	$lang['Please_select_your_address'] 					= "Please select your address";
 	$lang['Please_select_your_city'] 						= "Please select your city";
@@ -73,7 +73,7 @@
 	
 	$lang['Please_select_your_back_image'] 					= "Please select your back aadhar  image";
 	$lang['Please_select__image_type'] 						= "Only aadhar image type jpg/png/jpeg/gif is allowed";
-	$lang['Please_enter_at_least_10_digit_phone_number'] 	= "Please enter  10 digit phone number.";
+	$lang['Please_enter_at_least_10_digit_phone_number'] 	= "Please enter  10 digit mobile number.";
 	$lang['Please_enter_at_least_12_digit_aadhaar_number'] 	= "Please enter  12 digit aadhaar number.";
 	$lang['Please_select_your_unionName'] 					= "Please select your union name";
 	$lang['Please_select_your_Occupation'] 					= "Please select your Occupation";

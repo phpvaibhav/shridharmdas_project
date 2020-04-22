@@ -10,8 +10,8 @@
 	$lang['Last_name'] 									= "उपनाम";
 	$lang['parentName'] 								= "पिता/पति का नाम";
 	$lang['dob'] 										= "जन्म की तारीख";
-	$lang['Phone'] 										= "फ़ोन";
-	$lang['Whose_contact_number'] 						= "फ़ोन नंबर किसका है";
+	$lang['Phone'] 										= "मोबाइल नंबर";
+	$lang['Whose_contact_number'] 						= "मोबाइल नंबर किसका है";
 	$lang['Aadhar_number'] 								= "आधार कार्ड नंबर";
 	$lang['Select_Gender'] 								= "लिंग";
 	$lang['Marital_Status'] 							= "वैवाहिक स्थिति";
@@ -71,7 +71,7 @@
 	$lang['Please_select_your_back_image'] 				= "कृपया अपनी बैक आधार छवि का चयन करें";
 	$lang['Please_select__image_type'] 					= "केवल आधार छवि प्रकार jpg / png / jpeg / gif की अनुमति है";
 		$lang['Please_enter_at_least_12_digit_aadhaar_number'] 	= "कृपया 12 अंकों का आधार नंबर दर्ज करें।";
-	$lang['Please_enter_at_least_10_digit_phone_number'] 		= "कृपया 10 अंकों का फ़ोन नंबर दर्ज करें।";
+	$lang['Please_enter_at_least_10_digit_phone_number'] 		= "कृपया 10 अंकों का मोबाइल नंबर दर्ज करें।";
 	$lang['Please_select_your_unionName'] 						= "कृपया अपने संघ का नाम चुनें";
 	$lang['Please_select_your_Occupation'] 						= "कृपया अपना व्यवसाय चुनें";
 	$lang['This_option_field_is_required'] 						= "यह विकल्प फ़ील्ड आवश्यक है।";
