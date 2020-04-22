@@ -31,8 +31,13 @@ class Users extends Common_Back_Controller {
     } //End function 
     public function edit(){
      
-        $data['title']      = lang('Users');
-     
+        $data['title']          = lang('Users');
+        $userId                 = decoding($this->uri->segment(2));
+        $where                  = array('id'=>$userId);
+        $result                 = $this->common_model->getsingle('users',$where);
+        $data['info']           = $result;
+        $data['addresses']        = $this->common_model->getAll('addresses',array('userId'=>$result['id']));
+        $data['usermeta']        = $this->common_model->getsingle('user_meta',array('userId'=>$result['id']));
         $data['front_scripts'] = array('backend_assets/custom/js/user_edit.js');
       
         $this->load->admin_render('users/edit', $data, '');

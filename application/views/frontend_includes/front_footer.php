@@ -41,7 +41,7 @@
 			<div class="row">
 				<div class="col-md-4 footer_widget text-center-footer">
 					<div class="widget_inner">
-						<h5>संपर्क करें</h5>
+						<h5>जनगणना संबंधित जानकारी के लिए संपर्क करे</h5>
 						<p> श्री शांतिलाल जी भंडारी (धर्मदासगण अध्यक्ष) <br><span><i class="fas fa-mobile"></i> : +91 99870 69990</span></p>
 							<p> सर्वेश मण्डलेचा,बदनावर <br><span><i class="fas fa-mobile"></i> : +91 98937 41418</span></p>
 							<p> मिलिन गाँधी,रतलाम <br><span><i class="fas fa-mobile"></i> : +91 98272 53330</span></p>

@@ -74,3 +74,4 @@ $route['user-step-1'] 				= 'home/user_step_1';
 $route['user-step-2'] 				= 'home/user_step_2';
 $route['user-step-3'] 				= 'home/user_step_3';
 $route['user-preview'] 				= 'home/user_preview';
+

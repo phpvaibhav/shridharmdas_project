@@ -257,6 +257,66 @@ class Users extends Common_Admin_Controller{
         }
         $this->response($response);
     }//end function
+
+
+    function edit_post(){
+        $authCheck  = $this->check_admin_service_auth();
+        $this->form_validation->set_rules('firstName','first name', 'trim|required');
+        $this->form_validation->set_rules('lastName','last name', 'trim|required');
+       
+        if($this->form_validation->run() == FALSE){
+            $response = array('status' => FAIL, 'message' => strip_tags(validation_errors()));  
+        }else{
+          
+            $data_val['firstName']       = $this->post('firstName'); 
+            $data_val['lastName']        = $this->post('lastName'); 
+            $data_val['parentName']        = $this->post('parentName'); 
+            $data_val['familyHeadName']        = $this->post('familyHeadName'); 
+            $data_val['fullName']        = $this->post('firstName').' '.$this->post('lastName'); 
+            //$data_val['dob']             = date('Y-m-d',strtotime($this->post('dob'))); 
+
+
+            $user_meta['actualFirstName']       = $this->post('actualFirstName');
+            $user_meta['actualLastName']        = $this->post('actualLastName');
+             $data_val['actualFullName']        = $this->post('actualFirstName').' '.$this->post('actualLastName');
+            $user_meta['hindiFirstName']        = $this->post('hindiFirstName');
+            $user_meta['hindiLastName']         = $this->post('hindiLastName');
+            $data_val['hindiFullName']        = $this->post('hindiFirstName').' '.$this->post('hindiLastName');
+            $user_meta['actualParentName']      = $this->post('actualParentName');
+            $user_meta['actualFamilyHeadName']  = $this->post('actualFamilyHeadName');
+            $user_meta['hindiParentName']       = $this->post('hindiParentName');
+            $user_meta['hindiFamilyHeadName']   = $this->post('hindiFamilyHeadName');
+         
+            $id     = decoding($this->post('id'));
+         
+            $isExist            =  $this->common_model->is_data_exists('users',array('id'=>$id));
+            if($isExist){
+                    $result = $this->common_model->updateFields('users',$data_val,array('id'=>$id));
+                    $this->common_model->updateFields('user_meta',$user_meta,array('userId'=>$id));
+                    if($result){
+                    $status = SUCCESS;
+                        $msg  = ResponseMessages::getStatusCodeMessage(123);
+                    }else{
+                        $status = FAIL;
+                        $msg  = ResponseMessages::getStatusCodeMessage(118);
+                    }
+            }else{
+              $result=0;
+               // $this->common_model->insertData('addresses',$meta_val);
+
+               
+            }
+            if($result){
+                 $response   = array('status'=>SUCCESS,'message'=>$msg);
+            }else{
+                 $response   = array('status'=>FAIL,'message'=>ResponseMessages::getStatusCodeMessage(118));
+            }    
+        }
+        $this->response($response);
+    }//end function
+
+
+    
    function addressupdate_post(){
        // $authCheck  = $this->check_admin_service_auth();
         $this->form_validation->set_rules('address','address', 'trim|required');

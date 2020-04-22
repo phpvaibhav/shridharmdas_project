@@ -41,50 +41,106 @@
 					<form id="user-add-form" class="smart-form" novalidate="novalidate" action="users/edit" novalidate="novalidate" autocomplete="off">
             <header>
              <?= lang('basic_Information'); ?>
-              <input type="hidden" name="id" value="0">
+              <input type="hidden" name="id" value="<?= encoding($info['id']); ?>">
             </header>
             <fieldset>
              
               <div class="row">
                   <section class="col col-6">
-
-                  <label class="label">Actual</label>
+                  <label class="label"><?= lang('First_name').'(Actual)'; ?></label>
                     <label class="input"> <i class="icon-prepend fa fa-user"></i>
-                      <input type="text" name="firstName" placeholder="<?= lang('First_name'); ?>">
+                      <input type="text" name="actualFirstName" placeholder="<?= lang('First_name'); ?>"  maxlength="30" size="30" value="<?= $usermeta['actualFirstName']; ?>" >
                     </label>
                   </section>
                   <section class="col col-6">
-                  	<label class="label">Actual</label>
+                  	<label class="label"><?= lang('Last_name').'(Actual)'; ?></label>
                     <label class="input"> <i class="icon-prepend fa fa-user"></i>
-                      <input type="text" name="lastName" placeholder="<?= lang('Last_name'); ?>">
+                      <input type="text" name="actualLastName" placeholder="<?= lang('Last_name'); ?>"  maxlength="30" size="30" value="<?= $usermeta['actualLastName'] ?>" >
                     </label>
                   </section>
               </div>
 
+
+              <div class="row">
+                  <section class="col col-6">
+                  <label class="label"><?= lang('First_name').'(Hindi)'; ?></label>
+                    <label class="input"> <i class="icon-prepend fa fa-user"></i>
+                      <input type="text" name="hindiFirstName" placeholder="<?= lang('First_name'); ?>"  maxlength="30" size="30" value="<?= $usermeta['hindiFirstName']; ?>" >
+                    </label>
+                  </section>
+                  <section class="col col-6">
+                    <label class="label"><?= lang('Last_name').'(Hindi)'; ?></label>
+                    <label class="input"> <i class="icon-prepend fa fa-user"></i>
+                      <input type="text" name="hindiLastName" placeholder="<?= lang('Last_name'); ?>"  maxlength="30" size="30" value="<?= $usermeta['hindiLastName'] ?>" >
+                    </label>
+                  </section>
+              </div>
+
+
+              <div class="row">
+                  <section class="col col-6">
+                  <label class="label"><?= lang('First_name').'(English)'; ?></label>
+                    <label class="input"> <i class="icon-prepend fa fa-user"></i>
+                      <input type="text" name="firstName" placeholder="<?= lang('First_name'); ?>"  maxlength="30" size="30" value="<?= $info['firstName']; ?>" >
+                    </label>
+                  </section>
+                  <section class="col col-6">
+                    <label class="label"><?= lang('Last_name').'(English)'; ?></label>
+                    <label class="input"> <i class="icon-prepend fa fa-user"></i>
+                      <input type="text" name="lastName" placeholder="<?= lang('Last_name'); ?>"  maxlength="30" size="30" value="<?= $info['lastName'] ?>" >
+                    </label>
+                  </section>
+              </div>
               <div class="row">
                 <section class="col col-6">
+                    <label class="label"><?= lang('parentName').'('.lang('Write_full_name').')'.' (Actual)'; ?></label>
                   <label class="input"> <i class="icon-prepend fa fa-user"></i>
-                    <input type="text" name="parentName" placeholder="<?= lang('parentName'); ?>">
+                    <input type="text" name="actualParentName" placeholder="<?= lang('parentName'); ?>"   maxlength="30" size="30" value="<?= $usermeta['actualParentName']; ?>"  >
                   </label>
                 </section>
-                  <section class="col col-6">
-                  <label class="input"> <i class="icon-prepend fa fa-calendar"></i>
-                    <input type="text" name="dob" id="dob" placeholder="<?= lang('dob'); ?>" readonly="">
+                 <section class="col col-6">
+                    <label class="label"><?= lang('familyHeadName').'('.lang('Write_full_name').')'.' (Actual)'; ?></label>
+                  <label class="input"> <i class="icon-prepend fa fa-user"></i>
+                    <input type="text" name="actualFamilyHeadName" placeholder="<?= lang('familyHeadName'); ?>"  maxlength="30" size="30" value="<?= $usermeta['actualFamilyHeadName']; ?>"   >
                   </label>
-
-
-
-
-
-
-
-
-
                 </section>
-
+              </div>
+              <div class="row">
+                <section class="col col-6">
+                    <label class="label"><?= lang('parentName').'('.lang('Write_full_name').')'.' (Hindi)'; ?></label>
+                  <label class="input"> <i class="icon-prepend fa fa-user"></i>
+                    <input type="text" name="hindiParentName" placeholder="<?= lang('parentName'); ?>"   maxlength="30" size="30" value="<?= $usermeta['hindiParentName']; ?>"  >
+                  </label>
+                </section>
+                 <section class="col col-6">
+                    <label class="label"><?= lang('familyHeadName').'('.lang('Write_full_name').')'.' (Hindi)'; ?></label>
+                  <label class="input"> <i class="icon-prepend fa fa-user"></i>
+                    <input type="text" name="hindiFamilyHeadName" placeholder="<?= lang('familyHeadName'); ?>"  maxlength="30" size="30" value="<?= $usermeta['hindiFamilyHeadName']; ?>"   >
+                  </label>
+                </section>
+              </div>
+              <div class="row">
+                <section class="col col-6">
+                    <label class="label"><?= lang('parentName').'('.lang('Write_full_name').')'.' (English)'; ?></label>
+                  <label class="input"> <i class="icon-prepend fa fa-user"></i>
+                    <input type="text" name="parentName" placeholder="<?= lang('parentName'); ?>"   maxlength="30" size="30" value="<?= $info['parentName']; ?>"  >
+                  </label>
+                </section>
+                 <section class="col col-6">
+                    <label class="label"><?= lang('familyHeadName').'('.lang('Write_full_name').')'.' (English)'; ?></label>
+                  <label class="input"> <i class="icon-prepend fa fa-user"></i>
+                    <input type="text" name="familyHeadName" placeholder="<?= lang('familyHeadName'); ?>"  maxlength="30" size="30" value="<?= $info['familyHeadName']; ?>"   >
+                  </label>
+                </section>
               </div>
 
            <!--    <div class="row">
+               <section class="col col-6">
+                  <label class="input"> <i class="icon-prepend fa fa-calendar"></i>
+                    <input type="text" name="dob" id="dob" placeholder="<?= lang('dob'); ?>" readonly="">
+                  </label>
+                </section>
+
                   <section class="col col-6">
                    <label class="input"> <i class="icon-prepend fa fa-envelope"></i>
                     <input type="email" name="email" placeholder="<?= lang('email'); ?>">
@@ -349,3 +405,33 @@
 </div>
 
 <!-- END ROW -->
+<script type="text/javascript">
+  var Please_select_your_full_name              = "<?= lang('Please_select_your_full_name');?>";
+  var Please_select_your_first_name             =  "<?= lang('Please_select_your_first_name');?>";
+  var Please_select_your_last_name              = "<?= lang('Please_select_your_last_name');?>";
+  var Please_select_your_father_name_husband_name = "<?= lang('Please_select_your_father_name_husband_name');?>";
+  var Please_select_your_date_of_birth            ="<?= lang('Please_select_your_date_of_birth');?>";
+  var Please_select_your_gender                   = "<?= lang('Please_select_your_gender');?>";
+  var Please_select_your_marital_status           = "<?= lang('Please_select_your_marital_status');?>";
+  var Please_select_your_contact_number           = "<?= lang('Please_select_your_contact_number');?>";
+  var Please_select_your_aadhar_number            = "<?= lang('Please_select_your_aadhar_number');?>";
+  var Please_select_your_address                  = "<?= lang('Please_select_your_address');?>";
+  var Please_select_your_city                     = "<?= lang('Please_select_your_city');?>";
+  var Please_select_your_zip_code                 = "<?= lang('Please_select_your_zip_code');?>";
+  var Please_select_your_tehsil                   = "<?= lang('Please_select_your_tehsil');?>";
+  var Please_select_your_district                 = "<?= lang('Please_select_your_district');?>";
+  var Good_job                                    = "<?= lang('Good_job');?>";
+  var Your_form_submitted_successfully            = "<?= lang('Your_form_submitted_successfully');?>";
+  var Please_select_your_front_image              = "<?= lang('Please_select_your_front_image');?>";
+  var Please_select_your_back_image               = "<?= lang('Please_select_your_back_image');?>";
+  var Please_select__image_type                   = "<?= lang('Please_select__image_type');?>";
+  var Please_select_your_familyHeadName           = "<?= lang('Please_select_your_familyHeadName');?>";
+  var Please_enter_at_least_12_digit_aadhaar_number = "<?= lang('Please_enter_at_least_12_digit_aadhaar_number');?>";
+  var Please_enter_at_least_10_digit_phone_number   = "<?= lang('Please_enter_at_least_10_digit_phone_number');?>";
+  var Please_select_your_unionName                  = "<?= lang('Please_select_your_unionName');?>";
+  var This_option_field_is_required                 = "<?= lang('This_option_field_is_required');?>";
+  var This_aadhar_number_is_already_taken                 = "<?= lang('This_aadhar_number_is_already_taken');?>";
+  var Please_select_your_Occupation ="<?= lang('Please_select_your_Occupation');?>";
+var Please_select_your_religious_Knowledge ="<?= lang('Please_select_your_religious_Knowledge');?>";
+var Please_select_your_Identity_image ="<?= lang('Please_select_your_Identity_image');?>";
+</script>
