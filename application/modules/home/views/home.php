@@ -17,7 +17,7 @@
           <a href="<?= base_url(); ?>user-step-1" class="btn dark-btn tilak-top-btn">User Form</a>
         </div>
       </div>
-            <div class="item section-padding" style="background-image:url(<?= $frontend_assets.'images/slider/Group-329.png'; ?>);width: 100%;background-size:100% 100%;background-repeat:no-repeat;">
+            <div class="item section-padding" style="background-image:url(<?= $frontend_assets.'images/slider/Group-329-1.png'; ?>);width: 100%;background-size:100% 100%;background-repeat:no-repeat;">
         <div class="container">
           <div class="intro_text white_text">
             <!--  <h1>Shinto Believes in Kami</h1> -->
@@ -28,7 +28,7 @@
          <!--    <p>The point of using Lorem Ipsum is that it has a more-or-less normal distribution of letters, as opposed to using 'Content here, content here. </p> -->
           <!--   <a href="<?= base_url(); ?>user-form" class="btn dark-btn tilak-top-btn">User Form</a> -->
           </div>
-          <a href="<?= base_url(); ?>user-step-1" class="btn dark-btn tilak-top-btn" style="opacity: 0;" >User Form</a>
+          <div class="btn dark-btn tilak-top-btn" style="opacity: 0;" >User Form</div>
         </div>
       </div>
       

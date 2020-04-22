@@ -72,7 +72,7 @@ $('.popup-youtube').magnificPopup({
     nav:true,
 	dots:false,
 	autoplay:true,
-    autoplayTimeout:4000,
+    autoplayTimeout:10000,
     responsive:{
         0:{items:1},
         600:{items:1},
