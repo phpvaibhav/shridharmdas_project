@@ -18,7 +18,7 @@
 	$lang['Marital_Status'] 					= "Marital Status";
 	$lang['Address'] 							= "Address";
 	$lang['City'] 								= "City";
-	$lang['zip_code'] 							= "Zip code";
+	$lang['zip_code'] 							= "Pin code";
 	$lang['Tehsil'] 							= "Tehsil";
 	$lang['District'] 							= "District";
 	$lang['Country'] 							= "Country";
@@ -64,7 +64,7 @@
 	$lang['Please_select_your_aadhar_number'] 				= "Please select your aadhar number";
 	$lang['Please_select_your_address'] 					= "Please select your address";
 	$lang['Please_select_your_city'] 						= "Please select your city";
-	$lang['Please_select_your_zip_code'] 					= "Please select your zip code";
+	$lang['Please_select_your_zip_code'] 					= "Please select your pin code";
 	$lang['Please_select_your_tehsil'] 						= "Please select your tehsil";
 	$lang['Please_select_your_district'] 					= "Please select your district";
 	$lang['Good_job'] 										= "Good job";

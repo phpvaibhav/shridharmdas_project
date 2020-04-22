@@ -62,7 +62,7 @@
 	$lang['Please_select_your_aadhar_number'] 			= "कृपया अपना आधार कार्ड नंबर चुनें";
 	$lang['Please_select_your_address'] 				= "कृपया अपना पता चुनें";
 	$lang['Please_select_your_city'] 					= "कृपया अपने शहर का चयन करें";
-	$lang['Please_select_your_zip_code'] 				= "कृपया अपना ज़िप कोड चुनें";
+	$lang['Please_select_your_zip_code'] 				= "कृपया अपना पिन कोड चुनें";
 	$lang['Please_select_your_tehsil'] 					= "कृपया अपनी तहसील का चयन करें";
 	$lang['Please_select_your_district'] 				= "कृपया अपने जिले का चयन करें";
 	$lang['Good_job'] 									= "उत्कृष्ट";

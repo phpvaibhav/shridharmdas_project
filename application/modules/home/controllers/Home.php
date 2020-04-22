@@ -20,6 +20,7 @@ public function __construct()
     }//End Function
     public function aboutus() { 
         $data['title'] = 'About us';
+         $data['front_styles']   = array('frontend_assets/css/about.css');
         $this->load->front_render('aboutus',$data);
     }//End Function
 

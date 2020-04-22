@@ -114,6 +114,7 @@ $("#dob").datepicker({
   changeMonth : true,
   changeYear  : true,
   yearRange   : "-100:+0",
+   defaultDate: '01-01-2000',
   prevText    : '<i class="fa fa-chevron-left"></i>',
   nextText    : '<i class="fa fa-chevron-right"></i>',
 });
