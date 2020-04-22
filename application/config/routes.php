@@ -66,6 +66,7 @@ $route['office'] 					= 'admin/office';
 
 $route['user-form'] 				= 'home/addUser';
 $route['about-us'] 					= 'home/aboutus';
+$route['pad-adhikari'] 					= 'home/pad_adhikari';
 $route['contact-us'] 				= 'home/contact';
 $route['gallery'] 					= 'home/gallery';
 $route['motto-of-sdhp'] 			= 'home/motto_of_sdhp';

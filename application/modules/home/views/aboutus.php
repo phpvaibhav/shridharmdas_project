@@ -1,25 +1,4 @@
-<style type="text/css">
-	.headerb2{
-	max-width:100%;
-}
-.ptag{
-	text-align:left;
-	margin-bottom: 15px;
-}
-.content p{
-	margin-bottom: 15px;
-	font-size: 16px;
-	text-align:left;
-}
-#inner_intro2{
-	position: relative;
-    background-color: #4c4c4c;
-    background-image: url('../images/About-us/about.png');
-    background-position: center;
-    background-size: 100% 100%;
-    width: 100%;
-}
-</style>
+
 	<!-- Inner-intro -->
 	<section id="inner_intro" class="section-padding">
 		<div class="container">
@@ -86,11 +65,13 @@
 			<div class="features">
 				<div class="row">
 					<div class="col-lg-4 col-md-6">
+						<a href="<?= base_url().'pad-adhikari'; ?>">
 						<div class="features_wrap custom-md-mb features-after-none">
-							<div class="f-f-icon"><img src="https://via.placeholder.com/64x64" alt="img"></div>
-							<h4 class="text-custom-secondary">Meditation</h4>
-							<p class="mb-0">Uncover many web sites still in their infancy. Various versions have evolved over the years, sometimes by accident.</p>
+							<div class="f-f-icon"><img src="https://via.placeholder.com/64x64?text=P" alt="img"></div>
+							<h4 class="text-custom-secondary">पदाधिकारी</h4>
+							<p class="mb-0">गण के प्रथमअध्यक्ष श्री सौभाग्यमल जी गादिया , द्वितीय श्री शैतानमल जी मोदी , तृतीय श्री निहाल जी गाँधी व ततपश्चात श्री ज्ञानचंद जी बुपक्या रहे - सभी ने अपने कर्तव्यों का पूर्ण रूप से निर्वाहन कर गण को हर समय नई ऊँचाइयों तक पहुँचाया ।</p>
 						</div>
+						</a>
 					</div>
 					<div class="col-lg-4 col-md-6">
 						<div class="features_wrap custom-sm-mb features-after-none">

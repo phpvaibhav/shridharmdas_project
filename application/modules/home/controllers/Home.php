@@ -24,6 +24,13 @@ public function __construct()
         $this->load->front_render('aboutus',$data);
     }//End Function
 
+    public function pad_adhikari() { 
+        $data['title'] = 'Pad Adhikari';
+         $data['front_styles']   = array('frontend_assets/css/about.css');
+        $this->load->front_render('pad_adhikari',$data);
+    }//End Function
+    
+
     public function contact() { 
         $data['title'] = 'Contact us';
         $this->load->front_render('contactus',$data);
