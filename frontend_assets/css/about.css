@@ -6,7 +6,7 @@
 	margin-bottom: 15px;
 }
 .content{
-	background-image: url('../images/About-us/bg_logo.png');
+	background-image: url('../assets/images/About-us/bg_logo.png');
 	background-repeat: no-repeat;
 	text-align: center;
 	width: 100%;
@@ -20,7 +20,7 @@
 #inner_intro2{
 	position: relative;
     background-color: #4c4c4c;
-    background-image: url('../images/About-us/about.png');
+    background-image: url('../assets/images/About-us/about.png');
     background-position: center;
     background-size: 100% 100%;
     width: 100%;
