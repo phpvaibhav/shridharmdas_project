@@ -29,6 +29,15 @@ class Users extends Common_Back_Controller {
       
         $this->load->admin_render('users/add', $data, '');
     } //End function 
+    public function edit(){
+     
+        $data['title']      = lang('Users');
+     
+        $data['front_scripts'] = array('backend_assets/custom/js/user_edit.js');
+      
+        $this->load->admin_render('users/edit', $data, '');
+    } //End function 
+    
     public function detail(){
      
         $data['title']          = lang('Users');

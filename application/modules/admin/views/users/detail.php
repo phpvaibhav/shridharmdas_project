@@ -21,7 +21,10 @@
 }
   </style>
 <div class="row">
-
+<!-- 	<div class="col-sm-12 ">
+						<a href="<?= base_url().'edit-user/'.encoding($info['id']); ?>" class="btn btn-labeled btn-danger pull-right"> <span class="btn-label"><i class="glyphicon glyphicon-edit"></i></span> Edit </a>
+						<hr>
+					</div> -->
 	<div class="col-sm-12">
 
 
@@ -29,6 +32,7 @@
 
 				<div class="row">
 
+					
 					<div class="col-sm-12 col-md-12 col-lg-3">
 						<div class="well well-light well-sm no-margin no-padding">
 
