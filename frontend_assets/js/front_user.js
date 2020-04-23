@@ -989,15 +989,26 @@ $().ready(function() {
 
 });   
 
-
+/*
 function checkLang(e){
-        var url = $(e).data('url');
+      var url = $(e).data('url');
 
-              var radioValue = $("input[name='inlineRadioOptions']:checked").val();
+      var radioValue = $("input[name='inlineRadioOptions']:checked").val();
 
-            if(radioValue){
+      if(radioValue){
 
-                 window.location = url;
+        window.location = url;
 
-            }
-}
+      }
+}*/
+$(document).ready(function(){
+        
+    $('#my_radio_box').change(function(){
+
+    selected_value = $("input[name='inlineRadioOptions']:checked").val();
+    //alert(selected_value);
+     window.location = selected_value;
+    //
+    });
+        
+});

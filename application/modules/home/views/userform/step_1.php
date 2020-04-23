@@ -5,17 +5,17 @@
       <div class="col-md-3"></div>
       <div class="col-md-6 text-right">
          <div class="row">
-            
-            
               <div class="col-md-9 col-lg-10 lang-panding">
+                <form id="my_radio_box">
                 <div class="radio d-inline mr-4">
-                  <input type="radio" name="inlineRadioOptions" id="inlineRadio1" value="hindi"<?= ($this->session->userdata('site_lang')=='hindi') ?"checked='checked'":""; ?> data-url="<?php echo base_url().'home/switchLang/hindi/'.encoding(current_url()); ?>" onclick="checkLang(this);">
+                  <input type="radio" name="inlineRadioOptions" id="inlineRadio1" value="<?php echo base_url().'home/switchLang/hindi/'.encoding(current_url()); ?>"<?= ($this->session->userdata('site_lang')=='hindi') ?"checked='checked'":""; ?> data-url="<?php echo base_url().'home/switchLang/hindi/'.encoding(current_url()); ?>">
                   <label for="inlineRadio1">Hindi</label>
                 </div>
                 <div class="radio d-inline">
-                  <input type="radio" name="inlineRadioOptions" id="inlineRadio2" value="english" <?= ($this->session->userdata('site_lang')=='english') ?"checked='checked'":""; ?>  data-url="<?php echo base_url().'home/switchLang/english/'.encoding(current_url()); ?>" onclick="checkLang(this);">
+                  <input type="radio" name="inlineRadioOptions" id="inlineRadio2" value="<?php echo base_url().'home/switchLang/english/'.encoding(current_url()); ?>" <?= ($this->session->userdata('site_lang')=='english') ?"checked='checked'":""; ?>  data-url="<?php echo base_url().'home/switchLang/english/'.encoding(current_url()); ?>" >
                   <label for="inlineRadio2">English</label>
                 </div>
+              </form>
               </div>
             </div>
 

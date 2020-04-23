@@ -232,6 +232,8 @@
 
 					</div>
 				</div>
+
+				
 				<div class="col-xl-12 col-md-12 text-right"><a href="<?= base_url(); ?>about-us" class="btn dark-btn tilak-top-btn">Back</a></div>
 			</div>
 
