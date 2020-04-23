@@ -31,8 +31,13 @@
             <div class="row">
               <div class="col-md-8 offset-col-2 mx-auto d-block login-page">
                 <div class="login-page">
-                   <p class="sub_title"><b>Note:</b> जनगणना फॉर्म भरने  के लिए  2 स्टेप  दिए हुई है|</p>
+
                     <h4 class="title text-center"><?= lang('User_Form'); ?> (Step-2)</h4>
+                    <?php if($this->session->userdata('site_lang')=='hindi'){ ?>
+                     <p class="sub_title text-center"> <b>2 स्टेप फॉर्म</b></p>
+                     <?php }else{ ?>
+                       <p class="sub_title text-center"> <b>2 Step Form</b></p>
+                        <?php }?>
                     <p class="sub_title text-center"><!-- Already have an account? --> 
                        <?php if($this->session->userdata('site_lang')=='hindi'){ ?>
                       <a class="color-litegreen color-nirdes" href="javascript:void(0);" type="button"  data-toggle="modal" data-target=".bd-example-modal-lg" style="font-weight: 700;color: blue;">फॉर्म को भरने हेतु निर्देश </a>

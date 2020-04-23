@@ -30,9 +30,9 @@
                    <!--  <p class="sub_title"><b>Note:</b> जनगणना  भरने  के लिए   दिए हुई है|</p> -->
                     <h4 class="title text-center"><?= lang('User_Form'); ?> (Step-1)</h4>
                      <?php if($this->session->userdata('site_lang')=='hindi'){ ?>
-                     <p class="sub_title text-center"> 2 स्टेप फॉर्म</p>
+                     <p class="sub_title text-center"> <b>2 स्टेप फॉर्म</b></p>
                      <?php }else{ ?>
-                       <p class="sub_title text-center"> 2 Step Form</p>
+                       <p class="sub_title text-center"> <b>2 Step Form</b></p>
                         <?php }?>
                     <p class="sub_title text-center"><!-- Already have an account? --> 
                       <?php if($this->session->userdata('site_lang')=='hindi'){ ?>

@@ -68,7 +68,7 @@
 					<div class="col-lg-4 col-md-6">
 						<a href="<?= base_url('jeevani'); ?>">
 						<div class="features_wrap custom-sm-mb features-after-none">
-							<div class="f-f-icon"><img src="https://via.placeholder.com/64x64?text=J" alt="img"></div>
+							<div class="f-f-icon"><img src="<?= base_url().'frontend_assets/images/icon/जीवन-परिचय.png';?>" alt="img"></div>
 							<h4 class="text-custom-secondary">जीवन-परिचय</h4>
 							<p class="mb-0">कल्याणजी के सरखेज आने पर धर्मदास जी ने उनकी चर्या का सूक्ष्मता से अध्ययन किया और उस पंथ में दीक्षित हो गये। वे उस पंथ की क्रियाएँ पालन करने लगे। उन्हें लगा- ‘मैंने साधना का मार्ग पा लिया। </p>
 						</div>
@@ -77,7 +77,7 @@
 					<div class="col-lg-4 col-md-6">
 						<a href="<?= base_url('vidhan'); ?>">
 						<div class="features_wrap features-after-none">
-							<div class="f-f-icon"><img src="https://via.placeholder.com/64x64?text=G" alt="img"></div>
+							<div class="f-f-icon"><img src="<?= base_url().'frontend_assets/images/icon/गुरुदेव-द्वारा-निर्मित-विधान.png';?>" alt="img"></div>
 							<h4 class="text-custom-secondary">गुरुदेव द्वारा निर्मित विधान</h4>
 							<p class="mb-0">वर्तमान युग मे भोतिक विज्ञान की चकाचोंध मे आध्यात्मिकता की तरफ से मनुष्य का ध्यान हटाया जा रहा है | साधु साध्वियों के प्रति भी आज भावना कम होती जा रही है |</p>
 						</div>
@@ -87,7 +87,7 @@
 						<a href="<?= base_url().'pad-adhikari'; ?>">
 						
 						<div class="features_wrap custom-md-mb features-after-none">
-							<div class="f-f-icon"><img src="https://via.placeholder.com/64x64?text=P" alt="img"></div>
+							<div class="f-f-icon"><img src="<?= base_url().'frontend_assets/images/icon/पदाधिकारी.png';?>" alt="img"></div>
 							<h4 class="text-custom-secondary">पदाधिकारी</h4>
 							<p class="mb-0">गण के प्रथमअध्यक्ष श्री सौभाग्यमल जी गादिया , द्वितीय श्री शैतानमल जी मोदी , तृतीय श्री निहाल जी गाँधी व ततपश्चात श्री ज्ञानचंद जी बुपक्या रहे - सभी ने अपने कर्तव्यों का पूर्ण रूप से निर्वाहन कर गण को हर समय नई ऊँचाइयों तक पहुँचाया ।</p>
 						</div>
