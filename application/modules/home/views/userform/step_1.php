@@ -18,8 +18,6 @@
               </form>
               </div>
             </div>
-
-        
       </div>
       <!-- lang -->
       <div class="col-md-12">
