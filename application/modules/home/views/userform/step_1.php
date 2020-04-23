@@ -27,6 +27,7 @@
             <div class="row">
               <div class="col-md-8 offset-col-4 mx-auto d-block login-page">
                 <div class="login-page">
+                    <p class="sub_title"><b>Note:</b> जनगणना फॉर्म भरने  के लिए  2 स्टेप  दिए हुई है|</p>
                     <h4 class="title text-center"><?= lang('User_Form'); ?> (Step-1)</h4>
                     <p class="sub_title text-center"><!-- Already have an account? --> 
                       <?php if($this->session->userdata('site_lang')=='hindi'){ ?>
