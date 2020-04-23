@@ -64,16 +64,7 @@
 			<!-- Features -->
 			<div class="features">
 				<div class="row">
-					<div class="col-lg-4 col-md-6">
-						<a href="<?= base_url().'pad-adhikari'; ?>">
-						
-						<div class="features_wrap custom-md-mb features-after-none">
-							<div class="f-f-icon"><img src="https://via.placeholder.com/64x64?text=P" alt="img"></div>
-							<h4 class="text-custom-secondary">पदाधिकारी</h4>
-							<p class="mb-0">गण के प्रथमअध्यक्ष श्री सौभाग्यमल जी गादिया , द्वितीय श्री शैतानमल जी मोदी , तृतीय श्री निहाल जी गाँधी व ततपश्चात श्री ज्ञानचंद जी बुपक्या रहे - सभी ने अपने कर्तव्यों का पूर्ण रूप से निर्वाहन कर गण को हर समय नई ऊँचाइयों तक पहुँचाया ।</p>
-						</div>
-						</a>
-					</div>
+					
 					<div class="col-lg-4 col-md-6">
 						<a href="<?= base_url('jeevani'); ?>">
 						<div class="features_wrap custom-sm-mb features-after-none">
@@ -84,11 +75,23 @@
 					</a>
 					</div>
 					<div class="col-lg-4 col-md-6">
+						<a href="<?= base_url('vidhan'); ?>">
 						<div class="features_wrap features-after-none">
-							<div class="f-f-icon"><img src="https://via.placeholder.com/64x64" alt="img"></div>
-							<h4 class="text-custom-secondary">Philosophy</h4>
-							<p class="mb-0">Uncover many web sites still in their infancy. Various versions have evolved over the years, sometimes by accident.</p>
+							<div class="f-f-icon"><img src="https://via.placeholder.com/64x64?text=G" alt="img"></div>
+							<h4 class="text-custom-secondary">गुरुदेव द्वारा निर्मित विधान</h4>
+							<p class="mb-0">वर्तमान युग मे भोतिक विज्ञान की चकाचोंध मे आध्यात्मिकता की तरफ से मनुष्य का ध्यान हटाया जा रहा है | साधु साध्वियों के प्रति भी आज भावना कम होती जा रही है | इसका मूल कारण श्रद्धायुक्त ज्ञान का अभाव है | सांसरिक ज्ञान प्राप्ति के तो बहुत साधन है परंतु आध्यात्मिक ज्ञान प्राप्ति के साधन कम है , और जो है उनकी तरफ भी बचपन से ही ध्यान नहीं दिया जाता है जिससे आगे चल कर आध्यात्मिक ज्ञान की तरफ अरुचि होना स्वाभाविक है |</p>
 						</div>
+					</a>
+					</div>
+					<div class="col-lg-4 col-md-6">
+						<a href="<?= base_url().'pad-adhikari'; ?>">
+						
+						<div class="features_wrap custom-md-mb features-after-none">
+							<div class="f-f-icon"><img src="https://via.placeholder.com/64x64?text=P" alt="img"></div>
+							<h4 class="text-custom-secondary">पदाधिकारी</h4>
+							<p class="mb-0">गण के प्रथमअध्यक्ष श्री सौभाग्यमल जी गादिया , द्वितीय श्री शैतानमल जी मोदी , तृतीय श्री निहाल जी गाँधी व ततपश्चात श्री ज्ञानचंद जी बुपक्या रहे - सभी ने अपने कर्तव्यों का पूर्ण रूप से निर्वाहन कर गण को हर समय नई ऊँचाइयों तक पहुँचाया ।</p>
+						</div>
+						</a>
 					</div>
 				</div>
 			</div>

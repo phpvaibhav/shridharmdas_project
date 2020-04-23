@@ -14,7 +14,7 @@
           <!--    <p>The point of using Lorem Ipsum is that it has a more-or-less normal distribution of letters, as opposed to using 'Content here, content here. </p> -->
           <!--   <a href="<?= base_url(); ?>user-form" class="btn dark-btn tilak-top-btn">User Form</a> -->
           </div>
-          <a href="<?= base_url(); ?>user-step-1" class="btn dark-btn tilak-top-btn">User Form</a>
+          <a href="<?= base_url(); ?>user-step-1" class="btn dark-btn tilak-top-btn">जनगणना फ़ॉर्म</a>
         </div>
       </div>
             <div class="item section-padding" style="background-image:url(<?= $frontend_assets.'images/slider/Group-329-2.png'; ?>);width: 100%;background-size:100% 100%;background-repeat:no-repeat;">
@@ -28,7 +28,7 @@
          <!--    <p>The point of using Lorem Ipsum is that it has a more-or-less normal distribution of letters, as opposed to using 'Content here, content here. </p> -->
           <!--   <a href="<?= base_url(); ?>user-form" class="btn dark-btn tilak-top-btn">User Form</a> -->
           </div>
-          <div class="btn dark-btn tilak-top-btn" style="opacity: 0;" >User Form</div>
+          <div class="btn dark-btn tilak-top-btn" style="opacity: 0;" >जनगणना फ़ॉर्म</div>
         </div>
       </div>
       

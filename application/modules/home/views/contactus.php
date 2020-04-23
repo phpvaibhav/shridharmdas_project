@@ -32,7 +32,7 @@
 					<div class="col-md-6 primary-bg">
 						<div class="contact_info">
 							<div class="box_heading">
-								<h4><span>अधिक जानकारी </span>संपर्क करें</h4>
+								<h4><span>अधिक जानकारी के लिए</span>संपर्क करें</h4>
 							</div>
 							<p> श्री शांतिलाल जी भंडारी (धर्मदासगण अध्यक्ष) <br><span><i class="fas fa-mobile"></i> : +91 99870 69990<br> <i class="fas fa-envelope"></i>  : dharmdasjanganna2020@gmail.comm</span></p>
 						<!-- 	<p> सर्वेश मण्डलेचा,बदनावर <br><span>+91 98937 41418</span></p>

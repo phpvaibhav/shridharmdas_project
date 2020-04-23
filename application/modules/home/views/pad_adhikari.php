@@ -5,11 +5,11 @@
 			<div class="inner_wp z_index white_text">
 				<div class="row">
 					<div class="col-md-12">
-						<h1 class="text-center">Pad Adhikari</h1>
+						<h1 class="text-center">पदाधिकारी</h1>
 						<nav class="breadcrumb">
 							<ul>
 								<li class="breadcrumb-item"><a href="<?= base_url(); ?>">Home</a></li>
-								<li class="breadcrumb-item active">Pad Adhikari<</li>
+								<li class="breadcrumb-item active">पदाधिकारी</li>
 							</ul>
 						</nav>
 					</div>
@@ -35,7 +35,7 @@
 					    <p>इसी कड़ी में श्री धर्मदास पारिवारिक जनगणना का कार्य प्रारंभ किया गया ,जो कि निश्चित रूप से अनेक उपयोगी दृष्टि से लाभ प्रदान करेगा ।</p>
 					    <div class="col-md-12">
 
-					    	<h5 class="text-center mt-4"><b>श्री धर्मदास गण परिषद कार्यकारिणी</b></h5>
+					    	<h5 class="text-center mt-4"><b>वर्तमान पदाधिकारी गण</b></h5>
 
 					    	<div class="row">
 					    		<div class="col-md-4">
@@ -103,6 +103,7 @@
 					    </div>
 					</div>
 				</div>
+				<div class="col-xl-12 col-md-12 text-right"><a href="<?= base_url(); ?>about-us" class="btn dark-btn tilak-top-btn">Back</a></div>
 			</div>
 
 		</div>

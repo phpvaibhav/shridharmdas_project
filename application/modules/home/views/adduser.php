@@ -1,4 +1,4 @@
-  <?php $backend_assets =  base_url().'backend_assets/'; ?>
+<?php $backend_assets =  base_url().'backend_assets/'; ?>
   
 <div id="main" role="main">
   <!-- MAIN CONTENT -->

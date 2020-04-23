@@ -5,11 +5,11 @@
 			<div class="inner_wp z_index white_text">
 				<div class="row">
 					<div class="col-md-12">
-						<h1 class="text-center">Jeevan Parichay</h1>
+						<h1 class="text-center">जीवन-परिचय</h1>
 						<nav class="breadcrumb">
 							<ul>
 								<li class="breadcrumb-item"><a href="<?= base_url(); ?>">Home</a></li>
-								<li class="breadcrumb-item active">Jeevan Parichay</li>
+								<li class="breadcrumb-item active">जीवन-परिचय</li>
 							</ul>
 						</nav>
 					</div>
@@ -22,6 +22,7 @@
 	<section class="bg-about section-padding">
 		<div class="container">
 			<div class="row">
+				
 				<div class="col-xl-12 col-md-12">
 					<div class="about-us-content text-center content"> 
 						<div class="section-header headerb2">        
@@ -118,6 +119,7 @@
 
 					</div>
 				</div>
+				<div class="col-xl-12 col-md-12 text-right"><a href="<?= base_url(); ?>about-us" class="btn dark-btn tilak-top-btn">Back</a></div>
 			</div>
 		</div>
 	</section>

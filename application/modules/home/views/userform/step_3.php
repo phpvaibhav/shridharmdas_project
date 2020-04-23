@@ -33,7 +33,7 @@
             <div class="row">
               <div class="col-md-8 offset-col-2 mx-auto d-block login-page">
                 <div class="login-page">
-                    <h4 class="title"><?= lang('User_Form'); ?> (Step-3)</h4>
+                    <h4 class="title text-center"><?= lang('User_Form'); ?> (Step-3)</h4>
                     <p class="sub_title text-center"><!-- Already have an account? --> 
                       <?php if($this->session->userdata('site_lang')=='hindi'){ ?>
                       <a class="color-litegreen color-nirdes" href="javascript:void(0);" type="button"  data-toggle="modal" data-target=".bd-example-modal-lg">फॉर्म को भरने हेतु निर्देश </a>
