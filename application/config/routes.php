@@ -67,8 +67,12 @@ $route['office'] 					= 'admin/office';
 $route['user-form'] 				= 'home/addUser';
 $route['about-us'] 					= 'home/aboutus';
 $route['jeevani'] 					= 'home/jeevani';
+$route['jeevan-parichay'] 					= 'home/jeevani_parichay';
 $route['vidhan'] 					= 'home/vidhan';
 $route['pad-adhikari'] 				= 'home/pad_adhikari';
+$route['shishy-vrksh'] 				= 'home/vrksh';
+
+
 $route['contact-us'] 				= 'home/contact';
 $route['gallery'] 					= 'home/gallery';
 $route['motto-of-sdhp'] 			= 'home/motto_of_sdhp';

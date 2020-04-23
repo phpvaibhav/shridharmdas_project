@@ -3,8 +3,8 @@
   <section id="intro">
     <div class="overlay overlay-bg"></div>
     <div class="owl-carousel">
-      <div class="item section-padding" style="background-image:url(<?= $frontend_assets.'images/slider/Group-317.png'; ?>);width: 100%;background-size:100% 100%;background-repeat:no-repeat;">
-        <div class="container">
+      <div class="item section-padding" style="background-image:url(<?= $frontend_assets.'images/slider/Group-317.png'; ?>);width: 100%;background-size:100% 100%;background-repeat:no-repeat;">        <div class="container">
+
           <div class="intro_text white_text">
           <!--  <h1>Shinto Believes in Kami</h1> -->
           <h1></h1>

@@ -35,11 +35,26 @@ public function __construct()
          $data['front_styles']   = array('frontend_assets/css/about.css');
         $this->load->front_render('jeevani',$data);
     }//End Function
+    public function jeevani_parichay() { 
+        $data['title'] = 'Jeevani';
+         $data['front_styles']   = array('frontend_assets/css/about.css');
+        $this->load->front_render('jeevani_parichay',$data);
+    }//End Function
+    
     public function vidhan() { 
         $data['title'] = 'Vidhan';
          $data['front_styles']   = array('frontend_assets/css/about.css');
         $this->load->front_render('vidhan',$data);
     }//End Function
+
+    
+    
+ public function vrksh() { 
+        $data['title'] = 'Vrksh';
+         $data['front_styles']   = array('frontend_assets/css/about.css');
+        $this->load->front_render('vrksh',$data);
+    }//End Function
+    
     
     
 

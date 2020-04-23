@@ -93,6 +93,35 @@
 						</div>
 						</a>
 					</div>
+					<!-- extra -->
+										<div class="col-lg-4 col-md-6">
+											<a href="<?= base_url().'shishy-vrksh'; ?>">
+						<div class="features_wrap custom-md-mb features-after-none">
+							<div class="f-f-icon"><img src="<?= base_url().'frontend_assets/images/icon/धर्मदास-शिष्य-वृक्ष.png';?>" alt="img"></div>
+							<h4 class="text-custom-secondary">धर्मदास शिष्य वृक्ष</h4>
+							<p class="mb-0">Uncover many web sites still in their infancy. Various versions have evolved over the years, sometimes by accident.</p>
+						</div>
+					</a>
+					</div>
+					<div class="col-lg-4 col-md-6">
+						<a href="<?= base_url().'jeevan-parichay'; ?>">
+						<div class="features_wrap custom-sm-mb features-after-none">
+							<div class="f-f-icon"><img src="<?= base_url().'frontend_assets/images/icon/आचार्य-श्री-उमेशमुनिजी-का-जीवन-परिचय.png';?>" alt="img"></div>
+							<h4 class="text-custom-secondary">आचार्य श्री उमेशमुनिजी का जीवन परिचय</h4>
+							<p class="mb-0">Uncover many web sites still in their infancy. Various versions have evolved over the years, sometimes by accident.</p>
+						</div>
+					</a>
+					</div>
+					<div class="col-lg-4 col-md-6">
+						<div class="features_wrap features-after-none">
+							<div class="f-f-icon"><img src="https://via.placeholder.com/64x64" alt="img"></div>
+							<h4 class="text-custom-secondary">Philosophy</h4>
+							<p class="mb-0">Uncover many web sites still in their infancy. Various versions have evolved over the years, sometimes by accident.</p>
+						</div>
+					</div>
+				</div>
+					<!-- extra -->
+					
 				</div>
 			</div>
 			<!-- /Features -->
