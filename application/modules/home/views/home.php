@@ -761,7 +761,7 @@
                       <strong>03</strong>Dec
                     </div> -->
                     <div class="blog_img ">
-                      <a href="blog-detail.html"><img src="<?= base_url().'frontend_assets/images/anu-msg/PHOTO-2020-04-22-22-05-42.jpg';?>" alt="image"></a>
+                      <a href="javascript:void(0);"><img src="<?= base_url().'frontend_assets/images/anu-msg/PHOTO-2020-04-22-22-05-42.jpg';?>" alt="image"></a>
                     </div>
                  <!--    <div class="blog_info">
                       <div class="post_meta">
@@ -782,8 +782,8 @@
                    <!--  <div class="blog-post-date">
                       <strong>03</strong>Dec
                     </div> -->
-                    <div class="blog_img ">
-                      <a href="blog-detail.html"><img src="<?= base_url().'frontend_assets/images/anu-msg/PHOTO-2020-04-22-22-05-46.jpg';?>" alt="image"></a>
+                    <div class="blog_img">
+                      <a href="javascript:void(0);"><img src="<?= base_url().'frontend_assets/images/anu-msg/PHOTO-2020-04-22-22-05-46.jpg';?>" alt="image"></a>
                     </div>
              
                   </div>
@@ -796,7 +796,7 @@
                       <strong>03</strong>Dec
                     </div> -->
                     <div class="blog_img ">
-                      <a href="blog-detail.html"><img src="<?= base_url().'frontend_assets/images/anu-msg/PHOTO-2020-04-22-22-05-48.jpg';?>" alt="image"></a>
+                      <a href="javascript:void(0);"><img src="<?= base_url().'frontend_assets/images/anu-msg/PHOTO-2020-04-22-22-05-48.jpg';?>" alt="image"></a>
                     </div>
              
                   </div>
@@ -809,7 +809,7 @@
                       <strong>03</strong>Dec
                     </div> -->
                     <div class="blog_img ">
-                      <a href="blog-detail.html"><img src="<?= base_url().'frontend_assets/images/anu-msg/PHOTO-2020-04-22-22-05-50.jpg';?>" alt="image"></a>
+                      <a href="javascript:void(0);"><img src="<?= base_url().'frontend_assets/images/anu-msg/PHOTO-2020-04-22-22-05-50.jpg';?>" alt="image"></a>
                     </div>
              
                   </div>
@@ -822,7 +822,7 @@
                       <strong>03</strong>Dec
                     </div> -->
                     <div class="blog_img ">
-                      <a href="blog-detail.html"><img src="<?= base_url().'frontend_assets/images/anu-msg/PHOTO-2020-04-22-22-05-54.jpg';?>" alt="image"></a>
+                      <a href="javascript:void(0);"><img src="<?= base_url().'frontend_assets/images/anu-msg/PHOTO-2020-04-22-22-05-54.jpg';?>" alt="image"></a>
                     </div>
              
                   </div>
@@ -835,7 +835,7 @@
                       <strong>03</strong>Dec
                     </div> -->
                     <div class="blog_img ">
-                      <a href="blog-detail.html"><img src="<?= base_url().'frontend_assets/images/anu-msg/PHOTO-2020-04-22-22-05-56.jpg';?>" alt="image"></a>
+                      <a href="javascript:void(0);"><img src="<?= base_url().'frontend_assets/images/anu-msg/PHOTO-2020-04-22-22-05-56.jpg';?>" alt="image"></a>
                     </div>
              
                   </div>
@@ -848,7 +848,7 @@
                       <strong>03</strong>Dec
                     </div> -->
                     <div class="blog_img ">
-                      <a href="blog-detail.html"><img src="<?= base_url().'frontend_assets/images/anu-msg/PHOTO-2020-04-22-22-05-57.jpg';?>" alt="image"></a>
+                      <a href="javascript:void(0);"><img src="<?= base_url().'frontend_assets/images/anu-msg/PHOTO-2020-04-22-22-05-57.jpg';?>" alt="image"></a>
                     </div>
              
                   </div>
@@ -861,7 +861,7 @@
                       <strong>03</strong>Dec
                     </div> -->
                     <div class="blog_img ">
-                      <a href="blog-detail.html"><img src="<?= base_url().'frontend_assets/images/anu-msg/PHOTO-2020-04-22-22-06-01.jpg';?>" alt="image"></a>
+                      <a href="javascript:void(0);"><img src="<?= base_url().'frontend_assets/images/anu-msg/PHOTO-2020-04-22-22-06-01.jpg';?>" alt="image"></a>
                     </div>
              
                   </div>
@@ -874,7 +874,7 @@
                       <strong>03</strong>Dec
                     </div> -->
                     <div class="blog_img ">
-                      <a href="blog-detail.html"><img src="<?= base_url().'frontend_assets/images/anu-msg/PHOTO-2020-04-22-22-06-02.jpg';?>" alt="image"></a>
+                      <a href="javascript:void(0);"><img src="<?= base_url().'frontend_assets/images/anu-msg/PHOTO-2020-04-22-22-06-02.jpg';?>" alt="image"></a>
                     </div>
              
                   </div>
@@ -887,7 +887,7 @@
                       <strong>03</strong>Dec
                     </div> -->
                     <div class="blog_img ">
-                      <a href="blog-detail.html"><img src="<?= base_url().'frontend_assets/images/anu-msg/PHOTO-2020-04-22-22-06-03.jpg';?>" alt="image"></a>
+                      <a href="javascript:void(0);"><img src="<?= base_url().'frontend_assets/images/anu-msg/PHOTO-2020-04-22-22-06-03.jpg';?>" alt="image"></a>
                     </div>
              
                   </div>
