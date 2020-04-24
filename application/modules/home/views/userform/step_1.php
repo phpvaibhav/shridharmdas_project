@@ -165,6 +165,8 @@
                         <option value="Voter ID">Voter ID</option>
                         <option value="Driving Licence">Driving Licence</option>
                         <option value="Passport">Passport</option>
+                        <option value="Birth Certificate">Birth Certificate</option>
+                        <option value="School Certificate/ID">School Certificate/ID</option>
                       </select>
                     </div>
                   </div>
