@@ -164,6 +164,7 @@
 														</p>
 														<p><?= lang('City'); ?> : <?= display_placeholder_text($address->city); ?></p>
 													<!-- 	<p><?= lang('zip_code'); ?> : <?= display_placeholder_text($address->zip_code); ?></p> -->
+														<p><?= lang('postName'); ?> : <?= display_placeholder_text($address->postName); ?></p>
 														<p><?= lang('Tehsil'); ?> : <?= display_placeholder_text($address->tehsil); ?></p>
 														<p><?= lang('District'); ?> : <?= display_placeholder_text($address->district); ?></p>
 														<p><?= lang('State'); ?> : <?= display_placeholder_text($address->state); ?></p>

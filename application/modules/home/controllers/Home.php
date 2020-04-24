@@ -16,6 +16,7 @@ public function __construct()
 
     public function index() { 
         $data['title'] = 'Home';
+          $data['front_styles']   = array('frontend_assets/css/about.css');
         $this->load->front_render('home',$data);
     }//End Function
     public function aboutus() { 
@@ -112,10 +113,11 @@ public function __construct()
                 # code...
                 break;
         }
-        $this->load->helper('country_code_helper');
+      
         $data['title'] = 'User Form';
         $data['front_styles'] = array();
         $data['front_scripts'] = array('frontend_assets/js/front_user.js');
+        $this->load->helper('country_code_helper');
         $data['unionList'] = unionList();
         $data['userId'] = $userId;
         $this->load->front_render_minimal('userform/step_2',$data);

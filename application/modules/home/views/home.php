@@ -111,7 +111,98 @@
     </div>
   </section>
   <!-- /Intro -->
+<!-- About-us -->
+  <section class="bg-about section-padding">
+    <div class="container">
+      <div class="row">
+        <div class="col-xl-12 col-md-12">
+          <div class="about-us-content text-center content">
+            <div class="section-header headerb2">        
+              <h2>श्री धर्मदास गण परिषद</h2>
+            </div>
+            <p><b>वर्तमान युग मे भौतिक विज्ञान की चकाचोंध मे अध्यात्मिकता की तरफ से मनुष्य का ध्यान हटाया जा रहा है | साधु साध्वियों के प्रति भी अहो भाव कम होता जा रहा है | इसका मूल कारण श्रद्धायुक्त ज्ञान का अभाव है | सांसारिक ज्ञान प्राप्ति के तो बहुत साधन है परंतु आध्यात्मिक ज्ञान प्राप्ति के साधन कम है , और जो है उनकी तरफ भी बचपन से ही ध्यान नहीं दिया जाता है जिससे आगे चल कर अध्यात्मिक ज्ञान की तरफ अरुचि होना स्वाभाविक है | अतः धार्मिक प्रवृत्ति की ओर संगठित होकर ज्ञानार्जन किया जावे और धार्मिक प्रवृत्ति की उतरोत्तर वृद्धि हो इस लक्ष्य को सामने रखकर इस संस्था की स्थापना हुई ।</b></p>
 
+            <p ><a href="javascript:void(0);" class="text_url">परंपरा का इतिहास</a></p>
+
+              <p>गुजरात के सरखेज ग्राम मे संवत १७०१-०२ में जीवणभाई- डाहीबाई पटेल के यहाँ पुत्र रत्न की प्राप्ति हुई । जब आप गर्भ में थे तभी से माता- पिता दोनों की धर्म भावना बड़ गयी अतः आपका नाम धर्मदास रखा गया था। आप बचपन से धर्ममय माहौल में रहते थे ,आपके ग्राम में प्रायः साधु मुनिराज का आगमन चलता रहता था व आपके जीवन मे धर्म का बीज बढ़ते चला । संवत १७१६ में आपने संसार को असार समझकर दीक्षा ग्रहण की तत्पश्चात गहन अध्ययन किया। आप क्रियोंद्धारक सन्त बने ।आप श्री को वि.सं. १७२१ में उज्जैन में आचार्य पद प्रदान किया गया। आपके ९९ शिष्य हुए जिन्हें २२ सिंघाड़ों में विभक्त किया । जिनके द्वारा पूरे देश में धर्म की गंगा बहाई गयी ।
+              </p>
+
+              <p>संवत १७५९ , धार में धर्म की रक्षा हेतु अनशन ग्रहण कर शिष्य की जगह स्वयं को विराजित किया, यह अनशन ८ दिन चला ।
+                <a href="<?= base_url('about-us'); ?>" class="text_url"><u>अधिक जानकारी के लिए क्लिक करे</u></a> </p>
+
+           
+          </div>
+        </div>
+      </div>
+
+      <!-- Features -->
+      <div class="features">
+        <div class="row">
+          
+          <div class="col-lg-4 col-md-6">
+            <a href="<?= base_url('jeevani'); ?>">
+            <div class="features_wrap custom-sm-mb features-after-none">
+              <div class="f-f-icon"><img src="<?= base_url().'frontend_assets/images/icon/जीवन-परिचय.png';?>" alt="img"></div>
+              <h4 class="text-custom-secondary">आचार्य श्री धर्मदास जी का जीवन परिचय</h4>
+              <p class="mb-0">कल्याणजी के सरखेज आने पर धर्मदास जी ने उनकी चर्या का सूक्ष्मता से अध्ययन किया और उस पंथ में दीक्षित हो गये। वे उस पंथ की क्रियाएँ पालन करने लगे। उन्हें लगा- ‘मैंने साधना का मार्ग पा लिया। </p>
+            </div>
+          </a>
+          </div>
+          <div class="col-lg-4 col-md-6">
+            <a href="<?= base_url('vidhan'); ?>">
+            <div class="features_wrap features-after-none">
+              <div class="f-f-icon"><img src="<?= base_url().'frontend_assets/images/icon/गुरुदेव-द्वारा-निर्मित-विधान.png';?>" alt="img"></div>
+              <h4 class="text-custom-secondary">गुरुदेव द्वारा निर्मित विधान</h4>
+              <p class="mb-0">वर्तमान युग मे भोतिक विज्ञान की चकाचोंध मे आध्यात्मिकता की तरफ से मनुष्य का ध्यान हटाया जा रहा है | साधु साध्वियों के प्रति भी आज भावना कम होती जा रही है |</p>
+            </div>
+          </a>
+          </div>
+          <div class="col-lg-4 col-md-6">
+            <a href="<?= base_url().'pad-adhikari'; ?>">
+            
+            <div class="features_wrap custom-md-mb features-after-none">
+              <div class="f-f-icon"><img src="<?= base_url().'frontend_assets/images/icon/पदाधिकारी.png';?>" alt="img"></div>
+              <h4 class="text-custom-secondary">पदाधिकारी</h4>
+              <p class="mb-0">गण के प्रथमअध्यक्ष श्री सौभाग्यमल जी गादिया , द्वितीय श्री शैतानमल जी मोदी , तृतीय श्री निहाल जी गाँधी व ततपश्चात श्री ज्ञानचंद जी बुपक्या रहे - सभी ने अपने कर्तव्यों का पूर्ण रूप से निर्वाहन कर गण को हर समय नई ऊँचाइयों तक पहुँचाया ।</p>
+            </div>
+            </a>
+          </div>
+          <!-- extra -->
+                    <div class="col-lg-4 col-md-6">
+                      <a href="<?= base_url().'shishy-vrksh'; ?>">
+            <div class="features_wrap custom-md-mb features-after-none">
+              <div class="f-f-icon"><img src="<?= base_url().'frontend_assets/images/icon/धर्मदास-शिष्य-वृक्ष.png';?>" alt="img"></div>
+              <h4 class="text-custom-secondary">धर्मदास शिष्य वृक्ष</h4>
+              <p class="mb-0">Uncover many web sites still in their infancy. Various versions have evolved over the years, sometimes by accident.</p>
+            </div>
+          </a>
+          </div>
+          <div class="col-lg-4 col-md-6">
+            <a href="<?= base_url().'jeevan-parichay'; ?>">
+            <div class="features_wrap custom-sm-mb features-after-none">
+              <div class="f-f-icon"><img src="<?= base_url().'frontend_assets/images/icon/आचार्य-श्री-उमेशमुनिजी-का-जीवन-परिचय.png';?>" alt="img"></div>
+              <h4 class="text-custom-secondary">आचार्य श्री उमेशमुनिजी का जीवन परिचय</h4>
+              <p class="mb-0">Uncover many web sites still in their infancy. Various versions have evolved over the years, sometimes by accident.</p>
+            </div>
+          </a>
+          </div>
+        <!--  <div class="col-lg-4 col-md-6">
+            <div class="features_wrap features-after-none">
+              <div class="f-f-icon"><img src="https://via.placeholder.com/64x64" alt="img"></div>
+              <h4 class="text-custom-secondary">Philosophy</h4>
+              <p class="mb-0">Uncover many web sites still in their infancy. Various versions have evolved over the years, sometimes by accident.</p>
+            </div>
+          </div> -->
+        </div>
+        
+          
+        </div>
+      </div>
+      <!-- /Features -->
+
+    
+  </section>
+  <!-- /Features -->
   <!-- Next-Events-Sermons -->
 <!--     <section class="latest_event_sermons home-sermon">
       <div class="container">
@@ -653,12 +744,12 @@
   <!-- /Donation form -->
 
   <!-- Latest-Blog -->
-<!--   <section class="latest_blog secondary-bg section-padding" id="blog">
+  <section class="latest_blog secondary-bg section-padding" id="blog">
     <div class="container">
       <div class="blog">
         <div class="section-header-center text-center">
-          <h3>Latest News</h3>
-          <p>There are many variations of passages of Lorem Ipsum available, but the majority have suffered alteration in some</p>
+          <h3>अणु संदेश </h3>
+         <!--  <p>There are many variations of passages of Lorem Ipsum available, but the majority have suffered alteration in some</p> -->
         </div>
         <div class="row">
           <div class="col-12">
@@ -666,13 +757,13 @@
               <div class="item">
                 <article class="blog-section">
                   <div class="blog_wrap position-relative">
-                    <div class="blog-post-date">
+                   <!--  <div class="blog-post-date">
                       <strong>03</strong>Dec
-                    </div>
+                    </div> -->
                     <div class="blog_img ">
-                      <a href="blog-detail.html"><img src="https://via.placeholder.com/570x300" alt="image"></a>
+                      <a href="blog-detail.html"><img src="<?= base_url().'frontend_assets/images/anu-msg/PHOTO-2020-04-22-22-05-42.jpg';?>" alt="image"></a>
                     </div>
-                    <div class="blog_info">
+                 <!--    <div class="blog_info">
                       <div class="post_meta">
                         <span><a href="#">Meditation</a></span>
                       </div>
@@ -680,133 +771,137 @@
                       <p>You need to be sure there isn't anything embarrassing hidden in the middle of text.
                         All the Lorem Ipsum generators on the Internet tend to repeat predefined</p>
                       <a href="blog-detail.html" class="btn btn-outline">Read More <i class="fa fa-caret-right"></i> </a>
-                    </div>
+                    </div> -->
                   </div>
                 </article>
               </div>
-
+              <!-- test -->
               <div class="item">
                 <article class="blog-section">
                   <div class="blog_wrap position-relative">
-                    <div class="blog-post-date">
-                      <strong>13</strong>Jan
+                   <!--  <div class="blog-post-date">
+                      <strong>03</strong>Dec
+                    </div> -->
+                    <div class="blog_img ">
+                      <a href="blog-detail.html"><img src="<?= base_url().'frontend_assets/images/anu-msg/PHOTO-2020-04-22-22-05-46.jpg';?>" alt="image"></a>
                     </div>
-                    <div class="blog_img">
-                      <a href="blog-detail.html"><img src="https://via.placeholder.com/570x300" alt="image"></a>
-                    </div>
-                    <div class="blog_info">
-                      <div class="post_meta">
-                        <span><a href="#">Yoga</a></span>
-                        <span><a href="#">Books</a></span>
-                      </div>
-                      <h5><a href="blog-detail.html">Spectacular Pictures From 2019 Shinto Festival</a></h5>
-                      <p>You need to be sure there isn't anything embarrassing hidden in the middle of text.
-                        All the Lorem Ipsum generators on the Internet tend to repeat predefined</p>
-                      <a href="blog-detail.html" class="btn btn-outline">Read More <i class="fa fa-caret-right"></i> </a>
-                    </div>
+             
                   </div>
                 </article>
               </div>
-
-              <div class="item">
+<div class="item">
                 <article class="blog-section">
                   <div class="blog_wrap position-relative">
-                    <div class="blog-post-date">
-                      <strong>31</strong>Dec
+                   <!--  <div class="blog-post-date">
+                      <strong>03</strong>Dec
+                    </div> -->
+                    <div class="blog_img ">
+                      <a href="blog-detail.html"><img src="<?= base_url().'frontend_assets/images/anu-msg/PHOTO-2020-04-22-22-05-48.jpg';?>" alt="image"></a>
                     </div>
-                    <div class="blog_img">
-                      <a href="blog-detail.html"><img src="https://via.placeholder.com/570x300" alt="image"></a>
-                    </div>
-                    <div class="blog_info">
-                      <div class="post_meta">
-                        <span><a href="#">Meditation</a></span>
-                        <span><a href="#">Peace</a></span>
-                      </div>
-                      <h5><a href="blog-detail.html">Emperor performs ritual to report abdication</a></h5>
-                      <p>You need to be sure there isn't anything embarrassing hidden in the middle of text.
-                        All the Lorem Ipsum generators on the Internet tend to repeat predefined</p>
-                      <a href="blog-detail.html" class="btn btn-outline">Read More <i class="fa fa-caret-right"></i> </a>
-                    </div>
+             
                   </div>
                 </article>
               </div>
-
-              <div class="item">
+<div class="item">
                 <article class="blog-section">
                   <div class="blog_wrap position-relative">
-                    <div class="blog-post-date">
-                      <strong>04</strong>Nov
+                   <!--  <div class="blog-post-date">
+                      <strong>03</strong>Dec
+                    </div> -->
+                    <div class="blog_img ">
+                      <a href="blog-detail.html"><img src="<?= base_url().'frontend_assets/images/anu-msg/PHOTO-2020-04-22-22-05-50.jpg';?>" alt="image"></a>
                     </div>
-                    <div class="blog_img">
-                      <a href="blog-detail.html"><img src="https://via.placeholder.com/570x300" alt="image"></a>
-                    </div>
-                    <div class="blog_info">
-                      <div class="post_meta">
-                        <span><a href="#">Enlightment</a></span>
-                        <span><a href="#">Peace</a></span>
-                      </div>
-                      <h5><a href="blog-detail.html">Shinto festival carries old tradition across city</a></h5>
-                      <p>You need to be sure there isn't anything embarrassing hidden in the middle of text.
-                        All the Lorem Ipsum generators on the Internet tend to repeat predefined</p>
-                      <a href="blog-detail.html" class="btn btn-outline">Read More <i class="fa fa-caret-right"></i> </a>
-                    </div>
+             
                   </div>
                 </article>
               </div>
-
-              <div class="item">
+<div class="item">
                 <article class="blog-section">
                   <div class="blog_wrap position-relative">
-                    <div class="blog-post-date">
-                      <strong>13</strong>Nov
+                   <!--  <div class="blog-post-date">
+                      <strong>03</strong>Dec
+                    </div> -->
+                    <div class="blog_img ">
+                      <a href="blog-detail.html"><img src="<?= base_url().'frontend_assets/images/anu-msg/PHOTO-2020-04-22-22-05-54.jpg';?>" alt="image"></a>
                     </div>
-                    <div class="blog_img">
-                      <a href="blog-detail.html"><img src="https://via.placeholder.com/570x300" alt="image"></a>
-                    </div>
-                    <div class="blog_info">
-                      <div class="post_meta">
-                        <span><a href="#">Meditation</a></span>
-                        <span><a href="#">Books</a></span>
-                      </div>
-                      <h5><a href="blog-detail.html">Spectacular Pictures From 2019 Shinto Festival</a></h5>
-                      <p>You need to be sure there isn't anything embarrassing hidden in the middle of text.
-                        All the Lorem Ipsum generators on the Internet tend to repeat predefined</p>
-                      <a href="blog-detail.html" class="btn btn-outline">Read More <i class="fa fa-caret-right"></i> </a>
-                    </div>
+             
                   </div>
                 </article>
               </div>
-
-              <div class="item">
+<div class="item">
                 <article class="blog-section">
                   <div class="blog_wrap position-relative">
-                    <div class="blog-post-date">
-                      <strong>20</strong>Dec
+                   <!--  <div class="blog-post-date">
+                      <strong>03</strong>Dec
+                    </div> -->
+                    <div class="blog_img ">
+                      <a href="blog-detail.html"><img src="<?= base_url().'frontend_assets/images/anu-msg/PHOTO-2020-04-22-22-05-56.jpg';?>" alt="image"></a>
                     </div>
-                    <div class="blog_img">
-                      <a href="blog-detail.html"><img src="https://via.placeholder.com/570x300" alt="image"></a>
+             
+                  </div>
+                </article>
+              </div>
+<div class="item">
+                <article class="blog-section">
+                  <div class="blog_wrap position-relative">
+                   <!--  <div class="blog-post-date">
+                      <strong>03</strong>Dec
+                    </div> -->
+                    <div class="blog_img ">
+                      <a href="blog-detail.html"><img src="<?= base_url().'frontend_assets/images/anu-msg/PHOTO-2020-04-22-22-05-57.jpg';?>" alt="image"></a>
                     </div>
-                    <div class="blog_info">
-                      <div class="post_meta">
-                        <span><a href="#">Buddha</a></span>
-                        <span><a href="#">Enlightment</a></span>
-                      </div>
-                      <h5><a href="blog-detail.html">Emperor performs ritual to report abdication</a></h5>
-                      <p>You need to be sure there isn't anything embarrassing hidden in the middle of text.
-                        All the Lorem Ipsum generators on the Internet tend to repeat predefined</p>
-                      <a href="blog-detail.html" class="btn btn-outline">Read More <i class="fa fa-caret-right"></i> </a>
+             
+                  </div>
+                </article>
+              </div>
+<div class="item">
+                <article class="blog-section">
+                  <div class="blog_wrap position-relative">
+                   <!--  <div class="blog-post-date">
+                      <strong>03</strong>Dec
+                    </div> -->
+                    <div class="blog_img ">
+                      <a href="blog-detail.html"><img src="<?= base_url().'frontend_assets/images/anu-msg/PHOTO-2020-04-22-22-06-01.jpg';?>" alt="image"></a>
                     </div>
+             
+                  </div>
+                </article>
+              </div>
+<div class="item">
+                <article class="blog-section">
+                  <div class="blog_wrap position-relative">
+                   <!--  <div class="blog-post-date">
+                      <strong>03</strong>Dec
+                    </div> -->
+                    <div class="blog_img ">
+                      <a href="blog-detail.html"><img src="<?= base_url().'frontend_assets/images/anu-msg/PHOTO-2020-04-22-22-06-02.jpg';?>" alt="image"></a>
+                    </div>
+             
+                  </div>
+                </article>
+              </div>
+<div class="item">
+                <article class="blog-section">
+                  <div class="blog_wrap position-relative">
+                   <!--  <div class="blog-post-date">
+                      <strong>03</strong>Dec
+                    </div> -->
+                    <div class="blog_img ">
+                      <a href="blog-detail.html"><img src="<?= base_url().'frontend_assets/images/anu-msg/PHOTO-2020-04-22-22-06-03.jpg';?>" alt="image"></a>
+                    </div>
+             
                   </div>
                 </article>
               </div>
 
+ <!-- test -->
             </div>
           </div>
         </div>
 
       </div>
     </div>
-  </section> -->
+  </section>
   <!-- Latest-Blog -->
 <!-- 
   <section class="section-padding pb-0">

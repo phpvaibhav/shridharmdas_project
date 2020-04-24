@@ -151,6 +151,44 @@
                 </section>
               
               </div>
+              <section>
+                 <div class="col-md-6">
+                          <div class="form-label-group">
+                            <label for="maritalStatus"><?= lang('Marital_Status'); ?><span>*</span></label>
+                          
+                            <select name="maritalStatus" class="form-control" id="maritalStatus">
+                            <option value="" selected="" disabled=""><?= lang('Marital_Status'); ?></option>
+                            <option value="Married"><?= lang('married');?></option>
+                            <option value="Unmarried"><?= lang('unmarried');?></option>
+                            <option value="Divorced"><?= lang('divorced');?></option>
+                            <option value="Other"><?= lang('other');?></option>
+                            </select>
+                          </div>
+                      </div>
+                       <div class="col-md-6">
+                         <div class="form-label-group">
+                           
+                              <label for="unionName"><?= lang('Union').' '.lang('Name'); ?><span>*</span></label>
+                              <select name="unionName"  class="form-control js-example-basic-single "  id="unionName"  >
+                              <?php if(!empty($unionList)):
+                              foreach ($unionList as $kc => $union) { 
+                                
+                                ?>
+                              <option value="<?= $union; ?>" ><?=  $union; ?></option>
+                              <?php } endif; ?>
+
+                              </select>
+                            
+                          </div>
+                      </div>
+                      <div class="col-md-6 otherUnionName" style="display: none">
+                 
+                    <div class="form-label-group">
+                      <label for="otherUnionName"><?= lang('otherUnionName'); ?></label>
+                      <input type="text" id="otherUnionName" class="form-control" placeholder="<?= lang('otherUnionName'); ?>"  name="otherUnionName">
+                    </div>
+                  </div>
+              </section>
 
            <!--    <div class="row">
                <section class="col col-6">
