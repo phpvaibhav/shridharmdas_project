@@ -173,7 +173,7 @@
             <div class="features_wrap custom-md-mb features-after-none">
               <div class="f-f-icon"><img src="<?= base_url().'frontend_assets/images/icon/धर्मदास-शिष्य-वृक्ष.png';?>" alt="img"></div>
               <h4 class="text-custom-secondary">धर्मदास शिष्य वृक्ष</h4>
-              <p class="mb-0">Uncover many web sites still in their infancy. Various versions have evolved over the years, sometimes by accident.</p>
+              <p class="mb-0">इस सम्प्रदाय में अनेक ओजस्वी -तेजस्वी गण प्रमुख सन्त रहे।   धर्मदास शिष्य वृक्ष के लिए क्लिक करे</p>
             </div>
           </a>
           </div>
@@ -182,7 +182,8 @@
             <div class="features_wrap custom-sm-mb features-after-none">
               <div class="f-f-icon"><img src="<?= base_url().'frontend_assets/images/icon/आचार्य-श्री-उमेशमुनिजी-का-जीवन-परिचय.png';?>" alt="img"></div>
               <h4 class="text-custom-secondary">आचार्य श्री उमेशमुनिजी का जीवन परिचय</h4>
-              <p class="mb-0">Uncover many web sites still in their infancy. Various versions have evolved over the years, sometimes by accident.</p>
+              <p class="mb-0">आचार्य प्रवर, शासन गौरव, आत्मार्थीपूज्य गुरुदेव श्री उमेशमुनिजी म.सा.‘अणु’ का
+जीवन-परिचय के लिए क्लिक करे</p>
             </div>
           </a>
           </div>
