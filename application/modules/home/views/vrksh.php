@@ -24,7 +24,7 @@
 				<div class="row">
 					<div class="col-xl-12 col-md-12">
 						<div class="about-us-content text-center">
-								<img src="<?= base_url().'frontend_assets/images/name_image-1.png';?>" alt="img">
+								<img src="<?= base_url().'frontend_assets/images/Group-597.png';?>" alt="img">
 						</div>
 						<br>
 					</div>
