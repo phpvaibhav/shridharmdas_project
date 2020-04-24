@@ -116,7 +116,7 @@
     <div class="container">
       <div class="row">
         <div class="col-xl-12 col-md-12">
-          <div class="about-us-content text-center content">
+          <div class="about-us-content text-center content-home">
             <div class="section-header headerb2">        
               <h2>श्री धर्मदास गण परिषद</h2>
             </div>
@@ -762,7 +762,7 @@
                       <strong>03</strong>Dec
                     </div> -->
                     <div class="blog_img ">
-                      <a href="javascript:void(0);"><img src="<?= base_url().'frontend_assets/images/anu-msg/PHOTO-2020-04-22-22-05-42.jpg';?>" alt="image"></a>
+                      <a href="javascript:void(0);"><img src="<?= base_url().'frontend_assets/images/anu-msg/image/01.png';?>" alt="image"></a>
                     </div>
                  <!--    <div class="blog_info">
                       <div class="post_meta">
@@ -784,7 +784,7 @@
                       <strong>03</strong>Dec
                     </div> -->
                     <div class="blog_img">
-                      <a href="javascript:void(0);"><img src="<?= base_url().'frontend_assets/images/anu-msg/PHOTO-2020-04-22-22-05-46.jpg';?>" alt="image"></a>
+                      <a href="javascript:void(0);"><img src="<?= base_url().'frontend_assets/images/anu-msg/image/02.png';?>" alt="image"></a>
                     </div>
              
                   </div>
@@ -797,7 +797,7 @@
                       <strong>03</strong>Dec
                     </div> -->
                     <div class="blog_img ">
-                      <a href="javascript:void(0);"><img src="<?= base_url().'frontend_assets/images/anu-msg/PHOTO-2020-04-22-22-05-48.jpg';?>" alt="image"></a>
+                      <a href="javascript:void(0);"><img src="<?= base_url().'frontend_assets/images/anu-msg/image/03.png';?>" alt="image"></a>
                     </div>
              
                   </div>
@@ -810,7 +810,7 @@
                       <strong>03</strong>Dec
                     </div> -->
                     <div class="blog_img ">
-                      <a href="javascript:void(0);"><img src="<?= base_url().'frontend_assets/images/anu-msg/PHOTO-2020-04-22-22-05-50.jpg';?>" alt="image"></a>
+                      <a href="javascript:void(0);"><img src="<?= base_url().'frontend_assets/images/anu-msg/image/04.png';?>" alt="image"></a>
                     </div>
              
                   </div>
@@ -823,7 +823,7 @@
                       <strong>03</strong>Dec
                     </div> -->
                     <div class="blog_img ">
-                      <a href="javascript:void(0);"><img src="<?= base_url().'frontend_assets/images/anu-msg/PHOTO-2020-04-22-22-05-54.jpg';?>" alt="image"></a>
+                      <a href="javascript:void(0);"><img src="<?= base_url().'frontend_assets/images/anu-msg/image/04.png';?>" alt="image"></a>
                     </div>
              
                   </div>
@@ -836,7 +836,7 @@
                       <strong>03</strong>Dec
                     </div> -->
                     <div class="blog_img ">
-                      <a href="javascript:void(0);"><img src="<?= base_url().'frontend_assets/images/anu-msg/PHOTO-2020-04-22-22-05-56.jpg';?>" alt="image"></a>
+                      <a href="javascript:void(0);"><img src="<?= base_url().'frontend_assets/images/anu-msg/image/05.png';?>" alt="image"></a>
                     </div>
              
                   </div>
@@ -849,7 +849,7 @@
                       <strong>03</strong>Dec
                     </div> -->
                     <div class="blog_img ">
-                      <a href="javascript:void(0);"><img src="<?= base_url().'frontend_assets/images/anu-msg/PHOTO-2020-04-22-22-05-57.jpg';?>" alt="image"></a>
+                      <a href="javascript:void(0);"><img src="<?= base_url().'frontend_assets/images/anu-msg/image/06.png';?>" alt="image"></a>
                     </div>
              
                   </div>
@@ -862,7 +862,7 @@
                       <strong>03</strong>Dec
                     </div> -->
                     <div class="blog_img ">
-                      <a href="javascript:void(0);"><img src="<?= base_url().'frontend_assets/images/anu-msg/PHOTO-2020-04-22-22-06-01.jpg';?>" alt="image"></a>
+                      <a href="javascript:void(0);"><img src="<?= base_url().'frontend_assets/images/anu-msg/image/07.png';?>" alt="image"></a>
                     </div>
              
                   </div>
@@ -875,7 +875,7 @@
                       <strong>03</strong>Dec
                     </div> -->
                     <div class="blog_img ">
-                      <a href="javascript:void(0);"><img src="<?= base_url().'frontend_assets/images/anu-msg/PHOTO-2020-04-22-22-06-02.jpg';?>" alt="image"></a>
+                      <a href="javascript:void(0);"><img src="<?= base_url().'frontend_assets/images/anu-msg/image/08.png';?>" alt="image"></a>
                     </div>
              
                   </div>
@@ -888,7 +888,111 @@
                       <strong>03</strong>Dec
                     </div> -->
                     <div class="blog_img ">
-                      <a href="javascript:void(0);"><img src="<?= base_url().'frontend_assets/images/anu-msg/PHOTO-2020-04-22-22-06-03.jpg';?>" alt="image"></a>
+                      <a href="javascript:void(0);"><img src="<?= base_url().'frontend_assets/images/anu-msg/image/09.png';?>" alt="image"></a>
+                    </div>
+             
+                  </div>
+                </article>
+              </div>
+<div class="item">
+                <article class="blog-section">
+                  <div class="blog_wrap position-relative">
+                   <!--  <div class="blog-post-date">
+                      <strong>03</strong>Dec
+                    </div> -->
+                    <div class="blog_img ">
+                      <a href="javascript:void(0);"><img src="<?= base_url().'frontend_assets/images/anu-msg/image/10.png';?>" alt="image"></a>
+                    </div>
+             
+                  </div>
+                </article>
+              </div>
+<div class="item">
+                <article class="blog-section">
+                  <div class="blog_wrap position-relative">
+                   <!--  <div class="blog-post-date">
+                      <strong>03</strong>Dec
+                    </div> -->
+                    <div class="blog_img ">
+                      <a href="javascript:void(0);"><img src="<?= base_url().'frontend_assets/images/anu-msg/image/11.png';?>" alt="image"></a>
+                    </div>
+             
+                  </div>
+                </article>
+              </div>
+<div class="item">
+                <article class="blog-section">
+                  <div class="blog_wrap position-relative">
+                   <!--  <div class="blog-post-date">
+                      <strong>03</strong>Dec
+                    </div> -->
+                    <div class="blog_img ">
+                      <a href="javascript:void(0);"><img src="<?= base_url().'frontend_assets/images/anu-msg/image/12.png';?>" alt="image"></a>
+                    </div>
+             
+                  </div>
+                </article>
+              </div>
+<div class="item">
+                <article class="blog-section">
+                  <div class="blog_wrap position-relative">
+                   <!--  <div class="blog-post-date">
+                      <strong>03</strong>Dec
+                    </div> -->
+                    <div class="blog_img ">
+                      <a href="javascript:void(0);"><img src="<?= base_url().'frontend_assets/images/anu-msg/image/13.png';?>" alt="image"></a>
+                    </div>
+             
+                  </div>
+                </article>
+              </div>
+<div class="item">
+                <article class="blog-section">
+                  <div class="blog_wrap position-relative">
+                   <!--  <div class="blog-post-date">
+                      <strong>03</strong>Dec
+                    </div> -->
+                    <div class="blog_img ">
+                      <a href="javascript:void(0);"><img src="<?= base_url().'frontend_assets/images/anu-msg/image/14.png';?>" alt="image"></a>
+                    </div>
+             
+                  </div>
+                </article>
+              </div>
+<div class="item">
+                <article class="blog-section">
+                  <div class="blog_wrap position-relative">
+                   <!--  <div class="blog-post-date">
+                      <strong>03</strong>Dec
+                    </div> -->
+                    <div class="blog_img ">
+                      <a href="javascript:void(0);"><img src="<?= base_url().'frontend_assets/images/anu-msg/image/15.png';?>" alt="image"></a>
+                    </div>
+             
+                  </div>
+                </article>
+              </div>
+<div class="item">
+                <article class="blog-section">
+                  <div class="blog_wrap position-relative">
+                   <!--  <div class="blog-post-date">
+                      <strong>03</strong>Dec
+                    </div> -->
+                    <div class="blog_img ">
+                      <a href="javascript:void(0);"><img src="<?= base_url().'frontend_assets/images/anu-msg/image/16.png';?>" alt="image"></a>
+                    </div>
+             
+                  </div>
+                </article>
+              </div>
+<div class="item">
+                <article class="blog-section">
+                  <div class="blog_wrap position-relative">
+                   <!--  <div class="blog-post-date">
+                      <strong>03</strong>Dec
+                    </div> -->
+                    <div class="blog_img ">
+                      <a href="javascript:void(0);"><img src="<?= base_url().'frontend_assets/images/anu-msg/image/17.png';?>" alt="image"></a>
                     </div>
              
                   </div>
