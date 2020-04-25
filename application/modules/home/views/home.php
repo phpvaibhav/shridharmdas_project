@@ -125,7 +125,7 @@
                 <li><i class="far fa-calendar-alt"></i> sep 03, 2019</li>
               </ul> -->
               <div class="sermons_inside">
-                
+
                  <!-- यह विडिओ आपको जनगणना फॉर्म कैसे भरना है उससे भलीभाँति परिचय करवाएगा । .
                <ul>
                   <li><a class="popup-youtube" href="http://www.youtube.com/watch?v=0O2aH4XLbto"><i class="fab fa-youtube"></i></a></li>
@@ -155,7 +155,7 @@
             </div>
           </div>
           <div class="col-md-6">
-            <iframe width="560" height="315" src="https://www.youtube.com/embed/Vd-4P8lo-xc" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+            <iframe width="100%" height="315" src="https://www.youtube.com/embed/Vd-4P8lo-xc" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
            <!--  <div class="box_wrap video-bg home-video">
               <div class="video-content">
                 <div class="video_icon">
