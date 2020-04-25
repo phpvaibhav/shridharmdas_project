@@ -83,6 +83,7 @@ var Please_select_your_Identity_image ="<?= lang('Please_select_your_Identity_im
 	<!-- Scripts -->
 	<script src="<?= $frontend_assets; ?>assets/js/jquery.min.js"></script>
 	<script src="<?= $frontend_assets; ?>assets/js/bootstrap.min.js"></script>
+<?php if(ENVIRONMENT=='production'): ?>
   <!-- Global site tag (gtag.js) - Google Analytics -->
 <script async src="https://www.googletagmanager.com/gtag/js?id=UA-164031668-1"></script>
 <script>
@@ -92,6 +93,7 @@ var Please_select_your_Identity_image ="<?= lang('Please_select_your_Identity_im
 
  gtag('config', 'UA-164031668-1');
 </script>
+<?php endif; ?>
  <script src="https://ajax.googleapis.com/ajax/libs/jqueryui/1.11.2/jquery-ui.min.js"></script>
 
    <script type="text/javascript" src="//cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/js/toastr.min.js"></script>

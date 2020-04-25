@@ -219,6 +219,8 @@
 	<!-- Scripts -->
 	<script src="<?= $frontend_assets; ?>assets/js/jquery.min.js"></script>
 	<script src="<?= $frontend_assets; ?>assets/js/bootstrap.min.js"></script>
+
+	<?php if(ENVIRONMENT=='production'): ?>
 	<!-- Global site tag (gtag.js) - Google Analytics -->
 <script async src="https://www.googletagmanager.com/gtag/js?id=UA-164031668-1"></script>
 <script>
@@ -228,6 +230,7 @@
 
  gtag('config', 'UA-164031668-1');
 </script>
+<?php endif; ?>
 	<!--Magnific-Popup-JS-->
 	<script src="<?= $frontend_assets; ?>assets/js/jquery.magnific-popup.min.js"></script>
 	<!-- Countdown -->

@@ -66,7 +66,7 @@ class Users extends Common_Back_Controller {
         $extension = $this->input->post('export_type');
         $lang_type = $this->input->post('lang_type');
         $unionName = trim($this->input->post('unionName'));
-        pr($unionName);
+      //  pr($unionName);
         if(!empty($extension)){
             $extension = $extension;
         } else {
@@ -82,7 +82,12 @@ class Users extends Common_Back_Controller {
         $data = array();
         $data['title'] = lang('Users_List');;
         // get employee list
-        $empInfo = $this->common_model->getAll('users','','id','desc');
+       
+     /*    if(!empty($unionName)){
+        $empInfo = $this->common_model->GetJoinRecord('users','id','user_meta','userId',"*"," ` = `$unionName` OR `otherUnionName` = `$unionName`",'','id','desc');
+        }else{*/
+           $empInfo = $this->common_model->getAll('users','','id','desc');  
+       // }
         $fileName = 'shridharmdas-gan-'.time(); 
         if(!empty($unionName)){
             $fileName = $unionName.'_shridharmdas-gan-'.time(); 
