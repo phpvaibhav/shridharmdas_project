@@ -21,7 +21,7 @@ class Users extends Common_Back_Controller {
         $data['recordSet']  = array('<li class="sparks-info"><h5>'.lang('Users').'<span class="txt-color-blue"><a href="'.base_url('add-user').'" class="anchor-btn"><i class="fa fa-plus-square"></i></a></span></h5></li>','<li class="sparks-info"><h5>'.lang('Total').' '.lang('Users').'<span class="txt-color-darken" id="totalCust"><i class="fa fa-lg fa-fw fa fa-users"></i>&nbsp;'.$count.'</span></h5></li>');
          $this->load->helper('country_code_helper');
         $data['unionList'] = unionList();
-        $data['front_scripts'] = array(//'backend_assets/custom/js/common_datatable.js',
+        $data['front_scripts'] = array('backend_assets/custom/js/common_datatable.js',
             'backend_assets/custom/js/users.js');
         $this->load->admin_render('users/index', $data, '');
     } //End function
