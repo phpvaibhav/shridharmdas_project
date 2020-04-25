@@ -10,15 +10,19 @@ class Users extends Common_Back_Controller {
          error_reporting(E_ALL);
         ini_set('display_errors', 1);
         $this->check_admin_user_session();
-    }
+    }         
     public function index(){
      
         $data['title']      = lang('Users');
             $count              = $this->common_model->get_total_count('users');
         $data['countuser']  = $count ;   
         $count              = number_format_short($count);
+
         $data['recordSet']  = array('<li class="sparks-info"><h5>'.lang('Users').'<span class="txt-color-blue"><a href="'.base_url('add-user').'" class="anchor-btn"><i class="fa fa-plus-square"></i></a></span></h5></li>','<li class="sparks-info"><h5>'.lang('Total').' '.lang('Users').'<span class="txt-color-darken" id="totalCust"><i class="fa fa-lg fa-fw fa fa-users"></i>&nbsp;'.$count.'</span></h5></li>');
-        $data['front_scripts'] = array('backend_assets/custom/js/common_datatable.js','backend_assets/custom/js/users.js');
+         $this->load->helper('country_code_helper');
+        $data['unionList'] = unionList();
+        $data['front_scripts'] = array(//'backend_assets/custom/js/common_datatable.js',
+            'backend_assets/custom/js/users.js');
         $this->load->admin_render('users/index', $data, '');
     } //End function
     public function add(){
@@ -61,6 +65,8 @@ class Users extends Common_Back_Controller {
     function exportUser(){
         $extension = $this->input->post('export_type');
         $lang_type = $this->input->post('lang_type');
+        $unionName = trim($this->input->post('unionName'));
+        pr($unionName);
         if(!empty($extension)){
             $extension = $extension;
         } else {
@@ -78,6 +84,10 @@ class Users extends Common_Back_Controller {
         // get employee list
         $empInfo = $this->common_model->getAll('users','','id','desc');
         $fileName = 'shridharmdas-gan-'.time(); 
+        if(!empty($unionName)){
+            $fileName = $unionName.'_shridharmdas-gan-'.time(); 
+        }
+        
         $spreadsheet = new Spreadsheet();
         $sheet = $spreadsheet->getActiveSheet();
         $styleArray = [

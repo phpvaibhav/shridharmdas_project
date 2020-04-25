@@ -96,7 +96,13 @@ class Users extends Common_Admin_Controller{
     function list_post(){
         $this->load->helper('text');
         $this->load->model('user_model');
-        $this->user_model->set_data();
+        $where ="";
+        $unionName = $this->post('unionName');
+      /*  if(!empty($unionName)){
+             $where = "(um.unionName = ".$unionName." OR um.otherUnionName= ".$unionName.")";
+        }*/
+        $this->user_model->set_data($where);
+        //lq();
         $list   = $this->user_model->get_list();
         
         $data   = array();
@@ -110,7 +116,7 @@ class Users extends Common_Admin_Controller{
             $row[]      = '<a href="'.$link_url.'" >'.display_placeholder_text($serData->hindiFullName).'</a>'; 
             $row[]      = display_placeholder_text($serData->hindiParentName); 
             $row[]      = display_placeholder_text($serData->hindiFamilyHeadName); 
-            $row[]      = display_aadhar_text($serData->aadharNumber,6); 
+            $row[]      = ($serData->unionName=='OTHER') ?  display_placeholder_text($serData->otherUnionName) : display_placeholder_text($serData->unionName) ; 
             $row[]      = @$serData->countrycode.' '.display_mobile_text($serData->contactNumber); 
             $row[]      = display_placeholder_text(date('d-m-Y',strtotime($serData->dob))); 
           

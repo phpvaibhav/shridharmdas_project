@@ -51,22 +51,22 @@
 
 
 	$lang['Submit'] 										= "Submit";
-	$lang['Please_select_your_full_name'] 					= "Please Select Your Full Name";
-	$lang['Please_select_your_first_name'] 					= "Please select your first name";
-	$lang['Please_select_your_last_name'] 					= "Please select your last name";
-	$lang['Please_select_your_familyHeadName'] 				= "Please select your family head name";
+	$lang['Please_select_your_full_name'] 					= "Please enter your Full name";
+	$lang['Please_select_your_first_name'] 					= "Please enter your first name";
+	$lang['Please_select_your_last_name'] 					= "Please enter your last name";
+	$lang['Please_select_your_familyHeadName'] 				= "Please enter your family head name";
 	
-	$lang['Please_select_your_father_name_husband_name'] 	= "Please select your father name/husband name";
-	$lang['Please_select_your_date_of_birth'] 				= "Please select your date of birth";
-	$lang['Please_select_your_gender'] 						= "Please select your gender";
-	$lang['Please_select_your_marital_status'] 				= "Please select your marital status";
-	$lang['Please_select_your_contact_number'] 				= "Please select your mobile number";
-	$lang['Please_select_your_aadhar_number'] 				= "Please select your aadhar number";
-	$lang['Please_select_your_address'] 					= "Please select your address";
-	$lang['Please_select_your_city'] 						= "Please select your city";
-	$lang['Please_select_your_zip_code'] 					= "Please select your pin code";
-	$lang['Please_select_your_tehsil'] 						= "Please select your tehsil";
-	$lang['Please_select_your_district'] 					= "Please select your district";
+	$lang['Please_select_your_father_name_husband_name'] 	= "Please enter your father name/husband name";
+	$lang['Please_select_your_date_of_birth'] 				= "Please enter your date of birth";
+	$lang['Please_select_your_gender'] 						= "Please enter your gender";
+	$lang['Please_select_your_marital_status'] 				= "Please enter your marital status";
+	$lang['Please_select_your_contact_number'] 				= "Please enter your mobile number";
+	$lang['Please_select_your_aadhar_number'] 				= "Please enter your aadhar number";
+	$lang['Please_select_your_address'] 					= "Please enter your address";
+	$lang['Please_select_your_city'] 						= "Please enter your city";
+	$lang['Please_select_your_zip_code'] 					= "Please enter your pin code";
+	$lang['Please_select_your_tehsil'] 						= "Please enter your tehsil";
+	$lang['Please_select_your_district'] 					= "Please enter your district";
 	$lang['Good_job'] 										= "Good job";
 	$lang['Your_form_submitted_successfully'] 				= "Your form has  submitted successfully";
 	$lang['Please_select_your_front_image'] 				= "Please select your front aadhar  image";
@@ -75,8 +75,8 @@
 	$lang['Please_select__image_type'] 						= "Only aadhar image type jpg/png/jpeg/gif is allowed";
 	$lang['Please_enter_at_least_10_digit_phone_number'] 	= "Please enter  10 digit mobile number.";
 	$lang['Please_enter_at_least_12_digit_aadhaar_number'] 	= "Please enter  12 digit aadhaar number.";
-	$lang['Please_select_your_unionName'] 					= "Please select your union name";
-	$lang['Please_select_your_Occupation'] 					= "Please select your Occupation";
+	$lang['Please_select_your_unionName'] 					= "Please enter your union name";
+	$lang['Please_select_your_Occupation'] 					= "Please enter your Occupation";
 	$lang['This_option_field_is_required'] 					= "This option field is required";
 	$lang['This_aadhar_number_is_already_taken'] 					= "This aadhar number is already taken! Please enter  other aadhar card number .";
 	$lang['Please_select_your_religious_Knowledge'] 					= "Please select your religious Knowledge";
