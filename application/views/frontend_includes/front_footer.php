@@ -105,6 +105,7 @@
 				<div class="row">
 					<div class="col-lg-4 align-self-center">
 						<p class="mb-0">&copy; <?= date('Y');?> .All Rights Reserved</p>
+						<p class="mb-0">Developed by: <a target="_blank" href="https://outthinkcoders.com/" style="color: white;">Outthinkcoders.com</a></p>
 					</div>
 					<div class="col-lg-4 align-self-center">
 						<div id="back-top" class="back-top">
@@ -114,9 +115,9 @@
 					<div class="col-lg-4 align-self-center">
 						<div class="footer_links">
 							<a href="<?= base_url(); ?>">Home</a>
-							<!-- <a href="<?= base_url(); ?>about-us">About Us</a> -->
 							<a href="<?= base_url(); ?>user-step-1">User Form</a>
-							<!-- <a href="<?= base_url(); ?>contact-us">Contact</a> -->
+							<a href="<?= base_url(); ?>about-us">About Us</a>
+							<a href="<?= base_url(); ?>contact-us">Contact</a> 
 						</div>
 					</div>
 				</div>

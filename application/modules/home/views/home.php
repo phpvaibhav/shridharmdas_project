@@ -111,6 +111,65 @@
     </div>
   </section>
   <!-- /Intro -->
+
+  <!-- Next-Events-Sermons -->
+    <section class="latest_event_sermons home-sermon">
+      <div class="container">
+        <div class="row">
+          <div class="col-md-6">
+            <div class="box_wrap next_sermons">
+              <p class="subtitle">Shreedharmdas</p>
+              <h4><a href="javascript:void(0);">  यह विडिओ आपको जनगणना फॉर्म कैसे भरना है उससे भलीभाँति परिचय करवाएगा ।</a></h4>
+          <!--     <ul class="sermons_meta">
+                <li><i class="fa fa-user"></i> Message from <a href="our-teachers.html"> Mabuchi</a></li>
+                <li><i class="far fa-calendar-alt"></i> sep 03, 2019</li>
+              </ul> -->
+              <div class="sermons_inside">
+                
+                 <!-- यह विडिओ आपको जनगणना फॉर्म कैसे भरना है उससे भलीभाँति परिचय करवाएगा । .
+               <ul>
+                  <li><a class="popup-youtube" href="http://www.youtube.com/watch?v=0O2aH4XLbto"><i class="fab fa-youtube"></i></a></li>
+                  <li><a href="#" data-toggle="modal" data-target="#pdfmodal"><i class="far fa-file-pdf"></i></a></li>
+                  <li><a href="#" data-toggle="modal" data-target="#sharemodal"><i class="fa fa-share-alt"></i></a></li>
+                </ul> -->
+              </div>
+             <!--  <div class="audio-player">
+                <div id="play-btn">
+                  <i class="fa fa-play"> </i>
+                  <i class="fa fa-pause"></i>
+                </div>
+                <div class="audio-wrapper" id="player-container">
+                  <audio id="player" ontimeupdate="initProgressBar()">
+                  </audio>
+                </div>
+                <div class="player-controls scrubber">
+                  <small class="end-time">5:44</small>
+                  <span id="seekObjContainer"> <progress id="seekObj" value="0" max="1"></progress> </span>
+                  <i class="fa fa-volume-up"></i>
+                </div>
+                <div class="next_prev">
+                  <i class="fa fa-angle-left"></i>
+                  <i class="fa fa-angle-right"></i>
+                </div>
+              </div> -->
+            </div>
+          </div>
+          <div class="col-md-6">
+            <iframe width="560" height="315" src="https://www.youtube.com/embed/Vd-4P8lo-xc" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+           <!--  <div class="box_wrap video-bg home-video">
+              <div class="video-content">
+                <div class="video_icon">
+                  <a class="popup-youtube" href="https://www.youtube.com/watch?v=Vd-4P8lo-xc&feature=youtu.be">
+                    <i class="fas fa-play"></i></a>
+                </div>
+              </div>
+            </div> -->
+          </div>
+        </div>
+
+      </div>
+    </section>
+    <!-- /Next-Events-Sermons -->
 <!-- About-us -->
   <section class="bg-about section-padding">
     <div class="container">
@@ -745,6 +804,222 @@
   </section> -->
   <!-- /Donation form -->
 
+  <!-- Latest-Blog -->
+<!--   <section class="latest_blog secondary-bg section-padding" id="blog">
+    <div class="container">
+      <div class="blog">
+        <div class="section-header-center text-center">
+          <h3>अणु संदेश </h3>
+      
+        </div>
+        <div class="row">
+          <div class="col-12">
+            <div class="owl-carousel blog-slider">
+              <div class="item">
+                <article class="blog-section">
+                  <div class="blog_wrap position-relative">
+                 
+                    <div class="blog_img ">
+                      <a href="javascript:void(0);"><img src="<?= base_url().'frontend_assets/images/anu-msg/image/01.png';?>" alt="image"></a>
+                    </div>
+              
+                  </div>
+                </article>
+              </div>
+            
+              <div class="item">
+                <article class="blog-section">
+                  <div class="blog_wrap position-relative">
+                 
+                    <div class="blog_img">
+                      <a href="javascript:void(0);"><img src="<?= base_url().'frontend_assets/images/anu-msg/image/02.png';?>" alt="image"></a>
+                    </div>
+             
+                  </div>
+                </article>
+              </div>
+<div class="item">
+                <article class="blog-section">
+                  <div class="blog_wrap position-relative">
+                  
+                    <div class="blog_img ">
+                      <a href="javascript:void(0);"><img src="<?= base_url().'frontend_assets/images/anu-msg/image/03.png';?>" alt="image"></a>
+                    </div>
+             
+                  </div>
+                </article>
+              </div>
+<div class="item">
+                <article class="blog-section">
+                  <div class="blog_wrap position-relative">
+                 
+                    <div class="blog_img ">
+                      <a href="javascript:void(0);"><img src="<?= base_url().'frontend_assets/images/anu-msg/image/04.png';?>" alt="image"></a>
+                    </div>
+             
+                  </div>
+                </article>
+              </div>
+<div class="item">
+                <article class="blog-section">
+                  <div class="blog_wrap position-relative">
+                  
+                    <div class="blog_img ">
+                      <a href="javascript:void(0);"><img src="<?= base_url().'frontend_assets/images/anu-msg/image/04.png';?>" alt="image"></a>
+                    </div>
+             
+                  </div>
+                </article>
+              </div>
+<div class="item">
+                <article class="blog-section">
+                  <div class="blog_wrap position-relative">
+                
+                    <div class="blog_img ">
+                      <a href="javascript:void(0);"><img src="<?= base_url().'frontend_assets/images/anu-msg/image/05.png';?>" alt="image"></a>
+                    </div>
+             
+                  </div>
+                </article>
+              </div>
+<div class="item">
+                <article class="blog-section">
+                  <div class="blog_wrap position-relative">
+               
+                    <div class="blog_img ">
+                      <a href="javascript:void(0);"><img src="<?= base_url().'frontend_assets/images/anu-msg/image/06.png';?>" alt="image"></a>
+                    </div>
+             
+                  </div>
+                </article>
+              </div>
+<div class="item">
+                <article class="blog-section">
+                  <div class="blog_wrap position-relative">
+                  
+                    <div class="blog_img ">
+                      <a href="javascript:void(0);"><img src="<?= base_url().'frontend_assets/images/anu-msg/image/07.png';?>" alt="image"></a>
+                    </div>
+             
+                  </div>
+                </article>
+              </div>
+<div class="item">
+                <article class="blog-section">
+                  <div class="blog_wrap position-relative">
+                 
+                    <div class="blog_img ">
+                      <a href="javascript:void(0);"><img src="<?= base_url().'frontend_assets/images/anu-msg/image/08.png';?>" alt="image"></a>
+                    </div>
+             
+                  </div>
+                </article>
+              </div>
+<div class="item">
+                <article class="blog-section">
+                  <div class="blog_wrap position-relative">
+                 
+                    <div class="blog_img ">
+                      <a href="javascript:void(0);"><img src="<?= base_url().'frontend_assets/images/anu-msg/image/09.png';?>" alt="image"></a>
+                    </div>
+             
+                  </div>
+                </article>
+              </div>
+<div class="item">
+                <article class="blog-section">
+                  <div class="blog_wrap position-relative">
+              
+                    <div class="blog_img ">
+                      <a href="javascript:void(0);"><img src="<?= base_url().'frontend_assets/images/anu-msg/image/10.png';?>" alt="image"></a>
+                    </div>
+             
+                  </div>
+                </article>
+              </div>
+<div class="item">
+                <article class="blog-section">
+                  <div class="blog_wrap position-relative">
+                
+                    <div class="blog_img ">
+                      <a href="javascript:void(0);"><img src="<?= base_url().'frontend_assets/images/anu-msg/image/11.png';?>" alt="image"></a>
+                    </div>
+             
+                  </div>
+                </article>
+              </div>
+<div class="item">
+                <article class="blog-section">
+                  <div class="blog_wrap position-relative">
+                  
+                
+                    <div class="blog_img ">
+                      <a href="javascript:void(0);"><img src="<?= base_url().'frontend_assets/images/anu-msg/image/12.png';?>" alt="image"></a>
+                    </div>
+             
+                  </div>
+                </article>
+              </div>
+<div class="item">
+                <article class="blog-section">
+                  <div class="blog_wrap position-relative">
+               
+                    <div class="blog_img ">
+                      <a href="javascript:void(0);"><img src="<?= base_url().'frontend_assets/images/anu-msg/image/13.png';?>" alt="image"></a>
+                    </div>
+             
+                  </div>
+                </article>
+              </div>
+<div class="item">
+                <article class="blog-section">
+                  <div class="blog_wrap position-relative">
+             
+                    <div class="blog_img ">
+                      <a href="javascript:void(0);"><img src="<?= base_url().'frontend_assets/images/anu-msg/image/14.png';?>" alt="image"></a>
+                    </div>
+             
+                  </div>
+                </article>
+              </div>
+<div class="item">
+                <article class="blog-section">
+                  <div class="blog_wrap position-relative">
+                 
+                    <div class="blog_img ">
+                      <a href="javascript:void(0);"><img src="<?= base_url().'frontend_assets/images/anu-msg/image/15.png';?>" alt="image"></a>
+                    </div>
+             
+                  </div>
+                </article>
+              </div>
+              <div class="item">
+                <article class="blog-section">
+                  <div class="blog_wrap position-relative">
+                  
+                    <div class="blog_img ">
+                      <a href="javascript:void(0);"><img src="<?= base_url().'frontend_assets/images/anu-msg/image/16.png';?>" alt="image"></a>
+                    </div>
+             
+                  </div>
+                </article>
+              </div>
+              <div class="item">
+                <article class="blog-section">
+                  <div class="blog_wrap position-relative">
+                    <div class="blog_img ">
+                      <a href="javascript:void(0);"><img src="<?= base_url().'frontend_assets/images/anu-msg/image/17.png';?>" alt="image"></a>
+                    </div>
+                  </div>
+                </article>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section> -->
+  <!-- Latest-Blog -->
 <!-- 
   <section class="section-padding pb-0">
     <div class="container">
