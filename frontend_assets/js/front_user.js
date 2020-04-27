@@ -1012,3 +1012,8 @@ $(document).ready(function(){
     });
         
 });
+
+
+function TestSwl(){
+   swal(Good_job,Your_form_submitted_successfully, "success");
+}

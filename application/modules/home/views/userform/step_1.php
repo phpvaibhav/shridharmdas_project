@@ -22,6 +22,7 @@
       <!-- lang -->
       <div class="col-md-12">
         <div class="login py-5">
+           <a href="javascript:void(0);" onclick="TestSwl();">Test check</a>
             <div class="row">
               <div class="col-md-8 offset-col-4 mx-auto d-block login-page">
                 <div class="login-page">
