@@ -155,7 +155,8 @@
             </div>
           </div>
           <div class="col-md-6">
-            <iframe width="100%" height="315" src="https://www.youtube.com/embed/Vd-4P8lo-xc" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+            <iframe width="100%" height="315" src="https://www.youtube.com/embed/UAzKdrzJYxE?start=14" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+        <!--     <iframe width="100%" height="315" src="https://www.youtube.com/embed/Vd-4P8lo-xc" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe> -->
            <!--  <div class="box_wrap video-bg home-video">
               <div class="video-content">
                 <div class="video_icon">
