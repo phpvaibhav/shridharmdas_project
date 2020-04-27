@@ -155,7 +155,7 @@
             </div>
           </div>
           <div class="col-md-6">
-            <iframe width="100%" height="315" src="https://www.youtube.com/embed/UAzKdrzJYxE?start=14" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+          <iframe width="100%" height="315" src="https://www.youtube.com/embed/UAzKdrzJYxE" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
         <!--     <iframe width="100%" height="315" src="https://www.youtube.com/embed/Vd-4P8lo-xc" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe> -->
            <!--  <div class="box_wrap video-bg home-video">
               <div class="video-content">
@@ -231,7 +231,7 @@
             <a href="<?= base_url('vidhan'); ?>">
             <div class="features_wrap features-after-none">
               <div class="f-f-icon"><img src="<?= base_url().'frontend_assets/images/icon/गुरुदेव-द्वारा-निर्मित-विधान.png';?>" alt="img"></div>
-              <h4 class="text-custom-secondary">गुरुदेव द्वारा निर्मित विधान</h4>
+              <h4 class="text-custom-secondary">गुरुदेव द्वारा निर्मित धर्मदास गण परिषद का विधान</h4>
               <p class="mb-0">वर्तमान युग मे भोतिक विज्ञान की चकाचोंध मे आध्यात्मिकता की तरफ से मनुष्य का ध्यान हटाया जा रहा है | साधु साध्वियों के प्रति भी आज भावना कम होती जा रही है |</p>
             </div>
           </a>
