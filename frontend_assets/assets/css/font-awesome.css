@@ -14,7 +14,9 @@
   font-style: normal;
   font-variant: normal;
   text-rendering: auto;
-  line-height: 1; }
+  line-height: 1;
+
+}
 
 .fa-lg {
   font-size: 1.33333em;
@@ -65,33 +67,34 @@
   list-style-type: none;
   margin-left: 2.5em;
   padding-left: 0; }
-  .fa-ul > li {
-    position: relative; }
-
+.fa-ul > li {
+  position: relative; 
+}
 .fa-li {
   left: -2em;
   position: absolute;
   text-align: center;
   width: 2em;
-  line-height: inherit; }
-
+  line-height: inherit; 
+}
 .fa-border {
   border: solid 0.08em #eee;
   border-radius: .1em;
-  padding: .2em .25em .15em; }
-
+  padding: .2em .25em .15em; 
+}
 .fa-pull-left {
-  float: left; }
-
+  float: left; 
+}
 .fa-pull-right {
-  float: right; }
-
+  float: right; 
+}
 .fa.fa-pull-left,
 .fas.fa-pull-left,
 .far.fa-pull-left,
 .fal.fa-pull-left,
 .fab.fa-pull-left {
-  margin-right: .3em; }
+  margin-right: .3em;
+   }
 
 .fa.fa-pull-right,
 .fas.fa-pull-right,

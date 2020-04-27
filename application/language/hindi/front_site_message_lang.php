@@ -45,7 +45,7 @@
 	$lang['Write_full_name'] 							= "पूरा नाम लिखे";
 	$lang['otherUnionName'] 							= "अन्य श्री संघ का नाम";
 	$lang['identity_Type'] 								= "पहचान पत्र (कोई भी एक चुने)";
-	$lang['identity_Image'] 							= "पहचान छवि";
+	$lang['identity_Image'] 							= "पहचान पत्र की छवि";
 
 
 
@@ -80,7 +80,9 @@
 	$lang['Please_select_your_religious_Knowledge'] 			= "कृपया अपने धार्मिक ज्ञान का चयन करें";
 	$lang['Try_again_after_seconds'] 					= "सेकंड के बाद पुन: प्रयास करें";
 	$lang['First_write_your_name_then_your_surname'] 					= "पहले अपना नाम फिर अपना उपनाम या  सरनेम लिखे ";
-	$lang['Please_select_your_Identity_image'] 				= "कृपया अपनी पहचान छवि चुनें";
+	$lang['Please_select_your_Identity_image'] 				= "कृपया अपनी पहचान पत्र की छवि चुनें";
+	$lang['Please_do_not_add_a_photo_of_yourself'] 				= "कृपया खुद का फोटो नहीं डाले |";
+	
 
 	//सेकंड के बाद पुन: प्रयास करें
 

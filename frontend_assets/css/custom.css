@@ -285,5 +285,12 @@
     color: blue!important;
 }
 .section-padding {
-padding: 106px 0;
+    padding: 106px 0;
 }
+/*.intro_text {
+    max-width: 750px;
+    text-align: left;
+    padding: 22% 0;
+    position: relative;
+    z-index: 9;
+}*/

@@ -45,7 +45,7 @@
 	$lang['Write_full_name'] 					= "Write full name";
 	$lang['otherUnionName'] 					= "Other Sangh Name";
 	$lang['identity_Type'] 						= "Identity Proof (Choose any one)";
-	$lang['identity_Image'] 						= "Identity Image";
+	$lang['identity_Image'] 						= "Identity card image";
 		
 
 
@@ -72,7 +72,7 @@
 	$lang['Please_select_your_front_image'] 				= "Please select your front aadhar  image";
 	
 	$lang['Please_select_your_back_image'] 					= "Please select your back aadhar  image";
-	$lang['Please_select__image_type'] 						= "Only aadhar image type jpg/png/jpeg/gif is allowed";
+	$lang['Please_select__image_type'] 						= "Only image type jpg/png/jpeg/gif is allowed";
 	$lang['Please_enter_at_least_10_digit_phone_number'] 	= "Please enter  10 digit mobile number.";
 	$lang['Please_enter_at_least_12_digit_aadhaar_number'] 	= "Please enter  12 digit aadhaar number.";
 	$lang['Please_select_your_unionName'] 					= "Please enter your union name";
@@ -83,7 +83,7 @@
 	$lang['Try_again_after_seconds'] 					= "Try again after seconds";
 	$lang['First_write_your_name_then_your_surname'] 					= "First write your name then your surname";
 	$lang['Please_select_your_Identity_image'] 				= "Please select your identity image";
-	
+	$lang['Please_do_not_add_a_photo_of_yourself'] 				= "Please do not add a photo of yourself";
 	
 
 

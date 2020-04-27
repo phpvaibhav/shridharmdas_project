@@ -566,7 +566,7 @@ $("#user-add-step-3").validate({ // Rules for form validation
                 toastr.success(res.message, 'Success', {timeOut: 3000});
                   swal(Good_job,Your_form_submitted_successfully, "success");
                 setTimeout(function(){ 
-                  // window.location.reload();
+                 // window.location.reload();
                     window.location = base_url;
                 },3000);
               }else{

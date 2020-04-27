@@ -190,7 +190,7 @@
                               <label for="identityImage"><?= lang('identity_Image') ?><span>*</span></label>
                               <input type="file" class="form-control" id="identityImage"  name="identityImage" data-id="1" onchange="readURL(this,1);" accept="image/*" style="border: 0px solid #ddd;" >
                               </div>
-                              <small><b>Note:</b> Image  JPG/PNG/JPEG/GIF is allowed</small>
+                              <small><b>Note:</b>1) <?= lang('Please_do_not_add_a_photo_of_yourself'); ?> 2) Image  JPG/PNG/JPEG/GIF is allowed</small>
                           </div>
                           <div class="col-md-12">
                                 <div class="img-shop-wrapper tl-shop-single">
