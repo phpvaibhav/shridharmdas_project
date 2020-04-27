@@ -244,8 +244,20 @@ class Webapi extends Common_Service_Controller{
 
                 $this->common_model->updateFields('users',$user_val,array('id'=>$userId));
                 $this->common_model->updateFields('user_meta',$user_meta,array('userId'=>$userId));
-                $this->common_model->insertData('addresses',$add_meta);
-                $this->common_model->insertData('addresses',$add_meta1);
+                $isExistCurrent             =  $this->common_model->is_data_exists('addresses',array('userId'=>$userId,'addressType'=>'Current'));
+                if($isExistCurrent){
+                      $this->common_model->updateFields('addresses',$add_meta,array('userId'=>$userId,'addressType'=>'Current')); 
+                }else{
+                     $this->common_model->insertData('addresses',$add_meta);
+                }
+               $isExistPermanent             =  $this->common_model->is_data_exists('addresses',array('userId'=>$userId,'addressType'=>'Permanent'));
+                if($isExistPermanent){
+                      $this->common_model->updateFields('addresses',$add_meta1,array('userId'=>$userId,'addressType'=>'Permanent')); 
+                }else{
+                     $this->common_model->insertData('addresses',$add_meta1);
+                }
+               
+               // $this->common_model->insertData('addresses',$add_meta1);
                // $this->common_model->insertData('addresses',$add_meta2);
              /*   $msg            = 'Step-2 '.ResponseMessages::getStatusCodeMessage(122);
                 $_SESSION['userStep']        = 3; */
