@@ -230,7 +230,7 @@ class Webapi extends Common_Service_Controller{
                 $add_meta1['postName']      = $this->post('ppostName');
                 $add_meta1['addressType']   = 'Permanent';
                 
-/*                $add_meta2['userId']        = $userId;
+                /* $add_meta2['userId']        = $userId;
                 $add_meta2['zip_code']      = $this->post('ozip_code');
                 $add_meta2['address']       = $this->post('oaddress');
                 $add_meta2['city']          = $this->post('ocity');
@@ -246,15 +246,16 @@ class Webapi extends Common_Service_Controller{
                 $this->common_model->updateFields('user_meta',$user_meta,array('userId'=>$userId));
                 $isExistCurrent             =  $this->common_model->is_data_exists('addresses',array('userId'=>$userId,'addressType'=>'Current'));
                 if($isExistCurrent){
-                      $this->common_model->updateFields('addresses',$add_meta,array('userId'=>$userId,'addressType'=>'Current')); 
+                    $this->common_model->updateFields('addresses',$add_meta,array('userId'=>$userId,'addressType'=>'Current')); 
                 }else{
-                     $this->common_model->insertData('addresses',$add_meta);
+                    $this->common_model->insertData('addresses',$add_meta);
                 }
-               $isExistPermanent             =  $this->common_model->is_data_exists('addresses',array('userId'=>$userId,'addressType'=>'Permanent'));
+                
+                $isExistPermanent             =  $this->common_model->is_data_exists('addresses',array('userId'=>$userId,'addressType'=>'Permanent'));
                 if($isExistPermanent){
-                      $this->common_model->updateFields('addresses',$add_meta1,array('userId'=>$userId,'addressType'=>'Permanent')); 
+                    $this->common_model->updateFields('addresses',$add_meta1,array('userId'=>$userId,'addressType'=>'Permanent')); 
                 }else{
-                     $this->common_model->insertData('addresses',$add_meta1);
+                    $this->common_model->insertData('addresses',$add_meta1);
                 }
                
                // $this->common_model->insertData('addresses',$add_meta1);

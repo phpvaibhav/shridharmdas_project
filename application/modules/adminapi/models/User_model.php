@@ -15,7 +15,7 @@ class User_model extends CI_Model {
         THEN "Approved"  ELSE
         "Unknown" 
         END) as verifyShow'); //set column field database for datatable orderable
-    var $column_search = array('u.firstName','u.lastName','u.fullName','u.aadharNumber','u.parentName','u.contactNumber','u.gender','um.hindiFirstName','um.hindiLastName','um.hindiFullName','um.hindiParentName','um.hindiFamilyHeadName','um.unionName','um.otherUnionName','u.familyHeadName'); //set column field database for datatable searchable 
+    var $column_search = array('u.fullName','u.parentName','u.contactNumber','um.hindiFullName','um.hindiParentName','um.hindiFamilyHeadName','um.unionName','um.otherUnionName','u.familyHeadName'); //set column field database for datatable searchable 
     var $order = array('u.id'=> 'DESC');  // default order
     var $where = array();
     var $group_by = 'u.id'; 

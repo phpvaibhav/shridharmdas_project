@@ -837,9 +837,9 @@ function checkOtp(){
 
 function timerCount(){
   $('.countdown').html("");
-  var timer2 = "0:31";
+  var timer2 = "0:61";
   var interval = setInterval(function() {
-    if(timer2 == "0:31"){
+    if(timer2 == "0:61"){
       $(".countdown").css("display", "block");
     }
     var timer = timer2.split(':');
