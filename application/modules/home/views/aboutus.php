@@ -41,7 +41,7 @@
 					    	<a href="<?= base_url('jeevani'); ?>" class="text_url"><u>सम्पूर्ण परिचय के लिए क्लिक करे</u></a> </p>
 
 					    <p>आप श्री की अनेक परम्परा रही जिनमें मुख्य रूप से रतलाम शाखा रही जिसे श्री धर्मदास सम्प्रदाय के नाम से जाना जाता है । इस सम्प्रदाय में अनेक ओजस्वी -तेजस्वी गण प्रमुख सन्त रहे इनमें १४ वे गण प्रमुख के रूप में अध्यात्म योगी , जिनशाशन गौरव , वर्तमान के वर्धमान , आचार्य भगवन , पूज्य गुरुदेव श्री उमेशमुनि जी मसा हुए।  आप श्री के सानिध्य में वर्ष १९८६ में  मेघनगर में श्री धर्मदास गण परिषद की स्थापना की गई । आचार्य श्री की गण परिषद की स्थापना के पीछे अनेक दूर दृष्टि को महसूस किया गया । 
-					    <a href="<?= base_url().'shishy-vrksh'; ?>" class="text_url"> <u>धर्मदास शिष्य वृक्ष के लिए क्लिक करे</u></a></p>
+					    <a href="<?= base_url().'shishy-vrksh'; ?>" class="text_url"> <u>धर्मदास संप्रदाय शिष्य वृक्ष के लिए क्लिक करे</u></a></p>
 
 					    <p>परिषद के अनेक मुख्य उद्देश्य आचार्य श्री की दृष्टि में रहते हुए बने थे- <a href="<?= base_url().'jeevan-parichay'; ?>" class="text_url"> <u>आचार्य श्री उमेशमुनिजी के जीवन परिचय के लिए क्लिक करे</u></a></p>
 					    <div class="ptag">
@@ -81,7 +81,7 @@
 											<a href="<?= base_url().'shishy-vrksh'; ?>">
 						<div class="features_wrap custom-md-mb features-after-none">
 							<div class="f-f-icon"><img src="<?= base_url().'frontend_assets/images/icon/धर्मदास-शिष्य-वृक्ष.png';?>" alt="img"></div>
-							<h4 class="text-custom-secondary">धर्मदास शिष्य वृक्ष</h4>
+							<h4 class="text-custom-secondary">धर्मदास संप्रदाय शिष्य वृक्ष</h4>
 							<p class="mb-0">इस सम्प्रदाय में अनेक ओजस्वी -तेजस्वी गण प्रमुख सन्त रहे।   धर्मदास शिष्य वृक्ष के लिए क्लिक करे</p>
 						</div>
 					</a>
@@ -90,7 +90,7 @@
 						<a href="<?= base_url().'jeevan-parichay'; ?>">
 						<div class="features_wrap custom-sm-mb features-after-none">
 							<div class="f-f-icon"><img src="<?= base_url().'frontend_assets/images/icon/आचार्य-श्री-उमेशमुनिजी-का-जीवन-परिचय.png';?>" alt="img"></div>
-							<h4 class="text-custom-secondary">आचार्य श्री उमेशमुनिजी का जीवन परिचय</h4>
+							<h4 class="text-custom-secondary">आचार्य श्री उमेशमुनिजी मा.सा. का जीवन परिचय</h4>
 							<p class="mb-0">आचार्य प्रवर, शासन गौरव, आत्मार्थीपूज्य गुरुदेव श्री उमेशमुनिजी म.सा.‘अणु’ का
 जीवन-परिचय के लिए क्लिक करे
 </p>
@@ -101,7 +101,7 @@
 						<a href="<?= base_url('vidhan'); ?>">
 						<div class="features_wrap features-after-none">
 							<div class="f-f-icon"><img src="<?= base_url().'frontend_assets/images/icon/गुरुदेव-द्वारा-निर्मित-विधान.png';?>" alt="img"></div>
-							<h4 class="text-custom-secondary">गुरुदेव द्वारा निर्मित धर्मदास गण परिषद का विधान</h4>
+							<h4 class="text-custom-secondary">गुरुदेव द्वारा निर्मित धर्मदास गण परिषद का विधान - वर्ष १९८६</h4>
 							<p class="mb-0">वर्तमान युग मे भोतिक विज्ञान की चकाचोंध मे आध्यात्मिकता की तरफ से मनुष्य का ध्यान हटाया जा रहा है | साधु साध्वियों के प्रति भी आज भावना कम होती जा रही है |</p>
 						</div>
 					</a>

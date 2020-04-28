@@ -18,6 +18,11 @@ data_list.DataTable({
     initComplete: function () {
       $('.dataTables_filter input[type="search"]').css({ 'height': '32px'});
     },
+       // Sets the row-num-selection "Show %n entries" for the user
+        "lengthMenu": [ 50, 100, 200, 500, 1000 ], 
+        
+        // Set the default no. of rows to display
+        "oPageLength": 50 ,
     // Load data for the table's content from an Ajax source
     "ajax": {
       "url"     : base_url+$(data_list).data('list-url'),
