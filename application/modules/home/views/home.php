@@ -118,7 +118,7 @@
         <div class="row">
           <div class="col-md-6">
             <div class="box_wrap next_sermons">
-              <p class="subtitle">Shreedharmdas</p>
+             <!--  <p class="subtitle">Shreedharmdas</p> -->
               <h4> यह विडिओ आपको जनगणना फॉर्म कैसे भरना है उससे भलीभाँति परिचय करवाएगा ।</h4>
           <!--     <ul class="sermons_meta">
                 <li><i class="fa fa-user"></i> Message from <a href="our-teachers.html"> Mabuchi</a></li>
