@@ -58,8 +58,8 @@
 	
 	$lang['Please_select_your_father_name_husband_name'] 	= "Please enter your father name/husband name";
 	$lang['Please_select_your_date_of_birth'] 				= "Please enter your date of birth";
-	$lang['Please_select_your_gender'] 						= "Please enter your gender";
-	$lang['Please_select_your_marital_status'] 				= "Please enter your marital status";
+	$lang['Please_select_your_gender'] 						= "Please select your gender";
+	$lang['Please_select_your_marital_status'] 				= "Please select your marital status";
 	$lang['Please_select_your_contact_number'] 				= "Please enter your mobile number";
 	$lang['Please_select_your_aadhar_number'] 				= "Please enter your aadhar number";
 	$lang['Please_select_your_address'] 					= "Please enter your address";
@@ -75,7 +75,7 @@
 	$lang['Please_select__image_type'] 						= "Only image type jpg/png/jpeg/gif is allowed";
 	$lang['Please_enter_at_least_10_digit_phone_number'] 	= "Please enter  10 digit mobile number.";
 	$lang['Please_enter_at_least_12_digit_aadhaar_number'] 	= "Please enter  12 digit aadhaar number.";
-	$lang['Please_select_your_unionName'] 					= "Please enter your union name";
+	$lang['Please_select_your_unionName'] 					= "Please select your union name";
 	$lang['Please_select_your_Occupation'] 					= "Please enter your Occupation";
 	$lang['This_option_field_is_required'] 					= "This option field is required";
 	$lang['This_aadhar_number_is_already_taken'] 					= "This aadhar number is already taken! Please enter  other aadhar card number .";
