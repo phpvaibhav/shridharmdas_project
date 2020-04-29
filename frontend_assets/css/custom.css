@@ -77,15 +77,19 @@
  width: 100%;
  overflow: auto;
 }
+@media only screen and (max-width: 1920px) and (min-width:1610px){
+    .intro_text{ 
+        padding: 17% 0 !important;   }
+}
+@media only screen and (max-width: 1600px) and (min-width:1441px){
+    .intro_text{ 
+        padding: 17% 0 !important;   }
+}
 @media (min-width: 1440px) { 
 
     .intro_text{ 
         padding: 22% 0;   }
  }
-@media only screen and (max-width: 1600px) and (min-width:1441px){
-    .intro_text{ 
-        padding: 17% 0 !important;   }
-}
  @media only screen and (max-width: 1439px) and (min-width:1366px){
     .intro_text{ 
         padding: 17% 0 !important;   }
