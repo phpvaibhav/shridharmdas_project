@@ -61,6 +61,8 @@ public function __construct()
 
     public function contact() { 
         $data['title'] = 'Contact us';
+        $data['front_styles'] = array();
+        $data['front_scripts'] = array('frontend_assets/js/front_user.js');
         $this->load->front_render('contactus',$data);
     }//End Function
     public function motto_of_sdhp() { 

@@ -25,7 +25,10 @@
 	<!-- Google-Font-->
 	<link href="https://fonts.googleapis.com/css?family=Lato:400,400i,700,700i&display=swap" rel="stylesheet">
 	<link href="https://fonts.googleapis.com/css?family=Muli:300,300i,400,400i,700,700i&display=swap" rel="stylesheet">
-
+   <!-- toastr -->
+ <link href="//cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/css/toastr.min.css" rel="stylesheet">
+  <!-- sweetalert -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-sweetalert/1.0.1/sweetalert.css">
 	<!--Custom Style -->
 	<link href="<?= $frontend_assets; ?>css/custom.css" rel="stylesheet">
 

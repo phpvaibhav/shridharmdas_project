@@ -231,6 +231,13 @@
  gtag('config', 'UA-164031668-1');
 </script>
 <?php endif; ?>
+
+   <script type="text/javascript" src="//cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/js/toastr.min.js"></script>
+       <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-sweetalert/1.0.1/sweetalert.js"></script>
+   <!-- JQUERY VALIDATE -->
+    
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-validate/1.19.1/jquery.validate.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-validate/1.19.1/additional-methods.js"></script>
 	<!--Magnific-Popup-JS-->
 	<script src="<?= $frontend_assets; ?>assets/js/jquery.magnific-popup.min.js"></script>
 	<!-- Countdown -->
