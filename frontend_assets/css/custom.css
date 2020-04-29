@@ -80,12 +80,12 @@
 @media (min-width: 1440px) { 
 
     .intro_text{ 
-        padding: 27% 0;   }
+        padding: 22% 0;   }
  }
 
  @media only screen and (max-width: 1439px) and (min-width:1366px){
     .intro_text{ 
-        padding: 22% 0 !important;   }
+        padding: 17% 0 !important;   }
  }
  @media (max-width: 767px){
     #intro .owl-nav div::after {
