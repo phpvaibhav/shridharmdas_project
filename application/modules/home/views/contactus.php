@@ -48,10 +48,10 @@
 					</div>
 					<div class="col-md-6">
 						<div class="form_wrap">
-							<form method="post">
+							<form method="post" id="contactus-form" novalidate="novalidate" action="contactus" novalidate="novalidate" autocomplete="off">
 								<div class="form-group">
 									<label>Your Full Name</label>
-									<input type="text" class="form-control" name="Name">
+									<input type="text"  class="form-control" name="fullName">
 								</div>
 								<div class="form-group">
 									<label>Your Email</label>
@@ -62,7 +62,7 @@
 									<textarea name="message" cols="45" rows="3" class="form-control"></textarea>
 								</div>
 								<div class="form-group">
-									<input class="btn btn-outline" value="Submit" type="submit">
+									<input class="btn btn-outline" id="submit" value="Submit" type="submit">
 								</div>
 							</form>
 						</div>
