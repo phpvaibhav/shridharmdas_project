@@ -50,21 +50,21 @@
 
 
 	
-	$lang['Please_select_your_full_name'] 				= "कृपया अपना पूरा नाम चुनें";
-	$lang['Please_select_your_first_name'] 				= "कृपया अपना पहला नाम चुनें";
-	$lang['Please_select_your_last_name'] 				= "कृपया अपना उपनाम चुनें";
-	$lang['Please_select_your_familyHeadName'] 			= "कृपया अपने परिवार के मुखिया का नाम का नाम चुनें";
-	$lang['Please_select_your_father_name_husband_name'] = "कृपया अपने पिता/पति का नाम चुनें";
+	$lang['Please_select_your_full_name'] 				= "कृपया अपना पूरा नाम लिखे";
+	$lang['Please_select_your_first_name'] 				= "कृपया अपना पहला नाम लिखे";
+	$lang['Please_select_your_last_name'] 				= "कृपया अपना उपनाम लिखे";
+	$lang['Please_select_your_familyHeadName'] 			= "कृपया अपने परिवार के मुखिया का नाम का नाम लिखे";
+	$lang['Please_select_your_father_name_husband_name'] = "कृपया अपने पिता/पति का नाम लिखे";
 	$lang['Please_select_your_date_of_birth'] 			= "कृपया अपनी जन्मतिथि चुनें";
 	$lang['Please_select_your_gender'] 					= "कृपया अपना लिंग चुनें";
 	$lang['Please_select_your_marital_status'] 			= "कृपया अपनी वैवाहिक स्थिति चुनें";
-	$lang['Please_select_your_contact_number'] 			= "कृपया अपना संपर्क नंबर चुनें";
+	$lang['Please_select_your_contact_number'] 			= "कृपया अपना संपर्क नंबर नाम लिखे";
 	$lang['Please_select_your_aadhar_number'] 			= "कृपया अपना आधार कार्ड नंबर चुनें";
-	$lang['Please_select_your_address'] 				= "कृपया अपना पता चुनें";
-	$lang['Please_select_your_city'] 					= "कृपया अपने शहर का चयन करें";
-	$lang['Please_select_your_zip_code'] 				= "कृपया अपना पिन कोड चुनें";
-	$lang['Please_select_your_tehsil'] 					= "कृपया अपनी तहसील का चयन करें";
-	$lang['Please_select_your_district'] 				= "कृपया अपने जिले का चयन करें";
+	$lang['Please_select_your_address'] 				= "कृपया अपना पता लिखे";
+	$lang['Please_select_your_city'] 					= "कृपया अपने शहर का नाम लिखे";
+	$lang['Please_select_your_zip_code'] 				= "कृपया अपना पिन कोड लिखे";
+	$lang['Please_select_your_tehsil'] 					= "कृपया अपनी तहसील का नाम लिखे";
+	$lang['Please_select_your_district'] 				= "कृपया अपने जिले का नाम लिखे";
 	$lang['Good_job'] 									= "उत्कृष्ट";
 	$lang['Your_form_submitted_successfully'] 			= "आपका फॉर्म सफलतापूर्वक जमा हो गया है";
 	$lang['Please_select_your_front_image'] 			= "कृपया अपनी फ्रंट आधार छवि चुनें";

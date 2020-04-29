@@ -191,9 +191,10 @@
                               <label for="identityImage"><?= lang('identity_Image') ?><span>*</span></label>
                               <input type="file" class="form-control" id="identityImage"  name="identityImage" data-id="1" onchange="readURL(this,1);" accept="image/*" style="border: 0px solid #ddd;" >
                               </div>
-                              <small><b>Note:</b>1) <?= lang('Please_do_not_add_a_photo_of_yourself'); ?> 2) Image  JPG/PNG/JPEG/GIF is allowed</small>
+                            
                           </div>
                           <div class="col-md-12">
+                              <small><b>Note:</b>1) <?= lang('Please_do_not_add_a_photo_of_yourself'); ?> 2) Image  JPG/PNG/JPEG/GIF is allowed</small>
                                 <div class="img-shop-wrapper tl-shop-single">
                                 <div class="tl-img-shop">
                                 <img src="https://via.placeholder.com/640x360.png?text=Identity+Image" alt="image" class="mx-auto image-fluid d-block" id="blah_1">
