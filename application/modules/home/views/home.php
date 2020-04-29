@@ -6,29 +6,23 @@
       <div class="item section-padding" style="background-image:url(<?= $frontend_assets.'images/slider/slider_image01.png'; ?>);width: 100%;background-size:100% 100%;background-repeat:no-repeat;">        <div class="container">
 
           <div class="intro_text white_text">
-          <!--  <h1>Shinto Believes in Kami</h1> -->
-          <h1></h1>
-          <p></p>
-          <br>
-          <p></p>
-          <!--    <p>The point of using Lorem Ipsum is that it has a more-or-less normal distribution of letters, as opposed to using 'Content here, content here. </p> -->
-          <!--   <a href="<?= base_url(); ?>user-form" class="btn dark-btn tilak-top-btn">User Form</a> -->
-          </div>
+           <h1>Shinto Believes in Kami</h1>
+        
+             <p>The point of using Lorem Ipsum is that it has a more-or-less normal distribution of letters, as opposed to using 'Content here, content here. </p>
           <a href="<?= base_url(); ?>user-step-1" class="btn dark-btn tilak-top-btn">जनगणना फ़ॉर्म</a>
+          </div>
+         <!--  <a href="<?= base_url(); ?>user-step-1" class="btn dark-btn tilak-top-btn">जनगणना फ़ॉर्म</a> -->
         </div>
       </div>
             <div class="item section-padding" style="background-image:url(<?= $frontend_assets.'images/slider/slider_image02.png'; ?>);width: 100%;background-size:100% 100%;background-repeat:no-repeat;">
         <div class="container">
           <div class="intro_text white_text">
-            <!--  <h1>Shinto Believes in Kami</h1> -->
-            <h1></h1>
-            <p></p>
-            <br>
-            <p></p>
-         <!--    <p>The point of using Lorem Ipsum is that it has a more-or-less normal distribution of letters, as opposed to using 'Content here, content here. </p> -->
-          <!--   <a href="<?= base_url(); ?>user-form" class="btn dark-btn tilak-top-btn">User Form</a> -->
+           <h1>Shinto Believes in Kami</h1>
+        
+             <p>The point of using Lorem Ipsum is that it has a more-or-less normal distribution of letters, as opposed to using 'Content here, content here. </p>
+          <a href="<?= base_url(); ?>user-step-1" class="btn dark-btn tilak-top-btn" style="opacity: 0;" >जनगणना फ़ॉर्म</a>
           </div>
-          <div class="btn dark-btn tilak-top-btn" style="opacity: 0;" >जनगणना फ़ॉर्म</div>
+         
         </div>
       </div>
       
