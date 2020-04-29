@@ -135,60 +135,57 @@
               </div>
                <div class="row">
                <section class="col col-6">
+                 <label for="dob"><?= lang('dob'); ?><span>*</span></label>
                   <label class="input"> <i class="icon-prepend fa fa-calendar"></i>
-                    <input type="text" name="dob" id="dob" placeholder="<?= lang('dob'); ?>" readonly="">
+                    <input type="text" name="dob" id="dob" placeholder="<?= lang('dob'); ?>" readonly="" value="<?= date('d-m-Y',strtotime($info['dob'])); ?>">
                   </label>
                 </section>
 
               <section class="col col-6">
-              
+                  <label for="gender"><?= lang('Select_Gender'); ?><span>*</span></label>
                   <label class="select">
                     <select name="gender">
                       <option value="" selected="" disabled=""><?= lang('Select_Gender'); ?></option>
-                      <option value="Male"><?= lang('Male');?></option>
-                      <option value="Female"><?= lang('Female');?></option>
+                      <option value="Male" <?= $info['gender']=='Male'? "selected='selected'":""; ?>><?= lang('Male');?></option>
+                      <option value="Female" <?= $info['gender']=='Female'? "selected='selected'":""; ?>><?= lang('Female');?></option>
                     </select> <i></i> </label>
                 </section>
               
               </div>
-              <section>
-                 <div class="col-md-6">
-                          <div class="form-label-group">
-                            <label for="maritalStatus"><?= lang('Marital_Status'); ?><span>*</span></label>
-                          
-                            <select name="maritalStatus" class="form-control" id="maritalStatus">
+              <div class="row">
+                 <section class="col col-6">
+              
+                  <label class="select">
+                     <select name="maritalStatus" class="form-control" id="maritalStatus">
                             <option value="" selected="" disabled=""><?= lang('Marital_Status'); ?></option>
-                            <option value="Married"><?= lang('married');?></option>
-                            <option value="Unmarried"><?= lang('unmarried');?></option>
-                            <option value="Divorced"><?= lang('divorced');?></option>
-                            <option value="Other"><?= lang('other');?></option>
-                            </select>
-                          </div>
-                      </div>
-                       <div class="col-md-6">
-                         <div class="form-label-group">
-                           
-                              <label for="unionName"><?= lang('Union').' '.lang('Name'); ?><span>*</span></label>
-                              <select name="unionName"  class="form-control js-example-basic-single "  id="unionName"  >
+                            <option value="Married"  <?= $info['maritalStatus']=='Married' ?"selected='selected'":""; ?>><?= lang('married');?></option>
+                            <option value="Unmarried" <?= $info['maritalStatus']=='Unmarried' ?"selected='selected'":""; ?>><?= lang('unmarried');?></option>
+                            <option value="Divorced" <?= $info['maritalStatus']=='Divorced' ?"selected='selected'":""; ?>><?= lang('divorced');?></option>
+                            <option value="Other" <?= $info['maritalStatus']=='Other' ?"selected='selected'":""; ?>><?= lang('other');?></option>
+                            </select><i></i> </label>
+                </section>
+                <section class="col col-6">
+              
+                  <label class="select">
+                     <select name="unionName"  class="form-control js-example-basic-single "  id="unionName"  >
                               <?php if(!empty($unionList)):
                               foreach ($unionList as $kc => $union) { 
                                 
                                 ?>
-                              <option value="<?= $union; ?>" ><?=  $union; ?></option>
+                              <option value="<?= $union; ?>" <?= $usermeta['unionName']==$union ?"selected='selected'":""; ?>><?=  $union; ?></option>
                               <?php } endif; ?>
 
-                              </select>
-                            
-                          </div>
-                      </div>
-                      <div class="col-md-6 otherUnionName" style="display: none">
-                 
-                    <div class="form-label-group">
-                      <label for="otherUnionName"><?= lang('otherUnionName'); ?></label>
-                      <input type="text" id="otherUnionName" class="form-control" placeholder="<?= lang('otherUnionName'); ?>"  name="otherUnionName">
-                    </div>
-                  </div>
-              </section>
+                              </select><i></i> </label>
+                </section>
+    
+              </div>
+              <div class="row">
+                 <section class="col col-6 otherUnionName" <?= $usermeta['unionName']=='OTHER' ?"style='display: block;'":"style='display: none;'"; ?> >
+                  <label class="input">
+                   <input type="text" id="otherUnionName" class="form-control" placeholder="<?= lang('otherUnionName'); ?>" value="<?= $usermeta['otherUnionName']; ?>"  name="otherUnionName">
+                  </label>
+                </section>
+              </div>
 
            <!--    <div class="row">
                <section class="col col-6">

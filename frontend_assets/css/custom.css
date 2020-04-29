@@ -61,12 +61,7 @@
     border-radius: 12% !important;
     transition: 0.4s ease;
 }
-@media (max-width: 767px){
-	#intro .owl-nav div::after {
-		line-height: 48px;
-		font-size: 22px;
-	}
-}
+
 .invalid {
     color:red;
 }
@@ -81,6 +76,17 @@
 {
  width: 100%;
  overflow: auto;
+}
+@media (min-width: 1440px) { 
+
+    .intro_text{ 
+        padding: 27% 0;   }
+ }
+ @media (max-width: 767px){
+    #intro .owl-nav div::after {
+        line-height: 48px;
+        font-size: 22px;
+    }
 }
 @media only screen and (max-width: 732px) and (min-width:641px){
  .scrollbar-model{

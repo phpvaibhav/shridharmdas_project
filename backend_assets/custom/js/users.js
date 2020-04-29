@@ -183,129 +183,8 @@ $("#user-add-form").validate({// Rules for form validation
     error.insertAfter(element.parent());
   }
 });
-$(document).ready(function(){
-    $('#country').on('change',function(){
-        var countryID = $(this).val();
-        if(countryID){
-            $.ajax({
-                type:'POST',
-                url:base_url+'home/countryToState',
-                data:{'country':countryID},
-                success:function(html){
-                    $('#state').html(html);
-                    $("#state option[value='"+localStorage.state+"']").prop('selected', true);
-                    //$('#city').html('<option value="">Select state first</option>'); 
-                }
-            }); 
-        }else{
-            $('#state').html('<option value="">Select country first</option>');
-           // $('#city').html('<option value="">Select state first</option>'); 
-        }
-    });
-    $('#ocountry').on('change',function(){
-        var countryID = $(this).val();
-        if(countryID){
-            $.ajax({
-                type:'POST',
-                url:base_url+'home/countryToState',
-                data:{'country':countryID},
-                success:function(html){
-                    $('#ostate').html(html);
-                   // $('#city').html('<option value="">Select state first</option>'); 
-                }
-            }); 
-        }else{
-            $('#ostate').html('<option value="">Select country first</option>');
-           // $('#city').html('<option value="">Select state first</option>'); 
-        }
-    });
-      $("#country").trigger("change");
-      $("#ocountry").trigger("change");
-/*    $('#state').on('change',function(){
-        var stateID = $(this).val();
-        if(stateID){
-            $.ajax({
-                type:'POST',
-                url:base_url+'home/stateToCity',
-                data:{'state':stateID},
-                success:function(html){
-                    $('#city').html(html);
-                }
-            }); 
-        }else{
-            $('#city').html('<option value="">Select state first</option>'); 
-        }
-    });*/
-});
 
-//rember me
-$(function() {
-  if (localStorage.add_chkbx && localStorage.add_chkbx != '') {
-    $('#remember_Address').attr('checked', 'checked');
-    $('#address').val(localStorage.address);
-    $('#city').val(localStorage.city);
-    $('#zip_code').val(localStorage.zip_code);
-    $('#tehsil').val(localStorage.tehsil);
-    $('#district').val(localStorage.district);
-  } else {
-    $('#remember_Address').removeAttr('checked');
-    $('#address').val("");
-    $('#city').val("");
-    $('#zip_code').val("");
-    $('#tehsil').val("");
-    $('#district').val("");
-  }
-  $('#remember_Address').click(function() {
-    if ($('#remember_Address').is(':checked')) {
 
-      localStorage.address  = $('#address').val();
-      localStorage.city     = $('#city').val();
-      localStorage.zip_code     = $('#zip_code').val();
-      localStorage.tehsil     = $('#tehsil').val();
-      localStorage.district     = $('#district').val();
-      localStorage.country     = $('#country').val();
-      localStorage.state     = $('#state').val();
-      localStorage.add_chkbx    = $('#remember_Address').val();
-
-    } else {
-      localStorage.address  = "";
-      localStorage.city     =  "";
-      localStorage.zip_code     =  "";
-      localStorage.tehsil     =  "";
-      localStorage.district     = "";
-      localStorage.country     =  "";
-      localStorage.state     =  "";
-      localStorage.add_chkbx    =  "";
-    }
-  });
-    $('#Same_Address').click(function() {
-    if ($('#Same_Address').is(':checked')) {
-
-          $('#oaddress').val($('#address').val());
-          $('#ocity').val($('#city').val());
-          $('#ozip_code').val($('#zip_code').val());
-          $('#otehsil').val($('#tehsil').val());
-          $('#odistrict').val($('#district').val());
-          $("#ostate option[value='"+($('#state').val())+"']").prop('selected', true);
-    } else {
-    //gfgg
-    }
-  });    
-    $('#Same_AddressA').click(function() {
-    if ($('#Same_AddressA').is(':checked')) {
-
-          $('#oaddressu').val($('#addressu').val());
-          $('#ocityu').val($('#cityu').val());
-          $('#ozip_codeu').val($('#zip_codeu').val());
-          $('#otehsilu').val($('#tehsilu').val());
-          $('#odistrictu').val($('#districtu').val());
-          $("#ostateu option[value='"+($('#stateu').val())+"']").prop('selected', true);
-    } else {
-    //gfgg
-    }
-  });
-});
-//rember me
 
 
 //Update
@@ -419,63 +298,6 @@ $("#user-update-form").validate({// Rules for form validation
 });
 
 
-//Address 
-$(document).ready(function(){
-    $('#countryu').on('change',function(){
-        var countryID = $(this).val();
-        if(countryID){
-            $.ajax({
-                type:'POST',
-                url:base_url+'home/countryToState',
-                data:{'country':countryID},
-                success:function(html){
-                    $('#stateu').html(html);
-                    $("#stateu option[value='"+$('#st').val()+"']").prop('selected', true);
-                    //$('#city').html('<option value="">Select state first</option>'); 
-                }
-            }); 
-        }else{
-            $('#stateu').html('<option value="">Select country first</option>');
-           // $('#city').html('<option value="">Select state first</option>'); 
-        }
-    });
-    $('#ocountryu').on('change',function(){
-        var countryID = $(this).val();
-        if(countryID){
-            $.ajax({
-                type:'POST',
-                url:base_url+'home/countryToState',
-                data:{'country':countryID},
-                success:function(html){
-                    $('#ostateu').html(html);
-                      $("#ostateu option[value='"+$('#ost').val()+"']").prop('selected', true);
-                   // $('#city').html('<option value="">Select state first</option>'); 
-                }
-            }); 
-        }else{
-            $('#ostateu').html('<option value="">Select country first</option>');
-           // $('#city').html('<option value="">Select state first</option>'); 
-        }
-    });
-      $("#countryu").trigger("change");
-      $("#ocountryu").trigger("change");
-/*    $('#state').on('change',function(){
-        var stateID = $(this).val();
-        if(stateID){
-            $.ajax({
-                type:'POST',
-                url:base_url+'home/stateToCity',
-                data:{'state':stateID},
-                success:function(html){
-                    $('#city').html(html);
-                }
-            }); 
-        }else{
-            $('#city').html('<option value="">Select state first</option>'); 
-        }
-    });*/
-});
-//Address 
 
 
 $("#user-address-form").validate({// Rules for form validation
@@ -492,26 +314,40 @@ $("#user-address-form").validate({// Rules for form validation
 
       rules : {
     
-      address    : {
-        required : true
-      },  
-      city    : {
-        required : true
-      },  
-      zip_code    : {
-        required : true
-      },  
-      tehsil    : {
-        required : true
-      },  
-      district    : {
-        required : true
-      },
+   address    : {
+          required : true
+        },  
+        city    : {
+          required : true
+        },  
+        zip_code    : {
+          required : true
+        },  
+        tehsil    : {
+          required : true
+        },  
+        district    : {
+          required : true
+        },
+        paddress    : {
+          required : true
+        },  
+        pcity    : {
+          required : true
+        },  
+        pzip_code    : {
+          required : true
+        },  
+        ptehsil    : {
+          required : true
+        },  
+        pdistrict    : {
+          required : true
+        },
     },
     // Messages for form validation
     messages : {
- 
-          address : {
+  address : {
             required : Please_select_your_address
           },  
           city : {
@@ -520,10 +356,27 @@ $("#user-address-form").validate({// Rules for form validation
           zip_code : {
             required : Please_select_your_zip_code
           },
-           tehsil : {
+          tehsil : {
             required : Please_select_your_tehsil
           },
-           district : {
+          district : {
+            required : Please_select_your_district
+          },
+
+                  
+          paddress : {
+            required : Please_select_your_address
+          },  
+          pcity : {
+            required : Please_select_your_city
+          }, 
+          pzip_code : {
+            required : Please_select_your_zip_code
+          },
+          ptehsil : {
+            required : Please_select_your_tehsil
+          },
+          pdistrict : {
             required : Please_select_your_district
           },
           
@@ -571,4 +424,86 @@ $("#user-address-form").validate({// Rules for form validation
   errorPlacement : function(error, element) {
     error.insertAfter(element.parent());
   }
+});
+
+function zipCodetoData(e){
+    var value = $(e).val();
+    if(value.length==6){
+         var tag = $(e).data('set');
+      var postName  = '#'+tag+'postName';
+      var city      = '#'+tag+'city';
+      var tehsil      = '#'+tag+'tehsil';
+      var district      = '#'+tag+'district';
+      var state      = '#'+tag+'state';
+      var country      = '#'+tag+'country';
+     // alert(postName +' '+city+' '+tehsil+' '+district+' '+state);
+        /*set*/
+        $.ajax({
+                  url: base_url+'home/pincodeajax',
+                  cache: false,
+                  data: {'pinCode':value},
+                  type: "POST",
+                  beforeSend: function(){
+                      // Show image container
+                    //  $("#loader").show();
+                  },
+                  success: function(result){
+                    if(result.status){
+                        //  $('#pinCodeRes0').empty().append(result.res0);
+                        $(postName).empty().append(result.res1);
+                        // $('#pinCodeRes2').empty().append(result.res2);
+                        $(tehsil).empty().val(result.res3);
+                        $(city).empty().val(result.res3);
+                        $(district).empty().val(result.res4);
+                        $(state).empty().val(result.res5);
+                        $(country).empty().val('India');
+                        if(tag=='p'){
+                          $("#ppostName option[value='"+($('#postName').val())+"']").prop('selected', true);
+                        }
+                        if(tag=='o'){
+                          $("#opostName option[value='"+($('#ppostName').val())+"']").prop('selected', true);
+                        } 
+                       /* if(tag=='o'){
+                          setTimeout(function(){$("#postName option[value='"+localStorage.postName+"']").prop('selected', true); },3000);
+                        }*/
+
+                    }else{
+                     //   toastr.error(result.resx, 'Alert!', {timeOut: 4000});
+                    }
+                   
+                  },
+                  complete:function(result){
+                      // Hide image container
+                    //  $("#loader").hide();
+                  },
+                  error: function(result) {
+                      console.log(result);
+                  }
+              });
+        /*set*/
+    }//End if
+}//End FUnction
+    $('#Same_AddressP').click(function() {
+    if ($('#Same_AddressP').is(':checked')) {
+
+          $('#paddress').val($('#address').val());
+          $('#pcity').val($('#city').val());
+          $('#pzip_code').val($('#zip_code').val());
+          $('#ptehsil').val($('#tehsil').val());
+          $('#pcountry').val($('#country').val());
+          $('#pstate').val($('#state').val());
+          $('#pdistrict').val($('#district').val());
+
+          $("#pzip_code").trigger("keyup");
+          setTimeout(function(){$("#ppostName option[value='"+($('#postName').val())+"']").prop('selected', true); },3000);
+          
+    } else {
+    //gfgg
+    }
+  });
+$(document).ready(function(){
+        
+    $("#zip_code").trigger("keyup");
+    $("#pzip_code").trigger("keyup");
+        
 });

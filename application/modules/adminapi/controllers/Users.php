@@ -279,19 +279,24 @@ class Users extends Common_Admin_Controller{
             $data_val['parentName']        = $this->post('parentName'); 
             $data_val['familyHeadName']        = $this->post('familyHeadName'); 
             $data_val['fullName']        = $this->post('firstName').' '.$this->post('lastName'); 
-            //$data_val['dob']             = date('Y-m-d',strtotime($this->post('dob'))); 
+            $data_val['gender']        = $this->post('gender'); 
+            $data_val['maritalStatus']        = $this->post('maritalStatus'); 
+            $data_val['dob']             = date('Y-m-d',strtotime($this->post('dob'))); 
 
 
             $user_meta['actualFirstName']       = $this->post('actualFirstName');
             $user_meta['actualLastName']        = $this->post('actualLastName');
-             $data_val['actualFullName']        = $this->post('actualFirstName').' '.$this->post('actualLastName');
+             $user_meta['actualFullName']        = $this->post('actualFirstName').' '.$this->post('actualLastName');
             $user_meta['hindiFirstName']        = $this->post('hindiFirstName');
             $user_meta['hindiLastName']         = $this->post('hindiLastName');
-            $data_val['hindiFullName']        = $this->post('hindiFirstName').' '.$this->post('hindiLastName');
+            $user_meta['hindiFullName']        = $this->post('hindiFirstName').' '.$this->post('hindiLastName');
             $user_meta['actualParentName']      = $this->post('actualParentName');
             $user_meta['actualFamilyHeadName']  = $this->post('actualFamilyHeadName');
             $user_meta['hindiParentName']       = $this->post('hindiParentName');
             $user_meta['hindiFamilyHeadName']   = $this->post('hindiFamilyHeadName');
+            $user_meta['hindiFamilyHeadName']   = $this->post('hindiFamilyHeadName');
+            $user_meta['unionName']             = $this->post('unionName');
+            $user_meta['otherUnionName']        = $this->post('otherUnionName');
          
             $id     = decoding($this->post('id'));
          
@@ -331,43 +336,38 @@ class Users extends Common_Admin_Controller{
             $response = array('status' => FAIL, 'message' => strip_tags(validation_errors()));  
         }else{
          
-            $country        = $this->post('country'); 
-            $state          = $this->post('state'); 
-            $ocountry       = $this->post('ocountry'); 
-            $ostate         = $this->post('ostate'); 
-            $oaddress       = $this->post('oaddress');
-           // pr( $data_val);
-            $meta_val['addressType']         = 'Home'; 
-            $meta_val['address']         = $this->post('address'); 
-            $meta_val['country']         = isset($country) ? $country :""; 
-            $meta_val['state']           = isset($state) ? $state :""; 
-            $meta_val['city']            = $this->post('city'); 
-            $meta_val['tehsil']          = $this->post('tehsil'); 
-            $meta_val['district']        = $this->post('district'); 
-            $meta_val['zip_code']        = $this->post('zip_code'); 
-               //pr($meta_val);
-            if(isset($oaddress) && !empty($oaddress)){
-                $ometa_val['address']         = $this->post('oaddress'); 
-                $ometa_val['addressType']         = 'Office'; 
-                $ometa_val['country']         = isset($ocountry) ? $ocountry :""; 
-                $ometa_val['state']           = isset($ostate) ? $ostate :""; 
-                $ometa_val['city']            = $this->post('ocity'); 
-                $ometa_val['tehsil']          = $this->post('otehsil'); 
-                $ometa_val['district']        = $this->post('odistrict'); 
-                $ometa_val['zip_code']        = $this->post('ozip_code'); 
-               //pr($meta_val);
-            }
+            
+                $add_meta['zip_code']       = $this->post('zip_code');
+                $add_meta['address']        = $this->post('address');
+                $add_meta['city']           = $this->post('city');
+                $add_meta['tehsil']         = $this->post('tehsil');
+                $add_meta['district']       = $this->post('district');
+                $add_meta['country']        = $this->post('country');
+                $add_meta['state']          = $this->post('state');
+                $add_meta['postName']       = $this->post('postName');
+                $add_meta['addressType']    = 'Current';
+
+                
+                $add_meta1['zip_code']      = $this->post('pzip_code');
+                $add_meta1['address']       = $this->post('paddress');
+                $add_meta1['city']          = $this->post('pcity');
+                $add_meta1['tehsil']        = $this->post('ptehsil');
+                $add_meta1['district']      = $this->post('pdistrict');
+                $add_meta1['country']       = $this->post('pcountry');
+                $add_meta1['state']         = $this->post('pstate');
+                $add_meta1['postName']      = $this->post('ppostName');
+                $add_meta1['addressType']   = 'Permanent';
         
             $addressId      = $this->post('addressId');
-            $oaddressId      = $this->post('oaddressId');
+            $oaddressId      = $this->post('paddressId');
          
             $isExistH            =  $this->common_model->is_data_exists('addresses',array('addressId'=>$addressId));
             $isExistO            =  $this->common_model->is_data_exists('addresses',array('addressId'=>$oaddressId));
             if($isExistH){
-                $result = $this->common_model->updateFields('addresses',$meta_val,array('addressId'=>$addressId));
+                $result = $this->common_model->updateFields('addresses',$add_meta,array('addressId'=>$addressId));
             }
             if($isExistO){
-                $result = $this->common_model->updateFields('addresses',$ometa_val,array('addressId'=>$oaddressId));
+                $result = $this->common_model->updateFields('addresses',$add_meta1,array('addressId'=>$oaddressId));
             }
             if($result){
                 $status = SUCCESS;

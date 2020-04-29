@@ -63,9 +63,16 @@ $("#user-add-form").validate({// Rules for form validation
       maritalStatus    : {
         required : true
       },  
+
       contactNumber    : {
         required : true
-      },  
+      }, 
+        unionName    : {
+          required : true
+        },
+        otherUnionName    : {
+          required : true
+        }, 
      aadharNumber    : {
        required : true
      }
@@ -117,12 +124,17 @@ $("#user-add-form").validate({// Rules for form validation
           }, 
           gender : {
             required : Please_select_your_gender
-          }, maritalStatus : {
+          },
+           maritalStatus : {
             required : Please_select_your_marital_status
           }, 
-          contactNumber : {
-            required : Please_select_your_contact_number
+           unionName : {
+            required : Please_select_your_unionName
+          },
+            otherUnionName : {
+            required : This_option_field_is_required
           }, 
+        
            aadharNumber : {
             required : Please_select_your_aadhar_number
           },      
@@ -171,4 +183,11 @@ $("#user-add-form").validate({// Rules for form validation
     error.insertAfter(element.parent());
   }
 });
+$("#unionName").change(function(){
+  if($(this).val()=='OTHER'){
+     $(".otherUnionName").css("display", "block");
+  }else{
+     $(".otherUnionName").css("display", "none");
+  }
+}); 
 

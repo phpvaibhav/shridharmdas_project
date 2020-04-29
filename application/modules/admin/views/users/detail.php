@@ -21,10 +21,10 @@
 }
   </style>
 <div class="row">
-<!-- 	<div class="col-sm-12 ">
+<div class="col-sm-12 ">
 						<a href="<?= base_url().'edit-user/'.encoding($info['id']); ?>" class="btn btn-labeled btn-danger pull-right"> <span class="btn-label"><i class="glyphicon glyphicon-edit"></i></span> Edit </a>
 						<hr>
-					</div> -->
+					</div>
 	<div class="col-sm-12">
 
 
@@ -476,69 +476,74 @@
 											<div class="tab-pane fade" id="a2">
 												<div class="row">
 													<div class="col-xs-12 col-sm-12">	
-														<center><strong>Maintenance -2</strong></center>
-														<!-- 	<form id="user-address-form" class="smart-form" novalidate="novalidate" action="users/addressupdate" novalidate="novalidate" autocomplete="off">
+													<!-- 	<center><strong>Maintenance -2</strong></center> -->
+														<form id="user-address-form" class="smart-form" novalidate="novalidate" action="users/addressupdate" novalidate="novalidate" autocomplete="off">
 														            <header>
              <?= lang('home_address'); ?>
             </header>
             <fieldset>
               <section>
-             
-                <label for="address2" class="input">
-                  <input type="text" name="address" id="addressu" value="<?= $addresses[0]->address; ?>" placeholder=" <?= lang('Address'); ?>">
+             	<label for="zip_code"><?= lang('zip_code'); ?><span>*</span></label>
+                <label for="zip_code" class="input">
+                   <input type="text" class="form-control number-only" name="zip_code" maxlength="6" size="6" id="zip_code" placeholder="<?= lang('zip_code'); ?>" onkeyup="zipCodetoData(this);" data-set=""; value="<?= $addresses[0]->zip_code; ?>"   >
+                </label>
+              </section>
+				<section>
+             	 <label for="address"><?= lang('Address'); ?><span>*</span></label>
+                <label for="address" class="input">
+                	<input type="hidden" name="addressId" value="<?= $addresses[0]->addressId; ?>">
+                	<input type="hidden" name="paddressId" value="<?= $addresses[1]->addressId; ?>">
+                  <input type="text" name="address" id="address" value="<?= $addresses[0]->address; ?>" placeholder=" <?= lang('Address'); ?>"  maxlength="100" size="100">
                 </label>
               </section>
 
               <div class="row">
                 
                 <section class="col col-6">
-              
-                    <label class="input">
-                    <input type="text" name="city" id="cityu" value="<?= $addresses[0]->city; ?>" placeholder="<?= lang('City'); ?>">
-                  </label>
+                	 <label for="postName"><?= lang('postName'); ?><span>*</span></label>
+                 <label class="select">
+                    <select  class="form-control" name="postName" id="postName">
+                              <option value="0" selected="" disabled=""><?= lang('postName'); ?></option>
+                              </select><i></i></label>
+                 
                 </section>
                 <section class="col col-6">
+                	 <label for="city"><?= lang('City'); ?><span>*</span></label>
                   <label class="input">
-                    <input type="text" name="zip_code" id="zip_codeu" value="<?= $addresses[0]->zip_code; ?>" placeholder="<?= lang('zip_code'); ?>" class="number-only">
+                    <input type="text" class="form-control" name="city" id="city" placeholder="<?= lang('City'); ?>" value="<?= $addresses[0]->city; ?>" maxlength="30" size="30">
                   </label>
                 </section>
               </div>
                <div class="row">
                 
                 <section class="col col-6">
-              
+              		<label for="tehsil"><?= lang('Tehsil'); ?><span>*</span></label>
                     <label class="input">
-                    <input type="text" name="tehsil" id="tehsilu"  value="<?= $addresses[0]->tehsil; ?>" placeholder="<?= lang('Tehsil'); ?>">
+                    <input type="text" class="form-control" name="tehsil" id="tehsil" placeholder="<?= lang('Tehsil'); ?>"  value="<?= $addresses[0]->tehsil; ?>" maxlength="30" size="30">
                   </label>
                 </section>
                 
                 <section class="col col-6">
-              
+              		 <label for="district"><?= lang('District'); ?><span>*</span></label>
                     <label class="input">
-                    <input type="text" name="district" id="districtu"  value="<?= $addresses[0]->district; ?>" placeholder="<?= lang('District'); ?>">
+                    <input type="text" class="form-control" name="district" id="district" placeholder="<?= lang('District'); ?>" value="<?= $addresses[0]->district; ?>" maxlength="30" size="30">
                   </label>
                 </section>
                
               </div>
               
               <div class="row">
-                <section class="col col-6">
-                  <label class="select">
-                    <select name="country"  class="countries" id="countryu">
-                      <option value="0" selected="" disabled=""><?= lang('Country'); ?></option>
-                      <?php if(!empty($countries)):
-                        foreach ($countries as $k => $country) {?>
-                          <option value="<?=  $country->country_name; ?>" <?=  ($country->country_id==100)?  "selected='selected'" :""; ?> ><?=  $country->country_name; ?></option>
-                      <?php } endif; ?>
-              
-                    </select> <i></i> </label>
+                 <section class="col col-6">
+              		 <label for="state"><?= lang('State'); ?><span>*</span></label>
+                    <label class="input">
+                    <input type="text" class="form-control" name="state" id="state" placeholder="<?= lang('State'); ?>" value="<?= $addresses[0]->state; ?>" maxlength="30" size="30">
+                  </label>
                 </section>
-                <section class="col col-6">
-                  <label class="select">
-                    <select  class="states" name="state" id="stateu">
-                      <option value="0" selected="" disabled=""><?= lang('State'); ?></option>
-              
-                    </select> <i></i> </label>
+               <section class="col col-6">
+              		<label for="country"><?= lang('Country'); ?><span>*</span></label>
+                    <label class="input">
+                    <input type="text" class="form-control" name="country"  id="country" placeholder="<?= lang('Country'); ?>" value="<?= $addresses[0]->country; ?>" value="India" maxlength="30" size="30">
+                  </label>
                 </section>
               
               
@@ -548,87 +553,89 @@
             <header>
                 <div class="row">
                    <section class="col col-6">
-                 <?= lang('office_address'); ?>
+                 <?= lang('permanent_address'); ?>
                   </section>  
                   <section class="col col-6">
                   <label class="checkbox pull-right">
-                    <input type="checkbox" id="Same_AddressA" name="remember">
+                    <input type="checkbox" id="Same_AddressP" name="remember">
                     <i></i>Same as above</label>
                   </section>
               </div>
              
             </header>
-            <fieldset>
+                     <fieldset>
               <section>
-              	<input type="hidden" id="st" value="<?= $addresses[0]->state; ?>" >
-              	<input type="hidden" id="ost" value="<?= $addresses[1]->state; ?>" >
-              	<input type="hidden" name="addressId" value="<?= $addresses[0]->addressId; ?>" >
-              	<input type="hidden" name="oaddressId" value="<?= $addresses[1]->addressId; ?>" >
-                <label for="address2" class="input">
-                  <input type="text" value="<?= $addresses[1]->address; ?>" name="oaddress" id="oaddressu" placeholder=" <?= lang('Address'); ?>">
+             	<label for="pzip_code"><?= lang('zip_code'); ?><span>*</span></label>
+                <label for="pzip_code" class="input">
+                   <input type="text" class="form-control number-only" name="pzip_code" maxlength="6" size="6" id="pzip_code" placeholder="<?= lang('zip_code'); ?>" onkeyup="zipCodetoData(this);" data-set="p" value="<?= $addresses[1]->zip_code; ?>"   >
+                </label>
+              </section>
+				<section>
+             	 <label for="paddress"><?= lang('Address'); ?><span>*</span></label>
+                <label for="paddress" class="input">
+                  <input type="text" name="paddress" id="paddress" value="<?= $addresses[1]->address; ?>" placeholder=" <?= lang('Address'); ?>"  maxlength="100" size="100">
                 </label>
               </section>
 
               <div class="row">
                 
                 <section class="col col-6">
-                
-                    <label class="input">
-                    <input type="text" name="ocity" id="ocityu" value="<?= $addresses[1]->city; ?>" placeholder="<?= lang('City'); ?>">
-                  </label>
+                	 <label for="ppostName"><?= lang('postName'); ?><span>*</span></label>
+                 <label class="select">
+                    <select  class="form-control" name="ppostName" id="ppostName">
+                              <option value="0" selected="" disabled=""><?= lang('postName'); ?></option>
+                              </select><i></i></label>
+                 
                 </section>
                 <section class="col col-6">
+                	 <label for="pcity"><?= lang('City'); ?><span>*</span></label>
                   <label class="input">
-                    <input type="text" name="ozip_code" id="ozip_codeu" value="<?= $addresses[1]->zip_code; ?>"  placeholder="<?= lang('zip_code'); ?>" class="number-only">
+                    <input type="text" class="form-control" name="pcity" id="pcity" placeholder="<?= lang('City'); ?>" value="<?= $addresses[1]->city; ?>" maxlength="30" size="30">
                   </label>
                 </section>
               </div>
                <div class="row">
                 
                 <section class="col col-6">
-              
+              		<label for="ptehsil"><?= lang('Tehsil'); ?><span>*</span></label>
                     <label class="input">
-                    <input type="text" name="otehsil" id="otehsilu" value="<?= $addresses[1]->tehsil; ?>" placeholder="<?= lang('Tehsil'); ?>">
+                    <input type="text" class="form-control" name="ptehsil" id="ptehsil" placeholder="<?= lang('Tehsil'); ?>"  value="<?= $addresses[1]->tehsil; ?>" maxlength="30" size="30">
                   </label>
                 </section>
                 
                 <section class="col col-6">
-              
+              		 <label for="district"><?= lang('District'); ?><span>*</span></label>
                     <label class="input">
-                    <input type="text" name="odistrict" id="odistrictu" value="<?= $addresses[1]->district; ?>" placeholder="<?= lang('District'); ?>">
+                    <input type="text" class="form-control" name="pdistrict" id="pdistrict" placeholder="<?= lang('District'); ?>" value="<?= $addresses[1]->district; ?>" maxlength="30" size="30">
                   </label>
                 </section>
                
               </div>
               
               <div class="row">
-                <section class="col col-6">
-                  <label class="select">
-                    <select name="ocountry"  class="countries" id="ocountryu">
-                      <option value="0" selected="" disabled=""><?= lang('Country'); ?></option>
-                      <?php if(!empty($countries)):
-                        foreach ($countries as $k => $country) {?>
-                          <option value="<?=  $country->country_name; ?>" <?=  ($country->country_id==100)?  "selected='selected'" :""; ?> ><?=  $country->country_name; ?></option>
-                      <?php } endif; ?>
-              
-                    </select> <i></i> </label>
+                 <section class="col col-6">
+              		 <label for="pstate"><?= lang('State'); ?><span>*</span></label>
+                    <label class="input">
+                    <input type="text" class="form-control" name="pstate" id="pstate" placeholder="<?= lang('State'); ?>" value="<?= $addresses[1]->state; ?>" maxlength="30" size="30">
+                  </label>
                 </section>
-                <section class="col col-6">
-                  <label class="select">
-                    <select  class="states" name="ostate" id="ostateu">
-                      <option value="0" selected="" disabled=""><?= lang('State'); ?></option>
-              
-                    </select> <i></i> </label>
+               <section class="col col-6">
+              		<label for="pcountry"><?= lang('Country'); ?><span>*</span></label>
+                    <label class="input">
+                    <input type="text" class="form-control" name="pcountry"  id="pcountry" placeholder="<?= lang('Country'); ?>" value="<?= $addresses[1]->country; ?>" value="India" maxlength="30" size="30">
+                  </label>
                 </section>
+              
               
               </div>
-            </fieldset>
+          
+            </fieldset>     
             <footer>
 							<button type="submit" id="submitA" class="btn btn-primary">
 								<?= lang('Save'); ?>
 							</button>
 						</footer>
-        </form> -->
+        </form> 
 														<!-- <center><strong>Maintenance -2</strong></center> -->
 													</div>
 												</div>
@@ -670,20 +677,33 @@
 </div>
 <!-- end row-->
 <!-- END ROW -->
-<script type="text/javascript">
-  var Please_select_your_first_name ="<?= lang('Please_select_your_first_name');?>";
-  var Please_select_your_last_name ="<?= lang('Please_select_your_last_name');?>";
-  var Please_select_your_father_name_husband_name ="<?= lang('Please_select_your_father_name_husband_name');?>";
-  var Please_select_your_date_of_birth ="<?= lang('Please_select_your_date_of_birth');?>";
-  var Please_select_your_gender ="<?= lang('Please_select_your_gender');?>";
-  var Please_select_your_marital_status ="<?= lang('Please_select_your_marital_status');?>";
-  var Please_select_your_contact_number ="<?= lang('Please_select_your_contact_number');?>";
-  var Please_select_your_aadhar_number ="<?= lang('Please_select_your_aadhar_number');?>";
-  var Please_select_your_address ="<?= lang('Please_select_your_address');?>";
-  var Please_select_your_city ="<?= lang('Please_select_your_city');?>";
-  var Please_select_your_zip_code ="<?= lang('Please_select_your_zip_code');?>";
-  var Please_select_your_tehsil ="<?= lang('Please_select_your_tehsil');?>";
-  var Please_select_your_district ="<?= lang('Please_select_your_district');?>";
-  var Good_job ="<?= lang('Good_job');?>";
-  var Your_form_submitted_successfully ="<?= lang('Your_form_submitted_successfully');?>";
+ <script type="text/javascript">
+  var Please_select_your_full_name              = "<?= lang('Please_select_your_full_name');?>";
+  var Please_select_your_first_name             =  "<?= lang('Please_select_your_first_name');?>";
+  var Please_select_your_last_name              = "<?= lang('Please_select_your_last_name');?>";
+  var Please_select_your_father_name_husband_name = "<?= lang('Please_select_your_father_name_husband_name');?>";
+  var Please_select_your_date_of_birth            ="<?= lang('Please_select_your_date_of_birth');?>";
+  var Please_select_your_gender                   = "<?= lang('Please_select_your_gender');?>";
+  var Please_select_your_marital_status           = "<?= lang('Please_select_your_marital_status');?>";
+  var Please_select_your_contact_number           = "<?= lang('Please_select_your_contact_number');?>";
+  var Please_select_your_aadhar_number            = "<?= lang('Please_select_your_aadhar_number');?>";
+  var Please_select_your_address                  = "<?= lang('Please_select_your_address');?>";
+  var Please_select_your_city                     = "<?= lang('Please_select_your_city');?>";
+  var Please_select_your_zip_code                 = "<?= lang('Please_select_your_zip_code');?>";
+  var Please_select_your_tehsil                   = "<?= lang('Please_select_your_tehsil');?>";
+  var Please_select_your_district                 = "<?= lang('Please_select_your_district');?>";
+  var Good_job                                    = "<?= lang('Good_job');?>";
+  var Your_form_submitted_successfully            = "<?= lang('Your_form_submitted_successfully');?>";
+  var Please_select_your_front_image              = "<?= lang('Please_select_your_front_image');?>";
+  var Please_select_your_back_image               = "<?= lang('Please_select_your_back_image');?>";
+  var Please_select__image_type                   = "<?= lang('Please_select__image_type');?>";
+  var Please_select_your_familyHeadName           = "<?= lang('Please_select_your_familyHeadName');?>";
+  var Please_enter_at_least_12_digit_aadhaar_number = "<?= lang('Please_enter_at_least_12_digit_aadhaar_number');?>";
+  var Please_enter_at_least_10_digit_phone_number   = "<?= lang('Please_enter_at_least_10_digit_phone_number');?>";
+  var Please_select_your_unionName                  = "<?= lang('Please_select_your_unionName');?>";
+  var This_option_field_is_required                 = "<?= lang('This_option_field_is_required');?>";
+  var This_aadhar_number_is_already_taken                 = "<?= lang('This_aadhar_number_is_already_taken');?>";
+  var Please_select_your_Occupation ="<?= lang('Please_select_your_Occupation');?>";
+var Please_select_your_religious_Knowledge ="<?= lang('Please_select_your_religious_Knowledge');?>";
+var Please_select_your_Identity_image ="<?= lang('Please_select_your_Identity_image');?>";
 </script>
