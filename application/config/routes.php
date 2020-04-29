@@ -58,6 +58,8 @@ $route['profile/(:any)'] 			= 'admin/profile/userDetail/$1';
 $route['change_password/(:any)'] 	= 'admin/profile/changePassword/$1';
 $route['users'] 					= 'admin/users';
 $route['add-user'] 					= 'admin/users/add';
+$route['user-excel'] 					= 'admin/users/userexcel';
+
 $route['edit-user/(:any)'] 			= 'admin/users/edit';
 $route['user-detail/(:any)'] 		= 'admin/users/detail/$1';
 $route['preceptor'] 				= 'admin/preceptor';

@@ -133,7 +133,7 @@ class Webapi extends Common_Service_Controller{
                         if(in_array($file_extension,$valid_ext))
                         {  
                             // Compress Image
-                            $compressedImage = $this->compressedImage($_FILES['identityImage']['tmp_name'],$location,10);
+                            $compressedImage = $this->compressedImage($_FILES['identityImage']['tmp_name'],$location,8);
                             
                             if($compressedImage)
                             { 

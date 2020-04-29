@@ -77,10 +77,9 @@
 														
 													</div>
 
-													<div class="col-md-2"><button type="submit" name="import" class="btn btn-primary">Export</button></div>
-												<div class="col-md-4 text-right">
-													<a href="<?= base_url('user-excel'); ?>"> Advance Export</a>
-						<!-- <label class="select">
+											
+												<div class="col-md-4 text-center">
+						<label class="select">
 						<select name="unionName"  class="form-control select2-" id="unionName_1">
 						<option value="" selected="" disabled=""><?= lang('Union').' '.lang('Name'); ?></option>
 						<?php if(!empty($unionList)):
@@ -88,8 +87,9 @@
 						<option value="<?=  $union; ?>"  ><?=  $union; ?></option>
 						<?php } endif; ?>
 
-						</select> <i></i> </label> -->
+						</select> <i></i> </label>
 													</div> 
+															<div class="col-md-2"><button type="submit" name="import" class="btn btn-primary">Export</button></div>
 												</div>
 
       </form>
@@ -97,38 +97,7 @@
 		
 	</div>
 <?php endif; ?>
-						<div class="table-responsive">
-							<table class="table table-striped table-bordered table-hover dataTables-example-list" width="100%" data-list-url = "adminapi/users/list" data-id ="" data-no-record-found = "<?= lang('No_Record_found'); ?>" >
-								<thead>			                
-									<tr>
-										<th data-hide="phone">ID</th>
-										<th data-hide="phone">Full Name</th>
-										<th data-hide="phone">S/O|W/O</th>
-										<th data-hide="phone">Family Head</th>
-										<th data-hide="phone">Shree Shangh</th>
-										<th data-hide="phone">Contact Number</th>
-										<th data-hide="phone">Date Of Birth</th>
-										<th data-hide="phone,tablet">Status</th>
-										<th data-hide="phone,tablet">Approval</th>
-										<th data-hide="phone,tablet">Action</th>
-									</tr>
-								</thead>
-								<tbody>			
-								</tbody>
-								<!-- <tfoot>
-									<tr>
-										<th data-hide="phone">ID</th>
-										<th data-hide="phone">Full Name</th>
-										<th data-hide="phone">Aadhar Number</th>
-										<th data-hide="phone">Contact Number</th>
-										<th data-hide="phone">Gender</th>
-										<th data-hide="phone,tablet">Status</th>
-										<th data-hide="phone,tablet">Approval</th>
-										<th data-hide="phone,tablet">Action</th>
-									</tr>
-								</tfoot> -->
-							</table>
-						</div>
+
 					</div>
 					<!-- end widget content -->
 				</div>

@@ -18,17 +18,16 @@ data_list.DataTable({
     initComplete: function () {
       $('.dataTables_filter input[type="search"]').css({ 'height': '32px'});
     },
-       // Sets the row-num-selection "Show %n entries" for the user
-        "lengthMenu": [ 50, 100, 200, 500, 1000 ], 
-        
-        // Set the default no. of rows to display
-        "oPageLength": 50 ,
+    // Sets the row-num-selection "Show %n entries" for the user
+    "lengthMenu": [ 50, 100, 200, 500, 1000 ],     
+    // Set the default no. of rows to display
+    "oPageLength": 50 ,
     // Load data for the table's content from an Ajax source
     "ajax": {
       "url"     : base_url+$(data_list).data('list-url'),
       "type"    : "POST",
       "dataType": "json",
-      "data"    : { 'id':$(data_list).data('id')},
+      "data"    : { 'id':$(data_list).data('id'),'unionName':$('#unionName_1').val()},
       "headers" : { 'authToken':authToken},
       "dataSrc" : function (jsonData) {
         return jsonData.data;
@@ -37,9 +36,15 @@ data_list.DataTable({
     //Set column definition initialisation properties.
   "columnDefs": [
     { orderable: false, targets: -1 },    
-  ]// ,dom: 'lBfrtip',
+  ]
+  // ,dom: 'lBfrtip',
         //  buttons: [
              //  'excel',  'csv',
         //  ],
           //"lengthMenu": [[10, 25, 50, -1], [10, 25, 50, "All"]]
 });
+
+
+  $('#unionName_1').change(function(){
+   $('.dataTables-example-list').DataTable().ajax.reload();
+  });
