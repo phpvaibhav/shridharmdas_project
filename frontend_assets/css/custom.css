@@ -76,7 +76,7 @@
  width: 100%;
  overflow: auto;
 }
-/*@media only screen and (max-width: 1920px) and (min-width:1610px){
+@media only screen and (max-width: 1920px) and (min-width:1610px){
     .intro_text{ 
         padding: 35% 0 !important;   }
 }
@@ -92,7 +92,7 @@
  @media only screen and (max-width: 1439px) and (min-width:1366px){
     .intro_text{ 
         padding: 27% 0 !important;   }
- }*/
+ }
  @media (max-width: 767px){
     #intro .owl-nav div::after {
         line-height: 48px;
