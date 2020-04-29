@@ -1,8 +1,4 @@
 
-var base_url  = $('body').data('base-url'); // Base url
-var authToken = $('body').data('auth-url'); // Base url
-var errorClass    = 'invalid';
-var errorElement  = 'em';
 $("#contactus-form").validate({// Rules for form validation
     errorClass    : errorClass,
     errorElement  : errorElement,
@@ -18,6 +14,13 @@ $("#contactus-form").validate({// Rules for form validation
       fullName    : {
         required : true
       }, 
+      email : {
+      required  : true,
+      email     : true
+      },
+      message : {
+      required  : true,       
+      },
     
     },
     // Messages for form validation
@@ -25,6 +28,14 @@ $("#contactus-form").validate({// Rules for form validation
       fullName : {
             required : 'Please enter your full name'
           }, 
+      email : {
+      required  : 'Please enter email address',
+      email     : 'Please enter a valid email address'
+      },
+      message : {
+      required : 'Please enter your message',
+
+      }, 
 
   },
   // Ajax form submition
@@ -47,11 +58,11 @@ $("#contactus-form").validate({// Rules for form validation
             data            : post_data,
             cache           : false,
             beforeSend      : function() {
-             // preLoadshow(true);
+              preLoadshow(true);
               $('#submit').prop('disabled', true);  
             },     
             success         : function (res) {
-             // preLoadshow(false);
+              preLoadshow(false);
               setTimeout(function(){  $('#submit').prop('disabled', false); },4000);
               if(res.status=='success'){
                 //swal(Good_job,Your_form_submitted_successfully, "success");

@@ -48,18 +48,18 @@
 					</div>
 					<div class="col-md-6">
 						<div class="form_wrap">
-							<form method="post" id="contactus-form" novalidate="novalidate" action="contactus" novalidate="novalidate" autocomplete="off">
+							<form method="post" id="contactus-form" novalidate="novalidate" action="contactus_submit" novalidate="novalidate" autocomplete="off">
 								<div class="form-group">
 									<label>Your Full Name</label>
-									<input type="text"  class="form-control" name="fullName">
+									<input type="text"  class="form-control" name="fullName"  maxlength="30" size="30" placeholder="Enter Full Name">
 								</div>
 								<div class="form-group">
 									<label>Your Email</label>
-									<input type="email" class="form-control" name="email">
+									<input type="email" class="form-control" name="email"  maxlength="30" size="30" placeholder="Enter Email">
 								</div>
 								<div class="form-group">
 									<label>Your Message</label>
-									<textarea name="message" cols="45" rows="3" class="form-control"></textarea>
+									<textarea name="message" cols="45" rows="3" class="form-control"  maxlength="200" size="200" placeholder="Enter Message"></textarea>
 								</div>
 								<div class="form-group">
 									<input class="btn btn-outline" id="submit" value="Submit" type="submit">
