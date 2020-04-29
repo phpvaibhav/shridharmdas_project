@@ -44,7 +44,7 @@ data_list.DataTable({
           //"lengthMenu": [[10, 25, 50, -1], [10, 25, 50, "All"]]
 });
 
-
+/*
   $('#unionName_1').change(function(){
    $('.dataTables-example-list').DataTable().ajax.reload();
-  });
+  });*/
