@@ -45,7 +45,7 @@
 					    		<div class="col-md-4">
 					    			<p class="text-center mb-2 mt-4 man_hading"><b>वरिष्ठ उपाध्यक्ष</b></p>
 					    			<p class="text-center mb-1">श्री चंद्रप्रकाशजी बोकड़िया, बदनावर </p>
-					    			<p class="text-center">श्री प्रकाशचंद्र जी चोरडिया, इंदौर </p>
+					    			<p class="text-center">श्री प्रकाशचंद्रजी चोरडिया, इंदौर </p>
 					    		</div>
 					    		<div class="col-md-4">
 					    			<p class="text-center mb-2 mt-4 man_hading"><b>महामंत्री</b></p>
