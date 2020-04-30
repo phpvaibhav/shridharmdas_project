@@ -275,15 +275,25 @@ public function __construct()
     else {
         $recipient = "dharmadasjanganna2020@gmail.com";
     }*/
-     $recipient = "dharmadasjanganna2020@gmail.com"; 
-     $recipient = "vaibhavsharma.otc@gmail.com"; 
+    $recipient = "vaibhavsharma.otc@gmail.com"; 
+    switch (ENVIRONMENT)
+    {
+    case 'production':
+    $recipient = "dharmadasjanganna2020@gmail.com"; 
+    break;
+
+    default:
+    $recipient = "vaibhavsharma.otc@gmail.com"; 
+    }
+
+    
     $headers  = 'MIME-Version: 1.0' . "\r\n"
     .'Content-type: text/html; charset=utf-8' . "\r\n"
     .'From: ' . $visitor_email . "\r\n";
      
     if(mail($recipient, $email_title, $visitor_message, $headers)) {
         $status = 'success';
-        $message = 'Thank you for contacting us, $visitor_name. You will get a reply within 24 hours.';
+        $message = 'Thank you for contacting us, '.$visitor_name.'. You will get a reply within 24 hours.';
       
     } else {
       
