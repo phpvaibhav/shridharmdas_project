@@ -51,7 +51,7 @@ class Users extends Common_Admin_Controller{
                //pr($meta_val);
              if(isset($oaddress) && !empty($oaddress)){
                 $ometa_val['address']         = $this->post('oaddress'); 
-                $ometa_val['addressType']         = 'Office'; 
+                $ometa_val['addressType']     = 'Office'; 
                 $ometa_val['country']         = isset($ocountry) ? $ocountry :""; 
                 $ometa_val['state']           = isset($ostate) ? $ostate :""; 
                 $ometa_val['city']            = $this->post('ocity'); 
@@ -349,7 +349,7 @@ class Users extends Common_Admin_Controller{
                 $add_meta['state']          = $this->post('state');
                 $add_meta['postName']       = $this->post('postName');
                 $add_meta['addressType']    = 'Current';
-                
+
                 /*****************************************************/
                 $add_meta1['userId']        = $userId;
                 $add_meta1['zip_code']      = $this->post('pzip_code');
@@ -371,12 +371,12 @@ class Users extends Common_Admin_Controller{
                 $result = $this->common_model->updateFields('addresses',$add_meta,array('addressId'=>$addressId));
             }else{
                  $result =    $this->common_model->insertData('addresses',$add_meta);
-                }
+            }
             if($isExistO){
                 $result = $this->common_model->updateFields('addresses',$add_meta1,array('addressId'=>$oaddressId));
             }else{
                  $result =    $this->common_model->insertData('addresses',$add_meta1);
-                }
+            }
             if($result){
                 $status = SUCCESS;
                 $msg  = ResponseMessages::getStatusCodeMessage(123);
@@ -392,4 +392,121 @@ class Users extends Common_Admin_Controller{
         }
         $this->response($response);
     }//end function
+    
+   function imageUpdate_post(){
+     
+        $this->form_validation->set_rules('identityType','identityType', 'trim|required');
+        if (empty($_FILES['identityImage']['name'])) {
+            $this->form_validation->set_rules('identityImage','identity image','trim|required');
+        }
+     
+        if($this->form_validation->run() == FALSE){
+            $response = array('status' => FAIL, 'message' => strip_tags(validation_errors()));  
+        }else{
+                
+            
+                $userId                     = decoding($this->post('userId'));
+                 $identityType      = $this->post('identityType');
+               
+                $data_val['identityType']         = $identityType;
+               /* image Uploads*/ 
+                $image          = array(); $frontImage = '';
+                 $this->load->model('Image_model');
+                 $this->Image_model->make_dirs('identity');
+                 if (!empty($_FILES['identityImage']['name'])) {
+                                // Getting file name
+                        $filename  = $_FILES['identityImage']['name'];
+                        $imageTemp = $_FILES["identityImage"]["tmp_name"];
+                        $imageSize = $_FILES["identityImage"]["size"];
+                        // Valid extension
+                        $valid_ext = array('png','jpeg','jpg','gif','pdf');
+
+                        $photoExt1 = @end(explode('.', $filename)); // explode the image name to get the extension
+                        $phototest1 = strtolower($photoExt1);
+                            
+                        $new_profle_pic = "identityImage_".time().'.'.$phototest1;
+                            
+                        // Location
+                        $location = "uploads/identity/".$new_profle_pic;
+
+                        // file extension
+                        $file_extension = pathinfo($location, PATHINFO_EXTENSION);
+                        $file_extension = strtolower($file_extension);
+
+                        // Check extension
+                        if(in_array($file_extension,$valid_ext))
+                        {  
+                            // Compress Image
+                            $compressedImage = $this->compressedImage($_FILES['identityImage']['tmp_name'],$location,8);
+                            
+                            if($compressedImage)
+                            { 
+                                $compressedImageSize = filesize($compressedImage);
+                                $data_val['identityImage'] = $new_profle_pic;
+                             
+                            }
+                            else
+                            {
+                               // $statusMsg = "Image compress failed!";
+                                $response = array('status' => FAIL, 'message' => "Image compress failed!");
+                                $this->response($response);die;
+                            }   
+                        }
+                        else
+                        { 
+                            $statusMsg = 'Sorry, only JPG, JPEG, PNG, & GIF files are allowed to upload.'; 
+                             $response = array('status' => FAIL, 'message' =>$statusMsg);
+                           $this->response($response);die;
+                        }
+                    } 
+                  
+
+                /* image Uploads*/
+
+           
+         
+         
+            $isExistH            =  $this->common_model->is_data_exists('users',array('id'=>$userId));
+           
+            if($isExistH){
+                $result = $this->common_model->updateFields('users',$data_val,array('id'=>$userId));
+            }else{
+                 $result =    0;
+            }
+          
+            if($result){
+                $status = SUCCESS;
+                $msg  = ResponseMessages::getStatusCodeMessage(123);
+            }else{
+                $status = FAIL;
+                $msg  = ResponseMessages::getStatusCodeMessage(118);
+            }
+            if($result){
+                 $response   = array('status'=>SUCCESS,'message'=>$msg);
+            }else{
+                 $response   = array('status'=>FAIL,'message'=>ResponseMessages::getStatusCodeMessage(118));
+            }    
+        }
+        $this->response($response);
+    }//end function
+     // Compress image
+    function compressedImage($source, $path, $quality) 
+    {
+        $info = getimagesize($source);
+
+        if ($info['mime'] == 'image/jpeg') 
+            $image = imagecreatefromjpeg($source);
+
+        elseif ($info['mime'] == 'image/gif') 
+            $image = imagecreatefromgif($source);
+
+        elseif ($info['mime'] == 'image/png') 
+            $image = imagecreatefrompng($source);
+
+        // Save image 
+        imagejpeg($image, $path, $quality);
+
+        // sReturn compressed image 
+        return $path;
+    }
 }//End Class 

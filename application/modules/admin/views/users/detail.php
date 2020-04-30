@@ -522,48 +522,57 @@
 												<div class="row">
 													<div class="col-xs-12 col-sm-12">	
 														<!-- <center><strong>Maintenance -6</strong></center> -->
-														<form id="user-address-form" class="smart-form" novalidate="novalidate" action="users/imageUpdate" novalidate="novalidate" autocomplete="off">
+														<form id="user-image-form" class="smart-form" novalidate="novalidate" action="users/imageUpdate" novalidate="novalidate" autocomplete="off">
 														           
             											<fieldset>
 											              <section>
+
+											              	<?php $identityType = @$info['identityType']; 
+											              	$Iimage = 'https://via.placeholder.com/640x360.png?text=Identity+Image';
+											              	if(isset($info['identityImage']) && !empty($info['identityImage'])){
+											              		$Iimage = base_url().'uploads/identity/'.$info['identityImage'];
+											              	}
+
+											              	?>
 											           <label for="identity_Type"><?= lang('identity_Type'); ?></label>
 											                <label class="select">
 											                   
                       <select id="identity_Type" name="identityType" class="form-control">
-                        <option value="Aadhar" selected="selected">Aadhar</option>
-                        <option value="PAN">PAN</option>
-                        <option value="Voter ID">Voter ID</option>
-                        <option value="Driving Licence">Driving Licence</option>
-                        <option value="Passport">Passport</option>
-                        <option value="Birth Certificate">Birth Certificate</option>
-                        <option value="School Certificate/ID">School Certificate/ID</option>
+                        <option value="Aadhar" <?= $identityType=='Aadhar'?"selected='selected'":""; ?>>Aadhar</option>
+                        <option value="PAN" <?= $identityType=='PAN'?"selected='selected'":""; ?>>PAN</option>
+                        <option value="Voter ID" <?= $identityType=='Voter ID'?"selected='selected'":""; ?>>Voter ID</option>
+                        <option value="Driving Licence" <?= $identityType=='Driving Licence'?"selected='selected'":""; ?>>Driving Licence</option>
+                        <option value="Passport" <?= $identityType=='Passport'?"selected='selected'":""; ?>>Passport</option>
+                        <option value="Birth Certificate" <?= $identityType=='Birth Certificate'?"selected='selected'":""; ?>>Birth Certificate</option>
+                        <option value="School Certificate/ID" <?= $identityType=='School Certificate/ID'?"selected='selected'":""; ?>>School Certificate/ID</option>
                       </select><i></i>
 											                </label>
 											              </section>
 				<section>
+					<input type="hidden" name="userId" value="<?= encoding($info['id']); ?>">
 					<label for="identityImage"><?= lang('identity_Image') ?><span>*</span></label>
-								<div class="input input-file">
-									<span class="button"><input type="file" name="profileImage" id="file" onchange="readURL(this,1);this.parentNode.nextSibling.value = this.value" accept="image/*">Browse</span><input type="text" readonly="">
-								</div>
+					 <label class="input input-file">
+								
+
+									<span class="button"><input type="file" name="identityImage" id="identityImage" onchange="readURL(this,1);this.parentNode.nextSibling.value = this.value" accept="image/*">Browse</span><input type="text" readonly="" >
+								</label>
 							</section>
               <div class="row">
                 
                 <section class="col col-6">
                 	 <label for="identity_Image"><?= lang('identity_Image') ?><span>*</span></label>
-               		 <img src="https://via.placeholder.com/640x360.png?text=Identity+Image" alt="image" class="img img-responsive" id="blah_1">
+               		 <img src="<?= $Iimage;?>" alt="image" class="img img-responsive" id="blah_1">
                 </section>
              
               </div>
               
              
             </fieldset>            
-          
-            
-      <!--       <footer>
-							<button type="submit" id="submitI" class="btn btn-primary">
-								<?= lang('Save'); ?>
-							</button>
-						</footer> -->
+			<footer>
+				<button type="submit" id="submitI" class="btn btn-primary">
+				<?= lang('Save'); ?>
+				</button>
+			</footer> 
         </form> 
 														<!-- <center><strong>Maintenance -6</strong></center> -->
 													</div>

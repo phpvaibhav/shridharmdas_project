@@ -22,7 +22,9 @@
 			<header>
 				<span class="widget-icon"> <i class="fa fa-edit"></i> </span>
 				<h2><?= lang('User_Form'); ?></h2>				
-				
+				 <a class=" btn btn-success pull-right" href="<?= base_url().'user-detail/'.encoding($info['id']); ?>">
+                   Back To User Detail</a>
+                 
 			</header>
 
 			<!-- widget div-->

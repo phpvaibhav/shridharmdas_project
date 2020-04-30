@@ -21,7 +21,7 @@ class Webapi extends Common_Service_Controller{
         $this->form_validation->set_rules('contactNumber','contact number','trim|required');
        
         if (empty($_FILES['identityImage']['name'])) {
-            $this->form_validation->set_rules('identityImage','identityImage image','trim|required');
+            $this->form_validation->set_rules('identityImage','identity image','trim|required');
         }
      
         if($this->form_validation->run() == FALSE)

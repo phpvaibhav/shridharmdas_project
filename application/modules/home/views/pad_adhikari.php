@@ -40,7 +40,7 @@
 					    	<div class="row">
 					    		<div class="col-md-4">
 					    			<p class="text-center mb-2 mt-4 man_hading"><b>अध्यक्ष</b></p>
-					    			<p class="text-center">श्री शांतिलाल जी भण्डारी, रतलाम </p>
+					    			<p class="text-center">श्री शांतिलालजी भण्डारी, रतलाम </p>
 					    		</div>
 					    		<div class="col-md-4">
 					    			<p class="text-center mb-2 mt-4 man_hading"><b>वरिष्ठ उपाध्यक्ष</b></p>
@@ -49,54 +49,54 @@
 					    		</div>
 					    		<div class="col-md-4">
 					    			<p class="text-center mb-2 mt-4 man_hading"><b>महामंत्री</b></p>
-					    			<p class="text-center mb-0">श्री राजकुमार जी पारख, बड़नगर</p>
+					    			<p class="text-center mb-0">श्री राजकुमारजी पारख, बड़नगर</p>
 					    		</div>
 					    	</div>
 
 					    	<div class="row">
 					    		<div class="col-md-4">
 					    			<p class="text-center mb-2 mt-4 man_hading"><b>संघठन मंत्री </b></p>
-					    			<p class="text-center">श्री भरत जी भंसाली, थान्दला </p>
+					    			<p class="text-center">श्री भरतजी भंसाली, थान्दला </p>
 					    		</div>
 					    		<div class="col-md-4">
 					    			<p class="text-center mb-2 mt-4 man_hading"><b>राष्ट्रीय प्रवक्ता</b></p>
-					    			<p class="text-center mb-0">श्री देवेन्द्र जी गादिया, इंदौर </p>
+					    			<p class="text-center mb-0">श्री देवेन्द्रजी गादिया, इंदौर </p>
 					    		</div>
 					    		<div class="col-md-4">
 					    			<p class="text-center mb-2 mt-4 man_hading"><b>कोषाध्यक्ष</b></p>
-					    			<p class="text-center mb-0">श्री रजनीकान्त जी झामर, रतलाम</p>
+					    			<p class="text-center mb-0">श्री रजनीकान्तजी झामर, रतलाम</p>
 					    		</div>
 					    	</div>
 
 					    	<div class="row">
 					    		<div class="col-md-4">
 					    			<p class="text-center mb-2 mt-4 man_hading"><b>सरक्षक</b></p>
-					    			<p class="text-center mb-1">श्री कन्हैया लाल जी बोकड़िया, बदनावर</p>
-					    			<p class="text-center mb-1">श्री कनकमल जी घोड़ावत, थान्दला </p>
-					    			<p class="text-center mb-1">श्री हसमुख लाल जी वागरेचा, मेघनगर </p>
-					    			<p class="text-center mb-1">श्री कान्तिलाल जी मूनत, इंदौर</p>
-					    			<p class="text-center mb-1">श्री माँगिलाल जी वगरेचा, सनजेली</p>
-					    			<p class="text-center mb-1">श्री मणि लाल जी मेहता, रतलाम </p>
+					    			<p class="text-center mb-1">श्री कन्हैयालालजी बोकड़िया, बदनावर</p>
+					    			<p class="text-center mb-1">श्री कनकमलजी घोड़ावत, थान्दला </p>
+					    			<p class="text-center mb-1">श्री हसमुखलालजी वागरेचा, मेघनगर </p>
+					    			<p class="text-center mb-1">श्री कान्तिलालजी मूनत, इंदौर</p>
+					    			<p class="text-center mb-1">श्री माँगिलालजी वगरेचा, सनजेली</p>
+					    			<p class="text-center mb-1">श्री मणिलालजी मेहता, रतलाम </p>
 					    		</div>
 					    		<div class="col-md-4">
 					    			<p class="text-center mb-2 mt-4 man_hading"><b>उपाध्यक्ष</b></p>
-					    			<p class="text-center mb-1">श्री शिखर जी छाजेड, करही</p>
-					    			<p class="text-center mb-1">श्री कनक जी बाठीया, इंदौर </p>
-					    			<p class="text-center mb-1">श्री प्रदीप जी रूनवाल, झाबुआ </p>
-					    			<p class="text-center mb-1">श्री जितेंद्र जी घोड़ावत, थान्दला </p>
-					    			<p class="text-center mb-1">श्री रजनीकान्त जी खाबिया, कुशलगड </p>
-					    			<p class="text-center mb-1">श्री सुनील जी नाहर, धार </p>
+					    			<p class="text-center mb-1">श्री शिखरजी छाजेड, करही</p>
+					    			<p class="text-center mb-1">श्री कनकजी बाठीया, इंदौर </p>
+					    			<p class="text-center mb-1">श्री प्रदीपजी रूनवाल, झाबुआ </p>
+					    			<p class="text-center mb-1">श्री जितेंद्रजी घोड़ावत, थान्दला </p>
+					    			<p class="text-center mb-1">श्री रजनीकान्तजी खाबिया, कुशलगड </p>
+					    			<p class="text-center mb-1">श्री सुनीलजी नाहर, धार </p>
 					    		</div>
 					    		<div class="col-md-4">
 					    			<p class="text-center mb-2 mt-4 man_hading"><b>मंत्री</b></p>
-					    			<p class="text-center mb-1">श्री प्रवीण जी छाजेड, बड़वाह </p>
-					    			<p class="text-center mb-1">श्री हिरालाल जी गुगलिया, मूलथान </p>
-					    			<p class="text-center mb-1">श्री प्रेमचंद जी पगरिया, बड़वाह </p>
-					    			<p class="text-center mb-1">श्री श्रीपाल जी नाहर, बदनावर </p>
-					    			<p class="text-center mb-1">श्री वर्धमान जी संघवी, बदनावर </p>
-					    			<p class="text-center mb-1">श्री सुनील जी कोचर, जलगाव </p>
-					    			<p class="text-center mb-1">श्री नीरज जी मुनत, पेटलावाद </p>
-					    			<p class="text-center mb-1">श्री उमेश जी काठेड, हाटपिपल्या </p>
+					    			<p class="text-center mb-1">श्री प्रवीणजी छाजेड, बड़वाह </p>
+					    			<p class="text-center mb-1">श्री हिरालालजी गुगलिया, मूलथान </p>
+					    			<p class="text-center mb-1">श्री प्रेमचंदजी पगरिया, बड़वाह </p>
+					    			<p class="text-center mb-1">श्री श्रीपालजी नाहर, बदनावर </p>
+					    			<p class="text-center mb-1">श्री वर्धमानजी संघवी, बदनावर </p>
+					    			<p class="text-center mb-1">श्री सुनीलजी कोचर, जलगाव </p>
+					    			<p class="text-center mb-1">श्री नीरजजी मुनत, पेटलावाद </p>
+					    			<p class="text-center mb-1">श्री उमेशजी काठेड, हाटपिपल्या </p>
 					    		</div>
 					    	</div>
 
