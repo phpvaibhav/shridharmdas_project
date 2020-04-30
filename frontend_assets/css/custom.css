@@ -1,6 +1,6 @@
 .dialog-background{
     /*background: none repeat scroll 0 0 rgba(255, 0, 25, 0.5);*/
-    background: none repeat scroll 0 0 rgba(245, 244, 249, 0.98);
+   background-image: linear-gradient(to left bottom, #ed9a39, #f1a039, #f5a739, #f9ad39, #fdb439);
     height: 100%;
     left: 0;
     margin: 0;

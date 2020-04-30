@@ -525,18 +525,32 @@
 														<form id="user-address-form" class="smart-form" novalidate="novalidate" action="users/imageUpdate" novalidate="novalidate" autocomplete="off">
 														           
             											<fieldset>
-											      <!--         <section>
-											             	<label for="zip_code"><?= lang('zip_code'); ?><span>*</span></label>
-											                <label for="zip_code" class="input">
-											                   <input type="text" class="form-control number-only" name="zip_code" maxlength="6" size="6" id="zip_code" placeholder="<?= lang('zip_code'); ?>" onkeyup="zipCodetoData(this);" data-set=""; value="<?= @$addresses[0]->zip_code; ?>"   >
+											              <section>
+											           <label for="identity_Type"><?= lang('identity_Type'); ?></label>
+											                <label class="select">
+											                   
+                      <select id="identity_Type" name="identityType" class="form-control">
+                        <option value="Aadhar" selected="selected">Aadhar</option>
+                        <option value="PAN">PAN</option>
+                        <option value="Voter ID">Voter ID</option>
+                        <option value="Driving Licence">Driving Licence</option>
+                        <option value="Passport">Passport</option>
+                        <option value="Birth Certificate">Birth Certificate</option>
+                        <option value="School Certificate/ID">School Certificate/ID</option>
+                      </select><i></i>
 											                </label>
-											              </section> -->
-				
+											              </section>
+				<section>
+					<label for="identityImage"><?= lang('identity_Image') ?><span>*</span></label>
+								<div class="input input-file">
+									<span class="button"><input type="file" name="profileImage" id="file" onchange="readURL(this,1);this.parentNode.nextSibling.value = this.value" accept="image/*">Browse</span><input type="text" readonly="">
+								</div>
+							</section>
               <div class="row">
                 
                 <section class="col col-6">
                 	 <label for="identity_Image"><?= lang('identity_Image') ?><span>*</span></label>
-               		 <img src="https://via.placeholder.com/640x360.png?text=Identity+Image" alt="image" class="mx-auto image-fluid d-block" id="blah_1">
+               		 <img src="https://via.placeholder.com/640x360.png?text=Identity+Image" alt="image" class="img img-responsive" id="blah_1">
                 </section>
              
               </div>
