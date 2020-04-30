@@ -206,6 +206,9 @@
 												<a href="#a3" data-toggle="tab">Education</a>
 											</li>
 											<li>
+												<a href="#a6" data-toggle="tab">Identity Card</a>
+											</li>
+											<li>
 												<a href="#a4" data-toggle="tab">Occupation</a>
 											</li>
 											<li>
@@ -485,15 +488,16 @@
               <section>
              	<label for="zip_code"><?= lang('zip_code'); ?><span>*</span></label>
                 <label for="zip_code" class="input">
-                   <input type="text" class="form-control number-only" name="zip_code" maxlength="6" size="6" id="zip_code" placeholder="<?= lang('zip_code'); ?>" onkeyup="zipCodetoData(this);" data-set=""; value="<?= $addresses[0]->zip_code; ?>"   >
+                   <input type="text" class="form-control number-only" name="zip_code" maxlength="6" size="6" id="zip_code" placeholder="<?= lang('zip_code'); ?>" onkeyup="zipCodetoData(this);" data-set=""; value="<?= @$addresses[0]->zip_code; ?>"   >
                 </label>
               </section>
 				<section>
              	 <label for="address"><?= lang('Address'); ?><span>*</span></label>
                 <label for="address" class="input">
-                	<input type="hidden" name="addressId" value="<?= $addresses[0]->addressId; ?>">
-                	<input type="hidden" name="paddressId" value="<?= $addresses[1]->addressId; ?>">
-                  <input type="text" name="address" id="address" value="<?= $addresses[0]->address; ?>" placeholder=" <?= lang('Address'); ?>"  maxlength="100" size="100">
+                	<input type="hidden" name="addressId" value="<?= @$addresses[0]->addressId; ?>">
+                	<input type="hidden" name="paddressId" value="<?= @$addresses[1]->addressId; ?>">
+                	<input type="hidden" name="userId" value="<?= encoding($info['id']); ?>">
+                  <input type="text" name="address" id="address" value="<?= @$addresses[0]->address; ?>" placeholder=" <?= lang('Address'); ?>"  maxlength="100" size="100">
                 </label>
               </section>
 
@@ -510,7 +514,7 @@
                 <section class="col col-6">
                 	 <label for="city"><?= lang('City'); ?><span>*</span></label>
                   <label class="input">
-                    <input type="text" class="form-control" name="city" id="city" placeholder="<?= lang('City'); ?>" value="<?= $addresses[0]->city; ?>" maxlength="30" size="30">
+                    <input type="text" class="form-control" name="city" id="city" placeholder="<?= lang('City'); ?>" value="<?= @$addresses[0]->city; ?>" maxlength="30" size="30">
                   </label>
                 </section>
               </div>
@@ -519,14 +523,14 @@
                 <section class="col col-6">
               		<label for="tehsil"><?= lang('Tehsil'); ?><span>*</span></label>
                     <label class="input">
-                    <input type="text" class="form-control" name="tehsil" id="tehsil" placeholder="<?= lang('Tehsil'); ?>"  value="<?= $addresses[0]->tehsil; ?>" maxlength="30" size="30">
+                    <input type="text" class="form-control" name="tehsil" id="tehsil" placeholder="<?= lang('Tehsil'); ?>"  value="<?= @$addresses[0]->tehsil; ?>" maxlength="30" size="30">
                   </label>
                 </section>
                 
                 <section class="col col-6">
               		 <label for="district"><?= lang('District'); ?><span>*</span></label>
                     <label class="input">
-                    <input type="text" class="form-control" name="district" id="district" placeholder="<?= lang('District'); ?>" value="<?= $addresses[0]->district; ?>" maxlength="30" size="30">
+                    <input type="text" class="form-control" name="district" id="district" placeholder="<?= lang('District'); ?>" value="<?= @$addresses[0]->district; ?>" maxlength="30" size="30">
                   </label>
                 </section>
                
@@ -536,13 +540,13 @@
                  <section class="col col-6">
               		 <label for="state"><?= lang('State'); ?><span>*</span></label>
                     <label class="input">
-                    <input type="text" class="form-control" name="state" id="state" placeholder="<?= lang('State'); ?>" value="<?= $addresses[0]->state; ?>" maxlength="30" size="30">
+                    <input type="text" class="form-control" name="state" id="state" placeholder="<?= lang('State'); ?>" value="<?= @$addresses[0]->state; ?>" maxlength="30" size="30">
                   </label>
                 </section>
                <section class="col col-6">
               		<label for="country"><?= lang('Country'); ?><span>*</span></label>
                     <label class="input">
-                    <input type="text" class="form-control" name="country"  id="country" placeholder="<?= lang('Country'); ?>" value="<?= $addresses[0]->country; ?>" value="India" maxlength="30" size="30">
+                    <input type="text" class="form-control" name="country"  id="country" placeholder="<?= lang('Country'); ?>" value="<?= @$addresses[0]->country; ?>" value="India" maxlength="30" size="30">
                   </label>
                 </section>
               
@@ -567,13 +571,13 @@
               <section>
              	<label for="pzip_code"><?= lang('zip_code'); ?><span>*</span></label>
                 <label for="pzip_code" class="input">
-                   <input type="text" class="form-control number-only" name="pzip_code" maxlength="6" size="6" id="pzip_code" placeholder="<?= lang('zip_code'); ?>" onkeyup="zipCodetoData(this);" data-set="p" value="<?= $addresses[1]->zip_code; ?>"   >
+                   <input type="text" class="form-control number-only" name="pzip_code" maxlength="6" size="6" id="pzip_code" placeholder="<?= lang('zip_code'); ?>" onkeyup="zipCodetoData(this);" data-set="p" value="<?= @$addresses[1]->zip_code; ?>"   >
                 </label>
               </section>
 				<section>
              	 <label for="paddress"><?= lang('Address'); ?><span>*</span></label>
                 <label for="paddress" class="input">
-                  <input type="text" name="paddress" id="paddress" value="<?= $addresses[1]->address; ?>" placeholder=" <?= lang('Address'); ?>"  maxlength="100" size="100">
+                  <input type="text" name="paddress" id="paddress" value="<?= @$addresses[1]->address; ?>" placeholder=" <?= lang('Address'); ?>"  maxlength="100" size="100">
                 </label>
               </section>
 
@@ -590,7 +594,7 @@
                 <section class="col col-6">
                 	 <label for="pcity"><?= lang('City'); ?><span>*</span></label>
                   <label class="input">
-                    <input type="text" class="form-control" name="pcity" id="pcity" placeholder="<?= lang('City'); ?>" value="<?= $addresses[1]->city; ?>" maxlength="30" size="30">
+                    <input type="text" class="form-control" name="pcity" id="pcity" placeholder="<?= lang('City'); ?>" value="<?= @$addresses[1]->city; ?>" maxlength="30" size="30">
                   </label>
                 </section>
               </div>
@@ -599,14 +603,14 @@
                 <section class="col col-6">
               		<label for="ptehsil"><?= lang('Tehsil'); ?><span>*</span></label>
                     <label class="input">
-                    <input type="text" class="form-control" name="ptehsil" id="ptehsil" placeholder="<?= lang('Tehsil'); ?>"  value="<?= $addresses[1]->tehsil; ?>" maxlength="30" size="30">
+                    <input type="text" class="form-control" name="ptehsil" id="ptehsil" placeholder="<?= lang('Tehsil'); ?>"  value="<?= @$addresses[1]->tehsil; ?>" maxlength="30" size="30">
                   </label>
                 </section>
                 
                 <section class="col col-6">
               		 <label for="district"><?= lang('District'); ?><span>*</span></label>
                     <label class="input">
-                    <input type="text" class="form-control" name="pdistrict" id="pdistrict" placeholder="<?= lang('District'); ?>" value="<?= $addresses[1]->district; ?>" maxlength="30" size="30">
+                    <input type="text" class="form-control" name="pdistrict" id="pdistrict" placeholder="<?= lang('District'); ?>" value="<?= @$addresses[1]->district; ?>" maxlength="30" size="30">
                   </label>
                 </section>
                
@@ -616,13 +620,13 @@
                  <section class="col col-6">
               		 <label for="pstate"><?= lang('State'); ?><span>*</span></label>
                     <label class="input">
-                    <input type="text" class="form-control" name="pstate" id="pstate" placeholder="<?= lang('State'); ?>" value="<?= $addresses[1]->state; ?>" maxlength="30" size="30">
+                    <input type="text" class="form-control" name="pstate" id="pstate" placeholder="<?= lang('State'); ?>" value="<?= @$addresses[1]->state; ?>" maxlength="30" size="30">
                   </label>
                 </section>
                <section class="col col-6">
               		<label for="pcountry"><?= lang('Country'); ?><span>*</span></label>
                     <label class="input">
-                    <input type="text" class="form-control" name="pcountry"  id="pcountry" placeholder="<?= lang('Country'); ?>" value="<?= $addresses[1]->country; ?>" value="India" maxlength="30" size="30">
+                    <input type="text" class="form-control" name="pcountry"  id="pcountry" placeholder="<?= lang('Country'); ?>" value="<?= @$addresses[1]->country; ?>" value="India" maxlength="30" size="30">
                   </label>
                 </section>
               

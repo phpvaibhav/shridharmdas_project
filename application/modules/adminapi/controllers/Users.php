@@ -335,8 +335,11 @@ class Users extends Common_Admin_Controller{
         if($this->form_validation->run() == FALSE){
             $response = array('status' => FAIL, 'message' => strip_tags(validation_errors()));  
         }else{
-         
+                
             
+                $userId       = decoding($this->post('userId'));
+
+                $add_meta['userId']         = $userId;
                 $add_meta['zip_code']       = $this->post('zip_code');
                 $add_meta['address']        = $this->post('address');
                 $add_meta['city']           = $this->post('city');
@@ -348,6 +351,7 @@ class Users extends Common_Admin_Controller{
                 $add_meta['addressType']    = 'Current';
 
                 
+                $add_meta1['userId']        = $userId;
                 $add_meta1['zip_code']      = $this->post('pzip_code');
                 $add_meta1['address']       = $this->post('paddress');
                 $add_meta1['city']          = $this->post('pcity');
@@ -365,10 +369,14 @@ class Users extends Common_Admin_Controller{
             $isExistO            =  $this->common_model->is_data_exists('addresses',array('addressId'=>$oaddressId));
             if($isExistH){
                 $result = $this->common_model->updateFields('addresses',$add_meta,array('addressId'=>$addressId));
-            }
+            }else{
+                 $result =    $this->common_model->insertData('addresses',$add_meta);
+                }
             if($isExistO){
                 $result = $this->common_model->updateFields('addresses',$add_meta1,array('addressId'=>$oaddressId));
-            }
+            }else{
+                 $result =    $this->common_model->insertData('addresses',$add_meta1);
+                }
             if($result){
                 $status = SUCCESS;
                 $msg  = ResponseMessages::getStatusCodeMessage(123);

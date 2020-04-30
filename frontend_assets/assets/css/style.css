@@ -960,8 +960,12 @@ header.sticky .header_top {
 }
 .navbar-nav li a:hover,
 .navbar-nav li a.active {
-	color: #C70025;
+	color: #FECA86;
 }
+/*.navbar-nav li a:hover,
+.navbar-nav li a.active {
+	color: #C70025;
+}*/
 .navbar-nav .btn {
 	font-size: 700;
 	padding: 13px 32px;
