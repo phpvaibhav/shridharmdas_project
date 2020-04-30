@@ -337,7 +337,7 @@ class Users extends Common_Admin_Controller{
         }else{
                 
             
-                $userId       = decoding($this->post('userId'));
+                $userId                     = decoding($this->post('userId'));
 
                 $add_meta['userId']         = $userId;
                 $add_meta['zip_code']       = $this->post('zip_code');
@@ -349,8 +349,8 @@ class Users extends Common_Admin_Controller{
                 $add_meta['state']          = $this->post('state');
                 $add_meta['postName']       = $this->post('postName');
                 $add_meta['addressType']    = 'Current';
-
                 
+                /*****************************************************/
                 $add_meta1['userId']        = $userId;
                 $add_meta1['zip_code']      = $this->post('pzip_code');
                 $add_meta1['address']       = $this->post('paddress');
