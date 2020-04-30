@@ -1,6 +1,6 @@
 .dialog-background{
     /*background: none repeat scroll 0 0 rgba(255, 0, 25, 0.5);*/
-   background-image: linear-gradient(to left bottom, #ff8e16, #fe8b1a, #fc881e, #fb8621, #f98324);
+  background-image: radial-gradient(circle, #fef9f0, #fff8e8, #fff7df, #fdf6d7, #fbf6cf);
     height: 100%;
     left: 0;
     margin: 0;
@@ -18,20 +18,20 @@
     margin-left: -50px;
     margin-top: -50px;
     position: fixed;
-    top: 50%;
-    width: 100px;
+    top: 40%;
+    width: 200px;
     z-index: 999999;
 }
 .dialog-loading-icon {
    /*background-color: #FFFFFF !important;*/
     border-radius: 13px;
     display: block;
-    height: 100px;
+    height: 200px;
     line-height: 100px;
     margin: 0;
     padding: 1px;
     text-align: center;
-    width: 100px;
+    width: 200px;
 }
 
 .image-logo{
