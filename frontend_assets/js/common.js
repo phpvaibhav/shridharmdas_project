@@ -13,8 +13,11 @@ function preLoadshow(x){
 }
 // A $( document ).ready() block.
 preLoadshow(true);
-$( document ).ready(function() {
-   preLoadshow(false);
+/*$( document ).ready(function() {
+ 
+});*/
+$(window).load(function() {
+     preLoadshow(false);
 });
 toastr.options = {
   closeButton: true,
