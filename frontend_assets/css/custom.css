@@ -1,5 +1,6 @@
 .dialog-background{
-    background: none repeat scroll 0 0 rgba(255, 0, 25, 0.5);
+    /*background: none repeat scroll 0 0 rgba(255, 0, 25, 0.5);*/
+    background: none repeat scroll 0 0 rgba(245, 244, 249, 0.98);
     height: 100%;
     left: 0;
     margin: 0;
