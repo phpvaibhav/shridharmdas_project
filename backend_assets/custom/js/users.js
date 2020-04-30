@@ -523,7 +523,11 @@ $("#user-image-form").validate({// Rules for form validation
     },
     rules : {
 
-      identityImage:{
+      identityType:{
+        required: true,
+       
+      } ,  
+       identityImage:{
         required: true,
         accept:"jpg,png,jpeg,gif,pdf"
       } ,  

@@ -550,7 +550,7 @@
 											              </section>
 				<section>
 					<input type="hidden" name="userId" value="<?= encoding($info['id']); ?>">
-					<label for="identityImage"><?= lang('identity_Image') ?><span>*</span></label>
+					<label ><?= lang('identity_Image') ?><span>*</span></label>
 					 <label class="input input-file">
 								
 
