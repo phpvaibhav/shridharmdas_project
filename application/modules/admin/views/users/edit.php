@@ -154,6 +154,27 @@
                 </section>
               
               </div>
+                            <div class="row">
+                 <section class="col col-6">
+                  <label class="label"><?= lang('blood_group'); ?></label>
+                  <label class="select">
+                      <select name="bloodGroup" class="form-control" id="bloodGroup">
+                            <option value="" selected="" disabled=""><?= lang('blood_group'); ?></option>
+                            <option value="A+" <?= $usermeta['bloodGroup']=='A+'?"selected='selected'":"";  ?>>A+</option>
+                            <option value="O+" <?= $usermeta['bloodGroup']=='O+'?"selected='selected'":"";  ?>>O+</option>
+                            <option value="B+" <?= $usermeta['bloodGroup']=='B+'?"selected='selected'":"";  ?>>B+</option>
+                            <option value="AB+" <?= $usermeta['bloodGroup']=='A+'?"selected='selected'":"";  ?>>AB+</option>
+                            <option value="A-" <?= $usermeta['bloodGroup']=='A-'?"selected='selected'":"";  ?>>A-</option>
+                            <option value="O-" <?= $usermeta['bloodGroup']=='O-'?"selected='selected'":"";  ?>>O-</option>
+                            <option value="B-" <?= $usermeta['bloodGroup']=='B-'?"selected='selected'":"";  ?>>B-</option>
+                            <option value="AB-" <?= $usermeta['bloodGroup']=='AB-'?"selected='selected'":"";  ?>>AB-</option>
+                            <option value="Unknown" <?= $usermeta['bloodGroup']=='Unknown'?"selected='selected'":"";  ?>>Unknown</option>
+                          
+                            </select><i></i> </label>
+                </section>
+              
+    
+              </div>
               <div class="row">
                  <section class="col col-6">
               
@@ -180,7 +201,8 @@
                               </select><i></i> </label>
                 </section>
     
-              </div>
+              </div>              
+
               <div class="row">
                  <section class="col col-6 otherUnionName" <?= $usermeta['unionName']=='OTHER' ?"style='display: block;'":"style='display: none;'"; ?> >
                   <label class="input">
@@ -188,250 +210,32 @@
                   </label>
                 </section>
               </div>
+<section>
+  <?php $rk = !empty($usermeta['religiousKnowledge']) ? explode(",",$usermeta['religiousKnowledge']):array(); ?>
+                          <label class="label"><?= lang('Religious_knowledge'); ?></label>
+                          <div class="row">
+                            <div class="col col-6">
+                              <label class="checkbox">
+                                <input type="checkbox" name="religiousKnowledge[]" <?= in_array("णमोकार मंत्र एवं  प्राथमिक ज्ञान",$rk)?"checked='checked'":""; ?>  value="णमोकार मंत्र एवं  प्राथमिक ज्ञान" >
+                                <i></i>णमोकार मंत्र एवं  प्राथमिक ज्ञान</label>
+                              <label class="checkbox">
+                                <input type="checkbox" name="religiousKnowledge[]" <?= in_array("सामयिक",$rk)?"checked='checked'":""; ?> value="सामयिक" >
+                                <i></i>सामयिक</label>
+                             <label class="checkbox">
+                                <input type="checkbox" name="religiousKnowledge[]"  value="प्रतिक्रमण" <?= in_array("प्रतिक्रमण",$rk)?"checked='checked'":""; ?>>
+                                <i></i>प्रतिक्रमण</label>
+                               <label class="checkbox">
+                                <input type="checkbox" name="religiousKnowledge[]"  value="थोकड़ो का ज्ञान" <?= in_array("थोकड़ो का ज्ञान",$rk)?"checked='checked'":""; ?>>
+                                <i></i>थोकड़ो का ज्ञान</label>
+                                
+                                <label class="checkbox">
+                                <input type="checkbox" name="religiousKnowledge[]"  value="स्वाध्याय का ज्ञान" <?= in_array("स्वाध्याय का ज्ञान",$rk)?"checked='checked'":""; ?>>
+                                <i></i>स्वाध्याय का ज्ञान</label>
+                            </div>
 
-           <!--    <div class="row">
-               <section class="col col-6">
-                  <label class="input"> <i class="icon-prepend fa fa-calendar"></i>
-                    <input type="text" name="dob" id="dob" placeholder="<?= lang('dob'); ?>" readonly="">
-                  </label>
-                </section>
-
-                  <section class="col col-6">
-                   <label class="input"> <i class="icon-prepend fa fa-envelope"></i>
-                    <input type="email" name="email" placeholder="<?= lang('email'); ?>">
-                  </label>
-                  </section>
-                    <section class="col col-6">
-                   <label class="input"> <i class="icon-prepend fa fa-tag"></i>
-                    <input type="text" name="education" placeholder="<?= lang('Education'); ?>">
-                  </label>
-                  </section>
-               
-              
-              </div> -->
-<!--               <div class="row">
-                <section class="col col-6">
-              
-                  <label class="select">
-                    <select name="gender">
-                      <option value="" selected="" disabled=""><?= lang('Select_Gender'); ?></option>
-                      <option value="Male"><?= lang('Male');?></option>
-                      <option value="Female"><?= lang('Female');?></option>
-                    </select> <i></i> </label>
-                </section>
-                  <section class="col col-6">
-                  <label class="select">
-                    <select name="maritalStatus">
-                      <option value="" selected="" disabled=""><?= lang('Marital_Status'); ?></option>
-                      <option value="Married"><?= lang('married');?></option>
-                      <option value="Unmarried"><?= lang('unmarried');?></option>
-                      <option value="Divorced"><?= lang('divorced');?></option>
-                      <option value="Other"><?= lang('other');?></option>
-                    </select> <i></i> </label>
-                </section>
-               
-           
-              </div> -->
-<!--               <div class="row">
-                   <section class="col col-6">
-
-                      
-                      <select name="religiousKnowledge[]" multiple style="width:100%" class="select2" data-placeholder="<?= lang('Religious_knowledge'); ?>">
-                    
-                      <option value="णमोकार मंत्र"> णमोकार मंत्र</option>
-                      <option value="सामायिक">सामायिक</option>
-                      <option value="प्रतिक्रमण">प्रतिक्रमण</option>
-                      <option value="पच्चीस बोल">पच्चीस बोल</option>
-                      <option value="पुच्छिस्सुणम्">पुच्छिस्सुणम्</option>
-                      <option value="दशवैकालिक सूत्र">दशवैकालिक सूत्र</option>
-                      <option value="उत्तराध्ययन सूत्र">उत्तराध्ययन सूत्र</option>
-                      <option value="अन्य">अन्य</option>
-                     
-                      </select>
-                  </section>
-                
-        
-                  <section class="col col-6">
-                      <label class="select">
-                      <select name="profession">
-                      <option value="" selected="" disabled=""><?= lang('Profession'); ?></option>
-                      <option value="job">Job</option>
-                      <option value="business">Business</option>
-                      <option value="house wife">House wife</option>
-                      <option value="student">Student</option>
-                       <option value="other">Other</option>
-                      </select> <i></i> </label>
-                  </section>
-           
-              </div> -->
-<!--               <div class="row">
-                
-                  <section class="col col-6">
-                      <label class="select">
-                      <select name="bloodGroup">
-                      <option value="" selected="" disabled=""><?= lang('blood_group'); ?></option>
-                      <option value="A+">A+</option>
-                      <option value="O+">O+</option>
-                      <option value="B+">B+</option>
-                      <option value="AB+">AB+</option>
-                      <option value="A-">A-</option>
-                      <option value="O-">O-</option>
-                      <option value="B-">B-</option>
-                      <option value="AB-">AB-</option>
-                    
-                      </select> <i></i> </label>
-                  </section>
-                   <section class="col col-6">
-                   <label class="input"> <i class="icon-prepend fa fa-list"></i>
-                    <input type="text" name="unionResponsibility" placeholder="<?= lang('unionResponsibility'); ?>">
-                  </label>
-                  </section>
-           
-              </div> -->
-              
-
+                        </section>
             </fieldset>
-<!--             <header>
-              <?= lang('home_address'); ?>
-            </header>
-            <fieldset>
-              <section>
-                <label for="address2" class="input">
-                  <input type="text" name="address" id="address" placeholder=" <?= lang('Address'); ?>">
-                </label>
-              </section>
 
-              <div class="row">
-                
-                <section class="col col-6">
-            
-                    <label class="input">
-                    <input type="text" name="city" id="city" placeholder="<?= lang('City'); ?>">
-                  </label>
-                </section>
-                <section class="col col-6">
-                  <label class="input">
-                    <input type="text" name="zip_code" id="zip_code" placeholder="<?= lang('zip_code'); ?>" class="number-only">
-                  </label>
-                </section>
-              </div>
-               <div class="row">
-                
-                <section class="col col-6">
-              
-                    <label class="input">
-                    <input type="text" name="tehsil" id="tehsil" placeholder="<?= lang('Tehsil'); ?>">
-                  </label>
-                </section>
-                
-                <section class="col col-6">
-              
-                    <label class="input">
-                    <input type="text" name="district" id="district" placeholder="<?= lang('District'); ?>">
-                  </label>
-                </section>
-               
-              </div>
-              
-              <div class="row">
-                <section class="col col-6">
-                  <label class="select">
-                    <select name="country"  class="countries" id="country">
-                      <option value="0" selected="" disabled=""><?= lang('Country'); ?></option>
-                      <?php if(!empty($countries)):
-                        foreach ($countries as $k => $country) {?>
-                          <option value="<?=  $country->country_name; ?>" <?=  ($country->country_id==100)?  "selected='selected'" :""; ?> ><?=  $country->country_name; ?></option>
-                      <?php } endif; ?>
-              
-                    </select> <i></i> </label>
-                </section>
-                <section class="col col-6">
-                  <label class="select">
-                    <select  class="states" name="state" id="state">
-                      <option value="0" selected="" disabled=""><?= lang('State'); ?></option>
-              
-                    </select> <i></i> </label>
-                </section>
-              
-              
-              </div>
-          
-            </fieldset>            
-            <header>
-                <div class="row">
-                   <section class="col col-6">
-                 <?= lang('office_address'); ?>
-                  </section>  
-                  <section class="col col-6">
-                  <label class="checkbox pull-right">
-                    <input type="checkbox" id="Same_Address" name="remember">
-                    <i></i>Same as above</label>
-                  </section>
-              </div>
-             
-            </header>
-            <fieldset>
-              <section>
-                <label for="address2" class="input">
-                  <input type="text" name="oaddress" id="oaddress" placeholder=" <?= lang('Address'); ?>">
-                </label>
-              </section>
-
-              <div class="row">
-                
-                <section class="col col-6">
-                
-                    <label class="input">
-                    <input type="text" name="ocity" id="ocity" placeholder="<?= lang('City'); ?>">
-                  </label>
-                </section>
-                <section class="col col-6">
-                  <label class="input">
-                    <input type="text" name="ozip_code" id="ozip_code" placeholder="<?= lang('zip_code'); ?>" class="number-only">
-                  </label>
-                </section>
-              </div>
-               <div class="row">
-                
-                <section class="col col-6">
-              
-                    <label class="input">
-                    <input type="text" name="otehsil" id="otehsil" placeholder="<?= lang('Tehsil'); ?>">
-                  </label>
-                </section>
-                
-                <section class="col col-6">
-              
-                    <label class="input">
-                    <input type="text" name="odistrict" id="odistrict" placeholder="<?= lang('District'); ?>">
-                  </label>
-                </section>
-               
-              </div>
-              
-              <div class="row">
-                <section class="col col-6">
-                  <label class="select">
-                    <select name="ocountry"  class="countries" id="ocountry">
-                      <option value="0" selected="" disabled=""><?= lang('Country'); ?></option>
-                      <?php if(!empty($countries)):
-                        foreach ($countries as $k => $country) {?>
-                          <option value="<?=  $country->country_name; ?>" <?=  ($country->country_id==100)?  "selected='selected'" :""; ?> ><?=  $country->country_name; ?></option>
-                      <?php } endif; ?>
-              
-                    </select> <i></i> </label>
-                </section>
-                <section class="col col-6">
-                  <label class="select">
-                    <select  class="states" name="ostate" id="ostate">
-                      <option value="0" selected="" disabled=""><?= lang('State'); ?></option>
-              
-                    </select> <i></i> </label>
-                </section>
-              
-              </div>
-            </fieldset> -->
-			
 						<footer>
 							<button type="submit" id="submit" class="btn btn-primary">
 								<?= lang('Save'); ?>

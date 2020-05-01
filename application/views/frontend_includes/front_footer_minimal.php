@@ -45,14 +45,16 @@
     </div>
   </div>
 </div>
- <?php $frontend_assets =  base_url().'frontend_assets/';
-$backend_assets =  base_url().'backend_assets/';
+ <?php 
+
+        $frontend_assets =  base_url().'frontend_assets/';
+        $backend_assets  =  base_url().'backend_assets/';
 
  ?>
  <script type="text/javascript">
   var Please_select_your_full_name              = "<?= lang('Please_select_your_full_name');?>";
-  var Please_select_your_first_name             =  "<?= lang('Please_select_your_first_name');?>";
-  var Please_select_your_last_name              = "<?= lang('Please_select_your_last_name');?>";
+  var Please_select_your_first_name              =  "<?= lang('Please_select_your_first_name');?>";
+  var Please_select_your_last_name             = "<?= lang('Please_select_your_last_name');?>";
   var Please_select_your_father_name_husband_name = "<?= lang('Please_select_your_father_name_husband_name');?>";
   var Please_select_your_date_of_birth            ="<?= lang('Please_select_your_date_of_birth');?>";
   var Please_select_your_gender                   = "<?= lang('Please_select_your_gender');?>";
@@ -118,12 +120,9 @@ var Please_select_your_Identity_image ="<?= lang('Please_select_your_Identity_im
 	<!--Audio-JS-->
 	<script src="<?= $frontend_assets; ?>assets/js/audio_custome.js"></script>
  <script src="https://cdn.jsdelivr.net/npm/select2@4.0.13/dist/js/select2.min.js"></script>
-
-     
-      <script src="<?php echo $frontend_assets; ?>js/common.js"></script>
-
+  <script src="<?php echo $frontend_assets; ?>js/common.js"></script>
         
-    <?php if(!empty($front_scripts)) { load_js($front_scripts);} //load required page scripts ?>
+  <?php if(!empty($front_scripts)) { load_js($front_scripts);} //load required page scripts ?>
 </body>
 
 </html>

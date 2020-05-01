@@ -44,7 +44,7 @@
 </head>
 
 <body id="tl" data-base-url="<?php echo base_url(); ?>">
-		<!-- loader -->
+<!-- loader -->
 <div class="dialog-background" id="pre-load-dailog" style="display: block;">
     <div class="dialog-loading-wrapper">
         <span class="dialog-loading-icon"><img src="<?= base_url();?>frontend_assets/images/ajax-loader.png" alt="Loading..."></span>

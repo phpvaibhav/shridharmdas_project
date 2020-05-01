@@ -208,6 +208,7 @@ class Webapi extends Common_Service_Controller{
                 $user_meta['bloodGroup']        = @$this->post('bloodGroup');
                 $user_meta['religiousKnowledge']      = $this->post('religiousKnowledge') ? implode(",",$this->post('religiousKnowledge')) :"";
 
+
                 $add_meta['userId']         = $userId;
                 $add_meta['zip_code']       = $this->post('zip_code');
                 $add_meta['address']        = $this->post('address');

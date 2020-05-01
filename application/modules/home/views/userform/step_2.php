@@ -157,7 +157,7 @@
                                 <label class="custom-control-label" for="customCheck2" >सामयिक</label>
                               </div>
                               <div class="custom-control custom-checkbox mb-3">
-                                <input type="checkbox" class="custom-control-input limitCheckBox" value="प्रतिक्रमण " name="religiousKnowledge[]" id="customCheck3" data-limit="3">
+                                <input type="checkbox" class="custom-control-input limitCheckBox" value="प्रतिक्रमण" name="religiousKnowledge[]" id="customCheck3" data-limit="3">
                                 <label class="custom-control-label" for="customCheck3" >प्रतिक्रमण </label>
                               </div>
                               <div class="custom-control custom-checkbox mb-3">

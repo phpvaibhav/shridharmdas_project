@@ -297,7 +297,8 @@ class Users extends Common_Admin_Controller{
             $user_meta['hindiFamilyHeadName']   = $this->post('hindiFamilyHeadName');
             $user_meta['unionName']             = $this->post('unionName');
             $user_meta['otherUnionName']        = $this->post('otherUnionName');
-         
+             $user_meta['bloodGroup']        = @$this->post('bloodGroup');
+            $user_meta['religiousKnowledge']      = $this->post('religiousKnowledge') ? implode(",",$this->post('religiousKnowledge')) :"";
             $id     = decoding($this->post('id'));
          
             $isExist            =  $this->common_model->is_data_exists('users',array('id'=>$id));
