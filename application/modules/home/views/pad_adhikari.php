@@ -73,7 +73,7 @@
 					    			<p class="text-center mb-2 mt-4 man_hading"><b>सरक्षक</b></p>
 					    			<p class="text-center mb-1">श्री कन्हैयालालजी बोकड़िया, बदनावर</p>
 					    			<p class="text-center mb-1">श्री कनकमलजी घोड़ावत, थान्दला </p>
-					    			<p class="text-center mb-1">श्री हसमुखलालजी वागरेचा, मेघनगर </p>
+					    			<p class="text-center mb-1">श्री हंसमुखलालजी वागरेचा, मेघनगर </p>
 					    			<p class="text-center mb-1">श्री कान्तिलालजी मूनत, इंदौर</p>
 					    			<p class="text-center mb-1">श्री माँगिलालजी वगरेचा, सनजेली</p>
 					    			<p class="text-center mb-1">श्री मणिलालजी मेहता, रतलाम </p>
@@ -90,7 +90,7 @@
 					    		<div class="col-md-4">
 					    			<p class="text-center mb-2 mt-4 man_hading"><b>मंत्री</b></p>
 					    			<p class="text-center mb-1">श्री प्रवीणजी छाजेड, बड़वाह </p>
-					    			<p class="text-center mb-1">श्री हिरालालजी गुगलिया, मूलथान </p>
+					    			<p class="text-center mb-1">श्री हीरालालजी गुगलिया, मूलथान </p>
 					    			<p class="text-center mb-1">श्री प्रेमचंदजी पगरिया, बड़वाह </p>
 					    			<p class="text-center mb-1">श्री श्रीपालजी नाहर, बदनावर </p>
 					    			<p class="text-center mb-1">श्री वर्धमानजी संघवी, बदनावर </p>

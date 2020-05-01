@@ -14,7 +14,7 @@ function preLoadshow(x){
 // A $( document ).ready() block.
 preLoadshow(true);
 $( document ).ready(function() {
-       preLoadshow(false);
+      // preLoadshow(false);
 });
 /*$(window).load(function() {
      preLoadshow(false);

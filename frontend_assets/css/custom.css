@@ -1,6 +1,10 @@
+
 .dialog-background{
-    /*background: none repeat scroll 0 0 rgba(255, 0, 25, 0.5);*/
-  background-image: radial-gradient(circle, #fef9f0, #fff8e8, #fff7df, #fdf6d7, #fbf6cf);
+   /* background:  radial-gradient(circle, #fef9f0, #fff8e8, #fff7df, #fdf6d7, #fbf6cf);*/
+   /* background: none repeat scroll 0 0 rgba(255, 0, 25, 0.5);*/
+  /*  background: none repeat scroll 0 0 rgb(255, 127, 13);*/
+    /*background: none repeat scroll 0 0 rgb(238, 228, 220);*/
+    background: none repeat scroll 0 0 rgb(255, 250, 245);
     height: 100%;
     left: 0;
     margin: 0;
@@ -13,27 +17,26 @@
 .dialog-loading-wrapper {
     background: none repeat scroll 0 0 rgba(0, 0, 0, 0);
     border: 0 none;
-    height: 100px;
+    height: 150px;
     left: 50%;
     margin-left: -50px;
     margin-top: -50px;
     position: fixed;
-    top: 40%;
-    width: 200px;
+    top: 50%;
+    width: 150px;
     z-index: 999999;
 }
 .dialog-loading-icon {
    /*background-color: #FFFFFF !important;*/
     border-radius: 13px;
     display: block;
-    height: 200px;
+    height: 150px;
     line-height: 100px;
     margin: 0;
     padding: 1px;
     text-align: center;
-    width: 200px;
+    width: 150px;
 }
-
 .image-logo{
 	max-width: 44%;
  /*   max-width: 68%;*/
