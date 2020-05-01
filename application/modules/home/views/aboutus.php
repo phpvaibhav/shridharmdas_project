@@ -101,7 +101,7 @@
 						<a href="<?= base_url('vidhan'); ?>">
 						<div class="features_wrap features-after-none">
 							<div class="f-f-icon"><img src="<?= base_url().'frontend_assets/images/icon/गुरुदेव-द्वारा-निर्मित-विधान.png';?>" alt="img"></div>
-							<h4 class="text-custom-secondary">गुरुदेव द्वारा निर्मित धर्मदास गण परिषद का विधान - वर्ष १९८६</h4>
+							<h4 class="text-custom-secondary">आचार्य श्री उमेशमुनिजी म. सा. रचित धर्मदास गण परिषद का विधान सन १९८६</h4>
 							<p class="mb-0">वर्तमान युग मे भोतिक विज्ञान की चकाचोंध मे आध्यात्मिकता की तरफ से मनुष्य का ध्यान हटाया जा रहा है | साधु साध्वियों के प्रति भी आज भावना कम होती जा रही है |</p>
 						</div>
 					</a>

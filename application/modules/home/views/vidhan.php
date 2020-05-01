@@ -5,11 +5,11 @@
 			<div class="inner_wp z_index white_text">
 				<div class="row">
 					<div class="col-md-12">
-						<h1 class="text-center">गुरुदेव द्वारा निर्मित धर्मदास गण परिषद का विधान - वर्ष १९८६</h1>
+						<h1 class="text-center">आचार्य श्री उमेशमुनिजी म. सा. रचित धर्मदास गण परिषद का विधान सन १९८६</h1>
 						<nav class="breadcrumb">
 							<ul>
 								<li class="breadcrumb-item"><a href="<?= base_url(); ?>">Home</a></li>
-								<li class="breadcrumb-item active">गुरुदेव द्वारा निर्मित धर्मदास गण परिषद का विधान - वर्ष १९८६</li>
+								<li class="breadcrumb-item active">आचार्य श्री उमेशमुनिजी म. सा. रचित धर्मदास गण परिषद का विधान सन १९८६</li>
 							</ul>
 						</nav>
 					</div>
