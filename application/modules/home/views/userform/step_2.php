@@ -307,23 +307,21 @@
                       <div class="col-md-6">
                           <div class="form-label-group">
                             <label for="pdistrict"><?= lang('District'); ?><span>*</span></label>
-                          
-                           <input type="text" class="form-control" name="pdistrict" id="pdistrict" placeholder="<?= lang('District'); ?>" maxlength="30" size="30" >
+                            <input type="text" class="form-control" name="pdistrict" id="pdistrict" placeholder="<?= lang('District'); ?>" maxlength="30" size="30" >
                           </div>
                       </div>
                       <div class="col-md-6">
                           <div class="form-label-group">
                             <label for="state"><?= lang('State'); ?><span>*</span></label>
-                              <input type="text" class="form-control" name="pstate" id="pstate" placeholder="<?= lang('State'); ?>" maxlength="30" size="30" >
+                            <input type="text" class="form-control" name="pstate" id="pstate" placeholder="<?= lang('State'); ?>" maxlength="30" size="30" >
                           </div>
                       </div>
 
                       <div class="col-md-6">
                           <div class="form-label-group">
                             <label for="country"><?= lang('Country'); ?><span>*</span></label>
-                          
-                           <input type="text" class="form-control" name="pcountry"  id="pcountry" placeholder="<?= lang('Country'); ?>" value="India" maxlength="30" size="30">
-                             
+                            <input type="text" class="form-control" name="pcountry"  id="pcountry" placeholder="<?= lang('Country'); ?>" value="India" maxlength="30" size="30">
+
                           </div>
                       </div>
 

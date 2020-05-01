@@ -90,7 +90,7 @@
 						<a href="<?= base_url().'jeevan-parichay'; ?>">
 						<div class="features_wrap custom-sm-mb features-after-none">
 							<div class="f-f-icon"><img src="<?= base_url().'frontend_assets/images/icon/आचार्य-श्री-उमेशमुनिजी-का-जीवन-परिचय.png';?>" alt="img"></div>
-							<h4 class="text-custom-secondary">आचार्य श्री उमेशमुनिजी मा.सा. का जीवन परिचय</h4>
+							<h4 class="text-custom-secondary">आचार्य श्री उमेशमुनिजी म. सा. का जीवन परिचय</h4>
 							<p class="mb-0">आचार्य प्रवर, शासन गौरव, आत्मार्थीपूज्य गुरुदेव श्री उमेशमुनिजी म.सा.‘अणु’ का
 जीवन-परिचय के लिए क्लिक करे
 </p>

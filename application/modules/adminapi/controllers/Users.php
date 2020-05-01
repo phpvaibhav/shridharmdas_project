@@ -286,10 +286,10 @@ class Users extends Common_Admin_Controller{
 
             $user_meta['actualFirstName']       = $this->post('actualFirstName');
             $user_meta['actualLastName']        = $this->post('actualLastName');
-             $user_meta['actualFullName']        = $this->post('actualFirstName').' '.$this->post('actualLastName');
+             $user_meta['actualFullName']       = $this->post('actualFirstName').' '.$this->post('actualLastName');
             $user_meta['hindiFirstName']        = $this->post('hindiFirstName');
             $user_meta['hindiLastName']         = $this->post('hindiLastName');
-            $user_meta['hindiFullName']        = $this->post('hindiFirstName').' '.$this->post('hindiLastName');
+            $user_meta['hindiFullName']         = $this->post('hindiFirstName').' '.$this->post('hindiLastName');
             $user_meta['actualParentName']      = $this->post('actualParentName');
             $user_meta['actualFamilyHeadName']  = $this->post('actualFamilyHeadName');
             $user_meta['hindiParentName']       = $this->post('hindiParentName');
@@ -297,8 +297,8 @@ class Users extends Common_Admin_Controller{
             $user_meta['hindiFamilyHeadName']   = $this->post('hindiFamilyHeadName');
             $user_meta['unionName']             = $this->post('unionName');
             $user_meta['otherUnionName']        = $this->post('otherUnionName');
-             $user_meta['bloodGroup']        = @$this->post('bloodGroup');
-            $user_meta['religiousKnowledge']      = $this->post('religiousKnowledge') ? implode(",",$this->post('religiousKnowledge')) :"";
+             $user_meta['bloodGroup']           = @$this->post('bloodGroup');
+            $user_meta['religiousKnowledge']    = $this->post('religiousKnowledge') ? implode(",",$this->post('religiousKnowledge')) :"";
             $id     = decoding($this->post('id'));
          
             $isExist            =  $this->common_model->is_data_exists('users',array('id'=>$id));
