@@ -120,12 +120,25 @@
     -webkit-user-select: none;
     margin-bottom: 10px;
 }
+
 .logo{
    width: 63%;
  
 }
 .text-center-footer{
     text-align: center !important;
+}
+.dialog-loading-wrapper {
+    background: none repeat scroll 0 0 rgba(0, 0, 0, 0);
+    border: 0 none;
+    height: 150px;
+    left: 39%;
+    margin-left: -50px;
+    margin-top: -50px;
+    position: fixed;
+    top: 50%;
+    width: 150px;
+    z-index: 999999;
 }
 
 }
@@ -154,6 +167,18 @@
 .text-center-footer{
     text-align: center !important;
 }
+.dialog-loading-wrapper {
+    background: none repeat scroll 0 0 rgba(0, 0, 0, 0);
+    border: 0 none;
+    height: 150px;
+    left: 39%;
+    margin-left: -50px;
+    margin-top: -50px;
+    position: fixed;
+    top: 50%;
+    width: 150px;
+    z-index: 999999;
+}
 }
 
 @media only screen and (max-width: 600px) and (min-width:481px){
@@ -180,6 +205,18 @@
 .text-center-footer{
     text-align: center !important;
 }
+.dialog-loading-wrapper {
+    background: none repeat scroll 0 0 rgba(0, 0, 0, 0);
+    border: 0 none;
+    height: 150px;
+    left: 39%;
+    margin-left: -50px;
+    margin-top: -50px;
+    position: fixed;
+    top: 50%;
+    width: 150px;
+    z-index: 999999;
+}
 }
 
 @media only screen and (max-width:480px) and (min-width:413px){
@@ -205,6 +242,18 @@
 }
 .text-center-footer{
     text-align: center !important;
+}
+.dialog-loading-wrapper {
+    background: none repeat scroll 0 0 rgba(0, 0, 0, 0);
+    border: 0 none;
+    height: 150px;
+    left: 39%;
+    margin-left: -50px;
+    margin-top: -50px;
+    position: fixed;
+    top: 50%;
+    width: 150px;
+    z-index: 999999;
 }
 }
 
@@ -250,6 +299,18 @@
 .text-center-footer{
     text-align: center !important;
 }
+.dialog-loading-wrapper {
+    background: none repeat scroll 0 0 rgba(0, 0, 0, 0);
+    border: 0 none;
+    height: 150px;
+    left: 39%;
+    margin-left: -50px;
+    margin-top: -50px;
+    position: fixed;
+    top: 50%;
+    width: 150px;
+    z-index: 999999;
+}
 
 }
 
@@ -283,7 +344,18 @@
 .text-center-footer{
     text-align: center !important;
 }
-
+.dialog-loading-wrapper {
+    background: none repeat scroll 0 0 rgba(0, 0, 0, 0);
+    border: 0 none;
+    height: 150px;
+    left: 39%;
+    margin-left: -50px;
+    margin-top: -50px;
+    position: fixed;
+    top: 50%;
+    width: 150px;
+    z-index: 999999;
+}
 }
 .select2-container--default .select2-selection--single {
     background-color: #fff;

@@ -203,7 +203,7 @@
             <a href="<?= base_url('jeevani'); ?>">
             <div class="features_wrap custom-sm-mb features-after-none">
               <div class="f-f-icon"><img src="<?= base_url().'frontend_assets/images/icon/जीवन-परिचय.png';?>" alt="img"></div>
-              <h4 class="text-custom-secondary">आचार्य श्री धर्मदास जी का जीवन परिचय</h4>
+              <h4 class="text-custom-secondary">आचार्य श्री धर्मदासजी म. सा. का जीवन परिचय</h4>
               <p class="mb-0">कल्याणजी के सरखेज आने पर धर्मदास जी ने उनकी चर्या का सूक्ष्मता से अध्ययन किया और उस पंथ में दीक्षित हो गये। वे उस पंथ की क्रियाएँ पालन करने लगे। उन्हें लगा- ‘मैंने साधना का मार्ग पा लिया। </p>
             </div>
           </a>
