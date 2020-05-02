@@ -42,7 +42,7 @@
 									<tr>
 										<th data-hide="phone"><?=lang('ID');?></th>
 										<th data-hide="phone"><?= lang('Union')." ".lang('Name'); ?></th>
-										<th data-hide="phone"><?= lang('Union')." ".lang('About'); ?></th>
+										<!-- <th data-hide="phone"><?= lang('Union')." ".lang('About'); ?></th> -->
 										<th data-hide="phone,tablet"><?= lang('Status'); ?></th>
 										<th data-hide="phone,tablet"><?= lang('Action'); ?></th>
 									</tr>

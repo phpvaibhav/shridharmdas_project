@@ -18,4 +18,20 @@ class Union extends Common_Back_Controller {
 		$data['front_scripts'] = array('backend_assets/custom/js/common_datatable.js','backend_assets/custom/js/preceptor.js');
         $this->load->admin_render('union/index', $data, '');
     } //End function
+    function shree_sanghlist(){
+        
+        $this->load->helper('country_code_helper');
+        $unions = unionList();
+        $data_val =array();
+        $i=0;
+        foreach ($unions as $key => $value) {
+           $data_val[$i]['name'] =  $value;
+           $i++;
+        }
+        pr($data_val);
+      /*  if(!empty($data_val)){
+           /// $result = $this->common_model->insertBatch('shree_sangh',$data_val);
+        }*/
+       
+    }
 }//End Class

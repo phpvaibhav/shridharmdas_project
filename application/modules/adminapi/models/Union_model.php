@@ -4,17 +4,17 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 class Union_model extends CI_Model {
 
     //var $table , $column_order, $column_search , $order =  '';
-    var $table = 'union_group';
-    var $column_order = array('p.unionId','p.name','p.status'); //set column field database for datatable orderable
-    var $column_sel = array('p.unionId','p.name','p.about','p.status','(case when (p.status = 0) 
+    var $table = 'shree_sangh';
+    var $column_order = array('p.sanghId','p.name','p.status'); //set column field database for datatable orderable
+    var $column_sel = array('p.sanghId','p.name','p.about','p.status','(case when (p.status = 0) 
         THEN "Inactive" when (p.status = 1) 
         THEN "Active"  ELSE
         "Unknown" 
         END) as statusShow'); //set column field database for datatable orderable
     var $column_search = array('p.name'); //set column field database for datatable searchable 
-    var $order = array('p.unionId'=> 'DESC');  // default order
+    var $order = array('p.sanghId'=> 'ASC');  // default order
     var $where = array();
-    var $group_by = 'p.unionId'; 
+    var $group_by = 'p.sanghId'; 
 
     public function __construct(){
         parent::__construct();
@@ -28,7 +28,7 @@ class Union_model extends CI_Model {
     {
         $sel_fields = array_filter($this->column_sel); 
         $this->db->select($sel_fields);
-        $this->db->from('union_group as p');
+        $this->db->from('shree_sangh as p');
     
         $i = 0;
         foreach ($this->column_search as $emp) // loop column 
@@ -106,7 +106,7 @@ class Union_model extends CI_Model {
 
     public function count_all()
     {
-        $this->db->from('union_group as p');
+        $this->db->from('shree_sangh as p');
         if(!empty($this->where))
             $this->db->where($this->where); 
         return $this->db->count_all_results();
