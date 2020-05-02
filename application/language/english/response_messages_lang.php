@@ -17,4 +17,5 @@ $lang['Updated_successfully'] 	= "Updated successfully";
 $lang['Deleted_successfully'] 	= "Deleted successfully";
 $lang['Something_went_wrong'] 	= "Something went wrong. Please try again";
 $lang['successfully'] 	= "successfully";
+$lang['Shree_Sangh_already_exists'] 	= "Shree Sangh already exists, Please check it.";
 

@@ -37,6 +37,7 @@ class ResponseMessages{
             126 => $CI->lang->line("Invalid_Email_or_Password"),
             127 => "Record found",
             128 => $CI->lang->line("successfully"),
+            129 => $CI->lang->line("Shree_Sangh_already_exists"),
             200 => 'OK',
             201 => 'Created',
             202 => 'Accepted',

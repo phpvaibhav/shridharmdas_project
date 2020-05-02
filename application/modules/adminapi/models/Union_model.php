@@ -12,9 +12,10 @@ class Union_model extends CI_Model {
         "Unknown" 
         END) as statusShow'); //set column field database for datatable orderable
     var $column_search = array('p.name'); //set column field database for datatable searchable 
-    var $order = array('p.sanghId'=> 'ASC');  // default order
+    var $order = array('p.sanghId'=> 'DESC');  // default order
     var $where = array();
     var $group_by = 'p.sanghId'; 
+
 
     public function __construct(){
         parent::__construct();

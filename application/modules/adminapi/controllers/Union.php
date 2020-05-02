@@ -15,20 +15,39 @@ class Union extends Common_Admin_Controller{
             $response = array('status' => FAIL, 'message' => strip_tags(validation_errors()));  
         }else{
             $name   = $this->post('name'); 
-            $about  = $this->post('about'); 
+            $name   = strtoupper($name);
+
+            $about  = @$this->post('about'); 
             $id     = decoding($this->post('id'));
             $data_val['name']   = $name;
             $data_val['about']  = $about;
-            $isExist            =  $this->common_model->is_data_exists('union_group',array('unionId'=>$id));
+            $isExist            =  $this->common_model->is_data_exists('shree_sangh',array('sanghId'=>$id));
             if($isExist){
-                 $result = $this->common_model->updateFields('union_group',$data_val,array('uniond'=>$id));
-                 $msg = ResponseMessages::getStatusCodeMessage(123);
+                 $isExistN            =  $this->common_model->is_data_exists('shree_sangh',array('sanghId !='=>$id,'name'=>$name));
+                 if($isExistN){
+                     $result = 1;
+                     $status = FAIL;
+                     $msg = ResponseMessages::getStatusCodeMessage(129);
+                 }else{
+                    $result = $this->common_model->updateFields('shree_sangh',$data_val,array('sanghId'=>$id));
+                    $status = SUCCESS;
+                    $msg = ResponseMessages::getStatusCodeMessage(123);
+                 }
+                
             }else{
-                 $result = $this->common_model->insertData('union_group',$data_val);
-                $msg  = ResponseMessages::getStatusCodeMessage(122);
+                $isExistN            =  $this->common_model->is_data_exists('shree_sangh',array('name'=>$name));
+                 if($isExistN){
+                     $result = 1;
+                     $status = FAIL;
+                     $msg = ResponseMessages::getStatusCodeMessage(129);
+                 }else{
+                    $result = $this->common_model->insertData('shree_sangh',$data_val);
+                    $status = SUCCESS;
+                    $msg  = ResponseMessages::getStatusCodeMessage(122);
+                }
             }
             if($result){
-                 $response   = array('status'=>SUCCESS,'message'=>$msg);
+                 $response   = array('status'=>$status,'message'=>$msg);
             }else{
                  $response   = array('status'=>FAIL,'message'=>ResponseMessages::getStatusCodeMessage(118));
             }
@@ -42,8 +61,8 @@ class Union extends Common_Admin_Controller{
         $this->load->model('union_model');
         $this->union_model->set_data();
         $list   = $this->union_model->get_list();
-        
-        $data   = array();
+        $data   = array();        
+
         $no     = $_POST['start'];
         foreach ($list as $serData) { 
             $action = '';
@@ -76,7 +95,7 @@ class Union extends Common_Admin_Controller{
                 $action .= '<a href="'.$link.'" onclick="confirmAction(this);" data-message="You want to change status!" data-id="'.encoding($serData->sanghId).'" data-url="adminapi/union/activeInactiveStatus" data-list="1"  class="on-default edit-row table_action" title="Status"><i class="fa fa-times" aria-hidden="true"></i></a>';
             }
             $action .= '&nbsp;&nbsp;|&nbsp;&nbsp;<a href="'.$link.'"  class="on-default edit-row table_action" title="Edit"><i class="fa fa-edit" data-id="'.encoding($serData->sanghId).'" data-name="'.$serData->name.'" data-about="'.$serData->about.'"   onclick="editAction(this);"  aria-hidden="true"></i></a>';
-            $action .= '&nbsp;&nbsp;|&nbsp;&nbsp;<a href="'.$link.'" onclick="confirmAction(this);" data-message="You want to delete this record!" data-id="'.encoding($serData->sanghId).'" data-url="adminapi/union/recordDelete" data-list="1"  class="on-default edit-row table_action" title="Delete"><i class="fa fa-trash" aria-hidden="true"></i></a>';
+            /*$action .= '&nbsp;&nbsp;|&nbsp;&nbsp;<a href="'.$link.'" onclick="confirmAction(this);" data-message="You want to delete this record!" data-id="'.encoding($serData->sanghId).'" data-url="adminapi/union/recordDelete" data-list="1"  class="on-default edit-row table_action" title="Delete"><i class="fa fa-trash" aria-hidden="true"></i></a>';*/
 
             $row[]  = $action;
             $data[] = $row;

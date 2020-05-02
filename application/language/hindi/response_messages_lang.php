@@ -17,4 +17,5 @@ $lang['Updated_successfully'] 	= "अद्यतन सफलतापूर्
 $lang['Deleted_successfully'] 	= "सफलतापूर्वक मिटाया गया!";
 $lang['Something_went_wrong'] 	= "कुछ गलत हो गया। कृपया पुन: प्रयास करें";
 $lang['successfully'] 			= "सफलतापूर्ण हो गया!";
+$lang['Shree_Sangh_already_exists'] 	= "श्री संघ पहले से मौजूद है, कृपया इसकी जाँच करें।";
 
