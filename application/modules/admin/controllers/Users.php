@@ -392,9 +392,11 @@ class Users extends Common_Back_Controller {
         $this->output->set_header('Content-Type: application/vnd.ms-excel');
         $this->output->set_header("Content-type: application/csv");
         $this->output->set_header('Cache-Control: max-age=0');
-        $writer->save($fileName); 
+        $this->load->model('Image_model');
+        $this->Image_model->make_dirs('excel_pdf');
+        $writer->save('uploads/excel_pdf/'.$fileName); 
         //redirect(HTTP_UPLOAD_PATH.$fileName); 
-        $filepath = file_get_contents($fileName);
+        $filepath = file_get_contents('uploads/excel_pdf/'.$fileName);
         force_download($fileName, $filepath);
         //unlink(FCPATH.'/'.ROOT_UPLOAD_PATH.$fileName);
     }//End Function
