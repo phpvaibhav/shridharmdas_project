@@ -83,7 +83,7 @@
 	$lang['Please_select_your_Identity_image'] 				= "कृपया अपनी पहचान पत्र की छवि चुनें";
 	$lang['Please_do_not_add_a_photo_of_yourself'] 				= "कृपया खुद का फोटो नहीं डाले |";
 	
-
+	$lang['Please_enter_your_post_name'] 				= "कृपया अपना पोस्ट नाम दर्ज करें";
 	//सेकंड के बाद पुन: प्रयास करें
 
 ?>

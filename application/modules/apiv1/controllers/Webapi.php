@@ -228,7 +228,7 @@ class Webapi extends Common_Service_Controller{
                 $add_meta1['district']      = $this->post('pdistrict');
                 $add_meta1['country']       = $this->post('pcountry');
                 $add_meta1['state']         = $this->post('pstate');
-                $add_meta1['postName']      = $this->post('ppostName');
+                $add_meta1['postName']      = !empty($this->post('ppostName')) ? $this->post('ppostName'): $this->post('postName');
                 $add_meta1['addressType']   = 'Permanent';
                 
                 /* $add_meta2['userId']        = $userId;

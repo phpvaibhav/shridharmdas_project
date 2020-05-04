@@ -41,8 +41,6 @@
 	max-width: 44%;
  /*   max-width: 68%;*/
 }
-
-
 .text-manage{
      
     font-size: 15px;
@@ -60,7 +58,7 @@
     width: 50px;
     height: 50px;
     background: #fff;
-        background-color: rgb(255, 255, 255);
+    background-color: rgb(255, 255, 255);
     opacity: 0.7;
     border-radius: 12% !important;
     transition: 0.4s ease;
@@ -93,7 +91,7 @@
     .intro_text{ 
         padding: 22% 0;   }
  }
- @media only screen and (max-width: 1439px) and (min-width:1366px){
+ @media only screen and (max-widtsh: 1439px) and (min-width:1366px){
     .intro_text{ 
         padding: 17% 0 !important;   }
  }

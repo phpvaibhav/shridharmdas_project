@@ -346,6 +346,10 @@ $("#user-add-step-2").validate({ // Rules for form validation
         city    : {
           required : true
         },  
+         postName    : {
+          required : true
+        },  
+        
         zip_code    : {
           required : true
         },  
@@ -357,8 +361,12 @@ $("#user-add-step-2").validate({ // Rules for form validation
         },
         paddress    : {
           required : true
-        },  
+        }, 
+
         pcity    : {
+          required : true
+        },   
+        ppostName    : {
           required : true
         },  
         pzip_code    : {
@@ -401,7 +409,14 @@ $("#user-add-step-2").validate({ // Rules for form validation
         
           address : {
             required : Please_select_your_address
-          },  
+          }, 
+          postName : {
+            required : Please_enter_your_post_name
+          }, 
+            ppostName : {
+            required : Please_enter_your_post_name
+          }, 
+           
           city : {
             required : Please_select_your_city
           }, 

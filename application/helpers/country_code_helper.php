@@ -366,7 +366,7 @@ $list = array(
 	'BHOPAL',*/
 /*	'OTHER',*/
 'OTHER',
-	'BADNAWAR',	
+'BADNAWAR',	
 'NAGDA'	,
 'KANWAN',	
 'KOD'	,

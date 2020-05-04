@@ -80,6 +80,7 @@
   var Please_select_your_Occupation ="<?= lang('Please_select_your_Occupation');?>";
 var Please_select_your_religious_Knowledge ="<?= lang('Please_select_your_religious_Knowledge');?>";
 var Please_select_your_Identity_image ="<?= lang('Please_select_your_Identity_image');?>";
+var Please_enter_your_post_name ="<?= lang('Please_enter_your_post_name');?>";
 </script>
 
 	<!-- Scripts -->
