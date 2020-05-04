@@ -27,8 +27,7 @@
 				-->
 				<header>
 				<!-- 	<span class="widget-icon"> <i class="fa fa-users"></i> </span> -->
-					<h2>Users </h2>
-					<!-- <a class="btn btn-warning pull-right"  target="_blank" href="<?= base_url('users-incomplete');?>">Users incomplete</a>  -->
+					<h2>User incomplete process</h2>
 				</header>
 				<!-- widget div-->
 				<div>
@@ -39,68 +38,9 @@
 					<!-- end widget edit box -->
 					<!-- widget content -->
 					<div class="widget-body padding">
-					
-						<?php if(!empty($countuser)): ?>
-							<div class="row">
-	<div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
-		 <form action="<?php print base_url();?>admin/users/exportUser" class="form-horizontal"  enctype="multipart/form-data" method="post" accept-charset="utf-8">
-		 <div class="form-group">
-													
-													<div class="col-md-3 text-center">
 
-														<label class="radio radio-inline">
-															<input type="radio" class="radiobox" name="export_type" value="xlsx" checked=""> 
-															<span>.xlsx</span> 	
-														</label>
-														<label class="radio radio-inline">
-															<input type="radio" class="radiobox" name="export_type" value="xls"> 
-															<span>.xls</span> 	
-														</label>
-														<label class="radio radio-inline">
-															<input type="radio" class="radiobox" name="export_type" value="csv"> 
-															<span>.csv</span> 	
-														</label>
-														
-													</div>									
-													<div class="col-md-3 text-center">
-
-														<label class="radio radio-inline">
-															<input type="radio" class="radiobox" name="lang_type" value="Actual" > 
-															<span>Actual</span> 	
-														</label>
-														<label class="radio radio-inline">
-															<input type="radio" class="radiobox" name="lang_type" value="Hindi" checked=""> 
-															<span>Hindi</span> 	
-														</label>
-														<label class="radio radio-inline">
-															<input type="radio" class="radiobox" name="lang_type" value="English"> 
-															<span>English</span> 	
-														</label>
-														
-													</div>
-
-													<div class="col-md-2"><button type="submit" name="import" class="btn btn-primary">Export</button></div>
-												<div class="col-md-4 text-right">
-													<a href="<?= base_url('user-excel'); ?>"> Advance Export</a>
-						<!-- <label class="select">
-						<select name="unionName"  class="form-control select2-" id="unionName_1">
-						<option value="" selected="" disabled=""><?= lang('Union').' '.lang('Name'); ?></option>
-						<?php if(!empty($unionList)):
-						foreach ($unionList as $k => $union) {?>
-						<option value="<?=  $union; ?>"  ><?=  $union; ?></option>
-						<?php } endif; ?>
-
-						</select> <i></i> </label> -->
-													</div> 
-												</div>
-
-      </form>
-	</div>
-		
-	</div>
-<?php endif; ?>
 						<div class="table-responsive">
-							<table class="table table-striped table-bordered table-hover dataTables-example-list" width="100%" data-list-url = "adminapi/users/list" data-id ="" data-no-record-found = "<?= lang('No_Record_found'); ?>" >
+							<table class="table table-striped table-bordered table-hover dataTables-example-list" width="100%" data-list-url = "adminapi/users/list" data-id ="fail" data-no-record-found = "<?= lang('No_Record_found'); ?>" >
 								<thead>			                
 									<tr>
 										<th data-hide="phone">ID</th>

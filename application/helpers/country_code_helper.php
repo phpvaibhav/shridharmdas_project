@@ -495,7 +495,16 @@ $list = array(
 'PUNE',
 'GHOTI'	,
 'IGATPURI',
-'GHODNADI'
+'GHODNADI',
+'NASHIK',
+'YAVATMAL',
+'BULDHANA',
+'NAGPUR',
+'JALGOAN',
+'BHUSAVAL',
+'PAROLA',
+'AURANGABAD',
+'KOPARGAON'
 );
 // Sorting the array of string
 sort($list);

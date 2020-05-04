@@ -98,6 +98,10 @@ class Users extends Common_Admin_Controller{
         $this->load->model('user_model');
         $where ="";
         $unionName = $this->post('unionName');
+        $id = $this->post('id');
+        if(!empty($id)){
+            $where = array('communicationCode'=>0);
+        }
       /*  if(!empty($unionName)){
              $where = "(um.unionName = ".$unionName." OR um.otherUnionName= ".$unionName.")";
         }*/

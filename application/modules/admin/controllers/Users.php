@@ -17,8 +17,6 @@ class Users extends Common_Back_Controller {
             $count          = $this->common_model->get_total_count('users');
         $data['countuser']  = $count ;   
         $count              = number_format_short($count);
-
-/*'<li class="sparks-info"><h5>'.lang('Users').'<span class="txt-color-blue"><a href="'.base_url('add-user').'" class="anchor-btn"><i class="fa fa-plus-square"></i></a></span></h5></li>',*/
         $data['recordSet']  = array('<li class="sparks-info"><h5>'.lang('Total').' '.lang('Users').'<span class="txt-color-darken" id="totalCust"><i class="fa fa-lg fa-fw fa fa-users"></i>&nbsp;'.$count.'</span></h5></li>');
          $this->load->helper('country_code_helper');
         $data['unionList']      = unionList();
@@ -26,6 +24,21 @@ class Users extends Common_Back_Controller {
             'backend_assets/custom/js/users.js');
         $this->load->admin_render('users/index', $data, '');
     } //End function
+
+    public function indexC(){
+     
+        $data['title']      = lang('Users');
+            $count          = $this->common_model->get_total_count('users',array('communicationCode'=>0));
+        $data['countuser']  = $count ;   
+        $count              = number_format_short($count);
+        $data['recordSet']  = array('<li class="sparks-info"><h5>'.lang('Total').' '.lang('Users').'<span class="txt-color-darken" id="totalCust"><i class="fa fa-lg fa-fw fa fa-users"></i>&nbsp;'.$count.'</span></h5></li>');
+         $this->load->helper('country_code_helper');
+        $data['unionList']      = unionList();
+        $data['front_scripts']  = array('backend_assets/custom/js/common_datatable.js',
+            'backend_assets/custom/js/users.js');
+        $this->load->admin_render('users/trash_user', $data, '');
+    } //End function
+    
 
     public function userexcel(){
      

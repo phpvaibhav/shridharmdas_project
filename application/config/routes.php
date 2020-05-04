@@ -57,6 +57,7 @@ $route['dashboard']					= 'admin/dashboard';
 $route['profile/(:any)'] 			= 'admin/profile/userDetail/$1';
 $route['change_password/(:any)'] 	= 'admin/profile/changePassword/$1';
 $route['users'] 					= 'admin/users';
+$route['users-incomplete'] 					= 'admin/users/indexC';
 $route['add-user'] 					= 'admin/users/add';
 $route['user-excel'] 					= 'admin/users/userexcel';
 
