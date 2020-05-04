@@ -365,6 +365,7 @@ $list = array(
 	'SHIDDHGANAJ',
 	'BHOPAL',*/
 /*	'OTHER',*/
+'OTHER',
 	'BADNAWAR',	
 'NAGDA'	,
 'KANWAN',	
@@ -493,12 +494,12 @@ $list = array(
 'BHOPAL',
 'PUNE',
 'GHOTI'	,
-'IGATURI',
+'IGATPURI',
 'GHODNADI'
 );
 // Sorting the array of string
-	sort($list);
-	return $list;
+sort($list);
+return $list;
 }
 
 ?>
