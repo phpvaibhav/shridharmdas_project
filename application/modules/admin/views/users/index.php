@@ -28,7 +28,7 @@
 				<header>
 				<!-- 	<span class="widget-icon"> <i class="fa fa-users"></i> </span> -->
 					<h2>Users </h2>
-					<!-- <a class="btn btn-warning pull-right"  target="_blank" href="<?= base_url('users-incomplete');?>">Users incomplete</a>  -->
+					 <a class="btn btn-warning pull-right"  target="_blank" href="<?= base_url('users-incomplete');?>">Users incomplete</a> 
 				</header>
 				<!-- widget div-->
 				<div>
