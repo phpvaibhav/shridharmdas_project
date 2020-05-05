@@ -100,7 +100,7 @@ class Users extends Common_Admin_Controller{
         $unionName = $this->post('unionName');
         $id = $this->post('id');
         if(!empty($id)){
-            $where = array('communicationCode'=>0);
+            $where = array('sanghId'=>0);
         }
       /*  if(!empty($unionName)){
              $where = "(um.unionName = ".$unionName." OR um.otherUnionName= ".$unionName.")";
@@ -120,7 +120,7 @@ class Users extends Common_Admin_Controller{
             $row[]      = '<a href="'.$link_url.'" >'.display_placeholder_text($serData->hindiFullName).'</a>'; 
             $row[]      = display_placeholder_text($serData->hindiParentName); 
             $row[]      = display_placeholder_text($serData->hindiFamilyHeadName); 
-            $row[]      = ($serData->unionName=='OTHER') ?  display_placeholder_text($serData->otherUnionName) : display_placeholder_text($serData->unionName) ; 
+            $row[]      = display_placeholder_text($serData->unionName).(!empty($serData->otherUnionName) ? ' ('.display_placeholder_text($serData->otherUnionName).')':""); 
             $row[]      = @$serData->countrycode.' '.display_mobile_text($serData->contactNumber); 
             $row[]      = display_placeholder_text(date('d-m-Y',strtotime($serData->dob))); 
           
@@ -299,9 +299,16 @@ class Users extends Common_Admin_Controller{
             $user_meta['hindiParentName']       = $this->post('hindiParentName');
             $user_meta['hindiFamilyHeadName']   = $this->post('hindiFamilyHeadName');
             $user_meta['hindiFamilyHeadName']   = $this->post('hindiFamilyHeadName');
-            $user_meta['unionName']             = $this->post('unionName');
+           // $user_meta['unionName']             = $this->post('unionName');
             $user_meta['otherUnionName']        = $this->post('otherUnionName');
              $user_meta['bloodGroup']           = @$this->post('bloodGroup');
+               $unionName = $this->post('unionName');
+                $user_meta['unionName']         = $this->post('unionName');
+                $sangh             =  $this->common_model->is_data_exists('shree_sangh',array('sanghId'=>$unionName));
+                if($sangh){
+                    $data_val['sanghId']         = $sangh->sanghId;
+                     $user_meta['unionName']         = $sangh->name;
+                }
             $user_meta['religiousKnowledge']    = $this->post('religiousKnowledge') ? implode(",",$this->post('religiousKnowledge')) :"";
             $id     = decoding($this->post('id'));
          

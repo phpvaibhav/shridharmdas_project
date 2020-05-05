@@ -48,8 +48,8 @@ class Users extends Common_Back_Controller {
         $count              = number_format_short($count);
 
         $data['recordSet']  = array('<li class="sparks-info"><h5>'.lang('Total').' '.lang('Users').'<span class="txt-color-darken" id="totalCust"><i class="fa fa-lg fa-fw fa fa-users"></i>&nbsp;'.$count.'</span></h5></li>');
-         $this->load->helper('country_code_helper');
-        $data['unionList']      = unionList();
+        //  $this->load->helper('country_code_helper');
+      $data['unionList'] = $this->common_model->getAll('shree_sangh',array('status'=>1),'name','ASC'); //unionList();
         $data['front_scripts']  = array('backend_assets/custom/js/common_datatable.js',
             'backend_assets/custom/js/users.js');
         $this->load->admin_render('users/excelsheet', $data, '');
@@ -73,8 +73,8 @@ class Users extends Common_Back_Controller {
         $data['info']           = $result;
         $data['addresses']      = $this->common_model->getAll('addresses',array('userId'=>$result['id']));
         $data['usermeta']       = $this->common_model->getsingle('user_meta',array('userId'=>$result['id']));
-        $this->load->helper('country_code_helper');
-        $data['unionList']      = unionList();
+      //  $this->load->helper('country_code_helper');
+      $data['unionList'] = $this->common_model->getAll('shree_sangh',array('status'=>1),'name','ASC'); //unionList();
         $data['front_scripts']  = array('backend_assets/custom/js/user_edit.js');
       
         $this->load->admin_render('users/edit', $data, '');
@@ -113,15 +113,16 @@ class Users extends Common_Back_Controller {
         $data           = array();
         $data['title']  = lang('Users_List');;
         // get employee list
-       
+        $fileName = 'shridharmdas-gan-'.time(); 
          if(!empty($unionName)){
-        $empInfo = $this->common_model->GetJoinRecord('users','id','user_meta','userId',"*",array('user_meta.unionName'=>$unionName),'','id','desc');
+        $empInfo = $this->common_model->GetJoinRecord('users','id','user_meta','userId',"*",array('users.sanghId'=>$unionName),'','id','desc');
+
         }else{
            $empInfo = $this->common_model->getAll('users','','id','desc');  
         }
-        $fileName = 'shridharmdas-gan-'.time(); 
+        
         if(!empty($unionName)){
-            $fileName = $unionName.'_shridharmdas-gan-'.time(); 
+            $fileName = 'sangh_shridharmdas-gan-'.time(); 
         }
          //pr($empInfo);
         $spreadsheet = new Spreadsheet();

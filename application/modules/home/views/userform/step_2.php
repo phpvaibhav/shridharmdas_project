@@ -82,10 +82,8 @@
                               <label for="unionName"><?= lang('Union').' '.lang('Name'); ?><span>*</span></label>
                               <select name="unionName"  class="form-control js-example-basic-single "  id="unionName"  >
                               <?php if(!empty($unionList)):
-                              foreach ($unionList as $kc => $union) { 
-                                
-                                ?>
-                              <option value="<?= $union; ?>" ><?=  $union; ?></option>
+                              foreach ($unionList as $kc => $union) { ?>
+                                <option value="<?= $union->sanghId; ?>" data-sanghname="<?=  $union->name; ?>" ><?=  $union->name; ?></option>
                               <?php } endif; ?>
 
                               </select>

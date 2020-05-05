@@ -84,7 +84,7 @@
 						<option value="" selected="" disabled=""><?= lang('Union').' '.lang('Name'); ?></option>
 						<?php if(!empty($unionList)):
 						foreach ($unionList as $k => $union) {?>
-						<option value="<?=  $union; ?>"  ><?=  $union; ?></option>
+						<option value="<?=  $union->sanghId; ?>"  ><?=  $union->name; ?></option>
 						<?php } endif; ?>
 
 						</select> <i></i> </label>

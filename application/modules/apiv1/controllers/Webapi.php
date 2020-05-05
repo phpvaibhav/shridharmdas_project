@@ -200,7 +200,14 @@ class Webapi extends Common_Service_Controller{
                 $user_val['communicationCode']  = $this->post('zip_code');
 
               //  $user_meta['userId']        = $userId;
+                $unionName = $this->post('unionName');
                 $user_meta['unionName']         = $this->post('unionName');
+                $sangh             =  $this->common_model->is_data_exists('shree_sangh',array('sanghId'=>$unionName));
+                if($sangh){
+                    $user_val['sanghId']         = $sangh->sanghId;
+                     $user_meta['unionName']         = $sangh->name;
+                }
+               
                 $user_meta['otherUnionName']    = $this->post('otherUnionName');
                 $user_meta['profession']        = $this->post('profession');
                 $user_meta['subProfession']     = @$this->post('subProfession');

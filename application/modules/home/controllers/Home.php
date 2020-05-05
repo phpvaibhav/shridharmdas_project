@@ -119,8 +119,8 @@ public function __construct()
         $data['title'] = 'User Form';
         $data['front_styles'] = array();
         $data['front_scripts'] = array('frontend_assets/js/front_user.js');
-        $this->load->helper('country_code_helper');
-        $data['unionList'] = unionList();
+       // $this->load->helper('country_code_helper');
+        $data['unionList'] = $this->common_model->getAll('shree_sangh',array('status'=>1),'sanghId','ASC'); //unionList();
         $data['userId'] = $userId;
         $this->load->front_render_minimal('userform/step_2',$data);
     }//End Function

@@ -184,7 +184,9 @@ $("#user-add-form").validate({// Rules for form validation
   }
 });
 $("#unionName").change(function(){
-  if($(this).val()=='OTHER'){
+   var sanghname = $('#unionName option:selected').data('sanghname');
+ // alert(sanghname);
+  if(sanghname=='OTHER'){
      $(".otherUnionName").css("display", "block");
   }else{
      $(".otherUnionName").css("display", "none");

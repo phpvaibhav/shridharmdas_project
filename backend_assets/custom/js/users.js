@@ -84,6 +84,12 @@ $("#user-add-form").validate({// Rules for form validation
       address    : {
         required : true
       },  
+         postName    : {
+          required : true
+        },  
+           ppostName    : {
+          required : true
+        },  
       city    : {
         required : true
       },  
@@ -329,6 +335,13 @@ $("#user-address-form").validate({// Rules for form validation
         district    : {
           required : true
         },
+        postName    : {
+          required : true
+        },
+         ppostName    : {
+          required : true
+        },
+        
         paddress    : {
           required : true
         },  
@@ -362,7 +375,12 @@ $("#user-address-form").validate({// Rules for form validation
           district : {
             required : Please_select_your_district
           },
-
+  postName : {
+            required : Please_enter_your_post_name
+          }, 
+            ppostName : {
+            required : Please_enter_your_post_name
+          }, 
                   
           paddress : {
             required : Please_select_your_address

@@ -14,7 +14,7 @@ class User_model extends CI_Model {
         THEN "Not approved" when (u.verifyUser = 1) 
         THEN "Approved"  ELSE
         "Unknown" 
-        END) as verifyShow'); //set column field database for datatable orderable
+        END) as verifyShow','sg.name as unionName'); //set column field database for datatable orderable
     var $column_search = array('u.fullName','u.parentName','u.contactNumber','um.hindiFullName','um.hindiParentName','um.hindiFamilyHeadName','um.unionName','um.otherUnionName','u.familyHeadName'); //set column field database for datatable searchable 
     var $order = array('u.id'=> 'DESC');  // default order
     var $where = array();
@@ -32,6 +32,7 @@ class User_model extends CI_Model {
         $this->db->select($sel_fields);
         $this->db->from('users as u');
         $this->db->join('user_meta as um','um.userId=u.id','left');
+        $this->db->join('shree_sangh as sg','sg.sanghId=u.sanghId','left');
     
         $i = 0;
         foreach ($this->column_search as $emp) // loop column 
@@ -108,6 +109,7 @@ class User_model extends CI_Model {
     {
         $this->db->from('users as u');
         $this->db->join('user_meta as um','um.userId=u.id','left');
+        $this->db->join('shree_sangh as sg','sg.sanghId=u.sanghId','left');
         if(!empty($this->where))
             $this->db->where($this->where); 
         return $this->db->count_all_results();

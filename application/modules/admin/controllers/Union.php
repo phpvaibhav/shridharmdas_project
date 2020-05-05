@@ -34,4 +34,30 @@ class Union extends Common_Back_Controller {
         }*/
        
     }
+    function shree_userlist(){
+        $data_val           = array();
+       // $user = $this->common_model->getAll('users',);
+        $empInfo = $this->common_model->GetJoinRecord('users','id','user_meta','userId',"*",'','','id','desc');
+        //unionName
+        $i=0;
+        foreach ($empInfo as $key => $value) {
+         
+         $userId             = $value->id;
+         $unionName          = trim($value->unionName);
+    
+          $isExist            = $this->common_model->is_data_exists('shree_sangh',array('name'=>$unionName));
+
+          if($isExist){
+           $status = $this->common_model->updateFields('users',array('sanghId'=>$isExist->sanghId),array('id'=>$userId)); 
+            $data_val[$i]=$status;
+          }
+         $i++;
+        }
+        pr($data_val);
+      /*  if(!empty($data_val)){
+           /// $result = $this->common_model->insertBatch('shree_sangh',$data_val);
+        }*/
+       
+    }
+    
 }//End Class

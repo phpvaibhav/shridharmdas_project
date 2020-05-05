@@ -728,7 +728,7 @@ function sendOtpToMobile(){
 
 function ResendOtpToMobile(){
    $("#Resendotp").css("display", "none");
-  var method      =  "POST";
+    var method      =  "POST";
     var post_data   = {'contactNumber':$('#contactNumber').val(),'countrycode':$('#countrycode').val()};
     var url         =  base_url+'apiv1/webapi/smsSentReOtp';
     var header      = true;
@@ -890,7 +890,9 @@ function timerCount(){
   }
 }*/
 $("#unionName").change(function(){
-  if($(this).val()=='OTHER'){
+  var sanghname = $('#unionName option:selected').data('sanghname');
+ // alert(sanghname);
+  if(sanghname=='OTHER'){
      $(".otherUnionName").css("display", "block");
   }else{
      $(".otherUnionName").css("display", "none");
