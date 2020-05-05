@@ -28,10 +28,11 @@ class Union extends Common_Back_Controller {
            $data_val[$i]['name'] =  $value;
            $i++;
         }
-        pr($data_val);
+       
         if(!empty($data_val)){
            $result = $this->common_model->insertBatch('shree_sangh',$data_val);
         }
+         pr($data_val);
        
     }
     function shree_userlist(){
