@@ -15,7 +15,7 @@ function preLoadshow(x){
 preLoadshow(true);
 $( document ).ready(function() {
      setTimeout(function(){ preLoadshow(false);
-     },5000);
+     },2000);
       
 });
 /*$(window).load(function() {
