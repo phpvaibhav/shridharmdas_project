@@ -100,7 +100,7 @@ class Users extends Common_Admin_Controller{
         $unionName = $this->post('unionName');
         $id = $this->post('id');
         if(!empty($id)){
-            $where = array('sanghId'=>0);
+            $where = array('u.sanghId'=>0);
         }
       /*  if(!empty($unionName)){
              $where = "(um.unionName = ".$unionName." OR um.otherUnionName= ".$unionName.")";
@@ -189,8 +189,6 @@ class Users extends Common_Admin_Controller{
             }else{
                  $response       = array('status'=>FAIL,'message'=>ResponseMessages::getStatusCodeMessage(118));  
             }
-              
-           
         }
         $this->response($response);
     }//end function
@@ -256,8 +254,6 @@ class Users extends Common_Admin_Controller{
             }else{
               $result=0;
                // $this->common_model->insertData('addresses',$meta_val);
-
-               
             }
             if($result){
                  $response   = array('status'=>SUCCESS,'message'=>$msg);

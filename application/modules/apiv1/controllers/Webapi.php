@@ -358,7 +358,6 @@ class Webapi extends Common_Service_Controller{
         $this->response($response);
     } //End Function
     
-
     function verifyOtpCode_post(){
         $this->form_validation->set_rules('contactNumber','contact number','trim|required');
         $this->form_validation->set_rules('otpnumber','otpnumber','trim|required');

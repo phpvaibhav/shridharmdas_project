@@ -384,7 +384,7 @@
                   <!-- <label class="select">
                     <select  class="cities" id="city" name="city">
                       <option value="0" selected="" disabled="">Select City</option>
-              
+                      
                     </select> <i></i> </label> -->
                     <label class="input">
                     <input type="text" name="ocity" id="ocity" placeholder="<?= lang('City'); ?>">
