@@ -236,11 +236,11 @@ public function __construct()
     }
     public function contactus_submit(){
         if($_POST) {
-    $visitor_name = "";
-    $visitor_email = "";
-    $email_title = "";
-    $concerned_department = "";
-    $visitor_message = "";
+    $visitor_name               = "";
+    $visitor_email              = "";
+    $email_title                = "";
+    $concerned_department       = "";
+    $visitor_message            = "";
      
     if(isset($_POST['fullName'])) {
         $visitor_name = filter_var($_POST['fullName'], FILTER_SANITIZE_STRING);

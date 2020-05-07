@@ -245,14 +245,14 @@ class Users extends Common_Admin_Controller{
                     $result = $this->common_model->updateFields('users',$data_val,array('id'=>$id));
                     $this->common_model->updateFields('user_meta',$user_meta,array('userId'=>$id));
                     if($result){
-                    $status = SUCCESS;
+                        $status = SUCCESS;
                         $msg  = ResponseMessages::getStatusCodeMessage(123);
                     }else{
                         $status = FAIL;
                         $msg  = ResponseMessages::getStatusCodeMessage(118);
                     }
             }else{
-              $result=0;
+              $result = 0;
                // $this->common_model->insertData('addresses',$meta_val);
             }
             if($result){
@@ -266,6 +266,7 @@ class Users extends Common_Admin_Controller{
 
 
     function edit_post(){
+
         $authCheck  = $this->check_admin_service_auth();
         $this->form_validation->set_rules('firstName','first name', 'trim|required');
         $this->form_validation->set_rules('lastName','last name', 'trim|required');
@@ -297,14 +298,14 @@ class Users extends Common_Admin_Controller{
             $user_meta['hindiFamilyHeadName']   = $this->post('hindiFamilyHeadName');
            // $user_meta['unionName']             = $this->post('unionName');
             $user_meta['otherUnionName']        = $this->post('otherUnionName');
-             $user_meta['bloodGroup']           = @$this->post('bloodGroup');
-               $unionName = $this->post('unionName');
-                $user_meta['unionName']         = $this->post('unionName');
-                $sangh             =  $this->common_model->is_data_exists('shree_sangh',array('sanghId'=>$unionName));
-                if($sangh){
-                    $data_val['sanghId']         = $sangh->sanghId;
-                     $user_meta['unionName']         = $sangh->name;
-                }
+            $user_meta['bloodGroup']            = @$this->post('bloodGroup');
+            $unionName                          = $this->post('unionName');
+            $user_meta['unionName']             = $this->post('unionName');
+            $sangh                              = $this->common_model->is_data_exists('shree_sangh',array('sanghId'=>$unionName));
+            if($sangh){
+                $data_val['sanghId']            = $sangh->sanghId;
+                $user_meta['unionName']         = $sangh->name;
+            }
             $user_meta['religiousKnowledge']    = $this->post('religiousKnowledge') ? implode(",",$this->post('religiousKnowledge')) :"";
             $id     = decoding($this->post('id'));
          
@@ -313,17 +314,15 @@ class Users extends Common_Admin_Controller{
                     $result = $this->common_model->updateFields('users',$data_val,array('id'=>$id));
                     $this->common_model->updateFields('user_meta',$user_meta,array('userId'=>$id));
                     if($result){
-                    $status = SUCCESS;
-                        $msg  = ResponseMessages::getStatusCodeMessage(123);
+                        $status  = SUCCESS;
+                        $msg     = ResponseMessages::getStatusCodeMessage(123);
                     }else{
                         $status = FAIL;
-                        $msg  = ResponseMessages::getStatusCodeMessage(118);
+                        $msg    = ResponseMessages::getStatusCodeMessage(118);
                     }
             }else{
-              $result=0;
-               // $this->common_model->insertData('addresses',$meta_val);
-
-               
+                $result = 0;
+               //$this->common_model->insertData('addresses',$meta_val);
             }
             if($result){
                  $response   = array('status'=>SUCCESS,'message'=>$msg);
@@ -339,14 +338,13 @@ class Users extends Common_Admin_Controller{
    function addressupdate_post(){
        // $authCheck  = $this->check_admin_service_auth();
         $this->form_validation->set_rules('address','address', 'trim|required');
-       
+
         if($this->form_validation->run() == FALSE){
             $response = array('status' => FAIL, 'message' => strip_tags(validation_errors()));  
         }else{
                 
             
                 $userId                     = decoding($this->post('userId'));
-
                 $add_meta['userId']         = $userId;
                 $add_meta['zip_code']       = $this->post('zip_code');
                 $add_meta['address']        = $this->post('address');
@@ -385,6 +383,7 @@ class Users extends Common_Admin_Controller{
             }else{
                  $result =    $this->common_model->insertData('addresses',$add_meta1);
             }
+            
             if($result){
                 $status = SUCCESS;
                 $msg  = ResponseMessages::getStatusCodeMessage(123);
@@ -414,9 +413,9 @@ class Users extends Common_Admin_Controller{
                 
             
                 $userId                     = decoding($this->post('userId'));
-                 $identityType      = $this->post('identityType');
+                $identityType               = $this->post('identityType');
                
-                $data_val['identityType']         = $identityType;
+                $data_val['identityType']   = $identityType;
                /* image Uploads*/ 
                 $image          = array(); $frontImage = '';
                  $this->load->model('Image_model');

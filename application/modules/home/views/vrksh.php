@@ -22,10 +22,13 @@
 	<section class="sa-paster-about-section section-padding pd-default">
 			<div class="container">
 				<div class="row">
+					<div class="col-xl-12 col-md-12 text-center">
+					<h2>Coming <u class="text-custom-primary">Soon</u></h2>
+				</div>
 					<div class="col-xl-12 col-md-12">
-						<div class="about-us-content text-center">
+					<!-- 	<div class="about-us-content text-center">
 								<img src="<?= base_url().'frontend_assets/images/Group-597.png';?>" alt="img">
-						</div>
+						</div> -->
 						<br>
 					</div>
 					<div class="col-xl-12 col-md-12 text-right"><a href="<?= base_url(); ?>about-us" class="btn dark-btn tilak-top-btn">Back</a></div>

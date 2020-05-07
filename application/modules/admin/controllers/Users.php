@@ -332,8 +332,10 @@ class Users extends Common_Back_Controller {
                     $parentName      = @$usermeta['actualParentName'];
                     $familyHeadName  = @$usermeta['actualFamilyHeadName'];
                     break;
-            }
-        // pr($usermeta);
+            }    
+
+
+
         $sheet->setCellValue('A' . $rowCount, display_placeholder_text($firstName));
         $sheet->setCellValue('B' . $rowCount, display_placeholder_text($lastName));
         $sheet->setCellValue('C' . $rowCount, display_placeholder_text($parentName));
@@ -393,14 +395,14 @@ class Users extends Common_Back_Controller {
         }
 
         if($extension == 'csv'){          
-        $writer = new \PhpOffice\PhpSpreadsheet\Writer\Csv($spreadsheet);
-        $fileName = $fileName.'.csv';
+            $writer     = new \PhpOffice\PhpSpreadsheet\Writer\Csv($spreadsheet);
+            $fileName   = $fileName.'.csv';
         } elseif($extension == 'xlsx') {
-        $writer = new \PhpOffice\PhpSpreadsheet\Writer\Xlsx($spreadsheet);
-        $fileName = $fileName.'.xlsx';
+            $writer     = new \PhpOffice\PhpSpreadsheet\Writer\Xlsx($spreadsheet);
+            $fileName   = $fileName.'.xlsx';
         } else {
-        $writer = new \PhpOffice\PhpSpreadsheet\Writer\Xls($spreadsheet);
-        $fileName = $fileName.'.xls';
+            $writer     = new \PhpOffice\PhpSpreadsheet\Writer\Xls($spreadsheet);
+            $fileName   = $fileName.'.xls';
         }
 
         $this->output->set_header('Content-Type: application/vnd.ms-excel');
