@@ -961,6 +961,7 @@ function checkNumber(){
        // $('#contactNumber').prop('readonly',true);
         
         $('#disabled').prop('disabled',true);
+         stopInterval();
         sendOtpToMobile();
       }
     }
@@ -987,11 +988,13 @@ function checkOtp(){
       verifyOtpNumber();
     }
 }
-
+var interval = null;
 function timerCount(){
+
   $('.countdown').html("");
   var timer2 = "0:61";
-  var interval = setInterval(function() {
+  
+  interval = setInterval(function() {
     if(timer2 == "0:61"){
       $(".countdown").css("display", "block");
     }
@@ -1016,6 +1019,11 @@ function timerCount(){
        }
     }
   }, 1000);
+
+}
+function stopInterval(){
+  clearInterval(interval); // stop the interval
+  return true;
 }
 
 //otherUnionName
