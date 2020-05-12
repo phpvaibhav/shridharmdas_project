@@ -189,6 +189,7 @@ class Common_model extends CI_Model {
 
     /* check if any value exists in and return row if found */
     public function is_id_exist($table,$key,$value){
+        
         $this->db->select("*");
         $this->db->from($table);
         $this->db->where($key,$value);

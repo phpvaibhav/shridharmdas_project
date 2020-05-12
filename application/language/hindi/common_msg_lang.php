@@ -48,4 +48,5 @@ $lang['Address'] 								= "पता";
 $lang['contactNumber'] 							= "मोबाइल नंबर";
 $lang['Users_List'] 							= "गण सूची";
 $lang['Add_User'] 								= "गण जोड़ें";
+$lang['Sub_Admin'] 							= "उप व्यवस्थापक";
 ?>

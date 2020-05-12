@@ -212,7 +212,10 @@
           </li> 
           <li class="<?php echo (strtolower($this->router->fetch_class()) == "users") ? "active" : "" ?>">
             <a href="<?php echo base_url('users'); ?>" title="<?= lang('Users');?>"><i class="fa fa-lg fa-fw fa-users"></i> <span class="menu-item-parent"><?= lang('Users');?></span></a>
-          </li> 
+          </li>   
+        <!--   <li class="<?php echo (strtolower($this->router->fetch_class()) == "adminrole") ? "active" : "" ?>">
+            <a href="<?php echo base_url('sub-admin'); ?>" title="<?= lang('Sub_Admin'); ?>"><i class="fa fa-lg fa-fw fa-user-secret"></i> <span class="menu-item-parent"><?= lang('Sub_Admin'); ?></span></a>
+          </li>  -->
         <!--   <li class="<?php echo (strtolower($this->router->fetch_class()) == "preceptor") ? "active" : "" ?>">
             <a href="<?php echo base_url('preceptor'); ?>" title="<?= lang('Preceptor');?>"><i class="fa fa-lg fa-fw  fa-sun-o"></i> <span class="menu-item-parent"><?= lang('Preceptor');?></span></a>
           </li> 

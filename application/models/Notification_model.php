@@ -29,16 +29,16 @@ class Notification_model extends CI_Model {
         
         //curl request
         $ch = curl_init();
-        curl_setopt( $ch, CURLOPT_URL,'https://fcm.googleapis.com/fcm/send' );  //firebase end url
+        curl_setopt( $ch, CURLOPT_URL,'https://fcm.googleapis.com/fcm/send');  //firebase end url
         //curl_setopt( $ch,CURLOPT_URL, 'https://android.googleapis.com/gcm/send' );
         curl_setopt( $ch,CURLOPT_POST, true );
         curl_setopt( $ch,CURLOPT_HTTPHEADER, $headers );
         curl_setopt( $ch,CURLOPT_RETURNTRANSFER, true );
         curl_setopt( $ch,CURLOPT_SSL_VERIFYPEER, false );
         curl_setopt( $ch,CURLOPT_POSTFIELDS, json_encode( $fields ) );
-        $result = curl_exec($ch );
-        curl_close( $ch );
-        log_event($result, $this->notify_log_file);  //create log of notifcation
+        $result = curl_exec($ch);
+        curl_close($ch);
+        log_event($result,$this->notify_log_file);  //create log of notifcation
         return $result;
     }
     
@@ -52,12 +52,16 @@ class Notification_model extends CI_Model {
      * Added in ver 2.0
      */
     public function send_push_notification($token_arr, $title, $body, $reference_id,$type){
+        
         if(empty($token_arr)){
             return false;
         }
+
         //prepare notification payload
         $notif_msg = array('title'=>$title,'body'=> $body, 'reference_id'=>$reference_id, 'type'=> $type,'click_action'=>'ChatActivity','sound'=>'default');
+
         $this->send_notification($token_arr, $notif_msg); //send andriod and ios push notification
+
         return $notif_msg; //return message array
     }
 }

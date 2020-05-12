@@ -50,10 +50,8 @@
       </div>
        <div class="col-xs-12 col-sm-12 col-md-4 col-lg-4 hidden-xs hidden-sm">
             <div class="hero-1">
-
               <div class="pull-left login-desc-box-l">
                 <img src="<?php echo $backend_assets; ?>img/logo.png" class="pull-left display-image-1"  alt="" style="width:300px; margin-left: 63px;">
-
               </div>
             </div>
 

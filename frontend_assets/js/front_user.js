@@ -1,4 +1,6 @@
 /*createJobType*/
+
+
 $("#otpDivId").css("display", "none");
 $("#user-add-step-1").validate({// Rules for form validation
     errorClass    : errorClass,
@@ -48,10 +50,16 @@ $("#user-add-step-1").validate({// Rules for form validation
         minlength : 12,
         checkAadharNumber : true,
       }, */
-      identityImage:{
+       unionName    : {
+          required : true
+        },
+        otherUnionName    : {
+          required : true
+        },
+    /*  identityImage:{
         required: true,
         accept:"jpg,png,jpeg,gif,pdf"
-      } ,  
+      } ,  */
     /*  frontImage:{
         required: true,
         accept:"jpg,png,jpeg,gif,pdf"
@@ -64,6 +72,13 @@ $("#user-add-step-1").validate({// Rules for form validation
     },
     // Messages for form validation
     messages : {
+        unionName : {
+            required : Please_select_your_unionName
+          },
+   
+          otherUnionName : {
+            required : This_option_field_is_required
+          }, 
       fullName : {
             required : Please_select_your_full_name
           },
@@ -323,15 +338,19 @@ $("#user-add-step-2").validate({ // Rules for form validation
         maritalStatus    : {
           required : true
         },
-        unionName    : {
+       /* unionName    : {
           required : true
         },
         otherUnionName    : {
           required : true
-        },
+        },*/
          profession    : {
           required : true
         },
+          identityImage:{
+        required: true,
+        accept:"jpg,png,jpeg,gif,pdf"
+      } ,  
         
      /*  subProfession    : {
           required : true
@@ -383,6 +402,10 @@ $("#user-add-step-2").validate({ // Rules for form validation
     
     // Messages for form validation
     messages : {
+        identityImage:{
+            required: Please_select_your_Identity_image,
+          accept: Please_select__image_type,//"Only image type jpg/png/jpeg/gif is allowed"
+          },
      
           gender : {
             required : Please_select_your_gender
@@ -450,7 +473,7 @@ $("#user-add-step-2").validate({ // Rules for form validation
           
   },
   // Ajax form submition
-  submitHandler : function(form) {
+/*  submitHandler : function(form) {
 
       if ($('#remember_Address').is(':checked')) {
 
@@ -509,11 +532,126 @@ $("#user-add-step-2").validate({ // Rules for form validation
               setTimeout(function(){  $('#submit').prop('disabled', false); },4000);
               if(res.status=='success'){
                 //toastr.success(res.message, 'Success', {timeOut: 3000});
-                  swal(Good_job,Your_form_submitted_successfully, "success");
+                 // swal(Good_job,Your_form_submitted_successfully, "success");
+ swal({
+  title: Good_job,
+  text: Your_form_submitted_successfully,
+  type: "success",
+  showCancelButton: false,
+  confirmButtonColor: "#DD6B55",
+  confirmButtonText: "Ok",
+  //cancelButtonText: "No, cancel please!",
+  closeOnConfirm: false,
+  closeOnCancel: false,
+  allowOutsideClick: false
+},
+function(isConfirm){
+  if (isConfirm) {
+     window.location = base_url;      // submitting the form when user press yes
+  } else {
+   // swal("Cancelled", "Your imaginary file is safe :)", "error");
+  }
+});
+
                 setTimeout(function(){ 
                   // window.location.reload();
-                    window.location = base_url;
-                },3000);
+                 //   window.location = base_url;
+                },10000);
+             
+              }else{
+                toastr.error(res.message, 'Alert!', {timeOut: 4000});
+              }
+            }
+          });
+    return false; // required to block normal submit since you used ajax
+  },*/
+  onfocusout: injectTrim($.validator.defaults.onfocusout),
+  // Do not change code below
+  errorPlacement : function(error, element) {
+    error.insertAfter(element.parent());
+  }
+});
+/*second Form*/
+// Validation
+$(function() {
+      
+  $(document).on('submit', "#user-add-step-2", function (event) {
+    toastr.clear();
+    event.preventDefault();
+    var formData = new FormData(this);
+          if ($('#remember_Address').is(':checked')) {
+
+      localStorage.address      = $('#address').val();
+      localStorage.city         = $('#city').val();
+      localStorage.postName     = $('#postName').val();
+      localStorage.zip_code     = $('#zip_code').val();
+      localStorage.tehsil       = $('#tehsil').val();
+      localStorage.district     = $('#district').val();
+      localStorage.country      = $('#country').val();
+      localStorage.state        = $('#state').val();
+      localStorage.add_chkbx    = $('#remember_Address').val();
+
+    } else {
+      localStorage.address      =  "";
+      localStorage.city         =  "";
+      localStorage.zip_code     =  "";
+      localStorage.tehsil       =  "";
+      localStorage.district     =  "";
+      localStorage.country      =  "";
+      localStorage.state        =  "";
+      localStorage.postName        =  "";
+      localStorage.add_chkbx    =  "";
+    }
+    if($('[name="religiousKnowledge[]"]:checked').length > 0){
+       $('#check-d-error').text('');
+    }else{
+
+      alert(Please_select_your_religious_Knowledge);
+      $('#check-d-error').text(Please_select_your_religious_Knowledge);
+       return false;
+    }
+    $.ajax({
+        type            : "POST",
+        url             :  base_url+'apiv1/webapi/'+$(this).attr('action'),
+        headers         : { 'authToken': authToken },
+        data            : formData, //only input
+        processData     : false,
+        contentType     : false,
+        cache           : false,
+        beforeSend      : function () {
+          preLoadshow(true);
+            $('#submit').prop('disabled', true);
+        },
+        success         : function (res) {
+          preLoadshow(false);
+          setTimeout(function(){  $('#submit').prop('disabled', false); },4000);
+                        if(res.status=='success'){
+                //toastr.success(res.message, 'Success', {timeOut: 3000});
+                 // swal(Good_job,Your_form_submitted_successfully, "success");
+ swal({
+  title: Good_job,
+  text: Your_form_submitted_successfully,
+  type: "success",
+  showCancelButton: false,
+  confirmButtonColor: "#DD6B55",
+  confirmButtonText: "Ok",
+  //cancelButtonText: "No, cancel please!",
+  closeOnConfirm: false,
+  closeOnCancel: false,
+  allowOutsideClick: false
+},
+function(isConfirm){
+  if (isConfirm) {
+     window.location = base_url;      // submitting the form when user press yes
+  } else {
+   // swal("Cancelled", "Your imaginary file is safe :)", "error");
+  }
+});
+
+                setTimeout(function(){ 
+                  // window.location.reload();
+                 //   window.location = base_url;
+                },10000);
                /* toastr.success(res.message, 'Success', {timeOut: 3000});
                 setTimeout(function(){ 
                  // window.location.reload();
@@ -522,17 +660,17 @@ $("#user-add-step-2").validate({ // Rules for form validation
               }else{
                 toastr.error(res.message, 'Alert!', {timeOut: 4000});
               }
-            }
-          });
-    return false; // required to block normal submit since you used ajax
-  },
-  onfocusout: injectTrim($.validator.defaults.onfocusout),
-  // Do not change code below
-  errorPlacement : function(error, element) {
-    error.insertAfter(element.parent());
-  }
+         /* if(res.status=='success'){
+            toastr.success(res.message, 'Success', {timeOut: 3000});
+           
+          }else{
+            toastr.error(res.message, 'Alert!', {timeOut: 4000});
+          } */        
+        }
+    });
+  });        //fromsubmit
 });
-
+/*second Form*/
 $("#user-add-step-3").validate({ // Rules for form validation
     errorClass    : errorClass,
     errorElement  : errorElement,

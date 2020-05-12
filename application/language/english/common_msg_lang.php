@@ -51,6 +51,7 @@ $lang['Address'] 									= "Address";
 $lang['contactNumber'] 									= "contactNumber";
 	$lang['Users_List'] 							= "Users List";
 	$lang['Add_User'] 							= "Add User";
+	$lang['Sub_Admin'] 							= "Sub Admin";
 
 
 

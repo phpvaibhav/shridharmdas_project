@@ -76,7 +76,7 @@
                             </select>
                           </div>
                       </div>
-                       <div class="col-md-6">
+                    <!--    <div class="col-md-6">
                          <div class="form-label-group">
                            
                               <label for="unionName"><?= lang('Union').' '.lang('Name'); ?><span>*</span></label>
@@ -96,7 +96,7 @@
                       <label for="otherUnionName"><?= lang('otherUnionName'); ?></label>
                       <input type="text" id="otherUnionName" class="form-control" placeholder="<?= lang('otherUnionName'); ?>"  name="otherUnionName">
                     </div>
-                  </div>
+                  </div> -->
                   <div class="col-md-6">
                           <div class="form-label-group">
                             <label for="bloodGroup"><?= lang('blood_group'); ?></label>
@@ -120,7 +120,6 @@
                    <!--    <div class="col-md-6">
                           <div class="form-label-group">
                             <label for="profession"><?= lang('Profession'); ?><span>*</span></label>
-
                               <select name="profession" class="form-control" onchange="professionCheck(this);">
                                 <option value="" selected="" disabled=""><?= lang('Profession'); ?></option>
                                 <option value="profession">Profession</option>
@@ -170,9 +169,45 @@
                           </div>
                           <span id="check-d-error" for="idhhhh" class="invalid"></span>
                       </div>
+                       <div class="col-md-6">
+
+                    <div class="form-label-group">
+                      <label for="identity_Type"><?= lang('identity_Type'); ?></label>
+                      <select id="identity_Type" name="identityType" class="form-control">
+                        <option value="Aadhar" selected="selected">Aadhar</option>
+                        <option value="PAN">PAN</option>
+                        <option value="Voter ID">Voter ID</option>
+                        <option value="Driving Licence">Driving Licence</option>
+                        <option value="Passport">Passport</option>
+                        <option value="Birth Certificate">Birth Certificate</option>
+                        <option value="School Certificate/ID">School Certificate/ID</option>
+                      </select>
+                    </div>
+                  </div>
                                             
                       
                   </div>
+                  <div class="row">
+                    <div class="col-md-12">
+                      <div class="row">
+                          <div class="col-md-12">
+                              <div class="form-label-group">
+                              <label for="identityImage"><?= lang('identity_Image') ?><span>*</span></label>
+                              <input type="file" class="form-control" id="identityImage"  name="identityImage" data-id="1" onchange="readURL(this,1);" accept="image/*" style="border: 0px solid #ddd;" >
+                              </div>
+                            
+                          </div>
+                          <div class="col-md-12">
+                              <small><b>Note:</b>1) <?= lang('Please_do_not_add_a_photo_of_yourself'); ?> 2) Image  JPG/PNG/JPEG/GIF is allowed</small>
+                                <div class="img-shop-wrapper tl-shop-single">
+                                <div class="tl-img-shop">
+                                <img src="https://via.placeholder.com/640x360.png?text=Identity+Image" alt="image" class="mx-auto image-fluid d-block" id="blah_1">
+                                </div>
+                                </div>
+                          </div>
+                      </div>
+                    </div>
+                </div>
                   <div class="row">
                       <div class="col-md-12">
                           <header>

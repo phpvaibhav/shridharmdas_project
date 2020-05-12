@@ -19,10 +19,8 @@ class Webapi extends Common_Service_Controller{
         $this->form_validation->set_rules('familyHeadName','family head name','trim|required');
         $this->form_validation->set_rules('countrycode','country code','trim|required');
         $this->form_validation->set_rules('contactNumber','contact number','trim|required');
+        $this->form_validation->set_rules('unionName','union name','trim|required');
        
-        if (empty($_FILES['identityImage']['name'])) {
-            $this->form_validation->set_rules('identityImage','identity image','trim|required');
-        }
      
         if($this->form_validation->run() == FALSE)
         {
@@ -86,7 +84,7 @@ class Webapi extends Common_Service_Controller{
                 $data_val['countrycode']            = $this->post('countrycode'); 
                 $data_val['whose_contact_number']   = $this->post('whose_contact_number'); 
                 $data_val['mobileVerify']           = $this->post('mobileVerify'); 
-                $data_val['identityType']           = $this->post('identityType'); 
+               
 
                 $data_val['contactNumber']          = $contactNumber;
                // $data_val['aadharNumber']           = $aadharNumber; 
@@ -104,8 +102,99 @@ class Webapi extends Common_Service_Controller{
                 $meta_val['actualFullName']         = $this->post('fullName');
                 $meta_val['actualParentName']       = $this->post('parentName');
                 $meta_val['actualFamilyHeadName']   = $this->post('familyHeadName'); 
-            
-                /* image Uploads*/ 
+               $unionName = $this->post('unionName');
+                $meta_val['unionName']         = $this->post('unionName');
+                $sangh             =  $this->common_model->is_data_exists('shree_sangh',array('sanghId'=>$unionName));
+                if($sangh){
+                    $data_val['sanghId']         = $sangh->sanghId;
+                     $meta_val['unionName']         = $sangh->name;
+                }
+               
+                $meta_val['otherUnionName']    = $this->post('otherUnionName');
+               
+                $result = $this->common_model->insertData('users',$data_val);
+               
+                if($result){
+                    $meta_val['userId']             = $result;
+                    $this->common_model->insertData('user_meta',$meta_val);
+                     
+                    $_SESSION['userId']             = $result;  
+                    $_SESSION['userStep']           = 2;  
+                    //$_SESSION['userStep']        = 2;  
+                  
+                    $msg  = 'Step-1 '.ResponseMessages::getStatusCodeMessage(122);
+                    $response   = array('status'=>SUCCESS,'message'=>$msg);
+                }else{
+                    $response   = array('status'=>FAIL,'message'=>ResponseMessages::getStatusCodeMessage(118));
+                }    
+        }
+        $this->response($response);
+    } //End Function
+
+    function userStep2_post(){
+        $this->form_validation->set_rules('userId','userId','trim|required');
+        $this->form_validation->set_rules('gender','gender','trim|required');
+        $this->form_validation->set_rules('maritalStatus','marital status','trim|required');
+      
+       if (empty($_FILES['identityImage']['name'])) {
+            $this->form_validation->set_rules('identityImage','identity image','trim|required');
+        }
+        if($this->form_validation->run() == FALSE)
+        {
+            $response = array('status' => FAIL, 'message' => strip_tags(validation_errors()));
+        }
+        else
+        {
+            $userId              = $this->post('userId'); 
+            $isExist             =  $this->common_model->is_data_exists('users',array('id'=>$userId));
+            if($isExist){
+                $user_val = $user_meta = $add_meta = $add_meta1 = $add_meta2 = array();
+
+              //  $user_val['userId']         = $userId;
+                $user_val['gender']             = $this->post('gender');
+                $user_val['maritalStatus']      = $this->post('maritalStatus');
+                $user_val['communicationCode']  = $this->post('zip_code');
+                $user_val['identityType']           = $this->post('identityType'); 
+              //  $user_meta['userId']        = $userId;
+             /*   $unionName = $this->post('unionName');
+                $user_meta['unionName']         = $this->post('unionName');
+                $sangh             =  $this->common_model->is_data_exists('shree_sangh',array('sanghId'=>$unionName));
+                if($sangh){
+                    $user_val['sanghId']         = $sangh->sanghId;
+                     $user_meta['unionName']         = $sangh->name;
+                }
+               
+                $user_meta['otherUnionName']    = $this->post('otherUnionName');*/
+                $user_meta['profession']        = $this->post('profession');
+                $user_meta['subProfession']     = @$this->post('subProfession');
+                $user_meta['otherProfession']   = @$this->post('otherProfession');
+                $user_meta['bloodGroup']        = @$this->post('bloodGroup');
+
+                $user_meta['religiousKnowledge']      = $this->post('religiousKnowledge') ? implode(",",$this->post('religiousKnowledge')) :"";
+
+
+                $add_meta['userId']         = $userId;
+                $add_meta['zip_code']       = $this->post('zip_code');
+                $add_meta['address']        = $this->post('address');
+                $add_meta['city']           = $this->post('city');
+                $add_meta['tehsil']         = $this->post('tehsil');
+                $add_meta['district']       = $this->post('district');
+                $add_meta['country']        = $this->post('country');
+                $add_meta['state']          = $this->post('state');
+                $add_meta['postName']       = $this->post('postName');
+                $add_meta['addressType']    = 'Current';
+
+                $add_meta1['userId']        = $userId;
+                $add_meta1['zip_code']      = $this->post('pzip_code');
+                $add_meta1['address']       = $this->post('paddress');
+                $add_meta1['city']          = $this->post('pcity');
+                $add_meta1['tehsil']        = $this->post('ptehsil');
+                $add_meta1['district']      = $this->post('pdistrict');
+                $add_meta1['country']       = $this->post('pcountry');
+                $add_meta1['state']         = $this->post('pstate');
+                $add_meta1['postName']      = !empty($this->post('ppostName')) ? $this->post('ppostName'): $this->post('postName');
+                $add_meta1['addressType']   = 'Permanent';
+                 /* image Uploads*/ 
                 $image          = array(); $frontImage = '';
                  $this->load->model('Image_model');
                  $this->Image_model->make_dirs('identity');
@@ -138,7 +227,7 @@ class Webapi extends Common_Service_Controller{
                             if($compressedImage)
                             { 
                                 $compressedImageSize = filesize($compressedImage);
-                                $data_val['identityImage'] = $new_profle_pic;
+                                $user_val['identityImage'] = $new_profle_pic;
                              
                             }
                             else
@@ -158,86 +247,6 @@ class Webapi extends Common_Service_Controller{
                   
 
                 /* image Uploads*/
-                $result = $this->common_model->insertData('users',$data_val);
-               
-                if($result){
-                    $meta_val['userId']             = $result;
-                    $this->common_model->insertData('user_meta',$meta_val);
-                     
-                    $_SESSION['userId']             = $result;  
-                    $_SESSION['userStep']           = 2;  
-                    //$_SESSION['userStep']        = 2;  
-                  
-                    $msg  = 'Step-1 '.ResponseMessages::getStatusCodeMessage(122);
-                    $response   = array('status'=>SUCCESS,'message'=>$msg);
-                }else{
-                    $response   = array('status'=>FAIL,'message'=>ResponseMessages::getStatusCodeMessage(118));
-                }    
-        }
-        $this->response($response);
-    } //End Function
-
-    function userStep2_post(){
-        $this->form_validation->set_rules('userId','userId','trim|required');
-        $this->form_validation->set_rules('gender','gender','trim|required');
-        $this->form_validation->set_rules('maritalStatus','marital status','trim|required');
-        $this->form_validation->set_rules('unionName','union name','trim|required');
-      
-        if($this->form_validation->run() == FALSE)
-        {
-            $response = array('status' => FAIL, 'message' => strip_tags(validation_errors()));
-        }
-        else
-        {
-            $userId              = $this->post('userId'); 
-            $isExist             =  $this->common_model->is_data_exists('users',array('id'=>$userId));
-            if($isExist){
-                $user_val = $user_meta = $add_meta = $add_meta1 = $add_meta2 = array();
-
-              //  $user_val['userId']         = $userId;
-                $user_val['gender']             = $this->post('gender');
-                $user_val['maritalStatus']      = $this->post('maritalStatus');
-                $user_val['communicationCode']  = $this->post('zip_code');
-
-              //  $user_meta['userId']        = $userId;
-                $unionName = $this->post('unionName');
-                $user_meta['unionName']         = $this->post('unionName');
-                $sangh             =  $this->common_model->is_data_exists('shree_sangh',array('sanghId'=>$unionName));
-                if($sangh){
-                    $user_val['sanghId']         = $sangh->sanghId;
-                     $user_meta['unionName']         = $sangh->name;
-                }
-               
-                $user_meta['otherUnionName']    = $this->post('otherUnionName');
-                $user_meta['profession']        = $this->post('profession');
-                $user_meta['subProfession']     = @$this->post('subProfession');
-                $user_meta['otherProfession']   = @$this->post('otherProfession');
-                $user_meta['bloodGroup']        = @$this->post('bloodGroup');
-                $user_meta['religiousKnowledge']      = $this->post('religiousKnowledge') ? implode(",",$this->post('religiousKnowledge')) :"";
-
-
-                $add_meta['userId']         = $userId;
-                $add_meta['zip_code']       = $this->post('zip_code');
-                $add_meta['address']        = $this->post('address');
-                $add_meta['city']           = $this->post('city');
-                $add_meta['tehsil']         = $this->post('tehsil');
-                $add_meta['district']       = $this->post('district');
-                $add_meta['country']        = $this->post('country');
-                $add_meta['state']          = $this->post('state');
-                $add_meta['postName']       = $this->post('postName');
-                $add_meta['addressType']    = 'Current';
-
-                $add_meta1['userId']        = $userId;
-                $add_meta1['zip_code']      = $this->post('pzip_code');
-                $add_meta1['address']       = $this->post('paddress');
-                $add_meta1['city']          = $this->post('pcity');
-                $add_meta1['tehsil']        = $this->post('ptehsil');
-                $add_meta1['district']      = $this->post('pdistrict');
-                $add_meta1['country']       = $this->post('pcountry');
-                $add_meta1['state']         = $this->post('pstate');
-                $add_meta1['postName']      = !empty($this->post('ppostName')) ? $this->post('ppostName'): $this->post('postName');
-                $add_meta1['addressType']   = 'Permanent';
-                
                 /* $add_meta2['userId']        = $userId;
                 $add_meta2['zip_code']      = $this->post('ozip_code');
                 $add_meta2['address']       = $this->post('oaddress');

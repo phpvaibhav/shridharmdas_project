@@ -41,7 +41,7 @@ class Common_Admin_Controller extends REST_Controller{
         if($this->appLang == 'hindi'){
             $this->config->set_item('language', $this->appLang);
         }
-         $this->lang->load('login_signup_message_lang', $this->appLang);
+        $this->lang->load('login_signup_message_lang', $this->appLang);
        
         $this->lang->load('response_messages_lang', $this->appLang); 
         $this->lang->load('common_msg_lang', $this->appLang);

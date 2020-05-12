@@ -96,6 +96,7 @@ public function __construct()
         $data['countryCodes'] = countryCodelist();
      //   pr($data['countryCodes']);
         $data['front_styles'] = array();
+          $data['unionList'] = $this->common_model->getAll('shree_sangh',array('status'=>1),'sanghId','ASC'); //unionList();
          $data['front_scripts'] = array('frontend_assets/js/front_user.js');
         $this->load->front_render_minimal('userform/step_1',$data);
     }//End Function
@@ -194,9 +195,11 @@ public function __construct()
   
     public function pincodeajax()
     {
+
+       // pr($_POST);
         $res = array();
 
-        $fileName = base_url().'frontend_assets/updated_pincode_sheet.csv';
+        $fileName = 'frontend_assets/updated_pincode_sheet.csv';
 
         if($this->input->post())
         {

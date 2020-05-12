@@ -57,9 +57,12 @@ $route['dashboard']					= 'admin/dashboard';
 $route['profile/(:any)'] 			= 'admin/profile/userDetail/$1';
 $route['change_password/(:any)'] 	= 'admin/profile/changePassword/$1';
 $route['users'] 					= 'admin/users';
-$route['users-incomplete'] 					= 'admin/users/indexC';
+$route['users-incomplete'] 			= 'admin/users/indexC';
 $route['add-user'] 					= 'admin/users/add';
-$route['user-excel'] 					= 'admin/users/userexcel';
+$route['user-excel'] 				= 'admin/users/userexcel';
+$route['sub-admin'] 				= 'admin/adminrole/index';
+$route['sub-admin-add'] 			= 'admin/adminrole/add';
+$route['sub-admin-detail/(:any)'] 			= 'admin/adminrole/detail/$1';
 
 $route['edit-user/(:any)'] 			= 'admin/users/edit';
 $route['user-detail/(:any)'] 		= 'admin/users/detail/$1';

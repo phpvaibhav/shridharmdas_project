@@ -263,10 +263,10 @@ if (!function_exists('log_event')) {
         }else{
           $file_path = $log_path.$file_name;
         }
-
         $perfix = '['.datetime().'] ';  //add current date time
         $msg    = $perfix.$msg."\r\n"; //create new line
         error_log($msg, 3, $file_path); //log message in file
+        
     }
 }//End function
 

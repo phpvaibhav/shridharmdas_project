@@ -156,7 +156,29 @@
                       </select>
                     </div>
                   </div>
-                  <div class="col-md-6">
+                     <div class="col-md-6">
+                         <div class="form-label-group">
+                           
+                              <label for="unionName"><?= lang('Union').' '.lang('Name'); ?><span>*</span></label>
+                              <select name="unionName"  class="form-control js-example-basic-single "  id="unionName"  >
+                              <?php if(!empty($unionList)):?>
+                               <option value="" selected="" disabled=""><?= lang('Union').' '.lang('Name'); ?></option>
+                             <?php foreach ($unionList as $kc => $union) { ?>
+                                <option value="<?= $union->sanghId; ?>" data-sanghname="<?=  $union->name; ?>" ><?=  $union->name; ?></option>
+                              <?php } endif; ?>
+
+                              </select>
+                              <small>अगर आपके श्री संघ का नाम लिस्ट मैं नहीं है तो आप  other ऑप्शन को सर्च करे  एवं उसपर क्लिक करे , आप अपने श्री संघ का नाम डाल सकेंगे । </small>
+                          </div>
+                      </div>
+                      <div class="col-md-6 otherUnionName" style="display: none">
+                 
+                    <div class="form-label-group">
+                      <label for="otherUnionName"><?= lang('otherUnionName'); ?></label>
+                      <input type="text" id="otherUnionName" class="form-control" placeholder="<?= lang('otherUnionName'); ?>"  name="otherUnionName">
+                    </div>
+                  </div>
+                <!--   <div class="col-md-6">
 
                     <div class="form-label-group">
                       <label for="identity_Type"><?= lang('identity_Type'); ?></label>
@@ -170,7 +192,8 @@
                         <option value="School Certificate/ID">School Certificate/ID</option>
                       </select>
                     </div>
-                  </div>
+                  </div> -->
+
 
                  <!--  <div class="col-md-6">
                  
@@ -183,7 +206,7 @@
                   </div> -->
 
                 </div>
-                <div class="row">
+<!--                 <div class="row">
                     <div class="col-md-12">
                       <div class="row">
                           <div class="col-md-12">
@@ -203,7 +226,7 @@
                           </div>
                       </div>
                     </div>
-                </div>
+                </div> -->
                 <div class="row">
 <!--                     <div class="col-md-12">
                       <div class="row">
