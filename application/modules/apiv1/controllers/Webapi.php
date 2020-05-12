@@ -313,9 +313,9 @@ class Webapi extends Common_Service_Controller{
                 $this->common_model->updateFields('users',$user_val,array('id'=>$userId));
                 $this->common_model->updateFields('user_meta',$user_meta,array('userId'=>$userId));
              
-                 $msg  = lang('Your_form_submitted_successfully');;
-                 $_SESSION['userStep']        = 0; 
-                 $response   = array('status'=>SUCCESS,'message'=>$msg);
+                $msg  = lang('Your_form_submitted_successfully');;
+                $_SESSION['userStep']        = 0; 
+                $response   = array('status'=>SUCCESS,'message'=>$msg);
 
             }else{
                // pr($this->post());
