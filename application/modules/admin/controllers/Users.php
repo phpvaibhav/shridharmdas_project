@@ -14,7 +14,7 @@ class Users extends Common_Back_Controller {
     public function index(){
      
         $data['title']      = lang('Users');
-            $count          = $this->common_model->get_total_count('users');
+            $count          = $this->common_model->get_total_count('users',array('is_deleted'=>0));
         $data['countuser']  = $count ;   
         $count              = number_format_short($count);
         $data['recordSet']  = array('<li class="sparks-info"><h5>'.lang('Total').' '.lang('Users').'<span class="txt-color-darken" id="totalCust"><i class="fa fa-lg fa-fw fa fa-users"></i>&nbsp;'.$count.'</span></h5></li>');
@@ -25,10 +25,26 @@ class Users extends Common_Back_Controller {
         $this->load->admin_render('users/index', $data, '');
     } //End function
 
+    public function trash(){
+     
+        $data['title']      = lang('Users');
+             $count          = $this->common_model->get_total_count('users',array('is_deleted'=>1));
+        $data['countuser']  = $count ;   
+        $count              = number_format_short($count);
+        $data['recordSet']  = array('<li class="sparks-info"><h5>'.lang('Total').' '.lang('Users').'<span class="txt-color-darken" id="totalCust"><i class="fa fa-lg fa-fw fa fa-users"></i>&nbsp;'.$count.'</span></h5></li>');
+         $this->load->helper('country_code_helper');
+        $data['unionList']      = unionList();
+        $data['front_scripts']  = array('backend_assets/custom/js/common_datatable.js',
+            'backend_assets/custom/js/users.js');
+        $this->load->admin_render('users/trash', $data, '');
+    } //End function
+
+    
+
     public function indexC(){
      
         $data['title']      = lang('Users');
-            $count          = $this->common_model->get_total_count('users',array('communicationCode'=>0));
+            $count          = $this->common_model->get_total_count('users',array('communicationCode'=>0,'is_deleted'=>0));
         $data['countuser']  = $count ;   
         $count              = number_format_short($count);
         $data['recordSet']  = array('<li class="sparks-info"><h5>'.lang('Total').' '.lang('Users').'<span class="txt-color-darken" id="totalCust"><i class="fa fa-lg fa-fw fa fa-users"></i>&nbsp;'.$count.'</span></h5></li>');
@@ -95,6 +111,7 @@ class Users extends Common_Back_Controller {
     } //End function
     function exportUser(){
         $extension = $this->input->post('export_type');
+        $is_deleted = $this->input->post('is_deleted');
         $lang_type = $this->input->post('lang_type');
         $unionName = trim($this->input->post('unionName'));
        
@@ -115,10 +132,20 @@ class Users extends Common_Back_Controller {
         // get employee list
         $fileName = 'shridharmdas-gan-'.time(); 
          if(!empty($unionName)){
-        $empInfo = $this->common_model->GetJoinRecord('users','id','user_meta','userId',"*",array('users.sanghId'=>$unionName),'','id','desc');
+            if(!empty($is_deleted)){
+                $whereU = array('users.sanghId'=>$unionName,'users.is_deleted'=>1);
+            }else{
+                $whereU = array('users.sanghId'=>$unionName,'users.is_deleted'=>0);
+            }
+        $empInfo = $this->common_model->GetJoinRecord('users','id','user_meta','userId',"*",$whereU,'','id','desc');
 
         }else{
-           $empInfo = $this->common_model->getAll('users','','id','desc');  
+              if(!empty($is_deleted)){
+                $whereU = array('users.is_deleted'=>1);
+            }else{
+                $whereU = array('users.is_deleted'=>0);
+            }
+           $empInfo = $this->common_model->getAll('users',$whereU,'id','desc');  
         }
         
         if(!empty($unionName)){

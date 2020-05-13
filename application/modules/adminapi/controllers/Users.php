@@ -99,8 +99,16 @@ class Users extends Common_Admin_Controller{
         $where ="";
         $unionName = $this->post('unionName');
         $id = $this->post('id');
-        if(!empty($id)){
-            $where = array('u.sanghId'=>0);
+
+        if(!empty($id) && $id=='fail'){
+            $where = array('u.sanghId'=>0,'u.is_deleted'=>0);
+        }else{
+             $where = array('u.is_deleted'=>0);
+        }  
+        if(!empty($id) && $id=='trash'){
+            $where = array('u.is_deleted'=>1);
+        }else{
+            $where = array('u.is_deleted'=>0);
         }
       /*  if(!empty($unionName)){
              $where = "(um.unionName = ".$unionName." OR um.otherUnionName= ".$unionName.")";
@@ -153,6 +161,10 @@ class Users extends Common_Admin_Controller{
        
             $link      ='javascript:void(0)';
             $action .= "";
+             if(!empty($id) && $id=='trash'){
+                 $action .= '<a href="'.$link.'" onclick="confirmAction(this);" data-message="You want to Deleted this record!" data-id="'.encoding($serData->id).'" data-url="adminapi/users/recordDelete" data-list="1"  class="on-default edit-row table_action" title="Delete"><i class="fa fa-times" aria-hidden="true"></i></a>';
+                  $action .= '&nbsp;&nbsp;|&nbsp;&nbsp;<a href="'.$link.'" onclick="confirmAction(this);" data-message="You want to Recycle this record!" data-id="'.encoding($serData->id).'" data-url="adminapi/users/recordRecycle" data-list="1"  class="on-default edit-row table_action" title="Recycle"><i class="fa fa-recycle" aria-hidden="true"></i></a>';
+             }else{
            if($serData->status){
 
                 $action .= '<a href="'.$link.'" onclick="confirmAction(this);" data-message="You want to change status!" data-id="'.encoding($serData->id).'" data-url="adminapi/users/activeInactiveStatus" data-list="1"  class="on-default edit-row table_action" title="Status"><i class="fa fa-check" aria-hidden="true"></i></a>';
@@ -161,8 +173,8 @@ class Users extends Common_Admin_Controller{
             }
             $link_url      = base_url().'user-detail/'.encoding($serData->id);
             $action .= '&nbsp;&nbsp;|&nbsp;&nbsp;<a href="'.$link_url.'"  class="on-default edit-row table_action" title="Detail"><i class="fa fa-eye"  aria-hidden="true"></i></a>';
-            $action .= '&nbsp;&nbsp;|&nbsp;&nbsp;<a href="'.$link.'" onclick="confirmAction(this);" data-message="You want to delete this record!" data-id="'.encoding($serData->id).'" data-url="adminapi/users/recordDelete" data-list="1"  class="on-default edit-row table_action" title="Delete"><i class="fa fa-trash" aria-hidden="true"></i></a>';
-
+            $action .= '&nbsp;&nbsp;|&nbsp;&nbsp;<a href="'.$link.'" onclick="confirmAction(this);" data-message="You want to Trash this record!" data-id="'.encoding($serData->id).'" data-url="adminapi/users/recordTrash" data-list="1"  class="on-default edit-row table_action" title="Delete"><i class="fa fa-trash" aria-hidden="true"></i></a>';
+            }
             $row[]  = $action;
             $data[] = $row;
 
@@ -198,12 +210,41 @@ class Users extends Common_Admin_Controller{
         $dataExist          = $this->common_model->is_data_exists('users',$where);
         if($dataExist){
             $dataExist      = $this->common_model->deleteData('users',$where);
+
             $response       = array('status'=>SUCCESS,'message'=>ResponseMessages::getStatusCodeMessage(124));
         }else{
             $response       = array('status'=>FAIL,'message'=>ResponseMessages::getStatusCodeMessage(118));  
         }
         $this->response($response);
     }//end function
+    function recordTrash_post(){
+        $preId              = decoding($this->post('id'));
+        $where              = array('id'=>$preId);
+        $dataExist          = $this->common_model->is_data_exists('users',$where);
+        if($dataExist){
+          //  $dataExist      = $this->common_model->deleteData('users',$where);
+            $this->common_model->updateFields('users',array('is_deleted'=>1),$where);
+            $response       = array('status'=>SUCCESS,'message'=>ResponseMessages::getStatusCodeMessage(124));
+        }else{
+            $response       = array('status'=>FAIL,'message'=>ResponseMessages::getStatusCodeMessage(118));  
+        }
+        $this->response($response);
+    }//end function
+    function recordRecycle_post(){
+        $preId              = decoding($this->post('id'));
+        $where              = array('id'=>$preId);
+        $dataExist          = $this->common_model->is_data_exists('users',$where);
+        if($dataExist){
+          //  $dataExist      = $this->common_model->deleteData('users',$where);
+            $this->common_model->updateFields('users',array('is_deleted'=>0),$where);
+            $response       = array('status'=>SUCCESS,'message'=>ResponseMessages::getStatusCodeMessage(123));
+        }else{
+            $response       = array('status'=>FAIL,'message'=>ResponseMessages::getStatusCodeMessage(118));  
+        }
+        $this->response($response);
+    }//end function
+    
+    
     function update_post(){
         $authCheck  = $this->check_admin_service_auth();
         $this->form_validation->set_rules('firstName','first name', 'trim|required');

@@ -28,6 +28,14 @@
 				<header>
 				<!-- 	<span class="widget-icon"> <i class="fa fa-users"></i> </span> -->
 					<h2>User incomplete process</h2>
+					<div class="jarviswidget-ctrls" role="menu">   
+						<a href="<?= base_url('users');?>" class="button-icon" rel="tooltip" title="All User"><i class="fa fa-users "></i>  All users &nbsp;&nbsp; </a> 
+
+						<a href="<?= base_url('users-trash');?>" class="button-icon" rel="tooltip" title="Trash User"><i class="fa fa-eraser "></i>  Trash users &nbsp;&nbsp; </a> 
+
+
+
+						</div>
 				</header>
 				<!-- widget div-->
 				<div>
