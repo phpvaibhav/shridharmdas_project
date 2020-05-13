@@ -4,6 +4,8 @@ class Users extends Common_Admin_Controller{
     
     public function __construct(){
         parent::__construct();
+         error_reporting(E_ALL);
+        ini_set('display_errors', 1);
     }
 
     function add_post(){
@@ -102,10 +104,7 @@ class Users extends Common_Admin_Controller{
 
         if(!empty($id) && $id=='fail'){
             $where = array('u.sanghId'=>0,'u.is_deleted'=>0);
-        }else{
-             $where = array('u.is_deleted'=>0);
-        }  
-        if(!empty($id) && $id=='trash'){
+        }else if(!empty($id) && $id=='trash'){
             $where = array('u.is_deleted'=>1);
         }else{
             $where = array('u.is_deleted'=>0);
