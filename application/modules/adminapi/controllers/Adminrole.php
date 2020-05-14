@@ -20,8 +20,8 @@ class Adminrole extends Common_Admin_Controller{
         }else{
             $email                          =  $this->post('email');
             $fullName                       =  $this->post('fullName');
-            $roleId                             =  $this->post('roleId');
-            $sanghId                       =  $this->post('sanghId');
+            $roleId                         =  $this->post('roleId');
+            $sanghId                        =  $this->post('sanghId');
             $password                       =  $this->post('password');
             $data_val['fullName']           =  $fullName; 
             $data_val['email']              =  $email; 
@@ -95,8 +95,11 @@ class Adminrole extends Common_Admin_Controller{
                 $action .= '<a href="'.$link.'" onclick="confirmAction(this);" data-message="You want to change status!" data-id="'.encoding($serData->id).'" data-url="adminapi/adminrole/activeInactiveStatus" data-list="1"  class="on-default edit-row table_action" title="Status"><i class="fa fa-times" aria-hidden="true"></i></a>';
             }
             $link_url      = base_url().'sub-admin-detail/'.encoding($serData->id);
+            
             $action .= '&nbsp;&nbsp;|&nbsp;&nbsp;<a href="'.$link_url.'"  class="on-default edit-row table_action" title="Detail"><i class="fa fa-eye"  aria-hidden="true"></i></a>';
+
             $action .= '&nbsp;&nbsp;|&nbsp;&nbsp;<a href="'.$link.'" onclick="confirmAction(this);" data-message="You want to delete this record!" data-id="'.encoding($serData->id).'" data-url="adminapi/adminrole/recordDelete" data-list="1"  class="on-default edit-row table_action" title="Delete"><i class="fa fa-trash" aria-hidden="true"></i></a>';
+
 
             $row[]  = $action;
             $data[] = $row;
@@ -191,13 +194,11 @@ class Adminrole extends Common_Admin_Controller{
                // $this->common_model->insertData('addresses',$meta_val);
             }
             if($result){
-                 $response   = array('status'=>SUCCESS,'message'=>$msg);
+                $response   = array('status'=>SUCCESS,'message'=>$msg);
             }else{
-                 $response   = array('status'=>FAIL,'message'=>ResponseMessages::getStatusCodeMessage(118));
+                $response   = array('status'=>FAIL,'message'=>ResponseMessages::getStatusCodeMessage(118));
             }    
         }
         $this->response($response);
     }//end function
-
-
 }//End Class 

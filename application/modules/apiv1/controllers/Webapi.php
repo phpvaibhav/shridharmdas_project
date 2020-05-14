@@ -33,17 +33,17 @@ class Webapi extends Common_Service_Controller{
                 $data_val   = $meta_val  = array();
                 $fuN              = ucfirst(trim($this->post('fullName')));
                 $fuN = explode(" ", $fuN); 
-                $fullName1              =  ucfirst(trim($this->post('fullName'))); 
-                $firstName1              = ucfirst(trim($this->post('firstName'))); 
-                $lastName1               = ucfirst(trim($this->post('lastName'))); 
-                $parentName1             = ucfirst(trim($this->post('parentName'))); 
-                $familyHeadName1             = ucfirst(trim($this->post('familyHeadName'))); 
+                $fullName1               =  ucfirst(trim($this->post('fullName'))); 
+                $firstName1              =  ucfirst(trim($this->post('firstName'))); 
+                $lastName1               =  ucfirst(trim($this->post('lastName'))); 
+                $parentName1             =  ucfirst(trim($this->post('parentName'))); 
+                $familyHeadName1         =  ucfirst(trim($this->post('familyHeadName'))); 
               //  $fullName1               = $firstName1.' '.$lastName1 ; 
                 $tr = new GoogleTranslate(); // Translates to 'en' from auto-detected language by default
               
 
-                $fullName = $tr->setSource('hi')->setTarget('en')->translate($fullName1);
-                $hindiFullName = $tr->setSource('en')->setTarget('hi')->translate($fullName1);
+                $fullName       = $tr->setSource('hi')->setTarget('en')->translate($fullName1);
+                $hindiFullName  = $tr->setSource('en')->setTarget('hi')->translate($fullName1);
 
            
                 $fulldivideE    = explode(" ",$fullName);
@@ -64,7 +64,7 @@ class Webapi extends Common_Service_Controller{
 
 
                 $parentName         = $tr->setSource('hi')->setTarget('en')->translate($parentName1);
-                $hindiParentName = $tr->setSource('en')->setTarget('hi')->translate($parentName);
+                $hindiParentName    = $tr->setSource('en')->setTarget('hi')->translate($parentName);
 
 
 
@@ -136,9 +136,9 @@ class Webapi extends Common_Service_Controller{
         $this->form_validation->set_rules('gender','gender','trim|required');
         $this->form_validation->set_rules('maritalStatus','marital status','trim|required');
       
-       if (empty($_FILES['identityImage']['name'])) {
+       /* if (empty($_FILES['identityImage']['name'])) {
             $this->form_validation->set_rules('identityImage','identity image','trim|required');
-        }
+        }*/
         if($this->form_validation->run() == FALSE)
         {
             $response = array('status' => FAIL, 'message' => strip_tags(validation_errors()));
@@ -154,7 +154,7 @@ class Webapi extends Common_Service_Controller{
                 $user_val['gender']             = $this->post('gender');
                 $user_val['maritalStatus']      = $this->post('maritalStatus');
                 $user_val['communicationCode']  = $this->post('zip_code');
-                $user_val['identityType']           = $this->post('identityType'); 
+                $user_val['identityType']       = $this->post('identityType'); 
               //  $user_meta['userId']        = $userId;
              /*   $unionName = $this->post('unionName');
                 $user_meta['unionName']         = $this->post('unionName');
@@ -279,8 +279,8 @@ class Webapi extends Common_Service_Controller{
                // $this->common_model->insertData('addresses',$add_meta2);
              /*   $msg            = 'Step-2 '.ResponseMessages::getStatusCodeMessage(122);
                 $_SESSION['userStep']        = 3; */
-                 $msg  = lang('Your_form_submitted_successfully');;
-                 $_SESSION['userStep']        = 0; 
+                $msg  = lang('Your_form_submitted_successfully');;
+                $_SESSION['userStep']        = 0; 
                 $response   = array('status'=>SUCCESS,'message'=>$msg);
 
             }else{
@@ -293,8 +293,6 @@ class Webapi extends Common_Service_Controller{
     
     function userStep3_post(){
         $this->form_validation->set_rules('userId','userId','trim|required');
-     
-      
         if($this->form_validation->run() == FALSE)
         {
             $response = array('status' => FAIL, 'message' => strip_tags(validation_errors()));
@@ -347,9 +345,8 @@ class Webapi extends Common_Service_Controller{
     } //End Function
 
     function smsSentReOtp_post(){
+
         $this->form_validation->set_rules('contactNumber','contact number','trim|required');
-     
-      
         if($this->form_validation->run() == FALSE)
         {
             $response = array('status' => FAIL, 'message' => strip_tags(validation_errors()));
@@ -360,6 +357,7 @@ class Webapi extends Common_Service_Controller{
             $countrycode          = trim(str_replace(array('(',')','+',' '),array('','','',''),$this->post('countrycode')));
             $contactNumber = $countrycode.$contactNumber;
             $this->load->library('sms_sent');
+
             $response           = $this->sms_sent->sent_otp_retry_number($contactNumber); 
                // $response   = array('status'=>FAIL,'message'=>ResponseMessages::getStatusCodeMessage(118));   
             //}   
@@ -380,6 +378,7 @@ class Webapi extends Common_Service_Controller{
             $contactNumber          = trim(str_replace(array('(',')','-',' '),array('','','',''),$this->post('contactNumber')));
             $countrycode          = trim(str_replace(array('(',')','+',' '),array('','','',''),$this->post('countrycode')));
             $contactNumber = $countrycode.$contactNumber;
+
             $otpnumber          = trim(str_replace(array('(',')','-',' '),array('','','',''),$this->post('otpnumber')));
             $this->load->library('sms_sent');
             $response           = $this->sms_sent->verify_otp_code($contactNumber,$otpnumber); 
@@ -388,14 +387,12 @@ class Webapi extends Common_Service_Controller{
     } //End Function
 
     function checkAadharNumber_post(){
+
         $this->form_validation->set_rules('aadharNumber','aadhar number','trim|required');
-      
-      
         if($this->form_validation->run() == FALSE)
         {
             $response = array('status' => FAIL, 'message' => strip_tags(validation_errors()));
-        }
-        else
+        }else
         {
             $aadharNumber          = trim(str_replace(array('(',')','-',' '),array('','','',''),$this->post('aadharNumber')));
            
@@ -425,7 +422,6 @@ class Webapi extends Common_Service_Controller{
 
         // Save image 
         imagejpeg($image, $path, $quality);
-
         // sReturn compressed image 
         return $path;
     }

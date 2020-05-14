@@ -44,7 +44,7 @@
                     </p>
                 </div>
                 
-                <form id="user-add-step-3" method="post" class="login-form-t" novalidate="novalidate" action="userStep3"  novalidate="novalidate" autocomplete="off">
+                <form id="user-add-step-3" method="post" class="login-form-t" novalidate="novalidate" action="userStep3"  novalidate="novalidate" autocomplete="off" enctype="multipart/form-data" >
                   <div class="row">
                       <div class="col-md-12">
                           <header>

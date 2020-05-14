@@ -46,7 +46,7 @@
                 </div>
                
                
-                <form id="user-add-step-1" method="post" class="login-form-t" novalidate="novalidate" action="userStep1" novalidate="novalidate" autocomplete="off">
+                <form id="user-add-step-1" method="post" class="login-form-t" novalidate="novalidate" action="userStep1" novalidate="novalidate" autocomplete="off" enctype="multipart/form-data">
                 <div class="row" >
                   <div class="col-md-12">
                       <div class="form-label-group">

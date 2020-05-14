@@ -372,9 +372,7 @@ class Users extends Common_Admin_Controller{
         }
         $this->response($response);
     }//end function
-
-
-    
+ 
    function addressupdate_post(){
        // $authCheck  = $this->check_admin_service_auth();
         $this->form_validation->set_rules('address','address', 'trim|required');
