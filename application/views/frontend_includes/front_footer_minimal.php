@@ -107,6 +107,9 @@ var Please_enter_your_post_name ="<?= lang('Please_enter_your_post_name');?>";
         var control =
             new google.elements.transliteration.TransliterationControl(options);
         control.makeTransliteratable(['fullName','parentName','familyHeadName']);
+        
+//Add the following line to make it work over https
+        control.c.qc.t13n.c[3].c.d.keyup[0].ia.F.p = 'https://www.google.com';   
       }
       google.setOnLoadCallback(onLoad);
     </script>
