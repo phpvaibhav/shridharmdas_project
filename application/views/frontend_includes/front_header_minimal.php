@@ -52,28 +52,7 @@
       if(!empty($front_styles)) { load_css($front_styles); } //load required page styles 
      ?>
 
-       <script type="text/javascript" src="https://www.google.com/jsapi">
-    </script>
-    <script type="text/javascript">
-      google.load("elements", "1", {
-            packages: "transliteration"
-          });
- 
-      function onLoad() {
-        var options = {
-            sourceLanguage:
-                google.elements.transliteration.LanguageCode.ENGLISH,
-            destinationLanguage:
-                [google.elements.transliteration.LanguageCode.HINDI],
-            shortcutKey: 'ctrl+g',
-            transliterationEnabled: true
-        };
-        var control =
-            new google.elements.transliteration.TransliterationControl(options);
-        control.makeTransliteratable(['fullName','parentName','familyHeadName']);
-      }
-      google.setOnLoadCallback(onLoad);
-    </script>
+     
 </head>
 
 <body id="tl" data-base-url="<?php echo base_url(); ?>">

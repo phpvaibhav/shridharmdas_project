@@ -88,6 +88,28 @@ var Please_enter_your_post_name ="<?= lang('Please_enter_your_post_name');?>";
 	<!-- Scripts -->
 	<script src="<?= $frontend_assets; ?>assets/js/jquery.min.js"></script>
 	<script src="<?= $frontend_assets; ?>assets/js/bootstrap.min.js"></script>
+    <script type="text/javascript" src="https://www.google.com/jsapi">
+    </script>
+    <script type="text/javascript">
+      google.load("elements", "1", {
+            packages: "transliteration"
+          });
+ 
+      function onLoad() {
+        var options = {
+            sourceLanguage:
+                google.elements.transliteration.LanguageCode.ENGLISH,
+            destinationLanguage:
+                [google.elements.transliteration.LanguageCode.HINDI],
+            shortcutKey: 'ctrl+g',
+            transliterationEnabled: true
+        };
+        var control =
+            new google.elements.transliteration.TransliterationControl(options);
+        control.makeTransliteratable(['fullName','parentName','familyHeadName']);
+      }
+      google.setOnLoadCallback(onLoad);
+    </script>
 <?php if(ENVIRONMENT=='production'): ?>
   <!-- Global site tag (gtag.js) - Google Analytics -->
 <script async src="https://www.googletagmanager.com/gtag/js?id=UA-164031668-1"></script>
