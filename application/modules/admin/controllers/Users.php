@@ -113,6 +113,7 @@ class Users extends Common_Back_Controller {
         $extension = $this->input->post('export_type');
         $is_deleted = $this->input->post('is_deleted');
         $lang_type = $this->input->post('lang_type');
+        $trash_type = $this->input->post('trash');
         $unionName = trim($this->input->post('unionName'));
        
         if(!empty($extension)){
@@ -131,6 +132,11 @@ class Users extends Common_Back_Controller {
         $data['title']  = lang('Users_List');;
         // get employee list
         $fileName = 'shridharmdas-gan-'.time(); 
+          if(isset($trash_type) && $trash_type=='trash'){
+             $fileName = 'trash_sangh_shridharmdas-gan-'.time(); 
+              $is_deleted =$trash_type;
+         //pr($empInfo);
+        }
          if(!empty($unionName)){
             if(!empty($is_deleted)){
                 $whereU = array('users.sanghId'=>$unionName,'users.is_deleted'=>1);
@@ -151,7 +157,7 @@ class Users extends Common_Back_Controller {
         if(!empty($unionName)){
             $fileName = 'sangh_shridharmdas-gan-'.time(); 
         }
-         //pr($empInfo);
+
         $spreadsheet = new Spreadsheet();
         $sheet = $spreadsheet->getActiveSheet();
         $styleArray = [
@@ -386,9 +392,9 @@ class Users extends Common_Back_Controller {
         $sheet->setCellValue('Q' . $rowCount, display_placeholder_text(@$usermeta['unionResponsibility']));
 
         $sheet->setCellValue('R' . $rowCount, display_placeholder_text(@$addresses[0]->address));
-        $sheet->setCellValue('S' . $rowCount, display_placeholder_text(@$addresses[0]->city));
-        $sheet->setCellValue('T' . $rowCount, display_placeholder_text(@$addresses[0]->locality));
-        $sheet->setCellValue('U' . $rowCount, display_placeholder_text(@$addresses[0]->postName));
+        $sheet->setCellValue('S' . $rowCount, display_placeholder_text(@$addresses[0]->locality));
+        $sheet->setCellValue('T' . $rowCount, display_placeholder_text(@$addresses[0]->postName));
+        $sheet->setCellValue('U' . $rowCount, display_placeholder_text(@$addresses[0]->city));
         $sheet->setCellValue('V' . $rowCount, display_placeholder_text(@$addresses[0]->zip_code));
         $sheet->setCellValue('W' . $rowCount, display_placeholder_text(@$addresses[0]->tehsil));
         $sheet->setCellValue('X' . $rowCount, display_placeholder_text(@$addresses[0]->district));

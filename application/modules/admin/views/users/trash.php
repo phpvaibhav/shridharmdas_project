@@ -46,13 +46,13 @@
 					<div class="widget-body padding">
 					
 						<?php if(!empty($countuser)): ?>
-							<!-- <div class="row">
+							<div class="row">
 	<div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
 		 <form action="<?php print base_url();?>admin/users/exportUser" class="form-horizontal"  enctype="multipart/form-data" method="post" accept-charset="utf-8">
 		 <div class="form-group">
 													
 													<div class="col-md-3 text-center">
-
+														<input type="hidden" name="trash" value="trash">
 														<label class="radio radio-inline">
 															<input type="radio" class="radiobox" name="export_type" value="xlsx" checked=""> 
 															<span>.xlsx</span> 	
@@ -86,7 +86,7 @@
 
 													<div class="col-md-2"><button type="submit" name="import" class="btn btn-primary">Export</button></div>
 												<div class="col-md-4 text-right">
-												<a href="<?= base_url('user-excel'); ?>"> Advance Export</a> 
+											<!-- 	<a href="<?= base_url('user-excel'); ?>"> Advance Export</a>  -->
 						
 													</div> 
 												</div>
@@ -94,7 +94,7 @@
       </form>
 	</div>
 		
-	</div> -->
+	</div>
 <?php endif; ?>
 						<div class="table-responsive">
 							<table class="table table-striped table-bordered table-hover dataTables-example-list" width="100%" data-list-url = "adminapi/users/list" data-id ="trash" data-no-record-found = "<?= lang('No_Record_found'); ?>" >
