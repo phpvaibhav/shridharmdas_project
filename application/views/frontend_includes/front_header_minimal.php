@@ -7,6 +7,7 @@
 	<meta name="viewport" content="width=device-width,initial-scale=1.0">
 	<meta name="keywords" content="Shri dharmdas,श्री धर्मदास गण परिषद">
 	<meta name="description" content="Shri dharmdas,श्री धर्मदास गण परिषद">
+	<meta http-equiv="Content-Security-Policy" content="upgrade-insecure-requests">
 	<?php $frontend_assets =  base_url().'frontend_assets/';
 			$backend_assets =  base_url().'backend_assets/';
 

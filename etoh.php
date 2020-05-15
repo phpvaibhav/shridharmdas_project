@@ -2,6 +2,7 @@
 <head>
 <title>How to Convert Hindi Text into English Using JavaScript?</title>
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+<meta http-equiv="Content-Security-Policy" content="upgrade-insecure-requests">
 <script type="text/javascript" src="http://www.google.com/jsapi"></script>
 <link href="http://www.google.com/uds/modules/elements/transliteration/api.css"
 type="text/css" rel="stylesheet"/>
