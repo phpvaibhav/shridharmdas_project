@@ -433,6 +433,7 @@ class Users extends Common_Back_Controller {
         } elseif($extension == 'xlsx') {
             $writer     = new \PhpOffice\PhpSpreadsheet\Writer\Xlsx($spreadsheet);
             $fileName   = $fileName.'.xlsx';
+            
         } else {
             $writer     = new \PhpOffice\PhpSpreadsheet\Writer\Xls($spreadsheet);
             $fileName   = $fileName.'.xls';

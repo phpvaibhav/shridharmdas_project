@@ -30,8 +30,8 @@ class Webapi extends Common_Service_Controller{
         {
 
                // pr($this->post());
-                $data_val   = $meta_val  = array();
-                $fuN              = ucfirst(trim($this->post('fullName')));
+                $data_val                = $meta_val  = array();
+                $fuN                     = ucfirst(trim($this->post('fullName')));
                 $fuN = explode(" ", $fuN); 
                 $fullName1               =  ucfirst(trim($this->post('fullName'))); 
                 $firstName1              =  ucfirst(trim($this->post('firstName'))); 
@@ -39,7 +39,7 @@ class Webapi extends Common_Service_Controller{
                 $parentName1             =  ucfirst(trim($this->post('parentName'))); 
                 $familyHeadName1         =  ucfirst(trim($this->post('familyHeadName'))); 
               //  $fullName1               = $firstName1.' '.$lastName1 ; 
-                $tr = new GoogleTranslate(); // Translates to 'en' from auto-detected language by default
+                $tr                      = new GoogleTranslate(); // Translates to 'en' from auto-detected language by default
               
 
                 $fullName       = $tr->setSource('hi')->setTarget('en')->translate($fullName1);
@@ -71,8 +71,6 @@ class Webapi extends Common_Service_Controller{
                 $familyHeadName                     = $tr->setSource('hi')->setTarget('en')->translate($familyHeadName1);
                 $hindiFamilyHeadName                = $tr->setSource('en')->setTarget('hi')->translate($familyHeadName);
 
-
-
                 $contactNumber                      = trim(str_replace(array('(',')','-',' '),array('','','',''),$this->post('contactNumber')));
                 $data_val['dob']                    = date('Y-m-d',strtotime($this->post('dob'))); 
 
@@ -102,12 +100,12 @@ class Webapi extends Common_Service_Controller{
                 $meta_val['actualFullName']         = $this->post('fullName');
                 $meta_val['actualParentName']       = $this->post('parentName');
                 $meta_val['actualFamilyHeadName']   = $this->post('familyHeadName'); 
-               $unionName = $this->post('unionName');
-                $meta_val['unionName']         = $this->post('unionName');
-                $sangh             =  $this->common_model->is_data_exists('shree_sangh',array('sanghId'=>$unionName));
+                $unionName                          = $this->post('unionName');
+                $meta_val['unionName']              = $this->post('unionName');
+                $sangh                              = $this->common_model->is_data_exists('shree_sangh',array('sanghId'=>$unionName));
                 if($sangh){
                     $data_val['sanghId']         = $sangh->sanghId;
-                     $meta_val['unionName']         = $sangh->name;
+                    $meta_val['unionName']       = $sangh->name;
                 }
                
                 $meta_val['otherUnionName']    = $this->post('otherUnionName');
@@ -136,9 +134,9 @@ class Webapi extends Common_Service_Controller{
         $this->form_validation->set_rules('gender','gender','trim|required');
         $this->form_validation->set_rules('maritalStatus','marital status','trim|required');
       
-       /* if (empty($_FILES['identityImage']['name'])) {
+        if (empty($_FILES['identityImage']['name'])) {
             $this->form_validation->set_rules('identityImage','identity image','trim|required');
-        }*/
+        }
         if($this->form_validation->run() == FALSE)
         {
             $response = array('status' => FAIL, 'message' => strip_tags(validation_errors()));
@@ -170,7 +168,7 @@ class Webapi extends Common_Service_Controller{
                 $user_meta['otherProfession']   = @$this->post('otherProfession');
                 $user_meta['bloodGroup']        = @$this->post('bloodGroup');
 
-                $user_meta['religiousKnowledge']      = $this->post('religiousKnowledge') ? implode(",",$this->post('religiousKnowledge')) :"";
+                $user_meta['religiousKnowledge']  = $this->post('religiousKnowledge') ? implode(",",$this->post('religiousKnowledge')) :"";
 
 
                 $add_meta['userId']         = $userId;
@@ -222,7 +220,7 @@ class Webapi extends Common_Service_Controller{
                         if(in_array($file_extension,$valid_ext))
                         {  
                             // Compress Image
-                            $compressedImage = $this->compressedImage($_FILES['identityImage']['tmp_name'],$location,8);
+                            $compressedImage = $this->compressedImage($_FILES['identityImage']['tmp_name'],$location,7);
                             
                             if($compressedImage)
                             { 
@@ -334,10 +332,11 @@ class Webapi extends Common_Service_Controller{
         else
         {
             $contactNumber          = trim(str_replace(array('(',')','-',' '),array('','','',''),$this->post('contactNumber')));
-            $countrycode          = trim(str_replace(array('(',')','+',' '),array('','','',''),$this->post('countrycode')));
-            $contactNumber = $countrycode.$contactNumber;
+            $countrycode            = trim(str_replace(array('(',')','+',' '),array('','','',''),$this->post('countrycode')));
+            $contactNumber          = $countrycode.$contactNumber;
             $this->load->library('sms_sent');
-            $response           = $this->sms_sent->sent_otp_number($contactNumber);  
+            $response               = $this->sms_sent->sent_otp_number($contactNumber);  
+
             // $response   = array('status'=>FAIL,'message'=>ResponseMessages::getStatusCodeMessage(118));   
             //} 
         }
@@ -396,7 +395,7 @@ class Webapi extends Common_Service_Controller{
         {
             $aadharNumber          = trim(str_replace(array('(',')','-',' '),array('','','',''),$this->post('aadharNumber')));
            
-            $isExist            =  $this->common_model->is_data_exists('users',array('aadharNumber'=>$aadharNumber)); 
+            $isExist                =  $this->common_model->is_data_exists('users',array('aadharNumber'=>$aadharNumber)); 
 
             if($isExist){
                 $response = array('status' =>false);
@@ -409,6 +408,7 @@ class Webapi extends Common_Service_Controller{
     // Compress image
     function compressedImage($source, $path, $quality) 
     {
+
         $info = getimagesize($source);
 
         if ($info['mime'] == 'image/jpeg') 
@@ -424,5 +424,7 @@ class Webapi extends Common_Service_Controller{
         imagejpeg($image, $path, $quality);
         // sReturn compressed image 
         return $path;
-    }
+
+    }//End function
+    
 }//End Class 
