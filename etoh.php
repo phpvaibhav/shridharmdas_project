@@ -11,7 +11,8 @@ type="text/css" rel="stylesheet"/>
 <h1>How to Convert Hindi Text into English Using JavaScript?</h1><br>
 <h2>Type in Hindi (Press Ctrl+g to toggle between English and Hindi)</h2>
 <div id="Wrapper"> <h2> Textarea </h2>
-<textarea id="transliterateTextarea" style="width:650px;height:300px"></textarea>
+<input type="text" id="transliterateTextarea" name="transliterateTextarea" >	
+<!-- <textarea id="transliterateTextarea" style="width:650px;height:300px"></textarea> -->
 </div>
 </body>
 <script type="text/javascript">
