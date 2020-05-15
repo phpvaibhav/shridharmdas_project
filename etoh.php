@@ -12,6 +12,8 @@ type="text/css" rel="stylesheet"/>
 <h2>Type in Hindi (Press Ctrl+g to toggle between English and Hindi)</h2>
 <div id="Wrapper"> <h2> Textarea </h2>
 <input type="text" id="transliterateTextarea" name="transliterateTextarea" >	
+<br>
+<textarea id="transliterateTextarea_1" style="width:650px;height:300px"></textarea>
 <!-- <textarea id="transliterateTextarea" style="width:650px;height:300px"></textarea> -->
 </div>
 </body>
@@ -31,7 +33,7 @@ transliterationEnabled: true
 };
 var control =
 new google.elements.transliteration.TransliterationControl(options);
-control.makeTransliteratable(['transliterateTextarea']);
+control.makeTransliteratable(['transliterateTextarea','transliterateTextarea_1']);
 
 //Add the following line to make it work over https
         control.c.qc.t13n.c[3].c.d.keyup[0].ia.F.p = 'https://www.google.com';   
