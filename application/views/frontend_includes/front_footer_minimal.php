@@ -110,6 +110,8 @@ var Please_enter_your_post_name ="<?= lang('Please_enter_your_post_name');?>";
         
 //Add the following line to make it work over https
         control.c.qc.t13n.c[3].c.d.keyup[0].ia.F.p = 'https://www.google.com';   
+                // Show the transliteration control which can be used to toggle between English and Hindi and also choose other destination language.
+          control.showControl('translControl');
       }
       google.setOnLoadCallback(onLoad);
     </script>
