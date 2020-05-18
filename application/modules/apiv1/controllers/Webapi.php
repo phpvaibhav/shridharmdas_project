@@ -34,6 +34,7 @@ class Webapi extends Common_Service_Controller{
                 $fuN                     = ucfirst(trim($this->post('fullName')));
                 $fuN = explode(" ", $fuN); 
                 $fullName1               =  ucfirst(trim($this->post('fullName'))); 
+                $actualFullName               =  ucfirst(trim($this->post('fullName'))); 
                 $firstName1              =  ucfirst(trim($this->post('firstName'))); 
                 $lastName1               =  ucfirst(trim($this->post('lastName'))); 
                 $parentName1             =  ucfirst(trim($this->post('parentName'))); 
