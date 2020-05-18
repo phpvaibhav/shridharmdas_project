@@ -2,7 +2,7 @@
 defined('BASEPATH') OR exit('No direct script access allowed');
 
 use PhpOffice\PhpSpreadsheet\Spreadsheet;
-
+use Stichoza\GoogleTranslate\GoogleTranslate;
 class Users extends Common_Back_Controller {
 
     public $data = "";
@@ -455,7 +455,7 @@ class Users extends Common_Back_Controller {
     function userList(){
         $array = array();
         $empInfo = $this->common_model->GetJoinRecord('users','id','user_meta','userId',"*",'','','id','ASC');
-      
+       $tr                      = new GoogleTranslate(); // Translates to 'en' from auto-detected language by default
         if(!empty($empInfo)){
               foreach ($empInfo as $element) {
                 $userId         =  $element->id;
@@ -506,11 +506,32 @@ class Users extends Common_Back_Controller {
                         }
                     }
                     
-              
-                    $hindiFamilyHeadNameH =  trim(str_replace(array('।'),array('.'),$hindiFamilyHeadName));
-                    $hindiParentNameH = trim(str_replace(array('।'),array('.'),$hindiParentName));
+                    //$checkFullnameH   = $this->is_english($actualFullName);
+                      if($this->is_english($actualFamilyHeadName)){
+                        $actualFamilyHeadName                     = $actualFamilyHeadName;
+                        $hindiFamilyHeadNameH                = $tr->setSource('en')->setTarget('hi')->translate($actualFamilyHeadName);
+                      }else{
+                         $hindiFamilyHeadNameH =  trim(str_replace(array('।'),array('.'),$actualFamilyHeadName));
+                      }
+                    if($this->is_english($actualParentName)){
+                            $parentName         = $actualParentName;
+                            $hindiParentNameH    = $tr->setSource('en')->setTarget('hi')->translate($parentName);
+                      }else{
+                          $hindiParentNameH = trim(str_replace(array('।'),array('.'),$hindiParentName));
+                      }
+
+                   
                     $hindiFullNameH =  $hindiFullName;
-                    $hindiFullNameH = trim(str_replace(array('।'),array('.'),$hindiFullName));
+
+                     if($this->is_english($actualFullName)){
+                         $hindiFullName  = $tr->setSource('en')->setTarget('hi')->translate($actualFullName);
+                        $hindiFullNameH = trim(str_replace(array('।'),array('.'),$hindiFullName)); 
+
+                     }else{
+                        $hindiFullNameH = trim(str_replace(array('।'),array('.'),$actualFullName)); 
+                     }
+                   
+
                     $fulldivideH     = explode(" ",$hindiFullNameH);
                     if(sizeof($fulldivideH)>1){
                         $lastNameH = end($fulldivideH);
