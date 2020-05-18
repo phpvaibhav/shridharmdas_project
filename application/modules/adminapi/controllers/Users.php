@@ -128,7 +128,7 @@ class Users extends Common_Admin_Controller{
             $row[]      = display_placeholder_text($serData->hindiParentName); 
             $row[]      = display_placeholder_text($serData->hindiFamilyHeadName); 
             $row[]      = display_placeholder_text($serData->unionName).(!empty($serData->otherUnionName) ? ' ('.display_placeholder_text($serData->otherUnionName).')':""); 
-            $row[]      = @$serData->countrycode.' '.display_mobile_text($serData->contactNumber); 
+            $row[]      = display_placeholder_text($serData->contactNumber); 
             $row[]      = display_placeholder_text(date('d-m-Y',strtotime($serData->dob))); 
           
             switch ($serData->status) {
