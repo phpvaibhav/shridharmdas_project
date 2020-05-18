@@ -536,7 +536,7 @@ class Users extends Common_Back_Controller {
                 $meta_val['hindiParentName']             = $hindiParentNameH;
                 $meta_val['hindiFamilyHeadName']         = $hindiFamilyHeadNameH;
                 $uId= $this->common_model->updateFields('users',$data_val,array('id'=>$userId));
-                $umId= $this->common_model->updateFields('user_meta',$user_meta,array('userId'=>$userId));
+                $umId= $this->common_model->updateFields('user_meta',$meta_val,array('userId'=>$userId));
 
                 $array[]                            = array('main'=>$data_val,'meta'=>$meta_val,'user'=>$uId,'usermeta'=>$umId); 
               }//End Function
