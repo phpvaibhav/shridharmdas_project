@@ -469,3 +469,17 @@ if (!function_exists('display_aadhar_text')) {
         }
     }
 }//End function
+/**
+ * Display is_english_text when string is empty
+ */
+if (!function_exists('is_english_text')) {
+
+    function is_english_text($str)
+    {
+    if (strlen($str) != strlen(utf8_decode($str))) {
+            return false;
+        } else {
+            return true;
+        }
+    }
+}//End function

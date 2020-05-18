@@ -1,6 +1,8 @@
 <?php
 defined('BASEPATH') OR exit('No direct script access allowed');
+
 use PhpOffice\PhpSpreadsheet\Spreadsheet;
+
 class Users extends Common_Back_Controller {
 
     public $data = "";
@@ -450,4 +452,104 @@ class Users extends Common_Back_Controller {
         force_download($fileName, $filepath);
         //unlink(FCPATH.'/'.ROOT_UPLOAD_PATH.$fileName);
     }//End Function
+    function userList(){
+        $array = array();
+        $empInfo = $this->common_model->GetJoinRecord('users','id','user_meta','userId',"*",'','','id','ASC');
+      
+        if(!empty($empInfo)){
+              foreach ($empInfo as $element) {
+                $userId         =  $element->id;
+                $actualFullName         =  $element->actualFullName;
+                $actualParentName       =  $element->actualParentName;
+                $actualFamilyHeadName   =  $element->actualFamilyHeadName;
+
+                $hindiFullName          =  $element->hindiFullName ;
+                $hindiParentName        =  $element->hindiParentName ;
+                $hindiFamilyHeadName    =  $element->hindiFamilyHeadName ;
+
+                
+                $firstNameE = $lastNameE = $actualFullNameE =$actualParentNameE = $firstNameH = $lastNameH = $actualFullNameH ="";
+              //English
+
+                  
+                    
+                    $checkFullname   = $this->is_english($actualFullName);
+                    if($checkFullname){
+                        $actualFamilyHeadNameE =  $actualFamilyHeadName;
+                        $actualParentNameE =  $actualParentName;
+                        $actualFullNameE =  $actualFullName;
+                        $actualFullNameE = trim(str_replace(array('|'),array('.'),$actualFullNameE));
+                        $fulldivideE     = explode(" ",$actualFullNameE);
+                        if(sizeof($fulldivideE)>1){
+                            $lastNameE = end($fulldivideE);
+                        // Deleting last array item
+                            array_pop($fulldivideE);
+                            $firstNameE = implode(" ",$fulldivideE);
+                        }else{
+                            $lastNameE = "";
+                            $firstNameE = implode(" ",$fulldivideE);
+                        }
+                    }else{
+                        $actualFamilyHeadNameE = $element->familyHeadName ;
+                        $actualParentNameE =  $element->parentName;
+                        $actualFullNameE =  $element->fullName;
+                        $actualFullNameE = trim(str_replace(array('|'),array('.'),$actualFullNameE));
+                        $fulldivideE     = explode(" ",$actualFullNameE);
+                        if(sizeof($fulldivideE)>1){
+                            $lastNameE = end($fulldivideE);
+                        // Deleting last array item
+                            array_pop($fulldivideE);
+                            $firstNameE = implode(" ",$fulldivideE);
+                        }else{
+                            $lastNameE = "";
+                            $firstNameE = implode(" ",$fulldivideE);
+                        }
+                    }
+                    
+              
+                    $hindiFamilyHeadNameH =  trim(str_replace(array('|'),array('.'),$hindiFamilyHeadName));
+                    $hindiParentNameH = trim(str_replace(array('|'),array('.'),$hindiParentName));
+                    $hindiFullNameH =  $hindiFullName;
+                    $hindiFullNameH = trim(str_replace(array('|'),array('.'),$hindiFullName));
+                    $fulldivideH     = explode(" ",$hindiFullNameH);
+                    if(sizeof($fulldivideH)>1){
+                        $lastNameH = end($fulldivideH);
+                        // Deleting last array item
+                        array_pop($fulldivideH);
+                        $firstNameH = implode(" ",$fulldivideH);
+                    }else{
+                        $lastNameH = "";
+                        $firstNameH = implode(" ",$fulldivideH);
+                    }
+
+                 $data_val = $meta_val= array();
+                   //--------------------------
+                $data_val['firstName']              = $firstNameE;
+                $data_val['lastName']               = $lastNameE;
+                $data_val['fullName']               = $actualFullNameE;
+                $data_val['parentName']             = $actualParentNameE;
+                $data_val['familyHeadName']         = $actualFamilyHeadNameE;
+          
+                $meta_val['hindiFirstName']         = $firstNameH;
+                $meta_val['hindiLastName']          = $lastNameH;
+                $meta_val['hindiFullName']          = $hindiFullNameH;
+                $meta_val['hindiParentName']             = $hindiParentNameH;
+                $meta_val['hindiFamilyHeadName']         = $hindiFamilyHeadNameH;
+                $uId= $this->common_model->updateFields('users',$data_val,array('id'=>$userId));
+                $umId= $this->common_model->updateFields('user_meta',$user_meta,array('userId'=>$userId));
+
+                $array[]                            = array('main'=>$data_val,'meta'=>$meta_val,'user'=>$uId,'usermeta'=>$umId); 
+              }//End Function
+        }//End Function
+        pr($array);
+    }//End Function
+    function is_english($str)
+    {
+    if (strlen($str) != strlen(utf8_decode($str))) {
+            return false;
+        } else {
+            return true;
+        }
+    }
+
 }//End Class

@@ -40,36 +40,78 @@ class Webapi extends Common_Service_Controller{
                 $familyHeadName1         =  ucfirst(trim($this->post('familyHeadName'))); 
               //  $fullName1               = $firstName1.' '.$lastName1 ; 
                 $tr                      = new GoogleTranslate(); // Translates to 'en' from auto-detected language by default
-              
+                if(is_english_text($fullName1)){
+                    $fullName       = $fullName1;
+                    $hindiFullName  = $tr->setSource('en')->setTarget('hi')->translate($fullName1);
+                }else{
+                    $fullName       = $tr->setSource('hi')->setTarget('en')->translate($fullName1);
+                    $hindiFullName  = $tr->setSource('en')->setTarget('hi')->translate($fullName1);
+                }
 
-                $fullName       = $tr->setSource('hi')->setTarget('en')->translate($fullName1);
-                $hindiFullName  = $tr->setSource('en')->setTarget('hi')->translate($fullName1);
+               // $fullName       = $tr->setSource('hi')->setTarget('en')->translate($fullName1);
+               // $hindiFullName  = $tr->setSource('en')->setTarget('hi')->translate($fullName1);
 
            
                 $fulldivideE    = explode(" ",$fullName);
-                $firstName      = isset($fulldivideE[0]) ? $fulldivideE[0] :"";
+                 if(sizeof($fulldivideE)>1){
+                        $lastName = end($fulldivideE);
+                        // Deleting last array item
+                        array_pop($fulldivideE);
+                        $firstName = implode(" ",$fulldivideE);
+                    }else{
+                        $lastName = "";
+                        $firstName = implode(" ",$fulldivideE);
+                    }
+              /*  $firstName      = isset($fulldivideE[0]) ? $fulldivideE[0] :"";
                 $firstName      = trim($firstName);
                 // elements 
                 unset($fulldivideE[0]); 
                 $lastName       = isset($fulldivideE[1]) ? (implode(" ",$fulldivideE)) :"";
-                $lastName = trim($lastName);
-                
+                $lastName = trim($lastName);*/
                 $fulldivideH    = explode(" ",$hindiFullName);
-                $hindiFirstName = isset($fulldivideH[0]) ? $fulldivideH[0] :"";
+                if(sizeof($fulldivideH)>1){
+                        $hindiLastName = end($fulldivideH);
+                        // Deleting last array item
+                        array_pop($fulldivideE);
+                        $hindiFirstName = implode(" ",$fulldivideH);
+                    }else{
+                        $hindiLastName = "";
+                        $hindiFirstName = implode(" ",$fulldivideH);
+                    }
+
+                $actualfulldivide   = explode(" ",$actualFullName);
+                if(sizeof($actualfulldivide)>1){
+                        $aLastName = end($actualfulldivide);
+                        // Deleting last array item
+                        array_pop($actualfulldivide);
+                        $aFirstName = implode(" ",$actualfulldivide);
+                    }else{
+                        $aLastName = "";
+                        $aFirstName = implode(" ",$actualfulldivide);
+                    }
+
+               
+             /*   $hindiFirstName = isset($fulldivideH[0]) ? $fulldivideH[0] :"";
                 $hindiFirstName = trim($hindiFirstName);
                 // elements 
                 unset($fulldivideH[0]); 
                 $hindiLastName = isset($fulldivideH[1]) ? (implode(" ",$fulldivideH)) :"";
-                $hindiLastName = trim($hindiLastName);
+                $hindiLastName = trim($hindiLastName);*/
 
-
-                $parentName         = $tr->setSource('hi')->setTarget('en')->translate($parentName1);
-                $hindiParentName    = $tr->setSource('en')->setTarget('hi')->translate($parentName);
-
-
-
-                $familyHeadName                     = $tr->setSource('hi')->setTarget('en')->translate($familyHeadName1);
-                $hindiFamilyHeadName                = $tr->setSource('en')->setTarget('hi')->translate($familyHeadName);
+                if(is_english_text($parentName1)){
+                    $parentName         = $parentName1;
+                    $hindiParentName    = $tr->setSource('en')->setTarget('hi')->translate($parentName);
+                }else{
+                    $parentName         = $tr->setSource('hi')->setTarget('en')->translate($parentName1);
+                    $hindiParentName    = $tr->setSource('en')->setTarget('hi')->translate($parentName);
+                }
+                if(is_english_text($familyHeadName1)){
+                    $familyHeadName                     = $familyHeadName1;
+                    $hindiFamilyHeadName                = $tr->setSource('en')->setTarget('hi')->translate($familyHeadName);
+                }else{
+                    $familyHeadName                     = $tr->setSource('hi')->setTarget('en')->translate($familyHeadName1);
+                    $hindiFamilyHeadName                = $tr->setSource('en')->setTarget('hi')->translate($familyHeadName); 
+                }
 
                 $contactNumber                      = trim(str_replace(array('(',')','-',' '),array('','','',''),$this->post('contactNumber')));
                 $data_val['dob']                    = date('Y-m-d',strtotime($this->post('dob'))); 
@@ -89,14 +131,13 @@ class Webapi extends Common_Service_Controller{
                 $data_val['userName']               = rand('111111','999999'); 
                 $data_val['password']               = password_hash('123!@#', PASSWORD_DEFAULT);
 
-                $meta_val['hindiFirstName']         = $hindiFirstName;
-                $meta_val['hindiLastName']          = $hindiLastName;
-                $meta_val['hindiFullName']          = $hindiFullName;
-                $meta_val['hindiParentName']        = $hindiParentName;
-                $meta_val['hindiFamilyHeadName']    = $hindiFamilyHeadName;
-                $meta_val['actualFirstName']        =  trim(isset($fuN[0]) ? $fuN[0]:""); 
-                 unset($fuN[0]); 
-                $meta_val['actualLastName']         = trim(isset($fuN[1]) ? implode(" ",$fuN):"");
+                $meta_val['hindiFirstName']         = trim(str_replace(array('|'),array('.'),$hindiFirstName));
+                $meta_val['hindiLastName']          = trim(str_replace(array('|'),array('.'),$hindiLastName));//$hindiLastName;
+                $meta_val['hindiFullName']          = trim(str_replace(array('|'),array('.'),$hindiFullName));//$hindiFullName;
+                $meta_val['hindiParentName']        =  trim(str_replace(array('|'),array('.'),$hindiParentName));//$hindiParentName;
+                $meta_val['hindiFamilyHeadName']    = trim(str_replace(array('|'),array('.'),$hindiFamilyHeadName));//$hindiFamilyHeadName;
+                $meta_val['actualFirstName']        =  trim($aFirstName); 
+                $meta_val['actualLastName']         =  trim($aLastName);
                 $meta_val['actualFullName']         = $this->post('fullName');
                 $meta_val['actualParentName']       = $this->post('parentName');
                 $meta_val['actualFamilyHeadName']   = $this->post('familyHeadName'); 
