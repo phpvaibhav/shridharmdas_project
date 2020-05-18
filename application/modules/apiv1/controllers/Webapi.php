@@ -73,7 +73,7 @@ class Webapi extends Common_Service_Controller{
                 if(sizeof($fulldivideH)>1){
                         $hindiLastName = end($fulldivideH);
                         // Deleting last array item
-                        array_pop($fulldivideE);
+                        array_pop($fulldivideH);
                         $hindiFirstName = implode(" ",$fulldivideH);
                     }else{
                         $hindiLastName = "";
@@ -172,6 +172,7 @@ class Webapi extends Common_Service_Controller{
     } //End Function
 
     function userStep2_post(){
+        
         $this->form_validation->set_rules('userId','userId','trim|required');
         $this->form_validation->set_rules('gender','gender','trim|required');
         $this->form_validation->set_rules('maritalStatus','marital status','trim|required');

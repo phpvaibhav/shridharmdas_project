@@ -41,8 +41,6 @@ class Users extends Common_Back_Controller {
         $this->load->admin_render('users/trash', $data, '');
     } //End function
 
-    
-
     public function indexC(){
      
         $data['title']      = lang('Users');
@@ -57,7 +55,6 @@ class Users extends Common_Back_Controller {
         $this->load->admin_render('users/trash_user', $data, '');
     } //End function
     
-
     public function userexcel(){
      
         $data['title']      = lang('Users');
@@ -275,7 +272,7 @@ class Users extends Common_Back_Controller {
             $sheet->setCellValue('AH1', 'राज्य');
             $sheet->setCellValue('AI1', 'देश');
 
-        /*$sheet->setCellValue('AJ1', 'कार्यालय का पता');
+            /*$sheet->setCellValue('AJ1', 'कार्यालय का पता');
             $sheet->setCellValue('AK1', 'मुहल्ला / गाँव');
             $sheet->setCellValue('AL1', 'पोस्ट नाम');
             $sheet->setCellValue('AM1', 'शहर');
@@ -284,7 +281,9 @@ class Users extends Common_Back_Controller {
             $sheet->setCellValue('AP1', 'जिला');
             $sheet->setCellValue('AQ1', 'राज्य');
             $sheet->setCellValue('AR1', 'देश');*/
+
         }else{
+
             $sheet->setCellValue('A1', 'First Name');
             $sheet->setCellValue('B1', 'Last Name');
             $sheet->setCellValue('C1', 'Parent Name');
@@ -324,7 +323,8 @@ class Users extends Common_Back_Controller {
             $sheet->setCellValue('AH1', 'State');
             $sheet->setCellValue('AI1', 'Country');
 
-         /*   $sheet->setCellValue('AJ1', 'Office Address');
+
+         /* $sheet->setCellValue('AJ1', 'Office Address');
             $sheet->setCellValue('AK1', 'locality');
             $sheet->setCellValue('AL1', 'postName');
             $sheet->setCellValue('AM1', 'City');
@@ -333,9 +333,9 @@ class Users extends Common_Back_Controller {
             $sheet->setCellValue('AP1', 'District');
             $sheet->setCellValue('AQ1', 'State');
             $sheet->setCellValue('AR1', 'Country');*/
-        }
 
-        
+
+        }
 
         $rowCount = 2;
         foreach ($empInfo as $element) {

@@ -136,6 +136,7 @@ class Users extends Common_Admin_Controller{
                 case 1:
                    $row[] = '<label class="label label-success">'.$serData->statusShow.'</label>';
                     break;
+
                 case 0:
                    $row[] = '<label class="label label-warning">'.$serData->statusShow.'</label>';
                     break;
@@ -174,6 +175,7 @@ class Users extends Common_Admin_Controller{
             $action .= '&nbsp;&nbsp;|&nbsp;&nbsp;<a href="'.$link_url.'"  class="on-default edit-row table_action" title="Detail"><i class="fa fa-eye"  aria-hidden="true"></i></a>';
             $action .= '&nbsp;&nbsp;|&nbsp;&nbsp;<a href="'.$link.'" onclick="confirmAction(this);" data-message="You want to Trash this record!" data-id="'.encoding($serData->id).'" data-url="adminapi/users/recordTrash" data-list="1"  class="on-default edit-row table_action" title="Delete"><i class="fa fa-trash" aria-hidden="true"></i></a>';
             }
+
             $row[]  = $action;
             $data[] = $row;
 
@@ -207,10 +209,11 @@ class Users extends Common_Admin_Controller{
         $preId              = decoding($this->post('id'));
         $where              = array('id'=>$preId);
         $dataExist          = $this->common_model->is_data_exists('users',$where);
-        if($dataExist){
-            $dataExist      = $this->common_model->deleteData('users',$where);
 
+        if($dataExist){    
+            $dataExist      = $this->common_model->deleteData('users',$where);
             $response       = array('status'=>SUCCESS,'message'=>ResponseMessages::getStatusCodeMessage(124));
+            
         }else{
             $response       = array('status'=>FAIL,'message'=>ResponseMessages::getStatusCodeMessage(118));  
         }
