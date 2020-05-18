@@ -132,11 +132,11 @@ class Webapi extends Common_Service_Controller{
                 $data_val['userName']               = rand('111111','999999'); 
                 $data_val['password']               = password_hash('123!@#', PASSWORD_DEFAULT);
 
-                $meta_val['hindiFirstName']         = trim(str_replace(array('|'),array('.'),$hindiFirstName));
-                $meta_val['hindiLastName']          = trim(str_replace(array('|'),array('.'),$hindiLastName));//$hindiLastName;
-                $meta_val['hindiFullName']          = trim(str_replace(array('|'),array('.'),$hindiFullName));//$hindiFullName;
-                $meta_val['hindiParentName']        =  trim(str_replace(array('|'),array('.'),$hindiParentName));//$hindiParentName;
-                $meta_val['hindiFamilyHeadName']    = trim(str_replace(array('|'),array('.'),$hindiFamilyHeadName));//$hindiFamilyHeadName;
+                $meta_val['hindiFirstName']         = trim(str_replace(array('।'),array('.'),$hindiFirstName));
+                $meta_val['hindiLastName']          = trim(str_replace(array('।'),array('.'),$hindiLastName));//$hindiLastName;
+                $meta_val['hindiFullName']          = trim(str_replace(array('।'),array('.'),$hindiFullName));//$hindiFullName;
+                $meta_val['hindiParentName']        =  trim(str_replace(array('।'),array('.'),$hindiParentName));//$hindiParentName;
+                $meta_val['hindiFamilyHeadName']    = trim(str_replace(array('।'),array('.'),$hindiFamilyHeadName));//$hindiFamilyHeadName;
                 $meta_val['actualFirstName']        =  trim($aFirstName); 
                 $meta_val['actualLastName']         =  trim($aLastName);
                 $meta_val['actualFullName']         = $this->post('fullName');

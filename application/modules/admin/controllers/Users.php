@@ -478,7 +478,7 @@ class Users extends Common_Back_Controller {
                         $actualFamilyHeadNameE =  $actualFamilyHeadName;
                         $actualParentNameE =  $actualParentName;
                         $actualFullNameE =  $actualFullName;
-                        $actualFullNameE = trim(str_replace(array('|'),array('.'),$actualFullNameE));
+                        $actualFullNameE = trim(str_replace(array('।'),array('.'),$actualFullNameE));
                         $fulldivideE     = explode(" ",$actualFullNameE);
                         if(sizeof($fulldivideE)>1){
                             $lastNameE = end($fulldivideE);
@@ -493,7 +493,7 @@ class Users extends Common_Back_Controller {
                         $actualFamilyHeadNameE = $element->familyHeadName ;
                         $actualParentNameE =  $element->parentName;
                         $actualFullNameE =  $element->fullName;
-                        $actualFullNameE = trim(str_replace(array('|'),array('.'),$actualFullNameE));
+                        $actualFullNameE = trim(str_replace(array('।'),array('.'),$actualFullNameE));
                         $fulldivideE     = explode(" ",$actualFullNameE);
                         if(sizeof($fulldivideE)>1){
                             $lastNameE = end($fulldivideE);
@@ -507,10 +507,10 @@ class Users extends Common_Back_Controller {
                     }
                     
               
-                    $hindiFamilyHeadNameH =  trim(str_replace(array('|'),array('.'),$hindiFamilyHeadName));
-                    $hindiParentNameH = trim(str_replace(array('|'),array('.'),$hindiParentName));
+                    $hindiFamilyHeadNameH =  trim(str_replace(array('।'),array('.'),$hindiFamilyHeadName));
+                    $hindiParentNameH = trim(str_replace(array('।'),array('.'),$hindiParentName));
                     $hindiFullNameH =  $hindiFullName;
-                    $hindiFullNameH = trim(str_replace(array('|'),array('.'),$hindiFullName));
+                    $hindiFullNameH = trim(str_replace(array('।'),array('.'),$hindiFullName));
                     $fulldivideH     = explode(" ",$hindiFullNameH);
                     if(sizeof($fulldivideH)>1){
                         $lastNameH = end($fulldivideH);
