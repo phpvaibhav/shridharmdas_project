@@ -95,6 +95,7 @@ class Users extends Common_Admin_Controller{
         }
         $this->response($response);
     }//end function
+    
     function list_post(){
         $this->load->helper('text');
         $this->load->model('user_model');

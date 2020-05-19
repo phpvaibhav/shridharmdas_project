@@ -31,14 +31,14 @@ class Webapi extends Common_Service_Controller{
 
                // pr($this->post());
                 $data_val                = $meta_val  = array();
-                $fuN                     = ucfirst(trim($this->post('fullName')));
+                $fuN                     = ucfirst(trim(strtolower($this->post('fullName'))));
                 $fuN = explode(" ", $fuN); 
-                $fullName1               =  ucfirst(trim($this->post('fullName'))); 
-                $actualFullName               =  ucfirst(trim($this->post('fullName'))); 
-                $firstName1              =  ucfirst(trim($this->post('firstName'))); 
-                $lastName1               =  ucfirst(trim($this->post('lastName'))); 
-                $parentName1             =  ucfirst(trim($this->post('parentName'))); 
-                $familyHeadName1         =  ucfirst(trim($this->post('familyHeadName'))); 
+                $fullName1               =  ucfirst(trim(strtolower($this->post('fullName')))); 
+                $actualFullName               =  ucfirst(trim(strtolower($this->post('fullName')))); 
+                $firstName1              =  ucfirst(trim(strtolower($this->post('firstName')))); 
+                $lastName1               =  ucfirst(trim(strtolower($this->post('lastName')))); 
+                $parentName1             =  ucfirst(trim(strtolower($this->post('parentName')))); 
+                $familyHeadName1         =  ucfirst(trim(strtolower($this->post('familyHeadName')))); 
               //  $fullName1               = $firstName1.' '.$lastName1 ; 
                 $tr                      = new GoogleTranslate(); // Translates to 'en' from auto-detected language by default
                 if(is_english_text($fullName1)){

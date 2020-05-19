@@ -50,9 +50,7 @@ class Union extends Common_Admin_Controller{
                  $response   = array('status'=>$status,'message'=>$msg);
             }else{
                  $response   = array('status'=>FAIL,'message'=>ResponseMessages::getStatusCodeMessage(118));
-            }
-        
-              
+            }    
         }
         $this->response($response);
     }//end function

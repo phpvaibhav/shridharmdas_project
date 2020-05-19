@@ -459,9 +459,9 @@ class Users extends Common_Back_Controller {
         if(!empty($empInfo)){
               foreach ($empInfo as $element) {
                 $userId         =  $element->id;
-                $actualFullName         =  $element->actualFullName;
-                $actualParentName       =  $element->actualParentName;
-                $actualFamilyHeadName   =  $element->actualFamilyHeadName;
+                $actualFullName         =  strtolower($element->actualFullName);
+                $actualParentName       =  strtolower($element->actualParentName);
+                $actualFamilyHeadName   =  strtolower($element->actualFamilyHeadName);
 
                 $hindiFullName          =  $element->hindiFullName ;
                 $hindiParentName        =  $element->hindiParentName ;
