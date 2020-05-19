@@ -454,7 +454,7 @@ class Users extends Common_Back_Controller {
     }//End Function
     function userList(){
         $array = array();
-        $empInfo = $this->common_model->GetJoinRecord('users','id','user_meta','userId',"*",'','','id','ASC');
+        $empInfo = $this->common_model->GetJoinRecord('users','id','user_meta','userId',"*",'','','id','DESC');
       
         if(!empty($empInfo)){
               foreach ($empInfo as $element) {
@@ -489,6 +489,24 @@ class Users extends Common_Back_Controller {
                             $lastNameE = "";
                             $firstNameE = implode(" ",$fulldivideE);
                         }
+                        //English
+
+                        //hindi
+                            $hindiFamilyHeadNameH =  trim(str_replace(array('।'),array('.'),$hindiFamilyHeadName));
+                            $hindiParentNameH = trim(str_replace(array('।'),array('.'),$hindiParentName));
+                            $hindiFullNameH =  $hindiFullName;
+                            $hindiFullNameH = trim(str_replace(array('।'),array('.'),$hindiFullName));
+                            $fulldivideH     = explode(" ",$hindiFullNameH);
+                            if(sizeof($fulldivideH)>1){
+                            $lastNameH = end($fulldivideH);
+                            // Deleting last array item
+                            array_pop($fulldivideH);
+                            $firstNameH = implode(" ",$fulldivideH);
+                            }else{
+                            $lastNameH = "";
+                            $firstNameH = implode(" ",$fulldivideH);
+                            }
+                        //hindi
                     }else{
                         $actualFamilyHeadNameE = $element->familyHeadName ;
                         $actualParentNameE =  $element->parentName;
@@ -504,23 +522,26 @@ class Users extends Common_Back_Controller {
                             $lastNameE = "";
                             $firstNameE = implode(" ",$fulldivideE);
                         }
-                    }
-                    
-                
-                    $hindiFamilyHeadNameH =  trim(str_replace(array('।'),array('.'),$hindiFamilyHeadName));
-                    $hindiParentNameH = trim(str_replace(array('।'),array('.'),$hindiParentName));
-                    $hindiFullNameH =  $hindiFullName;
-                    $hindiFullNameH = trim(str_replace(array('।'),array('.'),$hindiFullName));
-                    $fulldivideH     = explode(" ",$hindiFullNameH);
-                    if(sizeof($fulldivideH)>1){
+                        //hindii
+                        $hindiFamilyHeadNameH =  trim(str_replace(array('।'),array('.'),$actualFamilyHeadName));
+                        $hindiParentNameH = trim(str_replace(array('।'),array('.'),$actualParentName));
+                        $hindiFullNameH =  $actualFullName;
+                        $hindiFullNameH = trim(str_replace(array('।'),array('.'),$hindiFullNameH));
+                        $fulldivideH     = explode(" ",$hindiFullNameH);
+                        if(sizeof($fulldivideH)>1){
                         $lastNameH = end($fulldivideH);
                         // Deleting last array item
                         array_pop($fulldivideH);
                         $firstNameH = implode(" ",$fulldivideH);
-                    }else{
+                        }else{
                         $lastNameH = "";
                         $firstNameH = implode(" ",$fulldivideH);
+                        }
+                        //hindii
                     }
+                    
+                
+
 
                  $data_val = $meta_val= array();
                    //--------------------------

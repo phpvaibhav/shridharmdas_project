@@ -46,7 +46,7 @@ class Webapi extends Common_Service_Controller{
                     $hindiFullName  = $tr->setSource('en')->setTarget('hi')->translate($fullName1);
                 }else{
                     $fullName       = $tr->setSource('hi')->setTarget('en')->translate($fullName1);
-                    $hindiFullName  = $tr->setSource('en')->setTarget('hi')->translate($fullName1);
+                    $hindiFullName  = $fullName1;
                 }
 
                // $fullName       = $tr->setSource('hi')->setTarget('en')->translate($fullName1);
@@ -104,14 +104,14 @@ class Webapi extends Common_Service_Controller{
                     $hindiParentName    = $tr->setSource('en')->setTarget('hi')->translate($parentName);
                 }else{
                     $parentName         = $tr->setSource('hi')->setTarget('en')->translate($parentName1);
-                    $hindiParentName    = $tr->setSource('en')->setTarget('hi')->translate($parentName);
+                    $hindiParentName    = $parentName;
                 }
                 if(is_english_text($familyHeadName1)){
                     $familyHeadName                     = $familyHeadName1;
                     $hindiFamilyHeadName                = $tr->setSource('en')->setTarget('hi')->translate($familyHeadName);
                 }else{
                     $familyHeadName                     = $tr->setSource('hi')->setTarget('en')->translate($familyHeadName1);
-                    $hindiFamilyHeadName                = $tr->setSource('en')->setTarget('hi')->translate($familyHeadName); 
+                    $hindiFamilyHeadName                = $familyHeadName; 
                 }
 
                 $contactNumber                      = trim(str_replace(array('(',')','-',' '),array('','','',''),$this->post('contactNumber')));
