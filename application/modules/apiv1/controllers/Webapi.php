@@ -101,17 +101,17 @@ class Webapi extends Common_Service_Controller{
 
                 if(is_english_text($parentName1)){
                     $parentName         = $parentName1;
-                    $hindiParentName    = $tr->setSource('en')->setTarget('hi')->translate($parentName);
+                    $hindiParentName    = $tr->setSource('en')->setTarget('hi')->translate($parentName1);
                 }else{
                     $parentName         = $tr->setSource('hi')->setTarget('en')->translate($parentName1);
-                    $hindiParentName    = $parentName;
+                    $hindiParentName    = $parentName1;
                 }
                 if(is_english_text($familyHeadName1)){
                     $familyHeadName                     = $familyHeadName1;
-                    $hindiFamilyHeadName                = $tr->setSource('en')->setTarget('hi')->translate($familyHeadName);
+                    $hindiFamilyHeadName                = $tr->setSource('en')->setTarget('hi')->translate($familyHeadName1);
                 }else{
                     $familyHeadName                     = $tr->setSource('hi')->setTarget('en')->translate($familyHeadName1);
-                    $hindiFamilyHeadName                = $familyHeadName; 
+                    $hindiFamilyHeadName                = $familyHeadName1; 
                 }
 
                 $contactNumber                      = trim(str_replace(array('(',')','-',' '),array('','','',''),$this->post('contactNumber')));
