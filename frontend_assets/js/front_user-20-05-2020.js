@@ -1,4 +1,6 @@
 /*createJobType*/
+
+
 $("#otpDivId").css("display", "none");
 $("#user-add-step-1").validate({// Rules for form validation
     errorClass    : errorClass,
@@ -15,6 +17,13 @@ $("#user-add-step-1").validate({// Rules for form validation
       fullName    : {
         required : true
       }, 
+     /* firstName    : {
+        required : true
+      }, 
+      
+      lastName    : {
+        required : true
+      },    */
       parentName    : {
         required : true
       }, 
@@ -34,60 +43,32 @@ $("#user-add-step-1").validate({// Rules for form validation
         required : true,
         minlength: 10
       },  
+      
+    /*  aadharNumber    : {
+        required : true,
+        number: true,
+        minlength : 12,
+        checkAadharNumber : true,
+      }, */
        unionName    : {
           required : true
         },
         otherUnionName    : {
           required : true
         },
-           gender    : {
-          required : true
-        },    
-        maritalStatus    : {
-          required : true
-        },
-      
-         profession    : {
-          required : true
-        },
-          address    : {
-          required : true
-        },  
-        city    : {
-          required : true
-        },  
-         postName    : {
-          required : true
-        },  
-        
-        zip_code    : {
-          required : true
-        },  
-        tehsil    : {
-          required : true
-        },  
-        district    : {
-          required : true
-        },
-        paddress    : {
-          required : true
-        }, 
-
-        pcity    : {
-          required : true
-        },   
-        ppostName    : {
-          required : true
-        },  
-        pzip_code    : {
-          required : true
-        },  
-        ptehsil    : {
-          required : true
-        },  
-        pdistrict    : {
-          required : true
-        },
+    /*  identityImage:{
+        required: true,
+        accept:"jpg,png,jpeg,gif,pdf"
+      } ,  */
+    /*  frontImage:{
+        required: true,
+        accept:"jpg,png,jpeg,gif,pdf"
+      } ,  */
+       
+    /*  backImage:{
+        required: true,
+        accept:"jpg,png,jpeg,gif,pdf"
+      } ,*/
     },
     // Messages for form validation
     messages : {
@@ -126,6 +107,306 @@ $("#user-add-step-1").validate({// Rules for form validation
             required : 'Please enter  OTP number',
             minlength : 'Please enter 4 OTP number'
           }, 
+          
+          aadharNumber : {
+            required : Please_select_your_aadhar_number,
+            minlength : Please_enter_at_least_12_digit_aadhaar_number,
+            checkAadharNumber : This_aadhar_number_is_already_taken
+          },  
+          frontImage:{
+            required: Please_select_your_front_image,
+          accept: Please_select__image_type,//"Only image type jpg/png/jpeg/gif is allowed"
+          },
+           identityImage:{
+            required: Please_select_your_Identity_image,
+          accept: Please_select__image_type,//"Only image type jpg/png/jpeg/gif is allowed"
+          },
+          
+          backImage:{
+            required: Please_select_your_back_image,
+            accept: Please_select__image_type//"Only image type jpg/png/jpeg/gif is allowed"
+          }  ,
+
+  },
+  // Ajax form submition
+/*  submitHandler : function(form) {
+
+    var method      =  "POST";
+    var post_data   = $(form).serialize();
+    var url         =  base_url+'adminapi/'+$(form).attr('action');
+    var header      = true;
+    var headerData  = {} ;
+    if(header){
+     var headerData = { 'authToken':authToken} ; 
+    }
+    toastr.clear();
+    $('#submit').prop('disabled', true);
+    $.ajax({
+            type            : method,
+            url             : url,
+            headers         : headerData,
+            data            : post_data,
+            cache           : false,
+            beforeSend      : function() {
+              preLoadshow(true);
+              $('#submit').prop('disabled', true);  
+            },     
+            success         : function (res) {
+              preLoadshow(false);
+              setTimeout(function(){  $('#submit').prop('disabled', false); },4000);
+              if(res.status=='success'){
+                swal(Good_job,Your_form_submitted_successfully, "success");
+                toastr.success(res.message, 'Success', {timeOut: 3000});
+                setTimeout(function(){ 
+                window.location.reload();
+                // window.location = base_url+'users';
+                },4000);
+              }else{
+                toastr.error(res.message, 'Alert!', {timeOut: 4000});
+              }
+            }
+          });
+    return false; // required to block normal submit since you used ajax
+  },*/
+  onfocusout: injectTrim($.validator.defaults.onfocusout),
+  // Do not change code below
+  errorPlacement : function(error, element) {
+    error.insertAfter(element.parent());
+  }
+});
+
+// Validation
+$(function() {
+      
+  $(document).on('submit', "#user-add-step-1", function (event) {
+    toastr.clear();
+    event.preventDefault();
+    var formData = new FormData(this);
+    $.ajax({
+        type            : "POST",
+        url             :  base_url+'apiv1/webapi/'+$(this).attr('action'),
+        headers         : { 'authToken': authToken },
+        data            : formData, //only input
+        processData     : false,
+        contentType     : false,
+        cache           : false,
+        beforeSend      : function () {
+          preLoadshow(true);
+            $('#submit').prop('disabled', true);
+        },
+        success         : function (res) {
+          preLoadshow(false);
+          setTimeout(function(){  $('#submit').prop('disabled', false); },4000);
+          if(res.status=='success'){
+            toastr.success(res.message, 'Success', {timeOut: 3000});
+            setTimeout(function(){ window.location = base_url+'user-step-2'; },3000);
+          }else{
+            toastr.error(res.message, 'Alert!', {timeOut: 4000});
+          }         
+        }
+    });
+  });        //fromsubmit
+});
+
+//rember me
+$(function() {
+  if (localStorage.add_chkbx && localStorage.add_chkbx != '') {
+    $('#remember_Address').attr('checked', 'checked');
+    $('#address').val(localStorage.address);
+    //$('#postName').val(localStorage.postName);
+    $('#city').val(localStorage.city);
+    $('#zip_code').val(localStorage.zip_code);
+    $('#tehsil').val(localStorage.tehsil);
+    $('#district').val(localStorage.district);
+    $('#country').val(localStorage.country);
+    $('#state').val(localStorage.state);
+    $("#zip_code").trigger("keyup");
+    setTimeout(function(){$("#postName option[value='"+localStorage.postName+"']").prop('selected', true); },3000);
+  } else {
+    $('#remember_Address').removeAttr('checked');
+    $('#address').val("");
+    $('#postName').val("");
+    $('#city').val("");
+    $('#zip_code').val("");
+    $('#tehsil').val("");
+    $('#district').val("");
+    $('#country').val("");
+    $('#state').val("");
+  }
+  $('#remember_Address').click(function() {
+    if ($('#remember_Address').is(':checked')) {
+
+      localStorage.address      = $('#address').val();
+      localStorage.city         = $('#city').val();
+      localStorage.postName     = $('#postName').val();
+      localStorage.zip_code     = $('#zip_code').val();
+      localStorage.tehsil       = $('#tehsil').val();
+      localStorage.district     = $('#district').val();
+      localStorage.country      = $('#country').val();
+      localStorage.state        = $('#state').val();
+      localStorage.add_chkbx    = $('#remember_Address').val();
+    
+    } else {
+      localStorage.address      =  "";
+      localStorage.city         =  "";
+      localStorage.zip_code     =  "";
+      localStorage.tehsil       =  "";
+      localStorage.district     =  "";
+      localStorage.country      =  "";
+      localStorage.state        =  "";
+      localStorage.postName     =  "";
+      localStorage.add_chkbx    =  "";
+    }
+  });
+    $('#Same_AddressP').click(function() {
+    if ($('#Same_AddressP').is(':checked')) {
+
+          $('#paddress').val($('#address').val());
+          $('#pcity').val($('#city').val());
+          $('#pzip_code').val($('#zip_code').val());
+          $('#ptehsil').val($('#tehsil').val());
+          $('#pcountry').val($('#country').val());
+          $('#pstate').val($('#state').val());
+          $('#pdistrict').val($('#district').val());
+
+          $("#pzip_code").trigger("keyup");
+          setTimeout(function(){$("#ppostName option[value='"+($('#postName').val())+"']").prop('selected', true); },3000);
+          
+    } else {
+    //gfgg
+    }
+  });
+
+  $('#Same_Address').click(function() {
+    if ($('#Same_Address').is(':checked')) {
+          $('#oaddress').val($('#paddress').val());
+          $('#ocity').val($('#pcity').val());
+          $('#ozip_code').val($('#pzip_code').val());
+          $('#otehsil').val($('#ptehsil').val());
+          $('#odistrict').val($('#pdistrict').val());
+          $('#ocountry').val($('#pcountry').val());
+          $('#ostate').val($('#pstate').val());
+          $("#ozip_code").trigger("keyup");
+          setTimeout(function(){
+            $("#opostName option[value='"+($('#ppostName').val())+"']").prop('selected', true);
+            //$("#ppostName option[value='"+($('#postName').val())+"']").prop('selected', true);
+                       },3000);
+           
+    } else {
+      //gfgg
+    }
+  });
+
+    
+});
+//rember me
+
+function professionCheck(e){
+    var expression = $(e).val();
+    switch(expression) {
+    case 'house wife':
+       // $("#offAddress").css("display","none");
+    break;
+    case 'student':
+       // $("#offAddress").css("display","none");
+    break;
+    case 'retired':
+       // $("#offAddress").css("display","none");
+    break;
+    
+    default:
+       // $("#offAddress").css("display","block");
+    } 
+
+}
+
+$("#user-add-step-2").validate({ // Rules for form validation
+    errorClass    : errorClass,
+    errorElement  : errorElement,
+    highlight: function(element) {
+      $(element).parent().removeClass('state-success').addClass("state-error");
+      $(element).removeClass('valid');
+    },
+    unhighlight: function(element) {
+      $(element).parent().removeClass("state-error").addClass('state-success');
+      $(element).addClass('valid');
+    },
+      rules : {
+        gender    : {
+          required : true
+        },    
+        maritalStatus    : {
+          required : true
+        },
+       /* unionName    : {
+          required : true
+        },
+        otherUnionName    : {
+          required : true
+        },*/
+         profession    : {
+          required : true
+        },
+          identityImage:{
+        required: true,
+        accept:"jpg,png,jpeg,gif,pdf"
+      } ,  
+        
+     /*  subProfession    : {
+          required : true
+        },
+        otherProfession    : {
+          required : true
+        },*/
+          
+        address    : {
+          required : true
+        },  
+        city    : {
+          required : true
+        },  
+         postName    : {
+          required : true
+        },  
+        
+        zip_code    : {
+          required : true
+        },  
+        tehsil    : {
+          required : true
+        },  
+        district    : {
+          required : true
+        },
+        paddress    : {
+          required : true
+        }, 
+
+        pcity    : {
+          required : true
+        },   
+        ppostName    : {
+          required : true
+        },  
+        pzip_code    : {
+          required : true
+        },  
+        ptehsil    : {
+          required : true
+        },  
+        pdistrict    : {
+          required : true
+        },
+        
+    },
+    
+    // Messages for form validation
+    messages : {
+        identityImage:{
+            required: Please_select_your_Identity_image,
+          accept: Please_select__image_type,//"Only image type jpg/png/jpeg/gif is allowed"
+          },
+     
           gender : {
             required : Please_select_your_gender
           }, 
@@ -189,57 +470,69 @@ $("#user-add-step-1").validate({// Rules for form validation
             required : Please_select_your_district
           },
           
-          aadharNumber : {
-            required : Please_select_your_aadhar_number,
-            minlength : Please_enter_at_least_12_digit_aadhaar_number,
-            checkAadharNumber : This_aadhar_number_is_already_taken
-          },  
-          frontImage:{
-            required: Please_select_your_front_image,
-          accept: Please_select__image_type,//"Only image type jpg/png/jpeg/gif is allowed"
-          },
-           identityImage:{
-            required: Please_select_your_Identity_image,
-          accept: Please_select__image_type,//"Only image type jpg/png/jpeg/gif is allowed"
-          },
           
-          backImage:{
-            required: Please_select_your_back_image,
-            accept: Please_select__image_type//"Only image type jpg/png/jpeg/gif is allowed"
-          }  ,
-
   },
-  onfocusout: injectTrim($.validator.defaults.onfocusout),
-  // Do not change code below
-  errorPlacement : function(error, element) {
-    error.insertAfter(element.parent());
-  }
-});
+  // Ajax form submition
+/*  submitHandler : function(form) {
 
-// Validation
-$(function() {
-      
-  $(document).on('submit', "#user-add-step-1", function (event) {
+      if ($('#remember_Address').is(':checked')) {
+
+      localStorage.address      = $('#address').val();
+      localStorage.city         = $('#city').val();
+      localStorage.postName     = $('#postName').val();
+      localStorage.zip_code     = $('#zip_code').val();
+      localStorage.tehsil       = $('#tehsil').val();
+      localStorage.district     = $('#district').val();
+      localStorage.country      = $('#country').val();
+      localStorage.state        = $('#state').val();
+      localStorage.add_chkbx    = $('#remember_Address').val();
+
+    } else {
+      localStorage.address      =  "";
+      localStorage.city         =  "";
+      localStorage.zip_code     =  "";
+      localStorage.tehsil       =  "";
+      localStorage.district     =  "";
+      localStorage.country      =  "";
+      localStorage.state        =  "";
+      localStorage.postName        =  "";
+      localStorage.add_chkbx    =  "";
+    }
+    if($('[name="religiousKnowledge[]"]:checked').length > 0){
+       $('#check-d-error').text('');
+    }else{
+
+      alert(Please_select_your_religious_Knowledge);
+      $('#check-d-error').text(Please_select_your_religious_Knowledge);
+       return false;
+    }
+    
+    var method      =  "POST";
+    var post_data   = $(form).serialize();
+    var url         =  base_url+'apiv1/webapi/'+$(form).attr('action');
+    var header      = true;
+    var headerData  = {} ;
+    if(header){
+     var headerData = { 'authToken':authToken} ; 
+    }
     toastr.clear();
-    event.preventDefault();
-    var formData = new FormData(this);
+    $('#submit').prop('disabled', true);
     $.ajax({
-        type            : "POST",
-        url             :  base_url+'apiv1/webapi/'+$(this).attr('action'),
-        headers         : { 'authToken': authToken },
-        data            : formData, //only input
-        processData     : false,
-        contentType     : false,
-        cache           : false,
-        beforeSend      : function () {
-          preLoadshow(true);
-            $('#submit').prop('disabled', true);
-        },
-        success         : function (res) {
-                    preLoadshow(false);
-          setTimeout(function(){  $('#submit').prop('disabled', false); },4000);
-                        if(res.status=='success'){
-               
+            type            : method,
+            url             : url,
+            headers         : headerData,
+            data            : post_data,
+            cache           : false,
+            beforeSend      : function() {
+              preLoadshow(true);
+              $('#submit').prop('disabled', true);  
+            },     
+            success         : function (res) {
+              preLoadshow(false);
+              setTimeout(function(){  $('#submit').prop('disabled', false); },4000);
+              if(res.status=='success'){
+                //toastr.success(res.message, 'Success', {timeOut: 3000});
+                 // swal(Good_job,Your_form_submitted_successfully, "success");
  swal({
   title: Good_job,
   text: Your_form_submitted_successfully,
@@ -260,52 +553,33 @@ function(isConfirm){
   }
 });
 
+                setTimeout(function(){ 
+                  // window.location.reload();
+                 //   window.location = base_url;
+                },10000);
+             
               }else{
                 toastr.error(res.message, 'Alert!', {timeOut: 4000});
               }
-     
-        /*  preLoadshow(false);
-          setTimeout(function(){  $('#submit').prop('disabled', false); },4000);
-          if(res.status=='success'){
-            toastr.success(res.message, 'Success', {timeOut: 3000});
-            setTimeout(function(){ window.location = base_url+'user-step-2'; },3000);
-          }else{
-            toastr.error(res.message, 'Alert!', {timeOut: 4000});
-          }         */
-        }
-    });
-  });        //fromsubmit
-});
-
-//rember me
-$(function() {
-  if (localStorage.add_chkbx && localStorage.add_chkbx != '') {
-    $('#remember_Address').attr('checked', 'checked');
-    $('#address').val(localStorage.address);
-    //$('#postName').val(localStorage.postName);
-    $('#city').val(localStorage.city);
-    $('#zip_code').val(localStorage.zip_code);
-    $('#tehsil').val(localStorage.tehsil);
-    $('#district').val(localStorage.district);
-    $('#country').val(localStorage.country);
-    $('#state').val(localStorage.state);
-    $("#zip_code").trigger("keyup");
-    setTimeout(function(){$("#postName option[value='"+localStorage.postName+"']").prop('selected', true); },3000);
-  } else {
-    $('#remember_Address').removeAttr('checked');
-    $('#address').val("");
-    $('#postName').val("");
-    $('#city').val("");
-    $('#zip_code').val("");
-    $('#tehsil').val("");
-    $('#district').val("");
-    $('#country').val("");
-    $('#state').val("");
+            }
+          });
+    return false; // required to block normal submit since you used ajax
+  },*/
+  onfocusout: injectTrim($.validator.defaults.onfocusout),
+  // Do not change code below
+  errorPlacement : function(error, element) {
+    error.insertAfter(element.parent());
   }
- 
-  
-  $('#remember_Address').click(function() {
-    if ($('#remember_Address').is(':checked')) {
+});
+/*second Form*/
+// Validation
+$(function() {
+      
+  $(document).on('submit', "#user-add-step-2", function (event) {
+    toastr.clear();
+    event.preventDefault();
+    var formData = new FormData(this);
+          if ($('#remember_Address').is(':checked')) {
 
       localStorage.address      = $('#address').val();
       localStorage.city         = $('#city').val();
@@ -316,7 +590,7 @@ $(function() {
       localStorage.country      = $('#country').val();
       localStorage.state        = $('#state').val();
       localStorage.add_chkbx    = $('#remember_Address').val();
-    
+
     } else {
       localStorage.address      =  "";
       localStorage.city         =  "";
@@ -325,94 +599,167 @@ $(function() {
       localStorage.district     =  "";
       localStorage.country      =  "";
       localStorage.state        =  "";
-      localStorage.postName     =  "";
+      localStorage.postName        =  "";
       localStorage.add_chkbx    =  "";
     }
-  });
+    if($('[name="religiousKnowledge[]"]:checked').length > 0){
+       $('#check-d-error').text('');
+    }else{
 
-  $('#remFH').click(function() {
-    if ($('#remFH').is(':checked')) {
-
-      localStorage.familyHeadName      = $('#familyHeadName').val();
-      localStorage.remFH    = $('#remFH').val();
-    
-    } else {
-      localStorage.familyHeadName      =  "";
-      localStorage.remFH    = "";
-     
+      alert(Please_select_your_religious_Knowledge);
+      $('#check-d-error').text(Please_select_your_religious_Knowledge);
+       return false;
     }
-  });
-    if (localStorage.remFH && localStorage.remFH != '') {
-    $('#remFH').attr('checked', 'checked');
-   $('#familyHeadName').val("");
+    $.ajax({
+        type            : "POST",
+        url             :  base_url+'apiv1/webapi/'+$(this).attr('action'),
+        headers         : { 'authToken': authToken },
+        data            : formData, //only input
+        processData     : false,
+        contentType     : false,
+        cache           : false,
+        beforeSend      : function () {
+          preLoadshow(true);
+            $('#submit').prop('disabled', true);
+        },
+        success         : function (res) {
+          preLoadshow(false);
+          setTimeout(function(){  $('#submit').prop('disabled', false); },4000);
+                        if(res.status=='success'){
+                //toastr.success(res.message, 'Success', {timeOut: 3000});
+                 // swal(Good_job,Your_form_submitted_successfully, "success");
+ swal({
+  title: Good_job,
+  text: Your_form_submitted_successfully,
+  type: "success",
+  showCancelButton: false,
+  confirmButtonColor: "#DD6B55",
+  confirmButtonText: "Ok",
+  //cancelButtonText: "No, cancel please!",
+  closeOnConfirm: false,
+  closeOnCancel: false,
+  allowOutsideClick: false
+},
+function(isConfirm){
+  if (isConfirm) {
+     window.location = base_url;      // submitting the form when user press yes
   } else {
-    $('#remFH').removeAttr('checked');
-    $('#familyHeadName').val("");
-   
+   // swal("Cancelled", "Your imaginary file is safe :)", "error");
   }
-
-  
-    $('#Same_AddressP').click(function() {
-    if ($('#Same_AddressP').is(':checked')) {
-
-          $('#paddress').val($('#address').val());
-          $('#pcity').val($('#city').val());
-          $('#pzip_code').val($('#zip_code').val());
-          $('#ptehsil').val($('#tehsil').val());
-          $('#pcountry').val($('#country').val());
-          $('#pstate').val($('#state').val());
-          $('#pdistrict').val($('#district').val());
-
-          $("#pzip_code").trigger("keyup");
-          setTimeout(function(){$("#ppostName option[value='"+($('#postName').val())+"']").prop('selected', true); },3000);
-          
-    } else {
-    //gfgg
-    }
-  });
-
-  $('#Same_Address').click(function() {
-    if ($('#Same_Address').is(':checked')) {
-          $('#oaddress').val($('#paddress').val());
-          $('#ocity').val($('#pcity').val());
-          $('#ozip_code').val($('#pzip_code').val());
-          $('#otehsil').val($('#ptehsil').val());
-          $('#odistrict').val($('#pdistrict').val());
-          $('#ocountry').val($('#pcountry').val());
-          $('#ostate').val($('#pstate').val());
-          $("#ozip_code").trigger("keyup");
-          setTimeout(function(){
-            $("#opostName option[value='"+($('#ppostName').val())+"']").prop('selected', true);
-            //$("#ppostName option[value='"+($('#postName').val())+"']").prop('selected', true);
-                       },3000);
-           
-    } else {
-      //gfgg
-    }
-  });
-
-    
 });
-//rember me
 
-function professionCheck(e){
-    var expression = $(e).val();
-    switch(expression) {
-    case 'house wife':
-       // $("#offAddress").css("display","none");
-    break;
-    case 'student':
-       // $("#offAddress").css("display","none");
-    break;
-    case 'retired':
-       // $("#offAddress").css("display","none");
-    break;
-    
-    default:
-       // $("#offAddress").css("display","block");
-    } 
+                setTimeout(function(){ 
+                  // window.location.reload();
+                 //   window.location = base_url;
+                },10000);
+               /* toastr.success(res.message, 'Success', {timeOut: 3000});
+                setTimeout(function(){ 
+                 // window.location.reload();
+                  window.location = base_url+'user-step-3';
+                },3000);*/
+              }else{
+                toastr.error(res.message, 'Alert!', {timeOut: 4000});
+              }
+         /* if(res.status=='success'){
+            toastr.success(res.message, 'Success', {timeOut: 3000});
+           
+          }else{
+            toastr.error(res.message, 'Alert!', {timeOut: 4000});
+          } */        
+        }
+    });
+  });        //fromsubmit
+});
+/*second Form*/
+$("#user-add-step-3").validate({ // Rules for form validation
+    errorClass    : errorClass,
+    errorElement  : errorElement,
+    highlight: function(element) {
+      $(element).parent().removeClass('state-success').addClass("state-error");
+      $(element).removeClass('valid');
+    },
+    unhighlight: function(element) {
+      $(element).parent().removeClass("state-error").addClass('state-success');
+      $(element).addClass('valid');
+    },
+      rules : {
+        userId    : {
+          required : true
+        },    
+     
+        
+    },
+   
+  // Ajax form submition
+  submitHandler : function(form) {
+    var method      =  "POST";
+    var post_data   = $(form).serialize();
+    var url         =  base_url+'apiv1/webapi/'+$(form).attr('action');
+    var header      = true;
+    var headerData  = {} ;
+    if(header){
+     var headerData = { 'authToken':authToken} ; 
+    }
+    toastr.clear();
+    $('#submit').prop('disabled', true);
+    $.ajax({
+            type            : method,
+            url             : url,
+            headers         : headerData,
+            data            : post_data,
+            cache           : false,
+            beforeSend      : function() {
+              preLoadshow(true);
+              $('#submit').prop('disabled', true);  
+            },     
+            success         : function (res) {
+              preLoadshow(false);
+              setTimeout(function(){  $('#submit').prop('disabled', false); },4000);
+              if(res.status=='success'){
+                toastr.success(res.message, 'Success', {timeOut: 3000});
+                  swal(Good_job,Your_form_submitted_successfully, "success");
+                setTimeout(function(){ 
+                 // window.location.reload();
+                    window.location = base_url;
+                },3000);
+              }else{
+                toastr.error(res.message, 'Alert!', {timeOut: 4000});
+              }
+            }
+          });
+    return false; // required to block normal submit since you used ajax
+  },
+  onfocusout: injectTrim($.validator.defaults.onfocusout),
+  // Do not change code below
+  errorPlacement : function(error, element) {
+    error.insertAfter(element.parent());
+  }
+});
 
-}
+
+/*$('.limitCheckBox').on('change', function(){
+    var noChecked = 0;
+    var limit = $(this).data('limit');
+    //alert(limit);
+    if($(this).not(':checked').length == 1){
+      $(this).prop('checked', false); 
+      $.each($('.limitCheckBox'), function(){
+      if($(this).data('limit') >= limit){
+        $(this).prop('checked', false);
+      }
+      });
+    }else{
+      $.each($('.limitCheckBox'), function(){
+        $(this).prop('checked', false);
+      });
+      $.each($('.limitCheckBox'), function(){
+        if($(this).data('limit') <= limit){
+          $(this).prop('checked', true);
+        }
+      });
+    }
+
+});*/
 
 function zipCodetoData(e){
     var value = $(e).val();
@@ -691,45 +1038,11 @@ function stopInterval(){
 $("#unionName").change(function(){
   var sanghname = $('#unionName option:selected').data('sanghname');
  // alert(sanghname);
- swal({
-  title: "Are you sure?",
-  text: "आपने श्री संघ "+sanghname+" किया है",
-  type: "warning",
-  showCancelButton: true,
-  confirmButtonColor: "#DD6B55",
-  cancelButtonColor: "#DD6B55",
-  confirmButtonText: "Yes",
-  cancelButtonText: "No",
-  closeOnConfirm: true,
-  closeOnCancel: true
-},
-function(isConfirm){
-  if (isConfirm) {
-
   if(sanghname=='OTHER'){
      $(".otherUnionName").css("display", "block");
   }else{
      $(".otherUnionName").css("display", "none");
   }
-    //swal("Deleted!", "Your imaginary file has been deleted.", "success");
-
-  } else {
-    $("#unionName").val(null).trigger('change');
-    $('#unionName option')
-     .removeAttr('selected')
-     .filter('[value=""]')
-         .prop('selected', true);
-    //$('#unionName option[value=""]').prop('selected',true);
-    //swal("Cancelled", "Your imaginary file is safe :)", "error");
-  }
-});
- // alert(sanghname);
-/*
-  if(sanghname=='OTHER'){
-     $(".otherUnionName").css("display", "block");
-  }else{
-     $(".otherUnionName").css("display", "none");
-  }*/
 }); 
 function subPro(e){
    $("#otherProfessionA").css("display", "none");
@@ -862,3 +1175,8 @@ $(document).ready(function(){
     });
         
 });
+
+
+function TestSwl(){
+   swal(Good_job,Your_form_submitted_successfully, "success");
+}

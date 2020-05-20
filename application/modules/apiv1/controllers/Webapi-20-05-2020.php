@@ -20,8 +20,7 @@ class Webapi extends Common_Service_Controller{
         $this->form_validation->set_rules('countrycode','country code','trim|required');
         $this->form_validation->set_rules('contactNumber','contact number','trim|required');
         $this->form_validation->set_rules('unionName','union name','trim|required');
-          $this->form_validation->set_rules('gender','gender','trim|required');
-        $this->form_validation->set_rules('maritalStatus','marital status','trim|required');
+       
      
         if($this->form_validation->run() == FALSE)
         {
@@ -126,9 +125,7 @@ class Webapi extends Common_Service_Controller{
                 $data_val['countrycode']            = $this->post('countrycode'); 
                 $data_val['whose_contact_number']   = $this->post('whose_contact_number'); 
                 $data_val['mobileVerify']           = $this->post('mobileVerify'); 
-                 $data_val['gender']             = $this->post('gender');
-                $data_val['maritalStatus']      = $this->post('maritalStatus');
-                $data_val['communicationCode']  = $this->post('zip_code');
+               
 
                 $data_val['contactNumber']          = $contactNumber;
                // $data_val['aadharNumber']           = $aadharNumber; 
@@ -140,20 +137,13 @@ class Webapi extends Common_Service_Controller{
                 $meta_val['hindiFullName']          = trim(str_replace(array('।'),array('.'),$hindiFullName));//$hindiFullName;
                 $meta_val['hindiParentName']        =  trim(str_replace(array('।'),array('.'),$hindiParentName));//$hindiParentName;
                 $meta_val['hindiFamilyHeadName']    = trim(str_replace(array('।'),array('.'),$hindiFamilyHeadName));//$hindiFamilyHeadName;
-                $meta_val['actualFirstName']        =  trim($aFirstName); 
+                $meta_val['actualFi  rstName']        =  trim($aFirstName); 
                 $meta_val['actualLastName']         =  trim($aLastName);
                 $meta_val['actualFullName']         = $this->post('fullName');
                 $meta_val['actualParentName']       = $this->post('parentName');
                 $meta_val['actualFamilyHeadName']   = $this->post('familyHeadName'); 
                 $unionName                          = $this->post('unionName');
                 $meta_val['unionName']              = $this->post('unionName');
-                  $meta_val['profession']        = $this->post('profession');
-                $meta_val['subProfession']     = @$this->post('subProfession');
-                $meta_val['otherProfession']   = @$this->post('otherProfession');
-                $meta_val['bloodGroup']        = @$this->post('bloodGroup');
-                  $meta_val['education']         = @$this->post('education');
-                $meta_val['religiousKnowledge']  = $this->post('religiousKnowledge') ? implode(",",$this->post('religiousKnowledge')) :"";
-
                 $sangh                              = $this->common_model->is_data_exists('shree_sangh',array('sanghId'=>$unionName));
                 if($sangh){
                     $data_val['sanghId']         = $sangh->sanghId;
@@ -165,47 +155,11 @@ class Webapi extends Common_Service_Controller{
                 $result = $this->common_model->insertData('users',$data_val);
                
                 if($result){
-                    $userId = $result;
-                    /*************Address*******************/
-                     $add_meta['userId']         = $userId;
-                $add_meta['zip_code']       = $this->post('zip_code');
-                $add_meta['address']        = $this->post('address');
-                $add_meta['city']           = $this->post('city');
-                $add_meta['tehsil']         = $this->post('tehsil');
-                $add_meta['district']       = $this->post('district');
-                $add_meta['country']        = $this->post('country');
-                $add_meta['state']          = $this->post('state');
-                $add_meta['postName']       = $this->post('postName');
-                $add_meta['addressType']    = 'Current';
-
-                $add_meta1['userId']        = $userId;
-                $add_meta1['zip_code']      = $this->post('pzip_code');
-                $add_meta1['address']       = $this->post('paddress');
-                $add_meta1['city']          = $this->post('pcity');
-                $add_meta1['tehsil']        = $this->post('ptehsil');
-                $add_meta1['district']      = $this->post('pdistrict');
-                $add_meta1['country']       = $this->post('pcountry');
-                $add_meta1['state']         = $this->post('pstate');
-                $add_meta1['postName']      = !empty($this->post('ppostName')) ? $this->post('ppostName'): $this->post('postName');
-                $add_meta1['addressType']   = 'Permanent';
-                    /*************Address*******************/
                     $meta_val['userId']             = $result;
                     $this->common_model->insertData('user_meta',$meta_val);
-                                     $isExistCurrent             =  $this->common_model->is_data_exists('addresses',array('userId'=>$userId,'addressType'=>'Current'));
-                if($isExistCurrent){
-                    $this->common_model->updateFields('addresses',$add_meta,array('userId'=>$userId,'addressType'=>'Current')); 
-                }else{
-                    $this->common_model->insertData('addresses',$add_meta);
-                }
-                
-                $isExistPermanent             =  $this->common_model->is_data_exists('addresses',array('userId'=>$userId,'addressType'=>'Permanent'));
-                if($isExistPermanent){
-                    $this->common_model->updateFields('addresses',$add_meta1,array('userId'=>$userId,'addressType'=>'Permanent')); 
-                }else{
-                    $this->common_model->insertData('addresses',$add_meta1);
-                }
+                     
                     $_SESSION['userId']             = $result;  
-                    $_SESSION['userStep']           = 0;  
+                    $_SESSION['userStep']           = 2;  
                     //$_SESSION['userStep']        = 2;  
                   
                     $msg  = 'Step-1 '.ResponseMessages::getStatusCodeMessage(122);
