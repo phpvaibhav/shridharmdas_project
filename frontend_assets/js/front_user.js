@@ -537,10 +537,12 @@ function sendOtpToMobile(){
             cache           : false,
             beforeSend      : function() {
              // preLoadshow(true);
+              $('.mob_otp').html('<i class="fa fa-spinner fa-spin fa-1x fa-fw"></i>');
              $('#contactNumber').prop('disabled',true);
               $('#submit').prop('disabled', true);  
             },     
             success         : function (res) {
+              $('.mob_otp').html('');
                $('#contactNumber').prop('disabled',false);
               //preLoadshow(false);
              // $('#contactNumber').prop('readonly',false);
@@ -582,11 +584,13 @@ function ResendOtpToMobile(){
             cache           : false,
             beforeSend      : function() {
              // preLoadshow(true);
+               $('.mob_reotp').html('<i class="fa fa-spinner fa-spin fa-1x fa-fw"></i>');
              $('#contactNumber').prop('disabled',true);
               $('#submit').prop('disabled', true);  
             },     
             success         : function (res) {
               //preLoadshow(false);
+              $('.mob_reotp').html('');
               $('#contactNumber').prop('readonly',false);
               $('#contactNumber').prop('disabled',false);
               setTimeout(function(){  $('#submit').prop('disabled', false); },4000);
@@ -625,9 +629,11 @@ function verifyOtpNumber(){
             cache           : false,
             beforeSend      : function() {
              // preLoadshow(true);
+              $('.mob_reotp').html('<i class="fa fa-spinner fa-spin fa-1x fa-fw"></i>');
               $('#submit').prop('disabled', true);  
             },     
             success         : function (res) {
+               $('.mob_reotp').html('');
               //preLoadshow(false);
               $('#submit').prop('disabled', false);
              // setTimeout(function(){  $('#submit').prop('disabled', false); },4000);

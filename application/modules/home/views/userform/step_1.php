@@ -96,7 +96,7 @@
                   <div class="col-md-6">
                     <div class="row">
                       <div class="col-md-12">
-                         <label for="contactNumber"><?= lang('Phone'); ?><span>*</span></label>
+                         <label for="contactNumber"><?= lang('Phone'); ?><span>*</span> <span class="mob_otp"></span></label>
                       </div>
                      <!--  <div class="col-md-4" style="display: none">
                          <div class="form-label-group">
@@ -126,7 +126,7 @@
                          <div class="row">
                               <div class="col-md-12">
                                  <label for="contactNumber">
-                                    OTP<span>*</span>
+                                    OTP<span>*</span> <span class="mob_reotp"></span>
                                   <input type="hidden" id="mobileVerify" name="mobileVerify" value="0">
                                  </label>
                               </div>
