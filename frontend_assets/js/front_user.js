@@ -786,25 +786,25 @@ function subPro(e){
    $("#otherProfessionA").css("display", "none");
    $('.otherProfessionA').html('<div class="form-label-group"><label for="">Profession Detail</label><input type="text" name="otherProfession"  class="form-control" maxlength="30" size="30"></div>');
   // $("#otherProfessionA").css("display", "block");
-  /* if($(e).val()=='Other'){
+   if($(e).val()=='Other'){
     $('.otherProfessionA').html('<div class="form-label-group"><label for="">Profession Detail</label><input type="text" name="otherProfession"  class="form-control"></div>');
      $("#otherProfessionA").css("display", "block");
   }else{
     $('.otherProfessionA').html('');
      $("#otherProfessionA").css("display", "none");
-  }*/
+  }
 }
 function subPro1(e){
    $("#otherProfessionA").css("display", "none");
    $('.otherProfessionA').html('<div class="form-label-group"><label for="">Business Detail</label><input type="text" name="otherProfession"  class="form-control" maxlength="30" size="30"></div>');
      //$("#otherProfessionA").css("display", "block");
-  /* if($(e).val()=='Other'){
-    $('.otherProfessionA').html('<div class="form-label-group"><label for="">Profession Detail</label><input type="text" name="otherProfession"  class="form-control"></div>');
+   if($(e).val()=='Other'){
+    $('.otherProfessionA').html('<div class="form-label-group"><label for="">Business Detail</label><input type="text" name="otherProfession"  class="form-control"></div>');
      $("#otherProfessionA").css("display", "block");
   }else{
     $('.otherProfessionA').html('');
      $("#otherProfessionA").css("display", "none");
-  }*/
+  }
 }
 
 function professionCheck(e){
@@ -831,9 +831,9 @@ function professionCheck(e){
     break;
 
     case 'other':
-     /* var html = '<div class="form-label-group"><label for="">Occupation Detail</label><input type="text" name="subProfession"  class="form-control" maxlength="30" size="30"></div>';
+      var html = '<div class="form-label-group"><label for="">Occupation Detail</label><input type="text" name="subProfession"  class="form-control" maxlength="30" size="30"></div>';
         $('.subProfessionA').html(html);
-        $("#subProfessionA").css("display","block");*/
+        $("#subProfessionA").css("display","block");
     break;
     
     
@@ -857,8 +857,8 @@ function professionCheck(e){
     } 
 
 }
-/*$("#subProfession").change(function(){
-  alert("FDSf");
+$("#subProfession").change(function(){
+ // alert("FDSf");
   if($(this).val()=='Other'){
     $('.otherProfessionA').html('<div class="form-label-group"><label for="">Other Profession</label><input type="text" name="otherProfession"  class="form-control"></div>');
      $("#otherProfessionA").css("display", "block");
@@ -866,7 +866,7 @@ function professionCheck(e){
     $('.otherProfessionA').html('');
      $("#otherProfessionA").css("display", "none");
   }
-}); */
+}); 
 $().ready(function() {
 
     $.validator.addMethod("checkAadharNumber", 
