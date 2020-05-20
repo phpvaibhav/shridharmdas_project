@@ -223,6 +223,49 @@ $(function() {
     toastr.clear();
     event.preventDefault();
     var formData = new FormData(this);
+    /*remeber*/
+              if ($('#remember_Address').is(':checked')) {
+
+      localStorage.address      = $('#address').val();
+      localStorage.city         = $('#city').val();
+      localStorage.postName     = $('#postName').val();
+      localStorage.zip_code     = $('#zip_code').val();
+      localStorage.tehsil       = $('#tehsil').val();
+      localStorage.district     = $('#district').val();
+      localStorage.country      = $('#country').val();
+      localStorage.state        = $('#state').val();
+      localStorage.add_chkbx    = $('#remember_Address').val();
+
+    } else {
+      localStorage.address      =  "";
+      localStorage.city         =  "";
+      localStorage.zip_code     =  "";
+      localStorage.tehsil       =  "";
+      localStorage.district     =  "";
+      localStorage.country      =  "";
+      localStorage.state        =  "";
+      localStorage.postName        =  "";
+      localStorage.add_chkbx    =  "";
+    }
+        if ($('#remFH').is(':checked')) {
+
+      localStorage.familyHeadName      = $('#familyHeadName').val();
+      localStorage.remFH    = $('#remFH').val();
+    
+    } else {
+      localStorage.familyHeadName      =  "";
+      localStorage.remFH    = "";
+     
+    }
+    if($('[name="religiousKnowledge[]"]:checked').length > 0){
+       $('#check-d-error').text('');
+    }else{
+
+      alert(Please_select_your_religious_Knowledge);
+      $('#check-d-error').text(Please_select_your_religious_Knowledge);
+       return false;
+    }
+    /*remeber*/
     $.ajax({
         type            : "POST",
         url             :  base_url+'apiv1/webapi/'+$(this).attr('action'),
@@ -344,7 +387,7 @@ $(function() {
   });
     if (localStorage.remFH && localStorage.remFH != '') {
     $('#remFH').attr('checked', 'checked');
-   $('#familyHeadName').val("");
+   $('#familyHeadName').val(localStorage.familyHeadName);
   } else {
     $('#remFH').removeAttr('checked');
     $('#familyHeadName').val("");

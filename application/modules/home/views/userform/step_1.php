@@ -90,7 +90,7 @@
                               <input type="text" id="familyHeadName" class="form-control" placeholder="<?= lang('familyHeadName'); ?>"  name="familyHeadName" maxlength="30" size="30" >
 
                             </div>
-                             <input type="checkbox"  id="remFH" name="rememberFH" >  <label for="remFH">Remember <?= lang('familyHeadName'); ?></label>
+                             <input type="checkbox"  id="remFH" name="rememberFH" value="FH" >  <label for="remFH">Remember <?= lang('familyHeadName'); ?></label>
                     </div>
 
                   <div class="col-md-6">
