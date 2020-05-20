@@ -738,7 +738,7 @@ $("#unionName").change(function(){
  // alert(sanghname);
  swal({
   title: "Are you sure?",
-  text: "आपने श्री संघ "+sanghname+" किया है",
+  text: "आपने श्री संघ "+sanghname+" चुना है,यदि  आपने सही श्री संघ सेलेक्ट किया तो Yes बटन क्लिक कर के आगे फॉर्म भरिए|",
   type: "warning",
   showCancelButton: true,
   confirmButtonColor: "#DD6B55",
