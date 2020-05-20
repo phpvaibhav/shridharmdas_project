@@ -180,7 +180,7 @@
                       <div class="col-md-6 otherUnionName" style="display: none">
                  
                     <div class="form-label-group">
-                      <label for="otherUnionName"><?= lang('otherUnionName'); ?></label>
+                      <label for="otherUnionName"><?= lang('otherUnionName'); ?><span>*</span> </label>
                       <input type="text" id="otherUnionName" class="form-control" placeholder="<?= lang('otherUnionName'); ?>"  name="otherUnionName">
                     </div>
                   </div>
