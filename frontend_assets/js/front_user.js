@@ -475,10 +475,12 @@ function zipCodetoData(e){
                   data: {'pinCode':value},
                   type: "POST",
                   beforeSend: function(){
+                    $('.add_'+tag).html('<i class="fa fa-spinner fa-spin fa-1x fa-fw"></i>');
                       // Show image container
                     //  $("#loader").show();
                   },
                   success: function(result){
+                      $('.add_'+tag).html('');
                     if(result.status){
                         //  $('#pinCodeRes0').empty().append(result.res0);
                         $(postName).empty().append(result.res1);

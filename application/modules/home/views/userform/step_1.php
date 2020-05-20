@@ -358,7 +358,7 @@
                                   <div class="row">
                       <div class="col-md-12">
                           <header>
-                          <b><?= lang('home_address'); ?></b>
+                          <b><?= lang('home_address'); ?> <span class="add_"></span></b>
                           </header>
                           <hr>
                       </div>
@@ -435,7 +435,7 @@
                       <div class="col-md-12">
                         <div class="row">
                         <section class="col col-6">
-                        <b><?= lang('permanent_address'); ?></b>
+                        <b><?= lang('permanent_address'); ?> <span class="add_p"></span></b>
                         </section>  
                         <section class="col col-6">
                            <div class="form-label-group pull-right">
