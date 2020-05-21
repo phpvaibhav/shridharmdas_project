@@ -85,6 +85,7 @@
 	$lang['Please_select_your_Identity_image'] 				= "Please select your identity image";
 	$lang['Please_do_not_add_a_photo_of_yourself'] 				= "Please do not add a photo of yourself";
 	$lang['Please_enter_your_post_name'] 				= "Please enter your post name";
+	$lang['shreesangh_option'] 				= "If your Shree Sangh's name is not in the list, then you can search for OTHER option and click on it, you will be able to enter your Shree Sangh's name.";
 	
 
 

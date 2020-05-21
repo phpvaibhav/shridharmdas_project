@@ -92,7 +92,7 @@
                               <?php } endif; ?>
 
                               </select>
-                              <small>अगर आपके श्री संघ का नाम लिस्ट मैं नहीं है तो आप  other ऑप्शन को सर्च करे  एवं उसपर क्लिक करे , आप अपने श्री संघ का नाम डाल सकेंगे । </small>
+                              <small><?= lang('shreesangh_option'); ?></small>
                           </div>
                       </div>
                       <div class="col-md-6 otherUnionName" style="display: none">

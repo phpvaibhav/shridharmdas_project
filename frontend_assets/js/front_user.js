@@ -333,7 +333,9 @@ $(function() {
     $('#country').val(localStorage.country);
     $('#state').val(localStorage.state);
     $("#zip_code").trigger("keyup");
-    setTimeout(function(){$("#postName option[value='"+localStorage.postName+"']").prop('selected', true); },3000);
+    setTimeout(function(){$("#postName option[value='"+localStorage.postName+"']").prop('selected', true);
+$(".form-control").trigger("blur");
+     },3000);
   } else {
     $('#remember_Address').removeAttr('checked');
     $('#address').val("");
@@ -407,7 +409,9 @@ $(function() {
           $('#pdistrict').val($('#district').val());
 
           $("#pzip_code").trigger("keyup");
-          setTimeout(function(){$("#ppostName option[value='"+($('#postName').val())+"']").prop('selected', true); },3000);
+          setTimeout(function(){$("#ppostName option[value='"+($('#postName').val())+"']").prop('selected', true); 
+  $(".form-control").trigger("blur");
+        },3000);
           
     } else {
     //gfgg
@@ -427,6 +431,7 @@ $(function() {
           setTimeout(function(){
             $("#opostName option[value='"+($('#ppostName').val())+"']").prop('selected', true);
             //$("#ppostName option[value='"+($('#postName').val())+"']").prop('selected', true);
+            $(".form-control").trigger("blur");
                        },3000);
            
     } else {
@@ -495,7 +500,8 @@ function zipCodetoData(e){
                         }
                         if(tag=='o'){
                           $("#opostName option[value='"+($('#ppostName').val())+"']").prop('selected', true);
-                        } 
+                        }
+                        $(".form-control").trigger("blur"); 
                        /* if(tag=='o'){
                           setTimeout(function(){$("#postName option[value='"+localStorage.postName+"']").prop('selected', true); },3000);
                         }*/
@@ -797,15 +803,16 @@ function subPro(e){
 
 function subPro1(e){
    $("#otherProfessionA").css("display", "none");
+   $('.otherProfessionA').html('');
    $('.otherProfessionA').html('<div class="form-label-group"><label for="">Business Detail</label><input type="text" name="otherProfession"  class="form-control" maxlength="30" size="30"></div>');
-     //$("#otherProfessionA").css("display", "block");
-   if($(e).val()=='Other'){
+  $("#otherProfessionA").css("display", "block");
+  /* if($(e).val()=='Other'){
     $('.otherProfessionA').html('<div class="form-label-group"><label for="">Business Detail</label><input type="text" name="otherProfession"  class="form-control"></div>');
      $("#otherProfessionA").css("display", "block");
   }else{
     $('.otherProfessionA').html('');
      $("#otherProfessionA").css("display", "none");
-  }
+  }*/
 }
 
 function professionCheck(e){
