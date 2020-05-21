@@ -82,10 +82,16 @@
 	$lang['Please_select_your_religious_Knowledge'] 					= "Please select your religious Knowledge";
 	$lang['Try_again_after_seconds'] 					= "Try again after seconds";
 	$lang['First_write_your_name_then_your_surname'] 					= "First write your name then your surname";
+	$lang['parentNamePlacehlder'] 					= "First write your Father/Husband name then surname";
+	$lang['familyHeadNamePlacehlder'] 					= "First write your Family head name then surname";
+
+
+
 	$lang['Please_select_your_Identity_image'] 				= "Please select your identity image";
 	$lang['Please_do_not_add_a_photo_of_yourself'] 				= "Please do not add a photo of yourself";
 	$lang['Please_enter_your_post_name'] 				= "Please enter your post name";
 	$lang['shreesangh_option'] 				= "If your Shree Sangh's name is not in the list, then you can search for OTHER option and click on it, you will be able to enter your Shree Sangh's name.";
+	$lang['familyHeadNameRemember'] 				= "Remember Family Head Name";
 	
 
 

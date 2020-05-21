@@ -793,7 +793,7 @@ function subPro(e){
    $('.otherProfessionA').html('<div class="form-label-group"><label for="">Profession Detail</label><input type="text" name="otherProfession"  class="form-control" maxlength="30" size="30"></div>');
   // $("#otherProfessionA").css("display", "block");
    if($(e).val()=='Other'){
-    $('.otherProfessionA').html('<div class="form-label-group"><label for="">Profession Detail</label><input type="text" name="otherProfession"  class="form-control"></div>');
+    $('.otherProfessionA').html('<div class="form-label-group"><label for="">Profession Detail</label><input type="text" name="otherProfession"placeholder="Please enter profession detail"  class="form-control"></div>');
      $("#otherProfessionA").css("display", "block");
   }else{
     $('.otherProfessionA').html('');
@@ -804,7 +804,7 @@ function subPro(e){
 function subPro1(e){
    $("#otherProfessionA").css("display", "none");
    $('.otherProfessionA').html('');
-   $('.otherProfessionA').html('<div class="form-label-group"><label for="">Business Detail</label><input type="text" name="otherProfession"  class="form-control" maxlength="30" size="30"></div>');
+   $('.otherProfessionA').html('<div class="form-label-group"><label for="">Business Detail</label><input type="text" name="otherProfession"  class="form-control" placeholder="Please enter occupation detail" maxlength="30" size="30"></div>');
   $("#otherProfessionA").css("display", "block");
   /* if($(e).val()=='Other'){
     $('.otherProfessionA').html('<div class="form-label-group"><label for="">Business Detail</label><input type="text" name="otherProfession"  class="form-control"></div>');

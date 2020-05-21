@@ -67,7 +67,7 @@
 	$lang['Please_select_your_district'] 				= "कृपया अपने जिले का नाम लिखे";
 	$lang['Good_job'] 									= "उत्कृष्ट";
 	//$lang['Your_form_submitted_successfully'] 			= "आपका फॉर्म सफलतापूर्वक जमा हो गया है";
-	$lang['Your_form_submitted_successfully'] 			= "जनगणना फ़ोर्म सफलता पूर्वक भरने के लिए धन्यवाद ! आपका नाम जनगणना में सम्मिलित हो गया हैं!";
+	$lang['Your_form_submitted_successfully'] 			= "जनगणना फॉर्म सफलता पूर्वक भरने के लिए धन्यवाद ! आपका नाम जनगणना में सम्मिलित हो गया हैं!";
 	$lang['Please_select_your_front_image'] 			= "कृपया अपनी फ्रंट आधार छवि चुनें";
 	$lang['Please_select_your_back_image'] 				= "कृपया अपनी बैक आधार छवि का चयन करें";
 	$lang['Please_select__image_type'] 					= "केवल आधार छवि प्रकार jpg / png / jpeg / gif की अनुमति है";
@@ -80,12 +80,18 @@
 	
 	$lang['Please_select_your_religious_Knowledge'] 			= "कृपया अपने धार्मिक ज्ञान का चयन करें";
 	$lang['Try_again_after_seconds'] 					= "सेकंड के बाद पुन: प्रयास करें";
-	$lang['First_write_your_name_then_your_surname'] 					= "पहले अपना नाम फिर अपना उपनाम या  सरनेम लिखे ";
+	$lang['First_write_your_name_then_your_surname'] 					= "पहले अपना नाम फिर अपना उपनाम या सरनेम लिखे ";
+	$lang['parentNamePlacehlder'] 					= "पहले अपने पिता/पति का नाम फिर अपना उपनाम या सरनेम लिखे ";
+	$lang['familyHeadNamePlacehlder'] 					= "पहले अपने परिवार के मुखिया का नाम फिर अपना उपनाम या सरनेम लिखे";
+
+
+
 	$lang['Please_select_your_Identity_image'] 				= "कृपया अपनी पहचान पत्र की छवि चुनें";
 	$lang['Please_do_not_add_a_photo_of_yourself'] 				= "कृपया खुद का फोटो नहीं डाले |";
 	
 	$lang['Please_enter_your_post_name'] 				= "कृपया अपना पोस्ट नाम दर्ज करें";
 	//सेकंड के बाद पुन: प्रयास करें
 	$lang['shreesangh_option'] 				= "अगर आपके श्री संघ का नाम लिस्ट मैं नहीं है तो आप  OTHER ऑप्शन को सर्च करे  एवं उसपर क्लिक करे , आप अपने श्री संघ का नाम डाल सकेंगे । ";
+	$lang['familyHeadNameRemember'] 				= "परिवार के मुखिया का नाम याद रखे";
 
 ?>

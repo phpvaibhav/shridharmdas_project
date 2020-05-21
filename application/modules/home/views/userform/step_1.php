@@ -68,17 +68,17 @@
                     <div class="col-md-6">
                             <div class="form-label-group">
                               <label for="parentName"><?= lang('parentName').'('.lang('Write_full_name').')'; ?><span>*</span></label>
-                              <input type="text" id="parentName" class="form-control" placeholder="<?= lang('parentName'); ?>"  name="parentName" maxlength="30" size="30" >
+                              <input type="text" id="parentName" class="form-control" placeholder="<?= lang('parentNamePlacehlder'); ?>"  name="parentName" maxlength="30" size="30" >
                             </div>
 
                     </div>
                     <div class="col-md-6">
                             <div class="form-label-group">
                               <label for="familyHeadName"><?= lang('familyHeadName').'('.lang('Write_full_name').')'; ?><span>*</span></label>
-                              <input type="text" id="familyHeadName" class="form-control" placeholder="<?= lang('familyHeadName'); ?>"  name="familyHeadName" maxlength="30" size="30" >
+                              <input type="text" id="familyHeadName" class="form-control" placeholder="<?= lang('familyHeadNamePlacehlder'); ?>"  name="familyHeadName" maxlength="30" size="30" >
 
                             </div>
-                             <input type="checkbox"  id="remFH" name="rememberFH" value="FH" >  <label for="remFH">Remember <?= lang('familyHeadName'); ?></label>
+                             <input type="checkbox"  id="remFH" name="rememberFH" value="FH" >  <label for="remFH"><?= lang('familyHeadNameRemember'); ?></label>
                     </div>
                                          <div class="col-md-6">
                          <div class="form-label-group">
