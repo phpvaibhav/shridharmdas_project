@@ -68,14 +68,14 @@
 	$lang['Please_select_your_tehsil'] 						= "Please enter your tehsil";
 	$lang['Please_select_your_district'] 					= "Please enter your district";
 	$lang['Good_job'] 										= "Good job";
-	$lang['Your_form_submitted_successfully'] 				= "The census form you have filled has been successfully filled. The information you received is important, Thank you";
+	$lang['Your_form_submitted_successfully'] 				= "The census form you have filled has been successfully filled. The information you filled is important, Thank you";
 	$lang['Please_select_your_front_image'] 				= "Please select your front aadhar  image";
 	
 	$lang['Please_select_your_back_image'] 					= "Please select your back aadhar  image";
 	$lang['Please_select__image_type'] 						= "Only image type jpg/png/jpeg/gif is allowed";
 	$lang['Please_enter_at_least_10_digit_phone_number'] 	= "Please enter  10 digit mobile number.";
 	$lang['Please_enter_at_least_12_digit_aadhaar_number'] 	= "Please enter  12 digit aadhaar number.";
-	$lang['Please_select_your_unionName'] 					= "Please select your union name";
+	$lang['Please_select_your_unionName'] 					= "Please select your shree sangh";
 	$lang['Please_select_your_Occupation'] 					= "Please enter your Occupation";
 	$lang['This_option_field_is_required'] 					= "This option field is required";
 	$lang['This_aadhar_number_is_already_taken'] 					= "This aadhar number is already taken! Please enter  other aadhar card number .";

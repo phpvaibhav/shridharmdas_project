@@ -67,13 +67,13 @@
 	$lang['Please_select_your_district'] 				= "कृपया अपने जिले का नाम लिखे";
 	$lang['Good_job'] 									= "उत्कृष्ट";
 	//$lang['Your_form_submitted_successfully'] 			= "आपका फॉर्म सफलतापूर्वक जमा हो गया है";
-	$lang['Your_form_submitted_successfully'] 			= "आपके द्वारा भरा गया जनगणना फॉर्म सफलतापूर्वक भरा गया है। आपके द्वारा प्राप्त की गई जानकारी महत्वपूर्ण है, धन्यवाद";
+	$lang['Your_form_submitted_successfully'] 			= "आपके द्वारा भरा गया जनगणना फॉर्म सफलतापूर्वक भरा गया है। आपके द्वारा भरी गई जानकारी महत्वपूर्ण है, धन्यवाद";
 	$lang['Please_select_your_front_image'] 			= "कृपया अपनी फ्रंट आधार छवि चुनें";
 	$lang['Please_select_your_back_image'] 				= "कृपया अपनी बैक आधार छवि का चयन करें";
 	$lang['Please_select__image_type'] 					= "केवल आधार छवि प्रकार jpg / png / jpeg / gif की अनुमति है";
 		$lang['Please_enter_at_least_12_digit_aadhaar_number'] 	= "कृपया 12 अंकों का आधार नंबर दर्ज करें।";
 	$lang['Please_enter_at_least_10_digit_phone_number'] 		= "कृपया 10 अंकों का मोबाइल नंबर दर्ज करें।";
-	$lang['Please_select_your_unionName'] 						= "कृपया अपने संघ का नाम चुनें";
+	$lang['Please_select_your_unionName'] 						= "कृपया अपने श्री संघ का नाम चुनें";
 	$lang['Please_select_your_Occupation'] 						= "कृपया अपना व्यवसाय चुनें";
 	$lang['This_option_field_is_required'] 						= "यह विकल्प फ़ील्ड आवश्यक है।";
 	$lang['This_aadhar_number_is_already_taken'] 				= "यह आधार नंबर पहले से ही लिया हुआ है! कृपया अन्य आधार कार्ड नंबर दर्ज करें।";

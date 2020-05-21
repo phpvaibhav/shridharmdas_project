@@ -649,7 +649,7 @@ function verifyOtpNumber(){
                  $(".countdown").css("display", "none");
                 toastr.success(res.message, 'Success', {timeOut: 3000});
               }else{
-                 $(".otpTodisplay").css("display", "none");
+                $(".otpTodisplay").css("display","none");
                 $('#submit').prop('disabled', true);
                 $('#mobileVerify').val(0);
                 $('#otpnumber').val('');
@@ -679,7 +679,6 @@ function checkReNumber(){
     if(value.length==12){
       if($('#mobileVerify').val()==0){
         $('#contactNumber').prop('readonly',true);
-        
         $('#disabled').prop('disabled',true);
         ResendOtpToMobile();
       }
@@ -769,12 +768,10 @@ function(isConfirm){
 
   } else {
     $("#unionName").val(null).trigger('change');
-    $('#unionName option')
-     .removeAttr('selected')
-     .filter('[value=""]')
-         .prop('selected', true);
+    $('#unionName option').removeAttr('selected').filter('[value=""]').prop('selected', true);
     //$('#unionName option[value=""]').prop('selected',true);
     //swal("Cancelled", "Your imaginary file is safe :)", "error");
+    
   }
 });
  // alert(sanghname);
@@ -797,6 +794,7 @@ function subPro(e){
      $("#otherProfessionA").css("display", "none");
   }
 }
+
 function subPro1(e){
    $("#otherProfessionA").css("display", "none");
    $('.otherProfessionA').html('<div class="form-label-group"><label for="">Business Detail</label><input type="text" name="otherProfession"  class="form-control" maxlength="30" size="30"></div>');
