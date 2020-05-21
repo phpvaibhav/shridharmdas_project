@@ -53,7 +53,7 @@
 	$lang['Please_select_your_full_name'] 				= "कृपया अपना पूरा नाम लिखे";
 	$lang['Please_select_your_first_name'] 				= "कृपया अपना पहला नाम लिखे";
 	$lang['Please_select_your_last_name'] 				= "कृपया अपना उपनाम लिखे";
-	$lang['Please_select_your_familyHeadName'] 			= "कृपया अपने परिवार के मुखिया का नाम का नाम लिखे";
+	$lang['Please_select_your_familyHeadName'] 			= "कृपया अपने परिवार के मुखिया का नाम लिखे";
 	$lang['Please_select_your_father_name_husband_name'] = "कृपया अपने पिता/पति का नाम लिखे";
 	$lang['Please_select_your_date_of_birth'] 			= "कृपया अपनी जन्मतिथि चुनें";
 	$lang['Please_select_your_gender'] 					= "कृपया अपना लिंग चुनें";
@@ -81,8 +81,8 @@
 	$lang['Please_select_your_religious_Knowledge'] 			= "कृपया अपने धार्मिक ज्ञान का चयन करें";
 	$lang['Try_again_after_seconds'] 					= "सेकंड के बाद पुन: प्रयास करें";
 	$lang['First_write_your_name_then_your_surname'] 					= "पहले अपना नाम फिर अपना उपनाम या सरनेम लिखे ";
-	$lang['parentNamePlacehlder'] 					= "पहले अपने पिता/पति का नाम फिर अपना उपनाम या सरनेम लिखे ";
-	$lang['familyHeadNamePlacehlder'] 					= "पहले अपने परिवार के मुखिया का नाम फिर अपना उपनाम या सरनेम लिखे";
+	$lang['parentNamePlacehlder'] 					= "पहले नाम फिर अपना उपनाम या सरनेम लिखे ";
+	$lang['familyHeadNamePlacehlder'] 					= "पहले नाम फिर अपना उपनाम या सरनेम लिखे";
 
 
 
