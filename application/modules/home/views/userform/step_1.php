@@ -160,7 +160,8 @@
 
                 </div>
 
-                <div class="row otpTodisplay" style="display: none">
+                <div class="otpTodisplay" style="display: none">
+                <div class="row">
                    <div class="col-md-12">
                           <header>
                           <b><?= lang('other_Information'); ?></b>
@@ -282,7 +283,9 @@
                           <span id="check-d-error" for="idhhhh" class="invalid"></span>
                       </div>
                 </div>
-                                  <div class="row otpTodisplay" style="display: none">
+                </div>
+                <div class="otpTodisplay" style="display: none">
+                <div class="row" >
                       <div class="col-md-12">
                           <header>
                           <b><?= lang('home_address'); ?> <span class="add_"></span></b>
@@ -357,8 +360,10 @@
                       </div>
    
                   </div>
+                  </div>
                  
-                  <div class="row otpTodisplay" style="display: none">
+                  <div class="otpTodisplay" style="display: none">
+                  <div class="row">
                       <div class="col-md-12">
                         <div class="row">
                         <section class="col col-6">
@@ -432,6 +437,7 @@
                           </div>
                       </div>
 
+                  </div>
                   </div>
 
                  
