@@ -33,15 +33,16 @@
                       <?php if($this->session->userdata('site_lang')=='hindi'){ ?>
                        
                     	<a class="color-litegreen color-nirdes" href="javascript:void(0);" type="button"  data-toggle="modal" data-target=".bd-example-modal-lg" style="font-weight: 700;color: blue;">फॉर्म को भरने हेतु निर्देश </a>
-                    <?php }else{ ?>
+                      
+                    <?php 
+                     }else{  
+                    ?>
              
                       <a class="color-litegreen color-nirdes" href="javascript:void(0);" type="button"  data-toggle="modal" data-target=".bd-example-modal-lg" style="font-weight: 700;color: blue;">Instructions for filling the form </a>
                        <?php }?>
 
                     </p>
-                </div>
-               
-               
+                </div>     
                 <form id="user-add-step-1" method="post" class="login-form-t" novalidate="novalidate" action="userStep1" novalidate="novalidate" autocomplete="off" enctype="multipart/form-data">
                 <div class="row" >
                   <div class="col-md-12">

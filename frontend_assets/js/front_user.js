@@ -771,7 +771,7 @@ function(isConfirm){
     $('#unionName option').removeAttr('selected').filter('[value=""]').prop('selected', true);
     //$('#unionName option[value=""]').prop('selected',true);
     //swal("Cancelled", "Your imaginary file is safe :)", "error");
-    
+         
   }
 });
  // alert(sanghname);

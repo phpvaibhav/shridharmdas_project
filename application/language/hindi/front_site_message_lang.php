@@ -67,7 +67,7 @@
 	$lang['Please_select_your_district'] 				= "कृपया अपने जिले का नाम लिखे";
 	$lang['Good_job'] 									= "उत्कृष्ट";
 	//$lang['Your_form_submitted_successfully'] 			= "आपका फॉर्म सफलतापूर्वक जमा हो गया है";
-	$lang['Your_form_submitted_successfully'] 			= "आपके द्वारा भरा गया जनगणना फॉर्म सफलतापूर्वक भरा गया है। आपके द्वारा भरी गई जानकारी महत्वपूर्ण है, धन्यवाद";
+	$lang['Your_form_submitted_successfully'] 			= "जनगणना फ़ोर्म सफलता पूर्वक भरने के लिए धन्यवाद ! आपका नाम जनगणना में सम्मिलित हो गया हैं!";
 	$lang['Please_select_your_front_image'] 			= "कृपया अपनी फ्रंट आधार छवि चुनें";
 	$lang['Please_select_your_back_image'] 				= "कृपया अपनी बैक आधार छवि का चयन करें";
 	$lang['Please_select__image_type'] 					= "केवल आधार छवि प्रकार jpg / png / jpeg / gif की अनुमति है";
