@@ -639,14 +639,17 @@ function verifyOtpNumber(){
              // setTimeout(function(){  $('#submit').prop('disabled', false); },4000);
               if(res.status=='success'){
                 $('#mobileVerify').val(1);
+                 $(".otpTodisplay").css("display", "block");
                 $('#submit').prop('disabled', false);
                 $('#contactNumber').prop('readonly',true);
                 $('#otpnumber').prop('readonly',true);
                 $("#Resendotp").css("display", "none");
+               
                  $('#contactNumber').prop('disabled',false);
                  $(".countdown").css("display", "none");
                 toastr.success(res.message, 'Success', {timeOut: 3000});
               }else{
+                 $(".otpTodisplay").css("display", "none");
                 $('#submit').prop('disabled', true);
                 $('#mobileVerify').val(0);
                 $('#otpnumber').val('');

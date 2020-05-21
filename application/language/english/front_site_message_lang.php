@@ -68,7 +68,7 @@
 	$lang['Please_select_your_tehsil'] 						= "Please enter your tehsil";
 	$lang['Please_select_your_district'] 					= "Please enter your district";
 	$lang['Good_job'] 										= "Good job";
-	$lang['Your_form_submitted_successfully'] 				= "Your form has  submitted successfully";
+	$lang['Your_form_submitted_successfully'] 				= "The census form you have filled has been successfully filled. The information you received is important, Thank you";
 	$lang['Please_select_your_front_image'] 				= "Please select your front aadhar  image";
 	
 	$lang['Please_select_your_back_image'] 					= "Please select your back aadhar  image";

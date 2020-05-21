@@ -57,20 +57,7 @@
                         <input type="text" id="fullName" class="form-control" placeholder="<?= lang('First_write_your_name_then_your_surname'); ?>"  name="fullName" maxlength="30" size="30">
                       </div>
                   </div>
-               <!--     <div class="col-md-6">
-                      <div class="form-label-group">
-                        <label for="firstName"><?= lang('First_name').'('.lang('Write_full_name').')'; ?></label>
-                        <input type="text" id="firstName" class="form-control" placeholder="<?= lang('First_name'); ?>"  name="firstName">
-                      </div>
-                  </div>
-                   -->
-                <!--   <div class="col-md-6">
-                 
-                    <div class="form-label-group">
-                      <label for="lastName"><?= lang('Last_name'); ?></label>
-                      <input type="text" id="lastName" class="form-control" placeholder="<?= lang('Last_name'); ?>"  name="lastName">
-                    </div>
-                  </div> -->
+             
                   <div class="col-md-6">
                             <div class="form-label-group">
                               <label for="dob"><?= lang('dob'); ?><span>*</span></label>
@@ -92,27 +79,34 @@
                             </div>
                              <input type="checkbox"  id="remFH" name="rememberFH" value="FH" >  <label for="remFH">Remember <?= lang('familyHeadName'); ?></label>
                     </div>
+                                         <div class="col-md-6">
+                         <div class="form-label-group">
+                           
+                              <label for="unionName"><?= lang('Union').' '.lang('Name'); ?><span>*</span></label>
+                              <select name="unionName"  class="form-control js-example-basic-single "  id="unionName"  >
+                              <?php if(!empty($unionList)):?>
+                               <option value="" selected="" disabled=""><?= lang('Union').' '.lang('Name'); ?></option>
+                             <?php foreach ($unionList as $kc => $union) { ?>
+                                <option value="<?= $union->sanghId; ?>" data-sanghname="<?=  $union->name; ?>" ><?=  $union->name; ?></option>
+                              <?php } endif; ?>
 
+                              </select>
+                              <small>अगर आपके श्री संघ का नाम लिस्ट मैं नहीं है तो आप  other ऑप्शन को सर्च करे  एवं उसपर क्लिक करे , आप अपने श्री संघ का नाम डाल सकेंगे । </small>
+                          </div>
+                      </div>
+                      <div class="col-md-6 otherUnionName" style="display: none">
+                 
+                    <div class="form-label-group">
+                      <label for="otherUnionName"><?= lang('otherUnionName'); ?><span>*</span> </label>
+                      <input type="text" id="otherUnionName" class="form-control" placeholder="<?= lang('otherUnionName'); ?>"  name="otherUnionName">
+                    </div>
+                  </div>
                   <div class="col-md-6">
                     <div class="row">
                       <div class="col-md-12">
                          <label for="contactNumber"><?= lang('Phone'); ?><span>*</span> <span class="mob_otp"></span></label>
                       </div>
-                     <!--  <div class="col-md-4" style="display: none">
-                         <div class="form-label-group">
-                           
-                          
-                              <select name="countrycode"  class="form-control js-example-basic-single " id="countrycode">
-                              <?php if(!empty($countryCodes)):
-                              foreach ($countryCodes as $kc => $code) { 
-                                
-                                ?>
-                              <option value="<?= '+'.$code['code']; ?>" <?= ($kc=='IN')?"selected='selected'":""; ?>><?=  "(+".$code["code"].") ".$kc; ?></option>
-                              <?php } endif; ?>
-
-                              </select>
-                          </div>
-                      </div> -->
+                   
                       <div class="col-md-12">
                           <div class="form-label-group">
                          <input type="hidden"  name="countrycode"  class="form-control" id="countrycode" value="+91">
@@ -136,7 +130,7 @@
                                     <input type="text" class="form-control" id="otpnumber" required="" placeholder="Enter OTP" name="otpnumber" data-mask="9  9  9  9" onkeyup="checkOtp(this);" >
                                     <p class="countdown"></p>
                                     <p id="Resendotp" class="text-right">
-                                    <a href="javascript:void(0);" onclick="checkReNumber();">Resend OTP</a></span>
+                                    <a href="javascript:void(0);" onclick="checkReNumber();">Resend OTP</a>
                                     </p>
                                       
                                  </div>
@@ -162,78 +156,11 @@
                       </select>
                     </div>
                   </div>
-                     <div class="col-md-6">
-                         <div class="form-label-group">
-                           
-                              <label for="unionName"><?= lang('Union').' '.lang('Name'); ?><span>*</span></label>
-                              <select name="unionName"  class="form-control js-example-basic-single "  id="unionName"  >
-                              <?php if(!empty($unionList)):?>
-                               <option value="" selected="" disabled=""><?= lang('Union').' '.lang('Name'); ?></option>
-                             <?php foreach ($unionList as $kc => $union) { ?>
-                                <option value="<?= $union->sanghId; ?>" data-sanghname="<?=  $union->name; ?>" ><?=  $union->name; ?></option>
-                              <?php } endif; ?>
 
-                              </select>
-                              <small>अगर आपके श्री संघ का नाम लिस्ट मैं नहीं है तो आप  other ऑप्शन को सर्च करे  एवं उसपर क्लिक करे , आप अपने श्री संघ का नाम डाल सकेंगे । </small>
-                          </div>
-                      </div>
-                      <div class="col-md-6 otherUnionName" style="display: none">
-                 
-                    <div class="form-label-group">
-                      <label for="otherUnionName"><?= lang('otherUnionName'); ?><span>*</span> </label>
-                      <input type="text" id="otherUnionName" class="form-control" placeholder="<?= lang('otherUnionName'); ?>"  name="otherUnionName">
-                    </div>
-                  </div>
-                <!--   <div class="col-md-6">
-
-                    <div class="form-label-group">
-                      <label for="identity_Type"><?= lang('identity_Type'); ?></label>
-                      <select id="identity_Type" name="identityType" class="form-control">
-                        <option value="Aadhar" selected="selected">Aadhar</option>
-                        <option value="PAN">PAN</option>
-                        <option value="Voter ID">Voter ID</option>
-                        <option value="Driving Licence">Driving Licence</option>
-                        <option value="Passport">Passport</option>
-                        <option value="Birth Certificate">Birth Certificate</option>
-                        <option value="School Certificate/ID">School Certificate/ID</option>
-                      </select>
-                    </div>
-                  </div> -->
-
-
-                 <!--  <div class="col-md-6">
-                 
-                 
-                    <div class="form-label-group">
-                      <label for="aadharNumber"><?= lang('Aadhar_number'); ?><span>*</span></label>
-                 
-                    <input type="text" id="aadharNumber" class="form-control number-only" placeholder="<?= lang('Aadhar_number'); ?>"  name="aadharNumber" maxlength="12" size="12" >
-                    </div>
-                  </div> -->
 
                 </div>
-<!--                 <div class="row">
-                    <div class="col-md-12">
-                      <div class="row">
-                          <div class="col-md-12">
-                              <div class="form-label-group">
-                              <label for="identityImage"><?= lang('identity_Image') ?><span>*</span></label>
-                              <input type="file" class="form-control" id="identityImage"  name="identityImage" data-id="1" onchange="readURL(this,1);" accept="image/*" style="border: 0px solid #ddd;" >
-                              </div>
-                            
-                          </div>
-                          <div class="col-md-12">
-                              <small><b>Note:</b>1) <?= lang('Please_do_not_add_a_photo_of_yourself'); ?> 2) Image  JPG/PNG/JPEG/GIF is allowed</small>
-                                <div class="img-shop-wrapper tl-shop-single">
-                                <div class="tl-img-shop">
-                                <img src="https://via.placeholder.com/640x360.png?text=Identity+Image" alt="image" class="mx-auto image-fluid d-block" id="blah_1">
-                                </div>
-                                </div>
-                          </div>
-                      </div>
-                    </div>
-                </div> -->
-                <div class="row">
+
+                <div class="row otpTodisplay" style="display: none">
                    <div class="col-md-12">
                           <header>
                           <b><?= lang('other_Information'); ?></b>
@@ -355,7 +282,7 @@
                           <span id="check-d-error" for="idhhhh" class="invalid"></span>
                       </div>
                 </div>
-                                  <div class="row">
+                                  <div class="row otpTodisplay" style="display: none">
                       <div class="col-md-12">
                           <header>
                           <b><?= lang('home_address'); ?> <span class="add_"></span></b>
@@ -431,7 +358,7 @@
    
                   </div>
                  
-                  <div class="row">
+                  <div class="row otpTodisplay" style="display: none">
                       <div class="col-md-12">
                         <div class="row">
                         <section class="col col-6">
@@ -585,7 +512,7 @@
                   </div>
                    -->
 
-                  <button class="btn btn-outline btn-lg btn-block tl-btn-round-2 text-uppercase font-weight-bold mb-2" id="submit" type="submit">Next</button>
+                  <button class="btn btn-outline btn-lg btn-block tl-btn-round-2 text-uppercase font-weight-bold mb-2" id="submit" type="submit"> <?= lang('Submit'); ?></button>
 <!-- Register -->
                   <div class="text-center">
                   <!--   <a class="small" href="<?= base_url();  ?>">Go To Home</a> -->
