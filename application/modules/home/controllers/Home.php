@@ -50,10 +50,18 @@ public function __construct()
 
     
     
- public function vrksh() { 
+    public function vrksh() { 
         $data['title'] = 'Vrksh';
          $data['front_styles']   = array('frontend_assets/css/about.css');
         $this->load->front_render('vrksh',$data);
+    }//End Function
+    
+    
+    
+    public function moto() { 
+        $data['title'] = 'Moto';
+         $data['front_styles']   = array('frontend_assets/css/about.css');
+        $this->load->front_render('moto',$data);
     }//End Function
     
     

@@ -81,6 +81,7 @@ $route['shishy-vrksh'] 				= 'home/vrksh';
 
 
 $route['contact-us'] 				= 'home/contact';
+$route['moto'] 				= 'home/moto';
 $route['gallery'] 					= 'home/gallery';
 $route['motto-of-sdhp'] 			= 'home/motto_of_sdhp';
 $route['user-step-1'] 				= 'home/user_step_1';
