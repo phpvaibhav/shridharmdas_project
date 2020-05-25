@@ -115,7 +115,7 @@
 					<div class="col-lg-4 align-self-center">
 						<div class="footer_links">
 							<a href="<?= base_url(); ?>">Home</a>
-							<a href="<?= base_url(); ?>user-step-1">User Form</a>
+							<a href="<?= base_url(); ?>user-form">User Form</a>
 							<a href="<?= base_url(); ?>about-us">About Us</a>
 							<a href="<?= base_url(); ?>contact-us">Contact</a> 
 						</div>

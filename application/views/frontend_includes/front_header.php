@@ -111,7 +111,7 @@
 							</ul>
 						</li> -->
 						<li><a href="<?= base_url(); ?>">Home</a></li>
-						<li><a href="<?= base_url(); ?>user-step-1">User Form</a></li>
+						<li><a href="<?= base_url(); ?>user-form">User Form</a></li>
 						<li><a href="<?= base_url(); ?>about-us">About us</a></li>
 					<!-- 	<li><a href="<?= base_url(); ?>about-us">About us</a></li>
 						<li><a href="<?= base_url(); ?>motto-of-sdhp">Motto Of SDHP</a></li>
