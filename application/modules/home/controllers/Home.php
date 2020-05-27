@@ -84,6 +84,31 @@ public function __construct()
         $this->load->front_render('gallery',$data);
     }//End Function
     
+    public function user_from() { 
+        $userId = (isset($_SESSION['userId']) && !empty($_SESSION['userId'])) ? $_SESSION['userId'] :0;
+        $userStep = (isset($_SESSION['userStep']) && !empty($_SESSION['userStep'])) ? $_SESSION['userStep'] :0;
+        switch ($userStep) {
+            case 2:
+              redirect('user-step-2');
+                break;
+            case 3:
+               redirect('user-step-3');
+                break;
+            
+            default:
+                # code...
+                break;
+        }
+        $this->load->helper('country_code_helper');
+        $data['title'] = 'User Form';
+        $data['countryCodes'] = countryCodelist();
+     //   pr($data['countryCodes']);
+        $data['front_styles'] = array();
+          $data['unionList'] = $this->common_model->getAll('shree_sangh',array('status'=>1),'sanghId','ASC'); //unionList();
+         $data['front_scripts'] = array('frontend_assets/js/user_form.js');
+        $this->load->front_render_minimal('userform/step_1',$data);
+    }//End Function
+
     public function user_step_1() { 
         $userId = (isset($_SESSION['userId']) && !empty($_SESSION['userId'])) ? $_SESSION['userId'] :0;
         $userStep = (isset($_SESSION['userStep']) && !empty($_SESSION['userStep'])) ? $_SESSION['userStep'] :0;
@@ -105,9 +130,10 @@ public function __construct()
      //   pr($data['countryCodes']);
         $data['front_styles'] = array();
           $data['unionList'] = $this->common_model->getAll('shree_sangh',array('status'=>1),'sanghId','ASC'); //unionList();
-         $data['front_scripts'] = array('frontend_assets/js/front_user.js');
+         $data['front_scripts'] = array('frontend_assets/js/user_form.js');
         $this->load->front_render_minimal('userform/step_1',$data);
     }//End Function
+    
     public function user_step_2() { 
        // pr($_SESSION);
         $userId = (isset($_SESSION['userId']) && !empty($_SESSION['userId'])) ? $_SESSION['userId'] :0;

@@ -12,6 +12,9 @@
 			$backend_assets =  base_url().'backend_assets/';
 
 	?>
+	<meta http-equiv = 'cache-control' content = 'no-cache'>
+	<meta http-equiv = 'expires' content = '0'>
+	<meta http-equiv = 'pragma' content = 'no-cache'>
 	<title><?= lang('site_name'); ?></title>
 	<!--Bootstrap -->
 	<link rel="stylesheet" href="<?= $frontend_assets; ?>assets/css/bootstrap.min.css" type="text/css">
