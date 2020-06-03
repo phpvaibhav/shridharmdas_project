@@ -139,8 +139,8 @@ class Adminapi extends Common_Admin_Controller{
 
     // Session store value for frontEnd
     function StoreSession($userData){
-        $session_data['id']             = $userData->userId;
-        $session_data['userId']         = $userData->userId;
+        $session_data['id']             = $userData->id;
+        $session_data['userId']         = $userData->id;
         $session_data['sanghId']         = $userData->sanghId;
         $session_data['roleId']         = $userData->roleId;
         $session_data['fullName']       = $userData->fullName;
