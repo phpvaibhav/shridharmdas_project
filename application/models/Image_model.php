@@ -174,8 +174,6 @@ class Image_model extends CI_Model{
             $image_data = $this->upload->data(); 
             $fileType   = explode("/",$image_data['file_type']);
             $file_type  = ($fileType[0]=='image') ?'image' :'doc' ;
-
-
             return array('image_name'=>$image_data['file_name'],'file_type'=> $file_type);
         }
 

@@ -63,3 +63,8 @@ function readURL(input,i) {
     reader.readAsDataURL(input.files[0]); // convert to base64 string
   }
 }
+// In your Javascript (external .js resource or <script> tag)
+$(document).ready(function() {
+    $('.js-example-basic-single').select2();
+});
+

@@ -71,6 +71,18 @@ $route['preceptor'] 				= 'admin/preceptor';
 $route['union'] 					= 'admin/union';
 $route['office'] 					= 'admin/office';
 
+
+$route['sangh-users'] 					= 'admin/sanghusers';
+$route['sangh-users-incomplete'] 			= 'admin/sanghusers/indexC';
+$route['sangh-users-trash'] 			= 'admin/sanghusers/trash';
+$route['sangh-add-user'] 					= 'admin/sanghusers/add';
+$route['sangh-user-excel'] 				= 'admin/sanghusers/userexcel';
+$route['sangh-edit-user/(:any)'] 			= 'admin/sanghusers/edit';
+$route['sangh-user-detail/(:any)'] 		= 'admin/sanghusers/detail/$1';
+
+
+
+
 $route['user-form'] 				= 'home/addUser';
 $route['about-us'] 					= 'home/aboutus';
 $route['jeevani'] 					= 'home/jeevani';

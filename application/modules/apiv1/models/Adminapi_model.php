@@ -82,23 +82,26 @@ class Adminapi_model extends CI_Model {
 	function userInfo($where){
         $userPath    = base_url().USER_AVATAR_PATH;
         $userDefault = base_url().USER_DEFAULT_AVATAR;
-        $this->db->select('id,
-            id as userId,
-            fullName,
-            email,
-            authToken,
-            userType,
-            (case when (profileImage = "") 
+        $this->db->select('admin.id,
+            admin.id as userId,
+            admin.fullName,
+            admin.email,
+            admin.authToken,
+            admin.status,
+           admin.sanghId,
+            admin.userType,admin_role.roleId,
+            (case when (admin.profileImage = "") 
             THEN "'.$userDefault.'" ELSE
-            concat("'.$userPath.'",profileImage) 
+            concat("'.$userPath.'",admin.profileImage) 
             END) as profileImage,
-            (case when (userType = 1) 
-            THEN "Super Admin" when (userType = 2) 
-            THEN "Customer" when (userType = 3) 
+            (case when (admin.userType = 1) 
+            THEN "Super Admin" when (admin.userType = 2) 
+            THEN "Customer" when (admin.userType = 3) 
             THEN "Employee" ELSE
             "Unknown" 
-            END) as userRole');
+            END) as userRole,admin_role.role as userRole');
         $this->db->from(ADMIN);
+        $this->db->join('admin_role','admin_role.roleId=admin.roleId');
         $this->db->where($where);
         $sql= $this->db->get();
 

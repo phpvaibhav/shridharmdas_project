@@ -155,6 +155,7 @@ $("#smart-form-register").validate({// Rules for form validation
       maxlength : 20,
       equalTo   : '#password'
     },
+    
 
   },
   // Messages for form validation

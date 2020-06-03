@@ -26,7 +26,7 @@ class Adminrole extends Common_Back_Controller {
      
         $data['title']      = 'Add';
         $data['unionList'] = $this->common_model->getAll('shree_sangh',array('status'=>1),'name','ASC');
-        $data['rolesList'] = $this->common_model->getAll('admin_role',array('status'=>1,'roleId !='=>1),'roleId','ASC');
+        $data['rolesList'] = $this->common_model->getAll('admin_role',array('rolestatus'=>1,'roleId !='=>1),'roleId','ASC');
         $data['front_scripts']  = array('backend_assets/custom/js/adminrole.js');
 
         $this->load->admin_render('adminrole/add', $data, '');

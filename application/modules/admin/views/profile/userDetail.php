@@ -3,6 +3,13 @@
 	<div class="col-sm-12">
 		<div class="well well-sm">
 			<div class="row">
+				<?php
+			/*	echo "<pre>";
+				print_r($userData);
+				echo "</pre>";
+
+*/
+				?>
 				<div class="col-sm-12 col-md-12 col-lg-6">
 					<div class="well well-light well-sm no-margin no-padding">
 						<div class="row">
@@ -46,7 +53,9 @@
 											} ?>
 											
 										<br>
-										<small><?php switch ($userData['userType']) {
+										<small><?php 
+										echo $userData['userRole'];
+										/*switch ($userData['userType']) {
 											case 1:
 												echo 'Super Admin';
 												break;
@@ -60,7 +69,7 @@
 											default:
 												echo 'Unknown';
 												break;
-										}
+										}*/
 										?></small></h1>
 										<ul class="list-unstyled">
 											<li>

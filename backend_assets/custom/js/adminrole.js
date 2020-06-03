@@ -19,11 +19,17 @@ $("#user-add-form").validate({// Rules for form validation
               required  : true,
               email     : true
             },
-    password : {
-              required  : true,
-              minlength : 3,
-              maxlength : 20
-            },
+  password : {
+      required  : true,
+      minlength : 3,
+      maxlength : 20
+    },
+    passwordConfirm : {
+      required  : true,
+      minlength : 3,
+      maxlength : 20,
+      equalTo   : '#password'
+    },
 roleId    : {
       required : true
     }, 
@@ -41,9 +47,13 @@ unionName    : {
               required  : 'Please enter email address',
               email     : 'Please enter a valid email address'
             },
-    password : {
-              required  : 'Please enter your password'
-            },
+       password : {
+      required  : 'Please enter your password'
+    },
+    passwordConfirm : {
+      required  : 'Please re-enter your password',
+      equalTo   : 'Please enter the same password as above'
+    },
       roleId : {
             required : 'Please select your role'
           },

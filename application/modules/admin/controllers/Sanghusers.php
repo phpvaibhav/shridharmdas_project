@@ -3,7 +3,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 
 use PhpOffice\PhpSpreadsheet\Spreadsheet;
 
-class Users extends Common_Back_Controller {
+class Sanghusers extends Common_Back_Controller {
 
     public $data = "";
 
@@ -12,14 +12,16 @@ class Users extends Common_Back_Controller {
          error_reporting(E_ALL);
         ini_set('display_errors', 1);
         $this->check_admin_user_session();
-        if (!empty($_SESSION[ADMIN_USER_SESS_KEY]['sanghId'])) {
-            redirect('sangh-users');
-        }
     }         
     public function index(){
      
         $data['title']      = lang('Users');
-            $count          = $this->common_model->get_total_count('users',array('is_deleted'=>0));
+         $sanghId=$_SESSION[ADMIN_USER_SESS_KEY]['sanghId'];
+         $where = "";
+        if(!empty($sanghId)){
+            $where = array('sanghId'=>$sanghId);
+        }
+            $count          = $this->common_model->get_total_count('users',array('is_deleted'=>0,'sanghId'=>$sanghId));
         $data['countuser']  = $count ;   
         $count              = number_format_short($count);
         $data['recordSet']  = array('<li class="sparks-info"><h5>'.lang('Total').' '.lang('Users').'<span class="txt-color-darken" id="totalCust"><i class="fa fa-lg fa-fw fa fa-users"></i>&nbsp;'.$count.'</span></h5></li>');
@@ -27,13 +29,14 @@ class Users extends Common_Back_Controller {
         $data['unionList']      = unionList();
         $data['front_scripts']  = array('backend_assets/custom/js/common_datatable.js',
             'backend_assets/custom/js/users.js');
-        $this->load->admin_render('users/index', $data, '');
+        $this->load->admin_render('sanghusers/index', $data, '');
     } //End function
 
     public function trash(){
      
         $data['title']      = lang('Users');
-             $count          = $this->common_model->get_total_count('users',array('is_deleted'=>1));
+        $sanghId=$_SESSION[ADMIN_USER_SESS_KEY]['sanghId'];
+             $count          = $this->common_model->get_total_count('users',array('is_deleted'=>1,'sanghId'=>$sanghId));
         $data['countuser']  = $count ;   
         $count              = number_format_short($count);
         $data['recordSet']  = array('<li class="sparks-info"><h5>'.lang('Total').' '.lang('Users').'<span class="txt-color-darken" id="totalCust"><i class="fa fa-lg fa-fw fa fa-users"></i>&nbsp;'.$count.'</span></h5></li>');
@@ -41,13 +44,14 @@ class Users extends Common_Back_Controller {
         $data['unionList']      = unionList();
         $data['front_scripts']  = array('backend_assets/custom/js/common_datatable.js',
             'backend_assets/custom/js/users.js');
-        $this->load->admin_render('users/trash', $data, '');
+        $this->load->admin_render('sanghusers/trash', $data, '');
     } //End function
 
     public function indexC(){
      
         $data['title']      = lang('Users');
-            $count          = $this->common_model->get_total_count('users',array('communicationCode'=>0,'is_deleted'=>0));
+        $sanghId=$_SESSION[ADMIN_USER_SESS_KEY]['sanghId'];
+            $count          = $this->common_model->get_total_count('users',array('communicationCode'=>0,'is_deleted'=>0,'sanghId'=>$sanghId));
         $data['countuser']  = $count ;   
         $count              = number_format_short($count);
         $data['recordSet']  = array('<li class="sparks-info"><h5>'.lang('Total').' '.lang('Users').'<span class="txt-color-darken" id="totalCust"><i class="fa fa-lg fa-fw fa fa-users"></i>&nbsp;'.$count.'</span></h5></li>');
@@ -55,7 +59,7 @@ class Users extends Common_Back_Controller {
         $data['unionList']      = unionList();
         $data['front_scripts']  = array('backend_assets/custom/js/common_datatable.js',
             'backend_assets/custom/js/users.js');
-        $this->load->admin_render('users/trash_user', $data, '');
+        $this->load->admin_render('sanghusers/trash_user', $data, '');
     } //End function
     
     public function userexcel(){
@@ -70,7 +74,7 @@ class Users extends Common_Back_Controller {
       $data['unionList'] = $this->common_model->getAll('shree_sangh',array('status'=>1),'name','ASC'); //unionList();
         $data['front_scripts']  = array('backend_assets/custom/js/common_datatable.js',
             'backend_assets/custom/js/users.js');
-        $this->load->admin_render('users/excelsheet', $data, '');
+        $this->load->admin_render('sanghusers/excelsheet', $data, '');
     } //End function
 
     
@@ -95,7 +99,7 @@ class Users extends Common_Back_Controller {
       $data['unionList'] = $this->common_model->getAll('shree_sangh',array('status'=>1),'name','ASC'); //unionList();
         $data['front_scripts']  = array('backend_assets/custom/js/user_edit.js');
       
-        $this->load->admin_render('users/edit', $data, '');
+        $this->load->admin_render('sanghusers/edit', $data, '');
     } //End function 
     
     public function detail(){
@@ -109,14 +113,15 @@ class Users extends Common_Back_Controller {
         $data['usermeta']       = $this->common_model->getsingle('user_meta',array('userId'=>$result['id']));
       
         $data['front_scripts']  = array('backend_assets/custom/js/users.js');
-        $this->load->admin_render('users/detail', $data, '');
+        $this->load->admin_render('sanghusers/detail', $data, '');
     } //End function
     function exportUser(){
         $extension = $this->input->post('export_type');
         $is_deleted = $this->input->post('is_deleted');
         $lang_type = $this->input->post('lang_type');
         $trash_type = $this->input->post('trash');
-        $unionName = trim($this->input->post('unionName'));
+         $sanghId=$_SESSION[ADMIN_USER_SESS_KEY]['sanghId'];
+        $unionName =  $sanghId;
        
         if(!empty($extension)){
             $extension = $extension;
@@ -575,118 +580,5 @@ class Users extends Common_Back_Controller {
             return true;
         }
     }
-/*            function userList(){
-        $array = array();
-        $empInfo = $this->common_model->GetJoinRecord('users','id','user_meta','userId',"*",'','','id','ASC');
-       $tr                      = new GoogleTranslate(); // Translates to 'en' from auto-detected language by default
-        if(!empty($empInfo)){
-              foreach ($empInfo as $element) {
-                $userId         =  $element->id;
-                $actualFullName         =  $element->actualFullName;
-                $actualParentName       =  $element->actualParentName;
-                $actualFamilyHeadName   =  $element->actualFamilyHeadName;
-
-                $hindiFullName          =  $element->hindiFullName ;
-                $hindiParentName        =  $element->hindiParentName ;
-                $hindiFamilyHeadName    =  $element->hindiFamilyHeadName ;
-
-                
-                $firstNameE = $lastNameE = $actualFullNameE =$actualParentNameE = $firstNameH = $lastNameH = $actualFullNameH ="";
-              //English
-
-                  
-                    
-                    $checkFullname   = $this->is_english($actualFullName);
-                    if($checkFullname){
-                        $actualFamilyHeadNameE =  $actualFamilyHeadName;
-                        $actualParentNameE =  $actualParentName;
-                        $actualFullNameE =  $actualFullName;
-                        $actualFullNameE = trim(str_replace(array('।'),array('.'),$actualFullNameE));
-                        $fulldivideE     = explode(" ",$actualFullNameE);
-                        if(sizeof($fulldivideE)>1){
-                            $lastNameE = end($fulldivideE);
-                        // Deleting last array item
-                            array_pop($fulldivideE);
-                            $firstNameE = implode(" ",$fulldivideE);
-                        }else{
-                            $lastNameE = "";
-                            $firstNameE = implode(" ",$fulldivideE);
-                        }
-                    }else{
-                        $actualFamilyHeadNameE = $element->familyHeadName ;
-                        $actualParentNameE =  $element->parentName;
-                        $actualFullNameE =  $element->fullName;
-                        $actualFullNameE = trim(str_replace(array('।'),array('.'),$actualFullNameE));
-                        $fulldivideE     = explode(" ",$actualFullNameE);
-                        if(sizeof($fulldivideE)>1){
-                            $lastNameE = end($fulldivideE);
-                        // Deleting last array item
-                            array_pop($fulldivideE);
-                            $firstNameE = implode(" ",$fulldivideE);
-                        }else{
-                            $lastNameE = "";
-                            $firstNameE = implode(" ",$fulldivideE);
-                        }
-                    }
-                    
-                    //$checkFullnameH   = $this->is_english($actualFullName);
-                      if($this->is_english($actualFamilyHeadName)){
-                        $actualFamilyHeadName                     = $actualFamilyHeadName;
-                        $hindiFamilyHeadNameH                = $tr->setSource('en')->setTarget('hi')->translate($actualFamilyHeadName);
-                      }else{
-                         $hindiFamilyHeadNameH =  trim(str_replace(array('।'),array('.'),$actualFamilyHeadName));
-                      }
-                    if($this->is_english($actualParentName)){
-                            $parentName         = $actualParentName;
-                            $hindiParentNameH    = $tr->setSource('en')->setTarget('hi')->translate($parentName);
-                      }else{
-                          $hindiParentNameH = trim(str_replace(array('।'),array('.'),$hindiParentName));
-                      }
-
-                   
-                    $hindiFullNameH =  $hindiFullName;
-
-                     if($this->is_english($actualFullName)){
-                         $hindiFullName  = $tr->setSource('en')->setTarget('hi')->translate($actualFullName);
-                        $hindiFullNameH = trim(str_replace(array('।'),array('.'),$hindiFullName)); 
-
-                     }else{
-                        $hindiFullNameH = trim(str_replace(array('।'),array('.'),$actualFullName)); 
-                     }
-                   
-
-                    $fulldivideH     = explode(" ",$hindiFullNameH);
-                    if(sizeof($fulldivideH)>1){
-                        $lastNameH = end($fulldivideH);
-                        // Deleting last array item
-                        array_pop($fulldivideH);
-                        $firstNameH = implode(" ",$fulldivideH);
-                    }else{
-                        $lastNameH = "";
-                        $firstNameH = implode(" ",$fulldivideH);
-                    }
-
-                 $data_val = $meta_val= array();
-                   //--------------------------
-                $data_val['firstName']              = $firstNameE;
-                $data_val['lastName']               = $lastNameE;
-                $data_val['fullName']               = $actualFullNameE;
-                $data_val['parentName']             = $actualParentNameE;
-                $data_val['familyHeadName']         = $actualFamilyHeadNameE;
-          
-                $meta_val['hindiFirstName']         = $firstNameH;
-                $meta_val['hindiLastName']          = $lastNameH;
-                $meta_val['hindiFullName']          = $hindiFullNameH;
-                $meta_val['hindiParentName']             = $hindiParentNameH;
-                $meta_val['hindiFamilyHeadName']         = $hindiFamilyHeadNameH;
-                $uId= $this->common_model->updateFields('users',$data_val,array('id'=>$userId));
-                $umId= $this->common_model->updateFields('user_meta',$meta_val,array('userId'=>$userId));
-
-                $array[]                            = array('main'=>$data_val,'meta'=>$meta_val,'user'=>$uId,'usermeta'=>$umId); 
-              }//End Function
-        }//End Function
-        pr($array);
-    }//End Function
-    */
 
 }//End Class

@@ -38,6 +38,7 @@ class MY_Loader extends MX_Loader {
         $session_u_id                   = $user_sess_data['id']; //user ID
         $where                          = array('id'=>$session_u_id,'status'=>1);//status:0 means active 
         $uData                          = $this->common_model->adminInfo($where);
+     //   pr($_SESSION[ADMIN_USER_SESS_KEY]['sanghId']);
         $vars['user']                   =  $uData;
         $this->view('backend_includes/admin_header', $vars);
         $this->view($template_name, $vars);

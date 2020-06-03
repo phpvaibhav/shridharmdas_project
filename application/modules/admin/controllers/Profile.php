@@ -14,7 +14,10 @@ class Profile extends Common_Back_Controller {
         $data['title']      = lang('My_Profile');
         $where              = array('id'=>$userId);
         $result             = $this->common_model->getsingle('admin',$where);
-        $data['userData']   = $result;
+       
+        $role   = $this->common_model->getsingle('admin_role',array('roleId'=>$result['roleId']));
+        $result['userRole']   = $role['role'];
+         $data['userData']   = $result;
         $this->load->admin_render('profile/userDetail', $data, '');
     } //End function
     public function changePassword(){

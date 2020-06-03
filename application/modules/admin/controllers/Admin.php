@@ -34,7 +34,12 @@ class Admin extends Common_Back_Controller {
     public function dashboard() {
         $data['parent']     = lang("Dashboard");
         $data['title']      = lang("Dashboard");
-        $data['users']      = $this->common_model->get_total_count('users');
+        $sanghId=$_SESSION[ADMIN_USER_SESS_KEY]['sanghId'];
+         $where = "";
+        if(!empty($sanghId)){
+            $where = array('sanghId'=>$sanghId);
+        }
+        $data['users']      = $this->common_model->get_total_count('users',$where);
     /*    $data['preceptor']  = $this->common_model->get_total_count('preceptor');
         $data['union']      = $this->common_model->get_total_count('union_group');
         $data['office']     = $this->common_model->get_total_count('offices');*/

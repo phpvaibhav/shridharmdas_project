@@ -42,7 +42,7 @@
             </a>
         </div>  -->
         <div class="col-lg-3 col-md-3 col-sm-6 col-xs-12">
-            <a href="<?php echo base_url('users'); ?>">
+            <a href="<?php echo   $_SESSION[ADMIN_USER_SESS_KEY]['sanghId'] ? base_url('sangh-users'):base_url('users'); ?>">
                 <div class="info-box bg-green hover-expand-effect">
                     <div class="icon">
                         <i class="fa fa-users"></i>

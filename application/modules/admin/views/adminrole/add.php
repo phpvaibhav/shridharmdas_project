@@ -79,37 +79,39 @@
 
           		<section>
                    <label class="input"> <i class="icon-prepend fa fa-lock"></i>
-                    <input type="password" name="password" placeholder="Password" value="" autocomplete="new-password">
+                    <input type="password" name="password" id="password" placeholder="Password" value="" autocomplete="new-password">
                   </label>
               	</section>
+              	<section>
+                   <label class="input"> <i class="icon-prepend fa fa-lock"></i>
+                    <input type="password" name="passwordConfirm" placeholder="Confirm password" value="" autocomplete="new-password">
+                  </label>
+              	</section>
+              	
 				<section>
 
 					<label class="select">
 					<select name="roleId"  class="form-control"  id="roleId"  >
 					<?php if(!empty($rolesList)):
-					foreach ($rolesList as $r => $role) { 
+					foreach ($rolesList as $r => $role) { 	?>
 
-					?>
-
-					<option value="<?= $role->roleId; ?>" selected='selected' ><?=  $role->role; ?></op0tion>
+					<option value="<?= $role->roleId; ?>" selected='selected' ><?=  $role->role; ?></option>
 					<?php } endif; ?>
 
 					</select><i></i> </label>
 				</section>
-
 				<section>
 
-					<label class="select">
+					
 					<select name="sanghId"  class="form-control js-example-basic-single "  id="sanghId"  >
-					<?php if(!empty($unionList)):
-					foreach ($unionList as $kc => $union) { 
-
-					?>
+					<?php if(!empty($unionList)):?>
+						 <option value="" selected="" disabled=""><?= lang('Union').' '.lang('Name'); ?></option>
+					<?php foreach ($unionList as $kc => $union) { ?>
 
 					<option value="<?= $union->sanghId; ?>" data-sanghname="<?=  $union->name; ?>" ><?=  $union->name; ?></option>
 					<?php } endif; ?>
 
-					</select><i></i> </label>
+					</select>
 				</section>
             </fieldset>
 						<footer>
