@@ -62,6 +62,7 @@ $route['users-trash'] 			= 'admin/users/trash';
 $route['add-user'] 					= 'admin/users/add';
 $route['user-excel'] 				= 'admin/users/userexcel';
 $route['sub-admin'] 				= 'admin/adminrole/index';
+$route['activity-log'] 				= 'admin/activity/index';
 $route['sub-admin-add'] 			= 'admin/adminrole/add';
 $route['sub-admin-detail/(:any)'] 			= 'admin/adminrole/detail/$1';
 

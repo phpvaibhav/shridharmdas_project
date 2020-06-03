@@ -198,7 +198,9 @@ class Users extends Common_Admin_Controller{
             $status         = $dataExist->status ? 0:1;
             $up      = $this->common_model->updateFields('users',array('status'=>$status),$where);
             $showmsg        = ($status==1)? lang("Active") : lang("Inactive");
+              $showmsg1        = ($status==1)? "Active" : "Inactive";
             if($up){
+                 $r= $this->common_model->activity_log($preId,$showmsg1." Activity");
                   $response       = array('status'=>SUCCESS,'message'=>$showmsg." ".ResponseMessages::getStatusCodeMessage(128));       
             }else{
                  $response       = array('status'=>FAIL,'message'=>ResponseMessages::getStatusCodeMessage(118));  
@@ -213,6 +215,7 @@ class Users extends Common_Admin_Controller{
 
         if($dataExist){    
             $dataExist      = $this->common_model->deleteData('users',$where);
+               $this->common_model->activity_log($preId,"Delete Activity");
             $response       = array('status'=>SUCCESS,'message'=>ResponseMessages::getStatusCodeMessage(124));
             
         }else{
@@ -227,6 +230,7 @@ class Users extends Common_Admin_Controller{
         if($dataExist){
           //  $dataExist      = $this->common_model->deleteData('users',$where);
             $this->common_model->updateFields('users',array('is_deleted'=>1),$where);
+            $this->common_model->activity_log($preId,"Trash Activity");
             $response       = array('status'=>SUCCESS,'message'=>ResponseMessages::getStatusCodeMessage(124));
         }else{
             $response       = array('status'=>FAIL,'message'=>ResponseMessages::getStatusCodeMessage(118));  
@@ -240,6 +244,7 @@ class Users extends Common_Admin_Controller{
         if($dataExist){
           //  $dataExist      = $this->common_model->deleteData('users',$where);
             $this->common_model->updateFields('users',array('is_deleted'=>0),$where);
+              $this->common_model->activity_log($preId,"Record Recycle Activity");
             $response       = array('status'=>SUCCESS,'message'=>ResponseMessages::getStatusCodeMessage(123));
         }else{
             $response       = array('status'=>FAIL,'message'=>ResponseMessages::getStatusCodeMessage(118));  
@@ -289,6 +294,7 @@ class Users extends Common_Admin_Controller{
                     $result = $this->common_model->updateFields('users',$data_val,array('id'=>$id));
                     $this->common_model->updateFields('user_meta',$user_meta,array('userId'=>$id));
                     if($result){
+                           $this->common_model->activity_log($id,"Basic information Update Activity");
                         $status = SUCCESS;
                         $msg  = ResponseMessages::getStatusCodeMessage(123);
                     }else{
@@ -358,6 +364,7 @@ class Users extends Common_Admin_Controller{
                     $result = $this->common_model->updateFields('users',$data_val,array('id'=>$id));
                     $this->common_model->updateFields('user_meta',$user_meta,array('userId'=>$id));
                     if($result){
+                           $this->common_model->activity_log($id,"Basic information Update Activity");
                         $status  = SUCCESS;
                         $msg     = ResponseMessages::getStatusCodeMessage(123);
                     }else{
@@ -427,6 +434,7 @@ class Users extends Common_Admin_Controller{
             }
             
             if($result){
+                $this->common_model->activity_log($id,"Address Update Activity");
                 $status = SUCCESS;
                 $msg  = ResponseMessages::getStatusCodeMessage(123);
             }else{

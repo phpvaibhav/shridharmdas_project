@@ -164,18 +164,18 @@ class Sanghusers extends Common_Admin_Controller{
             $link      ='javascript:void(0)';
             $action .= "";
              if(!empty($id) && $id=='trash'){
-                 $action .= '<a href="'.$link.'" onclick="confirmAction(this);" data-message="You want to Deleted this record!" data-id="'.encoding($serData->id).'" data-url="adminapi/users/recordDelete" data-list="1"  class="on-default edit-row table_action" title="Delete"><i class="fa fa-times" aria-hidden="true"></i></a>';
-                  $action .= '&nbsp;&nbsp;|&nbsp;&nbsp;<a href="'.$link.'" onclick="confirmAction(this);" data-message="You want to Recycle this record!" data-id="'.encoding($serData->id).'" data-url="adminapi/users/recordRecycle" data-list="1"  class="on-default edit-row table_action" title="Recycle"><i class="fa fa-recycle" aria-hidden="true"></i></a>';
+                 $action .= '<a href="'.$link.'" onclick="confirmAction(this);" data-message="You want to Deleted this record!" data-id="'.encoding($serData->id).'" data-url="adminapi/sanghusers/recordDelete" data-list="1"  class="on-default edit-row table_action" title="Delete"><i class="fa fa-times" aria-hidden="true"></i></a>';
+                  $action .= '&nbsp;&nbsp;|&nbsp;&nbsp;<a href="'.$link.'" onclick="confirmAction(this);" data-message="You want to Recycle this record!" data-id="'.encoding($serData->id).'" data-url="adminapi/sanghusers/recordRecycle" data-list="1"  class="on-default edit-row table_action" title="Recycle"><i class="fa fa-recycle" aria-hidden="true"></i></a>';
              }else{
            if($serData->status){
 
-                $action .= '<a href="'.$link.'" onclick="confirmAction(this);" data-message="You want to change status!" data-id="'.encoding($serData->id).'" data-url="adminapi/users/activeInactiveStatus" data-list="1"  class="on-default edit-row table_action" title="Status"><i class="fa fa-check" aria-hidden="true"></i></a>';
+                $action .= '<a href="'.$link.'" onclick="confirmAction(this);" data-message="You want to change status!" data-id="'.encoding($serData->id).'" data-url="adminapi/sanghusers/activeInactiveStatus" data-list="1"  class="on-default edit-row table_action" title="Status"><i class="fa fa-check" aria-hidden="true"></i></a>';
             }else{
-                $action .= '<a href="'.$link.'" onclick="confirmAction(this);" data-message="You want to change status!" data-id="'.encoding($serData->id).'" data-url="adminapi/users/activeInactiveStatus" data-list="1"  class="on-default edit-row table_action" title="Status"><i class="fa fa-times" aria-hidden="true"></i></a>';
+                $action .= '<a href="'.$link.'" onclick="confirmAction(this);" data-message="You want to change status!" data-id="'.encoding($serData->id).'" data-url="adminapi/sanghusers/activeInactiveStatus" data-list="1"  class="on-default edit-row table_action" title="Status"><i class="fa fa-times" aria-hidden="true"></i></a>';
             }
             $link_url      = base_url().'sangh-user-detail/'.encoding($serData->id);
             $action .= '&nbsp;&nbsp;|&nbsp;&nbsp;<a href="'.$link_url.'"  class="on-default edit-row table_action" title="Detail"><i class="fa fa-eye"  aria-hidden="true"></i></a>';
-            $action .= '&nbsp;&nbsp;|&nbsp;&nbsp;<a href="'.$link.'" onclick="confirmAction(this);" data-message="You want to Trash this record!" data-id="'.encoding($serData->id).'" data-url="adminapi/users/recordTrash" data-list="1"  class="on-default edit-row table_action" title="Delete"><i class="fa fa-trash" aria-hidden="true"></i></a>';
+            $action .= '&nbsp;&nbsp;|&nbsp;&nbsp;<a href="'.$link.'" onclick="confirmAction(this);" data-message="You want to Trash this record!" data-id="'.encoding($serData->id).'" data-url="adminapi/sanghusers/recordTrash" data-list="1"  class="on-default edit-row table_action" title="Delete"><i class="fa fa-trash" aria-hidden="true"></i></a>';
             }
 
             $row[]  = $action;
@@ -199,7 +199,9 @@ class Sanghusers extends Common_Admin_Controller{
             $status         = $dataExist->status ? 0:1;
             $up      = $this->common_model->updateFields('users',array('status'=>$status),$where);
             $showmsg        = ($status==1)? lang("Active") : lang("Inactive");
+            $showmsg1        = ($status==1)? "Active" : "Inactive";
             if($up){
+                $r= $this->common_model->activity_log($preId,$showmsg1." Activity");
                   $response       = array('status'=>SUCCESS,'message'=>$showmsg." ".ResponseMessages::getStatusCodeMessage(128));       
             }else{
                  $response       = array('status'=>FAIL,'message'=>ResponseMessages::getStatusCodeMessage(118));  
@@ -214,6 +216,7 @@ class Sanghusers extends Common_Admin_Controller{
 
         if($dataExist){    
             $dataExist      = $this->common_model->deleteData('users',$where);
+             $this->common_model->activity_log($preId,"Delete Activity");
             $response       = array('status'=>SUCCESS,'message'=>ResponseMessages::getStatusCodeMessage(124));
             
         }else{
@@ -228,6 +231,7 @@ class Sanghusers extends Common_Admin_Controller{
         if($dataExist){
           //  $dataExist      = $this->common_model->deleteData('users',$where);
             $this->common_model->updateFields('users',array('is_deleted'=>1),$where);
+            $this->common_model->activity_log($preId,"Trash Activity");
             $response       = array('status'=>SUCCESS,'message'=>ResponseMessages::getStatusCodeMessage(124));
         }else{
             $response       = array('status'=>FAIL,'message'=>ResponseMessages::getStatusCodeMessage(118));  
@@ -241,6 +245,7 @@ class Sanghusers extends Common_Admin_Controller{
         if($dataExist){
           //  $dataExist      = $this->common_model->deleteData('users',$where);
             $this->common_model->updateFields('users',array('is_deleted'=>0),$where);
+             $this->common_model->activity_log($preId,"Record Recycle Activity");
             $response       = array('status'=>SUCCESS,'message'=>ResponseMessages::getStatusCodeMessage(123));
         }else{
             $response       = array('status'=>FAIL,'message'=>ResponseMessages::getStatusCodeMessage(118));  
@@ -290,6 +295,7 @@ class Sanghusers extends Common_Admin_Controller{
                     $result = $this->common_model->updateFields('users',$data_val,array('id'=>$id));
                     $this->common_model->updateFields('user_meta',$user_meta,array('userId'=>$id));
                     if($result){
+                         $this->common_model->activity_log($id,"Basic information Update Activity");
                         $status = SUCCESS;
                         $msg  = ResponseMessages::getStatusCodeMessage(123);
                     }else{
@@ -359,6 +365,7 @@ class Sanghusers extends Common_Admin_Controller{
                     $result = $this->common_model->updateFields('users',$data_val,array('id'=>$id));
                     $this->common_model->updateFields('user_meta',$user_meta,array('userId'=>$id));
                     if($result){
+                           $this->common_model->activity_log($id,"Basic information Update Activity");
                         $status  = SUCCESS;
                         $msg     = ResponseMessages::getStatusCodeMessage(123);
                     }else{
@@ -428,6 +435,7 @@ class Sanghusers extends Common_Admin_Controller{
             }
             
             if($result){
+                $this->common_model->activity_log($id,"Address Update Activity");
                 $status = SUCCESS;
                 $msg  = ResponseMessages::getStatusCodeMessage(123);
             }else{
