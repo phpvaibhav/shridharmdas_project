@@ -46,12 +46,12 @@
             <?php 
             if($_SESSION[ADMIN_USER_SESS_KEY]['sanghId']){
 
-                  $burl = 'javascript:void(0);';
+                  
              $us_user_permission  = isset($user_permission['users']) ? json_decode($user_permission['users'],true) :array();
               $us_view_pr = isset($u_user_permission['list'])? $u_user_permission['list']:0;
-             
-              if($us_view_pr):
-                 $burl = base_url('sangh-users');
+              $burl = base_url('sangh-users');
+              if($us_view_pr==0):
+                $burl = 'javascript:void(0);';
               endif;
           }else{
 
