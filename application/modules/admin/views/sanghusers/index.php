@@ -1,3 +1,14 @@
+<?php
+ 
+    $u_user_permission  = isset($user_permission['users']) ? json_decode($user_permission['users'],true) :array();
+              $u_list_pr = isset($u_user_permission['list'])? $u_user_permission['list']:0;
+              
+              if($u_list_pr==0){
+                redirect(base_url('dashboard'));
+              }
+
+
+  ?>
 <section id="widget-grid" class="">
 	<!-- row -->
 

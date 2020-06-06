@@ -1,4 +1,14 @@
+ <?php
+ 
+    $u_user_permission  = isset($user_permission['users']) ? json_decode($user_permission['users'],true) :array();
+              $u_edit_pr = isset($u_user_permission['edit'])? $u_user_permission['edit']:0;
+              
+              if($u_edit_pr==0){
+                redirect(base_url('dashboard'));
+              }
 
+
+  ?>
 <div class="row">
 
 	<!-- NEW COL START -->

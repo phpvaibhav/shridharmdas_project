@@ -46,12 +46,12 @@
             <?php 
             if($_SESSION[ADMIN_USER_SESS_KEY]['sanghId']){
 
-
-             $u_user_permission  = isset($user_permission['users']) ? json_decode($user_permission['users'],true) :array();
-              $u_view_pr = isset($u_user_permission['list'])? $u_user_permission['list']:0;
-              $burl = base_url('sangh-users');
-              if($u_view_pr):
-                 $burl = 'javascript:void(0);';
+                  $burl = 'javascript:void(0);';
+             $us_user_permission  = isset($user_permission['users']) ? json_decode($user_permission['users'],true) :array();
+              $us_view_pr = isset($u_user_permission['list'])? $u_user_permission['list']:0;
+             
+              if($us_view_pr):
+                 $burl = base_url('sangh-users');
               endif;
           }else{
 
@@ -59,7 +59,7 @@
           }
 
             ?>
-            <a href="<?php echo   $burl; ?>">
+            <a href="<?php echo $burl; ?>">
                 <div class="info-box bg-green hover-expand-effect">
                     <div class="icon">
                         <i class="fa fa-users"></i>

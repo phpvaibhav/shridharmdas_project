@@ -24,6 +24,10 @@
  
     $u_user_permission  = isset($user_permission['users']) ? json_decode($user_permission['users'],true) :array();
               $u_edit_pr = isset($u_user_permission['edit'])? $u_user_permission['edit']:0;
+              $u_VIEW_pr = isset($u_user_permission['view'])? $u_user_permission['view']:0;
+              if($u_VIEW_pr==0){
+              	redirect(base_url('dashboard'));
+              }
 
 
   ?>
