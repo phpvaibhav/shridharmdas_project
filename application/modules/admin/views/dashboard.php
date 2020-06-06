@@ -42,7 +42,24 @@
             </a>
         </div>  -->
         <div class="col-lg-3 col-md-3 col-sm-6 col-xs-12">
-            <a href="<?php echo   $_SESSION[ADMIN_USER_SESS_KEY]['sanghId'] ? base_url('sangh-users'):base_url('users'); ?>">
+
+            <?php 
+            if($_SESSION[ADMIN_USER_SESS_KEY]['sanghId']){
+
+
+             $u_user_permission  = isset($user_permission['users']) ? json_decode($user_permission['users'],true) :array();
+              $u_view_pr = isset($u_user_permission['list'])? $u_user_permission['list']:0;
+              $burl = base_url('sangh-users');
+              if($u_view_pr):
+                 $burl = 'javascript:void(0);';
+              endif;
+          }else{
+
+            $burl = base_url('users');
+          }
+
+            ?>
+            <a href="<?php echo   $burl; ?>">
                 <div class="info-box bg-green hover-expand-effect">
                     <div class="icon">
                         <i class="fa fa-users"></i>
