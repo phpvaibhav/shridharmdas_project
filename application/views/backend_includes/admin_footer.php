@@ -77,12 +77,32 @@
         <li>
           <a href="gallery.html" class="jarvismetro-tile big-cubes bg-color-greenLight"> <span class="iconbox"> <i class="fa fa-picture-o fa-4x"></i> <span>Gallery </span> </span> </a>
         </li> -->
+        <?php if(!empty($user_permission) && $user['roleId']!=1): ?>
+          <?php 
+          $pro_per  = isset($user_permission['profile']) ? json_decode($user_permission['profile'],true) :array();
+              $pr_view = isset($pro_per['view'])? $pro_per['view']:0;
+              if($pr_view):
+          ?>
         <li>
+          <a href="<?php echo base_url().'profile/'.encoding($user['userId']);  ?>" class="jarvismetro-tile big-cubes selected bg-color-pinkDark"> <span class="iconbox"> <i class="fa fa-user fa-4x"></i> <span><?= lang('My_Profile'); ?> </span> </span> </a>
+        </li>  
+      <?php endif;
+          $password_pro  = isset($user_permission['password']) ? json_decode($user_permission['password'],true) :array();
+              $ps_view_pre = isset($password_pro['view'])? $password_pro['view']:0;
+              if($ps_view_pre):
+        ?>
+        <li>
+          <a href="<?php echo base_url().'change_password/'.encoding($user['userId']);  ?>" class="jarvismetro-tile big-cubes selected bg-color-pinkDark"> <span class="iconbox"> <i class="fa fa-key fa-4x"></i> <span><?= lang('Change_Password'); ?></span> </span> </a>
+        </li>
+         <?php endif;  ?>
+        <?php elseif($user['roleId']==1): ?>
+                <li>
           <a href="<?php echo base_url().'profile/'.encoding($user['userId']);  ?>" class="jarvismetro-tile big-cubes selected bg-color-pinkDark"> <span class="iconbox"> <i class="fa fa-user fa-4x"></i> <span><?= lang('My_Profile'); ?> </span> </span> </a>
         </li>  
         <li>
           <a href="<?php echo base_url().'change_password/'.encoding($user['userId']);  ?>" class="jarvismetro-tile big-cubes selected bg-color-pinkDark"> <span class="iconbox"> <i class="fa fa-key fa-4x"></i> <span><?= lang('Change_Password'); ?></span> </span> </a>
         </li>
+        <?php endif; ?>
       </ul>
     </div>
     <!-- END SHORTCUT AREA -->

@@ -51,4 +51,5 @@ $lang['Add_User'] 								= "गण जोड़ें";
 $lang['Sub_Admin'] 							= "उप व्यवस्थापक";
 $lang['Activity_Log'] 							= "गतिविधि लॉग";
 $lang['Activity_Time'] 							= "गतिविधि का समय";
+$lang['Permissions'] 							= "अनुमतियाँ";
 ?>

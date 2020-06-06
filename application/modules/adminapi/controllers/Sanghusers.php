@@ -100,6 +100,14 @@ class Sanghusers extends Common_Admin_Controller{
         $this->load->helper('text');
         $this->load->model('user_model');
         $sanghId=$_SESSION[ADMIN_USER_SESS_KEY]['sanghId'];
+        $roleId=$_SESSION[ADMIN_USER_SESS_KEY]['roleId'];
+        $permission             = $this->common_model->getsingle('permission',array('roleId'=>$roleId));
+        $u_set  = isset($permission['users']) ? json_decode($permission['users'],true) :array();
+        $u_view = isset($u_set['view'])? $u_set['view']:0;
+        $u_add = isset($u_set['add'])? $u_set['add']:0;
+        $u_edit = isset($u_set['edit'])? $u_set['edit']:0;
+        $u_delete = isset($u_set['delete'])? $u_set['delete']:0;
+
         $where ="";
         $unionName = $this->post('unionName');
         $id = $this->post('id');
@@ -124,7 +132,7 @@ class Sanghusers extends Common_Admin_Controller{
             $action = '';
             $no++;
             $row        = array();
-            $link_url   = base_url().'sangh-user-detail/'.encoding($serData->id);
+            $link_url   = $u_view ? base_url().'sangh-user-detail/'.encoding($serData->id):'javascript:void(0);';
             $row[]      = $no;
             $row[]      = '<a href="'.$link_url.'" >'.display_placeholder_text($serData->hindiFullName).'</a>'; 
             $row[]      = display_placeholder_text($serData->hindiParentName); 
@@ -167,15 +175,20 @@ class Sanghusers extends Common_Admin_Controller{
                  $action .= '<a href="'.$link.'" onclick="confirmAction(this);" data-message="You want to Deleted this record!" data-id="'.encoding($serData->id).'" data-url="adminapi/sanghusers/recordDelete" data-list="1"  class="on-default edit-row table_action" title="Delete"><i class="fa fa-times" aria-hidden="true"></i></a>';
                   $action .= '&nbsp;&nbsp;|&nbsp;&nbsp;<a href="'.$link.'" onclick="confirmAction(this);" data-message="You want to Recycle this record!" data-id="'.encoding($serData->id).'" data-url="adminapi/sanghusers/recordRecycle" data-list="1"  class="on-default edit-row table_action" title="Recycle"><i class="fa fa-recycle" aria-hidden="true"></i></a>';
              }else{
+                  if($u_view):
            if($serData->status){
 
                 $action .= '<a href="'.$link.'" onclick="confirmAction(this);" data-message="You want to change status!" data-id="'.encoding($serData->id).'" data-url="adminapi/sanghusers/activeInactiveStatus" data-list="1"  class="on-default edit-row table_action" title="Status"><i class="fa fa-check" aria-hidden="true"></i></a>';
             }else{
                 $action .= '<a href="'.$link.'" onclick="confirmAction(this);" data-message="You want to change status!" data-id="'.encoding($serData->id).'" data-url="adminapi/sanghusers/activeInactiveStatus" data-list="1"  class="on-default edit-row table_action" title="Status"><i class="fa fa-times" aria-hidden="true"></i></a>';
             }
+          
             $link_url      = base_url().'sangh-user-detail/'.encoding($serData->id);
-            $action .= '&nbsp;&nbsp;|&nbsp;&nbsp;<a href="'.$link_url.'"  class="on-default edit-row table_action" title="Detail"><i class="fa fa-eye"  aria-hidden="true"></i></a>';
-            $action .= '&nbsp;&nbsp;|&nbsp;&nbsp;<a href="'.$link.'" onclick="confirmAction(this);" data-message="You want to Trash this record!" data-id="'.encoding($serData->id).'" data-url="adminapi/sanghusers/recordTrash" data-list="1"  class="on-default edit-row table_action" title="Delete"><i class="fa fa-trash" aria-hidden="true"></i></a>';
+            $action .= '&nbsp;&nbsp;|&nbsp;&nbsp;<a href="'.$link_url.'"  class="on-default edit-row table_action" title="Detail"><i class="fa fa-eye"  aria-hidden="true"></i></a>&nbsp;&nbsp;|&nbsp;&nbsp;';
+             endif;
+             if($u_delete):
+            $action .= '<a href="'.$link.'" onclick="confirmAction(this);" data-message="You want to Trash this record!" data-id="'.encoding($serData->id).'" data-url="adminapi/sanghusers/recordTrash" data-list="1"  class="on-default edit-row table_action" title="Delete"><i class="fa fa-trash" aria-hidden="true"></i></a>';
+             endif;
             }
 
             $row[]  = $action;

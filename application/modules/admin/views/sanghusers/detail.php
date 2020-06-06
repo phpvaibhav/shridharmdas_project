@@ -20,11 +20,20 @@
     background-color: #3276b1;
 }
   </style>
+  <?php
+ 
+    $u_user_permission  = isset($user_permission['users']) ? json_decode($user_permission['users'],true) :array();
+              $u_edit_pr = isset($u_user_permission['edit'])? $u_user_permission['edit']:0;
+
+
+  ?>
 <div class="row">
+		<?php if($u_edit_pr): ?>
 <div class="col-sm-12 ">
 						<a href="<?= base_url().'sangh-edit-user/'.encoding($info['id']); ?>" class="btn btn-labeled btn-danger pull-right"> <span class="btn-label"><i class="glyphicon glyphicon-edit"></i></span> Edit </a>
 						<hr>
 					</div>
+					<?php endif; ?>
 	<div class="col-sm-12">
 			<div class="well well-sm">
 				<div class="row">	
@@ -435,12 +444,13 @@
               
               </div>
           
-            </fieldset>     
+            </fieldset>    
+            <?php if($u_edit_pr): ?> 
             <footer>
 							<button type="submit" id="submitA" class="btn btn-primary">
 								<?= lang('Save'); ?>
 							</button>
-						</footer>
+						</footer><?php endif; ?>
         </form> 
 														<!-- <center><strong>Maintenance -2</strong></center> -->
 													</div>

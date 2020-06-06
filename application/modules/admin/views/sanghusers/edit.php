@@ -187,7 +187,8 @@
                             <option value="Other" <?= $info['maritalStatus']=='Other' ?"selected='selected'":""; ?>><?= lang('other');?></option>
                             </select><i></i> </label>
                 </section>
-                <section class="col col-6">
+                <input type="hidden" name="unionName" value="<?= $info['sanghId']; ?>" >
+               <!--  <section class="col col-6">
               
                   
                      <select name="unionName"  class="form-control js-example-basic-single "  id="unionName"  >
@@ -201,16 +202,16 @@
 
                               </select>
                 </section>
-    
+     -->
               </div>              
 
-              <div class="row">
+           <!--    <div class="row">
                  <section class="col col-6 otherUnionName" <?= $usermeta['unionName']=='OTHER' ?"style='display: block;'":"style='display: none;'"; ?> >
                   <label class="input">
                    <input type="text" id="otherUnionName" class="form-control" placeholder="<?= lang('otherUnionName'); ?>" value="<?= $usermeta['otherUnionName']; ?>"  name="otherUnionName">
                   </label>
                 </section>
-              </div>
+              </div> -->
 <section>
   <?php $rk = !empty($usermeta['religiousKnowledge']) ? explode(",",$usermeta['religiousKnowledge']):array(); ?>
                           <label class="label"><?= lang('Religious_knowledge'); ?></label>

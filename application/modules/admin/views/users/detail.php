@@ -20,11 +20,15 @@
     background-color: #3276b1;
 }
   </style>
+  
 <div class="row">
+
+	
 <div class="col-sm-12 ">
 						<a href="<?= base_url().'edit-user/'.encoding($info['id']); ?>" class="btn btn-labeled btn-danger pull-right"> <span class="btn-label"><i class="glyphicon glyphicon-edit"></i></span> Edit </a>
 						<hr>
 					</div>
+					
 	<div class="col-sm-12">
 
 
@@ -484,9 +488,11 @@
           
             </fieldset>     
             <footer>
+            	
 							<button type="submit" id="submitA" class="btn btn-primary">
 								<?= lang('Save'); ?>
 							</button>
+						
 						</footer>
         </form> 
 														<!-- <center><strong>Maintenance -2</strong></center> -->

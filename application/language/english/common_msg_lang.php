@@ -54,6 +54,7 @@ $lang['contactNumber'] 									= "contactNumber";
 	$lang['Sub_Admin'] 							= "Sub Admin";
 	$lang['Activity_Log'] 							= "Activity Log";
 	$lang['Activity_Time'] 							= "Activity Time";
+	$lang['Permissions'] 							= "Permissions";
 
 
 

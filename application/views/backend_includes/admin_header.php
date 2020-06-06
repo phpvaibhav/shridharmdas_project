@@ -215,19 +215,29 @@
             <a href="<?php echo base_url('users'); ?>" title="<?= lang('Users');?>"><i class="fa fa-lg fa-fw fa-users"></i> <span class="menu-item-parent"><?= lang('Users');?></span></a>
           </li>   
           <?php endif; ?>          
-          <?php if(!empty($user['sanghId'])): ?>
+          <?php if(!empty($user['sanghId'])):
+              $u_user_permission  = isset($user_permission['users']) ? json_decode($user_permission['users'],true) :array();
+              $u_view_pr = isset($u_user_permission['list'])? $u_user_permission['list']:0;
+
+              if($u_view_pr):
+           ?>
          
            <li class="<?php echo (strtolower($this->router->fetch_class()) == "sangh-users") ? "active" : "" ?>">
             <a href="<?php echo base_url('sangh-users'); ?>" title="<?= lang('Users');?>"><i class="fa fa-lg fa-fw fa-users"></i> <span class="menu-item-parent"><?= lang('Users');?></span></a>
           </li>   
-          <?php endif; ?>
+          <?php endif;endif; ?>
          
           <?php if($user['sanghId']==0): ?>
           <li class="<?php echo (strtolower($this->router->fetch_class()) == "adminrole") ? "active" : "" ?>">
             <a href="<?php echo base_url('sub-admin'); ?>" title="<?= lang('Sub_Admin'); ?>"><i class="fa fa-lg fa-fw fa-user-secret"></i> <span class="menu-item-parent"><?= lang('Sub_Admin'); ?></span></a>
           </li>  
+
           <li class="<?php echo (strtolower($this->router->fetch_class()) == "activity") ? "active" : "" ?>">
             <a href="<?php echo base_url('activity-log'); ?>" title="<?= lang('Activity_Log'); ?>"><i class="fa fa-lg fa-fw fa-cogs"></i> <span class="menu-item-parent"><?= lang('Activity_Log'); ?></span></a>
+          </li>      
+          
+          <li class="<?php echo (strtolower($this->router->fetch_class()) == "permissions") ? "active" : "" ?>">
+            <a href="<?php echo base_url('admin-permissions'); ?>" title="<?= lang('Permissions'); ?>"><i class="fa fa-lg fa-fw fa-key"></i> <span class="menu-item-parent"><?= lang('Permissions'); ?></span></a>
           </li>  
           
         <?php endif; ?>
@@ -243,6 +253,7 @@
 <!--           <li class="<?php echo (strtolower($this->router->fetch_class()) == "users") ? "active" : "" ?>">
             <a href="<?php echo base_url('users'); ?>" title="<?= lang('Users');?>"><i class="fa fa-lg fa-fw fa-users"></i> <span class="menu-item-parent"><?= lang('Users');?></span></a>
           </li> -->
+          
 <!--           <li class="<?php echo (strtolower($this->router->fetch_class()) == "users") ? "active" : "" ?>">
             <a href="javascript:void(0);" title="<?= lang('Users');?>"><i class="fa fa-lg fa-fw fa-users"></i> <span class="menu-item-parent"><?= lang('Users');?></span></a>
             <ul>

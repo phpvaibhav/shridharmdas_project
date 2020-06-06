@@ -125,7 +125,13 @@
 							</section>
 						</fieldset>
 						<footer>
+							<?php
+							 $u_user_permission_e  = isset($user_permission['profile']) ? json_decode($user_permission['profile'],true) :array();
+              $u_edit_pre = isset($u_user_permission_e['edit'])? $u_user_permission_e['edit']:0;
+              	if($u_edit_pre):
+							 ?>
 							<button type="submit" id="submit" class="btn btn-primary"><?= lang('Update'); ?></button>
+						<?php endif; ?>
 						</footer>
 					</form>
 					<!-- update -->

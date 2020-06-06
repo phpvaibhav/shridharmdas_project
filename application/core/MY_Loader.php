@@ -40,6 +40,8 @@ class MY_Loader extends MX_Loader {
         $uData                          = $this->common_model->adminInfo($where);
      //   pr($_SESSION[ADMIN_USER_SESS_KEY]['sanghId']);
         $vars['user']                   =  $uData;
+        $permission             = $this->common_model->getsingle('permission',array('roleId'=>$uData['roleId']));
+            $vars['user_permission']                   =  $permission;
         $this->view('backend_includes/admin_header', $vars);
         $this->view($template_name, $vars);
         $this->view('backend_includes/admin_footer', $vars);
