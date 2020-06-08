@@ -42,12 +42,20 @@ class Permission extends Common_Admin_Controller{
             $u_add   = $this->post('u_add'); 
             $u_edit   = $this->post('u_edit'); 
             $u_delete   = $this->post('u_delete'); 
+            $u_export   = $this->post('u_export'); 
+            $u_contactNumber   = $this->post('u_contactNumber'); 
+            $u_current_address   = $this->post('u_current_address'); 
+            $u_permanent_address   = $this->post('u_permanent_address'); 
             $users  = array(
                 'list' => isset($u_list) ? $u_list:0,
                 'view' => isset($u_view) ? $u_view:0,
                 'add' => isset($u_add) ? $u_add:0,
                 'edit' => isset($u_edit) ? $u_edit:0,
-                'delete' => isset($u_delete) ? $u_delete:0
+                'delete' => isset($u_delete) ? $u_delete:0,
+                'export' => isset($u_export) ? $u_export:0,
+                'contactNumber' => isset($u_contactNumber) ? $u_contactNumber:0,
+                'current_address' => isset($u_current_address) ? $u_current_address:0,
+                'permanent_address' => isset($u_permanent_address) ? $u_permanent_address:0,
             );
             $data_val = array('profile'=>json_encode($profile),
                 'password'=>json_encode($password),

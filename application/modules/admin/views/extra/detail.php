@@ -49,7 +49,7 @@
 					<!-- widget content -->
 					<div class="widget-body">
 
-						<form class="form-horizontal" action="permission/add" id="smart-form-add-data"  enctype="multipart/form-data" novalidate="" autocomplete="off">
+						<form method="post" class="form-horizontal" action="permission/add" id="smart-form-add-data"  enctype="multipart/form-data" novalidate="" autocomplete="off">
 						<?php
 							
 							$profile  = isset($info['profile']) ? json_decode($info['profile'],true) :array();
@@ -72,6 +72,10 @@
 							$u_add = isset($u_set['add'])? $u_set['add']:0;
 							$u_edit = isset($u_set['edit'])? $u_set['edit']:0;
 							$u_delete = isset($u_set['delete'])? $u_set['delete']:0;
+							$u_export = isset($u_set['export'])? $u_set['export']:0;
+							$u_contactNumber = isset($u_set['contactNumber'])? $u_set['contactNumber']:0;
+							$u_current_address = isset($u_set['current_address'])? $u_set['current_address']:0;
+							$u_permanent_address = isset($u_set['permanent_address'])? $u_set['permanent_address']:0;
 
 
 						?>
@@ -103,6 +107,7 @@
 											  <input type="checkbox" class="checkbox check-Add-check style-0" name="p_delete" <?= ($p_delete==1)?"checked='checked'":""; ?> value="1">
 											  <span>Delete</span>
 										</label>
+
 									</div>
 								</div>
 								
@@ -154,6 +159,34 @@
 											  <input type="checkbox" class="checkbox check-Add-check style-0" name="u_delete" <?= ($u_delete==1)?"checked='checked'":""; ?> value="1">
 											  <span>Delete</span>
 										</label>
+
+										<label class="checkbox-inline">
+											  <input type="checkbox" class="checkbox check-Add-check style-0" name="u_export" <?= ($u_export==1)?"checked='checked'":""; ?> value="1">
+											  <span>Export</span>
+										</label>
+										
+										
+									</div>
+								</div>
+								<div class="form-group">
+									<label class="col-md-1 control-label"></label>
+									<div class="col-md-11">
+										
+										<label class="checkbox-inline">
+											  <input type="checkbox" class="checkbox check-Add-check style-0" name="u_contactNumber" <?= ($u_contactNumber==1)?"checked='checked'":""; ?> value="1">
+											  <span>Contact Number</span>
+										</label>
+										
+										<label class="checkbox-inline">
+											  <input type="checkbox" class="checkbox check-Add-check style-0" name="u_current_address" <?= ($u_current_address==1)?"checked='checked'":""; ?> value="1">
+											  <span>Current address</span>
+										</label>
+										
+										<label class="checkbox-inline">
+											  <input type="checkbox" class="checkbox check-Add-check style-0" name="u_permanent_address" <?= ($u_permanent_address==1)?"checked='checked'":""; ?> value="1">
+											  <span>Permanent address</span>
+										</label>
+										
 									</div>
 								</div>
 								

@@ -15,7 +15,7 @@
           </div>
           <div class="col-xs-12 col-sm-12 col-md-4 col-lg-4">
         <div class="well no-padding">
-          <form action="adminapi/login" id="login-form" class="smart-form client-form">
+          <form  method="post" action="adminapi/login" id="login-form" class="smart-form client-form">
             <header><?= lang('sign_in'); ?></header>
             <fieldset>
               <section>

@@ -25,6 +25,9 @@
     $u_user_permission  = isset($user_permission['users']) ? json_decode($user_permission['users'],true) :array();
               $u_edit_pr = isset($u_user_permission['edit'])? $u_user_permission['edit']:0;
               $u_VIEW_pr = isset($u_user_permission['view'])? $u_user_permission['view']:0;
+              $u_contactNumber_pr = isset($u_user_permission['contactNumber'])? $u_user_permission['contactNumber']:0;
+              $u_current_address_pr = isset($u_user_permission['current_address'])? $u_user_permission['current_address']:0;
+              $u_permanent_address_pr = isset($u_user_permission['permanent_address'])? $u_user_permission['permanent_address']:0;
               if($u_VIEW_pr==0){
               	redirect(base_url('dashboard'));
               }
@@ -82,12 +85,14 @@
 													<p class="text-muted">
 														<i class="fa fa-list"></i>&nbsp;&nbsp;<span class="txt-color-darken"><?= display_aadhar_text($info['aadharNumber'],6); ?></span>
 													</p>
-												</li>
+												</li> -->
+												<?php if($u_contactNumber_pr): ?>
 												<li>
 													<p class="text-muted">
 														<i class="fa fa-phone"></i>&nbsp;&nbsp;<span class="txt-color-darken"><?= display_mobile_text($info['contactNumber']); ?></span>
 													</p>
-												</li> -->
+												</li>
+											<?php endif; ?>
 												<li>
 													<p class="text-muted">
 														<i class="fa fa-calendar"></i>&nbsp;&nbsp;<span class="txt-color-darken"><?= display_placeholder_text(date('d-m-Y',strtotime($info['dob']))); ?></span>
@@ -155,7 +160,8 @@
 													</p>
 												</li>
 											</ul>
-											<?php if(!empty($addresses)){ foreach ($addresses as $e => $address) {?>
+											<?php if(!empty($addresses)){ foreach ($addresses as $e => $address) {   ?>
+												<?php if($address->addressType=='Current' && $u_current_address_pr){ ?>
 											<br>
 											<p class="font-md">
 												<i><?= $address->addressType; ?> Address</i>
@@ -177,6 +183,29 @@
 													</li>
 												</ul>
 											</p>
+											<?php }  ?>	<?php if($address->addressType=='Permanent' && $u_permanent_address_pr){ ?>
+											<br>
+											<p class="font-md">
+												<i><?= $address->addressType; ?> Address</i>
+											</p>
+											<p>
+												<ul class="list-unstyled">
+													<li>
+														<p class="text-muted">
+														<i class="fa fa-location-arrow" aria-hidden="true"></i>&nbsp;&nbsp;<span class="txt-color-darken"><?= display_placeholder_text($address->address); ?></span>
+														</p>
+														<p><?= lang('City'); ?> : <?= display_placeholder_text($address->city); ?></p>
+													<!-- 	<p><?= lang('zip_code'); ?> : <?= display_placeholder_text($address->zip_code); ?></p> -->
+														<p><?= lang('postName'); ?> : <?= display_placeholder_text($address->postName); ?></p>
+														<p><?= lang('Tehsil'); ?> : <?= display_placeholder_text($address->tehsil); ?></p>
+														<p><?= lang('District'); ?> : <?= display_placeholder_text($address->district); ?></p>
+														<p><?= lang('State'); ?> : <?= display_placeholder_text($address->state); ?></p>
+														<p><?= lang('Country'); ?> : <?= display_placeholder_text($address->country); ?></p>
+														<p><?= lang('zip_code'); ?> : <?= display_placeholder_text($address->zip_code); ?></p>
+													</li>
+												</ul>
+											</p>
+											<?php }  ?>
 											<?php } } ?>
 											<!-- <br>
 											<p class="font-md">
@@ -229,7 +258,7 @@
 											<div class="tab-pane fade in active" id="a1">
 												<div class="row">
 													<div class="col-xs-12 col-sm-12">	
-															<form id="user-update-form" class="smart-form" novalidate="novalidate" action="users/update" novalidate="novalidate" autocomplete="off">
+															<form method="post" id="user-update-form" class="smart-form" novalidate="novalidate" action="sanghusers/update" novalidate="novalidate" autocomplete="off">
 												<div class="row">
 
 	<!-- NEW COL START -->
@@ -295,7 +324,11 @@
 												<div class="row">
 													<div class="col-xs-12 col-sm-12">	
 													<!-- 	<center><strong>Maintenance -2</strong></center> -->
-														<form id="user-address-form" class="smart-form" novalidate="novalidate" action="users/addressupdate" novalidate="novalidate" autocomplete="off">
+														<form method="post" id="user-address-form" class="smart-form" novalidate="novalidate" action="sanghusers/addressupdate" novalidate="novalidate" autocomplete="off">
+															<input type="hidden" name="addressId" value="<?= @$addresses[0]->addressId; ?>">
+                	<input type="hidden" name="paddressId" value="<?= @$addresses[1]->addressId; ?>">
+                	<input type="hidden" name="userId" value="<?= encoding($info['id']); ?>">
+															<?php if($u_current_address_pr):?>
 														            <header>
              <?= lang('home_address'); ?>
             </header>
@@ -309,9 +342,7 @@
 				<section>
              	 <label for="address"><?= lang('Address'); ?><span>*</span></label>
                 <label for="address" class="input">
-                	<input type="hidden" name="addressId" value="<?= @$addresses[0]->addressId; ?>">
-                	<input type="hidden" name="paddressId" value="<?= @$addresses[1]->addressId; ?>">
-                	<input type="hidden" name="userId" value="<?= encoding($info['id']); ?>">
+                	
                   <input type="text" name="address" id="address" value="<?= @$addresses[0]->address; ?>" placeholder=" <?= lang('Address'); ?>"  maxlength="100" size="100">
                 </label>
               </section>
@@ -369,19 +400,23 @@
               </div>
           
             </fieldset>            
+        <?php endif; ?>
+        	<?php if($u_permanent_address_pr):?>
             <header>
                 <div class="row">
                    <section class="col col-6">
                  <?= lang('permanent_address'); ?>
                   </section>  
                   <section class="col col-6">
+                  	<?php if($u_current_address_pr):?>
                   <label class="checkbox pull-right">
                     <input type="checkbox" id="Same_AddressP" name="remember">
-                    <i></i>Same as above</label>
+                    <i></i>Same as above</label> <?php endif; ?>
                   </section>
               </div>
              
             </header>
+
                      <fieldset>
               <section>
              	<label for="pzip_code"><?= lang('zip_code'); ?><span>*</span></label>
@@ -448,13 +483,14 @@
               
               </div>
           
-            </fieldset>    
-            <?php if($u_edit_pr): ?> 
+            </fieldset>  
+             <?php endif; ?>  
+            <?php if($u_edit_pr): if($u_current_address_pr OR $u_permanent_address_pr ): ?> 
             <footer>
 							<button type="submit" id="submitA" class="btn btn-primary">
 								<?= lang('Save'); ?>
 							</button>
-						</footer><?php endif; ?>
+						</footer><?php endif; endif; ?>
         </form> 
 														<!-- <center><strong>Maintenance -2</strong></center> -->
 													</div>
@@ -489,7 +525,7 @@
 												<div class="row">
 													<div class="col-xs-12 col-sm-12">	
 														<!-- <center><strong>Maintenance -6</strong></center> -->
-														<form id="user-image-form" class="smart-form" novalidate="novalidate" action="users/imageUpdate" novalidate="novalidate" autocomplete="off">
+														<form method="post" id="user-image-form" class="smart-form" novalidate="novalidate" action="sanghusers/imageUpdate" novalidate="novalidate" autocomplete="off">
 														           
             											<fieldset>
 											              <section>

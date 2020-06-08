@@ -88,7 +88,7 @@
 	           <!-- Add CUstomer -->
 				<!-- widget content -->
 				<div class="widget-body no-padding">
-					<form action="union/add" id="create-pro" class="smart-form" novalidate="novalidate" autocomplete="off">
+					<form method="post" action="union/add" id="create-pro" class="smart-form" novalidate="novalidate" autocomplete="off">
 					
 						<fieldset>
 							<input type="hidden" name="id" id="id"  value="0" >

@@ -4,7 +4,7 @@
 		<div class="row">
 			<div class="col-xs-12 col-sm-12 col-md-6 col-lg-6 col-md-offset-3 col-lg-offset-3">
 				<div class="well no-padding">
-					<form action="adminapi/forgotPassword" id="forgot-form" class="smart-form client-form">
+					<form method="post" action="adminapi/forgotPassword" id="forgot-form" class="smart-form client-form">
 						<header>
 							<?= lang('forgot_password');?>
 						</header>

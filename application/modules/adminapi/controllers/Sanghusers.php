@@ -405,7 +405,12 @@ class Sanghusers extends Common_Admin_Controller{
         if($this->form_validation->run() == FALSE){
             $response = array('status' => FAIL, 'message' => strip_tags(validation_errors()));  
         }else{
-                
+                $roleId=$_SESSION[ADMIN_USER_SESS_KEY]['roleId'];
+                $permission             = $this->common_model->getsingle('permission',array('roleId'=>$roleId));
+                $u_set  = isset($permission['users']) ? json_decode($permission['users'],true) :array();
+                $u_current_address = isset($u_set['current_address'])? $u_set['current_address']:0;
+                $u_permanent_address = isset($u_set['permanent_address'])? $u_set['permanent_address']:0;
+             
             
                 $userId                     = decoding($this->post('userId'));
                 $add_meta['userId']         = $userId;
@@ -433,22 +438,25 @@ class Sanghusers extends Common_Admin_Controller{
         
             $addressId      = $this->post('addressId');
             $oaddressId      = $this->post('paddressId');
-         
+            if($u_current_address):
             $isExistH            =  $this->common_model->is_data_exists('addresses',array('addressId'=>$addressId));
-            $isExistO            =  $this->common_model->is_data_exists('addresses',array('addressId'=>$oaddressId));
+          
             if($isExistH){
                 $result = $this->common_model->updateFields('addresses',$add_meta,array('addressId'=>$addressId));
             }else{
                  $result =    $this->common_model->insertData('addresses',$add_meta);
             }
+            endif;
+            if($u_permanent_address):
+            $isExistO            =  $this->common_model->is_data_exists('addresses',array('addressId'=>$oaddressId));
             if($isExistO){
                 $result = $this->common_model->updateFields('addresses',$add_meta1,array('addressId'=>$oaddressId));
             }else{
                  $result =    $this->common_model->insertData('addresses',$add_meta1);
             }
-            
+            endif;
             if($result){
-                $this->common_model->activity_log($id,"Address Update Activity");
+                $this->common_model->activity_log($userId,"Address Update Activity");
                 $status = SUCCESS;
                 $msg  = ResponseMessages::getStatusCodeMessage(123);
             }else{

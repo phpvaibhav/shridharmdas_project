@@ -4,7 +4,7 @@
 		<div class="row">
 			<div class="col-xs-12 col-sm-12 col-md-6 col-lg-6 col-md-offset-3 col-lg-offset-3">
 				<div class="well no-padding">
-					<form action="adminapi/registration" id="smart-form-register" class="smart-form client-form" autocomplete="off">
+					<form method="post" action="adminapi/registration" id="smart-form-register" class="smart-form client-form" autocomplete="off">
 						<header>
 							Registration
 						</header>

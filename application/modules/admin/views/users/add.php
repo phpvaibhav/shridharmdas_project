@@ -60,7 +60,7 @@
 				<!-- widget content -->
 				<div class="widget-body no-padding">
 					
-					<form id="user-add-form" class="smart-form" novalidate="novalidate" action="users/add" novalidate="novalidate" autocomplete="off">
+					<form id="user-add-form" method="post" class="smart-form" novalidate="novalidate" action="users/add" novalidate="novalidate" autocomplete="off">
             <header>
              <?= lang('basic_Information'); ?>
               <input type="hidden" name="id" value="0">

@@ -434,7 +434,7 @@ class Users extends Common_Admin_Controller{
             }
             
             if($result){
-                $this->common_model->activity_log($id,"Address Update Activity");
+                $this->common_model->activity_log($userId,"Address Update Activity");
                 $status = SUCCESS;
                 $msg  = ResponseMessages::getStatusCodeMessage(123);
             }else{

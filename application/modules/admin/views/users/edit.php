@@ -189,9 +189,10 @@
                 </section>
                 <section class="col col-6">
               
-                  <label class="select">
                      <select name="unionName"  class="form-control js-example-basic-single "  id="unionName"  >
-                              <?php if(!empty($unionList)):
+                              <?php if(!empty($unionList)):?>
+                                  <option value="" selected="" disabled=""><?= lang('Union').' '.lang('Name'); ?></option>
+                                <?php
                               foreach ($unionList as $kc => $union) { 
                                 
                                 ?>
@@ -199,7 +200,7 @@
                               <option value="<?= $union->sanghId; ?>" data-sanghname="<?=  $union->name; ?>" <?= $info['sanghId']==$union->sanghId ?"selected='selected'":""; ?> ><?=  $union->name; ?></option>
                               <?php } endif; ?>
 
-                              </select><i></i> </label>
+                              </select>
                 </section>
     
               </div>              
@@ -253,11 +254,6 @@
 		</div>
 		<!-- end widget -->
 		
-
-
-
-
-
 	</article>
 	<!-- END COL -->
 

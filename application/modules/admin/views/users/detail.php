@@ -277,12 +277,12 @@
 										<td ><?= @$usermeta['hindiFamilyHeadName']; ?></td>
 										<td ><?= @$usermeta['actualFamilyHeadName'] ; ?></td>
 									</tr>
-									<tr>
+								<!-- 	<tr>
 										<td >Identity Type</td>
 										<td colspan="3" ><?= @$info['identityType'] ; ?></td>
 									
-									</tr>
-									
+									</tr> -->
+<!-- 									
 									<tr>
 										<td >Identity Image</td>
 										<td colspan="3">
@@ -302,7 +302,7 @@
 
 												?>
 											<img src="<?= $furl; ?>" width="300" height="255" class="img img-thumbnail"></td>
-									</tr>
+									</tr> -->
 					<!-- <tr>
 					<td >Back Aadhar Image</td>
 					<td colspan="3">

@@ -2,6 +2,7 @@
  
     $u_user_permission  = isset($user_permission['users']) ? json_decode($user_permission['users'],true) :array();
               $u_list_pr = isset($u_user_permission['list'])? $u_user_permission['list']:0;
+              $u_export_pr = isset($u_user_permission['export'])? $u_user_permission['export']:0;
               
               if($u_list_pr==0){
                 redirect(base_url('dashboard'));
@@ -58,7 +59,7 @@
 					<!-- widget content -->
 					<div class="widget-body padding">
 					
-						<?php if(!empty($countuser)): ?>
+						<?php if(!empty($countuser)): if($u_export_pr==1): ?>
 							<div class="row">
 	<div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
 		 <form action="<?php print base_url();?>admin/sanghusers/exportUser" class="form-horizontal"  enctype="multipart/form-data" method="post" accept-charset="utf-8">
@@ -116,7 +117,7 @@
 	</div>
 		
 	</div>
-<?php endif; ?>
+<?php endif;endif; ?>
 						<div class="table-responsive">
 							<table class="table table-striped table-bordered table-hover dataTables-example-list" width="100%" data-list-url = "adminapi/sanghusers/list" data-id ="" data-no-record-found = "<?= lang('No_Record_found'); ?>" >
 								<thead>			                
