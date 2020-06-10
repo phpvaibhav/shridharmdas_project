@@ -44,7 +44,7 @@
         <div class="col-lg-3 col-md-3 col-sm-6 col-xs-12">
 
             <?php 
-            if($_SESSION[ADMIN_USER_SESS_KEY]['sanghId']){
+            if($_SESSION[ADMIN_USER_SESS_KEY]['roleId']!=1){
 
                   
              $us_user_permission  = isset($user_permission['users']) ? json_decode($user_permission['users'],true) :array();
