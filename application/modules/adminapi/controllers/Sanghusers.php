@@ -26,7 +26,7 @@ class Sanghusers extends Common_Admin_Controller{
             $data_val['fullName']        = $this->post('firstName').' '.$this->post('lastName'); 
             $data_val['dob']             = date('Y-m-d',strtotime($this->post('dob'))); 
             $data_val['gender']          = $this->post('gender'); 
-            $data_val['email']          = $this->post('email'); 
+            $data_val['email']           = $this->post('email'); 
             $data_val['parentName']      = $this->post('parentName'); 
             $data_val['maritalStatus']   = $this->post('maritalStatus'); 
             $data_val['contactNumber']   = trim(str_replace(array('(',')','-',' '),array('','','',''),$this->post('contactNumber')));
@@ -36,10 +36,10 @@ class Sanghusers extends Common_Admin_Controller{
             $data_val['aadharNumber']    = $aadharNumber; 
             $data_val['userName']        = rand('111111','999999'); 
             $data_val['password']        = password_hash('123!@#', PASSWORD_DEFAULT);; 
-               $country        = $this->post('country'); 
-            $state         = $this->post('state'); 
-            $ocountry        = $this->post('ocountry'); 
-            $ostate         = $this->post('ostate'); 
+               $country                     = $this->post('country'); 
+            $state                      = $this->post('state'); 
+            $ocountry                   = $this->post('ocountry'); 
+            $ostate                     = $this->post('ostate'); 
             $oaddress = $this->post('oaddress');
            // pr( $data_val);
              $meta_val['addressType']         = 'Home'; 
@@ -62,13 +62,13 @@ class Sanghusers extends Common_Admin_Controller{
                 $ometa_val['zip_code']        = $this->post('ozip_code'); 
                //pr($meta_val);
             }
-            $user_meta['preceptorName']  = $this->post('preceptorName');
-            $user_meta['unionName']      = $this->post('unionName');
-            $user_meta['education']      = $this->post('education');
-            $user_meta['religiousKnowledge']      = $this->post('religiousKnowledge') ? implode(",",$this->post('religiousKnowledge')) :"";
-            $user_meta['profession']      = $this->post('profession');
-            $user_meta['bloodGroup']      = $this->post('bloodGroup');
-            $user_meta['unionResponsibility']      = $this->post('unionResponsibility');
+            $user_meta['preceptorName']             = $this->post('preceptorName');
+            $user_meta['unionName']                 = $this->post('unionName');
+            $user_meta['education']                 = $this->post('education');
+            $user_meta['religiousKnowledge']        = $this->post('religiousKnowledge') ? implode(",",$this->post('religiousKnowledge')) :"";
+            $user_meta['profession']                = $this->post('profession');
+            $user_meta['bloodGroup']                = $this->post('bloodGroup');
+            $user_meta['unionResponsibility']       = $this->post('unionResponsibility');
             $id     = decoding($this->post('id'));
          
             $isExist            =  $this->common_model->is_data_exists('users',array('id'=>$id));
@@ -77,9 +77,9 @@ class Sanghusers extends Common_Admin_Controller{
                    $this->response($response);
             }else{
                  $result = $this->common_model->insertData('users',$data_val);
-                 $user_meta['userId']        = $result; 
-                 $meta_val['userId']        = $result; 
-                 $ometa_val['userId']        = $result; 
+                 $user_meta['userId']           = $result; 
+                 $meta_val['userId']            = $result; 
+                 $ometa_val['userId']           = $result; 
                 $this->common_model->insertData('user_meta',$user_meta);
                 $this->common_model->insertData('addresses',$meta_val);
                 $this->common_model->insertData('addresses',$ometa_val);
@@ -113,11 +113,11 @@ class Sanghusers extends Common_Admin_Controller{
         $id = $this->post('id');
 
         if(!empty($id) && $id=='fail'){
-            $where = array('u.sanghId'=>$sanghId,'u.is_deleted'=>0);
+            $where = $sanghId ? array('u.sanghId'=>$sanghId,'u.is_deleted'=>0):array('u.is_deleted'=>0);
         }else if(!empty($id) && $id=='trash'){
-            $where = array('u.sanghId'=>$sanghId,'u.is_deleted'=>1);
+            $where =  $sanghId ? array('u.sanghId'=>$sanghId,'u.is_deleted'=>1):array('u.is_deleted'=>1);
         }else{
-            $where = array('u.sanghId'=>$sanghId,'u.is_deleted'=>0);
+            $where =  $sanghId ? array('u.sanghId'=>$sanghId,'u.is_deleted'=>0):array('u.is_deleted'=>0);
         }
       /*  if(!empty($unionName)){
              $where = "(um.unionName = ".$unionName." OR um.otherUnionName= ".$unionName.")";

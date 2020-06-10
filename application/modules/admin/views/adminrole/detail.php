@@ -12,7 +12,7 @@
 										<label class="center-block padding-5 label label-<?php echo $userData['status']?'success':'danger'; ?>"> <i class="fa fa-<?php echo $userData['status']?'check':'close'; ?>"></i><?php echo $userData['status']?' Active':' Inactive'; ?></label>
 									</div>
 									<div class="air air-top-left padding-10">
-										<h4 class="txt-color-white font-md"><?php echo date('M d,Y',strtotime($userData['crd'])); ?></h4>
+										<!-- <h4 class="txt-color-white font-md"><?php echo date('M d,Y',strtotime($userData['crd'])); ?></h4> -->
 									</div>
 									<div class="carousel-inner">
 										<div class="item active">
@@ -112,7 +112,7 @@
 						
 							<section>
 								<div class="input input-file">
-									<span class="button"><input type="file" name="profileImage" id="file" onchange="this.parentNode.nextSibling.value = this.value" accept="image/*">Browse</span><input type="text" readonly="">
+									<span class="button"><input type="file" name="profileImage" id="file" onchange="this.parentNode.nextSibling.value = this.value" accept="image/*">Browse</span><input type="text" readonly="" placeholder="Change Avatar">
 								</div>
 							</section>
 						</fieldset>

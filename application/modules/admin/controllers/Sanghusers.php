@@ -19,9 +19,11 @@ class Sanghusers extends Common_Back_Controller {
          $sanghId=$_SESSION[ADMIN_USER_SESS_KEY]['sanghId'];
          $where = "";
         if(!empty($sanghId)){
-            $where = array('sanghId'=>$sanghId);
+            $where = array('is_deleted'=>0,'sanghId'=>$sanghId);
+        }else{
+            $where = array('is_deleted'=>0); 
         }
-            $count          = $this->common_model->get_total_count('users',array('is_deleted'=>0,'sanghId'=>$sanghId));
+        $count          = $this->common_model->get_total_count('users',$where);
         $data['countuser']  = $count ;   
         $count              = number_format_short($count);
         $data['recordSet']  = array('<li class="sparks-info"><h5>'.lang('Total').' '.lang('Users').'<span class="txt-color-darken" id="totalCust"><i class="fa fa-lg fa-fw fa fa-users"></i>&nbsp;'.$count.'</span></h5></li>');
@@ -36,7 +38,14 @@ class Sanghusers extends Common_Back_Controller {
      
         $data['title']      = lang('Users');
         $sanghId=$_SESSION[ADMIN_USER_SESS_KEY]['sanghId'];
-             $count          = $this->common_model->get_total_count('users',array('is_deleted'=>1,'sanghId'=>$sanghId));
+         $sanghId=$_SESSION[ADMIN_USER_SESS_KEY]['sanghId'];
+         $where = "";
+        if(!empty($sanghId)){
+            $where = array('is_deleted'=>1,'sanghId'=>$sanghId);
+        }else{
+            $where = array('is_deleted'=>1); 
+        }
+             $count          = $this->common_model->get_total_count('users', $where);
         $data['countuser']  = $count ;   
         $count              = number_format_short($count);
         $data['recordSet']  = array('<li class="sparks-info"><h5>'.lang('Total').' '.lang('Users').'<span class="txt-color-darken" id="totalCust"><i class="fa fa-lg fa-fw fa fa-users"></i>&nbsp;'.$count.'</span></h5></li>');

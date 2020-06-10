@@ -207,7 +207,7 @@
           <li class="<?php echo (strtolower($this->router->fetch_class()) == "admin") ? "active" : "" ?>">
             <a href="<?php echo base_url('dashboard'); ?>" title="<?= lang('Dashboard');?>"><i class="fa fa-lg fa-fw fa-home"></i> <span class="menu-item-parent"><?= lang('Dashboard');?></span></a>
           </li>  
-          <?php if($user['sanghId']==0): ?>
+          <?php if($user['roleId']==1): ?>
           <li class="<?php echo (strtolower($this->router->fetch_class()) == "union") ? "active" : "" ?>">
             <a href="<?php echo base_url('union'); ?>" title="<?= lang('Union');?>"><i class="fa fa-lg fa-fw  fa-sun-o"></i> <span class="menu-item-parent"><?= lang('Union');?></span></a>
           </li> 
@@ -215,7 +215,7 @@
             <a href="<?php echo base_url('users'); ?>" title="<?= lang('Users');?>"><i class="fa fa-lg fa-fw fa-users"></i> <span class="menu-item-parent"><?= lang('Users');?></span></a>
           </li>   
           <?php endif; ?>          
-          <?php if(!empty($user['sanghId'])):
+          <?php if($user['roleId']!=1):
               $u_user_permission  = isset($user_permission['users']) ? json_decode($user_permission['users'],true) :array();
               $u_view_pr = isset($u_user_permission['list'])? $u_user_permission['list']:0;
 
@@ -227,7 +227,7 @@
           </li>   
           <?php endif;endif; ?>
          
-          <?php if($user['sanghId']==0): ?>
+          <?php if($user['roleId']==1): ?>
           <li class="<?php echo (strtolower($this->router->fetch_class()) == "adminrole") ? "active" : "" ?>">
             <a href="<?php echo base_url('sub-admin'); ?>" title="<?= lang('Sub_Admin'); ?>"><i class="fa fa-lg fa-fw fa-user-secret"></i> <span class="menu-item-parent"><?= lang('Sub_Admin'); ?></span></a>
           </li>  

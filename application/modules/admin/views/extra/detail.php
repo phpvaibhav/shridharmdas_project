@@ -53,29 +53,29 @@
 						<?php
 							
 							$profile  = isset($info['profile']) ? json_decode($info['profile'],true) :array();
-							$p_view = isset($profile['view'])? $profile['view']:0;
-							$p_add = isset($profile['add'])? $profile['add']:0;
-							$p_edit = isset($profile['edit'])? $profile['edit']:0;
-							$p_delete = isset($profile['delete'])? $profile['delete']:0;
+							$p_view 	= isset($profile['view'])? $profile['view']:0;
+							$p_add 		= isset($profile['add'])? $profile['add']:0;
+							$p_edit 	= isset($profile['edit'])? $profile['edit']:0;
+							$p_delete 	= isset($profile['delete'])? $profile['delete']:0;
 
 							//echo "</pre>";
-							$password  = isset($info['password']) ? json_decode($info['password'],true) :array();
-							$ps_view = isset($password['view'])? $password['view']:0;
-							$ps_add = isset($password['add'])? $password['add']:0;
-							$ps_edit = isset($password['edit'])? $password['edit']:0;
-							$ps_delete = isset($password['delete'])? $password['delete']:0;
+							$password  	= isset($info['password']) ? json_decode($info['password'],true) :array();
+							$ps_view 	= isset($password['view'])? $password['view']:0;
+							$ps_add 	= isset($password['add'])? $password['add']:0;
+							$ps_edit 	= isset($password['edit'])? $password['edit']:0;
+							$ps_delete 	= isset($password['delete'])? $password['delete']:0;
 
 							//echo "</pre>";
-							$u_set  = isset($info['users']) ? json_decode($info['users'],true) :array();
-							$u_list = isset($u_set['list'])? $u_set['list']:0;
-							$u_view = isset($u_set['view'])? $u_set['view']:0;
-							$u_add = isset($u_set['add'])? $u_set['add']:0;
-							$u_edit = isset($u_set['edit'])? $u_set['edit']:0;
-							$u_delete = isset($u_set['delete'])? $u_set['delete']:0;
-							$u_export = isset($u_set['export'])? $u_set['export']:0;
-							$u_contactNumber = isset($u_set['contactNumber'])? $u_set['contactNumber']:0;
-							$u_current_address = isset($u_set['current_address'])? $u_set['current_address']:0;
-							$u_permanent_address = isset($u_set['permanent_address'])? $u_set['permanent_address']:0;
+							$u_set  	= isset($info['users']) ? json_decode($info['users'],true) :array();
+							$u_list 	= isset($u_set['list'])? $u_set['list']:0;
+							$u_view 	= isset($u_set['view'])? $u_set['view']:0;
+							$u_add 		= isset($u_set['add'])? $u_set['add']:0;
+							$u_edit 	= isset($u_set['edit'])? $u_set['edit']:0;
+							$u_delete 	= isset($u_set['delete'])? $u_set['delete']:0;
+							$u_export 	= isset($u_set['export'])? $u_set['export']:0;
+							$u_contactNumber 		= isset($u_set['contactNumber'])? $u_set['contactNumber']:0;
+							$u_current_address 		= isset($u_set['current_address'])? $u_set['current_address']:0;
+							$u_permanent_address 	= isset($u_set['permanent_address'])? $u_set['permanent_address']:0;
 
 
 						?>

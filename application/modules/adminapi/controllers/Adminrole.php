@@ -9,14 +9,21 @@ class Adminrole extends Common_Admin_Controller{
     }
 
     function add_post(){
-          $this->form_validation->set_rules('email', 'Email', 'trim|required|valid_email|is_unique[admin.email]',
-            array('is_unique' => 'Email already exist')
+        $this->form_validation->set_rules('email', 'Email', 'trim|required|valid_email|is_unique[admin.email]',array('is_unique' => 'Email already exist')
         );
         $this->form_validation->set_rules('password', 'Password', 'trim|required|min_length[3]|max_length[20]');
       // $this->form_validation->set_rules('contact', 'Contact Number', 'trim|required|min_length[10]|max_length[20]');
         $this->form_validation->set_rules('fullName', 'full Name', 'trim|required|min_length[2]');
+        $this->form_validation->set_rules('roleId', 'role', 'trim|required');
+         $roleId                         =  $this->post('roleId');
+         if($roleId==2){
+            $this->form_validation->set_rules('sanghId', 'sangh name', 'trim|required');
+         }
+ //       $this->form_validation->set_rules('sanghId', 'sangh name', 'trim|required');
         if($this->form_validation->run() == FALSE){
-            $response = array('status' => FAIL, 'message' => strip_tags(validation_errors()));  
+
+            $response = array('status' => FAIL, 'message' => strip_tags(validation_errors()));
+
         }else{
             $email                          =  $this->post('email');
             $fullName                       =  $this->post('fullName');
@@ -25,7 +32,7 @@ class Adminrole extends Common_Admin_Controller{
             $password                       =  $this->post('password');
             $data_val['fullName']           =  $fullName; 
             $data_val['email']              =  $email; 
-            $data_val['sanghId']            =  $sanghId; 
+            $data_val['sanghId']            =  ($roleId==2) ? $sanghId:null; 
             $data_val['roleId']             =  $roleId; 
 
             $data_val['password']           =  password_hash($password, PASSWORD_DEFAULT);

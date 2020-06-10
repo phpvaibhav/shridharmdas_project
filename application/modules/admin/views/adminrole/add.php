@@ -17,6 +17,11 @@
     -ms-user-select: none;
     user-select: none;
     background-color: #3276b1;
+     width: 100%;
+}
+.select2-container {
+ 
+    width: 100% !important;
 }
   </style>
 <!-- START ROW -->
@@ -60,7 +65,7 @@
 				<!-- widget content -->
 				<div class="widget-body no-padding">
 					
-					<form id="user-add-form" class="smart-form" novalidate="novalidate" action="adminrole/add" novalidate="novalidate" autocomplete="off">
+					<form method="post" id="user-add-form" class="smart-form" novalidate="novalidate" action="adminrole/add" novalidate="novalidate" autocomplete="off">
            
             <fieldset>
              
@@ -91,26 +96,22 @@
 				<section>
 
 					<label class="select">
-					<select name="roleId"  class="form-control"  id="roleId"  >
-					<?php if(!empty($rolesList)):
-					foreach ($rolesList as $r => $role) { 	?>
-
-					<option value="<?= $role->roleId; ?>" selected='selected' ><?=  $role->role; ?></option>
-					<?php } endif; ?>
-
+					<select name="roleId"  class="form-control"  id="roleId" onchange="sanghIdCheck(this);" >
+						<?php if(!empty($rolesList)):
+							?>
+						 	<option value="" selected="" disabled=""><?= lang('Sub_Admin'); ?></option>
+						<?php foreach ($rolesList as $r => $role) { 	?>
+							<option value="<?= $role->roleId; ?>" ><?=  $role->role; ?></option>
+						<?php } endif; ?>
 					</select><i></i> </label>
 				</section>
-				<section>
-
-					
+				<section class="sanghIdCheck" style="display: none;">
 					<select name="sanghId"  class="form-control js-example-basic-single "  id="sanghId"  >
 					<?php if(!empty($unionList)):?>
-						 <option value="" selected="" disabled=""><?= lang('Union').' '.lang('Name'); ?></option>
+						<option value="" selected="" disabled=""><?= lang('Union').' '.lang('Name'); ?></option>
 					<?php foreach ($unionList as $kc => $union) { ?>
-
-					<option value="<?= $union->sanghId; ?>" data-sanghname="<?=  $union->name; ?>" ><?=  $union->name; ?></option>
+						<option value="<?= $union->sanghId; ?>" data-sanghname="<?=  $union->name; ?>" ><?=  $union->name; ?></option>
 					<?php } endif; ?>
-
 					</select>
 				</section>
             </fieldset>

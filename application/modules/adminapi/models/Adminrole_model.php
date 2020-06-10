@@ -28,7 +28,7 @@ class Adminrole_model extends CI_Model {
         $this->db->select($sel_fields);
         $this->db->from('admin as a');
         $this->db->join('admin_role as ar','ar.roleId=a.roleId');
-        $this->db->join('shree_sangh as ss','ss.sanghId=a.sanghId');
+        $this->db->join('shree_sangh as ss','ss.sanghId=a.sanghId','left');
         $i = 0;
         foreach ($this->column_search as $emp) // loop column 
         {
@@ -104,7 +104,7 @@ class Adminrole_model extends CI_Model {
     {
         $this->db->from('admin as a');
         $this->db->join('admin_role as ar','ar.roleId=a.roleId');
-        $this->db->join('shree_sangh as ss','ss.sanghId=a.sanghId');
+        $this->db->join('shree_sangh as ss','ss.sanghId=a.sanghId','left');
        
         if(!empty($this->where))
             $this->db->where($this->where); 

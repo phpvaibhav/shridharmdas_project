@@ -12,57 +12,54 @@ $("#user-add-form").validate({// Rules for form validation
     },
 
     rules : {
-    fullName    : {
-      required : true
-    }, 
-    email   : {
-              required  : true,
-              email     : true
-            },
-  password : {
-      required  : true,
-      minlength : 3,
-      maxlength : 20
-    },
-    passwordConfirm : {
-      required  : true,
-      minlength : 3,
-      maxlength : 20,
-      equalTo   : '#password'
-    },
-roleId    : {
-      required : true
-    }, 
-unionName    : {
-      required : true
-    }, 
-
+      fullName    : {
+        required : true
+      }, 
+      email   : {
+        required  : true,
+        email     : true
+      },
+      password : {
+        required  : true,
+        minlength : 3,
+        maxlength : 20
+      },
+      passwordConfirm : {
+        required  : true,
+        minlength : 3,
+        maxlength : 20,
+        equalTo   : '#password'
+      },
+      roleId    : {
+        required : true
+      }, 
+      sanghId    : {
+        required : true
+      }, 
     },
     // Messages for form validation
     messages : {
       fullName : {
-            required : 'Please enter your full name'
-          },
-    email : {
-              required  : 'Please enter email address',
-              email     : 'Please enter a valid email address'
-            },
-       password : {
-      required  : 'Please enter your password'
-    },
-    passwordConfirm : {
-      required  : 'Please re-enter your password',
-      equalTo   : 'Please enter the same password as above'
-    },
+        required : 'Please enter your full name'
+      },
+      email : {
+        required  : 'Please enter email address',
+        email     : 'Please enter a valid email address'
+      },
+      password : {
+        required  : 'Please enter your password'
+      },
+      passwordConfirm : {
+        required  : 'Please re-enter your password',
+        equalTo   : 'Please enter the same password as above'
+      },
       roleId : {
-            required : 'Please select your role'
-          },
-    
-      unionName : {
-            required : 'Please select your union name'
-          },
-        
-          
+        required : 'Please select your role'
+      },
+
+      sanghId : {
+        required : 'Please select your sangh name'
+      },       
   },
   // Ajax form submition
   submitHandler : function(form) {
@@ -108,3 +105,14 @@ unionName    : {
     error.insertAfter(element.parent());
   }
 });
+function sanghIdCheck(e){
+   var role = $(e).val();
+  $("#sanghId").val(null).trigger('change');
+  
+   if(role==2){
+     $(".sanghIdCheck").css("display", "block");
+
+  }else{
+     $(".sanghIdCheck").css("display", "none");
+  }
+}
