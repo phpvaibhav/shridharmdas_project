@@ -86,8 +86,10 @@
 														
 													</div>
 
-													<div class="col-md-2"><button type="submit" name="import" class="btn btn-primary">Export</button></div>
-												<div class="col-md-4 text-right">
+													<div class="col-md-2 text-right"><button type="submit" name="import" class="btn btn-primary">Export</button></div>
+													<div class="col-md-2"><a href="<?= base_url('admin/excel_import'); ?>" class="btn btn-success">Import</a></div>
+													
+												<div class="col-md-2 text-right">
 													<a href="<?= base_url('user-excel'); ?>"> Advance Export</a>
 						<!-- <label class="select">
 						<select name="unionName"  class="form-control select2-" id="unionName_1">

@@ -147,12 +147,12 @@ class Webapi extends Common_Service_Controller{
                 $meta_val['actualFamilyHeadName']   = $this->post('familyHeadName'); 
                 $unionName                          = $this->post('unionName');
                 $meta_val['unionName']              = $this->post('unionName');
-                  $meta_val['profession']        = $this->post('profession');
-                $meta_val['subProfession']     = @$this->post('subProfession');
-                $meta_val['otherProfession']   = @$this->post('otherProfession');
-                $meta_val['bloodGroup']        = @$this->post('bloodGroup');
-                  $meta_val['education']         = @$this->post('education');
-                $meta_val['religiousKnowledge']  = $this->post('religiousKnowledge') ? implode(",",$this->post('religiousKnowledge')) :"";
+                  $meta_val['profession']           = $this->post('profession');
+                $meta_val['subProfession']          = @$this->post('subProfession');
+                $meta_val['otherProfession']        = @$this->post('otherProfession');
+                $meta_val['bloodGroup']             = @$this->post('bloodGroup');
+                  $meta_val['education']            = @$this->post('education');
+                $meta_val['religiousKnowledge']     = $this->post('religiousKnowledge') ? implode(",",$this->post('religiousKnowledge')) :"";
 
                 $sangh                              = $this->common_model->is_data_exists('shree_sangh',array('sanghId'=>$unionName));
                 if($sangh){
