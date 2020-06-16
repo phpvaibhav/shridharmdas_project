@@ -127,7 +127,7 @@ class Adminrole extends Common_Admin_Controller{
         $dataExist          = $this->common_model->is_data_exists('admin',$where);
         if($dataExist){
             $status         = $dataExist->status ? 0:1;
-            $up      = $this->common_model->updateFields('admin',array('status'=>$status),$where);
+            $up             = $this->common_model->updateFields('admin',array('status'=>$status),$where);
             $showmsg        = ($status==1)? lang("Active") : lang("Inactive");
             if($up){
                   $response       = array('status'=>SUCCESS,'message'=>$showmsg." ".ResponseMessages::getStatusCodeMessage(128));       
@@ -188,7 +188,7 @@ class Adminrole extends Common_Admin_Controller{
             $isExist            =  $this->common_model->is_data_exists('users',array('id'=>$id));
             if($isExist){
                     $result = $this->common_model->updateFields('users',$data_val,array('id'=>$id));
-                    $this->common_model->updateFields('user_meta',$user_meta,array('userId'=>$id));
+                     $this->common_model->updateFields('user_meta',$user_meta,array('userId'=>$id));
                     if($result){
                         $status = SUCCESS;
                         $msg  = ResponseMessages::getStatusCodeMessage(123);
@@ -208,4 +208,43 @@ class Adminrole extends Common_Admin_Controller{
         }
         $this->response($response);
     }//end function
+        public function changePassword_post()
+    {
+
+        $authCheck  = $this->check_admin_service_auth();
+        $authToken  = $this->authData->authToken;
+       
+        $this->load->library('form_validation');
+       // $this->form_validation->set_rules('password', 'password', 'trim|required|min_length[6]');
+        $this->form_validation->set_rules('npassword', 'new password', 'trim|required|matches[rnpassword]|min_length[6]');
+        $this->form_validation->set_rules('rnpassword', 'retype new password ','trim|required|min_length[6]');
+       if($this->form_validation->run($this) == FALSE){
+            $messages       = (validation_errors()) ? validation_errors() : '';
+            $response       = array('status' => 0, 'message' => $messages);
+        }else{
+             //$userId     = $this->authData->id;
+              $userId     = decoding($this->post('userId'));
+         //   $password       = $this->input->post('password');
+            $npassword      = $this->input->post('npassword');
+            $select         = "password";
+            $where          = array('id' => $userId); 
+            $admin          = $this->common_model->getsingle('admin', $where,'password');
+          //  if(password_verify($password, $admin['password'])){
+            if($admin){
+                $set        = array('password'=> password_hash($this->input->post('npassword') , PASSWORD_DEFAULT)); 
+                $update     = $this->common_model->updateFields('admin', $set, $where);
+                if($update){
+                    $res = array();
+                    if($update){
+                        $response = array('status' =>SUCCESS, 'message' => ResponseMessages::getStatusCodeMessage(123), 'url' => base_url('users/userDetail'));
+                    }else{
+                        $response = array('status' => FAIL, 'message' => ResponseMessages::getStatusCodeMessage(118), 'url' => base_url('users/userDetail'));
+                    }    
+                } 
+            }else{
+                $response = array('status' =>FAIL, 'message' => lang('Your_Current_Password_is_Wrong'), 'url' => base_url('users/userDetail'));                 
+            }
+        }
+       $this->response($response);
+    }//End Function
 }//End Class 

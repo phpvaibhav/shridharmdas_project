@@ -23,7 +23,7 @@ class Sanghusers extends Common_Back_Controller {
         }else{
             $where = array('is_deleted'=>0); 
         }
-        $count          = $this->common_model->get_total_count('users',$where);
+        $count              = $this->common_model->get_total_count('users',$where);
         $data['countuser']  = $count ;   
         $count              = number_format_short($count);
         $data['recordSet']  = array('<li class="sparks-info"><h5>'.lang('Total').' '.lang('Users').'<span class="txt-color-darken" id="totalCust"><i class="fa fa-lg fa-fw fa fa-users"></i>&nbsp;'.$count.'</span></h5></li>');
@@ -37,8 +37,8 @@ class Sanghusers extends Common_Back_Controller {
     public function trash(){
      
         $data['title']      = lang('Users');
-        $sanghId=$_SESSION[ADMIN_USER_SESS_KEY]['sanghId'];
-         $sanghId=$_SESSION[ADMIN_USER_SESS_KEY]['sanghId'];
+        $sanghId            = $_SESSION[ADMIN_USER_SESS_KEY]['sanghId'];
+         $sanghId           = $_SESSION[ADMIN_USER_SESS_KEY]['sanghId'];
          $where = "";
         if(!empty($sanghId)){
             $where = array('is_deleted'=>1,'sanghId'=>$sanghId);
@@ -125,12 +125,12 @@ class Sanghusers extends Common_Back_Controller {
         $this->load->admin_render('sanghusers/detail', $data, '');
     } //End function
     function exportUser(){
-        $extension = $this->input->post('export_type');
-        $is_deleted = $this->input->post('is_deleted');
-        $lang_type = $this->input->post('lang_type');
-        $trash_type = $this->input->post('trash');
-         $sanghId=$_SESSION[ADMIN_USER_SESS_KEY]['sanghId'];
-        $unionName =  $sanghId;
+        $extension          = $this->input->post('export_type');
+        $is_deleted         = $this->input->post('is_deleted');
+        $lang_type          = $this->input->post('lang_type');
+        $trash_type         = $this->input->post('trash');
+         $sanghId           = $_SESSION[ADMIN_USER_SESS_KEY]['sanghId'];
+        $unionName          =  $sanghId;
        
         if(!empty($extension)){
             $extension = $extension;
@@ -149,8 +149,8 @@ class Sanghusers extends Common_Back_Controller {
         // get employee list
         $fileName = 'shridharmdas-gan-'.time(); 
           if(isset($trash_type) && $trash_type=='trash'){
-             $fileName = 'trash_sangh_shridharmdas-gan-'.time(); 
-              $is_deleted =$trash_type;
+             $fileName      = 'trash_sangh_shridharmdas-gan-'.time(); 
+              $is_deleted   = $trash_type;
          //pr($empInfo);
         }
          if(!empty($unionName)){

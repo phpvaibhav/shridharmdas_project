@@ -4,17 +4,17 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 class Adminrole_model extends CI_Model {
 
     //var $table , $column_order, $column_search , $order =  '';
-    var $table = 'admin';
-    var $column_order = array('a.id','a.fullName','a.email','ar.role','ss.name','a.status'); //set column field database for datatable orderable
-    var $column_sel = array('a.id','a.fullName','a.email','a.status','ar.roleId','ss.name as sanghName','ar.role','(case when (a.status = 0) 
+    var $table          = 'admin';
+    var $column_order   = array('a.id','a.fullName','a.email','ar.role','ss.name','a.status'); //set column field database for datatable orderable
+    var $column_sel     = array('a.id','a.fullName','a.email','a.status','ar.roleId','ss.name as sanghName','ar.role','(case when (a.status = 0) 
         THEN "Inactive" when (a.status = 1) 
         THEN "Active"  ELSE
         "Unknown" 
         END) as statusShow'); //set column field database for datatable orderable
-    var $column_search = array('a.id','a.fullName','a.email','ar.role','ss.name','a.status'); //set column field database for datatable searchable 
-    var $order = array('a.id'=> 'DESC');  // default order
-    var $where = array();
-    var $group_by = 'a.id'; 
+    var $column_search  = array('a.id','a.fullName','a.email','ar.role','ss.name','a.status'); //set column field database for datatable searchable 
+    var $order          = array('a.id'=> 'DESC');  // default order
+    var $where          = array();
+    var $group_by       = 'a.id'; 
 
     public function __construct(){
         parent::__construct();

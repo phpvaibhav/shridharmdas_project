@@ -1,5 +1,6 @@
 <?php
 defined('BASEPATH') OR exit('No direct script access allowed');
+use Stichoza\GoogleTranslate\GoogleTranslate;
 class Excel_import extends Common_Back_Controller {
 
     public $data = "";
@@ -22,11 +23,11 @@ class Excel_import extends Common_Back_Controller {
     public function importFile(){
   
                  
-                $path = 'uploads/';
+                $path                     = 'uploads/';
                 require_once APPPATH . "/third_party/PHPExcel.php";
-                $config['upload_path'] = $path;
-                $config['allowed_types'] = 'xlsx|xls|csv';
-                $config['remove_spaces'] = TRUE;
+                $config['upload_path']    = $path;
+                $config['allowed_types']  = 'xlsx|xls|csv';
+                $config['remove_spaces']  = TRUE;
                 $this->load->library('upload', $config);
                 $this->upload->initialize($config);            
                 if (!$this->upload->do_upload('excelFile')) {
@@ -43,17 +44,18 @@ class Excel_import extends Common_Back_Controller {
                 $inputFileName = $path . $import_xls_file;
                  
                 try {
-                    $inputFileType = PHPExcel_IOFactory::identify($inputFileName);
-                    $objReader = PHPExcel_IOFactory::createReader($inputFileType);
-                    $objPHPExcel = $objReader->load($inputFileName);
-                    $worksheetData = $objReader->listWorksheetInfo($inputFileName);
-                    $totalRows     = $worksheetData[0]['totalRows'];
-                    $totalColumns  = $worksheetData[0]['totalColumns'];
+                    $inputFileType  = PHPExcel_IOFactory::identify($inputFileName);
+                    $objReader      = PHPExcel_IOFactory::createReader($inputFileType);
+                    $objPHPExcel    = $objReader->load($inputFileName);
+                    $worksheetData  = $objReader->listWorksheetInfo($inputFileName);
+                    $totalRows      = $worksheetData[0]['totalRows'];
+                    $totalColumns   = $worksheetData[0]['totalColumns'];
                    // pr($totalColumns);
                     if($totalColumns==35){
                     $allDataInSheet = $objPHPExcel->getActiveSheet()->toArray(null, true, true, true, true, true, true, true, true, true, true, true, true, true, true, true, true, true, true, true, true, true, true, true, true, true, true, true, true, true, true, true, true, true, true);
                     $flag = true;
                     $i=0;
+                   //   $tr                      = new GoogleTranslate(); // Translates to 'en' from auto-detected language by default
                     foreach ($allDataInSheet as $value) {
                       if($flag){
                         $flag =false;
@@ -83,13 +85,13 @@ class Excel_import extends Common_Back_Controller {
                     //Address
                      $address               = $value['R'];
                      $locality              = $value['S'];
-                     $postName              =$value['T'];
-                     $city                  =$value['U'];
+                     $postName              = $value['T'];
+                     $city                  = $value['U'];
                      $zip_code              = $value['V'];
-                     $tehsil                =$value['W'];
+                     $tehsil                = $value['W'];
                      $district              = $value['X'];
-                     $state                 =$value['Y'];
-                     $country               =$value['Z'];
+                     $state                 = $value['Y'];
+                     $country               = $value['Z'];
                      //p Address
                      $paddress              =$value['AA'];
                      $plocality             = $value['AB'];
@@ -100,18 +102,41 @@ class Excel_import extends Common_Back_Controller {
                      $pdistrict             = $value['AG'];
                      $pstate                = $value['AH'];
                      $pcountry              = $value['AI'];
-                     $firstName             =   trim(($firstName=='NA') ? "":$firstName);
-                     $lastName              =   trim(($lastName=='NA') ? "":$lastName);
-                     $fullName              =   trim($firstName." ".$lastName);
+                     $firstName             = trim(($firstName=='NA') ? "":$firstName);
+                     $lastName              = trim(($lastName=='NA') ? "":$lastName);
+                     $fullName              = trim($firstName." ".$lastName);
 
+                    /*****************/
+                    if(is_english_text($fullName)){
+                        $fullName1       = $fullName;
+                        $hindiFullName  = $fullName;//$tr->setSource('en')->setTarget('hi')->translate($fullName);
+                    }else{
+                        $fullName1       = $fullName;//$tr->setSource('hi')->setTarget('en')->translate($fullName);
+                        $hindiFullName  = $fullName;
+                    }
+                    if(is_english_text($parentName)){
+                        $parentName1         = $parentName;
+                        $hindiParentName    = $parentName;//$tr->setSource('en')->setTarget('hi')->translate($parentName);
+                    }else{
+                        $parentName1         = $parentName;//$tr->setSource('hi')->setTarget('en')->translate($parentName);
+                        $hindiParentName    = $parentName;
+                    }
+                    if(is_english_text($familyHeadName)){
+                        $familyHeadName1                     = $familyHeadName;
+                        $hindiFamilyHeadName                = $familyHeadName;//$tr->setSource('en')->setTarget('hi')->translate($familyHeadName);
+                    }else{
+                        $familyHeadName1                     = $familyHeadName;//$tr->setSource('hi')->setTarget('en')->translate($familyHeadName);
+                        $hindiFamilyHeadName                = $familyHeadName; 
+                    }
+                    /*****************/
                 $contactNumber              = trim(str_replace(array('(',')','-','Self','Husband','Wife','Father','Mother','Brother','Sister','Son','Daughter',' '),array('','','','','','','','','','','','',''),$contactNumber));
-                $data_val['dob']                    = date('Y-m-d',strtotime($dob)); 
+                $data_val['dob']                    =  date('Y-m-d',strtotime($dob)); 
 
                 $data_val['firstName']              =  trim(($firstName=='NA') ? "":$firstName);//$firstName;
-                $data_val['lastName']               = trim(($lastName=='NA') ? "":$lastName);//$lastName; 
-                $data_val['fullName']               = trim(($fullName=='NA') ? "":$fullName);//$fullName; 
-                $data_val['parentName']             = trim(($parentName=='NA') ? "":$parentName);//$parentName; 
-                $data_val['familyHeadName']         = trim(($familyHeadName=='NA') ? "":$familyHeadName);//$familyHeadName; 
+                $data_val['lastName']               =  trim(($lastName=='NA') ? "":$lastName);//$lastName; 
+                $data_val['fullName']               =  trim(($fullName1=='NA') ? "":$fullName1);//$fullName; 
+                $data_val['parentName']             =  trim(($parentName1=='NA') ? "":$parentName1);//$parentName; 
+                $data_val['familyHeadName']         =  trim(($familyHeadName1=='NA') ? "":$familyHeadName1);//$familyHeadName; 
                 $data_val['countrycode']            = '+91'; 
                 $data_val['whose_contact_number']   = 'Self'; 
                 $data_val['mobileVerify']           = 0; 
@@ -126,11 +151,12 @@ class Excel_import extends Common_Back_Controller {
 
                 //meta
 
+
                 $meta_val['hindiFirstName']         = trim(($firstName=='NA') ? "":$firstName);
                 $meta_val['hindiLastName']          = trim(($lastName=='NA') ? "":$lastName);
-                $meta_val['hindiFullName']          = trim(($fullName=='NA') ? "":$fullName);
-                $meta_val['hindiParentName']        = trim(($parentName=='NA') ? "":$parentName);
-                $meta_val['hindiFamilyHeadName']    = trim(($familyHeadName=='NA') ? "":$familyHeadName);
+                $meta_val['hindiFullName']          = trim(($hindiFullName=='NA') ? "":$hindiFullName);
+                $meta_val['hindiParentName']        = trim(($hindiParentName=='NA') ? "":$hindiParentName);
+                $meta_val['hindiFamilyHeadName']    = trim(($hindiFamilyHeadName=='NA') ? "":$hindiFamilyHeadName);
                 $meta_val['actualFirstName']        =   trim(($firstName=='NA') ? "":$firstName);
                 $meta_val['actualLastName']         =   trim(($lastName=='NA') ? "":$lastName);
                 $meta_val['actualFullName']         = trim(($fullName=='NA') ? "":$fullName);

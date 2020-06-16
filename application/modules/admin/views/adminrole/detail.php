@@ -85,42 +85,105 @@
 					</div>
 				</div>
 				<div class="col-sm-12 col-md-12 col-lg-6">
-					<!-- update -->
-					<form action="updateUser" id="smart-form-updateuser" class="smart-form client-form" enctype="multipart/form-data" novalidate="" autocomplete="off">
-						<header>
-							<?= lang('Update'); ?>
-						</header>
-						<fieldset>
-							<input type="hidden" name="userauth" value="<?php echo $this->uri->segment(2); ?>">
-							<section>
-								<label class="input"> <i class="icon-append fa fa-user"></i>
-								<input type="text" name="fullName" placeholder="<?=lang('Full_name');?>" value="<?php echo $userData['fullName']; ?>" maxlength="30" size="30">
-								<b class="tooltip tooltip-bottom-right"> <?= lang('Please_enter_your_full_name'); ?></b> </label>
-							</section>
-							<section>
-								<label class="input"> <i class="icon-append fa fa-envelope"></i>
-									<input type="email" name="email" placeholder="<?=lang('email');?>" value="<?php echo $userData['email']; ?>" maxlength="30" size="30">
-									<b class="tooltip tooltip-bottom-right"> <?= lang('Please_enter_your_registered_email_address'); ?></b>
-								</label>
-							</section>
-							<section>
-								<label class="input"> <i class="icon-append fa fa-phone"></i>
-									<input type="text" name="contact" maxlength="20" size="20" class="number-only" placeholder="<?=lang('Contact');?>"  value="<?php echo $userData['contactNumber']; ?>" data-mask="(99999) 999999">
-									<b class="tooltip tooltip-bottom-right"> <?= lang('Please_enter_your_contact_number'); ?></b> 
-								</label>
-							</section>
-						
-							<section>
-								<div class="input input-file">
-									<span class="button"><input type="file" name="profileImage" id="file" onchange="this.parentNode.nextSibling.value = this.value" accept="image/*">Browse</span><input type="text" readonly="" placeholder="Change Avatar">
+						<div class="row">
+								<div class="col-sm-12">
+									<div class="padding-10">
+										<ul class="nav nav-tabs tabs-pull-left">
+											<li class="active">
+												<a href="#a1" data-toggle="tab">Basic info</a>
+											</li>
+
+											<li>
+												<a href="#a2" data-toggle="tab">Change password</a>
+											</li>
+										
+											<li class="pull-right">
+												<span class="margin-top-10 display-inline"><i class="fa fa-rss text-success"></i> Activity</span>
+											</li>
+										</ul>
+										<div class="tab-content padding-top-10">
+											<div class="tab-pane fade in active" id="a1">
+												<div class="row">
+													<div class="col-xs-12 col-sm-12">
+														<!-- update -->
+														<form action="updateUser" id="smart-form-updateuser" class="smart-form client-form" enctype="multipart/form-data" novalidate="" autocomplete="off">
+														<!-- 	<header>
+																<?= lang('Update'); ?>
+															</header> -->
+															<fieldset>
+																<input type="hidden" name="userauth" value="<?php echo $this->uri->segment(2); ?>">
+																<section>
+																	<label class="input"> <i class="icon-append fa fa-user"></i>
+																	<input type="text" name="fullName" placeholder="<?=lang('Full_name');?>" value="<?php echo $userData['fullName']; ?>" maxlength="30" size="30">
+																	<b class="tooltip tooltip-bottom-right"> <?= lang('Please_enter_your_full_name'); ?></b> </label>
+																</section>
+																<section>
+																	<label class="input"> <i class="icon-append fa fa-envelope"></i>
+																		<input type="email" name="email" placeholder="<?=lang('email');?>" value="<?php echo $userData['email']; ?>" maxlength="30" size="30">
+																		<b class="tooltip tooltip-bottom-right"> <?= lang('Please_enter_your_registered_email_address'); ?></b>
+																	</label>
+																</section>
+																<section>
+																	<label class="input"> <i class="icon-append fa fa-phone"></i>
+																		<input type="text" name="contact" maxlength="20" size="20" class="number-only" placeholder="<?=lang('Contact');?>"  value="<?php echo $userData['contactNumber']; ?>" data-mask="(99999) 999999">
+																		<b class="tooltip tooltip-bottom-right"> <?= lang('Please_enter_your_contact_number'); ?></b> 
+																	</label>
+																</section>
+															
+																<section>
+																	<div class="input input-file">
+																		<span class="button"><input type="file" name="profileImage" id="file" onchange="this.parentNode.nextSibling.value = this.value" accept="image/*">Browse</span><input type="text" readonly="" placeholder="Change Avatar">
+																	</div>
+																</section>
+															</fieldset>
+															<footer>
+																<button type="submit" id="submit" class="btn btn-primary"><?= lang('Update'); ?></button>
+															</footer>
+														</form>
+														<!-- update -->
+													</div>
+												</div>
+											</div>											
+											<div class="tab-pane fade in" id="a2">
+												<div class="row">
+													<div class="col-xs-12 col-sm-12">
+														<!-- update -->
+														<form method="post" action="adminrole/changePassword" id="adminrole-changepass" class="smart-form client-form" enctype="multipart/form-data" novalidate autocomplete="off">
+														<!-- 	<header>
+																<?= lang('Change_Password'); ?>
+															</header> -->
+														
+															<input type="hidden" name="userId" value="<?php echo $this->uri->segment(2); ?>">
+															<fieldset>
+															
+																<section>
+																	<label class="input"> <i class="icon-append fa fa-lock"></i>
+																		<input type="password" name="npassword" autocomplete="new-password" id="npassword" placeholder="<?= lang('New_Password'); ?>" >
+																		<b class="tooltip tooltip-bottom-right"> <?= lang('Please_enter_your_new_password');?></b> 
+																	</label>
+																</section>
+																<section>
+																	<label class="input"> <i class="icon-append fa fa-lock"></i>
+																		<input type="password" name="rnpassword" placeholder="<?= lang('Confirm_Password'); ?>">
+																		<b class="tooltip tooltip-bottom-right"> <?= lang('Please_re-enter_your_password'); ?></b> 
+																	</label>
+																</section>		
+															</fieldset>
+															<footer>
+																<button type="submit" id="submitP" class="btn btn-primary"> <?= lang('Change_Password'); ?></button>
+															</footer>
+														</form>
+														<!-- update -->
+													</div>
+												</div>
+											</div>
+
+											<!--  -->
+										</div>
+									</div>
 								</div>
-							</section>
-						</fieldset>
-						<footer>
-							<button type="submit" id="submit" class="btn btn-primary"><?= lang('Update'); ?></button>
-						</footer>
-					</form>
-					<!-- update -->
+							</div>
+					
 				</div>
 			</div>
 		</div>

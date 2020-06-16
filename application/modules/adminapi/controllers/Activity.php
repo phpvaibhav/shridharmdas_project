@@ -58,12 +58,12 @@ class Activity extends Common_Admin_Controller{
         $this->response($response);
     }//end function
     function recordDelete_post(){
-        $activityId        = decoding($this->post('id'));
-        $where          = array('activityId'=>$activityId);
-        $dataExist      = $this->common_model->is_data_exists('activity_log',$where);
+        $activityId         = decoding($this->post('id'));
+        $where              = array('activityId'=>$activityId);
+        $dataExist          = $this->common_model->is_data_exists('activity_log',$where);
         if($dataExist){
-            $dataExist  = $this->common_model->deleteData('activity_log',$where);
-            $response   = array('status'=>SUCCESS,'message'=>ResponseMessages::getStatusCodeMessage(124));
+            $dataExist      = $this->common_model->deleteData('activity_log',$where);
+            $response       = array('status'=>SUCCESS,'message'=>ResponseMessages::getStatusCodeMessage(124));
         }else{
             $response  = array('status'=>FAIL,'message'=>ResponseMessages::getStatusCodeMessage(118));  
         }

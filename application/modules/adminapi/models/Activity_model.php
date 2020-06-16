@@ -4,13 +4,13 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 class Activity_model extends CI_Model {
 
     //var $table , $column_order, $column_search , $order =  '';
-    var $table = 'activity_log';
-    var $column_order = array('al.activityId','a.fullName','u.fullName','al.type','al.crd'); //set column field database for datatable orderable
-    var $column_sel = array('al.*','a.fullName as adminName','u.fullName as userName','r.role'); //set column field database for datatable orderable
-    var $column_search = array('al.activityId','a.fullName','u.fullName','r.role'); //set column field database for datatable searchable 
-    var $order = array('al.activityId'=> 'DESC');  // default order
-    var $where = array();
-    var $group_by = 'al.activityId'; 
+    var $table          = 'activity_log';
+    var $column_order   = array('al.activityId','a.fullName','u.fullName','al.type','al.crd'); //set column field database for datatable orderable
+    var $column_sel     = array('al.*','a.fullName as adminName','u.fullName as userName','r.role'); //set column field database for datatable orderable
+    var $column_search  = array('al.activityId','a.fullName','u.fullName','r.role'); //set column field database for datatable searchable 
+    var $order          = array('al.activityId'=> 'DESC');  // default order
+    var $where          = array();
+    var $group_by       = 'al.activityId'; 
 
 
     public function __construct(){

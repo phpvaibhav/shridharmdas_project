@@ -14,7 +14,7 @@ class Adminrole extends Common_Back_Controller {
     public function index(){
      
         $data['title']      = lang('Sub_Admin');
-        $count          = $this->common_model->get_total_count('admin',array('roleId !='=>1));
+        $count              = $this->common_model->get_total_count('admin',array('roleId !='=>1));
         $data['countuser']  = $count ;   
         $count              = number_format_short($count);
         $data['recordSet']  = array('<li class="sparks-info"><h5>'.lang('Sub_Admin').'<span class="txt-color-blue"><a  href="'.base_url('sub-admin-add').'" class="anchor-btn" ><i class="fa fa-plus-square"></i></a></span></h5></li>','<li class="sparks-info"><h5>'.lang('Total').' '.lang('Sub_Admin').'<span class="txt-color-darken" id="totalCust"><i class="fa fa-lg fa-fw fa fa-users"></i>&nbsp;'.$count.'</span></h5></li>');
@@ -40,6 +40,8 @@ class Adminrole extends Common_Back_Controller {
         $where              = array('id'=>$userId);
         $result             = $this->common_model->getsingle('admin',$where);
         $data['userData']   = $result;
+         $data['front_scripts']  = array('backend_assets/custom/js/adminrole.js');
+
         $this->load->admin_render('adminrole/detail', $data, '');
 
     } //End function

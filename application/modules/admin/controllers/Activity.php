@@ -12,10 +12,10 @@ class Activity extends Common_Back_Controller {
     }
     public function index(){
      
-    $data['title']      = lang('Activity_Log');
-		$count              = $this->common_model->get_total_count('activity_log');
-		$count              = number_format_short($count);
-		$data['recordSet']  = array('<li class="sparks-info"><h5>'.lang('Total').' '.lang('Activity_Log').'<span class="txt-color-darken" id="totalCust"><i class="fa fa-lg fa-fw fa fa-sitemap"></i>&nbsp;'.$count.'</span></h5></li>');
+        $data['title']      = lang('Activity_Log');
+        $count              = $this->common_model->get_total_count('activity_log');
+        $count              = number_format_short($count);
+        $data['recordSet']  = array('<li class="sparks-info"><h5>'.lang('Total').' '.lang('Activity_Log').'<span class="txt-color-darken" id="totalCust"><i class="fa fa-lg fa-fw fa fa-sitemap"></i>&nbsp;'.$count.'</span></h5></li>');
 
 	
 		$data['front_scripts'] = array('backend_assets/custom/js/common_datatable.js','backend_assets/custom/js/activity.js');
