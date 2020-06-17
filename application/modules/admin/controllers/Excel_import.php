@@ -50,17 +50,25 @@ class Excel_import extends Common_Back_Controller {
                     $worksheetData  = $objReader->listWorksheetInfo($inputFileName);
                     $totalRows      = $worksheetData[0]['totalRows'];
                     $totalColumns   = $worksheetData[0]['totalColumns'];
-                   // pr($totalColumns);
+                   // pr($totalRows);
                     if($totalColumns==35){
                     $allDataInSheet = $objPHPExcel->getActiveSheet()->toArray(null, true, true, true, true, true, true, true, true, true, true, true, true, true, true, true, true, true, true, true, true, true, true, true, true, true, true, true, true, true, true, true, true, true, true);
+                  /*   $allDataInSheet = array_map('array_filter', $allDataInSheet);
+        $allDataInSheet = array_filter($allDataInSheet);*/
                     $flag = true;
                     $i=0;
+                   // $allDataInSheet = array_filter($allDataInSheet);
+                  //  pr($allDataInSheet);
                    //   $tr                      = new GoogleTranslate(); // Translates to 'en' from auto-detected language by default
                     foreach ($allDataInSheet as $value) {
                       if($flag){
                         $flag =false;
                         continue;
                       }
+                      if (empty(array_filter($value)) ){
+                                                continue;
+                      }
+                     // pr($value);
                         /*   $inserdata[$i]['firstName'] = $value['A'];
                       $inserdata[$i]['lastName'] = $value['B'];
                       $inserdata[$i]['parentName'] = $value['C'];

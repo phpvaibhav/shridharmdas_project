@@ -42,12 +42,12 @@ function test()
                 $inputFileName = $path . $import_xls_file;
                  
                 try {
-                    $inputFileType = PHPExcel_IOFactory::identify($inputFileName);
-                    $objReader = PHPExcel_IOFactory::createReader($inputFileType);
-                    $objPHPExcel = $objReader->load($inputFileName);
-                    $worksheetData = $objReader->listWorksheetInfo($inputFileName);
-                    $totalRows     = $worksheetData[0]['totalRows'];
-                    $totalColumns  = $worksheetData[0]['totalColumns'];
+                    $inputFileType  = PHPExcel_IOFactory::identify($inputFileName);
+                    $objReader      = PHPExcel_IOFactory::createReader($inputFileType);
+                    $objPHPExcel    = $objReader->load($inputFileName);
+                    $worksheetData  = $objReader->listWorksheetInfo($inputFileName);
+                    $totalRows      = $worksheetData[0]['totalRows'];
+                    $totalColumns   = $worksheetData[0]['totalColumns'];
                    // pr($totalColumns);
                     if($totalColumns==35){
                     $allDataInSheet = $objPHPExcel->getActiveSheet()->toArray(null, true, true, true, true, true, true, true, true, true, true, true, true, true, true, true, true, true, true, true, true, true, true, true, true, true, true, true, true, true, true, true, true, true, true);
