@@ -25,10 +25,11 @@ class Activity extends Common_Admin_Controller{
             $row[]      = display_placeholder_text($serData->userName);    
             $row[]      = display_placeholder_text($serData->type);    
             $row[]      = time_elapsed_string($serData->crd);    
-            $link      ='javascript:void(0)';
+            $link      ='javascript:void(0);';
             $action .= "";
 
             $action .= '<a href="'.$link.'" onclick="confirmAction(this);" data-message="You want to delete this record!" data-id="'.encoding($serData->activityId).'" data-url="adminapi/activity/recordDelete" data-list="1"  class="on-default edit-row table_action" title="Delete"><i class="fa fa-trash" aria-hidden="true"></i></a>';
+              $action .= '&nbsp;&nbsp;|&nbsp;&nbsp;<a href="javascript:void(0);"  class="on-default edit-row table_action" onclick="act_show(this)" title="Detail" data-detail="'.display_placeholder_text($serData->notes).'"><i class="fa fa-eye"  aria-hidden="true"></i></a>';
 
             $row[]  = $action;
             $data[] = $row;

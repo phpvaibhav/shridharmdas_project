@@ -329,14 +329,14 @@ class Common_model extends CI_Model {
             $ipaddress = 'UNKNOWN';
         return $ipaddress;
     }//end function
-    function activity_log($userId,$text){
-        $adminId = $_SESSION[ADMIN_USER_SESS_KEY]['userId'];
+    function activity_log($userId,$text,$notes=""){
+        $adminId             = $_SESSION[ADMIN_USER_SESS_KEY]['userId'];
         $data_val['adminId'] = $adminId;
-        $data_val['userId'] = $userId;
-        $data_val['type'] = $text;
+        $data_val['userId']  = $userId;
+        $data_val['type']    = $text;
+        $data_val['notes']   = $notes;
         return $this->insertData('activity_log',$data_val);
-    }//ENd function
-    
+    }//ENd function   
 } //end of class
 /* Do not close php tags */
 /* IMP: Do not add any new method in this file */

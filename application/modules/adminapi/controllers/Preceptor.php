@@ -14,26 +14,24 @@ class Preceptor extends Common_Admin_Controller{
         if($this->form_validation->run() == FALSE){
             $response = array('status' => FAIL, 'message' => strip_tags(validation_errors()));  
         }else{
-            $name   = $this->post('name'); 
-            $about  = $this->post('about'); 
-            $id     = decoding($this->post('id'));
-            $data_val['name'] = $name;
-            $data_val['about'] = $about;
+            $name               = $this->post('name'); 
+            $about              = $this->post('about'); 
+            $id                 = decoding($this->post('id'));
+            $data_val['name']   = $name;
+            $data_val['about']  = $about;
             $isExist            =  $this->common_model->is_data_exists('preceptor',array('preId'=>$id));
             if($isExist){
-                 $result = $this->common_model->updateFields('preceptor',$data_val,array('preId'=>$id));
-                 $msg = ResponseMessages::getStatusCodeMessage(123);
+                $result        = $this->common_model->updateFields('preceptor',$data_val,array('preId'=>$id));
+                $msg           = ResponseMessages::getStatusCodeMessage(123);
             }else{
-                 $result = $this->common_model->insertData('preceptor',$data_val);
-                $msg  = ResponseMessages::getStatusCodeMessage(122);
+                $result        = $this->common_model->insertData('preceptor',$data_val);
+                $msg            = ResponseMessages::getStatusCodeMessage(122);
             }
             if($result){
                  $response   = array('status'=>SUCCESS,'message'=>$msg);
             }else{
                  $response   = array('status'=>FAIL,'message'=>ResponseMessages::getStatusCodeMessage(118));
-            }
-        
-              
+            }     
         }
         $this->response($response);
     }//end function
@@ -67,7 +65,7 @@ class Preceptor extends Common_Admin_Controller{
                     break;
             }
        
-            $link      ='javascript:void(0)';
+            $link      = 'javascript:void(0);';
             $action .= "";
            if($serData->status){
 
@@ -106,14 +104,14 @@ class Preceptor extends Common_Admin_Controller{
         $this->response($response);
     }//end function
     function recordDelete_post(){
-        $preId     = decoding($this->post('id'));
-        $where      = array('preId'=>$preId);
-        $dataExist  = $this->common_model->is_data_exists('preceptor',$where);
+        $preId              = decoding($this->post('id'));
+        $where              = array('preId'=>$preId);
+        $dataExist          = $this->common_model->is_data_exists('preceptor',$where);
         if($dataExist){
-            $dataExist = $this->common_model->deleteData('preceptor',$where);
-            $response  = array('status'=>SUCCESS,'message'=>ResponseMessages::getStatusCodeMessage(124));
+            $dataExist      = $this->common_model->deleteData('preceptor',$where);
+            $response       = array('status'=>SUCCESS,'message'=>ResponseMessages::getStatusCodeMessage(124));
         }else{
-            $response  = array('status'=>FAIL,'message'=>ResponseMessages::getStatusCodeMessage(118));  
+            $response       = array('status'=>FAIL,'message'=>ResponseMessages::getStatusCodeMessage(118));  
         }
         $this->response($response);
     }//end function

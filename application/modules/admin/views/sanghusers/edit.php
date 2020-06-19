@@ -32,9 +32,7 @@
 			<header>
 				<span class="widget-icon"> <i class="fa fa-edit"></i> </span>
 				<h2><?= lang('User_Form'); ?></h2>				
-				 <a class=" btn btn-success pull-right" href="<?= base_url().'sangh-user-detail/'.encoding($info['id']); ?>">
-                   Back To User Detail</a>
-                 
+				 <a class=" btn btn-success pull-right" href="<?= base_url().'sangh-user-detail/'.encoding($info['id']); ?>">Back To User Detail</a>     
 			</header>
 
 			<!-- widget div-->
@@ -43,14 +41,12 @@
 				<!-- widget edit box -->
 				<div class="jarviswidget-editbox">
 					<!-- This area used as dropdown edit box -->
-					
 				</div>
 				<!-- end widget edit box -->
-				
 				<!-- widget content -->
 				<div class="widget-body no-padding">
 					
-					<form id="user-add-form" class="smart-form" novalidate="novalidate" action="users/edit" novalidate="novalidate" autocomplete="off">
+					<form method="post" id="user-add-form" class="smart-form" novalidate="novalidate" action="sanghusers/edit" novalidate="novalidate" autocomplete="off">
             <header>
              <?= lang('basic_Information'); ?>
               <input type="hidden" name="id" value="<?= encoding($info['id']); ?>">
@@ -71,8 +67,6 @@
                     </label>
                   </section>
               </div>
-
-
               <div class="row">
                   <section class="col col-6">
                   <label class="label"><?= lang('First_name').'(Hindi)'; ?></label>
@@ -87,8 +81,6 @@
                     </label>
                   </section>
               </div>
-
-
               <div class="row">
                   <section class="col col-6">
                   <label class="label"><?= lang('First_name').'(English)'; ?></label>
@@ -145,15 +137,15 @@
                   </label>
                 </section>
               </div>
-               <div class="row">
-               <section class="col col-6">
+              <div class="row">
+                <section class="col col-6">
                  <label for="dob"><?= lang('dob'); ?><span>*</span></label>
                   <label class="input"> <i class="icon-prepend fa fa-calendar"></i>
                     <input type="text" name="dob" id="dob" placeholder="<?= lang('dob'); ?>" readonly="" value="<?= date('d-m-Y',strtotime($info['dob'])); ?>">
                   </label>
                 </section>
 
-              <section class="col col-6">
+                <section class="col col-6">
                   <label for="gender"><?= lang('Select_Gender'); ?><span>*</span></label>
                   <label class="select">
                     <select name="gender">
@@ -162,28 +154,25 @@
                       <option value="Female" <?= $info['gender']=='Female'? "selected='selected'":""; ?>><?= lang('Female');?></option>
                     </select> <i></i> </label>
                 </section>
-              
               </div>
-                            <div class="row">
+              <div class="row">
                  <section class="col col-6">
                   <label class="label"><?= lang('blood_group'); ?></label>
                   <label class="select">
-                      <select name="bloodGroup" class="form-control" id="bloodGroup">
-                            <option value="" selected="" disabled=""><?= lang('blood_group'); ?></option>
-                            <option value="A+" <?= $usermeta['bloodGroup']=='A+'?"selected='selected'":"";  ?>>A+</option>
-                            <option value="O+" <?= $usermeta['bloodGroup']=='O+'?"selected='selected'":"";  ?>>O+</option>
-                            <option value="B+" <?= $usermeta['bloodGroup']=='B+'?"selected='selected'":"";  ?>>B+</option>
-                            <option value="AB+" <?= $usermeta['bloodGroup']=='A+'?"selected='selected'":"";  ?>>AB+</option>
-                            <option value="A-" <?= $usermeta['bloodGroup']=='A-'?"selected='selected'":"";  ?>>A-</option>
-                            <option value="O-" <?= $usermeta['bloodGroup']=='O-'?"selected='selected'":"";  ?>>O-</option>
-                            <option value="B-" <?= $usermeta['bloodGroup']=='B-'?"selected='selected'":"";  ?>>B-</option>
-                            <option value="AB-" <?= $usermeta['bloodGroup']=='AB-'?"selected='selected'":"";  ?>>AB-</option>
-                            <option value="Unknown" <?= $usermeta['bloodGroup']=='Unknown'?"selected='selected'":"";  ?>>Unknown</option>
-                          
-                            </select><i></i> </label>
+                    <select name="bloodGroup" class="form-control" id="bloodGroup">
+                    <option value="" selected="" disabled=""><?= lang('blood_group'); ?></option>
+                    <option value="A+" <?= $usermeta['bloodGroup']=='A+'?"selected='selected'":"";  ?>>A+</option>
+                    <option value="O+" <?= $usermeta['bloodGroup']=='O+'?"selected='selected'":"";  ?>>O+</option>
+                    <option value="B+" <?= $usermeta['bloodGroup']=='B+'?"selected='selected'":"";  ?>>B+</option>
+                    <option value="AB+" <?= $usermeta['bloodGroup']=='A+'?"selected='selected'":"";  ?>>AB+</option>
+                    <option value="A-" <?= $usermeta['bloodGroup']=='A-'?"selected='selected'":"";  ?>>A-</option>
+                    <option value="O-" <?= $usermeta['bloodGroup']=='O-'?"selected='selected'":"";  ?>>O-</option>
+                    <option value="B-" <?= $usermeta['bloodGroup']=='B-'?"selected='selected'":"";  ?>>B-</option>
+                    <option value="AB-" <?= $usermeta['bloodGroup']=='AB-'?"selected='selected'":"";  ?>>AB-</option>
+                    <option value="Unknown" <?= $usermeta['bloodGroup']=='Unknown'?"selected='selected'":"";  ?>>Unknown</option>
+
+                    </select><i></i> </label>
                 </section>
-              
-    
               </div>
               <div class="row">
                  <section class="col col-6">
@@ -277,9 +266,9 @@
 
 <!-- END ROW -->
 <script type="text/javascript">
-  var Please_select_your_full_name              = "<?= lang('Please_select_your_full_name');?>";
-  var Please_select_your_first_name             =  "<?= lang('Please_select_your_first_name');?>";
-  var Please_select_your_last_name              = "<?= lang('Please_select_your_last_name');?>";
+  var Please_select_your_full_name                = "<?= lang('Please_select_your_full_name');?>";
+  var Please_select_your_first_name               =  "<?= lang('Please_select_your_first_name');?>";
+  var Please_select_your_last_name                = "<?= lang('Please_select_your_last_name');?>";
   var Please_select_your_father_name_husband_name = "<?= lang('Please_select_your_father_name_husband_name');?>";
   var Please_select_your_date_of_birth            ="<?= lang('Please_select_your_date_of_birth');?>";
   var Please_select_your_gender                   = "<?= lang('Please_select_your_gender');?>";
@@ -301,9 +290,9 @@
   var Please_enter_at_least_10_digit_phone_number   = "<?= lang('Please_enter_at_least_10_digit_phone_number');?>";
   var Please_select_your_unionName                  = "<?= lang('Please_select_your_unionName');?>";
   var This_option_field_is_required                 = "<?= lang('This_option_field_is_required');?>";
-  var This_aadhar_number_is_already_taken                 = "<?= lang('This_aadhar_number_is_already_taken');?>";
-  var Please_select_your_Occupation ="<?= lang('Please_select_your_Occupation');?>";
-var Please_select_your_religious_Knowledge ="<?= lang('Please_select_your_religious_Knowledge');?>";
-var Please_select_your_Identity_image ="<?= lang('Please_select_your_Identity_image');?>";
-var Please_enter_your_post_name ="<?= lang('Please_enter_your_post_name');?>";
+  var This_aadhar_number_is_already_taken           = "<?= lang('This_aadhar_number_is_already_taken');?>";
+  var Please_select_your_Occupation                 = "<?= lang('Please_select_your_Occupation');?>";
+var Please_select_your_religious_Knowledge          = "<?= lang('Please_select_your_religious_Knowledge');?>";
+var Please_select_your_Identity_image               = "<?= lang('Please_select_your_Identity_image');?>";
+var Please_enter_your_post_name           = "<?= lang('Please_enter_your_post_name');?>";
 </script>

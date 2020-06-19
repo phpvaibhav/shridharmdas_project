@@ -74,3 +74,41 @@
 	<!-- end row -->
 </section>
 <!-- end widget grid -->
+<!-- Modal -->
+<div class="modal fade" id="add-data" tabindex="-1" role="dialog">
+	<div class="modal-dialog">
+		<div class="modal-content">
+			<div class="modal-header">
+				<button type="button" class="close" data-dismiss="modal" aria-hidden="true">
+					&times;
+				</button>
+				<h4 class="modal-title">
+					<strong>Log Activity</strong>	
+				</h4>
+			</div>
+			<div class="modal-body">
+	           <!-- Add CUstomer -->
+				<!-- widget content -->
+				<div class="widget-body padding">
+					<header>
+					<p><strong>Actvity Log detail below :</strong></p>
+					</header>
+					
+						<fieldset>
+							<section>
+								<p id="act_detail"></p>
+							</section>
+						</fieldset>
+
+						<footer>
+							<button type="button" data-dismiss="modal" aria-hidden="true" class="btn btn-primary">OK</button>
+						</footer>
+					
+				</div>
+				<!-- end widget content -->
+				<!-- Add CUstomer -->
+	        </div>
+		</div>
+	</div>
+</div>
+<!-- End modal -->

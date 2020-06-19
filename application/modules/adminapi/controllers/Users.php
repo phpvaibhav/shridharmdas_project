@@ -324,7 +324,66 @@ class Users extends Common_Admin_Controller{
         if($this->form_validation->run() == FALSE){
             $response = array('status' => FAIL, 'message' => strip_tags(validation_errors()));  
         }else{
-          
+           $notes ="";
+             $id     = decoding($this->post('id'));
+            $user                               =  $this->common_model->is_data_exists('users',array('id'=>$id));
+            $usermeta                               =  $this->common_model->is_data_exists('user_meta',array('userId'=>$id));
+$firstName = $this->post('firstName'); 
+            if($user->firstName!=$firstName){
+               $notes .= "First name change <b>".display_placeholder_text($user->firstName)."</b> to <b>".$firstName."</b><br>"; 
+            } 
+            $lastName = $this->post('lastName'); 
+            if($user->lastName!=$lastName){
+               $notes .= "Last name change <b>".display_placeholder_text($user->lastName)."</b> to <b>".$lastName."</b><br>"; 
+            } 
+            $parentName = $this->post('parentName'); 
+            if($user->parentName!=$parentName){
+               $notes .= "S/O OR W/O name change <b>".display_placeholder_text($user->parentName)."</b> to <b>".$parentName."</b><br>"; 
+            } 
+            $familyHeadName = $this->post('familyHeadName'); 
+            if($user->familyHeadName!=$familyHeadName){
+               $notes .= "family head name change <b>".display_placeholder_text($user->familyHeadName)."</b> to <b>".$familyHeadName."</b><br>"; 
+            }  
+            $fullName = $this->post('firstName').' '.$this->post('lastName');
+            if($user->fullName!=$fullName){
+               $notes .= "full name change <b>".display_placeholder_text($user->fullName)."</b> to <b>".$fullName."</b><br>"; 
+            }
+            $gender = $this->post('gender');
+            if($user->gender!=$gender){
+               $notes .= "Gender change <b>".display_placeholder_text($user->gender)."</b> to <b>".$gender."</b><br>"; 
+            }
+            $maritalStatus = $this->post('maritalStatus');
+            if($user->maritalStatus!=$maritalStatus){
+               $notes .= "Marital Status change <b>".display_placeholder_text($user->maritalStatus)."</b> to <b>".$maritalStatus."</b><br>"; 
+            }
+            $dob = date('Y-m-d',strtotime($this->post('dob')));
+            if(strtotime($user->dob)!=strtotime($dob)){
+               $notes .= "DOB change <b>".date('d/m/Y',strtotime($user->dob))."</b> to <b>".date('d/m/Y',strtotime($dob))."</b><br>"; 
+            }
+            $actualFirstName = $this->post('actualFirstName');
+            if($usermeta->actualFirstName!=$actualFirstName){
+               $notes .= "Actual First Name change <b>".display_placeholder_text($usermeta->actualFirstName)."</b> to <b>".$actualFirstName."</b><br>"; 
+            }
+            $actualLastName = $this->post('actualLastName');
+            if($usermeta->actualLastName!=$actualLastName){
+               $notes .= "Actual Last Name change <b>".display_placeholder_text($usermeta->actualLastName)."</b> to <b>".$actualLastName."</b><br>"; 
+            }
+            $actualFullName = $this->post('actualFirstName')." ".$this->post('actualLastName');
+            if($usermeta->actualFullName!=$actualFullName){
+               $notes .= "Actual Full Name change <b>".display_placeholder_text($usermeta->actualFullName)."</b> to <b>".$actualFullName."</b><br>"; 
+            }
+             $hindiFirstName = $this->post('hindiFirstName');
+            if($usermeta->hindiFirstName!=$hindiFirstName){
+               $notes .= "Hindi First Name change <b>".display_placeholder_text($usermeta->hindiFirstName)."</b> to <b>".$hindiFirstName."</b><br>"; 
+            }
+            $hindiLastName = $this->post('hindiLastName');
+            if($usermeta->hindiLastName!=$hindiLastName){
+               $notes .= "Hindi Last Name change <b>".display_placeholder_text($usermeta->hindiLastName)."</b> to <b>".$hindiLastName."</b><br>"; 
+            }
+            $hindiFullName = $this->post('hindiFirstName')." ".$this->post('hindiLastName');
+            if($usermeta->hindiFullName!=$hindiFullName){
+               $notes .= "Hindi Full Name change <b>".display_placeholder_text($usermeta->hindiFullName)."</b> to <b>".$hindiFullName."</b><br>"; 
+            }
             $data_val['firstName']       = $this->post('firstName'); 
             $data_val['lastName']        = $this->post('lastName'); 
             $data_val['parentName']        = $this->post('parentName'); 
@@ -364,7 +423,7 @@ class Users extends Common_Admin_Controller{
                     $result = $this->common_model->updateFields('users',$data_val,array('id'=>$id));
                     $this->common_model->updateFields('user_meta',$user_meta,array('userId'=>$id));
                     if($result){
-                           $this->common_model->activity_log($id,"Basic information Update Activity");
+                           $this->common_model->activity_log($id,"Basic information Update Activity",$notes);
                         $status  = SUCCESS;
                         $msg     = ResponseMessages::getStatusCodeMessage(123);
                     }else{
@@ -394,6 +453,76 @@ class Users extends Common_Admin_Controller{
                 
             
                 $userId                     = decoding($this->post('userId'));
+                $notes = "";
+            $addressId      = $this->post('addressId');
+            $oaddressId      = $this->post('paddressId');
+
+            $c_adress            =  $this->common_model->is_data_exists('addresses',array('addressId'=>$addressId));
+            $p_adress            =  $this->common_model->is_data_exists('addresses',array('addressId'=>$oaddressId));  
+           $zip_code = $this->post('zip_code');
+            if($c_adress->zip_code!=$zip_code){
+               $notes .= "Current address zip code change <b>".display_placeholder_text($c_adress->zip_code)."</b> to <b>".$zip_code."</b><br>"; 
+            }
+            $address = $this->post('address');
+            if($c_adress->address!=$address){
+               $notes .= "Current address change <b>".display_placeholder_text($c_adress->address)."</b> to <b>".$address."</b><br>"; 
+            }
+            $city = $this->post('city');
+            if($c_adress->city!=$city){
+               $notes .= "Current address change <b>".display_placeholder_text($c_adress->city)."</b> to <b>".$city."</b><br>"; 
+            }
+            $tehsil = $this->post('tehsil');
+            if($c_adress->tehsil!=$tehsil){
+               $notes .= "Current address tehsil change <b>".display_placeholder_text($c_adress->tehsil)."</b> to <b>".$tehsil."</b><br>"; 
+            }
+            $district = $this->post('district');
+            if($c_adress->district!=$district){
+               $notes .= "Current address district change <b>".display_placeholder_text($c_adress->district)."</b> to <b>".$district."</b><br>"; 
+            }
+            $country = $this->post('country');
+            if($c_adress->country!=$country){
+               $notes .= "Current address country change <b>".display_placeholder_text($c_adress->country)."</b> to <b>".$country."</b><br>"; 
+            }
+            $state = $this->post('state');
+            if($c_adress->state!=$state){
+               $notes .= "Current address state change <b>".display_placeholder_text($c_adress->state)."</b> to <b>".$state."</b><br>"; 
+            }
+            $postName = $this->post('postName');
+            if($c_adress->postName!=$postName){
+               $notes .= "Current address postName change <b>".display_placeholder_text($c_adress->postName)."</b> to <b>".$postName."</b><br>"; 
+            }
+            $pzip_code = $this->post('pzip_code');
+            if($p_adress->zip_code!=$pzip_code){
+               $notes .= "Permanent address zip code change <b>".display_placeholder_text($p_adress->zip_code)."</b> to <b>".$pzip_code."</b><br>"; 
+            }
+            $paddress = $this->post('paddress');
+            if($p_adress->address!=$paddress){
+               $notes .= "Permanent address change <b>".display_placeholder_text($p_adress->address)."</b> to <b>".$paddress."</b><br>"; 
+            }
+            $pcity = $this->post('pcity');
+            if($p_adress->city!=$pcity){
+               $notes .= "Permanent address change <b>".display_placeholder_text($p_adress->city)."</b> to <b>".$pcity."</b><br>"; 
+            }
+            $ptehsil = $this->post('ptehsil');
+            if($p_adress->tehsil!=$ptehsil){
+               $notes .= "Permanent address tehsil change <b>".display_placeholder_text($p_adress->tehsil)."</b> to <b>".$ptehsil."</b><br>"; 
+            }
+            $pdistrict = $this->post('pdistrict');
+            if($p_adress->district!=$pdistrict){
+               $notes .= "Permanent address district change <b>".display_placeholder_text($p_adress->district)."</b> to <b>".$pdistrict."</b><br>"; 
+            }
+            $pcountry = $this->post('pcountry');
+            if($p_adress->country!=$pcountry){
+               $notes .= "Permanent address country change <b>".display_placeholder_text($p_adress->country)."</b> to <b>".$pcountry."</b><br>"; 
+            }
+            $pstate = $this->post('pstate');
+            if($p_adress->state!=$pstate){
+               $notes .= "Permanent address state change <b>".display_placeholder_text($p_adress->state)."</b> to <b>".$pstate."</b><br>"; 
+            }
+            $ppostName = $this->post('ppostName');
+            if($p_adress->postName!=$ppostName){
+               $notes .= "Permanent address postName change <b>".display_placeholder_text($p_adress->postName)."</b> to <b>".$ppostName."</b><br>"; 
+            }
                 $add_meta['userId']         = $userId;
                 $add_meta['zip_code']       = $this->post('zip_code');
                 $add_meta['address']        = $this->post('address');
@@ -434,7 +563,7 @@ class Users extends Common_Admin_Controller{
             }
             
             if($result){
-                $this->common_model->activity_log($userId,"Address Update Activity");
+                $this->common_model->activity_log($userId,"Address Update Activity",$notes);
                 $status = SUCCESS;
                 $msg  = ResponseMessages::getStatusCodeMessage(123);
             }else{
