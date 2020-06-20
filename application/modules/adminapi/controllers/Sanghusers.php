@@ -438,6 +438,10 @@ $firstName = $this->post('firstName');
             }
             
             $user_meta['religiousKnowledge']    = $this->post('religiousKnowledge') ? implode(",",$this->post('religiousKnowledge')) :"";
+
+            if($usermeta->religiousKnowledge!=$user_meta['religiousKnowledge']){
+               $notes .= "Religious Knowledge change <b>".display_placeholder_text($usermeta->religiousKnowledge)."</b> to <b>".display_placeholder_text($user_meta['religiousKnowledge'])."</b><br>"; 
+            }
             $id     = decoding($this->post('id'));
          
             $isExist            =  $this->common_model->is_data_exists('users',array('id'=>$id));
