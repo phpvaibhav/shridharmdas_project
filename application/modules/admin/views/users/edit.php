@@ -2,7 +2,8 @@
 <div class="row">
 
 	<!-- NEW COL START -->
-	<article class="col-sm-12 col-md-12 col-lg-8 col-lg-offset-2">
+	<article class="col-sm-7 col-md-7 col-lg-7">
+
 		
 		<!-- Widget ID (each widget will need unique ID)-->
 		<div class="jarviswidget" id="wid-id-1" data-widget-editbutton="false" data-widget-custombutton="false">
@@ -40,7 +41,7 @@
 				<!-- widget content -->
 				<div class="widget-body no-padding">
 					
-					<form id="user-add-form" class="smart-form" novalidate="novalidate" action="users/edit" novalidate="novalidate" autocomplete="off">
+					<form method="post" id="user-add-form" class="smart-form" novalidate="novalidate" action="users/edit" novalidate="novalidate" autocomplete="off">
             <header>
              <?= lang('basic_Information'); ?>
               <input type="hidden" name="id" value="<?= encoding($info['id']); ?>">
@@ -172,12 +173,8 @@
                           
                             </select><i></i> </label>
                 </section>
-              
-    
-              </div>
-              <div class="row">
-                 <section class="col col-6">
-              
+               <section class="col col-6">
+                   <label class="label"><?= lang('Marital_Status'); ?></label>
                   <label class="select">
                      <select name="maritalStatus" class="form-control" id="maritalStatus">
                             <option value="" selected="" disabled=""><?= lang('Marital_Status'); ?></option>
@@ -187,8 +184,12 @@
                             <option value="Other" <?= $info['maritalStatus']=='Other' ?"selected='selected'":""; ?>><?= lang('other');?></option>
                             </select><i></i> </label>
                 </section>
+    
+              </div>
+              <div class="row">
+                
                 <section class="col col-6">
-              
+                      <label class="label"><?= lang('Union').' '.lang('Name'); ?></label>
                      <select name="unionName"  class="form-control js-example-basic-single "  id="unionName"  >
                               <?php if(!empty($unionList)):?>
                                   <option value="" selected="" disabled=""><?= lang('Union').' '.lang('Name'); ?></option>
@@ -257,6 +258,213 @@
 	</article>
 	<!-- END COL -->
 
+  <!-- NEW COL START -->
+  <article class="col-sm-5 col-md-5 col-lg-5">
+    
+    <!-- Widget ID (each widget will need unique ID)-->
+    <div class="jarviswidget" id="wid-id-1" data-widget-editbutton="false" data-widget-custombutton="false">
+      <!-- widget options:
+        usage: <div class="jarviswidget" id="wid-id-0" data-widget-editbutton="false">
+        
+        data-widget-colorbutton="false" 
+        data-widget-editbutton="false"
+        data-widget-togglebutton="false"
+        data-widget-deletebutton="false"
+        data-widget-fullscreenbutton="false"
+        data-widget-custombutton="false"
+        data-widget-collapsed="true" 
+        data-widget-sortable="false"
+        
+      -->
+      <header>
+        <span class="widget-icon"> <i class="fa fa-edit"></i> </span>
+        <h2>Address</h2>        
+         <a class=" btn btn-success pull-right" href="<?= base_url().'user-detail/'.encoding($info['id']); ?>">Back To User Detail</a>     
+      </header>
+
+      <!-- widget div-->
+      <div>
+        
+        <!-- widget edit box -->
+        <div class="jarviswidget-editbox">
+          <!-- This area used as dropdown edit box -->
+        </div>
+        <!-- end widget edit box -->
+        <!-- widget content -->
+        <div class="widget-body no-padding">
+         <form method="post" id="user-address-form" class="smart-form" novalidate="novalidate" action="users/addressupdate" novalidate="novalidate" autocomplete="off">
+                                        <header>
+             <?= lang('home_address'); ?>
+            </header>
+            <fieldset>
+              <section>
+              <label for="zip_code"><?= lang('zip_code'); ?><span>*</span></label>
+                <label for="zip_code" class="input">
+                   <input type="text" class="form-control number-only" name="zip_code" maxlength="6" size="6" id="zip_code" placeholder="<?= lang('zip_code'); ?>" onkeyup="zipCodetoData(this);" data-set=""; value="<?= @$addresses[0]->zip_code; ?>"   >
+                </label>
+              </section>
+        <section>
+               <label for="address"><?= lang('Address'); ?><span>*</span></label>
+                <label for="address" class="input">
+                  <input type="hidden" name="addressId" value="<?= @$addresses[0]->addressId; ?>">
+                  <input type="hidden" name="paddressId" value="<?= @$addresses[1]->addressId; ?>">
+                  <input type="hidden" name="userId" value="<?= encoding($info['id']); ?>">
+                  <input type="text" name="address" id="address" value="<?= @$addresses[0]->address; ?>" placeholder=" <?= lang('Address'); ?>"  maxlength="100" size="100">
+                </label>
+              </section>
+
+              <div class="row">
+                
+                <section class="col col-6">
+                   <label for="postName"><?= lang('postName'); ?><span>*</span></label>
+                 <label class="select">
+                    <select  class="form-control" name="postName" id="postName">
+                              <option value="0" selected="" disabled=""><?= lang('postName'); ?></option>
+                              </select><i></i></label>
+                 
+                </section>
+                <section class="col col-6">
+                   <label for="city"><?= lang('City'); ?><span>*</span></label>
+                  <label class="input">
+                    <input type="text" class="form-control" name="city" id="city" placeholder="<?= lang('City'); ?>" value="<?= @$addresses[0]->city; ?>" maxlength="30" size="30">
+                  </label>
+                </section>
+              </div>
+               <div class="row">
+                
+                <section class="col col-6">
+                  <label for="tehsil"><?= lang('Tehsil'); ?><span>*</span></label>
+                    <label class="input">
+                    <input type="text" class="form-control" name="tehsil" id="tehsil" placeholder="<?= lang('Tehsil'); ?>"  value="<?= @$addresses[0]->tehsil; ?>" maxlength="30" size="30">
+                  </label>
+                </section>
+                
+                <section class="col col-6">
+                   <label for="district"><?= lang('District'); ?><span>*</span></label>
+                    <label class="input">
+                    <input type="text" class="form-control" name="district" id="district" placeholder="<?= lang('District'); ?>" value="<?= @$addresses[0]->district; ?>" maxlength="30" size="30">
+                  </label>
+                </section>
+               
+              </div>
+              
+              <div class="row">
+                 <section class="col col-6">
+                   <label for="state"><?= lang('State'); ?><span>*</span></label>
+                    <label class="input">
+                    <input type="text" class="form-control" name="state" id="state" placeholder="<?= lang('State'); ?>" value="<?= @$addresses[0]->state; ?>" maxlength="30" size="30">
+                  </label>
+                </section>
+               <section class="col col-6">
+                  <label for="country"><?= lang('Country'); ?><span>*</span></label>
+                    <label class="input">
+                    <input type="text" class="form-control" name="country"  id="country" placeholder="<?= lang('Country'); ?>" value="<?= @$addresses[0]->country; ?>" value="India" maxlength="30" size="30">
+                  </label>
+                </section>
+              
+              
+              </div>
+          
+            </fieldset>            
+            <header>
+                <div class="row">
+                   <section class="col col-6">
+                 <?= lang('permanent_address'); ?>
+                  </section>  
+                  <section class="col col-6">
+                  <label class="checkbox pull-right">
+                    <input type="checkbox" id="Same_AddressP" name="remember">
+                    <i></i>Same as above</label>
+                  </section>
+              </div>
+             
+            </header>
+                     <fieldset>
+              <section>
+              <label for="pzip_code"><?= lang('zip_code'); ?><span>*</span></label>
+                <label for="pzip_code" class="input">
+                   <input type="text" class="form-control number-only" name="pzip_code" maxlength="6" size="6" id="pzip_code" placeholder="<?= lang('zip_code'); ?>" onkeyup="zipCodetoData(this);" data-set="p" value="<?= @$addresses[1]->zip_code; ?>"   >
+                </label>
+              </section>
+        <section>
+               <label for="paddress"><?= lang('Address'); ?><span>*</span></label>
+                <label for="paddress" class="input">
+                  <input type="text" name="paddress" id="paddress" value="<?= @$addresses[1]->address; ?>" placeholder=" <?= lang('Address'); ?>"  maxlength="100" size="100">
+                </label>
+              </section>
+
+              <div class="row">
+                
+                <section class="col col-6">
+                   <label for="ppostName"><?= lang('postName'); ?><span>*</span></label>
+                 <label class="select">
+                    <select  class="form-control" name="ppostName" id="ppostName">
+                              <option value="0" selected="" disabled=""><?= lang('postName'); ?></option>
+                              </select><i></i></label>
+                 
+                </section>
+                <section class="col col-6">
+                   <label for="pcity"><?= lang('City'); ?><span>*</span></label>
+                  <label class="input">
+                    <input type="text" class="form-control" name="pcity" id="pcity" placeholder="<?= lang('City'); ?>" value="<?= @$addresses[1]->city; ?>" maxlength="30" size="30">
+                  </label>
+                </section>
+              </div>
+               <div class="row">
+                
+                <section class="col col-6">
+                  <label for="ptehsil"><?= lang('Tehsil'); ?><span>*</span></label>
+                    <label class="input">
+                    <input type="text" class="form-control" name="ptehsil" id="ptehsil" placeholder="<?= lang('Tehsil'); ?>"  value="<?= @$addresses[1]->tehsil; ?>" maxlength="30" size="30">
+                  </label>
+                </section>
+                
+                <section class="col col-6">
+                   <label for="district"><?= lang('District'); ?><span>*</span></label>
+                    <label class="input">
+                    <input type="text" class="form-control" name="pdistrict" id="pdistrict" placeholder="<?= lang('District'); ?>" value="<?= @$addresses[1]->district; ?>" maxlength="30" size="30">
+                  </label>
+                </section>
+               
+              </div>
+              
+              <div class="row">
+                 <section class="col col-6">
+                   <label for="pstate"><?= lang('State'); ?><span>*</span></label>
+                    <label class="input">
+                    <input type="text" class="form-control" name="pstate" id="pstate" placeholder="<?= lang('State'); ?>" value="<?= @$addresses[1]->state; ?>" maxlength="30" size="30">
+                  </label>
+                </section>
+               <section class="col col-6">
+                  <label for="pcountry"><?= lang('Country'); ?><span>*</span></label>
+                    <label class="input">
+                    <input type="text" class="form-control" name="pcountry"  id="pcountry" placeholder="<?= lang('Country'); ?>" value="<?= @$addresses[1]->country; ?>" value="India" maxlength="30" size="30">
+                  </label>
+                </section>
+              
+              
+              </div>
+          
+            </fieldset>     
+            <footer>
+              
+              <button type="submit" id="submitA" class="btn btn-primary">
+                <?= lang('Save'); ?>
+              </button>
+            
+            </footer>
+        </form> 
+
+        </div>
+        <!-- end widget content -->
+        
+      </div>
+      <!-- end widget div -->
+      
+    </div>
+    <!-- end widget -->
+  </article>
+  <!-- END COL -->
 
 </div>
 

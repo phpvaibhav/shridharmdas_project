@@ -415,6 +415,12 @@ $firstName = $this->post('firstName');
                 $data_val['sanghId']            = $sangh->sanghId;
                 $user_meta['unionName']         = $sangh->name;
             }
+            
+
+            if($user->sanghId!=$unionName){
+                 $sangh_s                               = $this->common_model->is_data_exists('shree_sangh',array('sanghId'=>$user->sanghId));
+               $notes .= "Shree sangh change <b>".display_placeholder_text($sangh_s->name)."</b> to <b>".$user_meta['unionName']."</b><br>"; 
+            }
             $user_meta['religiousKnowledge']    = $this->post('religiousKnowledge') ? implode(",",$this->post('religiousKnowledge')) :"";
             $id     = decoding($this->post('id'));
          

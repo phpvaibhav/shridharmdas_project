@@ -104,9 +104,10 @@ class Sanghusers extends Common_Back_Controller {
         $data['info']           = $result;
         $data['addresses']      = $this->common_model->getAll('addresses',array('userId'=>$result['id']));
         $data['usermeta']       = $this->common_model->getsingle('user_meta',array('userId'=>$result['id']));
+         $data['addresses']      = $this->common_model->getAll('addresses',array('userId'=>$result['id']));
       //  $this->load->helper('country_code_helper');
       $data['unionList'] = $this->common_model->getAll('shree_sangh',array('status'=>1),'name','ASC'); //unionList();
-        $data['front_scripts']  = array('backend_assets/custom/js/user_edit.js');
+        $data['front_scripts']  = array('backend_assets/custom/js/user_edit.js','backend_assets/custom/js/users.js');
       
         $this->load->admin_render('sanghusers/edit', $data, '');
     } //End function 
