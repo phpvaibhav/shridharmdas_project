@@ -16,12 +16,21 @@ class Sanghusers extends Common_Back_Controller {
     public function index(){
      
         $data['title']      = lang('Users');
-         $sanghId=$_SESSION[ADMIN_USER_SESS_KEY]['sanghId'];
+        $sanghId=$_SESSION[ADMIN_USER_SESS_KEY]['sanghId'];
+        $roleId=$_SESSION[ADMIN_USER_SESS_KEY]['roleId'];
+        $userId=$_SESSION[ADMIN_USER_SESS_KEY]['userId'];
+        if($roleId==4){
+            $sanghId = $this->common_model->GetSingleJoinRecord('shree_sangh','sanghId','admin_sanghs','sanghId','GROUP_CONCAT(shree_sangh.sanghId) as sanghId',array('admin_sanghs.adminId'=>$userId))->sanghId;
+       // pr($sanghIds);
+        }
+        
          $where = "";
         if(!empty($sanghId)){
-            $where = array('is_deleted'=>0,'sanghId'=>$sanghId);
+            $where = "`is_deleted` =0 AND (`sanghId` IN ($sanghId))";
+           // $where = array('is_deleted'=>0,'sanghId'=>$sanghId);
         }else{
-            $where = array('is_deleted'=>0); 
+             $where = "`is_deleted` =0";
+            //$where = array('is_deleted'=>0); 
         }
         $count              = $this->common_model->get_total_count('users',$where);
         $data['countuser']  = $count ;   
@@ -38,12 +47,20 @@ class Sanghusers extends Common_Back_Controller {
      
         $data['title']      = lang('Users');
         $sanghId            = $_SESSION[ADMIN_USER_SESS_KEY]['sanghId'];
-         $sanghId           = $_SESSION[ADMIN_USER_SESS_KEY]['sanghId'];
+        $roleId=$_SESSION[ADMIN_USER_SESS_KEY]['roleId'];
+        $userId=$_SESSION[ADMIN_USER_SESS_KEY]['userId'];
+        if($roleId==4){
+            $sanghId = $this->common_model->GetSingleJoinRecord('shree_sangh','sanghId','admin_sanghs','sanghId','GROUP_CONCAT(shree_sangh.sanghId) as sanghId',array('admin_sanghs.adminId'=>$userId))->sanghId;
+       // pr($sanghIds);
+        }
+        
          $where = "";
         if(!empty($sanghId)){
-            $where = array('is_deleted'=>1,'sanghId'=>$sanghId);
+            $where = "`is_deleted` =1 AND (`sanghId` IN ($sanghId))";
+           // $where = array('is_deleted'=>0,'sanghId'=>$sanghId);
         }else{
-            $where = array('is_deleted'=>1); 
+             $where = "`is_deleted` =1";
+            //$where = array('is_deleted'=>0); 
         }
              $count          = $this->common_model->get_total_count('users', $where);
         $data['countuser']  = $count ;   
@@ -131,6 +148,21 @@ class Sanghusers extends Common_Back_Controller {
         $lang_type          = $this->input->post('lang_type');
         $trash_type         = $this->input->post('trash');
          $sanghId           = $_SESSION[ADMIN_USER_SESS_KEY]['sanghId'];
+                 $roleId=$_SESSION[ADMIN_USER_SESS_KEY]['roleId'];
+        $userId=$_SESSION[ADMIN_USER_SESS_KEY]['userId'];
+        if($roleId==4){
+            $sanghId = $this->common_model->GetSingleJoinRecord('shree_sangh','sanghId','admin_sanghs','sanghId','GROUP_CONCAT(shree_sangh.sanghId) as sanghId',array('admin_sanghs.adminId'=>$userId))->sanghId;
+       // pr($sanghIds);
+        }
+        
+       /*  $where = "";
+        if(!empty($sanghId)){
+            $where = "`is_deleted` =0 AND (`sanghId` IN ($sanghId))";
+           // $where = array('is_deleted'=>0,'sanghId'=>$sanghId);
+        }else{
+             $where = "`is_deleted` =0";
+            //$where = array('is_deleted'=>0); 
+        }*/
         $unionName          =  $sanghId;
        
         if(!empty($extension)){
@@ -156,17 +188,19 @@ class Sanghusers extends Common_Back_Controller {
         }
          if(!empty($unionName)){
             if(!empty($is_deleted)){
-                $whereU = array('users.sanghId'=>$unionName,'users.is_deleted'=>1);
+               // $whereU = array('users.sanghId'=>$unionName,'users.is_deleted'=>1);
+                $whereU = "`users.is_deleted` =1 AND (`users.sanghId` IN ($unionName))";
             }else{
-                $whereU = array('users.sanghId'=>$unionName,'users.is_deleted'=>0);
+                $whereU = "`users.is_deleted` =0 AND (`users.sanghId` IN ($unionName))";
+                //$whereU = array('users.sanghId'=>$unionName,'users.is_deleted'=>0);
             }
         $empInfo = $this->common_model->GetJoinRecord('users','id','user_meta','userId',"*",$whereU,'','id','desc');
 
         }else{
               if(!empty($is_deleted)){
-                $whereU = array('users.is_deleted'=>1);
+                $whereU = "`users.is_deleted` =1";
             }else{
-                $whereU = array('users.is_deleted'=>0);
+                $whereU = "`users.is_deleted` =0";
             }
            $empInfo = $this->common_model->getAll('users',$whereU,'id','desc');  
         }

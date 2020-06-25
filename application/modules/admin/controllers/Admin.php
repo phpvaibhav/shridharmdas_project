@@ -39,7 +39,22 @@ class Admin extends Common_Back_Controller {
         if(!empty($sanghId)){
             $where = array('sanghId'=>$sanghId);
         }
+        $roleId=$_SESSION[ADMIN_USER_SESS_KEY]['roleId'];
+        $userId=$_SESSION[ADMIN_USER_SESS_KEY]['userId'];
+        if($roleId==4){
+            $sanghId = $this->common_model->GetSingleJoinRecord('shree_sangh','sanghId','admin_sanghs','sanghId','GROUP_CONCAT(shree_sangh.sanghId) as sanghId',array('admin_sanghs.adminId'=>$userId))->sanghId;
+       // pr($sanghIds);
+        }
+        
+         $where = "";
+         $data['AssignedSangh']      = array();
+        if(!empty($sanghId)){
+            $where = "(`sanghId` IN ($sanghId))";
+             $data['AssignedSangh']      = $this->common_model->getAll('shree_sangh',$where);
+           // $where = array('is_deleted'=>0,'sanghId'=>$sanghId);
+        }
         $data['users']      = $this->common_model->get_total_count('users',$where);
+       
     /*    $data['preceptor']  = $this->common_model->get_total_count('preceptor');
         $data['union']      = $this->common_model->get_total_count('union_group');
         $data['office']     = $this->common_model->get_total_count('offices');*/

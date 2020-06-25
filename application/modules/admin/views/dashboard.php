@@ -76,5 +76,68 @@
         </div>
     </div>
     <!-- #END# Widgets -->
+    <?php if(!empty($AssignedSangh)):?>
+    <div class="row clearfix">
+          <div class="col-lg-6 col-md-6 col-sm-6 col-xs-12">
+        <div class="jarviswidget jarviswidget-color-pink jarviswidget-sortable" id="wid-id-9" data-widget-colorbutton="false" data-widget-editbutton="false" data-widget-togglebutton="false" data-widget-deletebutton="false" data-widget-fullscreenbutton="false" data-widget-custombutton="false" role="widget" >
+                                <!-- widget options:
+                                    usage: <div class="jarviswidget" id="wid-id-0" data-widget-editbutton="false">
+                                    
+                                    data-widget-colorbutton="false" 
+                                    data-widget-editbutton="false"
+                                    data-widget-togglebutton="false"
+                                    data-widget-deletebutton="false"
+                                    data-widget-fullscreenbutton="false"
+                                    data-widget-custombutton="false"
+                                    data-widget-collapsed="true" 
+                                    data-widget-sortable="false"
+                                    
+                                -->
+                                <header role="heading" class="ui-sortable-handle">
+                                    <span class="widget-icon"> <i class="fa fa-lg fa-fw  fa-sun-o"></i> </span>
+                                    <h2><strong>Assigned Shree Sangh</strong> </h2> 
+                                </header>
+
+                                <!-- widget div-->
+                                <div role="content">
+                                    
+                                    <!-- widget edit box -->
+                                    <div class="jarviswidget-editbox">
+                                        <!-- This area used as dropdown edit box -->
+                                        
+                                    </div>
+                                    <!-- end widget edit box -->
+                                    
+                                    <!-- widget content -->
+                                    <div class="widget-body">
+                                        
+                                       
+                                        <!-- widget body text-->
+                                        <?php
+                                        $colors = array('info', 'success','warning','danger');
+                                         foreach ($AssignedSangh as $key => $sangh) {
+
+                                             $rand_color = $colors[array_rand($colors)];
+                                            ?>
+                                            <p class="alert alert-<?= $rand_color; ?>">
+                                                
+                                                <strong><?= $sangh->name; ?></strong>
+                                                
+                                            </p>
+                                        <?php } ?>
+                                        <!-- end widget body text-->
+                                        
+
+                                        
+                                    </div>
+                                    <!-- end widget content -->
+                                    
+                                </div>
+                                <!-- end widget div -->
+                                
+                            </div>
+    </div>
+    </div>
+<?php endif; ?>
 </section>
 <!-- end widget grid -->

@@ -80,7 +80,7 @@ $("#login-form").validate({
           }
         }
       });
-      return false; // required to block normal submit since you used ajax
+    return false; // required to block normal submit since you used ajax
   }
 });    // Validation
 //Forgot

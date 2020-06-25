@@ -101,23 +101,41 @@ class Sanghusers extends Common_Admin_Controller{
         $this->load->model('user_model');
         $sanghId=$_SESSION[ADMIN_USER_SESS_KEY]['sanghId'];
         $roleId=$_SESSION[ADMIN_USER_SESS_KEY]['roleId'];
+                $where ="";
+        $unionName = $this->post('unionName');
+        $id = $this->post('id');
         $permission             = $this->common_model->getsingle('permission',array('roleId'=>$roleId));
         $u_set  = isset($permission['users']) ? json_decode($permission['users'],true) :array();
         $u_view = isset($u_set['view'])? $u_set['view']:0;
         $u_add = isset($u_set['add'])? $u_set['add']:0;
         $u_edit = isset($u_set['edit'])? $u_set['edit']:0;
         $u_delete = isset($u_set['delete'])? $u_set['delete']:0;
+                $roleId=$_SESSION[ADMIN_USER_SESS_KEY]['roleId'];
+        $userId=$_SESSION[ADMIN_USER_SESS_KEY]['userId'];
+        if($roleId==4){
+            $sanghId = $this->common_model->GetSingleJoinRecord('shree_sangh','sanghId','admin_sanghs','sanghId','GROUP_CONCAT(shree_sangh.sanghId) as sanghId',array('admin_sanghs.adminId'=>$userId))->sanghId;
+       // pr($sanghIds);
+        }
+        
+         $where = "";
+      /*  if(!empty($sanghId)){
+            $where = "`is_deleted` =0 AND (`sanghId` IN ($sanghId))";
+           // $where = array('is_deleted'=>0,'sanghId'=>$sanghId);
+        }else{
+             $where = "`is_deleted` =0";
+            //$where = array('is_deleted'=>0); 
+        }*/
 
-        $where ="";
-        $unionName = $this->post('unionName');
-        $id = $this->post('id');
 
         if(!empty($id) && $id=='fail'){
-            $where = $sanghId ? array('u.sanghId'=>$sanghId,'u.is_deleted'=>0):array('u.is_deleted'=>0);
+            //$where = $sanghId ? array('u.sanghId'=>$sanghId,'u.is_deleted'=>0):array('u.is_deleted'=>0);
+             $where = $sanghId ? "`u.is_deleted` =0 AND (`u.sanghId` IN ($sanghId))":"`u.is_deleted` =0";
         }else if(!empty($id) && $id=='trash'){
-            $where =  $sanghId ? array('u.sanghId'=>$sanghId,'u.is_deleted'=>1):array('u.is_deleted'=>1);
+            //$where =  $sanghId ? array('u.sanghId'=>$sanghId,'u.is_deleted'=>1):array('u.is_deleted'=>1);
+             $where = $sanghId ? "`u.is_deleted` =1 AND (`u.sanghId` IN ($sanghId))":"`u.is_deleted` =1";
         }else{
-            $where =  $sanghId ? array('u.sanghId'=>$sanghId,'u.is_deleted'=>0):array('u.is_deleted'=>0);
+             $where = $sanghId ? "`u.is_deleted` =0 AND (`u.sanghId` IN ($sanghId))":"`u.is_deleted` =0";
+            //$where =  $sanghId ? array('u.sanghId'=>$sanghId,'u.is_deleted'=>0):array('u.is_deleted'=>0);
         }
       /*  if(!empty($unionName)){
              $where = "(um.unionName = ".$unionName." OR um.otherUnionName= ".$unionName.")";

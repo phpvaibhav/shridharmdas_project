@@ -95,7 +95,7 @@
               	
 				<section>
 
-					<label class="select">
+				<label class="select">
 					<select name="roleId"  class="form-control"  id="roleId" onchange="sanghIdCheck(this);" >
 						<?php if(!empty($rolesList)):
 							?>
@@ -106,7 +106,16 @@
 					</select><i></i> </label>
 				</section>
 				<section class="sanghIdCheck" style="display: none;">
-					<select name="sanghId"  class="form-control js-example-basic-single "  id="sanghId"  >
+					<select name="sanghId"  class="form-control js-example-basic-single "  id="sanghId">
+					<?php if(!empty($unionList)):?>
+						<option value="" selected="" disabled=""><?= lang('Union').' '.lang('Name'); ?></option>
+					<?php foreach ($unionList as $kc => $union) { ?>
+						<option value="<?= $union->sanghId; ?>" data-sanghname="<?=  $union->name; ?>" ><?=  $union->name; ?></option>
+					<?php } endif; ?>
+					</select>
+				</section>
+				<section class="sanghIdCheckM" style="display: none;">
+					<select name="sanghIdM[]"  class="form-control js-example-basic-single "  id="sanghIdM" multiple="multiple">
 					<?php if(!empty($unionList)):?>
 						<option value="" selected="" disabled=""><?= lang('Union').' '.lang('Name'); ?></option>
 					<?php foreach ($unionList as $kc => $union) { ?>

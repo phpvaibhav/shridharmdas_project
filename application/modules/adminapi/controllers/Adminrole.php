@@ -18,6 +18,9 @@ class Adminrole extends Common_Admin_Controller{
          $roleId                         =  $this->post('roleId');
          if($roleId==2){
             $this->form_validation->set_rules('sanghId', 'sangh name', 'trim|required');
+         }  
+         if($roleId==4){
+            $this->form_validation->set_rules('sanghIdM[]', 'sangh name', 'trim|required');
          }
  //       $this->form_validation->set_rules('sanghId', 'sangh name', 'trim|required');
         if($this->form_validation->run() == FALSE){
@@ -25,10 +28,12 @@ class Adminrole extends Common_Admin_Controller{
             $response = array('status' => FAIL, 'message' => strip_tags(validation_errors()));
 
         }else{
+           
             $email                          =  $this->post('email');
             $fullName                       =  $this->post('fullName');
             $roleId                         =  $this->post('roleId');
             $sanghId                        =  $this->post('sanghId');
+            $sanghIdM                        =  $this->post('sanghIdM');
             $password                       =  $this->post('password');
             $data_val['fullName']           =  $fullName; 
             $data_val['email']              =  $email; 
@@ -39,13 +44,26 @@ class Adminrole extends Common_Admin_Controller{
             $id                             =  decoding($this->post('id'));
          
             $isExist                        =  $this->common_model->is_data_exists('admin',array('id'=>$id) );
+           
+            
             if($isExist){
-                  $result                   = $this->common_model->updateFields('admin',$data_val,array('id'=>$id));
+                $result                   = $this->common_model->updateFields('admin',$data_val,array('id'=>$id));
+               
+
                    $msg                 = ResponseMessages::getStatusCodeMessage(123);
                 
             }else{
                  $result = $this->common_model->insertData('admin',$data_val);
-             
+              $sangh_data =array();
+                if(!empty($sanghIdM) && is_array($sanghIdM)){
+                    for ($i=0; $i <sizeof($sanghIdM) ; $i++) { 
+                    $sangh_data[] =array('adminId'=>$result,'sanghId'=>$sanghIdM[$i]);
+                    }
+
+                }
+                if(!empty($sangh_data)){
+                    $this->common_model->insertBatch('admin_sanghs',$sangh_data);
+                }
                 $msg  = ResponseMessages::getStatusCodeMessage(122);
             }
             if($result){
@@ -75,7 +93,7 @@ class Adminrole extends Common_Admin_Controller{
             $row[]      = '<a href="'.$link_url.'" >'.display_placeholder_text($serData->fullName).'</a>'; 
             $row[]      = display_placeholder_text($serData->email); 
             $row[]      = display_placeholder_text($serData->role); 
-            $row[]      = display_placeholder_text($serData->sanghName); 
+            $row[]      = ($serData->roleId==4)? $this->common_model->GetSingleJoinRecord('shree_sangh','sanghId','admin_sanghs','sanghId','GROUP_CONCAT(shree_sangh.name) as sanghName',array('admin_sanghs.adminId'=>$serData->id))->sanghName:display_placeholder_text($serData->sanghName); 
 
           
             switch ($serData->status) {

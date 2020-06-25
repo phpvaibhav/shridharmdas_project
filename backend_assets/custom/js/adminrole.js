@@ -106,11 +106,20 @@ $("#user-add-form").validate({// Rules for form validation
   }
 });
 function sanghIdCheck(e){
+   $(".sanghIdCheck").css("display", "none");
+   $(".sanghIdCheckM").css("display", "none");
    var role = $(e).val();
   $("#sanghId").val(null).trigger('change');
+  $("#sanghIdM").val(null).trigger('change');
   
-   if(role==2){
+  if(role==2){
      $(".sanghIdCheck").css("display", "block");
+     $(".sanghIdCheckM").css("display", "none");
+
+  }else if(role==4){
+     $(".sanghIdCheck").css("display", "none");
+     $(".sanghIdCheckM").css("display", "block");
+  
 
   }else{
      $(".sanghIdCheck").css("display", "none");
