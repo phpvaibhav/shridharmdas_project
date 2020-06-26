@@ -263,7 +263,7 @@
                       </div>
                 </div>
                 </div>
-                <div class="otpTodisplay" style="display: none">
+                <div class="otpTodisplayAAA">
                 <div class="row" >
                       <div class="col-md-12">
                           <header>
@@ -341,7 +341,7 @@
                   </div>
                   </div>
                  
-                  <div class="otpTodisplay" style="display: none">
+                  <div class="otpTodisplayAAA" >
                   <div class="row">
                       <div class="col-md-12">
                         <div class="row">
