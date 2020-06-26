@@ -119,7 +119,7 @@
 						<option value="<?= $union->sanghId; ?>" data-sanghname="<?=  $union->name; ?>" ><?=  $union->name; ?></option>
 					<?php } endif; ?>
 					</select>
-					 	</div>
+				</div>
                  
                 </section>
 				</div>

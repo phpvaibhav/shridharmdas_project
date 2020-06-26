@@ -101,6 +101,7 @@ $route['gallery'] 					= 'home/gallery';
 $route['motto-of-sdhp'] 			= 'home/motto_of_sdhp';
 $route['user-step-1'] 				= 'home/user_step_1';
 $route['user-form'] 				= 'home/user_from';
+$route['user-form-2'] 				= 'home/user_from_2';
 $route['user-step-2'] 				= 'home/user_step_2';
 $route['user-step-3'] 				= 'home/user_step_3';
 $route['user-preview'] 				= 'home/user_preview';

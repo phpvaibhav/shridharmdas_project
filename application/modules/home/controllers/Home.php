@@ -109,6 +109,19 @@ public function __construct()
         $this->load->front_render_minimal('userform/step_1',$data);
     }//End Function
 
+    public function user_from_2() { 
+        
+        $this->load->helper('country_code_helper');
+        $data['title'] = 'User Form';
+        $data['countryCodes'] = countryCodelist();
+     //   pr($data['countryCodes']);
+        $data['front_styles'] = array();
+          $data['unionList'] = $this->common_model->getAll('shree_sangh',array('status'=>1),'sanghId','ASC'); //unionList();
+         $data['front_scripts'] = array('frontend_assets/js/user_form_2.js');
+        $this->load->front_render_minimal('userform/otherform',$data);
+    }//End Function
+
+
     public function user_step_1() { 
         $userId = (isset($_SESSION['userId']) && !empty($_SESSION['userId'])) ? $_SESSION['userId'] :0;
         $userStep = (isset($_SESSION['userStep']) && !empty($_SESSION['userStep'])) ? $_SESSION['userStep'] :0;
