@@ -1,4 +1,25 @@
 <?php $backend_assets=base_url().'backend_assets/'; ?>
+<style type="text/css">
+	.select2-container-multi .select2-choices .select2-search-choice, .select2-selection__choice {
+    padding: 1px 28px 1px 8px !important;
+    margin: 4px 0 3px 5px !important;
+    position: relative;
+    line-height: 18px;
+    color: #fff;
+    cursor: default;
+    border: 1px solid #2a6395;
+    -webkit-background-clip: padding-box !important;
+    background-clip: padding-box;
+    -webkit-touch-callout: none;
+    -webkit-user-select: none;
+    -khtml-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+    background-color: #3276b1;
+}
+
+</style>
 <div class="row">
 	<div class="col-sm-12">
 		<div class="well well-sm">
@@ -106,12 +127,12 @@
 												<div class="row">
 													<div class="col-xs-12 col-sm-12">
 														<!-- update -->
-														<form action="updateUser" id="smart-form-updateuser" class="smart-form client-form" enctype="multipart/form-data" novalidate="" autocomplete="off">
+														<form action="updateUser" id="smart-form-updateuser-role" class="smart-form client-form" enctype="multipart/form-data" novalidate="" autocomplete="off">
 														<!-- 	<header>
 																<?= lang('Update'); ?>
 															</header> -->
 															<fieldset>
-																<input type="hidden" name="userauth" value="<?php echo $this->uri->segment(2); ?>">
+																<input type="hidden" name="userauth" value="<?php echo $this->uri->segment(2); ?>"><input type="hidden" name="roleId" value="<?php echo $userData['roleId']; ?>">
 																<section>
 																	<label class="input"> <i class="icon-append fa fa-user"></i>
 																	<input type="text" name="fullName" placeholder="<?=lang('Full_name');?>" value="<?php echo $userData['fullName']; ?>" maxlength="30" size="30">
@@ -135,6 +156,31 @@
 																		<span class="button"><input type="file" name="profileImage" id="file" onchange="this.parentNode.nextSibling.value = this.value" accept="image/*">Browse</span><input type="text" readonly="" placeholder="Change Avatar">
 																	</div>
 																</section>
+																<?php if($userData['roleId']==2): ?>
+																		<section>
+																		<select name="sanghId"  class="form-control js-example-basic-single "  id="sanghId">
+																		<?php if(!empty($unionList)):?>
+																		<option value="" selected="" disabled=""><?= lang('Union').' '.lang('Name'); ?></option>
+																		<?php foreach ($unionList as $kc => $union) { ?>
+																		<option value="<?= $union->sanghId; ?>" data-sanghname="<?=  $union->name; ?>"<?=  $union->sanghId==$userData['sanghId']?"selected='selected'":""; ?> ><?=  $union->name; ?></option>
+																		<?php } endif; ?>
+																		</select>
+																		</section>
+																<?php endif; ?>																<?php if($userData['roleId']==4):
+																	$sa = isset($adminR) ?explode(",",$adminR) :array();
+																//	print_r($sa);
+
+																 ?>
+																<section >
+					<select name="sanghIdM[]"  class="form-control js-example-basic-single "  id="sanghIdM" multiple="multiple">
+					<?php if(!empty($unionList)):?>
+						<!-- <option value="" selected="" disabled=""><?= lang('Union').' '.lang('Name'); ?></option> -->
+					<?php foreach ($unionList as $kc => $union) { ?>
+						<option value="<?= $union->sanghId; ?>" data-sanghname="<?=  $union->name; ?>"  <?=  in_array($union->sanghId,$sa) ?"selected='selected'":""; ?> ><?=  $union->name; ?></option>
+					<?php } endif; ?>
+					</select>
+				</section>
+																<?php endif; ?>
 															</fieldset>
 															<footer>
 																<button type="submit" id="submit" class="btn btn-primary"><?= lang('Update'); ?></button>

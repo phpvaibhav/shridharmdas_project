@@ -39,7 +39,11 @@ class Adminrole extends Common_Back_Controller {
         $data['title']      = lang('Sub_Admin');
         $where              = array('id'=>$userId);
         $result             = $this->common_model->getsingle('admin',$where);
+        $adminR             =$this->common_model->GetSingleJoinRecord('shree_sangh','sanghId','admin_sanghs','sanghId','GROUP_CONCAT(shree_sangh.sanghId) as sanghIds',array('admin_sanghs.adminId'=>$userId))->sanghIds;// $this->common_model->getAll('admin_sanghs',array('adminId'=>$userId));
         $data['userData']   = $result;
+        $data['adminR']   = $adminR;
+        $data['unionList']  = $this->common_model->getAll('shree_sangh',array('status'=>1),'name','ASC');
+        $data['rolesList']  = $this->common_model->getAll('admin_role',array('rolestatus'=>1,'roleId !='=>1),'roleId','ASC');
          $data['front_scripts']  = array('backend_assets/custom/js/adminrole.js');
 
         $this->load->admin_render('adminrole/detail', $data, '');

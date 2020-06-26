@@ -74,6 +74,95 @@ class Adminrole extends Common_Admin_Controller{
         }
         $this->response($response);
     }//end function
+        function updateUser_post(){
+        $authCheck  = $this->check_admin_service_auth();
+        $authToken  = $this->authData->authToken;
+        $userId     = $this->authData->id;
+        $this->form_validation->set_rules('email', 'Email', 'trim|required|valid_email');
+        $this->form_validation->set_rules('contact', 'Contact Number', 'trim|required|min_length[10]|max_length[20]');
+        $this->form_validation->set_rules('fullName', 'full Name', 'trim|required|min_length[2]');
+        $this->form_validation->set_rules('roleId', 'role', 'trim|required');
+         $roleId                         =  $this->post('roleId');
+         if($roleId==2){
+            $this->form_validation->set_rules('sanghId', 'sangh name', 'trim|required');
+         }  
+         if($roleId==4){
+            $this->form_validation->set_rules('sanghIdM[]', 'sangh name', 'trim|required');
+         }
+        if($this->form_validation->run() == FALSE){
+            $response = array('status' => FAIL, 'message' => strip_tags(validation_errors()));  
+        }else{
+        
+            $userid             =  $this->post('userauth');
+            $userauth           =  decoding($userid);
+            $email              =  $this->post('email');
+            $fullName           =  $this->post('fullName');
+            $roleId                         =  $this->post('roleId');
+            $sanghId                        =  $this->post('sanghId');
+            $sanghIdM                        =  $this->post('sanghIdM');
+            $isExist            =  $this->common_model->is_data_exists('admin',array('id'=>$userauth));
+            if($isExist){
+                $isExistEmail   = $this->common_model->is_data_exists('admin',array('id  !='=>$userauth,'email'=>$email));
+                if(!$isExistEmail){
+                    //update
+                    //user info
+                    $userData['fullName']           =   $fullName;
+                    $userData['email']              =   $email;
+                    $userData['contactNumber']      =   $this->post('contact');
+                    $userData['sanghId']            =  ($roleId==2) ? $sanghId:null; 
+                    $userData['roleId']             =  $roleId; 
+
+                    //user info
+                    // profile pic upload
+                    $this->load->model('Image_model');
+
+                    $image          = array(); $profileImage = '';
+                    if (!empty($_FILES['profileImage']['name'])) {
+                        $folder     = 'admin';
+                        $image      = $this->Image_model->upload_image('profileImage',$folder); //upload media of Seller
+                        //check for error
+                        if(array_key_exists("error",$image) && !empty($image['error'])){
+                            $response = array('status' => FAIL, 'message' => strip_tags($image['error'].'(In user Image)'));
+                           $this->response($response);die;
+                        }
+                        //check for image name if present
+                        if(array_key_exists("image_name",$image)):
+                            $profileImage = $image['image_name'];
+                            if(!empty($isExist->profileImage)){
+                                $this->Image_model->delete_image('uploads/admin/',$isExist->profileImage);
+                            }
+                        endif;
+                        }
+                        if(!empty($profileImage)){
+                            $userData['profileImage']           =   $profileImage;
+                        } 
+                    //update
+                    $result = $this->common_model->updateFields('admin',$userData,array('id'=>$userauth));
+                    if($result){
+                          $sangh_data =array();
+                if(!empty($sanghIdM) && is_array($sanghIdM)){
+                    $this->common_model->deleteData('admin_sanghs',array('adminId'=>$userauth));
+                    for ($i=0; $i <sizeof($sanghIdM) ; $i++) { 
+                    $sangh_data[] =array('adminId'=>$userauth,'sanghId'=>$sanghIdM[$i]);
+                    }
+
+                }
+                if(!empty($sangh_data)){
+                    $this->common_model->insertBatch('admin_sanghs',$sangh_data);
+                }
+                        $response   = array('status'=>SUCCESS,'message'=>ResponseMessages::getStatusCodeMessage(123),'url'=>$userid);
+                    }else{
+                        $response   = array('status'=>FAIL,'message'=>ResponseMessages::getStatusCodeMessage(118),'userDetail'=>array());
+                    }  
+                }else{
+                    $response       = array('status'=>FAIL,'message'=>ResponseMessages::getStatusCodeMessage(117),'userDetail'=>array());
+                }
+            }else{
+                $response = array('status'=>FAIL,'message'=>ResponseMessages::getStatusCodeMessage(126),'userDetail'=>array()); 
+            }
+        }
+        $this->response($response);
+    }//end function
     function list_post(){
         $this->load->helper('text');
         $this->load->model('adminrole_model');

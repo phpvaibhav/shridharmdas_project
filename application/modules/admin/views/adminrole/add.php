@@ -1,6 +1,5 @@
 <style type="text/css">
-
-.select2-container-multi .select2-choices .select2-search-choice, .select2-selection__choice {
+	.select2-container-multi .select2-choices .select2-search-choice, .select2-selection__choice {
     padding: 1px 28px 1px 8px !important;
     margin: 4px 0 3px 5px !important;
     position: relative;
@@ -9,21 +8,17 @@
     cursor: default;
     border: 1px solid #2a6395;
     -webkit-background-clip: padding-box !important;
-    background-clip: padding-box !important;
-    -webkit-touch-callout: none !important;
-    -webkit-user-select: none !important;
+    background-clip: padding-box;
+    -webkit-touch-callout: none;
+    -webkit-user-select: none;
     -khtml-user-select: none;
     -moz-user-select: none;
     -ms-user-select: none;
     user-select: none;
     background-color: #3276b1;
-     width: 100%;
 }
-.select2-container {
- 
-    width: 100% !important;
-}
-  </style>
+
+</style>
 <!-- START ROW -->
 
 <div class="row">

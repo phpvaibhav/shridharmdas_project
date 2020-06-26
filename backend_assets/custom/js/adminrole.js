@@ -201,3 +201,79 @@ $("#adminrole-changepass").validate({
           }
         });
         // Change Password
+
+         // update profile
+        $("#smart-form-updateuser-role").validate({
+
+          // Rules for form validation
+          rules : {
+            fullName : {
+              required  : true
+            },
+            email : {
+              required  : true,
+              email     : true
+            },
+            contact : {
+              required  : true,       
+            },
+          },
+
+          // Messages for form validation
+          messages : {
+            fullName : {
+              required : Please_enter_your_full_name
+            },
+            email : {
+              required  : Please_enter_email_address,
+              email     : Please_enter_a_valid_email_address
+            },
+            contact : {
+              required : Please_enter_your_contact_number,
+            
+            }, 
+          },
+          // Ajax form submition
+         /* submitHandler : function(form) {
+           
+             return false; // required to block normal submit since you used ajax
+          },
+*/
+          // Do not change code below
+          errorPlacement : function(error, element) {
+            error.insertAfter(element.parent());
+          }
+        });
+        // update profile                         
+// Validation
+$(function() {
+      
+  $(document).on('submit', "#smart-form-updateuser-role", function (event) {
+    toastr.clear();
+    event.preventDefault();
+    var formData = new FormData(this);
+    $.ajax({
+        type            : "POST",
+        url             : base_url+'adminapi/adminrole/'+$(this).attr('action'),
+        headers         : { 'authToken': authToken },
+        data            : formData, //only input
+        processData     : false,
+        contentType     : false,
+        cache           : false,
+        beforeSend      : function () {
+            preLoadshow(true);
+            $('#submit').prop('disabled', true);
+        },
+        success         : function (res) {
+          preLoadshow(false);
+          setTimeout(function(){  $('#submit').prop('disabled', false); },4000);
+          if(res.status=='success'){
+            toastr.success(res.message, 'Success', {timeOut: 3000});
+            setTimeout(function(){ window.location = base_url+'sub-admin-detail/'+res.url; },4000);
+          }else{
+            toastr.error(res.message, 'Alert!', {timeOut: 4000});
+          }         
+        }
+    });
+  });        //fromsubmit
+});
