@@ -1,4 +1,13 @@
 <style type="text/css">
+	.select2-container {
+    margin: 0;
+    position: relative;
+    display: inline-block;
+    zoom: 1;
+    *display: inline;
+    vertical-align: middle;
+    width: 100% !important;
+}
 	.select2-container-multi .select2-choices .select2-search-choice, .select2-selection__choice {
     padding: 1px 28px 1px 8px !important;
     margin: 4px 0 3px 5px !important;
@@ -100,7 +109,21 @@
 						<?php } endif; ?>
 					</select><i></i> </label>
 				</section>
-				<section class="sanghIdCheck" style="display: none;">
+				<div class="row">
+					 <section class="col col-md-12">
+					 	<div class="sanghIdCheck" style="display: none;">
+					 		<select name="sanghId"  class="form-control js-example-basic-single "  id="sanghId">
+					<?php if(!empty($unionList)):?>
+						<option value="" selected="" disabled=""><?= lang('Union').' '.lang('Name'); ?></option>
+					<?php foreach ($unionList as $kc => $union) { ?>
+						<option value="<?= $union->sanghId; ?>" data-sanghname="<?=  $union->name; ?>" ><?=  $union->name; ?></option>
+					<?php } endif; ?>
+					</select>
+					 	</div>
+                 
+                </section>
+				</div>
+				<!-- <section >
 					<select name="sanghId"  class="form-control js-example-basic-single "  id="sanghId">
 					<?php if(!empty($unionList)):?>
 						<option value="" selected="" disabled=""><?= lang('Union').' '.lang('Name'); ?></option>
@@ -108,8 +131,22 @@
 						<option value="<?= $union->sanghId; ?>" data-sanghname="<?=  $union->name; ?>" ><?=  $union->name; ?></option>
 					<?php } endif; ?>
 					</select>
-				</section>
-				<section class="sanghIdCheckM" style="display: none;">
+				</section> -->
+				<div class="row">
+					 <section class="col col-md-12">
+					 	<div class="sanghIdCheckM" style="display: none;">
+					 		<select name="sanghIdM[]"  class="form-control js-example-basic-single "  id="sanghIdM" multiple="multiple">
+					<?php if(!empty($unionList)):?>
+						<option value="" selected="" disabled=""><?= lang('Union').' '.lang('Name'); ?></option>
+					<?php foreach ($unionList as $kc => $union) { ?>
+						<option value="<?= $union->sanghId; ?>" data-sanghname="<?=  $union->name; ?>" ><?=  $union->name; ?></option>
+					<?php } endif; ?>
+					</select>
+					 	</div>
+                 
+                </section>
+				</div>
+				<!-- <section class="sanghIdCheckM" style="display: none;">
 					<select name="sanghIdM[]"  class="form-control js-example-basic-single "  id="sanghIdM" multiple="multiple">
 					<?php if(!empty($unionList)):?>
 						<option value="" selected="" disabled=""><?= lang('Union').' '.lang('Name'); ?></option>
@@ -117,7 +154,7 @@
 						<option value="<?= $union->sanghId; ?>" data-sanghname="<?=  $union->name; ?>" ><?=  $union->name; ?></option>
 					<?php } endif; ?>
 					</select>
-				</section>
+				</section> -->
             </fieldset>
 						<footer>
 							<button type="submit" id="submit" class="btn btn-primary">
