@@ -80,6 +80,11 @@
 													<p class="text-muted"><i class="fa fa-hand-o-right" aria-hidden="true"></i>
 														Approval :&nbsp;&nbsp;<span class="txt-color-darken pull-right"><label class="label label-<?= $info['verifyUser'] ? "info":"danger"; ?>"><?= $info['verifyUser'] ? "Approved":"Not approved"; ?></label></span>
 													</p>
+												</li>	
+												<li>
+													<p class="text-muted"><i class="fa fa-star-o" aria-hidden="true"></i>
+														Entry :&nbsp;&nbsp;<span class="txt-color-darken pull-right"><label class="label label-info"><?= $info['entryStatus']; ?></label></span>
+													</p>
 												</li>
 												<!-- <li>
 													<p class="text-muted">

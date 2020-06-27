@@ -48,7 +48,7 @@
                   <div class="col-md-12">
                           <header>
                           <b><?= lang('basic_Information'); ?></b>
-                        
+                        <input type="hidden" name="entryStatus" value="Manual">
                           </header>
                           <hr>
                       </div>

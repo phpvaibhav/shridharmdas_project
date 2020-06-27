@@ -132,6 +132,7 @@ class Webapi extends Common_Service_Controller{
                  $data_val['gender']             = $this->post('gender');
                 $data_val['maritalStatus']      = $this->post('maritalStatus');
                 $data_val['communicationCode']  = $this->post('zip_code');
+                $data_val['entryStatus']        = $this->post('entryStatus');
 
                 $data_val['contactNumber']          = $contactNumber;
                // $data_val['aadharNumber']           = $aadharNumber; 

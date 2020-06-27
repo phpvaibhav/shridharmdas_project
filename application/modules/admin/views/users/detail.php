@@ -79,6 +79,11 @@
 													</p>
 												</li>
 												<li>
+													<p class="text-muted"><i class="fa fa-star-o" aria-hidden="true"></i>
+														Entry :&nbsp;&nbsp;<span class="txt-color-darken pull-right"><label class="label label-info"><?= $info['entryStatus']; ?></label></span>
+													</p>
+												</li>
+												<li>
 													<p class="text-muted">
 														<i class="fa fa-list"></i>&nbsp;&nbsp;<span class="txt-color-darken"><?= display_aadhar_text($info['aadharNumber'],6); ?></span>
 													</p>
