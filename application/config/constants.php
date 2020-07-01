@@ -115,4 +115,5 @@ define('UNKNOWN_ERR', 'Something went wrong. Please try again');
 define('FAIL', 'fail');
 define('SUCCESS', 'success');
 define('BAD_REQUEST',	'400');
+define('APP_ADMIN_ASSETS_IMG', 'backend_assets/img/logo/');
 

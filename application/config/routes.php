@@ -73,6 +73,7 @@ $route['user-detail/(:any)'] 		= 'admin/users/detail/$1';
 $route['preceptor'] 				= 'admin/preceptor';
 $route['union'] 					= 'admin/union';
 $route['office'] 					= 'admin/office';
+$route['reports'] 					= 'admin/report';
 
 
 $route['sangh-users'] 					= 'admin/sanghusers';

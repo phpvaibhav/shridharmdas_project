@@ -6,7 +6,7 @@ class User_model extends CI_Model {
     //var $table , $column_order, $column_search , $order =  '';
     var $table = 'users';
     var $column_order = array('u.id','u.fullName','u.parentName','u.familyHeadName','um.unionName','u.contactNumber','u.dob','u.status','u.verifyUser'); //set column field database for datatable orderable
-    var $column_sel = array('u.id','u.fullName','u.firstName','u.lastName','u.username','u.email','u.aadharNumber','u.countrycode','u.contactNumber','u.gender','u.dob','u.parentName','u.familyHeadName','u.verifyUser','um.hindiFirstName','um.hindiLastName','um.hindiFullName','um.hindiFamilyHeadName','um.hindiParentName','um.unionName','um.otherUnionName','u.status','(case when (u.status = 0) 
+    var $column_sel = array('u.id','u.fullName','u.firstName','u.lastName','u.username','u.email','u.aadharNumber','u.countrycode','u.contactNumber','u.gender','u.dob','u.parentName','u.familyHeadName','u.verifyUser','um.hindiFirstName','um.hindiLastName','um.hindiFullName','um.hindiFamilyHeadName','um.hindiParentName','um.unionName','um.otherUnionName','um.religiousKnowledge','u.status','(case when (u.status = 0) 
         THEN "Inactive" when (u.status = 1) 
         THEN "Active"  ELSE
         "Unknown" 
