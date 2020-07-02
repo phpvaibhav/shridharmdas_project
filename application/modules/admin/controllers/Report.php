@@ -31,6 +31,7 @@ class Report extends Common_Back_Controller {
         $data['front_scripts']  = array('backend_assets/custom/js/common_datatable.js');
         $this->load->admin_render('report/gyan', $data, '');
     } //End function
+
     function listpdf(){
         $id             = decoding($this->uri->segment(4));
         $id_gyan             = $this->uri->segment(4);
@@ -160,7 +161,7 @@ $pdf->setFontSubsetting(true);
       $content .='</tr>';
     } 
     $content .='</table>';
-    $pdf->WriteHTML($content, true, 0, true, 0);
+    $pdf->WriteHTML($content, true, false, true, false, '');
    // $pdf->writeHTML($content, true, false, true, false, '');
     // reset pointer to the last page
     $pdf->lastPage();

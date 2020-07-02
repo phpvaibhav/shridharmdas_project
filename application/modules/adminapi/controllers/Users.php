@@ -208,6 +208,25 @@ class Users extends Common_Admin_Controller{
         }
         $this->response($response);
     }//end function
+    function recordApproved_post(){
+        $preId              = decoding($this->post('id'));
+        $where              = array('id'=>$preId);
+        $dataExist          = $this->common_model->is_data_exists('users',$where);
+        if($dataExist){
+            $status         = $dataExist->verifyUser ? 0:1;
+            $up      = $this->common_model->updateFields('users',array('verifyUser'=>$status),$where);
+            $showmsg        = ($status==1)? 'Approved' : 'Unapproved';
+              $showmsg1        = ($status==1)? "Approved" : "Unapproved";
+            if($up){
+                 $r= $this->common_model->activity_log($preId,$showmsg1." Activity");
+                  $response       = array('status'=>SUCCESS,'message'=>$showmsg." ".ResponseMessages::getStatusCodeMessage(128));       
+            }else{
+                 $response       = array('status'=>FAIL,'message'=>ResponseMessages::getStatusCodeMessage(118));  
+            }
+        }
+        $this->response($response);
+    }//end function
+    
     function recordDelete_post(){
         $preId              = decoding($this->post('id'));
         $where              = array('id'=>$preId);
@@ -223,6 +242,7 @@ class Users extends Common_Admin_Controller{
         }
         $this->response($response);
     }//end function
+
     function recordTrash_post(){
         $preId              = decoding($this->post('id'));
         $where              = array('id'=>$preId);

@@ -52,22 +52,22 @@ class Phpspreadsheet extends CI_Controller {
     $sheet = $spreadsheet->getActiveSheet();
     
     $sheet->setCellValue('A1', 'First_Name');
-        $sheet->setCellValue('B1', 'Last_Name');
-        $sheet->setCellValue('C1', 'Email');
-        $sheet->setCellValue('D1', 'DOB');
-        $sheet->setCellValue('E1', 'Contact_No');
+    $sheet->setCellValue('B1', 'Last_Name');
+    $sheet->setCellValue('C1', 'Email');
+    $sheet->setCellValue('D1', 'DOB');
+    $sheet->setCellValue('E1', 'Contact_No');
 
-        $rowCount = 2;
-        foreach ($empInfo as $element) {
-            $sheet->setCellValue('A' . $rowCount, $element['firstName']);
-            $sheet->setCellValue('B' . $rowCount, $element['lastName']);
-            $sheet->setCellValue('C' . $rowCount, $element['email']);
-            $sheet->setCellValue('D' . $rowCount, $element['dob']);
-            $sheet->setCellValue('E' . $rowCount, $element['contactNumber']);
-            $rowCount++;
-        }
+    $rowCount = 2;
+    foreach ($empInfo as $element) {
+      $sheet->setCellValue('A' . $rowCount, $element['firstName']);
+      $sheet->setCellValue('B' . $rowCount, $element['lastName']);
+      $sheet->setCellValue('C' . $rowCount, $element['email']);
+      $sheet->setCellValue('D' . $rowCount, $element['dob']);
+      $sheet->setCellValue('E' . $rowCount, $element['contactNumber']);
+      $rowCount++;
+    }
 
-        if($extension == 'csv'){          
+    if($extension == 'csv'){          
       $writer = new \PhpOffice\PhpSpreadsheet\Writer\Csv($spreadsheet);
       $fileName = $fileName.'.csv';
     } elseif($extension == 'xlsx') {

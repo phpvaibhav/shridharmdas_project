@@ -36,10 +36,26 @@
   ?>
 <div class="row">
 	<?php if($u_edit_pr): ?>
-		<div class="col-sm-12 ">
+
+	<div class="col-sm-12 ">
+		<span>
+			<?php if($info['verifyUser']): ?>
+			<a href="javascript:void(0);" onclick="confirmAction(this);" data-message="You want to Unapproved this record!" data-id="<?= encoding($info['id']); ?>"  data-url="adminapi/sanghusers/recordApproved" data-list="0"  class="btn btn-labeled btn-danger"> <span class="btn-label"><i class="fa fa-close"></i></span> Unapproved </a>
+			<?php else: ?>
+			
+			<a href="javascript:void(0);" onclick="confirmAction(this);" data-message="You want to Approved this record!" data-id="<?= encoding($info['id']); ?>"  data-url="adminapi/sanghusers/recordApproved" data-list="0"  class="btn btn-labeled btn-success"> <span class="btn-label"><i class="fa fa-check"></i></span> Approved </a>
+		<?php endif; ?>
+			
+			
+		</span>
+		<span class="pull-right"><a href="<?= base_url().'sangh-edit-user/'.encoding($info['id']); ?>" class="btn btn-labeled btn-danger"> <span class="btn-label"><i class="glyphicon glyphicon-edit"></i></span> Edit </a></span>
+	 
+	</div>
+		<hr>
+		<!-- <div class="col-sm-12 ">
 			<a href="<?= base_url().'sangh-edit-user/'.encoding($info['id']); ?>" class="btn btn-labeled btn-danger pull-right"> <span class="btn-label"><i class="glyphicon glyphicon-edit"></i></span> Edit </a>
 			<hr>
-		</div>
+		</div> -->
 	<?php endif; ?>
 	<div class="col-sm-12">
 			<div class="well well-sm">
