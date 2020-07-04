@@ -36,14 +36,14 @@
         <td width="33%" style="text-align: right;">By: <?= $_SESSION[ADMIN_USER_SESS_KEY]['fullName']; ?></td>
     </tr>
 </table>
-<table border="1" cellspacing="1" cellpadding="2" style="width:100%;font-size: 12px;">
+<table border="1" cellspacing="1" cellpadding="2" style="width:100%;font-size: 12px;  font-family: freeserif;">
 <tr style="background-color:#707070;color:#FFFFFF;"  nobr="true">
-        <th>S.No.</th>
-        <th>Full Name</th>
-        <th>S/O|W/O</th>
-        <th>Family Head Name</th>
-        <th>Shree Shangh</th>
-        <th>Religious knowledge</th>
+        <th><?=lang('ID');?></th>
+        <th><?= lang('Full_name'); ?></th>
+        <th><?= lang('parentName'); ?></th>
+        <th><?= lang('familyHeadName'); ?></th>
+        <th><?= lang('Union').' '.lang('Name'); ?></th>
+        <th><?= lang('Religious_knowledge'); ?></th>
         </tr>
 	
 <?php $content="";
