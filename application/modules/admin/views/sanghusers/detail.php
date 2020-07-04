@@ -349,6 +349,8 @@
 															<input type="hidden" name="addressId" value="<?= @$addresses[0]->addressId; ?>">
                 	<input type="hidden" name="paddressId" value="<?= @$addresses[1]->addressId; ?>">
                 	<input type="hidden" name="userId" value="<?= encoding($info['id']); ?>">
+                	  <input type="hidden" id="postNameE" name="postNameE" value="<?= @$addresses[0]->postName; ?>">
+                  <input type="hidden" id="ppostNameE" name="ppostNameE" value="<?= @$addresses[1]->postName; ?>">
 															<?php if($u_current_address_pr):?>
 														            <header>
              <?= lang('home_address'); ?>

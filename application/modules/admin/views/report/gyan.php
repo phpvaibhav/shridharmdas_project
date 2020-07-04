@@ -34,7 +34,9 @@
 
 					
 						</div>
-						 <a class="btn btn-warning pull-right"  target="_blank" href="<?= base_url('admin/report/listpdf/').$id_gyan;?>">Download PDF</a> 
+						 <a class="btn btn-warning pull-right"  target="_blank" href="<?= base_url('admin/report/listpdf/').$id_gyan;?>">Download PDF</a>  
+
+						 <!-- <a class="btn btn-warning pull-right"  target="_blank" href="<?= base_url('admin/report/pgpdf/').$id_gyan;?>">Download PDF G</a>  -->
 					<!--  <a class="btn btn-warning pull-right"  target="_blank" href="<?= base_url('users-incomplete');?>">Users incomplete</a> 
 					 <a class="btn btn-danger pull-right"  target="_blank" href="<?= base_url('users-trash');?>">Trash User</a>  -->
 				</header>

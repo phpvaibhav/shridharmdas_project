@@ -475,8 +475,18 @@ function zipCodetoData(e){
                         $(district).empty().val(result.res4);
                         $(state).empty().val(result.res5);
                         $(country).empty().val('India');
+                       // alert();
+                       if($('#postNameE').val()){
+                          $("#postName option[value='"+($('#postNameE').val())+"']").prop('selected', true);
+                       }
+                      
                         if(tag=='p'){
-                          $("#ppostName option[value='"+($('#postName').val())+"']").prop('selected', true);
+                          if($('#ppostNameE').val()){
+                             $("#ppostName option[value='"+($('#ppostNameE').val())+"']").prop('selected', true);
+                          }else{
+                             $("#ppostName option[value='"+($('#postName').val())+"']").prop('selected', true);
+                          }
+                         
                         }
                         if(tag=='o'){
                           $("#opostName option[value='"+($('#ppostName').val())+"']").prop('selected', true);

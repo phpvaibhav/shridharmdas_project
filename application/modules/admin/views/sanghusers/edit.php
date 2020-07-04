@@ -306,10 +306,18 @@
         <!-- end widget edit box -->
         <!-- widget content -->
         <div class="widget-body no-padding">
+          <?php
+          /*  echo "<pre>";
+            print_r($addresses);
+            echo "</pre>";*/
+
+          ?>
           <form method="post" id="user-address-form" class="smart-form" novalidate="novalidate" action="sanghusers/addressupdate" novalidate="novalidate" autocomplete="off">
                               <input type="hidden" name="addressId" value="<?= @$addresses[0]->addressId; ?>">
                   <input type="hidden" name="paddressId" value="<?= @$addresses[1]->addressId; ?>">
                   <input type="hidden" name="userId" value="<?= encoding($info['id']); ?>">
+                  <input type="hidden" id="postNameE" name="postNameE" value="<?= @$addresses[0]->postName; ?>">
+                  <input type="hidden" id="ppostNameE" name="ppostNameE" value="<?= @$addresses[1]->postName; ?>">
                               <?php if($u_current_address_pr):?>
                                         <header>
              <?= lang('home_address'); ?>
@@ -332,6 +340,7 @@
               <div class="row">
                 
                 <section class="col col-6">
+                
                    <label for="postName"><?= lang('postName'); ?><span>*</span></label>
                  <label class="select">
                     <select  class="form-control" name="postName" id="postName">

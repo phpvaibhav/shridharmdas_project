@@ -4,8 +4,8 @@
 	<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
 	<meta http-equiv="X-UA-Compatible" content="IE=edge">
 	<meta name="viewport" content="width=device-width,initial-scale=1">
-	<meta name="keywords" content="Shri dharmdas,श्री धर्मदास गण परिषद">
-	<meta name="description" content="Shri dharmdas,श्री धर्मदास गण परिषद">
+	<meta name="keywords" content="Shree dharmdas,श्री धर्मदास गण परिषद">
+	<meta name="description" content="Shree dharmdas,श्री धर्मदास गण परिषद">
 	<?php $frontend_assets =  base_url().'frontend_assets/';?>
 	<title><?= lang('site_name'); ?></title>
 	<!--Bootstrap -->
