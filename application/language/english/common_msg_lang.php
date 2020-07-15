@@ -56,6 +56,7 @@ $lang['contactNumber'] 									= "contactNumber";
 	$lang['Activity_Time'] 							= "Activity Time";
 	$lang['Permissions'] 							= "Permissions";
 	$lang['reports'] 							= "Reports";
+	$lang['pachkan'] 							= "Pachkan";
 
 
 

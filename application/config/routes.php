@@ -74,6 +74,7 @@ $route['preceptor'] 				= 'admin/preceptor';
 $route['union'] 					= 'admin/union';
 $route['office'] 					= 'admin/office';
 $route['reports'] 					= 'admin/report';
+$route['pachkan'] 					= 'admin/pachkan';
 
 
 $route['sangh-users'] 					= 'admin/sanghusers';

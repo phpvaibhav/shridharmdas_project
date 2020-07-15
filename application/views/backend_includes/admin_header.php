@@ -247,6 +247,10 @@
           <li class="<?php echo (strtolower($this->router->fetch_class()) == "report") ? "active" : "" ?>">
             <a href="<?php echo base_url('reports'); ?>" title="<?= lang('reports'); ?>"><i class="fa fa-lg fa-fw fa-list-alt"></i> <span class="menu-item-parent"><?= lang('reports'); ?></span></a>
           </li>  
+          <li class="<?php echo (strtolower($this->router->fetch_class()) == "pachkan") ? "active" : "" ?>">
+            <a href="<?php echo base_url('pachkan'); ?>" title="<?= lang('pachkan'); ?>"><i class="fa fa-lg fa-fw fa-list"></i> <span class="menu-item-parent"><?= lang('pachkan'); ?></span></a>
+          </li>  
+          
           
         <?php endif; ?>
         <!--   <li class="<?php echo (strtolower($this->router->fetch_class()) == "preceptor") ? "active" : "" ?>">

@@ -14,8 +14,6 @@ class Report extends Common_Back_Controller {
     public function index(){
      
         $data['title']      = lang('reports');
-       
-	
 		$data['front_scripts'] = array('');
         $this->load->admin_render('report/index', $data, '');
     } //End function

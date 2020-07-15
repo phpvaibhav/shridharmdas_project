@@ -479,10 +479,9 @@ $firstName = $this->post('firstName');
         if($this->form_validation->run() == FALSE){
             $response = array('status' => FAIL, 'message' => strip_tags(validation_errors()));  
         }else{
-                
-            
-                $userId                     = decoding($this->post('userId'));
-                $notes = "";
+
+            $userId                     = decoding($this->post('userId'));
+            $notes = "";
             $addressId      = $this->post('addressId');
             $oaddressId      = $this->post('paddressId');
 

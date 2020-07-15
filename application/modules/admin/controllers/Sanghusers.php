@@ -544,10 +544,10 @@ class Sanghusers extends Common_Back_Controller {
                         //English
 
                         //hindi
-                            $hindiFamilyHeadNameH =  trim(str_replace(array('।'),array('.'),$hindiFamilyHeadName));
-                            $hindiParentNameH = trim(str_replace(array('।'),array('.'),$hindiParentName));
+                            $hindiFamilyHeadNameH   =  trim(str_replace(array('।'),array('.'),$hindiFamilyHeadName));
+                            $hindiParentNameH       = trim(str_replace(array('।'),array('.'),$hindiParentName));
                             $hindiFullNameH =  $hindiFullName;
-                            $hindiFullNameH = trim(str_replace(array('।'),array('.'),$hindiFullName));
+                            $hindiFullNameeH = trim(str_replace(array('।'),array('.'),$hindiFullName));
                             $fulldivideH     = explode(" ",$hindiFullNameH);
                             if(sizeof($fulldivideH)>1){
                             $lastNameH = end($fulldivideH);

@@ -16,7 +16,16 @@ class Pin extends CI_Controller {
 	{
 		$res = array();
 		$this->load->view('pincode',$res);
-	}
+	}public function msg()
+  {
+          $contactNumber = '9009585194';
+
+          $msg          = "Hello,Vaibhav sharma ,Shree Dharmdas project activation successfully./n Username : 23432 and Password : 123456";
+          $this->load->library('sms_sent');
+          $response           = $this->sms_sent->normal_msg($contactNumber,$msg); 
+          pr($response);
+   
+  }
 
 	public function pincodeajax()
 	{

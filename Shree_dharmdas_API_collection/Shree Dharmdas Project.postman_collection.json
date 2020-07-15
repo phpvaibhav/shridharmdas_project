@@ -1,0 +1,621 @@
+{
+	"id": "1776d64c-374c-63bf-6a21-239bbb04560a",
+	"name": "Shree Dharmdas Project",
+	"description": "",
+	"order": [
+		"fe8416b7-4d75-e451-dd1e-c1808c53fa7b",
+		"2009c5d9-ed2d-98a0-f82a-faac11eb153f",
+		"3abcc904-1fe6-d6be-e840-5bf64002549a",
+		"95d47b3e-a881-6234-396c-c6392a235afd",
+		"99a36b16-26e5-39d2-7431-b77f23d21ef3",
+		"cad65b99-b815-9570-0e25-4c29453b4e5d",
+		"b53f49e7-0b5a-f065-db29-f7afe3d7087d",
+		"1efbdb67-9400-45e5-b86f-8c290e1892da",
+		"dfe3baef-c1e4-01e7-96d6-88b79dbc457d",
+		"c268fb0a-0f05-51ea-fef1-aacd1bb43d58",
+		"95fafd3d-5328-1f15-390c-f2590c36ecd0",
+		"db6f52d7-2fde-1e38-e173-da2cc2687414",
+		"05201e6f-b49a-d845-ba21-667e8c450e5d",
+		"527e7cf3-61dc-a215-e5c6-6ec4ba765370"
+	],
+	"folders": [],
+	"folders_order": [],
+	"timestamp": 1594030079292,
+	"owner": 0,
+	"public": false,
+	"requests": [
+		{
+			"id": "05201e6f-b49a-d845-ba21-667e8c450e5d",
+			"headers": "",
+			"headerData": [],
+			"url": "{{apiUrl}}api/sangh_list",
+			"queryParams": [],
+			"preRequestScript": null,
+			"pathVariables": {},
+			"pathVariableData": [],
+			"method": "GET",
+			"data": null,
+			"dataMode": "params",
+			"tests": null,
+			"currentHelper": "normal",
+			"helperAttributes": {},
+			"time": 1594473142350,
+			"name": "Sangh list",
+			"description": "",
+			"collectionId": "1776d64c-374c-63bf-6a21-239bbb04560a",
+			"responses": []
+		},
+		{
+			"id": "1efbdb67-9400-45e5-b86f-8c290e1892da",
+			"headers": "authToken: 0a9d73baade4a6e3b8a97fb7a59de6d18d850779\n",
+			"headerData": [
+				{
+					"key": "authToken",
+					"value": "0a9d73baade4a6e3b8a97fb7a59de6d18d850779",
+					"description": "",
+					"enabled": true
+				}
+			],
+			"url": "{{apiUrl}}user/getAddress",
+			"queryParams": [],
+			"preRequestScript": null,
+			"pathVariables": {},
+			"pathVariableData": [],
+			"method": "GET",
+			"data": null,
+			"dataMode": "params",
+			"tests": null,
+			"currentHelper": "normal",
+			"helperAttributes": {},
+			"time": 1594452230956,
+			"name": "Get Address",
+			"description": "",
+			"collectionId": "1776d64c-374c-63bf-6a21-239bbb04560a",
+			"responses": []
+		},
+		{
+			"id": "2009c5d9-ed2d-98a0-f82a-faac11eb153f",
+			"headers": "",
+			"headerData": [],
+			"url": "{{apiUrl}}api/verifyOtpCode",
+			"queryParams": [],
+			"preRequestScript": null,
+			"pathVariables": {},
+			"pathVariableData": [],
+			"method": "POST",
+			"data": [
+				{
+					"key": "contactNumber",
+					"value": "9009585194",
+					"description": "",
+					"type": "text",
+					"enabled": true
+				},
+				{
+					"key": "otpnumber",
+					"value": "2961",
+					"description": "",
+					"type": "text",
+					"enabled": true
+				},
+				{
+					"key": "countrycode",
+					"value": "91",
+					"description": "",
+					"type": "text",
+					"enabled": true
+				}
+			],
+			"dataMode": "params",
+			"tests": null,
+			"currentHelper": "normal",
+			"helperAttributes": {},
+			"time": 1594277694848,
+			"name": "VerifyOtpCode Api",
+			"description": "",
+			"collectionId": "1776d64c-374c-63bf-6a21-239bbb04560a",
+			"responses": []
+		},
+		{
+			"id": "3abcc904-1fe6-d6be-e840-5bf64002549a",
+			"headers": "",
+			"headerData": [],
+			"url": "{{apiUrl}}api/smsSentReOtp",
+			"queryParams": [],
+			"preRequestScript": null,
+			"pathVariables": {},
+			"pathVariableData": [],
+			"method": "POST",
+			"data": [
+				{
+					"key": "countrycode",
+					"value": "91",
+					"description": "",
+					"type": "text",
+					"enabled": true
+				},
+				{
+					"key": "contactNumber",
+					"value": "9009585194",
+					"description": "",
+					"type": "text",
+					"enabled": true
+				}
+			],
+			"dataMode": "params",
+			"tests": null,
+			"currentHelper": "normal",
+			"helperAttributes": {},
+			"time": 1594272048607,
+			"name": "SmsSentReOtp API",
+			"description": "",
+			"collectionId": "1776d64c-374c-63bf-6a21-239bbb04560a",
+			"responses": []
+		},
+		{
+			"id": "527e7cf3-61dc-a215-e5c6-6ec4ba765370",
+			"headers": "",
+			"headerData": [],
+			"url": "{{apiUrl}}api/pachkan_list",
+			"queryParams": [],
+			"pathVariables": {},
+			"pathVariableData": [],
+			"preRequestScript": null,
+			"method": "GET",
+			"collectionId": "1776d64c-374c-63bf-6a21-239bbb04560a",
+			"data": null,
+			"dataMode": "params",
+			"name": "Pachkan List",
+			"description": "",
+			"descriptionFormat": "html",
+			"time": 1594805438242,
+			"version": 2,
+			"responses": [],
+			"tests": null,
+			"currentHelper": "normal",
+			"helperAttributes": {}
+		},
+		{
+			"id": "95d47b3e-a881-6234-396c-c6392a235afd",
+			"headers": "",
+			"headerData": [],
+			"url": "{{apiUrl}}api/loginwithUser",
+			"queryParams": [],
+			"preRequestScript": null,
+			"pathVariables": {},
+			"pathVariableData": [],
+			"method": "POST",
+			"data": [
+				{
+					"key": "username",
+					"value": "995519",
+					"description": "",
+					"type": "text",
+					"enabled": true
+				},
+				{
+					"key": "password",
+					"value": "123!@#",
+					"description": "",
+					"type": "text",
+					"enabled": true
+				},
+				{
+					"key": "deviceType",
+					"value": "",
+					"description": "",
+					"type": "text",
+					"enabled": true
+				},
+				{
+					"key": "deviceToken",
+					"value": "",
+					"description": "",
+					"type": "text",
+					"enabled": true
+				}
+			],
+			"dataMode": "params",
+			"tests": null,
+			"currentHelper": "normal",
+			"helperAttributes": {},
+			"time": 1594288072173,
+			"name": "LoginwithUser",
+			"description": "",
+			"collectionId": "1776d64c-374c-63bf-6a21-239bbb04560a",
+			"responses": []
+		},
+		{
+			"id": "95fafd3d-5328-1f15-390c-f2590c36ecd0",
+			"headers": "authToken: 0a9d73baade4a6e3b8a97fb7a59de6d18d850779\n",
+			"headerData": [
+				{
+					"key": "authToken",
+					"value": "0a9d73baade4a6e3b8a97fb7a59de6d18d850779",
+					"description": "",
+					"enabled": true
+				}
+			],
+			"url": "{{apiUrl}}user/address_update",
+			"queryParams": [],
+			"preRequestScript": null,
+			"pathVariables": {},
+			"pathVariableData": [],
+			"method": "POST",
+			"data": [
+				{
+					"key": "addressType",
+					"value": "Permanent",
+					"description": "Current/Permanent",
+					"type": "text",
+					"enabled": true
+				},
+				{
+					"key": "zip_code",
+					"value": "452011",
+					"description": "",
+					"type": "text",
+					"enabled": true
+				},
+				{
+					"key": "address",
+					"value": "ABC ib",
+					"description": "",
+					"type": "text",
+					"enabled": true
+				},
+				{
+					"key": "postName",
+					"value": "Nanda Nagar S.O",
+					"description": "",
+					"type": "text",
+					"enabled": true
+				},
+				{
+					"key": "tehsil",
+					"value": "INDORE",
+					"description": "",
+					"type": "text",
+					"enabled": true
+				},
+				{
+					"key": "city",
+					"value": "INDORE",
+					"description": "",
+					"type": "text",
+					"enabled": true
+				},
+				{
+					"key": "district",
+					"value": "INDORE",
+					"description": "",
+					"type": "text",
+					"enabled": true
+				},
+				{
+					"key": "state",
+					"value": "MADHYA PRADESH",
+					"description": "",
+					"type": "text",
+					"enabled": true
+				},
+				{
+					"key": "country",
+					"value": "India",
+					"description": "",
+					"type": "text",
+					"enabled": true
+				}
+			],
+			"dataMode": "params",
+			"tests": null,
+			"currentHelper": "normal",
+			"helperAttributes": {},
+			"time": 1594450885470,
+			"name": "Address update",
+			"description": "",
+			"collectionId": "1776d64c-374c-63bf-6a21-239bbb04560a",
+			"responses": []
+		},
+		{
+			"id": "99a36b16-26e5-39d2-7431-b77f23d21ef3",
+			"headers": "",
+			"headerData": [],
+			"url": "{{apiUrl}}api/sent_password",
+			"queryParams": [],
+			"preRequestScript": null,
+			"pathVariables": {},
+			"pathVariableData": [],
+			"method": "POST",
+			"data": [
+				{
+					"key": "userId",
+					"value": "1914",
+					"description": "",
+					"type": "text",
+					"enabled": true
+				}
+			],
+			"dataMode": "params",
+			"tests": null,
+			"currentHelper": "normal",
+			"helperAttributes": {},
+			"time": 1594288076814,
+			"name": "Sentpassword",
+			"description": "",
+			"collectionId": "1776d64c-374c-63bf-6a21-239bbb04560a",
+			"responses": []
+		},
+		{
+			"id": "b53f49e7-0b5a-f065-db29-f7afe3d7087d",
+			"headers": "authToken: 0a9d73baade4a6e3b8a97fb7a59de6d18d850779\n",
+			"headerData": [
+				{
+					"key": "authToken",
+					"value": "0a9d73baade4a6e3b8a97fb7a59de6d18d850779",
+					"description": "",
+					"enabled": true
+				}
+			],
+			"url": "{{apiUrl}}user/getProfile",
+			"queryParams": [],
+			"preRequestScript": null,
+			"pathVariables": {},
+			"pathVariableData": [],
+			"method": "GET",
+			"data": null,
+			"dataMode": "params",
+			"tests": null,
+			"currentHelper": "normal",
+			"helperAttributes": {},
+			"time": 1594445723948,
+			"name": "Get Profile",
+			"description": "",
+			"collectionId": "1776d64c-374c-63bf-6a21-239bbb04560a",
+			"responses": []
+		},
+		{
+			"id": "c268fb0a-0f05-51ea-fef1-aacd1bb43d58",
+			"headers": "",
+			"headerData": [],
+			"url": "{{apiUrl}}api/zipcode_to_address",
+			"queryParams": [],
+			"preRequestScript": null,
+			"pathVariables": {},
+			"pathVariableData": [],
+			"method": "POST",
+			"data": [
+				{
+					"key": "zip_code",
+					"value": "32323232",
+					"description": "",
+					"type": "text",
+					"enabled": true
+				}
+			],
+			"dataMode": "params",
+			"tests": null,
+			"currentHelper": "normal",
+			"helperAttributes": {},
+			"time": 1594386575759,
+			"name": "Zipcode_to_address",
+			"description": "",
+			"collectionId": "1776d64c-374c-63bf-6a21-239bbb04560a",
+			"responses": []
+		},
+		{
+			"id": "cad65b99-b815-9570-0e25-4c29453b4e5d",
+			"headers": "authToken: a186721ea11509a823ed9a91a9bea71374c67b0a\n",
+			"headerData": [
+				{
+					"key": "authToken",
+					"value": "a186721ea11509a823ed9a91a9bea71374c67b0a",
+					"description": "",
+					"enabled": true
+				}
+			],
+			"url": "{{apiUrl}}user/changePassword",
+			"queryParams": [],
+			"preRequestScript": null,
+			"pathVariables": {},
+			"pathVariableData": [],
+			"method": "POST",
+			"data": [
+				{
+					"key": "password",
+					"value": "",
+					"description": "",
+					"type": "text",
+					"enabled": true
+				},
+				{
+					"key": "npassword",
+					"value": "",
+					"description": "",
+					"type": "text",
+					"enabled": true
+				}
+			],
+			"dataMode": "params",
+			"tests": null,
+			"currentHelper": "normal",
+			"helperAttributes": {},
+			"time": 1594302531989,
+			"name": "Change Password",
+			"description": "",
+			"collectionId": "1776d64c-374c-63bf-6a21-239bbb04560a",
+			"responses": []
+		},
+		{
+			"id": "db6f52d7-2fde-1e38-e173-da2cc2687414",
+			"headers": "",
+			"headerData": [],
+			"url": "{{apiUrl}}user/user_edit",
+			"queryParams": [],
+			"preRequestScript": null,
+			"pathVariables": {},
+			"pathVariableData": [],
+			"method": "POST",
+			"data": [
+				{
+					"key": "firstName",
+					"value": "",
+					"description": "",
+					"type": "text",
+					"enabled": true
+				},
+				{
+					"key": "lastName",
+					"value": "",
+					"description": "",
+					"type": "text",
+					"enabled": true
+				},
+				{
+					"key": "parentName",
+					"value": "",
+					"description": "",
+					"type": "text",
+					"enabled": true
+				},
+				{
+					"key": "familyHeadName",
+					"value": "",
+					"description": "",
+					"type": "text",
+					"enabled": true
+				},
+				{
+					"key": "gender",
+					"value": "",
+					"description": "",
+					"type": "text",
+					"enabled": true
+				},
+				{
+					"key": "maritalStatus",
+					"value": "",
+					"description": "",
+					"type": "text",
+					"enabled": true
+				},
+				{
+					"key": "dob",
+					"value": "",
+					"description": "",
+					"type": "text",
+					"enabled": true
+				},
+				{
+					"key": "bloodGroup",
+					"value": "",
+					"description": "",
+					"type": "text",
+					"enabled": true
+				},
+				{
+					"key": "sanghId",
+					"value": "",
+					"description": "",
+					"type": "text",
+					"enabled": true
+				},
+				{
+					"key": "otherSanghName",
+					"value": "",
+					"description": "",
+					"type": "text",
+					"enabled": true
+				},
+				{
+					"key": "dharmikgyan",
+					"value": "",
+					"description": "",
+					"type": "text",
+					"enabled": true
+				}
+			],
+			"dataMode": "params",
+			"tests": null,
+			"currentHelper": "normal",
+			"helperAttributes": {},
+			"time": 1594471599269,
+			"name": "User edit",
+			"description": "",
+			"collectionId": "1776d64c-374c-63bf-6a21-239bbb04560a",
+			"responses": []
+		},
+		{
+			"id": "dfe3baef-c1e4-01e7-96d6-88b79dbc457d",
+			"headers": "authToken: 0a9d73baade4a6e3b8a97fb7a59de6d18d850779\n",
+			"headerData": [
+				{
+					"key": "authToken",
+					"value": "0a9d73baade4a6e3b8a97fb7a59de6d18d850779",
+					"description": "",
+					"enabled": true
+				}
+			],
+			"url": "{{apiUrl}}user/getUser",
+			"queryParams": [],
+			"preRequestScript": null,
+			"pathVariables": {},
+			"pathVariableData": [],
+			"method": "POST",
+			"data": [
+				{
+					"key": "searchKey",
+					"value": "9009585194",
+					"description": "",
+					"type": "text",
+					"enabled": true
+				}
+			],
+			"dataMode": "params",
+			"tests": null,
+			"currentHelper": "normal",
+			"helperAttributes": {},
+			"time": 1594445751343,
+			"name": "Get User",
+			"description": "",
+			"collectionId": "1776d64c-374c-63bf-6a21-239bbb04560a",
+			"responses": []
+		},
+		{
+			"id": "fe8416b7-4d75-e451-dd1e-c1808c53fa7b",
+			"headers": "",
+			"headerData": [],
+			"url": "{{apiUrl}}api/login_number",
+			"queryParams": [],
+			"preRequestScript": null,
+			"pathVariables": {},
+			"pathVariableData": [],
+			"method": "POST",
+			"data": [
+				{
+					"key": "countrycode",
+					"value": "91",
+					"description": "",
+					"type": "text",
+					"enabled": true
+				},
+				{
+					"key": "contactNumber",
+					"value": "9009585194",
+					"description": "",
+					"type": "text",
+					"enabled": true
+				}
+			],
+			"dataMode": "params",
+			"tests": null,
+			"currentHelper": "normal",
+			"helperAttributes": {},
+			"time": 1594272063467,
+			"name": "Login number API",
+			"description": "",
+			"collectionId": "1776d64c-374c-63bf-6a21-239bbb04560a",
+			"responses": []
+		}
+	]
+}

@@ -66,7 +66,7 @@ class Excel_import extends Common_Back_Controller {
                         continue;
                       }
                       if (empty(array_filter($value)) ){
-                                                continue;
+                          continue;
                       }
                      // pr($value);
                         /*   $inserdata[$i]['firstName'] = $value['A'];

@@ -37,6 +37,7 @@ class Api_model extends CI_Model {
         }
         return true;
     }//End function  
+
     /*
     Function for check provided token is resultid or not
     */
@@ -87,25 +88,19 @@ class Api_model extends CI_Model {
                         id as userId,
                         fullName,
                         email,
-                        authToken,
-                        userType,
+                        authToken,activePassword,
+                        username,
                         (case when (profileImage = "") 
                         THEN "'.$userDefault.'" ELSE
                         concat("'.$userPath.'",profileImage) 
-                        END) as profileImage,
-                        (case when (userType = 1) 
-                        THEN "Customer" when (userType = 2) 
-                        THEN "Driver" when (userType = 3) 
-                        THEN "Employee" ELSE
-                        "Unknown" 
-                        END) as userRole');
+                        END) as profileImage');
         $this->db->from(USERS);
         $this->db->where($where);
         $sql = $this->db->get();
 
         if($sql->num_rows()):
             $user = $sql->row();
-            switch ($user->userType) {
+/*            switch ($user->userType) {
                 case 1:
                     $user->otherInfo =  $this->otherInfo('customerMeta',array('userId'=>$user->id));
                     break;
@@ -116,7 +111,7 @@ class Api_model extends CI_Model {
                 default:
                 $user->otherInfo    =  new stdClass();
                     break;
-            }
+            }*/
             return $user;
         endif;
         return false;
@@ -132,7 +127,7 @@ class Api_model extends CI_Model {
         return new stdClass();
     }//End Function
     function login($data,$authToken){
-        $res = $this->db->select('*')->where(array('email'=>$data['email']))->get('users');
+        $res = $this->db->select('*')->where(array('username'=>$data['username']))->get('users');
         if($res->num_rows()){
             $result = $res->row();
          

@@ -53,4 +53,5 @@ $lang['Activity_Log'] 							= "गतिविधि लॉग";
 $lang['Activity_Time'] 							= "गतिविधि का समय";
 $lang['Permissions'] 							= "अनुमतियाँ";
 $lang['reports'] 							= "रिपोर्ट";
+$lang['pachkan'] 							= "पचकान";
 ?>
