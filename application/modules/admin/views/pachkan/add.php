@@ -69,7 +69,7 @@
            
             <fieldset>
 							<section>
-								<input type="hidden" name="id"  value="<?= encoding($pachkan['pachkanId']); ?>">
+								<input type="hidden" name="id"  value="<?= encoding(@$pachkan['pachkanId']); ?>">
 								<label class="label">Name</label>
 								<label class="input"> <i class="icon-append fa fa-user"></i>
 									<input type="text" id="name" name="name" placeholder="Name" value="<?= @$pachkan['name']; ?>" maxlength="30" size="30">
