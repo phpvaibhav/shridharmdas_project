@@ -235,9 +235,10 @@
           <li class="<?php echo (strtolower($this->router->fetch_class()) == "adminrole") ? "active" : "" ?>">
             <a href="<?php echo base_url('sub-admin'); ?>" title="<?= lang('Sub_Admin'); ?>"><i class="fa fa-lg fa-fw fa-user-secret"></i> <span class="menu-item-parent"><?= lang('Sub_Admin'); ?></span></a>
           </li>  
-
-         
-          
+ <li class="<?php echo (strtolower($this->router->fetch_class()) == "pachkan") ? "active" : "" ?>">
+            <a href="<?php echo base_url('pachkan'); ?>" title="<?= lang('pachkan'); ?>"><i class="fa fa-lg fa-fw fa-list"></i> <span class="menu-item-parent"><?= lang('pachkan'); ?></span></a>
+          </li>  
+ 
           <li class="<?php echo (strtolower($this->router->fetch_class()) == "permissions") ? "active" : "" ?>">
             <a href="<?php echo base_url('admin-permissions'); ?>" title="<?= lang('Permissions'); ?>"><i class="fa fa-lg fa-fw fa-key"></i> <span class="menu-item-parent"><?= lang('Permissions'); ?></span></a>
           </li>  
@@ -247,9 +248,7 @@
           <li class="<?php echo (strtolower($this->router->fetch_class()) == "report") ? "active" : "" ?>">
             <a href="<?php echo base_url('reports'); ?>" title="<?= lang('reports'); ?>"><i class="fa fa-lg fa-fw fa-list-alt"></i> <span class="menu-item-parent"><?= lang('reports'); ?></span></a>
           </li>  
-          <li class="<?php echo (strtolower($this->router->fetch_class()) == "pachkan") ? "active" : "" ?>">
-            <a href="<?php echo base_url('pachkan'); ?>" title="<?= lang('pachkan'); ?>"><i class="fa fa-lg fa-fw fa-list"></i> <span class="menu-item-parent"><?= lang('pachkan'); ?></span></a>
-          </li>  
+         
           
           
         <?php endif; ?>

@@ -89,8 +89,7 @@
 									<span class="button"><input type="file" name="audioFile" id="audioFile" onchange="this.parentNode.nextSibling.value = this.value" accept="audio/*" >Browse</span><input type="text" readonly="" placeholder="Audio file (audio/* only)">
 								</div>
 							</section>
-             
-              	
+    
             </fieldset>
 						<footer>
 							<button type="submit" id="submit" class="btn btn-primary">
