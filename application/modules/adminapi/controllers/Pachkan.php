@@ -79,6 +79,13 @@ class Pachkan extends Common_Admin_Controller{
         $this->response($response);
     }//end function
     function list_post(){
+        $roleId=$_SESSION[ADMIN_USER_SESS_KEY]['roleId'];
+        $permission             = $this->common_model->getsingle('permission',array('roleId'=>$roleId));
+        $u_set  = isset($permission['pachkan']) ? json_decode($permission['pachkan'],true) :array();
+        $u_view = isset($u_set['view'])? $u_set['view']:0;
+        $u_add = isset($u_set['add'])? $u_set['add']:0;
+        $u_edit = isset($u_set['edit'])? $u_set['edit']:0;
+        $u_delete = isset($u_set['delete'])? $u_set['delete']:0;
         $this->load->helper('text');
         $this->load->model('pachkan_model');
         $this->pachkan_model->set_data();
@@ -111,6 +118,7 @@ class Pachkan extends Common_Admin_Controller{
          
             $link      ='javascript:void(0)';
             $action .= "";
+            if($roleId==1):
            if($serData->status){
 
                 $action .= '<a href="'.$link.'" onclick="confirmAction(this);" data-message="You want to change status!" data-id="'.encoding($serData->pachkanId).'" data-url="adminapi/pachkan/activeInactiveStatus" data-list="1"  class="on-default edit-row table_action" title="Status"><i class="fa fa-check" aria-hidden="true"></i></a>';
@@ -121,11 +129,30 @@ class Pachkan extends Common_Admin_Controller{
             $action .= '&nbsp;&nbsp;|&nbsp;&nbsp;<a href="'.$link.'" onclick="confirmAction(this);" data-message="You want to delete this record!" data-id="'.encoding($serData->pachkanId).'" data-url="adminapi/pachkan/recordDelete" data-list="1"  class="on-default edit-row table_action" title="Delete"><i class="fa fa-trash" aria-hidden="true"></i></a>';
              $e_url      = base_url().'admin/pachkan/edit/'.encoding($serData->pachkanId);
             $action .= '&nbsp;&nbsp;|&nbsp;&nbsp;<a href="'.$e_url.'"  class="on-default edit-row table_action" title="Edit"><i class="fa fa-edit"  aria-hidden="true"></i></a>';
-            if(!empty($serData->file)):
-             $a_url   = base_url().'uploads/pachkan/'.$serData->file;
-            $action .= '&nbsp;&nbsp;|&nbsp;&nbsp;<a target="_blank" href="'.$a_url.'" class="on-default edit-row table_action" title="Sound"><i class="fa fa-volume-up" aria-hidden="true"></i></a>';
-        endif;
+            
+        else:
+            //Permission
+            if($u_edit){
+                if($serData->status){
 
+                    $action .= '<a href="'.$link.'" onclick="confirmAction(this);" data-message="You want to change status!" data-id="'.encoding($serData->pachkanId).'" data-url="adminapi/pachkan/activeInactiveStatus" data-list="1"  class="on-default edit-row table_action" title="Status"><i class="fa fa-check" aria-hidden="true"></i></a>';
+                }else{
+                    $action .= '<a href="'.$link.'" onclick="confirmAction(this);" data-message="You want to change status!" data-id="'.encoding($serData->pachkanId).'" data-url="adminapi/pachkan/activeInactiveStatus" data-list="1"  class="on-default edit-row table_action" title="Status"><i class="fa fa-times" aria-hidden="true"></i></a>';
+                }
+                 $e_url      = base_url().'admin/pachkan/edit/'.encoding($serData->pachkanId);
+            $action .= '&nbsp;&nbsp;|&nbsp;&nbsp;<a href="'.$e_url.'"  class="on-default edit-row table_action" title="Edit"><i class="fa fa-edit"  aria-hidden="true"></i></a>';
+            }
+          
+            if($u_delete){
+            $action .= '&nbsp;&nbsp;|&nbsp;&nbsp;<a href="'.$link.'" onclick="confirmAction(this);" data-message="You want to delete this record!" data-id="'.encoding($serData->pachkanId).'" data-url="adminapi/pachkan/recordDelete" data-list="1"  class="on-default edit-row table_action" title="Delete"><i class="fa fa-trash" aria-hidden="true"></i></a>';
+            
+            }
+            //Permission
+        endif;
+        if(!empty($serData->file)):
+                $a_url   = base_url().'uploads/pachkan/'.$serData->file;
+                $action .= '&nbsp;&nbsp;|&nbsp;&nbsp;<a target="_blank" href="'.$a_url.'" class="on-default edit-row table_action" title="Sound"><i class="fa fa-volume-up" aria-hidden="true"></i></a>';
+            endif;
             $row[]  = $action;
             $data[] = $row;
 

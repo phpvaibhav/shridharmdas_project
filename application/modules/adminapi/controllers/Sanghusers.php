@@ -101,7 +101,7 @@ class Sanghusers extends Common_Admin_Controller{
         $this->load->model('user_model');
         $sanghId=$_SESSION[ADMIN_USER_SESS_KEY]['sanghId'];
         $roleId=$_SESSION[ADMIN_USER_SESS_KEY]['roleId'];
-                $where ="";
+        $where ="";
         $unionName = $this->post('unionName');
         $id = $this->post('id');
         $permission             = $this->common_model->getsingle('permission',array('roleId'=>$roleId));

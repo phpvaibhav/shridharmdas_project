@@ -78,6 +78,18 @@
 							$u_permanent_address 	= isset($u_set['permanent_address'])? $u_set['permanent_address']:0;
 
 
+								$pachkan  	= isset($info['pachkan']) ? json_decode($info['pachkan'],true) :array();
+							$pc_view 	= isset($pachkan['view'])? $pachkan['view']:0;
+							$pc_add 	= isset($pachkan['add'])? $pachkan['add']:0;
+							$pc_edit 	= isset($pachkan['edit'])? $pachkan['edit']:0;
+							$pc_delete 	= isset($pachkan['delete'])? $pachkan['delete']:0;
+
+								$report  	= isset($info['report']) ? json_decode($info['report'],true) :array();
+							$r_view 	= isset($report['view'])? $report['view']:0;
+							$r_add 	= isset($report['add'])? $report['add']:0;
+							$r_edit 	= isset($report['edit'])? $report['edit']:0;
+							$r_delete 	= isset($report['delete'])? $report['delete']:0;
+							
 						?>
 							<fieldset class="demo-switcher-1">
 								<input type="hidden" name="roleId" value="<?= encoding($role['roleId']); ?>">
@@ -189,6 +201,55 @@
 										
 									</div>
 								</div>
+
+
+								<div class="form-group">
+									<label class="col-md-2 control-label"><strong>Pachkan</strong></label>
+									<div class="col-md-10">
+										<label class="checkbox-inline">
+											  <input type="checkbox" class="checkbox check-Add-check style-0" name="pc_view" <?= ($pc_view==1)?"checked='checked'":""; ?> value="1">
+											  <span>View</span>
+										</label>
+										<label class="checkbox-inline">
+											  <input type="checkbox" class="checkbox check-Add-check style-0" name="pc_add" <?= ($pc_add==1)?"checked='checked'":""; ?> value="1">
+											  <span>Add</span>
+										</label>
+										<label class="checkbox-inline">
+											  <input type="checkbox" class="checkbox check-Add-check style-0" name="pc_edit" <?= ($pc_edit==1)?"checked='checked'":""; ?> value="1">
+											  <span>Edit</span>
+										</label>
+										
+										<label class="checkbox-inline">
+											  <input type="checkbox" class="checkbox check-Add-check style-0" name="pc_delete" <?= ($pc_delete==1)?"checked='checked'":""; ?> value="1">
+											  <span>Delete</span>
+										</label>
+									</div>
+								</div>
+								
+
+								<div class="form-group">
+									<label class="col-md-2 control-label"><strong>Report</strong></label>
+									<div class="col-md-10">
+										<label class="checkbox-inline">
+											  <input type="checkbox" class="checkbox check-Add-check style-0" name="r_view" <?= ($r_view==1)?"checked='checked'":""; ?> value="1">
+											  <span>View</span>
+										</label>
+										<label class="checkbox-inline">
+											  <input type="checkbox" class="checkbox check-Add-check style-0" name="r_add" <?= ($r_add==1)?"checked='checked'":""; ?> value="1">
+											  <span>Add</span>
+										</label>
+										<label class="checkbox-inline">
+											  <input type="checkbox" class="checkbox check-Add-check style-0" name="r_edit" <?= ($r_edit==1)?"checked='checked'":""; ?> value="1">
+											  <span>Edit</span>
+										</label>
+										
+										<label class="checkbox-inline">
+											  <input type="checkbox" class="checkbox check-Add-check style-0" name="r_delete" <?= ($r_delete==1)?"checked='checked'":""; ?> value="1">
+											  <span>Delete</span>
+										</label>
+									</div>
+								</div>
+								
 								
 							</fieldset>
 

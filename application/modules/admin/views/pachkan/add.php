@@ -67,11 +67,11 @@
 					
 					<form method="post" id="pachkan-form" class="smart-form" novalidate="novalidate" action="adminapi/pachkan/add" enctype="multipart/form-data" novalidate="novalidate" autocomplete="off">
            
-            <fieldset>
+            		<fieldset>
 							<section>
 								<input type="hidden" name="id"  value="<?= encoding(@$pachkan['pachkanId']); ?>">
 								<label class="label">Name</label>
-								<label class="input"> <i class="icon-append fa fa-user"></i>
+								<label class="input"> <i class="icon-append fa fa-list"></i>
 									<input type="text" id="name" name="name" placeholder="Name" value="<?= @$pachkan['name']; ?>" maxlength="30" size="30">
 								</label>
 							</section>
@@ -80,7 +80,6 @@
 								<label class="label">Description</label>
 								<label class="textarea" > <i class="icon-append fa fa-comment"></i>
 								<textarea rows="4" placeholder="Description" name="description" id="description"><?= @$pachkan['description']; ?></textarea> </label>
-								
 							</section>	
              
 							<section>
@@ -89,8 +88,7 @@
 									<span class="button"><input type="file" name="audioFile" id="audioFile" onchange="this.parentNode.nextSibling.value = this.value" accept="audio/*" >Browse</span><input type="text" readonly="" placeholder="Audio file (audio/* only)">
 								</div>
 							</section>
-    
-            </fieldset>
+            			</fieldset>
 						<footer>
 							<button type="submit" id="submit" class="btn btn-primary">
 								Submit

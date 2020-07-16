@@ -217,7 +217,11 @@
           <?php endif; ?>          
           <?php if($user['roleId']!=1):
               $u_user_permission  = isset($user_permission['users']) ? json_decode($user_permission['users'],true) :array();
+              $pc_user_permission  = isset($user_permission['pachkan']) ? json_decode($user_permission['pachkan'],true) :array();
+              $r_user_permission  = isset($user_permission['report']) ? json_decode($user_permission['report'],true) :array();
               $u_view_pr = isset($u_user_permission['list'])? $u_user_permission['list']:0;
+              $r_view_pr = isset($r_user_permission['view'])? $r_user_permission['view']:0;
+              $pc_view_pr = isset($pc_user_permission['view'])? $pc_user_permission['view']:0;
 
               if($u_view_pr):
            ?>
@@ -226,9 +230,18 @@
             <a href="<?php echo base_url('sangh-users'); ?>" title="<?= lang('Users');?>"><i class="fa fa-lg fa-fw fa-users"></i> <span class="menu-item-parent"><?= lang('Users');?></span></a>
           </li>   
           <?php endif;?>
+          <?php if($r_view_pr): ?>
             <li class="<?php echo (strtolower($this->router->fetch_class()) == "report") ? "active" : "" ?>">
             <a href="<?php echo base_url('reports'); ?>" title="<?= lang('reports'); ?>"><i class="fa fa-lg fa-fw fa-list-alt"></i> <span class="menu-item-parent"><?= lang('reports'); ?></span></a>
+            </li>  
+          <?php endif; ?>
+                    <?php if($pc_view_pr): ?>
+           <li class="<?php echo (strtolower($this->router->fetch_class()) == "pachkan") ? "active" : "" ?>">
+            <a href="<?php echo base_url('pachkan'); ?>" title="<?= lang('pachkan'); ?>"><i class="fa fa-lg fa-fw fa-list"></i> <span class="menu-item-parent"><?= lang('pachkan'); ?></span></a>
           </li>  
+ 
+          <?php endif; ?>
+          
         <?php endif; ?>
          
           <?php if($user['roleId']==1): ?>
@@ -244,7 +257,7 @@
           </li>  
           <li class="<?php echo (strtolower($this->router->fetch_class()) == "activity") ? "active" : "" ?>">
             <a href="<?php echo base_url('activity-log'); ?>" title="<?= lang('Activity_Log'); ?>"><i class="fa fa-lg fa-fw fa-cogs"></i> <span class="menu-item-parent"><?= lang('Activity_Log'); ?></span></a>
-          </li>     
+          </li>         
           <li class="<?php echo (strtolower($this->router->fetch_class()) == "report") ? "active" : "" ?>">
             <a href="<?php echo base_url('reports'); ?>" title="<?= lang('reports'); ?>"><i class="fa fa-lg fa-fw fa-list-alt"></i> <span class="menu-item-parent"><?= lang('reports'); ?></span></a>
           </li>  

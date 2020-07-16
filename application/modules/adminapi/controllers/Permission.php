@@ -27,6 +27,7 @@ class Permission extends Common_Admin_Controller{
                 'edit'          => isset($p_edit) ? $p_edit:0,
                 'delete'        => isset($p_delete) ? $p_delete:0
             );
+
             $ps_view        = $this->post('ps_view'); 
             $ps_add         = $this->post('ps_add'); 
             $ps_edit        = $this->post('ps_edit'); 
@@ -57,11 +58,35 @@ class Permission extends Common_Admin_Controller{
                 'current_address'   => isset($u_current_address) ? $u_current_address:0,
                 'permanent_address' => isset($u_permanent_address) ? $u_permanent_address:0,
             );
-            $data_val = array('profile'=>json_encode($profile),
-                'password'=>json_encode($password),
-                'users'=>json_encode($users)
+                            
+            $pc_view        = $this->post('pc_view'); 
+            $pc_add         = $this->post('pc_add'); 
+            $pc_edit        = $this->post('pc_edit'); 
+            $pc_delete      = $this->post('pc_delete'); 
+            $pachkan  = array(
+                'view'      => isset($pc_view) ? $pc_view:0,
+                'add'       => isset($pc_add) ? $pc_add:0,
+                'edit'      => isset($pc_edit) ? $pc_edit:0,
+                'delete'    => isset($pc_delete) ? $pc_delete:0
+            );                 
+            $r_view        = $this->post('r_view'); 
+            $r_add         = $this->post('r_add'); 
+            $r_edit        = $this->post('r_edit'); 
+            $r_delete      = $this->post('r_delete'); 
+            $report  = array(
+                'view'      => isset($r_view) ? $r_view:0,
+                'add'       => isset($r_add) ? $r_add:0,
+                'edit'      => isset($r_edit) ? $r_edit:0,
+                'delete'    => isset($r_delete) ? $r_delete:0
             );
-              //pr($data_val);
+            $data_val = array(
+                'profile'   => json_encode($profile),
+                'password'  => json_encode($password),
+                'pachkan'   => json_encode($pachkan),
+                'report'   => json_encode($report),
+                'users'     => json_encode($users)
+            );       
+            //pr($data_val);
             $id     = decoding($this->post('id'));
           
             $isExist            =  $this->common_model->is_data_exists('permission',array('preId'=>$id,'roleId'=>$roleId));
@@ -78,14 +103,13 @@ class Permission extends Common_Admin_Controller{
                     $msg  = ResponseMessages::getStatusCodeMessage(122);
                 
             }
+
             if($result){
                  $response   = array('status'=>$status,'message'=>$msg);
-            }else{
+            }else{ 
                  $response   = array('status'=>FAIL,'message'=>ResponseMessages::getStatusCodeMessage(118));
             }    
         }
         $this->response($response);
     }//end function
- 
-
 }//End Class 
