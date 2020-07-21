@@ -75,6 +75,7 @@ $route['union'] 					= 'admin/union';
 $route['office'] 					= 'admin/office';
 $route['reports'] 					= 'admin/report';
 $route['pachkan'] 					= 'admin/pachkan';
+$route['sant-satee'] 					= 'admin/sant';
 
 
 $route['sangh-users'] 					= 'admin/sanghusers';

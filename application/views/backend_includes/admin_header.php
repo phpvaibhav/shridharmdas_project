@@ -222,6 +222,7 @@
               $u_view_pr = isset($u_user_permission['list'])? $u_user_permission['list']:0;
               $r_view_pr = isset($r_user_permission['view'])? $r_user_permission['view']:0;
               $pc_view_pr = isset($pc_user_permission['view'])? $pc_user_permission['view']:0;
+              
 
               if($u_view_pr):
            ?>
@@ -261,7 +262,13 @@
           <li class="<?php echo (strtolower($this->router->fetch_class()) == "report") ? "active" : "" ?>">
             <a href="<?php echo base_url('reports'); ?>" title="<?= lang('reports'); ?>"><i class="fa fa-lg fa-fw fa-list-alt"></i> <span class="menu-item-parent"><?= lang('reports'); ?></span></a>
           </li>  
-         
+         <li>
+            <a href="javascript:void(0);"><i class="fa fa-lg fa-fw fa-cubes"></i> <span class="menu-item-parent"><?= lang('vichran_vihar'); ?></span></a>
+            <ul>
+              <li><a href="<?= base_url('sant-satee'); ?>"><?= lang('sant_satee'); ?></a></li>
+              
+            </ul>
+          </li> 
           
           
         <?php endif; ?>

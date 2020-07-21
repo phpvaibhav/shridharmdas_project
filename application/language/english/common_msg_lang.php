@@ -57,8 +57,9 @@ $lang['contactNumber'] 									= "contactNumber";
 	$lang['Permissions'] 							= "Permissions";
 	$lang['reports'] 							= "Reports";
 	$lang['pachkan'] 							= "Pachkan";
+	$lang['vichran_vihar'] 							= "Vichran Vihar";
 
-
+	$lang['sant_satee'] 							= "Sant Satee";
 
 
 
