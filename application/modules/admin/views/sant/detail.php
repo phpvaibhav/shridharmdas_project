@@ -144,8 +144,78 @@
 											</div>
 											<div class="tab-pane fade" id="a3">
 
-												<div class="text-center">
-													Maintenance 
+												<div class="text-center-1">
+													<!-- Maintenance  -->
+													<form action="sant/address" id="addresssAddUpdate" class="smart-form" novalidate="novalidate" autocomplete="off" enctype="multipart/form-data">
+
+						<header>
+							Address
+						</header>
+						<fieldset>
+							<div class="row">
+								<section class="col col-md-12">
+									<label class="input"> <i class="icon-append fa fa-map-marker"></i>
+										<input type="text" name="address" placeholder="Address" id="autocomplete0" class="autocomplete" data-id="0" maxlength="300" size="300" value="<?= $info['address']; ?>" >
+										<input type="hidden" name="id" value="<?= encoding($info['santId']); ?>">
+									</label>
+								</section>
+							</div>
+							<div class="row">
+								<section class="col col-6">
+									<label class="input"> <i class="icon-append fa fa-map-marker"></i>
+										<input type="text" class="latitudeautocomplete0" name="latitude" placeholder="latitude" maxlength="30" size="30" value="<?= $info['latitude']; ?>" readonly="">
+									</label>
+								</section>
+								<section class="col col-6">
+									<label class="input"> <i class="icon-append fa fa-map-marker"></i>
+										<input type="text"  class="longitudeautocomplete0" name="longitude" placeholder="longitude" maxlength="30" size="30" readonly="" value="<?= $info['longitude']; ?>">
+									</label>
+								</section>
+							</div>
+							<div class="row">
+								<section class="col col-3">
+									<label class="input"> <i class="icon-append fa fa-map-marker"></i>
+										<input type="text" name="street" placeholder="Street" class="street_numberautocomplete0" maxlength="30" size="30" value="<?= $info['street']; ?>" >
+									</label>
+								</section>
+								<section class="col col-9">
+									<label class="input"> <i class="icon-append fa fa-map-marker"></i>
+										<input type="text" name="street2" placeholder="Street Second" class="routeautocomplete0" maxlength="30" size="30" value="<?= $info['street2']; ?>">
+									</label>
+								</section>
+							</div>
+							<div class="row">
+								<section class="col col-6">
+									<label class="input"> <i class="icon-append fa fa-map-marker"></i>
+										<input type="text" name="city" placeholder="City" class="localityautocomplete0" maxlength="30" size="30" value="<?= $info['city']; ?>">
+									</label>
+								</section>
+								<section class="col col-6">
+									<label class="input"> <i class="icon-append fa fa-map-marker"></i>
+										<input type="text" name="state" placeholder="State" class="administrative_area_level_1autocomplete0" maxlength="30" size="30" value="<?= $info['state']; ?>" >
+									</label>
+								</section>
+							</div>
+							<div class="row">
+								<section class="col col-6">
+									<label class="input"> <i class="icon-append fa fa-map-marker"></i>
+										<input type="text" name="zip" placeholder="Zip Code" class="postal_codeautocomplete0 number-only1" maxlength="15" size="15" value="<?= $info['zip']; ?>">
+									</label>
+								</section>
+								<section class="col col-6">
+									<label class="input"> <i class="icon-append fa fa-map-marker"></i>
+										<input type="text" name="country" placeholder="Country" class="countryautocomplete0" maxlength="15" size="15" value="<?= $info['country']; ?>">
+									</label>
+								</section>
+							</div>
+						</fieldset>				
+						<footer>
+							<button type="submit" id="submit" class="btn btn-primary">
+								Add 
+							</button>
+						</footer>
+					</form>
+													<!-- Maintenance  -->
 												</div>
 
 											</div>

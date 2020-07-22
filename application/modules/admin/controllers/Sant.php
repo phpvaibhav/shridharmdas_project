@@ -32,7 +32,7 @@ class Sant extends Common_Back_Controller {
         $data['shishya']           = $this->common_model->getAll('sant_maharaj',$where_s);
         $data['shishyaList']           = $this->common_model->getAll('sant_maharaj',array('santId !='=>$id));
     
-        $data['front_scripts'] = array('backend_assets/custom/js/sant.js');
+        $data['front_scripts'] = array('backend_assets/custom/js/giolocation.js','backend_assets/custom/js/sant.js');
        
         $this->load->admin_render('sant/detail', $data, '');
     } //End function

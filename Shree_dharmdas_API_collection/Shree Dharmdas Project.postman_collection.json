@@ -16,7 +16,8 @@
 		"95fafd3d-5328-1f15-390c-f2590c36ecd0",
 		"db6f52d7-2fde-1e38-e173-da2cc2687414",
 		"05201e6f-b49a-d845-ba21-667e8c450e5d",
-		"527e7cf3-61dc-a215-e5c6-6ec4ba765370"
+		"527e7cf3-61dc-a215-e5c6-6ec4ba765370",
+		"ce25231e-7dea-0ead-40a6-6ab49b9475a4"
 	],
 	"folders": [],
 	"folders_order": [],
@@ -445,6 +446,29 @@
 			"description": "",
 			"collectionId": "1776d64c-374c-63bf-6a21-239bbb04560a",
 			"responses": []
+		},
+		{
+			"id": "ce25231e-7dea-0ead-40a6-6ab49b9475a4",
+			"headers": "",
+			"headerData": [],
+			"url": "{{apiUrl}}api/sant_list",
+			"queryParams": [],
+			"pathVariables": {},
+			"pathVariableData": [],
+			"preRequestScript": null,
+			"method": "GET",
+			"collectionId": "1776d64c-374c-63bf-6a21-239bbb04560a",
+			"data": null,
+			"dataMode": "params",
+			"name": "Sant satee list",
+			"description": "",
+			"descriptionFormat": "html",
+			"time": 1595421234654,
+			"version": 2,
+			"responses": [],
+			"tests": null,
+			"currentHelper": "normal",
+			"helperAttributes": {}
 		},
 		{
 			"id": "db6f52d7-2fde-1e38-e173-da2cc2687414",

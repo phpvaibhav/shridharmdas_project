@@ -380,6 +380,18 @@ class Api extends Common_Service_Controller{
     }//End Function
     
     
-      
-    
+    public function sant_list_get()
+    {
+        $select = 'santId,name';
+        $sant_list          =  $this->common_model->getAll('sant_maharaj',array('status'=>1),'santId','DESC',$select);
+        if($sant_list){
+              
+            $response = array('status' =>SUCCESS, 'message' => ResponseMessages::getStatusCodeMessage(200),'data'=>$sant_list);
+        }else{
+            $response = array('status' =>FAIL, 'message' => ResponseMessages::getStatusCodeMessage(118));                 
+        }
+       
+       $this->response($response);
+    }//End Function
+        
 }//End Class 
