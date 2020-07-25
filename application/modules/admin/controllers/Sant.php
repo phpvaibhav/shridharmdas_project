@@ -1,4 +1,3 @@
-
 <?php
 defined('BASEPATH') OR exit('No direct script access allowed');
 class Sant extends Common_Back_Controller {
@@ -30,6 +29,7 @@ class Sant extends Common_Back_Controller {
         $data['info']           = $result;
         $where_s = "santId IN (".(!empty($result['shishya'])?$result['shishya']:0).")";
         $data['shishya']           = $this->common_model->getAll('sant_maharaj',$where_s);
+        $data['con_list']           = $this->common_model->getAll('sant_maharaj_contact',$where);
         $data['shishyaList']           = $this->common_model->getAll('sant_maharaj',array('santId !='=>$id));
     
         $data['front_scripts'] = array('backend_assets/custom/js/giolocation.js','backend_assets/custom/js/sant.js');

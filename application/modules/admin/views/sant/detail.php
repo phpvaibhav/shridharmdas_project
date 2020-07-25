@@ -108,32 +108,32 @@
 											<div class="tab-pane fade" id="a2">
 												<!-- test -->
 												<div class="row">
+													<div class="col-md-12 col-sm-12">
+														<a href="javascript:void(0);" class="btn btn-labeled btn-success margin-bottom-5 pull-right"  onclick="openActionCon();"> <span class="btn-label"><i class="glyphicon glyphicon-plus"></i></span>Add Contact</a>
+													</div>
+												</div>
+												<div class="row">
 												<div class="col-sm-12">
 													<ul class="list-unstyled">
+														<?php if(!empty($con_list)): foreach ($con_list as $kc => $c) {?>
 											<li>
 												<!-- <h4 class="semi-bold">Rogers, Inc.</h4> -->
 													<address>
-														<strong>Mr. Simon Hedger</strong>
+														<strong><?= $c->name; ?></strong>
 														<br>
-														342 Mirlington Road,
+														<?= $c->address; ?>
 														<br>
-														Calfornia, CA 431464
+														<?= $c->city.", ".$c->state.", ".$c->country.", ".$c->zip; ?>
 														<br>
-														<abbr title="Phone">P:</abbr> (467) 143-4317
+														<abbr title="Phone">M:</abbr> <?= $c->contact; ?> <span><a href="javascript:void(0);" onclick="confirmAction(this);" data-message="You want to delete this record!" data-id="<?= encoding($c->contactId);?>" data-url="adminapi/sant/recordDelete_1" data-list="0"  class="on-default edit-row table_action" title="Delete"><i class="fa fa-trash" aria-hidden="true"></i> Delete</a></span>
 													</address>
+
 											</li>
+										<?php } else: ?>
 											<li>
-												<!-- <h4 class="semi-bold">Rogers, Inc.</h4> -->
-													<address>
-														<strong>Mr. Simon Hedger</strong>
-														<br>
-														342 Mirlington Road,
-														<br>
-														Calfornia, CA 431464
-														<br>
-														<abbr title="Phone">P:</abbr> (467) 143-4317
-													</address>
+												<div class="text-center">No Record Found.</div>
 											</li>
+										<?php endif; ?>
 										</ul>
 													
 												</div>
@@ -282,6 +282,115 @@
 						<footer>
 							<button type="submit" id="submit" class="btn btn-primary">
 								<?= lang('Save'); ?>
+							</button>
+						</footer>
+					</form>
+				</div>
+				<!-- end widget content -->
+				<!-- Add CUstomer -->
+	        </div>
+		</div>
+	</div>
+</div>
+<!-- End modal -->
+<!-- Modal -->
+<div class="modal fade" id="add-data-contact" tabindex="-1" role="dialog">
+	<div class="modal-dialog">
+		<div class="modal-content">
+			<div class="modal-header">
+				<button type="button" class="close" data-dismiss="modal" aria-hidden="true">
+					&times;
+				</button>
+				<h4 class="modal-title">
+					Add
+				</h4>
+			</div>
+			<div class="modal-body">
+	           <!-- Add CUstomer -->
+				<!-- widget content -->
+				<div class="widget-body no-padding">
+					<form action="sant/addSantContact" id="create-pro-sant-contact" class="smart-form" novalidate="novalidate" autocomplete="off">
+					
+						<fieldset>
+							<div class="row">
+								<section class="col col-6">
+									<label class="input"> <i class="icon-append fa fa-user"></i>
+										<input type="text" name="contactName" placeholder="Contact Name" maxlength="30" size="30">
+									</label>
+								</section>
+							
+								<section class="col col-6">
+									<label class="input"> <i class="icon-append fa fa-phone"></i>
+										<input type="text" name="contactNumber" placeholder="Contact Number" data-mask="(99999) 999999">
+									</label>
+								</section>
+							</div>
+							<!-- Address name -->
+							<div class="row">
+								<section class="col col-md-12">
+									<label class="input"> <i class="icon-append fa fa-map-marker"></i>
+										<input type="text" name="address" placeholder="Address" id="autocomplete1" class="autocomplete" data-id="1" maxlength="300" size="300">
+										<input type="hidden" name="id" value="<?= encoding($info['santId']); ?>">
+									</label>
+								</section>
+							</div>
+							<div class="row">
+								<section class="col col-6">
+									<label class="input"> <i class="icon-append fa fa-map-marker"></i>
+										<input type="text" class="latitudeautocomplete1" name="latitude" placeholder="latitude" maxlength="30" size="30"  readonly="">
+									</label>
+								</section>
+								<section class="col col-6">
+									<label class="input"> <i class="icon-append fa fa-map-marker"></i>
+										<input type="text"  class="longitudeautocomplete1" name="longitude" placeholder="longitude" maxlength="30" size="30" readonly="" >
+									</label>
+								</section>
+							</div>
+							<div class="row">
+								<section class="col col-3">
+									<label class="input"> <i class="icon-append fa fa-map-marker"></i>
+										<input type="text" name="street" placeholder="Street" class="street_numberautocomplete1" maxlength="30" size="30"  >
+									</label>
+								</section>
+								<section class="col col-9">
+									<label class="input"> <i class="icon-append fa fa-map-marker"></i>
+										<input type="text" name="street2" placeholder="Street Second" class="routeautocomplete1" maxlength="30" size="30" >
+									</label>
+								</section>
+							</div>
+							<div class="row">
+								<section class="col col-6">
+									<label class="input"> <i class="icon-append fa fa-map-marker"></i>
+										<input type="text" name="city" placeholder="City" class="localityautocomplete1" maxlength="30" size="30" >
+									</label>
+								</section>
+								<section class="col col-6">
+									<label class="input"> <i class="icon-append fa fa-map-marker"></i>
+										<input type="text" name="state" placeholder="State" class="administrative_area_level_1autocomplete1" maxlength="30" size="30"  >
+									</label>
+								</section>
+							</div>
+							<div class="row">
+								<section class="col col-6">
+									<label class="input"> <i class="icon-append fa fa-map-marker"></i>
+										<input type="text" name="zip" placeholder="Zip Code" class="postal_codeautocomplete1 number-only1" maxlength="15" size="15" >
+									</label>
+								</section>
+								<section class="col col-6">
+									<label class="input"> <i class="icon-append fa fa-map-marker"></i>
+										<input type="text" name="country" placeholder="Country" class="countryautocomplete1" maxlength="15" size="15" >
+									</label>
+								</section>
+							</div>
+							<!-- Address name -->
+							
+								
+								
+						</fieldset>
+
+						<footer>
+							<button type="submit" id="submit" class="btn btn-primary">
+								Submit
 							</button>
 						</footer>
 					</form>

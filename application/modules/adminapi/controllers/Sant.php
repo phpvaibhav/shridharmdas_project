@@ -79,21 +79,67 @@ class Sant extends Common_Admin_Controller{
             $response = array('status' => FAIL, 'message' => strip_tags(validation_errors()));  
         }else{
             //pr($this->post());
-            $id                 = decoding($this->post('id'));
-            $data_val['address']   = $this->post('address');
+            $id                     = decoding($this->post('id'));
+            $data_val['address']    = $this->post('address');
             $data_val['latitude']   = $this->post('latitude');
-            $data_val['longitude']   = $this->post('longitude');
-            $data_val['street']   = $this->post('street');
-            $data_val['street2']   = $this->post('street2');
-            $data_val['city']   = $this->post('city');
-            $data_val['state']   = $this->post('state');
-            $data_val['zip']   = $this->post('zip');
-            $data_val['country']   = $this->post('country');
+            $data_val['longitude']  = $this->post('longitude');
+            $data_val['street']     = $this->post('street');
+            $data_val['street2']    = $this->post('street2');
+            $data_val['city']       = $this->post('city');
+            $data_val['state']      = $this->post('state');
+            $data_val['zip']        = $this->post('zip');
+            $data_val['country']    = $this->post('country');
             
-            $isExist            =  $this->common_model->is_data_exists('sant_maharaj',array('santId'=>$id));
+            $isExist                = $this->common_model->is_data_exists('sant_maharaj',array('santId'=>$id));
             if($isExist){
-                $result        = $this->common_model->updateFields('sant_maharaj',$data_val,array('santId'=>$id));
-                $msg           = ResponseMessages::getStatusCodeMessage(123);
+                $result             = $this->common_model->updateFields('sant_maharaj',$data_val,array('santId'=>$id));
+                $msg                = ResponseMessages::getStatusCodeMessage(123);
+            }else{
+                $result        = 0;
+                
+            }
+            if($result){
+                 $response   = array('status'=>SUCCESS,'message'=>$msg);
+            }else{
+                 $response   = array('status'=>FAIL,'message'=>ResponseMessages::getStatusCodeMessage(118));
+            }     
+        }
+        $this->response($response);
+    }//end function
+
+
+    function addSantContact_post(){
+        $authCheck  = $this->check_admin_service_auth();
+        $authToken  = $this->authData->authToken;
+        $userId     = $this->authData->id;
+        $this->form_validation->set_rules('id','id', 'trim|required');
+        $this->form_validation->set_rules('contactName','contact name', 'trim|required');
+        $this->form_validation->set_rules('contactNumber','contact number', 'trim|required');
+        $this->form_validation->set_rules('address', 'address', 'trim|required');
+        $this->form_validation->set_rules('latitude', 'latitude', 'trim|required');
+        $this->form_validation->set_rules('longitude', 'longitude', 'trim|required');
+        if($this->form_validation->run() == FALSE){
+            $response = array('status' => FAIL, 'message' => strip_tags(validation_errors()));  
+        }else{
+            //pr($this->post());
+            $id                     = decoding($this->post('id'));
+            $data_val['santId']     = $id;
+            $data_val['name']       = $this->post('contactName');
+            $data_val['contact']    = $this->post('contactNumber');
+            $data_val['address']    = $this->post('address');
+            $data_val['latitude']   = $this->post('latitude');
+            $data_val['longitude']  = $this->post('longitude');
+            $data_val['street']     = $this->post('street');
+            $data_val['street2']    = $this->post('street2');
+            $data_val['city']       = $this->post('city');
+            $data_val['state']      = $this->post('state');
+            $data_val['zip']        = $this->post('zip');
+            $data_val['country']    = $this->post('country');
+            
+            $isExist                = $this->common_model->is_data_exists('sant_maharaj',array('santId'=>$id));
+            if($isExist){
+                $result             = $this->common_model->insertData('sant_maharaj_contact',$data_val);
+                $msg                = ResponseMessages::getStatusCodeMessage(123);
             }else{
                 $result        = 0;
                 
@@ -189,5 +235,19 @@ class Sant extends Common_Admin_Controller{
             $response       = array('status'=>FAIL,'message'=>ResponseMessages::getStatusCodeMessage(118));  
         }
         $this->response($response);
+
+    }//end function    
+    function recordDelete_1_post(){
+        $preId              = decoding($this->post('id'));
+        $where              = array('contactId'=>$preId);
+        $dataExist          = $this->common_model->is_data_exists('sant_maharaj_contact',$where);
+        if($dataExist){
+            $this->common_model->deleteData('sant_maharaj_contact',$where);
+            $response       = array('status'=>SUCCESS,'message'=>ResponseMessages::getStatusCodeMessage(124));
+        }else{
+            $response       = array('status'=>FAIL,'message'=>ResponseMessages::getStatusCodeMessage(118));  
+        }
+        $this->response($response);
+        
     }//end function
 }//End Class 

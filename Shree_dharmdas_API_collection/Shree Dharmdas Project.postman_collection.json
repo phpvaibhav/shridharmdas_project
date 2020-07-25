@@ -17,7 +17,8 @@
 		"db6f52d7-2fde-1e38-e173-da2cc2687414",
 		"05201e6f-b49a-d845-ba21-667e8c450e5d",
 		"527e7cf3-61dc-a215-e5c6-6ec4ba765370",
-		"ce25231e-7dea-0ead-40a6-6ab49b9475a4"
+		"ce25231e-7dea-0ead-40a6-6ab49b9475a4",
+		"b6ac5d69-774d-29e0-616b-b0bcc154a2c7"
 	],
 	"folders": [],
 	"folders_order": [],
@@ -159,22 +160,20 @@
 			"headerData": [],
 			"url": "{{apiUrl}}api/pachkan_list",
 			"queryParams": [],
+			"preRequestScript": null,
 			"pathVariables": {},
 			"pathVariableData": [],
-			"preRequestScript": null,
 			"method": "GET",
-			"collectionId": "1776d64c-374c-63bf-6a21-239bbb04560a",
 			"data": null,
 			"dataMode": "params",
-			"name": "Pachkan List",
-			"description": "",
-			"descriptionFormat": "html",
-			"time": 1594805438242,
-			"version": 2,
-			"responses": [],
 			"tests": null,
 			"currentHelper": "normal",
-			"helperAttributes": {}
+			"helperAttributes": {},
+			"time": 1595583046416,
+			"name": "Pachkan List",
+			"description": "",
+			"collectionId": "1776d64c-374c-63bf-6a21-239bbb04560a",
+			"responses": []
 		},
 		{
 			"id": "95d47b3e-a881-6234-396c-c6392a235afd",
@@ -374,6 +373,37 @@
 			"description": "",
 			"collectionId": "1776d64c-374c-63bf-6a21-239bbb04560a",
 			"responses": []
+		},
+		{
+			"id": "b6ac5d69-774d-29e0-616b-b0bcc154a2c7",
+			"headers": "",
+			"headerData": [],
+			"url": "{{apiUrl}}api/sant_detail",
+			"queryParams": [],
+			"pathVariables": {},
+			"pathVariableData": [],
+			"preRequestScript": null,
+			"method": "POST",
+			"collectionId": "1776d64c-374c-63bf-6a21-239bbb04560a",
+			"data": [
+				{
+					"key": "santId",
+					"value": "5",
+					"description": "",
+					"type": "text",
+					"enabled": true
+				}
+			],
+			"dataMode": "params",
+			"name": "Sant detail",
+			"description": "",
+			"descriptionFormat": "html",
+			"time": 1595583277688,
+			"version": 2,
+			"responses": [],
+			"tests": null,
+			"currentHelper": "normal",
+			"helperAttributes": {}
 		},
 		{
 			"id": "c268fb0a-0f05-51ea-fef1-aacd1bb43d58",

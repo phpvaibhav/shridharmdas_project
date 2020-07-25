@@ -1,9 +1,9 @@
 /*Add */
 var data_list         = $('.dataTables-example-list');
 var norecord          = $(data_list).data('no-record-found');
- var No_Record_found  = (norecord) ? norecord: 'No Record found';
+var No_Record_found  = (norecord) ? norecord: 'No Record found';
 data_list.DataTable({ 
-    "processing"    : true, //Feature control the processing indicator.
+    "processsing"    : true, //Feature control the processing indicator.
     "serverSide"    : true, //Feature control DataTables' servermside processing mode.
     "order"         : [], //Initial no order.
     "lengthChange"  : false,

@@ -305,7 +305,7 @@ class Api extends Common_Service_Controller{
         $this->response($response);
     } //End function
     public function zipcode_to_address_post(){
-            $this->form_validation->set_rules('zip_code', 'zip code', 'trim|required');
+        $this->form_validation->set_rules('zip_code', 'zip code', 'trim|required');
         if($this->form_validation->run() == FALSE){
             $response = array('status' => FAIL, 'message' => strip_tags(validation_errors()));
            
@@ -393,5 +393,26 @@ class Api extends Common_Service_Controller{
        
        $this->response($response);
     }//End Function
-        
+
+    
+    public function sant_detail_post()
+    {
+        $this->form_validation->set_rules('santId', 'sant id', 'trim|required');
+        if($this->form_validation->run() == FALSE){
+            $response = array('status' => FAIL, 'message' => strip_tags(validation_errors()));
+           
+        }else{
+            $santId = $this->post('santId');
+            $sant         =  $this->common_model->is_data_exists('sant_maharaj',array('santId'=>$santId));
+            if($sant){
+                $where_s = "santId IN (".(!empty($sant->shishya)?$sant->shishya:0).")";
+                $sant->shishyaList           = $this->common_model->getAll('sant_maharaj',$where_s,'santId','DESC','santId,name');
+                $sant->contactList =  $this->common_model->getAll('sant_maharaj_contact',array('santId'=>$santId));
+                $response = array('status' =>SUCCESS, 'message' => ResponseMessages::getStatusCodeMessage(200),'data'=>$sant);
+            }else{
+                $response = array('status' =>FAIL, 'message' => ResponseMessages::getStatusCodeMessage(118));                 
+            }
+       }
+       $this->response($response);
+    }//End Function      
 }//End Class 

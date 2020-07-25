@@ -87,6 +87,15 @@ function openActionShishya(){
      $('#add-data-shishya').modal('show');
 }
 
+function openActionCon(){
+   // $('#create-pro-sant').trigger("reset");
+//var id    = $(e).data('id');
+   // $('#id').val(0);
+  
+     $('#add-data-contact').modal('show');
+}
+
+
 $("#create-pro-sant").validate({// Rules for form validation
     errorClass    : errorClass,
     errorElement  : errorElement,
@@ -178,6 +187,94 @@ $("#addresssAddUpdate").validate({// Rules for form validation
       address     : {
         required  : 'Please enter address'
       },latitude     : {
+        required  : 'Latitude  field is required'
+      }
+      ,longitude     : {
+        required  : 'Longitude field is required'
+      }
+  },
+  // Ajax form submition
+  submitHandler : function(form) {
+    var method      =  "POST";
+    var post_data   = $(form).serialize();
+    var url         =  base_url+'adminapi/'+$(form).attr('action');
+    var header      = true;
+    var headerData  = {} ;
+    if(header){
+     var headerData = { 'authToken':authToken} ; 
+    }
+    toastr.clear();
+    $('#submit').prop('disabled', true);
+    $.ajax({
+            type            : method,
+            url             : url,
+            headers         : headerData,
+            data            : post_data,
+            cache           : false,
+            beforeSend      : function() {
+              preLoadshow(true);
+              $('#submit').prop('disabled', true);  
+            },     
+            success         : function (res) {
+              preLoadshow(false);
+              setTimeout(function(){  $('#submit').prop('disabled', false); },4000);
+              if(res.status=='success'){
+                toastr.success(res.message, 'Success', {timeOut: 3000});
+                setTimeout(function(){ window.location.reload();},4000);
+              }else{
+                toastr.error(res.message, 'Alert!', {timeOut: 4000});
+              }
+            }
+          });
+    return false; // required to block normal submit since you used ajax
+  },
+  onfocusout: injectTrim($.validator.defaults.onfocusout),
+  // Do not change code below
+  errorPlacement : function(error, element) {
+    error.insertAfter(element.parent());
+  }
+});
+
+$("#create-pro-sant-contact").validate({// Rules for form validation
+    errorClass    : errorClass,
+    errorElement  : errorElement,
+    highlight: function(element) {
+      $(element).parent().removeClass('state-success').addClass("state-error");
+      $(element).removeClass('valid');
+    },
+    unhighlight: function(element) {
+      $(element).parent().removeClass("state-error").addClass('state-success');
+      $(element).addClass('valid');
+    },
+    rules : {
+      contactName    : {
+        required : true
+      } ,
+      contactNumber    : {
+        required : true
+      } ,
+       address    : {
+        required : true
+      } ,     
+      latitude    : {
+        required : true
+      },     
+      longitude    : {
+        required : true
+      }
+    },
+    // Messages for form validation
+    messages : {
+      contactName     : {
+        required  : 'Please enter contact name'
+      }, 
+      contactNumber     : {
+        required  : 'Please enter contact number'
+      }, 
+      address     : {
+        required  : 'Please enter address'
+      },
+      latitude     : {
         required  : 'Latitude  field is required'
       }
       ,longitude     : {
