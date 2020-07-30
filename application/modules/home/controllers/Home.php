@@ -73,6 +73,24 @@ public function __construct()
         $data['front_scripts'] = array('frontend_assets/js/contactus.js');
         $this->load->front_render('contactus',$data);
     }//End Function
+    public function termConditions() { 
+        $page = $this->common_model->getsingle('pages',array('pageUrl'=>'termConditions'));
+        $data['title'] = $page['title'];
+        $data['info'] = $page;
+        $data['front_styles'] = array();
+        $data['front_scripts'] = array();
+        $this->load->front_render('custompage',$data);
+    }//End Function
+     public function privacyPolicy() { 
+        $page = $this->common_model->getsingle('pages',array('pageUrl'=>'privacyPolicy'));
+        $data['title'] = $page['title'];
+        $data['info'] = $page;
+        $data['front_styles'] = array();
+        $data['front_scripts'] = array();
+        $this->load->front_render('custompage',$data);
+    }//End Function
+    
+    
     public function motto_of_sdhp() { 
         $data['title'] = 'Motto of SDHP';
         $this->load->front_render('motto_of_sdhp',$data);

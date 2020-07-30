@@ -60,6 +60,7 @@ $lang['contactNumber'] 									= "contactNumber";
 	$lang['vichran_vihar'] 							= "Vichran Vihar";
 
 	$lang['sant_satee'] 							= "Sant Satee";
+	$lang['Pages'] 							= "Pages";
 
 
 

@@ -76,6 +76,7 @@ $route['office'] 					= 'admin/office';
 $route['reports'] 					= 'admin/report';
 $route['pachkan'] 					= 'admin/pachkan';
 $route['sant-satee'] 					= 'admin/sant';
+$route['custom-pages'] 					= 'admin/pages';
 
 
 $route['sangh-users'] 					= 'admin/sanghusers';
@@ -108,4 +109,6 @@ $route['user-form-2'] 				= 'home/user_from_2';
 $route['user-step-2'] 				= 'home/user_step_2';
 $route['user-step-3'] 				= 'home/user_step_3';
 $route['user-preview'] 				= 'home/user_preview';
+$route['privacy-policy'] 				= 'home/privacyPolicy';
+$route['term-conditions'] 				= 'home/termConditions';
 

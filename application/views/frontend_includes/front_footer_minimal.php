@@ -1,4 +1,31 @@
+  <footer id="footer">
+   
 
+    <!-- Footer-Bottom -->
+    <div class="footer_bottom">
+      <div class="container">
+        <div class="row">
+          <div class="col-lg-4 align-self-center">
+            <p class="mb-0">&copy; <?= date('Y');?> .All Rights Reserved</p>
+            <p class="mb-0">Developed by: <a target="_blank" href="https://outthinkcoders.com/" style="color: white;">Outthinkcoders.com</a></p>
+          </div>
+         
+          <div class="col-lg-8 align-self-center">
+            <div class="footer_links">
+              <a href="<?= base_url(); ?>">Home</a>
+              <a href="<?= base_url(); ?>user-form">User Form</a>
+              <a href="<?= base_url(); ?>about-us">About Us</a>
+              <a href="<?= base_url(); ?>contact-us">Contact</a> 
+              <a href="<?= base_url(); ?>term-conditions">Term Conditions</a> 
+              <a href="<?= base_url(); ?>privacy-policy">Privacy Policy</a> 
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <!-- /Footer-Bottom -->
+  </footer>
+  <!-- /Footer -->
 
 <div class="modal fade bd-example-modal-lg " tabindex="-1" role="dialog" aria-labelledby="myLargeModalLabel" aria-hidden="true">
   <div class="modal-dialog modal-lg ">

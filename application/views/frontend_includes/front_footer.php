@@ -118,6 +118,8 @@
 							<a href="<?= base_url(); ?>user-form">User Form</a>
 							<a href="<?= base_url(); ?>about-us">About Us</a>
 							<a href="<?= base_url(); ?>contact-us">Contact</a> 
+							<a href="<?= base_url(); ?>term-conditions">Term Conditions</a> 
+							<a href="<?= base_url(); ?>privacy-policy">Privacy Policy</a> 
 						</div>
 					</div>
 				</div>

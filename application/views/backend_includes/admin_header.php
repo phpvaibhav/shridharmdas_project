@@ -261,6 +261,9 @@
           </li>         
           <li class="<?php echo (strtolower($this->router->fetch_class()) == "report") ? "active" : "" ?>">
             <a href="<?php echo base_url('reports'); ?>" title="<?= lang('reports'); ?>"><i class="fa fa-lg fa-fw fa-list-alt"></i> <span class="menu-item-parent"><?= lang('reports'); ?></span></a>
+          </li>   
+          <li class="<?php echo (strtolower($this->router->fetch_class()) == "pages") ? "active" : "" ?>">
+            <a href="<?php echo base_url('custom-pages'); ?>" title="<?= lang('Pages'); ?>"><i class="fa fa-lg fa-fw fa-file-o"></i> <span class="menu-item-parent"><?= lang('Pages'); ?></span></a>
           </li>  
          <li>
             <a href="javascript:void(0);"><i class="fa fa-lg fa-fw fa-cubes"></i> <span class="menu-item-parent"><?= lang('vichran_vihar'); ?></span></a>

@@ -48,12 +48,13 @@ $lang['Address'] 								= "पता";
 $lang['contactNumber'] 							= "मोबाइल नंबर";
 $lang['Users_List'] 							= "गण सूची";
 $lang['Add_User'] 								= "गण जोड़ें";
-$lang['Sub_Admin'] 							= "उप व्यवस्थापक";
+$lang['Sub_Admin'] 								= "उप व्यवस्थापक";
 $lang['Activity_Log'] 							= "गतिविधि लॉग";
 $lang['Activity_Time'] 							= "गतिविधि का समय";
 $lang['Permissions'] 							= "अनुमतियाँ";
-$lang['reports'] 							= "रिपोर्ट";
-$lang['pachkan'] 							= "पचकान";
+$lang['reports'] 								= "रिपोर्ट";
+$lang['pachkan'] 								= "पचकान";
 $lang['vichran_vihar'] 							= "विचरण विहार";
 $lang['sant_satee'] 							= "संत सती";
+$lang['Pages'] 									= "पेज";
 ?>
