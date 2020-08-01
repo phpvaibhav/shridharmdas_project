@@ -90,6 +90,10 @@ $route['sangh-user-detail/(:any)'] 		= 'admin/sanghusers/detail/$1';
 
 
 
+$route['donation_list'] 				= 'admin/donation/index';
+$route['donation_for'] 					= 'admin/donation/donation_for';
+$route['donation_chance'] 				= 'admin/donation/donation_chance';
+
 $route['user-form'] 				= 'home/addUser';
 $route['about-us'] 					= 'home/aboutus';
 $route['jeevani'] 					= 'home/jeevani';
@@ -100,7 +104,7 @@ $route['shishy-vrksh'] 				= 'home/vrksh';
 
 
 $route['contact-us'] 				= 'home/contact';
-$route['moto'] 				= 'home/moto';
+$route['moto'] 						= 'home/moto';
 $route['gallery'] 					= 'home/gallery';
 $route['motto-of-sdhp'] 			= 'home/motto_of_sdhp';
 $route['user-step-1'] 				= 'home/user_step_1';

@@ -415,4 +415,35 @@ class Api extends Common_Service_Controller{
        }
        $this->response($response);
     }//End Function      
+
+    public function donation_chance_list_get()
+    {
+        $select = 'typeId,name';
+        $list          =  $this->common_model->getAll('donationtype',array('donationType'=>'BY'));
+        if($list){
+              
+            $response = array('status' =>SUCCESS, 'message' => ResponseMessages::getStatusCodeMessage(200),'data'=>$list);
+        }else{
+            $response = array('status' =>FAIL, 'message' => ResponseMessages::getStatusCodeMessage(118));                 
+        }
+       
+       $this->response($response);
+    }//End Function
+
+    
+    public function donation_for_list_get()
+    {
+        $select = 'typeId,name';
+        $list          =  $this->common_model->getAll('donationtype',array('donationType'=>'FOR'));
+        if($list){
+              
+            $response = array('status' =>SUCCESS, 'message' => ResponseMessages::getStatusCodeMessage(200),'data'=>$list);
+        }else{
+            $response = array('status' =>FAIL, 'message' => ResponseMessages::getStatusCodeMessage(118));                 
+        }
+       
+       $this->response($response);
+    }//End Function
+
+    
 }//End Class 

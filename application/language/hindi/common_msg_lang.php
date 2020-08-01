@@ -57,4 +57,10 @@ $lang['pachkan'] 								= "पचकान";
 $lang['vichran_vihar'] 							= "विचरण विहार";
 $lang['sant_satee'] 							= "संत सती";
 $lang['Pages'] 									= "पेज";
+$lang['donation'] 							    = "दान";
+$lang['donation_chance'] 						= "दान का मौका";
+$lang['donation_for'] 							= "के लिए दान";
+$lang['donation_list'] 							= "दान की सूची";
+
+
 ?>

@@ -287,4 +287,53 @@ class User extends Common_Service_Controller{
     }//end function
  
     
+    function add_donation_post(){
+        $authCheck  = $this->check_service_auth();
+        $authToken  = $this->authData->authToken;
+        $userId     = $this->authData->id;
+        $this->form_validation->set_rules('amount','amount', 'trim|required');
+        $this->form_validation->set_rules('receiptName','receiptName', 'trim|required');
+        $this->form_validation->set_rules('payName','payName', 'trim|required');
+        $this->form_validation->set_rules('contactNumber','contactNumber', 'trim|required');
+        $this->form_validation->set_rules('email','email', 'trim|required');
+        $this->form_validation->set_rules('occasionId','occasion Id', 'trim|required');
+        $this->form_validation->set_rules('helpforId','helpfor', 'trim|required');
+        $this->form_validation->set_rules('isAnonymous','isAnonymous', 'trim|required');
+        $this->form_validation->set_rules('feeds','feeds', 'trim|required');
+        $this->form_validation->set_rules('txnId','txnId', 'trim|required');
+        $this->form_validation->set_rules('paymentStatus','paymentStatus', 'trim|required');
+      
+       
+        if($this->form_validation->run() == FALSE){
+            $response = array('status' => FAIL, 'message' => strip_tags(validation_errors()));  
+        }else{
+      
+            $data_val['userId']         = $userId; 
+            $data_val['amount']         = $this->post('amount'); 
+            $data_val['receiptName']    = $this->post('receiptName'); 
+            $data_val['payName']        = $this->post('payName'); 
+            $data_val['contactNumber']  = $this->post('contactNumber'); 
+            $data_val['email']          = $this->post('email'); 
+            $data_val['address']        = $this->post('address'); 
+            $data_val['occasion']       = $this->post('occasionId'); 
+            $data_val['helpfor']        = $this->post('helpforId'); 
+            $data_val['isAnonymous']    = $this->post('isAnonymous'); 
+            $data_val['feeds']          = $this->post('feeds'); 
+            $data_val['paymentMode']    = $this->post('paymentMode'); 
+            $data_val['txnId']          = $this->post('txnId'); 
+            $data_val['paymentStatus']  = $this->post('paymentStatus'); 
+            $data_val['message']        = $this->post('message'); 
+         
+            $result            =  $this->common_model->insertData('donation',$data_val);
+           
+            if($result){
+                 $response   = array('status'=>SUCCESS,'message'=>ResponseMessages::getStatusCodeMessage(123));
+            }else{
+                 $response   = array('status'=>FAIL,'message'=>ResponseMessages::getStatusCodeMessage(118));
+            }    
+        }
+        $this->response($response);
+    }//end function
+ 
+    
 }//End Class 
