@@ -27,7 +27,7 @@ class Donation extends Common_Admin_Controller{
         $row[] = display_placeholder_text($serData->paymentMode); 
 
        
-        if($serData->status){
+        if($serData->paymentStatus){
         $row[] = '<label class="label label-success">'.$serData->statusShow.'</label>';
         }else{ 
         $row[] = '<label class="label label-danger">'.$serData->statusShow.'</label>'; 
