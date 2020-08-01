@@ -6,7 +6,7 @@ class Donation_model extends CI_Model {
     //var $table , $column_order, $column_search , $order =  '';
     var $table = 'donation';
     var $column_order = array('d.donationId','d.amount','d.receiptName','d.payName','d.contactNumber','d.paymentMode','d.paymentStatus'); //set column field database for datatable orderable
-    var $column_sel = array('d.donationId','d.amount','d.receiptName','d.payName','d.contactNumber','d.paymentMode','(case when (d.paymentStatus = 0) 
+    var $column_sel = array('d.donationId','d.amount','d.receiptName','d.payName','d.contactNumber','d.paymentMode','d.paymentStatus','(case when (d.paymentStatus = 0) 
         THEN "Pending" when (d.paymentStatus = 1) 
         THEN "Complete"  ELSE
         "Unknown" 
