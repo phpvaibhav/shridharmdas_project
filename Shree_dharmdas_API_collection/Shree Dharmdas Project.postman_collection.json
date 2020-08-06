@@ -1,24 +1,29 @@
 {
-	"id": "1776d64c-374c-63bf-6a21-239bbb04560a",
+	"id": "0aa11518-a6af-0a78-729f-0b1badf4ddcc",
 	"name": "Shree Dharmdas Project",
 	"description": "",
 	"order": [
-		"fe8416b7-4d75-e451-dd1e-c1808c53fa7b",
-		"2009c5d9-ed2d-98a0-f82a-faac11eb153f",
-		"3abcc904-1fe6-d6be-e840-5bf64002549a",
-		"95d47b3e-a881-6234-396c-c6392a235afd",
-		"99a36b16-26e5-39d2-7431-b77f23d21ef3",
-		"cad65b99-b815-9570-0e25-4c29453b4e5d",
-		"b53f49e7-0b5a-f065-db29-f7afe3d7087d",
-		"1efbdb67-9400-45e5-b86f-8c290e1892da",
-		"dfe3baef-c1e4-01e7-96d6-88b79dbc457d",
-		"c268fb0a-0f05-51ea-fef1-aacd1bb43d58",
-		"95fafd3d-5328-1f15-390c-f2590c36ecd0",
-		"db6f52d7-2fde-1e38-e173-da2cc2687414",
-		"05201e6f-b49a-d845-ba21-667e8c450e5d",
-		"527e7cf3-61dc-a215-e5c6-6ec4ba765370",
-		"ce25231e-7dea-0ead-40a6-6ab49b9475a4",
-		"b6ac5d69-774d-29e0-616b-b0bcc154a2c7"
+		"4d32f409-6e16-70a5-6f6c-525a2cb8bb9e",
+		"e3a9b438-eae6-fc04-7faa-ec14c36ef2b6",
+		"12cb5917-f067-2817-c71b-e3ad786d36c8",
+		"6bbdffd9-977e-bef2-5c53-173234939e77",
+		"5e786120-9a7e-ab69-71a1-e1ac4aa12586",
+		"2e6e0226-8642-b136-e40b-3b6e625724ba",
+		"c37756ea-272e-dde3-5b9b-639b93f56896",
+		"a5917a90-e55f-0822-92ac-70a13e7743f7",
+		"5a68b335-873c-94d5-28d5-1022c080fffb",
+		"b3c9f647-9ebf-d6b5-c1a3-5b81dfcd0b69",
+		"3428da5e-786e-42ac-ddba-743d22de7c2c",
+		"5b968aa9-1106-5042-88e6-69c287971e92",
+		"11dff2cf-0eb6-5914-36fb-f3aa4216f39c",
+		"6a5649fb-42c3-ee5f-3e3e-8721ce1f0382",
+		"371038a3-1117-7a2a-2c8f-36f71d46e978",
+		"41d05f36-747c-85de-a236-81f92d2893f0",
+		"62956c11-72e3-af1f-b661-4088b918fc7c",
+		"86ea9f06-a43b-8494-c320-e019acbb7030",
+		"3c429542-e96d-6198-76ee-b795347ceafa",
+		"364d5d55-4976-845c-a470-e6792c3d799f",
+		"4c42fa68-06d0-df71-203f-7ef1e835bcd9"
 	],
 	"folders": [],
 	"folders_order": [],
@@ -27,7 +32,7 @@
 	"public": false,
 	"requests": [
 		{
-			"id": "05201e6f-b49a-d845-ba21-667e8c450e5d",
+			"id": "11dff2cf-0eb6-5914-36fb-f3aa4216f39c",
 			"headers": "",
 			"headerData": [],
 			"url": "{{apiUrl}}api/sangh_list",
@@ -44,82 +49,12 @@
 			"time": 1594473142350,
 			"name": "Sangh list",
 			"description": "",
-			"collectionId": "1776d64c-374c-63bf-6a21-239bbb04560a",
-			"responses": []
+			"collectionId": "0aa11518-a6af-0a78-729f-0b1badf4ddcc",
+			"responses": [],
+			"collection_id": "0aa11518-a6af-0a78-729f-0b1badf4ddcc"
 		},
 		{
-			"id": "1efbdb67-9400-45e5-b86f-8c290e1892da",
-			"headers": "authToken: 0a9d73baade4a6e3b8a97fb7a59de6d18d850779\n",
-			"headerData": [
-				{
-					"key": "authToken",
-					"value": "0a9d73baade4a6e3b8a97fb7a59de6d18d850779",
-					"description": "",
-					"enabled": true
-				}
-			],
-			"url": "{{apiUrl}}user/getAddress",
-			"queryParams": [],
-			"preRequestScript": null,
-			"pathVariables": {},
-			"pathVariableData": [],
-			"method": "GET",
-			"data": null,
-			"dataMode": "params",
-			"tests": null,
-			"currentHelper": "normal",
-			"helperAttributes": {},
-			"time": 1594452230956,
-			"name": "Get Address",
-			"description": "",
-			"collectionId": "1776d64c-374c-63bf-6a21-239bbb04560a",
-			"responses": []
-		},
-		{
-			"id": "2009c5d9-ed2d-98a0-f82a-faac11eb153f",
-			"headers": "",
-			"headerData": [],
-			"url": "{{apiUrl}}api/verifyOtpCode",
-			"queryParams": [],
-			"preRequestScript": null,
-			"pathVariables": {},
-			"pathVariableData": [],
-			"method": "POST",
-			"data": [
-				{
-					"key": "contactNumber",
-					"value": "9009585194",
-					"description": "",
-					"type": "text",
-					"enabled": true
-				},
-				{
-					"key": "otpnumber",
-					"value": "2961",
-					"description": "",
-					"type": "text",
-					"enabled": true
-				},
-				{
-					"key": "countrycode",
-					"value": "91",
-					"description": "",
-					"type": "text",
-					"enabled": true
-				}
-			],
-			"dataMode": "params",
-			"tests": null,
-			"currentHelper": "normal",
-			"helperAttributes": {},
-			"time": 1594277694848,
-			"name": "VerifyOtpCode Api",
-			"description": "",
-			"collectionId": "1776d64c-374c-63bf-6a21-239bbb04560a",
-			"responses": []
-		},
-		{
-			"id": "3abcc904-1fe6-d6be-e840-5bf64002549a",
+			"id": "12cb5917-f067-2817-c71b-e3ad786d36c8",
 			"headers": "",
 			"headerData": [],
 			"url": "{{apiUrl}}api/smsSentReOtp",
@@ -151,35 +86,22 @@
 			"time": 1594272048607,
 			"name": "SmsSentReOtp API",
 			"description": "",
-			"collectionId": "1776d64c-374c-63bf-6a21-239bbb04560a",
-			"responses": []
+			"collectionId": "0aa11518-a6af-0a78-729f-0b1badf4ddcc",
+			"responses": [],
+			"collection_id": "0aa11518-a6af-0a78-729f-0b1badf4ddcc"
 		},
 		{
-			"id": "527e7cf3-61dc-a215-e5c6-6ec4ba765370",
-			"headers": "",
-			"headerData": [],
-			"url": "{{apiUrl}}api/pachkan_list",
-			"queryParams": [],
-			"preRequestScript": null,
-			"pathVariables": {},
-			"pathVariableData": [],
-			"method": "GET",
-			"data": null,
-			"dataMode": "params",
-			"tests": null,
-			"currentHelper": "normal",
-			"helperAttributes": {},
-			"time": 1595583046416,
-			"name": "Pachkan List",
-			"description": "",
-			"collectionId": "1776d64c-374c-63bf-6a21-239bbb04560a",
-			"responses": []
-		},
-		{
-			"id": "95d47b3e-a881-6234-396c-c6392a235afd",
-			"headers": "",
-			"headerData": [],
-			"url": "{{apiUrl}}api/loginwithUser",
+			"id": "2e6e0226-8642-b136-e40b-3b6e625724ba",
+			"headers": "authToken: a186721ea11509a823ed9a91a9bea71374c67b0a\n",
+			"headerData": [
+				{
+					"key": "authToken",
+					"value": "a186721ea11509a823ed9a91a9bea71374c67b0a",
+					"description": "",
+					"enabled": true
+				}
+			],
+			"url": "{{apiUrl}}user/changePassword",
 			"queryParams": [],
 			"preRequestScript": null,
 			"pathVariables": {},
@@ -187,28 +109,14 @@
 			"method": "POST",
 			"data": [
 				{
-					"key": "username",
-					"value": "995519",
-					"description": "",
-					"type": "text",
-					"enabled": true
-				},
-				{
 					"key": "password",
-					"value": "123!@#",
-					"description": "",
-					"type": "text",
-					"enabled": true
-				},
-				{
-					"key": "deviceType",
 					"value": "",
 					"description": "",
 					"type": "text",
 					"enabled": true
 				},
 				{
-					"key": "deviceToken",
+					"key": "npassword",
 					"value": "",
 					"description": "",
 					"type": "text",
@@ -219,14 +127,15 @@
 			"tests": null,
 			"currentHelper": "normal",
 			"helperAttributes": {},
-			"time": 1594288072173,
-			"name": "LoginwithUser",
+			"time": 1594302531989,
+			"name": "Change Password",
 			"description": "",
-			"collectionId": "1776d64c-374c-63bf-6a21-239bbb04560a",
-			"responses": []
+			"collectionId": "0aa11518-a6af-0a78-729f-0b1badf4ddcc",
+			"responses": [],
+			"collection_id": "0aa11518-a6af-0a78-729f-0b1badf4ddcc"
 		},
 		{
-			"id": "95fafd3d-5328-1f15-390c-f2590c36ecd0",
+			"id": "3428da5e-786e-42ac-ddba-743d22de7c2c",
 			"headers": "authToken: 0a9d73baade4a6e3b8a97fb7a59de6d18d850779\n",
 			"headerData": [
 				{
@@ -314,14 +223,69 @@
 			"time": 1594450885470,
 			"name": "Address update",
 			"description": "",
-			"collectionId": "1776d64c-374c-63bf-6a21-239bbb04560a",
-			"responses": []
+			"collectionId": "0aa11518-a6af-0a78-729f-0b1badf4ddcc",
+			"responses": [],
+			"collection_id": "0aa11518-a6af-0a78-729f-0b1badf4ddcc"
 		},
 		{
-			"id": "99a36b16-26e5-39d2-7431-b77f23d21ef3",
+			"id": "364d5d55-4976-845c-a470-e6792c3d799f",
 			"headers": "",
 			"headerData": [],
-			"url": "{{apiUrl}}api/sent_password",
+			"url": "{{apiUrl}}api/donation_feed_list",
+			"queryParams": [],
+			"pathVariables": {},
+			"pathVariableData": [],
+			"preRequestScript": null,
+			"method": "GET",
+			"collectionId": "0aa11518-a6af-0a78-729f-0b1badf4ddcc",
+			"data": null,
+			"dataMode": "params",
+			"name": "Donation_feed_list",
+			"description": "",
+			"descriptionFormat": "html",
+			"time": 1596693926467,
+			"version": 2,
+			"responses": [],
+			"tests": null,
+			"currentHelper": "normal",
+			"helperAttributes": {}
+		},
+		{
+			"id": "371038a3-1117-7a2a-2c8f-36f71d46e978",
+			"headers": "",
+			"headerData": [],
+			"url": "{{apiUrl}}api/sant_list",
+			"queryParams": [],
+			"pathVariables": {},
+			"pathVariableData": [],
+			"preRequestScript": null,
+			"method": "GET",
+			"collectionId": "0aa11518-a6af-0a78-729f-0b1badf4ddcc",
+			"data": null,
+			"dataMode": "params",
+			"name": "Sant satee list",
+			"description": "",
+			"descriptionFormat": "html",
+			"time": 1595421234654,
+			"version": 2,
+			"responses": [],
+			"tests": null,
+			"currentHelper": "normal",
+			"helperAttributes": {},
+			"collection_id": "0aa11518-a6af-0a78-729f-0b1badf4ddcc"
+		},
+		{
+			"id": "3c429542-e96d-6198-76ee-b795347ceafa",
+			"headers": "authToken: 26ca99f82b2dda54b9757c5616b607f941821a65\n",
+			"headerData": [
+				{
+					"key": "authToken",
+					"value": "26ca99f82b2dda54b9757c5616b607f941821a65",
+					"description": "",
+					"enabled": true
+				}
+			],
+			"url": "{{apiUrl}}user/add_donation",
 			"queryParams": [],
 			"preRequestScript": null,
 			"pathVariables": {},
@@ -329,8 +293,99 @@
 			"method": "POST",
 			"data": [
 				{
-					"key": "userId",
-					"value": "1914",
+					"key": "amount",
+					"value": "120",
+					"description": "",
+					"type": "text",
+					"enabled": true
+				},
+				{
+					"key": "receiptName",
+					"value": "Raj A",
+					"description": "",
+					"type": "text",
+					"enabled": true
+				},
+				{
+					"key": "payName",
+					"value": "kumar A",
+					"description": "",
+					"type": "text",
+					"enabled": true
+				},
+				{
+					"key": "contactNumber",
+					"value": "5554322276",
+					"description": "",
+					"type": "text",
+					"enabled": true
+				},
+				{
+					"key": "email",
+					"value": "test@test.com",
+					"description": "",
+					"type": "text",
+					"enabled": true
+				},
+				{
+					"key": "address",
+					"value": "indore arrea ",
+					"description": "",
+					"type": "text",
+					"enabled": true
+				},
+				{
+					"key": "occasionId",
+					"value": "1",
+					"description": "",
+					"type": "text",
+					"enabled": true
+				},
+				{
+					"key": "helpforId",
+					"value": "2",
+					"description": "",
+					"type": "text",
+					"enabled": true
+				},
+				{
+					"key": "isAnonymous",
+					"value": "0",
+					"description": "1/0",
+					"type": "text",
+					"enabled": true
+				},
+				{
+					"key": "feeds",
+					"value": "1",
+					"description": "1/0",
+					"type": "text",
+					"enabled": true
+				},
+				{
+					"key": "paymentMode",
+					"value": "CARD",
+					"description": "",
+					"type": "text",
+					"enabled": true
+				},
+				{
+					"key": "txnId",
+					"value": "ABC321AS758",
+					"description": "",
+					"type": "text",
+					"enabled": true
+				},
+				{
+					"key": "paymentStatus",
+					"value": "1",
+					"description": "",
+					"type": "text",
+					"enabled": true
+				},
+				{
+					"key": "message",
+					"value": "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.",
 					"description": "",
 					"type": "text",
 					"enabled": true
@@ -340,42 +395,14 @@
 			"tests": null,
 			"currentHelper": "normal",
 			"helperAttributes": {},
-			"time": 1594288076814,
-			"name": "Sentpassword",
+			"time": 1596541263033,
+			"name": "Add Donation",
 			"description": "",
-			"collectionId": "1776d64c-374c-63bf-6a21-239bbb04560a",
+			"collectionId": "0aa11518-a6af-0a78-729f-0b1badf4ddcc",
 			"responses": []
 		},
 		{
-			"id": "b53f49e7-0b5a-f065-db29-f7afe3d7087d",
-			"headers": "authToken: 0a9d73baade4a6e3b8a97fb7a59de6d18d850779\n",
-			"headerData": [
-				{
-					"key": "authToken",
-					"value": "0a9d73baade4a6e3b8a97fb7a59de6d18d850779",
-					"description": "",
-					"enabled": true
-				}
-			],
-			"url": "{{apiUrl}}user/getProfile",
-			"queryParams": [],
-			"preRequestScript": null,
-			"pathVariables": {},
-			"pathVariableData": [],
-			"method": "GET",
-			"data": null,
-			"dataMode": "params",
-			"tests": null,
-			"currentHelper": "normal",
-			"helperAttributes": {},
-			"time": 1594445723948,
-			"name": "Get Profile",
-			"description": "",
-			"collectionId": "1776d64c-374c-63bf-6a21-239bbb04560a",
-			"responses": []
-		},
-		{
-			"id": "b6ac5d69-774d-29e0-616b-b0bcc154a2c7",
+			"id": "41d05f36-747c-85de-a236-81f92d2893f0",
 			"headers": "",
 			"headerData": [],
 			"url": "{{apiUrl}}api/sant_detail",
@@ -384,7 +411,7 @@
 			"pathVariableData": [],
 			"preRequestScript": null,
 			"method": "POST",
-			"collectionId": "1776d64c-374c-63bf-6a21-239bbb04560a",
+			"collectionId": "0aa11518-a6af-0a78-729f-0b1badf4ddcc",
 			"data": [
 				{
 					"key": "santId",
@@ -403,97 +430,33 @@
 			"responses": [],
 			"tests": null,
 			"currentHelper": "normal",
-			"helperAttributes": {}
-		},
-		{
-			"id": "c268fb0a-0f05-51ea-fef1-aacd1bb43d58",
-			"headers": "",
-			"headerData": [],
-			"url": "{{apiUrl}}api/zipcode_to_address",
-			"queryParams": [],
-			"preRequestScript": null,
-			"pathVariables": {},
-			"pathVariableData": [],
-			"method": "POST",
-			"data": [
-				{
-					"key": "zip_code",
-					"value": "32323232",
-					"description": "",
-					"type": "text",
-					"enabled": true
-				}
-			],
-			"dataMode": "params",
-			"tests": null,
-			"currentHelper": "normal",
 			"helperAttributes": {},
-			"time": 1594386575759,
-			"name": "Zipcode_to_address",
-			"description": "",
-			"collectionId": "1776d64c-374c-63bf-6a21-239bbb04560a",
-			"responses": []
+			"collection_id": "0aa11518-a6af-0a78-729f-0b1badf4ddcc"
 		},
 		{
-			"id": "cad65b99-b815-9570-0e25-4c29453b4e5d",
-			"headers": "authToken: a186721ea11509a823ed9a91a9bea71374c67b0a\n",
+			"id": "4c42fa68-06d0-df71-203f-7ef1e835bcd9",
+			"headers": "authToken: 2b52a9a28fa867c164464ab38cfdc46f4164ccb3\n",
 			"headerData": [
 				{
 					"key": "authToken",
-					"value": "a186721ea11509a823ed9a91a9bea71374c67b0a",
+					"value": "2b52a9a28fa867c164464ab38cfdc46f4164ccb3",
 					"description": "",
 					"enabled": true
 				}
 			],
-			"url": "{{apiUrl}}user/changePassword",
-			"queryParams": [],
-			"preRequestScript": null,
-			"pathVariables": {},
-			"pathVariableData": [],
-			"method": "POST",
-			"data": [
-				{
-					"key": "password",
-					"value": "",
-					"description": "",
-					"type": "text",
-					"enabled": true
-				},
-				{
-					"key": "npassword",
-					"value": "",
-					"description": "",
-					"type": "text",
-					"enabled": true
-				}
-			],
-			"dataMode": "params",
-			"tests": null,
-			"currentHelper": "normal",
-			"helperAttributes": {},
-			"time": 1594302531989,
-			"name": "Change Password",
-			"description": "",
-			"collectionId": "1776d64c-374c-63bf-6a21-239bbb04560a",
-			"responses": []
-		},
-		{
-			"id": "ce25231e-7dea-0ead-40a6-6ab49b9475a4",
-			"headers": "",
-			"headerData": [],
-			"url": "{{apiUrl}}api/sant_list",
+			"url": "{{apiUrl}}user/my_donation",
 			"queryParams": [],
 			"pathVariables": {},
 			"pathVariableData": [],
 			"preRequestScript": null,
 			"method": "GET",
-			"collectionId": "1776d64c-374c-63bf-6a21-239bbb04560a",
+			"collectionId": "0aa11518-a6af-0a78-729f-0b1badf4ddcc",
 			"data": null,
 			"dataMode": "params",
-			"name": "Sant satee list",
+			"name": "My Donation",
 			"description": "",
 			"descriptionFormat": "html",
-			"time": 1595421234654,
+			"time": 1596694002040,
 			"version": 2,
 			"responses": [],
 			"tests": null,
@@ -501,7 +464,81 @@
 			"helperAttributes": {}
 		},
 		{
-			"id": "db6f52d7-2fde-1e38-e173-da2cc2687414",
+			"id": "4d32f409-6e16-70a5-6f6c-525a2cb8bb9e",
+			"headers": "",
+			"headerData": [],
+			"url": "{{apiUrl}}api/login_number",
+			"queryParams": [],
+			"preRequestScript": null,
+			"pathVariables": {},
+			"pathVariableData": [],
+			"method": "POST",
+			"data": [
+				{
+					"key": "countrycode",
+					"value": "91",
+					"description": "",
+					"type": "text",
+					"enabled": true
+				},
+				{
+					"key": "contactNumber",
+					"value": "9009585194",
+					"description": "",
+					"type": "text",
+					"enabled": true
+				}
+			],
+			"dataMode": "params",
+			"tests": null,
+			"currentHelper": "normal",
+			"helperAttributes": {},
+			"time": 1594272063467,
+			"name": "Login number API",
+			"description": "",
+			"collectionId": "0aa11518-a6af-0a78-729f-0b1badf4ddcc",
+			"responses": [],
+			"collection_id": "0aa11518-a6af-0a78-729f-0b1badf4ddcc"
+		},
+		{
+			"id": "5a68b335-873c-94d5-28d5-1022c080fffb",
+			"headers": "authToken: 0a9d73baade4a6e3b8a97fb7a59de6d18d850779\n",
+			"headerData": [
+				{
+					"key": "authToken",
+					"value": "0a9d73baade4a6e3b8a97fb7a59de6d18d850779",
+					"description": "",
+					"enabled": true
+				}
+			],
+			"url": "{{apiUrl}}user/getUser",
+			"queryParams": [],
+			"preRequestScript": null,
+			"pathVariables": {},
+			"pathVariableData": [],
+			"method": "POST",
+			"data": [
+				{
+					"key": "searchKey",
+					"value": "9009585194",
+					"description": "",
+					"type": "text",
+					"enabled": true
+				}
+			],
+			"dataMode": "params",
+			"tests": null,
+			"currentHelper": "normal",
+			"helperAttributes": {},
+			"time": 1594445751343,
+			"name": "Get User",
+			"description": "",
+			"collectionId": "0aa11518-a6af-0a78-729f-0b1badf4ddcc",
+			"responses": [],
+			"collection_id": "0aa11518-a6af-0a78-729f-0b1badf4ddcc"
+		},
+		{
+			"id": "5b968aa9-1106-5042-88e6-69c287971e92",
 			"headers": "",
 			"headerData": [],
 			"url": "{{apiUrl}}user/user_edit",
@@ -596,11 +633,160 @@
 			"time": 1594471599269,
 			"name": "User edit",
 			"description": "",
-			"collectionId": "1776d64c-374c-63bf-6a21-239bbb04560a",
+			"collectionId": "0aa11518-a6af-0a78-729f-0b1badf4ddcc",
+			"responses": [],
+			"collection_id": "0aa11518-a6af-0a78-729f-0b1badf4ddcc"
+		},
+		{
+			"id": "5e786120-9a7e-ab69-71a1-e1ac4aa12586",
+			"headers": "",
+			"headerData": [],
+			"url": "{{apiUrl}}api/sent_password",
+			"queryParams": [],
+			"preRequestScript": null,
+			"pathVariables": {},
+			"pathVariableData": [],
+			"method": "POST",
+			"data": [
+				{
+					"key": "userId",
+					"value": "1914",
+					"description": "",
+					"type": "text",
+					"enabled": true
+				}
+			],
+			"dataMode": "params",
+			"tests": null,
+			"currentHelper": "normal",
+			"helperAttributes": {},
+			"time": 1594288076814,
+			"name": "Sentpassword",
+			"description": "",
+			"collectionId": "0aa11518-a6af-0a78-729f-0b1badf4ddcc",
+			"responses": [],
+			"collection_id": "0aa11518-a6af-0a78-729f-0b1badf4ddcc"
+		},
+		{
+			"id": "62956c11-72e3-af1f-b661-4088b918fc7c",
+			"headers": "",
+			"headerData": [],
+			"url": "{{apiUrl}}api/donation_chance_list",
+			"queryParams": [],
+			"pathVariables": {},
+			"pathVariableData": [],
+			"preRequestScript": null,
+			"method": "GET",
+			"collectionId": "0aa11518-a6af-0a78-729f-0b1badf4ddcc",
+			"data": null,
+			"dataMode": "params",
+			"name": "Donation chance list",
+			"description": "",
+			"descriptionFormat": "html",
+			"time": 1596280615427,
+			"version": 2,
+			"responses": [],
+			"tests": null,
+			"currentHelper": "normal",
+			"helperAttributes": {}
+		},
+		{
+			"id": "6a5649fb-42c3-ee5f-3e3e-8721ce1f0382",
+			"headers": "",
+			"headerData": [],
+			"url": "{{apiUrl}}api/pachkan_list",
+			"queryParams": [],
+			"preRequestScript": null,
+			"pathVariables": {},
+			"pathVariableData": [],
+			"method": "GET",
+			"data": null,
+			"dataMode": "params",
+			"tests": null,
+			"currentHelper": "normal",
+			"helperAttributes": {},
+			"time": 1595583046416,
+			"name": "Pachkan List",
+			"description": "",
+			"collectionId": "0aa11518-a6af-0a78-729f-0b1badf4ddcc",
+			"responses": [],
+			"collection_id": "0aa11518-a6af-0a78-729f-0b1badf4ddcc"
+		},
+		{
+			"id": "6bbdffd9-977e-bef2-5c53-173234939e77",
+			"headers": "",
+			"headerData": [],
+			"url": "{{apiUrl}}api/loginwithUser",
+			"queryParams": [],
+			"preRequestScript": null,
+			"pathVariables": {},
+			"pathVariableData": [],
+			"method": "POST",
+			"data": [
+				{
+					"key": "username",
+					"value": "576209",
+					"description": "",
+					"type": "text",
+					"enabled": true
+				},
+				{
+					"key": "password",
+					"value": "123!@#",
+					"description": "",
+					"type": "text",
+					"enabled": true
+				},
+				{
+					"key": "deviceType",
+					"value": "",
+					"description": "",
+					"type": "text",
+					"enabled": true
+				},
+				{
+					"key": "deviceToken",
+					"value": "",
+					"description": "",
+					"type": "text",
+					"enabled": true
+				}
+			],
+			"dataMode": "params",
+			"tests": null,
+			"currentHelper": "normal",
+			"helperAttributes": {},
+			"time": 1596281002773,
+			"name": "LoginwithUser",
+			"description": "",
+			"collectionId": "0aa11518-a6af-0a78-729f-0b1badf4ddcc",
 			"responses": []
 		},
 		{
-			"id": "dfe3baef-c1e4-01e7-96d6-88b79dbc457d",
+			"id": "86ea9f06-a43b-8494-c320-e019acbb7030",
+			"headers": "",
+			"headerData": [],
+			"url": "{{apiUrl}}api/donation_for_list",
+			"queryParams": [],
+			"pathVariables": {},
+			"pathVariableData": [],
+			"preRequestScript": null,
+			"method": "GET",
+			"collectionId": "0aa11518-a6af-0a78-729f-0b1badf4ddcc",
+			"data": null,
+			"dataMode": "params",
+			"name": "Donation for list",
+			"description": "",
+			"descriptionFormat": "html",
+			"time": 1596280675334,
+			"version": 2,
+			"responses": [],
+			"tests": null,
+			"currentHelper": "normal",
+			"helperAttributes": {}
+		},
+		{
+			"id": "a5917a90-e55f-0822-92ac-70a13e7743f7",
 			"headers": "authToken: 0a9d73baade4a6e3b8a97fb7a59de6d18d850779\n",
 			"headerData": [
 				{
@@ -610,7 +796,29 @@
 					"enabled": true
 				}
 			],
-			"url": "{{apiUrl}}user/getUser",
+			"url": "{{apiUrl}}user/getAddress",
+			"queryParams": [],
+			"preRequestScript": null,
+			"pathVariables": {},
+			"pathVariableData": [],
+			"method": "GET",
+			"data": null,
+			"dataMode": "params",
+			"tests": null,
+			"currentHelper": "normal",
+			"helperAttributes": {},
+			"time": 1594452230956,
+			"name": "Get Address",
+			"description": "",
+			"collectionId": "0aa11518-a6af-0a78-729f-0b1badf4ddcc",
+			"responses": [],
+			"collection_id": "0aa11518-a6af-0a78-729f-0b1badf4ddcc"
+		},
+		{
+			"id": "b3c9f647-9ebf-d6b5-c1a3-5b81dfcd0b69",
+			"headers": "",
+			"headerData": [],
+			"url": "{{apiUrl}}api/zipcode_to_address",
 			"queryParams": [],
 			"preRequestScript": null,
 			"pathVariables": {},
@@ -618,8 +826,8 @@
 			"method": "POST",
 			"data": [
 				{
-					"key": "searchKey",
-					"value": "9009585194",
+					"key": "zip_code",
+					"value": "32323232",
 					"description": "",
 					"type": "text",
 					"enabled": true
@@ -629,47 +837,85 @@
 			"tests": null,
 			"currentHelper": "normal",
 			"helperAttributes": {},
-			"time": 1594445751343,
-			"name": "Get User",
+			"time": 1594386575759,
+			"name": "Zipcode_to_address",
 			"description": "",
-			"collectionId": "1776d64c-374c-63bf-6a21-239bbb04560a",
-			"responses": []
+			"collectionId": "0aa11518-a6af-0a78-729f-0b1badf4ddcc",
+			"responses": [],
+			"collection_id": "0aa11518-a6af-0a78-729f-0b1badf4ddcc"
 		},
 		{
-			"id": "fe8416b7-4d75-e451-dd1e-c1808c53fa7b",
+			"id": "c37756ea-272e-dde3-5b9b-639b93f56896",
+			"headers": "authToken: 0a9d73baade4a6e3b8a97fb7a59de6d18d850779\n",
+			"headerData": [
+				{
+					"key": "authToken",
+					"value": "0a9d73baade4a6e3b8a97fb7a59de6d18d850779",
+					"description": "",
+					"enabled": true
+				}
+			],
+			"url": "{{apiUrl}}user/getProfile",
+			"queryParams": [],
+			"preRequestScript": null,
+			"pathVariables": {},
+			"pathVariableData": [],
+			"method": "GET",
+			"data": null,
+			"dataMode": "params",
+			"tests": null,
+			"currentHelper": "normal",
+			"helperAttributes": {},
+			"time": 1594445723948,
+			"name": "Get Profile",
+			"description": "",
+			"collectionId": "0aa11518-a6af-0a78-729f-0b1badf4ddcc",
+			"responses": [],
+			"collection_id": "0aa11518-a6af-0a78-729f-0b1badf4ddcc"
+		},
+		{
+			"id": "e3a9b438-eae6-fc04-7faa-ec14c36ef2b6",
 			"headers": "",
 			"headerData": [],
-			"url": "{{apiUrl}}api/login_number",
+			"url": "{{apiUrl}}api/verifyOtpCode",
 			"queryParams": [],
 			"preRequestScript": null,
 			"pathVariables": {},
 			"pathVariableData": [],
 			"method": "POST",
 			"data": [
-				{
-					"key": "countrycode",
-					"value": "91",
-					"description": "",
-					"type": "text",
-					"enabled": true
-				},
 				{
 					"key": "contactNumber",
 					"value": "9009585194",
 					"description": "",
 					"type": "text",
 					"enabled": true
+				},
+				{
+					"key": "otpnumber",
+					"value": "2961",
+					"description": "",
+					"type": "text",
+					"enabled": true
+				},
+				{
+					"key": "countrycode",
+					"value": "91",
+					"description": "",
+					"type": "text",
+					"enabled": true
 				}
 			],
 			"dataMode": "params",
 			"tests": null,
 			"currentHelper": "normal",
 			"helperAttributes": {},
-			"time": 1594272063467,
-			"name": "Login number API",
+			"time": 1594277694848,
+			"name": "VerifyOtpCode Api",
 			"description": "",
-			"collectionId": "1776d64c-374c-63bf-6a21-239bbb04560a",
-			"responses": []
+			"collectionId": "0aa11518-a6af-0a78-729f-0b1badf4ddcc",
+			"responses": [],
+			"collection_id": "0aa11518-a6af-0a78-729f-0b1badf4ddcc"
 		}
 	]
 }

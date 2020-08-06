@@ -50,6 +50,8 @@
 										<th data-hide="phone">Receipt Name</th>
 										<th data-hide="phone">Pay Name</th>
 										<th data-hide="phone">Contact Number</th>
+										<th data-hide="phone">Occasion</th>
+										<th data-hide="phone">Help For</th>
 										<th data-hide="phone">Payment Mode</th>
 										<th data-hide="phone,tablet">Payment Status</th>
 										

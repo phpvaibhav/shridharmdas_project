@@ -5,13 +5,13 @@ class Donation_model extends CI_Model {
 
     //var $table , $column_order, $column_search , $order =  '';
     var $table = 'donation';
-    var $column_order = array('d.donationId','d.amount','d.receiptName','d.payName','d.contactNumber','d.paymentMode','d.paymentStatus'); //set column field database for datatable orderable
-    var $column_sel = array('d.donationId','d.amount','d.receiptName','d.payName','d.contactNumber','d.paymentMode','d.paymentStatus','(case when (d.paymentStatus = 0) 
+    var $column_order = array('d.donationId','d.amount','d.receiptName','d.payName','d.contactNumber','o.name as occasionName','h.name as helpforName','d.paymentMode','d.paymentStatus'); //set column field database for datatable orderable
+    var $column_sel = array('d.donationId','d.amount','d.receiptName','d.payName','o.name as occasionName','h.name as helpforName','d.contactNumber','d.paymentMode','d.paymentStatus','d.message','d.address','d.isAnonymous','d.feeds as feedStatus','(case when (d.paymentStatus = 0) 
         THEN "Pending" when (d.paymentStatus = 1) 
         THEN "Complete"  ELSE
         "Unknown" 
         END) as statusShow'); //set column field database for datatable orderable
-    var $column_search = array('d.amount','d.receiptName','d.payName','d.contactNumber'); //set column field database for datatable searchable 
+    var $column_search = array('d.amount','d.receiptName','d.payName','d.contactNumber','o.name as occasionName','h.name as helpforName'); //set column field database for datatable searchable 
     var $order = array('d.donationId'=> 'DESC');  // default order
     var $where = array();
     var $group_by = 'd.donationId'; 
@@ -30,6 +30,8 @@ class Donation_model extends CI_Model {
         $sel_fields = array_filter($this->column_sel); 
         $this->db->select($sel_fields);
         $this->db->from('donation as d');
+        $this->db->join('donationtype as o','o.typeId=d.occasion');
+        $this->db->join('donationtype as h','h.typeId=d.helpfor');
     
         $i = 0;
         foreach ($this->column_search as $emp) // loop column 
@@ -108,6 +110,8 @@ class Donation_model extends CI_Model {
     public function count_all()
     {
         $this->db->from('donation as d');
+        $this->db->join('donationtype as o','o.typeId=d.occasion');
+        $this->db->join('donationtype as h','h.typeId=d.helpfor');
         if(!empty($this->where))
             $this->db->where($this->where); 
         return $this->db->count_all_results();

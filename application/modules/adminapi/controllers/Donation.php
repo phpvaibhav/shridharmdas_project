@@ -24,6 +24,8 @@ class Donation extends Common_Admin_Controller{
         $row[] = display_placeholder_text($serData->receiptName); 
         $row[] = display_placeholder_text($serData->payName); 
         $row[] = display_placeholder_text($serData->contactNumber); 
+        $row[] = display_placeholder_text($serData->occasionName); 
+        $row[] = display_placeholder_text($serData->contactNumber); 
         $row[] = display_placeholder_text($serData->paymentMode); 
 
        
@@ -35,8 +37,8 @@ class Donation extends Common_Admin_Controller{
             $link  ='javascript:void(0)';
             $action .= "";
 
-      /*  $link = base_url().'vehicles/vehicleDetail/'.encoding($serData->vehicleId);
-        $action .= '&nbsp;&nbsp;|&nbsp;&nbsp;<a href="'.$link.'"  class="on-default edit-row table_action" title="Detail"><i class="fa fa-eye" aria-hidden="true"></i></a>';*/
+        $link = base_url().'admin/donation/detail/'.encoding($serData->donationId);
+        $action .= '<a href="'.$link.'"  class="on-default edit-row table_action" title="Detail"><i class="fa fa-eye" aria-hidden="true"></i></a>';
         
 
         $row[] = $action;

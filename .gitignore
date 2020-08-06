@@ -17,6 +17,7 @@ application/vendor/*
 
 # Ignore everything in uploads directory      
 uploads/*
+dev.shreedhamdas.com/*
 
 # Ignore placeholder images in uploads directory
 !uploads/placeholders/ws_general_placeholder.png

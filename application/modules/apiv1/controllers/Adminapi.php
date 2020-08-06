@@ -141,7 +141,7 @@ class Adminapi extends Common_Admin_Controller{
     function StoreSession($userData){
         $session_data['id']             = $userData->id;
         $session_data['userId']         = $userData->id;
-        $session_data['sanghId']         = $userData->sanghId;
+        $session_data['sanghId']        = $userData->sanghId;
         $session_data['roleId']         = $userData->roleId;
         $session_data['fullName']       = $userData->fullName;
         $session_data['email']          = $userData->email;

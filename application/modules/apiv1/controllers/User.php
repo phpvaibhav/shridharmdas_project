@@ -165,7 +165,7 @@ class User extends Common_Service_Controller{
                $notes .= $addressType." address postName change <b>".display_placeholder_text($c_adress->postName)."</b> to <b>".$postName."</b><br>"; 
             }
             	/*activity*/
-            	            $add_meta['userId']         = $userId;
+            	$add_meta['userId']         = $userId;
                 $add_meta['zip_code']       = $this->post('zip_code');
                 $add_meta['address']        = $this->post('address');
                 $add_meta['city']           = $this->post('city');
@@ -194,15 +194,13 @@ class User extends Common_Service_Controller{
                 $status = FAIL;
                 $msg  = ResponseMessages::getStatusCodeMessage(118);
             }
-            if($result){
-            	 $add            =  $this->common_model->is_data_exists('addresses',array('addressType'=>$addressType,'userId'=>$userId));
+                if($result){
+                 $add            =  $this->common_model->is_data_exists('addresses',array('addressType'=>$addressType,'userId'=>$userId));
                  $response   = array('status'=>SUCCESS,'message'=>$msg,'data'=> $add);
-            }else{
+                }else{
                  $response   = array('status'=>FAIL,'message'=>ResponseMessages::getStatusCodeMessage(118));
-            }    
+                }    
             }
-          
-    
         }
         $this->response($response);
     }//end function
@@ -334,6 +332,23 @@ class User extends Common_Service_Controller{
         }
         $this->response($response);
     }//end function
- 
+
+    public function my_donation_get()
+    {
+        $authCheck  = $this->check_service_auth();
+        $authToken  = $this->authData->authToken;
+        $userId     = $this->authData->id;
+        $this->load->model('adminapi/donation_model');
+        $where = array('d.userId' => $userId);
+        $this->donation_model->set_data();
+        $list = $this->donation_model->get_list();
+        if($list){    
+            $response = array('status' =>SUCCESS, 'message' => ResponseMessages::getStatusCodeMessage(200),'data'=>$list);
+        }else{
+            $response = array('status' =>FAIL, 'message' => ResponseMessages::getStatusCodeMessage(118));                 
+        }
+       
+       $this->response($response);
+    }//End Function
     
 }//End Class 

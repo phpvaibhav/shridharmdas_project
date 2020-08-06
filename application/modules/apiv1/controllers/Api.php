@@ -419,7 +419,7 @@ class Api extends Common_Service_Controller{
     public function donation_chance_list_get()
     {
         $select = 'typeId,name';
-        $list          =  $this->common_model->getAll('donationtype',array('donationType'=>'BY'));
+        $list          =  $this->common_model->getAll('donationtype',array('donationType'=>'BY','status'=>1));
         if($list){
               
             $response = array('status' =>SUCCESS, 'message' => ResponseMessages::getStatusCodeMessage(200),'data'=>$list);
@@ -431,10 +431,11 @@ class Api extends Common_Service_Controller{
     }//End Function
 
     
-    public function donation_for_list_get()
+    public function donation_feed_list_get()
     {
-        $select = 'typeId,name';
-        $list          =  $this->common_model->getAll('donationtype',array('donationType'=>'FOR'));
+        $this->load->model('adminapi/donation_model');
+        $this->donation_model->set_data();
+        $list = $this->donation_model->get_list();
         if($list){
               
             $response = array('status' =>SUCCESS, 'message' => ResponseMessages::getStatusCodeMessage(200),'data'=>$list);
@@ -444,6 +445,7 @@ class Api extends Common_Service_Controller{
        
        $this->response($response);
     }//End Function
+    
 
     
 }//End Class 

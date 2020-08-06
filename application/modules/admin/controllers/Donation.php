@@ -47,5 +47,18 @@ class Donation extends Common_Back_Controller {
         $data['front_scripts']  = array('backend_assets/custom/js/common_datatable.js','backend_assets/custom/js/donation.js');
         $this->load->admin_render('donation/typelist', $data);
     } 
+    public function detail() { 
+        
+        $data['title']      = lang('donation');
+        
+        $id             = decoding($this->uri->segment(4));
+       
+         $this->load->model('adminapi/donation_model');
+          $where = array('d.userId' => $userId,'d.donationId' => $id);
+        $this->donation_model->set_data();
+        $list = $this->donation_model->get_list();
+        $data['info'] = isset($list[0]) ?  json_decode(json_encode($list[0]),true):array();
+        $this->load->admin_render('donation/detail', $data);
+    } 
   
 }

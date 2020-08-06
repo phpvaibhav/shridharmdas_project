@@ -276,9 +276,10 @@
            <li>
             <a href="javascript:void(0);"><i class="fa fa-lg fa-fw fa-bank"></i> <span class="menu-item-parent"><?= lang('donation'); ?></span></a>
             <ul>
+              <li><a href="<?= base_url('donation_list'); ?>"><?= lang('donation_list'); ?></a></li>
               <li><a href="<?= base_url('donation_chance'); ?>"><?= lang('donation_chance'); ?></a></li>
               <li><a href="<?= base_url('donation_for'); ?>"><?= lang('donation_for'); ?></a></li>
-              <li><a href="<?= base_url('donation_list'); ?>"><?= lang('donation_list'); ?></a></li>
+              
             </ul>
           </li> 
           
