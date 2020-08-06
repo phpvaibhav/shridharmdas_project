@@ -54,7 +54,7 @@ class Donation extends Common_Back_Controller {
         $id             = decoding($this->uri->segment(4));
        
          $this->load->model('adminapi/donation_model');
-          $where = array('d.userId' => $userId,'d.donationId' => $id);
+          $where = array('d.donationId' => $id);
         $this->donation_model->set_data();
         $list = $this->donation_model->get_list();
         $data['info'] = isset($list[0]) ?  json_decode(json_encode($list[0]),true):array();
